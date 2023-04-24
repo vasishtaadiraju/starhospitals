@@ -44,6 +44,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 MenuSection::resource(Speciality::class),
             ];
         });
+
+        Nova::footer(function($request){
+            return '<center><b>Copyright © 2023 by Star Hospitals. All Rights Reserved.</b></center>';
+        });
     }
 
     /**

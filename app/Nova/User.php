@@ -103,6 +103,16 @@ class User extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
 
+            Trix::make('Expertise', 'expertise')
+                ->withFiles('public')
+                ->hideFromIndex()
+                ->rules('nullable', 'string'),
+
+            Trix::make('Memberships', 'memberships')
+                ->withFiles('public')
+                ->hideFromIndex()
+                ->rules('nullable', 'string'),
+
             Trix::make('Publications', 'publications')
                 ->withFiles('public')
                 ->hideFromIndex()

@@ -25,6 +25,8 @@ return new class extends Migration
             $table->text('long_description')->nullable();
             $table->text('publications')->nullable();
             $table->text('affiliations_and_fellowships')->nullable();
+            $table->text('expertise')->nullable();
+            $table->text('memberships')->nullable();
             $table->string('slug', 50)->nullable();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
