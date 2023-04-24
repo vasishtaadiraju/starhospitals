@@ -163,7 +163,7 @@ return [
     */
 
     'brand' => [
-        // 'logo' => public_path('/images/starhospitals-logo.svg'),
+        'logo' => public_path('/images/starhospitals-logo.svg'),
 
         'colors' => [
             "400" => "15, 98, 172, 0.5",
