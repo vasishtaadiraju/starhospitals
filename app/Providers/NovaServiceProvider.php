@@ -26,9 +26,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         parent::boot();
 
+        Nova::withoutNotificationCenter();
+
         Nova::mainMenu(function (Request $request) {
             return [
-                MenuSection::dashboard(Main::class)->icon('chart-bar'),
+                // MenuSection::dashboard(Main::class)->icon('chart-bar'),
 
                 MenuSection::make('Team Management', [
                     MenuItem::resource(User::class)
