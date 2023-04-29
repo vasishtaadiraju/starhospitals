@@ -289,11 +289,6 @@ class User extends Resource
         ];
     }
 
-    public function subtitle()
-    {
-        return "Region: {$this->regions->region_id->name}";
-    }
-
     public static function redirectAfterCreate(NovaRequest $request, $resource)
     {
         return '/resources/users/';
