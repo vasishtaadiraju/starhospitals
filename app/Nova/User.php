@@ -77,7 +77,7 @@ class User extends Resource
 
             Password::make('Password')
                 ->onlyOnForms()
-                ->creationRules('required', Rules\Password::defaults(), 'confirmed')
+                ->creationRules('nullable', Rules\Password::defaults(), 'confirmed')
                 ->updateRules('nullable', Rules\Password::defaults(), 'confirmed'),
 
             PasswordConfirmation::make('Password Confirmation'),
@@ -86,9 +86,9 @@ class User extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:50'),
 
-            Text::make('Qualification', 'qualification')
+            Textarea::make('Qualification', 'qualification')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:100'),
+                ->rules('nullable', 'string'),
 
             Text::make('Experience', 'experience')
                 ->hideFromIndex()
@@ -292,5 +292,15 @@ class User extends Resource
     public function subtitle()
     {
         return "Region: {$this->regions->region_id->name}";
+    }
+
+    public static function redirectAfterCreate(NovaRequest $request, $resource)
+    {
+        return '/resources/users/';
+    }
+
+    public static function redirectAfterUpdate(NovaRequest $request, $resource)
+    {
+        return '/resources/users/';
     }
 }

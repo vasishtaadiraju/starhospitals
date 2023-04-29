@@ -30,7 +30,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
         Nova::mainMenu(function (Request $request) {
             return [
-                // MenuSection::dashboard(Main::class)->icon('chart-bar'),
+                MenuSection::dashboard(Main::class)->icon('chart-bar'),
 
                 MenuSection::make('Team Management', [
                     MenuItem::resource(User::class)
@@ -48,7 +48,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         });
 
         Nova::footer(function($request){
-            return '<center><b>Copyright © 2023 by Star Hospitals. All Rights Reserved.</b></center>';
+            return '<center><b>Copyright &copy; 2023 by Star Hospitals. All Rights Reserved.</b></center>';
         });
     }
 

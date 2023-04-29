@@ -18,6 +18,11 @@ class Speciality extends Model
         return $this->belongsToMany(User::class, 'speciality_user', 'speciality_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 
+    public function regions()
+    {
+        return $this->belongsToMany(Region::class, 'region_user', 'speciality_id', 'region_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+    }
+
     public function branches()
     {
         return $this->belongsToMany(Branch::class, 'branch_speciality', 'speciality_id', 'branch_id', 'id', 'id')->withPivot('order_number')->withTimestamps();

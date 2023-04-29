@@ -202,4 +202,14 @@ class Region extends Resource
     {
         return [];
     }
+
+    public static function redirectAfterCreate(NovaRequest $request, $resource)
+    {
+        return '/resources/regions/';
+    }
+
+    public static function redirectAfterUpdate(NovaRequest $request, $resource)
+    {
+        return '/resources/regions/';
+    }
 }

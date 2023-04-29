@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('password')->nullable();
             $table->rememberToken();
             $table->string('designation', 50)->nullable();
-            $table->string('qualification', 100)->nullable();
+            $table->text('qualification')->nullable();
             $table->string('experience', 20)->nullable();
             $table->string('short_description')->nullable();
             $table->text('long_description')->nullable();

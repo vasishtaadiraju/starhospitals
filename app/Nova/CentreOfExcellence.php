@@ -144,6 +144,14 @@ class CentreOfExcellence extends Resource
                     ];
                 }),
 
+            BelongsToMany::make('Region', 'regions')
+                ->searchable()
+                ->fields(function () {
+                    return [
+                        Number::make('Order Number', 'order_number')
+                    ];
+                }),
+
             BelongsToMany::make('Branch', 'branches')
                 ->searchable()
                 ->fields(function () {
@@ -204,5 +212,15 @@ class CentreOfExcellence extends Resource
     public function actions(NovaRequest $request)
     {
         return [];
+    }
+
+    public static function redirectAfterCreate(NovaRequest $request, $resource)
+    {
+        return '/resources/centre-of-excellences/';
+    }
+
+    public static function redirectAfterUpdate(NovaRequest $request, $resource)
+    {
+        return '/resources/centre-of-excellences/';
     }
 }

@@ -18,6 +18,11 @@ class CentreOfExcellence extends Model
         return $this->belongsToMany(User::class, 'coe_user', 'coe_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 
+    public function regions()
+    {
+        return $this->belongsToMany(Region::class, 'coe_region', 'coe_id', 'region_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+    }
+
     public function branches()
     {
         return $this->belongsToMany(Branch::class, 'branch_coe', 'coe_id', 'branch_id', 'id', 'id')->withPivot('order_number')->withTimestamps();

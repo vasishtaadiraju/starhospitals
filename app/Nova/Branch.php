@@ -281,4 +281,14 @@ class Branch extends Resource
     {
         return "Region: {$this->region->name}";
     }
+
+    public static function redirectAfterCreate(NovaRequest $request, $resource)
+    {
+        return '/resources/branches/';
+    }
+
+    public static function redirectAfterUpdate(NovaRequest $request, $resource)
+    {
+        return '/resources/branches/';
+    }
 }
