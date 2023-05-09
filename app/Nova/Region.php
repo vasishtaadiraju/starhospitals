@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
@@ -211,5 +212,18 @@ class Region extends Resource
     public static function redirectAfterUpdate(NovaRequest $request, $resource)
     {
         return '/resources/regions/';
+    }
+
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        if (DB::table('role_user')->where('user_id', $request->user()->id)->where('role_id', 2)->exists()) {
+            $branch_id = $request->user()->branch_id;
+
+            $region_ids = DB::table('branch_region')->where('branch_id', $branch_id)->pluck('region_id')->toArray();
+
+            return $query->whereIn('id', $region_ids);
+        }
+
+        return $query;
     }
 }

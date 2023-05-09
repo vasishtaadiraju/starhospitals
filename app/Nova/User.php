@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Models\Branch;
 use App\Models\Region;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,6 +18,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\PasswordConfirmation;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
@@ -59,12 +61,6 @@ class User extends Resource
                 ->sortable(),
 
             // Gravatar::make('Avatar', 'small_image'),
-
-            // BelongsToMany::make('Region', 'regions')
-            //     ->fields(function () {
-            //         return [
-            //         ];
-            //     }),
 
             Text::make('Name', 'name')
                 ->sortable()
@@ -196,7 +192,24 @@ class User extends Resource
 
             Boolean::make('Status', 'status')
                 ->trueValue('active')
-                ->falseValue('inactive'),
+                ->falseValue('inactive')
+                ->filterable(),
+
+            Select::make('Branch', 'branch_id')
+                ->options(function () {
+
+                    $branch_select = [];
+                    $branches = Branch::get(['id', 'name']);
+
+                    foreach ($branches as $branch) {
+                        $branch_select[$branch->id] = $branch->name;
+                    }
+
+                    return $branch_select;
+                })
+                ->displayUsingLabels()
+                ->help('Please select the branch, only if this user is a branch admin.')
+                ->hideFromIndex(),
 
             BelongsToMany::make('Region', 'regions')
                 ->searchable()
@@ -229,6 +242,9 @@ class User extends Resource
                         Number::make('Order Number', 'order_number')
                     ];
                 }),
+
+            BelongsToMany::make('Role', 'roles')
+                ->searchable(),
         ];
     }
 
@@ -297,5 +313,18 @@ class User extends Resource
     public static function redirectAfterUpdate(NovaRequest $request, $resource)
     {
         return '/resources/users/';
+    }
+
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        if (DB::table('role_user')->where('user_id', $request->user()->id)->where('role_id', 2)->exists()) {
+            $branch_id = $request->user()->branch_id;
+
+            $user_ids = DB::table('branch_user')->where('branch_id', $branch_id)->pluck('user_id')->toArray();
+
+            return $query->whereIn('id', $user_ids);
+        }
+
+        return $query;
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
@@ -59,7 +60,6 @@ class Branch extends Resource
                 ->rules('required', 'string', 'max:50'),
 
             BelongsTo::make('Region')
-                ->searchable()
                 ->withoutTrashed(),
 
             Text::make('Contact', 'contact')
@@ -290,5 +290,14 @@ class Branch extends Resource
     public static function redirectAfterUpdate(NovaRequest $request, $resource)
     {
         return '/resources/branches/';
+    }
+
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        if (DB::table('role_user')->where('user_id', $request->user()->id)->where('role_id', 2)->exists()) {
+            return $query->where('id', $request->user()->branch_id);
+        }
+
+        return $query;
     }
 }

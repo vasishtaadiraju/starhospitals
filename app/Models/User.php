@@ -65,4 +65,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Speciality::class, 'speciality_user', 'user_id', 'speciality_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id', 'id', 'id')->withTimestamps();
+    }
 }

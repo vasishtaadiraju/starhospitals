@@ -5,7 +5,9 @@ namespace App\Providers;
 use App\Nova\Branch;
 use App\Nova\CentreOfExcellence;
 use App\Nova\Region;
+use App\Nova\Role;
 use App\Nova\Speciality;
+use App\Nova\Testimonial;
 use App\Nova\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -44,6 +46,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 MenuSection::resource(CentreOfExcellence::class),
 
                 MenuSection::resource(Speciality::class),
+
+                MenuSection::resource(Testimonial::class),
             ];
         });
 

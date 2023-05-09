@@ -44,6 +44,7 @@ return new class extends Migration
             $table->string('schema_postalCode')->nullable();
             $table->string('schema_streetAddress')->nullable();
             $table->string('schema_telephone')->nullable();
+            $table->foreignId('branch_id')->nullable()->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->enum('status', ['active', 'inactive']);
             $table->timestamps();
             $table->softDeletes();
