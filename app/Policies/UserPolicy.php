@@ -168,4 +168,21 @@ class UserPolicy
 
         return $allow;
     }
+
+    public function seo(User $user): bool
+    {
+        $role_ids = DB::table('role_user')->where('user_id', $user->id)->pluck('role_id');
+
+        $permission_id = Permission::where('name', 'seo')->pluck('id')->first();
+
+        $allow = false;
+
+        foreach ($role_ids as $role_id) {
+            if ($role_id === 1 || DB::table('permission_role')->where('role_id', $role_id)->where('permission_id', $permission_id)->exists()) {
+                $allow = true;
+            }
+        }
+
+        return $allow;
+    }
 }

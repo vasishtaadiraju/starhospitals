@@ -121,16 +121,19 @@ class User extends Resource
 
             Text::make('Slug', 'slug')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:50'),
+                ->rules('nullable', 'string', 'max:50')
+                ->canSeeWhen('seo', $this),
 
             Text::make('Meta Title', 'meta_title')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:255'),
+                ->rules('nullable', 'string', 'max:255')
+                ->canSeeWhen('seo', $this),
 
             Textarea::make('Meta Description', 'meta_description')
                 ->rows(3)
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string')
+                ->canSeeWhen('seo', $this),
 
             Avatar::make('Small Image', 'small_image')
                 ->disk('public')
@@ -139,7 +142,8 @@ class User extends Resource
 
             Text::make('Small Image Alt', 'small_image_alt')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:100'),
+                ->rules('nullable', 'string', 'max:100')
+                ->canSeeWhen('seo', $this),
 
             Image::make('Large Image', 'large_image')
                 ->disk('public')
@@ -148,47 +152,58 @@ class User extends Resource
 
             Text::make('Large Image Alt', 'large_image_alt')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:100'),
+                ->rules('nullable', 'string', 'max:100')
+                ->canSeeWhen('seo', $this),
 
             URL::make('Canonical', 'canonical')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string')
+                ->canSeeWhen('seo', $this),
 
             Text::make('Schema Name', 'schema_name')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string')
+                ->canSeeWhen('seo', $this),
 
             Text::make('Schema Description', 'schema_description')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string')
+                ->canSeeWhen('seo', $this),
 
             Text::make('Schema Image', 'schema_image')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string')
+                ->canSeeWhen('seo', $this),
 
             Text::make('Schema Opening Hours', 'schema_openingHours')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string')
+                ->canSeeWhen('seo', $this),
 
             Text::make('Schema Address Locality', 'schema_addressLocality')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string')
+                ->canSeeWhen('seo', $this),
 
             Text::make('Schema Region', 'schema_addressRegion')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string')
+                ->canSeeWhen('seo', $this),
 
             Text::make('Schema Postal Code', 'schema_postalCode')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string')
+                ->canSeeWhen('seo', $this),
 
             Text::make('Schema Street Address', 'schema_streetAddress')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string')
+                ->canSeeWhen('seo', $this),
 
             Text::make('Schema Telephone', 'schema_telephone')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string')
+                ->canSeeWhen('seo', $this),
 
             Boolean::make('Status', 'status')
                 ->trueValue('active')

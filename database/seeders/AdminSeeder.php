@@ -18,7 +18,7 @@ class AdminSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Super Admin',
             'email' => 'admin@gmail.com',
-            'password' => Hash::make('1234'),
+            'password' => Hash::make('12345678'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -29,16 +29,5 @@ class AdminSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
-
-        $permissions = Permission::get(['id', 'name']);
-
-        foreach ($permissions as $permission) {
-            DB::table('permission_role')->insert([
-                'permission_id' => $permission->id,
-                'role_id' => 1,
-                'created_at' => now(),
-                'updated_at' => now()
-            ]);
-        }
     }
 }
