@@ -1,0 +1,155 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+
+.choose-us {
+    @include centerSection;
+    display: flex;
+    // justify-content: space-between;
+    gap: 10%;
+    
+    @include media("sm-mob") {
+        flex-direction: column-reverse;
+    }
+    @include media("md-mob") {
+        flex-direction: column-reverse;
+    }
+    @include media("x-sm-tab") {
+        flex-direction: column-reverse;
+    }
+    @include media("md-tab") {
+        flex-direction: column-reverse;
+    }
+    @include media("sm-tab") {
+        gap: 1%;
+    }
+    @include media("lg-tab") {
+        gap: 1%;
+    }
+    // @include media("lg-tab") {
+    //     flex-direction: column-reverse;
+    // }
+    &__benifits {
+        flex: 0 0 40%;
+        // min-height: 60vh;
+        @include media("sm-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("md-mob") {
+            flex: 0 0 100%;
+        }
+        @include media('sm-tab')
+        {
+            flex: 0 0 61%;
+        }
+        @include media("lg-tab") {
+            flex: 0 0 60%;
+        }
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        &__card {
+            flex: 0 0 calc(97% / 2);
+            margin-top: 0.5em;
+            padding: 1em;
+            // border: 1px solid blue;
+            border-radius: 10px;
+            box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.4);
+            -webkit-box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.4);
+            -moz-box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.4);
+            @include media("sm-mob") {
+                flex: 0 0 100%;
+                display: flex;
+                align-items: center;
+                gap: 1em;
+            }
+            @include media("md-mob") {
+                flex: 0 0 100%;
+                display: flex;
+                align-items: center;
+                gap: 1em;
+            }
+            h3 {
+                padding: 0.5em 0px;
+                @include font-family(500);
+                font-size: 16px;
+                @include media("sm-mob") {
+                    font-size: 14px;
+                    padding: 0.25em 0px;
+                }
+                @include media("md-mob") {
+                    font-size: 14px;
+                    padding: 0.25em 0px;
+                }
+                @include media("lg-tab") {
+                    font-size: 14px;
+                    padding: 0.25em 0px;
+                }
+            }
+
+            p {
+                padding: 1em 0px;
+                @include font-family(400);
+                color: variables.$starhospitals-text-tertiary;
+                font-size: 14px;
+                @include media("sm-mob") {
+                    font-size: 12px;
+                    padding: 0.25em 0px;
+                }
+                @include media("md-mob") {
+                    font-size: 12px;
+                    padding: 0.25em 0px;
+                }
+                @include media("lg-tab") {
+                    font-size: 12px;
+                    padding: 0.25em 0px;
+                }
+                
+            }
+        }
+    }
+    &__image-wrapper {
+        width: 80%;
+        margin: 0px auto;
+        @include media('sm-tab')
+        {
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            // height: 100%;
+        }
+    }
+    &__image-container {
+        position: relative;
+        flex: 0 0 40%;
+        @include media("sm-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("sm-tab") {
+            flex: 0 0 35%;
+        }
+        @include media("sm-tab") {
+            height: 50%;
+        }
+        @include media("lg-tab") {
+            flex: 0 0 35%;
+        }
+        // background-color: white;
+        &__dots-left {
+            width: 10%;
+            position: absolute;
+            left: 2rem;
+            bottom: 10%;
+            z-index: -1;
+        }
+        &__dots-right {
+            width: 10%;
+            position: absolute;
+            right: 2rem;
+            top: 10%;
+            z-index: -1;
+        }
+    }
+}

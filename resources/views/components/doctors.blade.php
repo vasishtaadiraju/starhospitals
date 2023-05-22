@@ -1,0 +1,202 @@
+<x-heading :title="'Book an Appointment'" :description="'Our healthcare specialists are equipped with the knowledge and skills to provide you with the support you require. From consultation to diagnosis to treatments, our experts are dedicated to helping you.'"/>
+<x-filter/>
+<div class="doctors">
+    <div class="doctors__cards-wrapper @if ($type == 'flex')
+    doctors__cards-wrapper--flex-list
+    @else
+    doctor-slide
+    @endif">
+        <div class="doctors-card">
+            <a href="" class="doctors-card__lt">
+                <img src="{{ asset('images/doctors/Bushra.png') }}" alt="">
+                <div class="doctors-card__lt__details">
+                    <p>35 yrs <span>Experience</span></p>
+                    <p>Rs. 500 <span>Fees</span> </p>
+                </div>
+            </a>
+            <div class="doctors-card__rt">
+                <h2><a href=""> Dr. Bushra Khan </a></h2>
+                <p class="doctors-card__rt__designation"><a href=""> Jr. Consultant | Oncology </a></p>
+                <p class="doctors-card__rt__speciality"><a href=""> Oncology </a></p>
+                <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
+
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/profile.png') }}" alt="">
+                    <span>View Full Profile</span>
+                </div>
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/calender.png') }}" alt="">
+                    <span>Book an Appointment</span>
+                </div>
+            </div>
+        </div>
+        <div class="doctors-card">
+            <a href="" class="doctors-card__lt">
+                <img src="{{ asset('images/doctors/Bushra.png') }}" alt="">
+                <div class="doctors-card__lt__details">
+                    <p>35 yrs <span>Experience</span></p>
+                    <p>Rs. 500 <span>Fees</span> </p>
+                </div>
+            </a>
+            <div class="doctors-card__rt">
+                <h2><a href=""> Dr. Bushra Khan </a></h2>
+                <p class="doctors-card__rt__designation"><a href=""> Jr. Consultant | Oncology </a></p>
+                <p class="doctors-card__rt__speciality"><a href=""> Oncology </a></p>
+                <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
+
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/profile.png') }}" alt="">
+                    <span>View Full Profile</span>
+                </div>
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/calender.png') }}" alt="">
+                    <span>Book an Appointment</span>
+                </div>
+            </div>
+        </div>
+        <div class="doctors-card">
+            <a href="" class="doctors-card__lt">
+                <img src="{{ asset('images/doctors/Bushra.png') }}" alt="">
+                <div class="doctors-card__lt__details">
+                    <p>35 yrs <span>Experience</span></p>
+                    <p>Rs. 500 <span>Fees</span> </p>
+                </div>
+            </a>
+            <div class="doctors-card__rt">
+                <h2><a href=""> Dr. Bushra Khan </a></h2>
+                <p class="doctors-card__rt__designation"><a href=""> Jr. Consultant | Oncology </a></p>
+                <p class="doctors-card__rt__speciality"><a href=""> Oncology </a></p>
+                <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
+
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/profile.png') }}" alt="">
+                    <span>View Full Profile</span>
+                </div>
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/calender.png') }}" alt="">
+                    <span>Book an Appointment</span>
+                </div>
+            </div>
+        </div>
+        <div class="doctors-card">
+            <a href="" class="doctors-card__lt">
+                <img src="{{ asset('images/doctors/Bushra.png') }}" alt="">
+                <div class="doctors-card__lt__details">
+                    <p>35 yrs <span>Experience</span></p>
+                    <p>Rs. 500 <span>Fees</span> </p>
+                </div>
+            </a>
+            <div class="doctors-card__rt">
+                <h2><a href=""> Dr. Bushra Khan </a></h2>
+                <p class="doctors-card__rt__designation"><a href=""> Sr. Consultant | General Medicine/ Internal Medicine </a></p>
+                <p class="doctors-card__rt__speciality"><a href=""> Oncology </a></p>
+                <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
+
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/profile.png') }}" alt="">
+                    <span>View Full Profile</span>
+                </div>
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/calender.png') }}" alt="">
+                    <span>Book an Appointment</span>
+                </div>
+            </div>
+        </div>
+        <div class="doctors-card">
+            <a href="" class="doctors-card__lt">
+                <img src="{{ asset('images/doctors/Bushra.png') }}" alt="">
+                <div class="doctors-card__lt__details">
+                    <p>35 yrs <span>Experience</span></p>
+                    <p>Rs. 500 <span>Fees</span> </p>
+                </div>
+            </a>
+            <div class="doctors-card__rt">
+                <h2><a href=""> Dr. Bushra Khan </a></h2>
+                <p class="doctors-card__rt__designation"><a href=""> Jr. Consultant | Oncology </a></p>
+                <p class="doctors-card__rt__speciality"><a href=""> Oncology </a></p>
+                <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
+
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/profile.png') }}" alt="">
+                    <span>View Full Profile</span>
+                </div>
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/calender.png') }}" alt="">
+                    <span>Book an Appointment</span>
+                </div>
+            </div>
+        </div>
+        <div class="doctors-card">
+            <a href="" class="doctors-card__lt">
+                <img src="{{ asset('images/doctors/Bushra.png') }}" alt="">
+                <div class="doctors-card__lt__details">
+                    <p>35 yrs <span>Experience</span></p>
+                    <p>Rs. 500 <span>Fees</span> </p>
+                </div>
+            </a>
+            <div class="doctors-card__rt">
+                <h2><a href=""> Dr. Bushra Khan </a></h2>
+                <p class="doctors-card__rt__designation"><a href=""> Jr. Consultant | Oncology </a></p>
+                <p class="doctors-card__rt__speciality"><a href=""> Oncology </a></p>
+                <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
+
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/profile.png') }}" alt="">
+                    <span>View Full Profile</span>
+                </div>
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/calender.png') }}" alt="">
+                    <span>Book an Appointment</span>
+                </div>
+            </div>
+        </div>
+        <div class="doctors-card">
+            <a href="" class="doctors-card__lt">
+                <img src="{{ asset('images/doctors/Bushra.png') }}" alt="">
+                <div class="doctors-card__lt__details">
+                    <p>35 yrs <span>Experience</span></p>
+                    <p>Rs. 500 <span>Fees</span> </p>
+                </div>
+            </a>
+            <div class="doctors-card__rt">
+                <h2><a href=""> Dr. Bushra Khan </a></h2>
+                <p class="doctors-card__rt__designation"><a href=""> Jr. Consultant | Oncology </a></p>
+                <p class="doctors-card__rt__speciality"><a href=""> Oncology </a></p>
+                <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
+
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/profile.png') }}" alt="">
+                    <span>View Full Profile</span>
+                </div>
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/calender.png') }}" alt="">
+                    <span>Book an Appointment</span>
+                </div>
+            </div>
+        </div>
+        <div class="doctors-card">
+            <a href="" class="doctors-card__lt">
+                <img src="{{ asset('images/doctors/Bushra.png') }}" alt="">
+                <div class="doctors-card__lt__details">
+                    <p>35 yrs <span>Experience</span></p>
+                    <p>Rs. 500 <span>Fees</span> </p>
+                </div>
+            </a>
+            <div class="doctors-card__rt">
+                <h2><a href=""> Dr. Bushra Khan </a></h2>
+                <p class="doctors-card__rt__designation"><a href=""> Jr. Consultant | Oncology </a></p>
+                <p class="doctors-card__rt__speciality"><a href=""> Oncology </a></p>
+                <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
+
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/profile.png') }}" alt="">
+                    <span>View Full Profile</span>
+                </div>
+                <div class="doctors-card__rt__btn">
+                    <img src="{{ asset('images/Icons/calender.png') }}" alt="">
+                    <span>Book an Appointment</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

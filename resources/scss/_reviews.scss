@@ -1,0 +1,158 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+$card-height:15rem;
+.reviews {
+    @include centerSection;
+
+    &__card {
+        min-height: $card-height;
+        // display: flex !important;
+        justify-content: space-around;
+        margin: 0.5em;
+        position: relative;
+        &__image-wrapper {
+            margin-left: 2rem;
+            z-index: 5;
+            position: relative;
+            width: 30%;
+            @include media("sm-mob") {
+                margin-left: 0px;
+                width: 100%;
+            }
+            @include media("md-mob") {
+                margin-left: 0px;
+                width: 100%;
+            }
+            @include media("x-sm-tab") {
+                margin-left: 0px;
+                width: 100%;
+            }
+            // @include media("sm-tab") {
+            //     margin-left: 1em;
+            //     // width: 100%;
+            // }
+            img {
+                width: 100%;
+                height: $card-height;
+                @include media("sm-mob") {
+                    margin: 0px auto;
+
+                    height: 19rem !important;
+                    width: 100%;
+                }
+                @include media("md-mob") {
+                    margin: 0px auto;
+
+                    height: 19rem !important;
+                    width: 100%;
+                }
+                @include media("x-sm-tab") {
+                    margin: 0px auto;
+
+                    height: 19rem !important;
+                    width: 100%;
+                }
+            }
+
+            &--video {
+                position: relative;
+                &::after {
+                    content: "\1F892";
+                    // display: block;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform:translateX(-50%) !important;
+                    // transform: translateY(-50%) !important;
+                    font-size: 40px;
+                    font-weight: 500;
+                    color: white;
+                    z-index: 50;
+                    // margin-right: 20px;
+                    padding: 10px 15px;                   
+                    border-radius: 50%;
+                    line-height: 20px;
+                    // word-spacing: 40px;
+                    border: 4px solid white;
+                    
+                }
+            }
+        }
+        &__text-wrapper {
+            display: flex;
+
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            // border: 2px solid blue;
+            height: 80%;
+            border-radius: 10px;
+            box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.4);
+            -webkit-box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.4);
+            -moz-box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.4);
+            z-index: -1;
+            width: 100%;
+            @include media("sm-mob") {
+                display: block;
+                position: relative;
+                transform: translateY(0%);
+                // border: 2px solid blue;
+                height: max-content;
+                box-shadow: none;
+                padding: 1em;
+            }
+            @include media("md-mob") {
+                display: block;
+                position: relative;
+                transform: translateY(0%);
+                // border: 2px solid blue;
+                height: max-content;
+                box-shadow: none;
+                padding: 1em;
+            }
+            @include media("x-sm-tab") {
+                display: block;
+                position: relative;
+                transform: translateY(0%);
+                // border: 2px solid blue;
+                height: max-content;
+                box-shadow: none;
+                padding: 1em;
+            }
+            
+        }
+
+        &__name {
+            padding: 0.5em 0px;
+            font-size: 16px;
+            @include font-family(500);
+        }
+
+        &__text {
+            padding: 0.5em 0px;
+            font-size: 14px;
+            @include font-family(400);
+            color: variables.$starhospitals-text-secondary;
+        }
+
+        &__read-more {
+            display: block;
+            padding: 1em 0px;
+            @include font-family(600);
+            color: variables.$starhospitals-brand-secondary;
+            font-size: 13px;
+        }
+    }
+}
+
+.flex-space {
+    flex: 0 0 40%;
+    @include media("sm-tab") {
+        .flex-space {
+            flex: 0 0 45%;
+        }
+    }
+}

@@ -1,0 +1,151 @@
+@use "utils/variables" as variables;
+@import 'utils/utils';
+
+@import "utils/media-queries";
+.about{
+    @include centerSection;
+    display: flex;
+    @include media('sm-mob')
+    {
+        flex-direction: column;
+    }
+    @include media('md-mob')
+    {
+        flex-direction: column;
+    }
+    @include media('x-sm-tab')
+    {
+        flex-direction: column;
+    }
+    @include media('sm-tab')
+    {
+        flex-direction: column;
+    }
+    &__image-wrapper{
+        padding: 2em;
+        position: relative;
+        flex: 0 0 45%; 
+        @include media('sm-mob')
+    {
+        padding: 0.5em;
+        flex: 0 0 100%; 
+
+    }
+    @include media('md-mob')
+    {
+        padding: 0.5em;
+        flex: 0 0 100%; 
+
+    }
+    @include media('x-sm-tab')
+    {
+        padding: 0.5em;
+        flex: 0 0 100%; 
+    }       
+    }
+
+    &__image{
+        width: 100%;
+        &__dots-left{
+            position: absolute;
+            bottom: 0%;
+            left: 10%;
+            z-index: -1;
+        }
+        &__dots-right{
+            position: absolute;
+            top: 0%;
+            right: 10%;
+            transform: rotate(90deg);
+            z-index: -1;
+        }
+    }
+
+
+    &__text{
+        padding: 1em 2em;
+        flex: 0 0 50%;
+        @include media('sm-mob')
+        {
+            padding: 0.5em 0.5em;
+            flex: 0 0 100%; 
+    
+        } 
+        @include media('md-mob')
+        {
+            padding: 0.5em 0.5em;
+            flex: 0 0 100%; 
+    
+        }
+        @include media('x-sm-tab')
+        {
+            padding: 0.5em 0.5em;
+            flex: 0 0 100%; 
+    
+        }
+        h2{
+            padding: 1em 0px;
+            @include font-family(600);
+            @include media('sm-mob')
+            {
+                text-align: center
+        
+            } 
+            @include media('md-mob')
+            {
+                text-align: center
+        
+            }
+            @include media('x-sm-tab')
+            {
+                text-align: center
+        
+            }
+        }
+        p{
+            @include font-family(400);
+            font-size: 15px;
+            line-height: 22px;
+            @include media('sm-mob')
+            {
+                text-align: center;
+                font-size: 13px
+            } 
+            @include media('md-mob')
+            {
+                text-align: center;
+                font-size: 13px
+            }
+            @include media('x-sm-tab')
+            {
+                text-align: center;
+                font-size: 13px
+            }
+
+        }
+
+        &__read-more{
+            @include btn-primary(red,white);
+            width: max-content;
+            margin-top: 1em;
+            @include media('sm-mob')
+            {
+                margin: 0px auto;
+                margin-top: 1.5em;
+                font-size: 13px;
+            } 
+            @include media('md-mob')
+            {
+                margin: 0px auto;
+                margin-top: 1.5em;
+                font-size: 13px;
+            } 
+            @include media('x-sm-tab')
+            {
+                margin: 0px auto;
+                margin-top: 1.5em;
+                font-size: 13px;
+            }
+        }
+    }
+}

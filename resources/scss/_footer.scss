@@ -1,0 +1,279 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+
+$footer-columns: 5;
+.footer {
+    width: 100%;
+    min-height: 40vh;
+    background-color: variables.$starhospitals-ui-secondary;
+    padding: 4em 0px;
+    @include media("sm-mob") {
+        padding: 1em 0px;
+    }
+    @include media("md-mob") {
+        padding: 1em 0px;
+    }
+    @include media("x-sm-tab") {
+        padding: 1em 0px;
+    }
+    &__wrapper {
+        @include centerSection;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        @include media("sm-mob") {
+            flex-direction: column;
+        }
+        @include media("md-mob") {
+            flex-direction: column;
+        }
+        @include media("x-sm-tab") {
+            flex-direction: column;
+        }
+    }
+
+    &__columns {
+        flex: 0 0 calc(105% / $footer-columns);
+        &--logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            // justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 2em;
+            // padding: 1em;
+            flex: 0 0 10%;
+            @include media("sm-mob") {
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: flex-start;
+                padding: 1em;
+            }
+            @include media("md-mob") {
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: flex-start;
+                padding: 1em;
+            }
+            @include media("x-sm-tab") {
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: flex-start;
+                padding: 1em;
+            }
+            img {
+                width: 80%;
+                @include media("sm-mob") {
+                    width: 30%;
+                }
+                @include media("md-mob") {
+                    width: 30%;
+                }
+                @include media("x-sm-tab") {
+                    width: 30%;
+                }
+            }
+            &--star {
+                @include media("sm-mob") {
+                    width: 50% !important;
+                    margin: 0px 2em;
+                }
+                @include media("md-mob") {
+                    width: 50% !important;
+                    margin: 0px 2em;
+                }
+                @include media("x-sm-tab") {
+                    width: 50% !important;
+                    margin: 0px 2em;
+                }
+            }
+        }
+
+        &__option {
+            display: flex;
+            flex-direction: column;
+            gap: 3em;
+            // transition: 0.100s all ease-in-out;
+            @include media("sm-mob") {
+                margin-top: 0.5em;
+                gap: 0.5em;
+            }
+            @include media("md-mob") {
+                margin-top: 0.5em;
+                gap: 0.5em;
+            }
+            @include media("x-sm-tab") {
+                margin-top: 0.5em;
+                gap: 0.5em;
+            }
+            &__label {
+                color: variables.$starhospitals-ui-tertiary;
+                @include font-family(600);
+                list-style-type: none;
+                color: variables.$starhospitals-ui-tertiary;
+                position: relative;
+
+                @include media("sm-mob") {
+                    font-size: 14px;
+                }
+                @include media("md-mob") {
+                    font-size: 14px;
+                }
+                @include media("x-sm-tab") {
+                    font-size: 14px;
+                }
+
+                &--social-icon-wrapper {
+                    @include media("sm-mob") {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        margin: 1em 0px;
+                    }
+                    @include media("md-mob") {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        margin: 1em 0px;
+                    }
+                    @include media("x-sm-tab") {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        margin: 1em 0px;
+                    }
+                }
+                
+                &--dropdown {
+                    
+                    &__option{
+                        margin: 1em 0px;
+
+                    transition: max-height 1s;
+                        @include media("sm-mob") {
+                            max-height: 0px;
+                            overflow: hidden;
+                        }
+                        @include media("md-mob") {
+                            max-height: 0px;
+                            overflow: hidden;
+                        }
+                        @include media("x-sm-tab") {
+                            max-height: 0px;
+                        }
+
+                        &--active{
+                            @include media("sm-mob") {
+                                max-height: 12rem !important;
+
+                            }
+                            @include media("md-mob") {
+                                max-height: 12rem !important;
+
+                            }
+                            @include media("x-sm-tab") {
+                                max-height: 12rem !important;
+
+                            }
+                        }
+
+                    }
+                    &::after {
+                        content: "❯";
+                        color: variables.$starhospitals-ui-tertiary;
+                        position: absolute;
+                        right: 5%;
+                        top: 0;
+                        transform: rotate(90deg);
+                        display: none;
+                        @include media("sm-mob") {
+                            display: block;
+                        }
+                        @include media("md-mob") {
+                            display: block;
+                        }
+                        @include media("x-sm-tab") {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            &__item {
+                list-style-type: none;
+
+                a {
+                    display: block;
+                    line-height: 25px;
+                    color: variables.$starhospitals-ui-tertiary;
+                    @include font-family(400);
+                    font-size: 12px;
+                    font-style: normal;
+                }
+            }
+        }
+    }
+
+    &__social-icons {
+        display: flex;
+        gap: 1.5em;
+        align-items: center;
+        margin-top: 1em;
+    }
+    &__copyright {
+        text-align: center;
+        color: variables.$starhospitals-ui-tertiary;
+        @include font-family(400);
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-size: 13px;
+        
+        span {
+            padding: 0.5em 1em;
+            display: block; 
+            display: flex;
+            align-items: center;
+            
+            a {
+                color: variables.$starhospitals-ui-tertiary;
+            }
+        }
+
+        &__pipe{
+            @include media("sm-mob") {
+                display: none !important;
+            }
+            @include media("md-mob") {
+                display: none !important;
+            }
+            @include media("x-sm-tab") {
+                display: none !important;
+            }
+        }
+
+        @include media("sm-mob") {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        @include media("md-mob") {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        @include media("x-sm-tab") {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+}

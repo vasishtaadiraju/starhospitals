@@ -1,0 +1,106 @@
+
+
+@mixin media($type)
+{
+    @if($type == 'sm-mob')
+    {
+        @media screen and (max-width: 391px) {
+            @content;
+        }
+    }
+    @else if ($type == 'md-mob')
+    {
+        @media screen and (min-width: 391px) and (max-width: 481px) {
+            @content;
+        }
+    }
+
+    @else if ($type == 'lg-mob')
+    {
+        @media screen and (min-width: 482px) and (max-width: 599px) {
+            @content;
+        }
+    }
+
+    @else if($type == 'x-sm-tab')
+    {
+        @media screen and (min-width: 600px) and (max-width: 769px) {
+            @content;
+        }
+    }
+    @else if($type == 'sm-tab')
+    {
+        @media screen and (min-width: 770px) and (max-width: 990px) {
+            @content;
+        }
+    }
+    @else if($type == 'md-tab')
+    {
+        @media screen and (min-width: 991px) and (max-width: 1023px) {
+            @content;
+        }
+    }
+    @else if($type == 'lg-tab')
+    {
+        @media screen and (min-width: 1024px) and (max-width: 1275px) {
+            @content;
+        }
+    }
+}
+
+
+/* 
+=======================================
+        QUERY FOR CARD CONTAINER
+=======================================
+*/
+
+/* 
+=======================================
+        QUERY FOR TABLET
+=======================================
+*/
+
+
+
+
+
+/* 
+=======================================
+        QUERY FOR DESKTOP
+=======================================
+*/
+
+
+
+
+@media screen and (min-width: 1276px) and (max-width: 1365px) {
+   
+}
+@media screen and (min-width: 1366px) and (max-width: 1439px) {
+    
+}
+@media screen and (min-width: 1440px) and (max-width: 1679px) {
+}
+@media screen and (min-width: 1680px) and (max-width: 1919px) {
+}
+@media screen and (min-width: 1920px) and (max-width: 2559px) {
+}
+@media screen and (min-width: 2560px) and (max-width: 3839px) {
+}
+@media screen and (min-width: 3840px) and (max-width: 4095px) {
+}
+@media screen and (min-width: 4096px) and (max-width: 5117px) {
+}
+@media screen and (min-width: 5118px) {
+    
+}
+
+/* 
+=======================================
+        QUERY FOR MOBILE
+=======================================
+*/
+
+
+

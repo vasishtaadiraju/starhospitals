@@ -1,0 +1,564 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+@import "utils/media-queries";
+$main-header-height: 8rem;
+
+@mixin dropdown-Options-wrapper() {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    min-width: 100%;
+    border-radius: 10px;
+    background-color: variables.$starhospitals-text-inverted;
+    @content;
+}
+
+@mixin fixed-header() {
+    position: fixed;
+    background-color: variables.$starhospitals-text-inverted;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
+
+@mixin dropdown-link() {
+    display: block;
+    padding: 0.25em 0.5em;
+    // background-color: black;
+    color: variables.$starhospitals-ui-secondary;
+    width: 100%;
+}
+
+@mixin option-hover() {
+    background-color: variables.$starhospitals-brand-primary;
+    color: variables.$starhospitals-text-inverted;
+}
+
+@mixin dropdown-arrow() {
+    content: "❯";
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: variables.$starhospitals-ui-tertiary;
+}
+
+@mixin mobile-nav() {
+    top: $main-header-height;
+    bottom: 0px;
+    left: 100%;
+    right: 0px;
+    z-index: 3000;
+    // width: 10%;
+    overflow: hidden;
+    // margin-left: 100%;
+
+    align-items: flex-start;
+}
+
+.header-gap {
+    @include media("sm-mob") {
+        height: $main-header-height;
+    }
+    @include media("md-mob") {
+        height: $main-header-height;
+    }
+    @include media("x-sm-tab") {
+        height: $main-header-height;
+    }
+    @include media("sm-tab") {
+        height: $main-header-height;
+    }
+    @include media("md-tab") {
+        height: $main-header-height;
+    }
+}
+.header {
+    width: 100%;
+    // overflow: hidden;
+    background-color: white;
+    &__main {
+        @include centerSection;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: calc(5% / 4);
+        padding: 1em 0px;
+        height: $main-header-height;
+        position: relative;
+        z-index: 3000;
+        @include media("sm-mob") {
+            @include fixed-header;
+            width: 100%;
+            padding: 1em;
+        }
+        @include media("md-mob") {
+            @include fixed-header;
+            width: 100%;
+            padding: 1em;
+        }
+        @include media("sm-tab") {
+            @include fixed-header;
+            width: 100%;
+            padding: 1em;
+        }
+
+        &__card {
+            flex: 0 0 calc(60% / 4);
+            @include media("sm-mob") {
+                flex: 0 0 calc(50% / 2);
+            }
+            @include media("md-mob") {
+                flex: 0 0 calc(50% / 2);
+            }
+            @include media("lg-mob") {
+                flex: 0 0 calc(50% / 2);
+            }
+
+            @include media("x-sm-tab") {
+                flex: 0 0 calc(50% / 2);
+            }
+            @include media("md-tab") {
+                flex: 0 0 calc(40% / 2);
+            }
+            @include media("lg-tab") {
+                flex: 0 0 calc(40% / 2);
+            }
+
+            p {
+                @include media("md-tab") {
+                    font-size: 12px;
+                }
+                @include media("lg-tab") {
+                    font-size: 12px;
+                }
+            }
+            height: 100%;
+            @include font-family(400);
+            font-size: 14px;
+            @include center-child-element;
+            justify-content: flex-start;
+            color: variables.$starhospitals-text-secondary;
+            overflow: hidden;
+            &--logo {
+                img {
+                    width: 100% !important;
+                    height: 100%;
+                }
+            }
+            &--emergency {
+                @include media("sm-mob") {
+                    flex: 0 0 40%;
+                }
+                @include media("md-mob") {
+                    flex: 0 0 40%;
+                }
+                @include media("lg-mob") {
+                    flex: 0 0 40%;
+                }
+                @include media("x-sm-tab") {
+                    flex: 0 0 40%;
+                }
+                @include media("sm-tab") {
+                    flex: 0 0 30%;
+                }
+                div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0.5em 1em;
+                    gap: 1em;
+                    background-color: variables.$starhospitals-brand-secondary;
+                    border-radius: 10px;
+                    @include media("sm-mob") {
+                        font-size: 10px;
+                        gap: 0.25em;
+                    }
+                    @include media("md-mob") {
+                        font-size: 10px;
+                        gap: 0.25em;
+                    }
+                    @include media("lg-mob") {
+                        font-size: 10px;
+                        gap: 0.25em;
+                    }
+                    img {
+                        width: 18px;
+                        height: 18px;
+                    }
+
+                    p {
+                        color: variables.$starhospitals-ui-tertiary;
+                        line-height: 22px;
+                        @include media("sm-mob") {
+                            line-height: 15px;
+                        }
+                        @include media("md-mob") {
+                            line-height: 15px;
+                        }
+                        @include media("lg-mob") {
+                            line-height: 15px;
+                        }
+                        span {
+                            @include font-family(700);
+                        }
+                    }
+                }
+            }
+            &--web-search {
+                display: block;
+                position: relative;
+                flex: 0 0 20%;
+                div {
+                    width: 100%;
+
+                    position: absolute;
+                    top: 25%;
+                    flex: 1 0 auto;
+                    border-radius: 20px;
+                }
+            }
+            &--mob-nav {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            &--mob-hide {
+                @include media("sm-mob") {
+                    display: none;
+                }
+                @include media("md-mob") {
+                    display: none;
+                }
+                @include media("lg-mob") {
+                    display: none;
+                }
+                @include media("x-sm-tab") {
+                    display: none;
+                }
+                @include media("sm-tab") {
+                    display: none;
+                }
+            }
+            &--desk-hide {
+                display: none;
+                @include media("sm-mob") {
+                    display: flex;
+                }
+                @include media("md-mob") {
+                    display: flex;
+                }
+                @include media("lg-mob") {
+                    display: flex;
+                }
+                @include media("x-sm-tab") {
+                    display: flex;
+                }
+                @include media("sm-tab") {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    &__nav {
+        width: 100%;
+        height: 4rem;
+        background-color: variables.$starhospitals-brand-primary;
+        display: flex;
+        // display: none;
+        align-items: center;
+        transition: 0.3s all ease;
+
+        &--active {
+            // left: 100%;
+            @include media("sm-mob") {
+                left: 0% !important;
+            }
+            @include media("md-mob") {
+                left: 0% !important;
+            }
+            @include media("x-sm-tab") {
+                left: 0% !important;
+            }
+            @include media("sm-tab") {
+                left: 0% !important;
+            }
+            @include media("md-tab") {
+                left: 0% !important;
+            }
+        }
+
+        @include media("sm-mob") {
+            height: initial;
+            @include fixed-header;
+            @include mobile-nav;
+        }
+        @include media("md-mob") {
+            height: initial;
+            @include fixed-header;
+            @include mobile-nav;
+        }
+        @include media("x-sm-tab") {
+            height: initial;
+            @include fixed-header;
+            @include mobile-nav;
+        }
+        @include media("sm-tab") {
+            height: initial;
+            @include fixed-header;
+            @include mobile-nav;
+        }
+        @include media("md-tab") {
+            height: initial;
+            @include fixed-header;
+            @include mobile-nav;
+        }
+
+        &__options {
+            @include centerSection;
+            // margin: 0px;
+            padding: 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include media("sm-mob") {
+                display: block;
+                // @include fixed-header;
+            }
+            @include media("sm-mob") {
+                display: block;
+
+                // @include fixed-header;
+            }
+
+            @include media("md-mob") {
+                display: block;
+            }
+            @include media("x-sm-tab") {
+                display: block;
+            }
+            @include media("sm-tab") {
+                display: block;
+            }
+            @include media("md-tab") {
+                display: block;
+            }
+        }
+
+        &__option {
+            // flex: 0 0 calc(90%/7);
+            list-style-type: none;
+            // border: 1px solid black;
+            @include media("sm-mob") {
+                padding: 1em 0px;
+
+                // @include fixed-header;
+            }
+            @include media("md-mob") {
+                padding: 1em 0px;
+
+                // @include fixed-header;
+            }
+            @include media("x-sm-tab") {
+                padding: 1em 0px;
+            }
+            @include media("sm-tab") {
+                padding: 1em 0px;
+            }
+            @include media("md-tab") {
+                padding: 1em 0px;
+            }
+            // padding: 1em;
+
+            a {
+                @include font-family(500);
+                font-size: 15px;
+                color: variables.$starhospitals-ui-tertiary;
+                padding: 0px 2em 0px 0px;
+                @include media("sm-mob") {
+                    color: black;
+                }
+                @include media("md-mob") {
+                    color: black;
+
+                    // @include fixed-header;
+                }
+                @include media("x-sm-tab") {
+                    color: black;
+                }
+                @include media("sm-tab") {
+                    color: black;
+                }
+                @include media("md-tab") {
+                    color: black;
+                }
+            }
+
+            &--dropdown {
+                position: relative;
+                &__options {
+                    @include dropdown-Options-wrapper;
+                    z-index: 3000;
+                    @include media("sm-mob") {
+                        top: 100%;
+                        position: relative;
+                    }
+                    @include media("md-mob") {
+                        top: 100%;
+                        position: relative;
+                    }
+                    @include media("x-sm-tab") {
+                        top: 100%;
+                        position: relative;
+                    }
+                    @include media("sm-tab") {
+                        top: 100%;
+                        position: relative;
+                    }
+                    @include media("md-tab") {
+                        top: 100%;
+                        position: relative;
+                    }
+
+                    
+                    // display: none;
+                    // position: absolute;
+                    // list-style-type: none;
+                    // min-width: 100%;
+                    // border-radius: 10px;
+                    // background-color: variables.$starhospitals-text-inverted;
+                    // overflow: hidden;
+                    // top: 0;
+                    li {
+                        position: relative;
+                        a {
+                            @include dropdown-link;
+                            @include media("sm-mob") {
+                                padding: 1em;
+                            }
+                            @include media("md-mob") {
+                                padding: 1em;
+                            }
+                            @include media("lg-mob") {
+                                padding: 1em;
+                            }
+
+                            &:hover {
+                                @include option-hover;
+
+                                &::after {
+                                    color: variables.$starhospitals-text-inverted;
+                                }
+                            }
+
+                            // &:hover ul{
+                            //     display: block;
+                            //     right: 0;
+                            // }
+                        }
+                    }
+                }
+
+                &:hover &__options {
+                    display: block;
+                }
+
+                &::after {
+                    @include dropdown-arrow;
+                    transform: rotate(90deg);
+                    @include media("sm-mob") {
+                        transform: rotate(0deg);
+                        color: black;
+                        top: 25%;
+                        right: 5%;
+                    }
+                    @include media("md-mob") {
+                        transform: rotate(0deg);
+                        color: black;
+                        top: 25%;
+                        right: 5%;
+                    }
+                    @include media("lg-mob") {
+                        transform: rotate(0deg);
+                        color: black;
+                        top: 25%;
+                        right: 5%;
+                    }
+                    @include media("x-sm-mob") {
+                        transform: rotate(0deg);
+                        color: black;
+                        top: 25%;
+                        right: 5%;
+                    }
+                    @include media("sm-mob") {
+                        transform: rotate(0deg);
+                        color: black;
+                        top: 25%;
+                        right: 5%;
+                    }
+                    @include media("md-mob") {
+                        transform: rotate(0deg);
+                        color: black;
+                        top: 25%;
+                        right: 5%;
+                    }
+                }
+            }
+
+            &--nested-dropdown {
+                position: relative;
+                ul {
+                    @include dropdown-Options-wrapper;
+                    left: 100%;
+                    top: 0;
+                    @include media("sm-mob") {
+                        position: initial;
+                    }
+                    @include media("md-mob") {
+                        position: initial;
+                    }
+                    @include media("x-sm-tab") {
+                        position: initial;
+                    }
+                    @include media("sm-tab") {
+                        position: initial;
+                    }
+                    @include media("md-tab") {
+                        position: initial;
+                    }
+                }
+                &:hover ul {
+                    display: block;
+                }
+
+                &::after {
+                    @include dropdown-arrow;
+                    transform: rotate(0deg);
+                    color: black;
+                    @include media("sm-mob") {
+                        right: 5%;
+                        top: 12%;
+                    }
+                    @include media("md-mob") {
+                        right: 5%;
+                        top: 12px;
+                    }
+                    @include media("x-sm-tab") {
+                        right: 5%;
+                        top: 12px;
+                    }
+                    @include media("sm-tab") {
+                        right: 5%;
+                        top: 12px;
+                    }
+                    @include media("md-tab") {
+                        right: 5%;
+                        top: 12px;
+                    }
+                    
+
+                }
+            }
+        }
+    }
+}

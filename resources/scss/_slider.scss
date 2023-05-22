@@ -1,0 +1,206 @@
+@use "utils/variables" as variables;
+@import 'utils/utils';
+
+@import "utils/media-queries";
+$visible-cards:1;
+.slider{
+    // width: 100%;
+    // height: 60vh;
+    // background-color: black;
+    // display: flex;
+    // overflow: hidden;
+    &__image{
+        width: 100%;
+        height: 100%;
+        @include media('sm-mob')
+        {
+            height: 50%;
+            position: absolute;
+            bottom: 0;
+        }
+        @include media('md-mob')
+        {
+            height: 50%;
+            position: absolute;
+            bottom: 0;
+        }
+        @include media('lg-mob')
+        {
+            height: 50%;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    &__item{
+        height: 75vh;
+        z-index: 3000;
+        position: relative;
+        @include media('sm-mob')
+        {
+            height: 60vh;
+        }
+        @include media('md-mob')
+        {
+            height: 40vh;
+        }
+        // @include media('x-sm-tab')
+        // {
+        //     height: 40vh;
+        // }
+
+        // @include media('sm-tab')
+        // {
+        //     height: 40vh;
+        // }
+        // @include media('md-tab')
+        // {
+        //     height: 50vh;
+        // }
+
+        &__content{
+            position: absolute;
+            width: 35%;
+            top: 50%;
+            left: 10%;
+            background-color: white;
+            min-height: 50%;
+            transform: translateY(-60%);
+            z-index: 3000;
+            border-left: 5px solid variables.$starhospitals-brand-secondary;
+            border-radius: 10px;
+            padding: 3em 2.5em;
+
+            @include media('sm-mob')
+            {
+               
+                width: 100%;
+                top: 0;
+                left: 0;
+                transform: translateY(0%);
+                border-left:none;
+                border-radius:0px;
+                padding: 1em;
+            
+            }
+            @include media('md-mob')
+            {
+               
+                width: 100%;
+                top: 0;
+                left: 0;
+                transform: translateY(0%);
+                border-left:none;
+                border-radius:0px;
+                padding: 1em;
+            
+            }
+            
+            @include media('lg-mob')
+            {
+               
+                width: 100%;
+                top: 0;
+                left: 0;
+                transform: translateY(0%);
+                border-left:none;
+                border-radius:0px;
+                padding: 1em;
+            
+            }
+            @include media('sm-tab')
+            {
+                width: 40%;
+                padding: 1em;
+                left: 5%;
+            
+            }
+
+            h1{
+                @include font-family(600);
+                @include media('sm-mob')
+                {
+                    font-size: 20px;
+                }
+                @include media('md-mob')
+                {
+                    font-size: 20px;
+                }
+                @include media('lg-mob')
+                {
+                    font-size: 20px;
+                }
+                
+                @include media('x-sm-tab')
+                {
+                    font-size: 20px;
+                }
+                @include media('sm-tab')
+                {
+                    font-size: 20px;
+                }
+
+            }
+            
+            p{
+                margin-top: 1.5rem;
+                color: variables.$starhospitals-text-secondary;
+                @include font-family(400);
+                @include media('sm-mob')
+                {
+                    font-size: 14px;
+                    margin-top: 1em;
+                }
+                @include media('md-mob')
+                {
+                    font-size: 14px;
+                    margin-top: 1em;
+                }
+                @include media('lg-mob')
+                {
+                    font-size: 14px;
+                    margin-top: 1em;
+                }
+                @include media('sm-tab')
+                {
+                    font-size: 14px;
+                    margin-top: 1em;
+                }
+
+            }
+
+            a{
+                @include btn-primary(variables.$starhospitals-brand-secondary,'white');
+                width: max-content;
+                margin-top: 2rem;
+                font-size: 15px;
+                @include media('sm-mob')
+                {
+                    font-size: 13px;
+                    margin-top: 1em;
+                }
+                @include media('md-mob')
+                {
+                    font-size: 13px;
+                    margin-top: 1em;
+                }
+                @include media('lg-mob')
+                {
+                    font-size: 13px;
+                    margin-top: 1em;
+                }
+                @include media('sm-tab')
+                {
+                    font-size: 13px;
+                    margin-top: 1em;
+                }
+
+            }
+        }
+
+
+    }
+
+
+}
+

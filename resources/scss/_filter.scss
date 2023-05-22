@@ -1,0 +1,163 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+@mixin fields-width($columns) {
+    flex: 0 0 calc(98% / $columns);
+}
+
+@mixin fields-width-query() {
+    @include fields-width(4);
+    @include media("sm-mob") {
+        @include fields-width(2);
+    }
+    @include media("md-mob") {
+        @include fields-width(2);
+    }
+    @include media("lg-mob") {
+        @include fields-width(2);
+    }
+
+    @include media("x-sm-tab") {
+        @include fields-width(2);
+    }
+    @include media("md-tab") {
+        @include fields-width(2);
+    }
+    @include media("lg-tab") {
+        @include fields-width(2);
+    }
+}
+
+.search-doctor {
+    min-height: 8rem;
+    background-color: variables.$starhospitals-brand-primary;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    @include media("sm-mob") {
+        flex-direction: column;
+        padding: 1em 0px;
+        gap: 1em;
+    }
+    @include media("md-mob") {
+        flex-direction: column;
+        padding: 1em 0px;
+        gap: 1em;
+    }
+    @include media("lg-mob") {
+        flex-direction: column;
+        padding: 1em 0px;
+        gap: 1em;
+    }
+    @include media("x-sm-tab") {
+        flex-direction: column;
+        padding: 1em 0px;
+        gap: 1em;
+    }
+    @include media("md-tab") {
+        flex-direction: column;
+        padding: 1em 0px;
+        gap: 1em;
+    }
+    form {
+        display: block;
+    }
+    &__submit-btn-container {
+        flex: 0 0 20%;
+        display: flex;
+        align-items: center;
+    }
+    &__submit-btn {
+        @include btn-primary(white, variables.$starhospitals-brand-secondary);
+        border: none;
+        outline: none;
+        font-size: 15px;
+        padding: 0.85em 0px;
+        font-weight: 400;
+        cursor: pointer;
+        width: 100%;
+        // margin-right: 15rem;
+        @include media("sm-mob") {
+            padding: 1em;
+        }
+        @include media("md-mob") {
+            padding: 1em;
+        }
+        @include media("lg-mob") {
+            padding: 1em;
+        }
+        @include media("x-sm-tab") {
+            padding: 1em;
+        }
+        @include media("md-tab") {
+            padding: 1em;
+        }
+    }
+}
+.filter {
+    @include centerSection;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &--type-secondary {
+        // justify-content:space-between;
+        // gap: 1em    ;
+        margin: 0px;
+        flex: 0 0 70%;
+
+        .filter__fields-wrapper {
+            flex: 0 0 calc(95% / 3);
+        }
+        @include media("sm-mob") {
+            gap: 1em;
+            flex-direction: column;
+        }
+        @include media("md-mob") {
+            gap: 1em;
+            flex-direction: column;
+        }
+        @include media("lg-mob") {
+            gap: 1em;
+            flex-direction: column;
+        }
+        @include media("x-sm-tab") {
+            gap: 1em;
+            flex-direction: column;
+        }
+        @include media("md-tab") {
+            gap: 1em;
+            flex-direction: column;
+        }
+    }
+    &__fields-wrapper {
+        // flex: 0 0 calc(90%/4);
+        @include fields-width-query;
+        @include input-fields-with-Icon;
+        border-radius: 10px;
+
+        // margin-top: 0.5em;
+
+        // border: 1px solid variables.$starhospitals-ui-tertiary;
+        // border-radius: 10px;
+        // display: flex;
+        // justify-content: flex-start;
+        // align-items: center;
+        // padding: 0.25em;
+
+        // img {
+        //     padding: 0.25em;
+        // }
+
+        // input,
+        // select {
+        //     border: none;
+        //     outline: none;
+        //     color: variables.$starhospitals-text-tertiary;
+        //     width: 100%;
+        //     height: 80%;
+        //     background: none;
+        // }
+    }
+}

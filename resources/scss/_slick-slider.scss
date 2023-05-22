@@ -1,0 +1,114 @@
+/* slick buttons */
+@use "utils/variables" as variables;
+@import 'utils/utils';
+
+@import "utils/media-queries";
+
+.slick-dotted.slick-slider {
+   margin-bottom: 0px;
+}
+.slick-dots {
+    position: absolute;
+    bottom: 25px;
+}
+
+.slick-dots li button::before {
+    font-family: 'slick';
+    font-size: 10px;
+    color: #004E9E;
+
+}
+
+.slick-dots li.slick-active button::before {
+    color: #004E9E;
+
+  }
+
+  .slick-prev, .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 28px;
+    height: 28px;
+    border: 3px solid black;
+    border-radius: 50%;
+
+    @include media('sm-mob')
+    {
+      width: 20px;
+      height: 21px;
+    }
+    @include media('md-mob')
+    {
+      width: 20px;
+      height: 21px;
+    }
+    @include media('x-sm-tab')
+    {
+      width: 20px;
+      height: 21px;
+    }
+  }
+  .slick-prev::before, .slick-next::before {
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+    @include media('sm-mob')
+    {
+      font-size: 12px;
+
+    }
+    @include media('md-mob')
+    {
+      font-size: 12px;
+
+    }
+    @include media('x-sm-tab')
+    {
+      font-size: 12px;
+
+    }
+  }
+  .slick-prev {
+    @include media('sm-mob')
+    {
+    left: -14px;
+    }
+    @include media('md-mob')
+    {
+    left: -14px;
+    }
+    @include media('x-sm-tab')
+    {
+    left: -14px;
+    }
+}
+  .slick-prev::before {
+    content: '\1F824';
+    transform: rotate(180deg);
+  }
+
+  .slick-next {
+    @include media('sm-mob')
+    {
+      right: -14px;
+
+    }
+    @include media('md-mob')
+    {
+      right: -14px;
+
+    }
+    @include media('x-sm-tab')
+    {
+      right: -14px;
+
+    }
+    
+}
+  
+  .slick-next::before {
+    content: '\1F826';
+  }
