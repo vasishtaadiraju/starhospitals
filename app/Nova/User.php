@@ -316,7 +316,9 @@ class User extends Resource
                 }
 
                 return $doctor;
-            }),
+            })->showInline(),
+
+            Actions\DataSync::make()->showInline()
         ];
     }
 

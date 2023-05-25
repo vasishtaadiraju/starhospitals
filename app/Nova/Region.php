@@ -216,13 +216,13 @@ class Region extends Resource
 
     public static function indexQuery(NovaRequest $request, $query)
     {
-        if (DB::table('role_user')->where('user_id', $request->user()->id)->where('role_id', 2)->exists()) {
-            $branch_id = $request->user()->branch_id;
+        // if (DB::table('role_user')->where('user_id', $request->user()->id)->where('role_id', 2)->exists()) {
+        //     $branch_id = $request->user()->branch_id;
 
-            $region_ids = DB::table('branch_region')->where('branch_id', $branch_id)->pluck('region_id')->toArray();
+        //     $region_ids = DB::table('branches')->where('region_id', $branch_id)->pluck('region_id')->toArray();
 
-            return $query->whereIn('id', $region_ids);
-        }
+        //     return $query->whereIn('id', $region_ids);
+        // }
 
         return $query;
     }

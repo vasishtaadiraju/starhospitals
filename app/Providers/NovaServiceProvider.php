@@ -2,8 +2,12 @@
 
 namespace App\Providers;
 
+use App\Nova\AboutUs;
+use App\Nova\Blog;
 use App\Nova\Branch;
 use App\Nova\CentreOfExcellence;
+use App\Nova\Homepage;
+use App\Nova\Media;
 use App\Nova\Region;
 use App\Nova\Role;
 use App\Nova\Speciality;
@@ -34,9 +38,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             return [
                 MenuSection::dashboard(Main::class)->icon('chart-bar'),
 
-                MenuSection::make('Team Management', [
-                    MenuItem::resource(User::class)
-                ])->icon('user-group')->collapsable(),
+                MenuSection::resource(Homepage::class)->icon('home'),
+
+                MenuSection::resource(AboutUs::class)->icon('identification'),
+
+                MenuSection::resource(User::class)->icon('user-group'),
 
                 MenuSection::make('Location', [
                     MenuItem::resource(Region::class),
@@ -48,10 +54,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 MenuSection::resource(Speciality::class),
 
                 MenuSection::resource(Testimonial::class),
+
+                MenuSection::resource(Blog::class),
+
+                MenuSection::resource(Media::class),
             ];
         });
 
-        Nova::footer(function($request){
+        Nova::footer(function ($request) {
             return '<center><b>Copyright &copy; 2023 by Star Hospitals. All Rights Reserved.</b></center>';
         });
     }
