@@ -85,7 +85,7 @@ class Homepage extends Resource
 
             Text::make('Description', 'banner' . $number . '_description')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:100'),
+                ->rules('nullable', 'string', 'max:130'),
 
             URL::make('CTA', 'banner' . $number . '_cta')
                 ->hideFromIndex()
