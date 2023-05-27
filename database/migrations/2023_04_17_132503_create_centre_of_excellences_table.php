@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('centre_of_excellences', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
-            $table->string('icon_image', 100)->nullable();
+            $table->text('icon_image')->nullable();
             $table->string('icon_image_alt', 100)->nullable();
             $table->string('banner_desktop', 100)->nullable();
             $table->string('banner_desktop_alt', 100)->nullable();

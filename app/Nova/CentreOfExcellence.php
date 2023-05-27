@@ -55,10 +55,9 @@ class CentreOfExcellence extends Resource
                 ->sortable()
                 ->rules('required', 'string', 'max:50'),
 
-            Avatar::make('Icon Image', 'icon_image')
-                ->disk('public')
+            Text::make('Icon Image', 'icon_image')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('nullable', 'string'),
 
             Text::make('Icon Image Alt', 'icon_image_alt')
                 ->hideFromIndex()
