@@ -118,6 +118,11 @@ class Blog extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
 
+            Boolean::make('Show in Homepage', 'homepage')
+                ->trueValue('yes')
+                ->falseValue('no')
+                ->hideFromIndex(),
+
             Boolean::make('Status', 'status')
                 ->trueValue('active')
                 ->falseValue('inactive'),

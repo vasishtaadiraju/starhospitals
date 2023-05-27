@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('slug', 50)->nullable();
             $table->string('meta_title')->nullable();
             $table->text('meta_description', 50)->nullable();
+            $table->enum('homepage', ['yes', 'no']);
             $table->enum('status', ['active', 'inactive']);
             $table->timestamps();
             $table->softDeletes();
