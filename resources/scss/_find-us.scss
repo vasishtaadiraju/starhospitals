@@ -1,0 +1,119 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+
+.find-us{
+@include centerSection;
+min-height: 25em;
+display: flex;
+justify-content: space-between;
+
+@include media('sm-mob')
+{
+    flex-direction: column;
+}
+@include media('md-mob')
+{
+    flex-direction: column;
+}
+@include media('lg-mob')
+{
+    flex-direction: column;
+}
+@include media('x-sm-tab')
+{
+    flex-direction: column;
+}
+@include media('sm-tab')
+{
+    flex-direction: column;
+}
+
+&__locations{
+    flex: 0 0 30%;
+    @include media('sm-mob')
+    {
+        flex: 0 0 100%;
+    }
+    @include media('md-mob')
+    {
+        flex: 0 0 100%;
+    }
+    @include media('lg-mob')
+    {
+        flex: 0 0 100%;
+    }
+    @include media('x-sm-tab')
+    {
+        flex: 0 0 100%;
+    }
+    @include media('sm-tab')
+    {
+        flex: 0 0 100%;
+    }
+
+    &__title{
+        @include font-family(600);
+        padding-bottom: 1em;
+    }
+
+    &__card{
+        width: 100%;
+        // min-height: 12rem;
+        
+        position: relative;
+        padding: 1em 0px;
+        margin-top: 1em ;
+
+        h3{
+            @include font-family(600);
+            padding-bottom: 1em;
+
+        }
+
+        p{
+            @include font-family(400);
+            font-size: 15px;
+            width: 50%
+            ;
+        }
+
+        button{
+            @include btn-primary(variables.$starhospitals-brand-secondary,white);
+            position:absolute;
+            right: 0;
+            bottom: 20px;
+        }
+    }
+}
+
+&__map{
+    flex:0 0 65%;
+    @include media('sm-mob')
+    {
+        flex: 0 0 100%;
+        margin-top: 2em;
+    }
+    @include media('md-mob')
+    {
+        flex: 0 0 100%;
+        margin-top: 2em;
+    }
+    @include media('lg-mob')
+    {
+        flex: 0 0 100%;
+        margin-top: 2em;
+    }
+    @include media('x-sm-tab')
+    {
+        flex: 0 0 100%;
+        margin-top: 2em;
+    }
+    @include media('sm-tab')
+    {
+        flex: 0 0 100%;
+        margin-top: 2em;
+    }
+}
+}

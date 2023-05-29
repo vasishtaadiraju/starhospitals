@@ -11,9 +11,12 @@ class Reviews extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $content,$reviews;
+
+    public function __construct($content,$reviews)
     {
-        //
+        $this->content = $content;
+        $this->reviews = $reviews;
     }
 
     /**

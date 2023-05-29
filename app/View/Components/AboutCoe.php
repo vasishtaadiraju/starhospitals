@@ -11,9 +11,12 @@ class AboutCoe extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    
+    public $coes;
+
+    public function __construct($coes)
     {
-        //
+        $this->coes = $coes;
     }
 
     /**

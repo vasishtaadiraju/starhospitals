@@ -1,0 +1,124 @@
+@use "utils/variables" as variables;
+@import 'utils/utils';
+
+@import "utils/media-queries";
+
+.chairman-desk{
+    width: 100%;
+    padding: 5em 0px;
+    background-color: variables.$starhospitals-brand-primary;
+    &__wrapper{
+        @include centerSection;
+        display: flex;
+        gap: 3em;
+        justify-content: center;
+        align-items: center;
+        @include media('sm-mob')
+        {
+            flex-direction: column;
+            flex: 0 0 100%;
+            gap: 3em;
+        }
+        @include media('md-mob')
+        {
+            flex-direction: column;
+            flex: 0 0 100%;
+            gap: 3em;
+        }
+        @include media('lg-mob')
+        {
+            flex-direction: column;
+            flex: 0 0 100%;
+            gap: 3em;
+        }
+        @include media('x-sm-tab')
+        {
+            flex-direction: column;
+            flex: 0 0 100%;
+            gap: 3em;
+        }
+        @include media('sm-tab')
+        {
+            flex-direction: column;
+            flex: 0 0 100%;
+            gap: 3em;
+        }
+    }
+
+    &__image-container{
+        
+        img{
+            @include media('sm-mob')
+        {
+            width: 100%;
+        }
+        @include media('md-mob')
+        {
+            width: 100%;
+        }
+        @include media('lg-mob')
+        {
+            width: 100%;
+        }
+        @include media('x-sm-tab')
+        {
+            width: 100%;
+        }
+        }
+    }
+
+    &__content-container{
+        color: variables.$starhospitals-text-inverted;
+
+        h2{
+            padding-bottom: 1em;
+            @include font-family(600);
+            @include media('sm-mob')
+            {
+                text-align: center
+            }
+            @include media('md-mob')
+            {
+                text-align: center
+            }
+            @include media('lg-mob')
+            {
+                text-align: center
+            }
+            @include media('x-sm-tab')
+            {
+                text-align: center
+            }
+            @include media('sm-tab')
+            {
+                text-align: center
+            }
+        }
+        p{
+            font-size: 15px;
+            line-height: 28px;
+            @include font-family(400);
+            @include media('sm-mob')
+            {
+                text-align: justify;
+            }
+            @include media('md-mob')
+            {
+                text-align: justify;
+            }
+            @include media('lg-mob')
+            {
+                text-align: justify;
+            }
+            @include media('x-sm-tab')
+            {
+                text-align: justify;
+            }
+            @include media('sm-tab')
+            {
+                text-align: justify;
+            }
+
+        }
+    }
+}

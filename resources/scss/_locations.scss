@@ -1,0 +1,97 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+
+.locations {
+    @include centerSection;
+    width: 80%;
+    margin-top: 5em;
+    @include media("sm-tab") {
+        width: 90%;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    @include media("sm-tab") {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    align-items: center;
+    &__card {
+        flex: 0 0 calc(95% / 4);
+        background-color: white;
+        border-radius: 10px;
+        // padding-bottom: 1em;
+        @include media("sm-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("md-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("lg-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("x-sm-tab") {
+            flex: 0 0 100%;
+        }
+        @include media("sm-tab") {
+            flex: 0 0 calc(95% / 3);
+        }
+
+        img {
+            width: 100%;
+        }
+        &__content-wrapper {
+            padding: 1em;
+            h3 {
+                padding: 0.75em 0px;
+                @include font-family(600);
+                @include media("sm-mob") {
+                    text-align: center;
+                }
+                @include media("md-mob") {
+                    text-align: center;
+                }
+                @include media("lg-mob") {
+                    text-align: center;
+                }
+                @include media("x-sm-tab") {
+                    text-align: center;
+                }
+            }
+            p {
+                font-size: 15px;
+                line-height: 28px;
+                margin-bottom: 1em;
+                @include font-family(400);
+                @include media("sm-mob") {
+                    text-align: justify;
+                }
+                @include media("md-mob") {
+                    text-align: justify;
+                }
+                @include media("lg-mob") {
+                    text-align: justify;
+                }
+                @include media("x-sm-tab") {
+                    text-align: justify;
+                }
+            }
+
+            &__btn {
+                @include btn-primary(
+                    variables.$starhospitals-brand-secondary,
+                    white
+                );
+                margin: 0.5em 0px;
+                &--secondary {
+                    @include btn-primary(
+                        white,
+                        variables.$starhospitals-brand-secondary
+                    );
+                }
+            }
+        }
+    }
+}

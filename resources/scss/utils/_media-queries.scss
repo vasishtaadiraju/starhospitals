@@ -17,7 +17,7 @@
 
     @else if ($type == 'lg-mob')
     {
-        @media screen and (min-width: 482px) and (max-width: 599px) {
+        @media screen and (min-width: 482px) and (max-width: 600px) {
             @content;
         }
     }
@@ -30,19 +30,19 @@
     }
     @else if($type == 'sm-tab')
     {
-        @media screen and (min-width: 770px) and (max-width: 990px) {
+        @media screen and (min-width: 770px) and (max-width: 991px) {
             @content;
         }
     }
     @else if($type == 'md-tab')
     {
-        @media screen and (min-width: 991px) and (max-width: 1023px) {
+        @media screen and (min-width: 991px) and (max-width: 1025px) {
             @content;
         }
     }
     @else if($type == 'lg-tab')
     {
-        @media screen and (min-width: 1024px) and (max-width: 1275px) {
+        @media screen and (min-width: 1025px) and (max-width: 1275px) {
             @content;
         }
     }

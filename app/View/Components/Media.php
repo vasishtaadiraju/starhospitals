@@ -11,9 +11,12 @@ class Media extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $content,$media;
+
+    public function __construct($content,$media)
     {
-        //
+        $this->content = $content;
+        $this->media = $media;
     }
 
     /**

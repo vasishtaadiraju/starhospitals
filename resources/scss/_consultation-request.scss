@@ -33,10 +33,40 @@
         flex-direction: column-reverse;
     }
 
+    &__heading-mobile{
+        display: none;
+        margin-bottom: 2em;
+        @include media('sm-mob')
+            {
+                display: block;
+            }
+            @include media('md-mob')
+            {
+                display: block;
+            }
+            @include media('lg-mob')
+            {
+                display: block;
+            }
+
+    }
+
     &__card{
         flex:0 0 45%;
         padding: 0px 2em ;
         @include media('sm-mob')
+            {
+                padding: 0px;
+                flex: 0 0 100%;
+                // margin-left: 0px auto
+            }
+            @include media('md-mob')
+            {
+                padding: 0px;
+                flex: 0 0 100%;
+                // margin-left: 0px auto
+            }
+            @include media('lg-mob')
             {
                 padding: 0px;
                 flex: 0 0 100%;
@@ -104,7 +134,7 @@
                     @include font-family(600);
                     font-size: 16px;
                     margin-bottom: 1.5em;
-                    img{
+                svg{
                         position: absolute;
                         left: 0.5em;
                         // top: 0px;
@@ -132,11 +162,12 @@
 
     &__form{
         flex: 0 0 35%;
-        border: 1px solid variables.$starhospitals-brand-primary;
+        border: 1.5px solid variables.$starhospitals-brand-primary;
         border-radius: 20px;
         position: relative;
         overflow: hidden;
         padding: 2em;
+        background-color: white;
         @include media('sm-mob')
         {
             padding:1em;

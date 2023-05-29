@@ -4,6 +4,9 @@
 
 @import "utils/media-queries";
 
+.slick-slide{
+  // margin: 0.5em;
+}
 .slick-dotted.slick-slider {
    margin-bottom: 0px;
 }
@@ -32,8 +35,10 @@
     display: block;
     width: 28px;
     height: 28px;
-    border: 3px solid black;
-    border-radius: 50%;
+    // border: 3px solid black;
+    // background-repeat: no-repeat;
+
+    // border-radius: 50%;
 
     @include media('sm-mob')
     {
@@ -72,6 +77,7 @@
     }
   }
   .slick-prev {
+    // left: -35px;
     @include media('sm-mob')
     {
     left: -14px;
@@ -86,8 +92,16 @@
     }
 }
   .slick-prev::before {
-    content: '\1F824';
-    transform: rotate(180deg);
+    content: ' ';
+    // transform: rotate(180deg);
+    background-image: url("data:image/svg+xml,%3Csvg width='34' height='34' viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.0007 0.333374C26.2007 0.333374 33.6673 7.80004 33.6673 17C33.6673 26.2 26.2007 33.6667 17.0007 33.6667C7.80065 33.6667 0.333984 26.2 0.333984 17C0.333984 7.80004 7.80065 0.333374 17.0007 0.333374ZM17.0007 30.3334C24.3673 30.3334 30.334 24.3667 30.334 17C30.334 9.63337 24.3673 3.66671 17.0007 3.66671C9.63398 3.66671 3.66732 9.63337 3.66732 17C3.66732 24.3667 9.63398 30.3334 17.0007 30.3334ZM17.0007 15.3334H23.6673V18.6667H17.0007V23.6667L10.334 17L17.0007 10.3334V15.3334Z' fill='black'/%3E%3C/svg%3E%0A");;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-repeat: no-repeat;
+    // z-index: 2500;
+
   }
 
   .slick-next {
@@ -110,5 +124,13 @@
 }
   
   .slick-next::before {
-    content: '\1F826';
+    content: ' ';
+    // transform: rotate(180deg);
+    background-image: url("data:image/svg+xml,%3Csvg width='34' height='34' viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.0007 15.3334V10.3334L23.6673 17L17.0007 23.6667V18.6667H10.334V15.3334H17.0007ZM17.0007 0.333374C26.2007 0.333374 33.6673 7.80004 33.6673 17C33.6673 26.2 26.2007 33.6667 17.0007 33.6667C7.80065 33.6667 0.333984 26.2 0.333984 17C0.333984 7.80004 7.80065 0.333374 17.0007 0.333374ZM17.0007 30.3334C24.3673 30.3334 30.334 24.3667 30.334 17C30.334 9.63337 24.3673 3.66671 17.0007 3.66671C9.63398 3.66671 3.66732 9.63337 3.66732 17C3.66732 24.3667 9.63398 30.3334 17.0007 30.3334Z' fill='black'/%3E%3C/svg%3E%0A");;
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-repeat: no-repeat;
   }

@@ -1,31 +1,61 @@
 <div class="slider" id="slider-body">
 
+    @if($content->banner1_desktop != null)
     <div class="slider__item" style="background-color: pink">
-        <img class="slider__image" src="{{asset('images/banner/banner-1.png')}}" alt="">
+        <img class="slider__image" src="{{config('variables.asset').$content->banner1_desktop}}" alt="">
 
         <div class="slider__item__content">
-            <h1>Clinical Excellence with 
-                a Heart</h1>
+            <h1>{{$content->banner1_title}}</h1>
 
-                <p>We realize offering tolerant focused consideration. It implies that each administration is obliged to your individual needs.  </p>
+                <p>{{$content->banner1_description}}</p>
                 
-                <a href="#" class="btn-primary">Explore More</a>
+                <a href="{{$content->banner1_link}}" class="btn-primary">Explore More</a>
             </div>
 
     </div>
-    <div class="slider__item" style="background-color: blue">
+    @endif
+    @if($content->banner2_desktop != null)
+    <div class="slider__item" style="background-color: pink">
+        <img class="slider__image" src="{{config('variables.asset').$content->banner2_desktop}}" alt="">
+
         <div class="slider__item__content">
-            
-        </div>
+            <h1>{{$content->banner2_title}}</h1>
+
+                <p>{{$content->banner2_description}}</p>
+                
+                <a href="{{$content->banner2_link}}" class="btn-primary">Explore More</a>
+            </div>
+
     </div>
-    <div class="slider__item" style="background-color: green">
+    @endif
+    @if($content->banner3_desktop != null)
+    <div class="slider__item" style="background-color: pink">
+        <img class="slider__image" src="{{config('variables.asset').$content->banner3_desktop}}" alt="">
+
         <div class="slider__item__content">
-            
-        </div>
+            <h1>{{$content->banner3_title}}</h1>
+
+                <p>{{$content->banner3_description}}</p>
+                
+                <a href="{{$content->banner3_link}}" class="btn-primary">Explore More</a>
+            </div>
+
     </div>
-    <div class="slider__item" style="background-color: red">
+    @endif
+    @if($content->banner4_desktop != null)
+    <div class="slider__item" style="background-color: pink">
+        <img class="slider__image" src="{{config('variables.asset').$content->banner4_desktop}}" alt="">
+
         <div class="slider__item__content">
-            
-        </div>
+            <h1>{{$content->banner4_title}}</h1>
+
+                <p>{{$content->banner4_description}}</p>
+                
+                <a href="{{$content->banner4_link}}" class="btn-primary">Explore More</a>
+            </div>
+
     </div>
+    @endif
+
+    
 </div>

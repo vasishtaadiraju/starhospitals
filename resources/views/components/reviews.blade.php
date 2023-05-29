@@ -1,9 +1,10 @@
-<x-heading :title="'Reviews From Our Patients'" :description="'Lorem ipsum dolor sit amet consectetur. Pharetra hac gravida vestibulum donec accumsan morbi. In aliquam turpis pellentesque ultricies imperdiet accumsan sociis.'" />
+<x-heading :title="'Reviews From Our Patients'" :description="$content->review_text" />
 
 <div class="reviews reviews-slider">
+    @foreach ($reviews as $item)
     <div class="reviews__card">
-        <div class="reviews__card__image-wrapper reviews__card__image-wrapper--video">
-                <img src="{{asset('images/review/review.png')}}"  alt="">
+        <div class="reviews__card__image-wrapper @if($item->type == 'video') ctg-video @endif">
+                <img src="{{ config('variables.asset') . $item->thumbnail }}"  alt="">
         </div>
         <div class="reviews__card__text-wrapper">
 
@@ -15,10 +16,12 @@
                 </div>
         </div>
         
-    </div>
+    </div>  
+    @endforeach
+    
     <div class="reviews__card">
         <div class="reviews__card__image-wrapper">
-                <img src="{{asset('images/review/review.png')}}" alt="">
+                <img src="{{Vite::asset('resources/images/review/review.png')}}" alt="">
         </div>
         <div class="reviews__card__text-wrapper">
 

@@ -1,5 +1,11 @@
 
 @use "variables";
+@import "./media-queries";
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    // src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
+  }
 @mixin centerSection{
     width: variables.$starhospitals-component-width;
     margin: 0px auto;
@@ -19,9 +25,10 @@
     gap: 0.5em;
     background-color: white;
     @content;
-    img {
+    img , svg {
         padding: 0.25em;
     }
+    
 
     input,
     select {
@@ -33,6 +40,8 @@
         background: none;
     }
 }
+
+
 
 @mixin center-child-element()
 {
@@ -67,11 +76,29 @@ place-items: center;
    
 }
 
+@mixin box-shadow()
+{
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.16);
+        -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.16);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.16);
+}
+
+@keyframes growDown {
+    0% {
+        transform: scaleY(0)
+    }
+    80% {
+        transform: scaleY(1.1)
+    }
+    100% {
+        transform: scaleY(1)
+    }
+}
+
 *,html {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-
 }
 
 select {
@@ -79,11 +106,12 @@ select {
     -moz-appearance: none;
     position: relative;
     background: transparent;
-    background-image: url('../../../public/images/Icons/select-arrow.png') !important;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='6' viewBox='0 0 12 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 6L0 0H12L6 6Z' fill='black'/%3E%3C/svg%3E%0A") !important;
     background-repeat: no-repeat !important;
     background-size: 10px;
     background-position: calc(100% - 1em) !important;
     padding-right: 2em !important;
+    padding-left: 1em;
   }
 
   
@@ -103,4 +131,154 @@ body{
 
 .gap{
     height: 5rem;
+}
+
+.form-input{
+
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0px;
+    flex-wrap: wrap;
+    gap: 1em;
+    &__field{
+        padding: 1em;
+        outline: none;
+        border: 1px solid variables.$starhospitals-ui-tertiary;
+        border-radius: 10px;
+        background-color: #FAFAFA;
+        &--w-1{
+            flex: 0 0 100%;
+        }
+        &--w-2{
+            flex: 0 0 calc(95%/2);
+            @include media('sm-mob')
+        {
+            
+            flex: 0 0 100%;
+            
+            
+        }
+        @include media('md-mob')
+        {
+            
+            flex: 0 0 100%;
+            
+        }
+        @include media('lg-mob')
+        {
+            
+            flex: 0 0 100%;
+            
+        }
+        @include media('x-sm-tab')
+        {
+            
+            flex: 0 0 100%;
+            
+        }
+        }
+        &--w-3{
+            flex: 0 0 calc(95%/3);
+            @include media('sm-mob')
+            {
+                
+                flex: 0 0 100%;
+                
+                
+            }
+            @include media('md-mob')
+            {
+                
+                flex: 0 0 100%;
+                
+            }
+            @include media('lg-mob')
+            {
+                
+                flex: 0 0 100%;
+                
+            }
+            @include media('x-sm-tab')
+            {
+                
+                flex: 0 0 100%;
+                
+            }
+        }
+    }
+
+    &__radio{
+        display: flex;
+        align-items: center;
+        // justify-content: space-between;
+        gap: 1em;
+        font-size: 15px;
+        cursor: pointer;
+        @include font-family(400)
+    }
+
+    
+}
+
+.view-all-btn{
+        @include btn-primary(red,transparent);
+        width: 8rem;
+        padding: 1em 0px;
+        margin: 0px auto;
+        margin-top: 3em;
+}
+.ui-background{
+    padding:5rem 0px;
+        background-color: variables.$starhospitals-ui-background;
+        // background-color:gray
+        // z-index: 400;
+}
+
+.section-heading{
+        @include font-family(700);
+
+        @include media("sm-mob") {
+        font-size: 20px;
+            
+
+        }
+        @include media("md-mob") {
+        font-size: 20px;
+            
+
+        }
+        @include media("lg-mob") {
+        font-size: 20px;
+            
+
+        }
+        @include media("x-sm-tab") {
+        font-size: 20px;
+            
+
+        }
+        @include media("md-tab") {
+        font-size: 20px;
+            
+
+        }
+}
+
+.ctg-video{
+    position: relative;
+
+    &::after{
+        content: url("data:image/svg+xml,%3Csvg  viewBox='0 0 68 68' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M33.9993 67.3333C15.5898 67.3333 0.666016 52.4093 0.666016 34C0.666016 15.5905 15.5898 0.666672 33.9993 0.666672C52.4087 0.666672 67.3327 15.5905 67.3327 34C67.3327 52.4093 52.4087 67.3333 33.9993 67.3333ZM33.9993 60.6667C48.727 60.6667 60.666 48.7277 60.666 34C60.666 19.2724 48.727 7.33334 33.9993 7.33334C19.2717 7.33334 7.33268 19.2724 7.33268 34C7.33268 48.7277 19.2717 60.6667 33.9993 60.6667ZM29.4057 22.0486L45.6687 32.8907C46.2813 33.299 46.447 34.127 46.0383 34.7397C45.9407 34.886 45.815 35.0117 45.6687 35.1093L29.4057 45.9513C28.793 46.36 27.965 46.1943 27.5567 45.5817C27.4107 45.3627 27.3327 45.1053 27.3327 44.842V23.158C27.3327 22.4216 27.9297 21.8247 28.666 21.8247C28.9293 21.8247 29.1867 21.9026 29.4057 22.0486Z' fill='white'/%3E%3C/svg%3E");
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 200;
+        display: block;
+        height: 50px;
+        width: 50px;
+        font-size: 12px;
+    cursor: pointer;
+
+    }
 }

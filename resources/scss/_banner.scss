@@ -1,0 +1,116 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+
+.banner {
+    height: 75vh;
+    width: 100%;
+    position: relative;
+    @include media("sm-mob") {
+        height: 40vh;
+    }
+    @include media("md-mob") {
+        height: 40vh;
+    }
+    @include media("x-sm-tab") {
+        height: 40vh;
+    }
+    @include media("sm-tab") {
+        height: 75vh;
+    }
+    @include media("md-tab") {
+        height: 40vh;
+    }
+    @include media("lg-tab") {
+        height: 40vh;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        @include media("sm-mob") {
+            position: absolute;
+            bottom: 0;
+            height: 60%;
+        }
+        @include media("md-mob") {
+            position: absolute;
+            height: 60%;
+            bottom: 0;
+        }
+    }
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+        width: 30%;
+        @include media("sm-mob") {
+            position: absolute;
+            top: 0;
+            height: 40%;
+            width: 80%;
+            transform: translateY(0%);
+        }
+        @include media("md-mob") {
+            position: absolute;
+            height: 40%;
+            top: 0;
+            width: 80%;
+            transform: translateY(0%);
+        }
+        @include media("x-sm-tab") {
+            width: 60%;
+        }
+        @include media("sm-tab") {
+            width: 60%;
+        }
+        @include media("md-tab") {
+            width: 60%;
+        }
+        @include media("lg-tab") {
+            width: 60%;
+        }
+        h1 {
+            color: variables.$starhospitals-text-inverted;
+            @include font-family(700);
+            font-size: 40px;
+            line-height: 60px;
+            @include media("sm-mob") {
+                color: black;
+                line-height: 35px;
+                font-size: 25px;
+
+            }
+            @include media("md-mob") {
+                color: black;
+                font-size: 25px;
+                line-height: 35px;
+            }
+        }
+    }
+
+    &__breadcrum {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5em;
+        padding: 1em 0px;
+        a,
+        span {
+            @include font-family(400);
+            color: variables.$starhospitals-text-inverted;
+            display: block;
+            @include media("sm-mob") {
+                color: black;
+                font-size: 13px;
+            }
+            @include media("md-mob") {
+                color: black;
+                font-size: 25px;
+                font-size: 13px;
+            }
+        }
+    }
+}

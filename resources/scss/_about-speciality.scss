@@ -1,0 +1,204 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+
+.about-speciality {
+    @include centerSection;
+    display: flex;
+    justify-content: space-between;
+    // min-height: 20rem;
+    gap: 5%;
+
+    @include media("sm-mob") {
+        flex-direction: column;
+    }
+    @include media("md-mob") {
+        flex-direction: column;
+    }
+    @include media("lg-mob") {
+        flex-direction: column;
+    }
+    @include media("x-sm-tab") {
+        flex-direction: column;
+        align-items: center;
+    }
+    @include media("sm-tab") {
+        flex-direction: column;
+        align-items: center;
+    }
+    @include media("md-tab") {
+        flex-direction: column;
+        align-items: center;
+    }
+    &__image-wrapper {
+        position: relative;
+        &__image {
+            position: relative;
+            z-index: 50;
+            padding: 10% 0px;
+            img {
+                @include media("sm-mob") {
+                    width: 100%;
+                }
+                @include media("md-mob") {
+                    width: 100%;
+                }
+                @include media("lg-mob") {
+                    width: 100%;
+                }
+            }
+        }
+        &__dot-left {
+            position: absolute;
+            left: 5%;
+            // bottom: 2rem;
+            top: 25em;
+            transform: rotate(90deg);
+            // z-index: 20;
+            @include media("sm-mob") {
+                display: none;
+            }
+            @include media("md-mob") {
+                display: none;
+            }
+            @include media("lg-mob") {
+                display: none;
+            }
+        }
+        &__dot-right {
+            position: absolute;
+            right: 5%;
+            top: 0%;
+            z-index: 2;
+        }
+    }
+
+    &__content {
+        flex: 1;
+
+        &__heading {
+            padding-bottom:1em;
+            // @include media("sm-mob") {
+                
+            // }
+            // @include media("md-mob") {
+                
+            // }
+            // @include media("lg-mob") {
+                
+            // }
+            // @include media("x-sm-tab") {
+            //     padding: 0px;
+            //     padding-bottom: 1em ;
+            //     // text-align: center;
+            // }
+            // @include media("sm-tab") {
+            //     padding: 0px;
+            //     padding-bottom: 1em ;
+            //     // text-align: center;
+            // }
+            // @include media("md-tab") {
+            //     padding: 0px;
+            //     padding-bottom: 1em ;
+            //     // text-align: center;
+            // }
+            // @include media("lg-tab") {
+            //     padding: 0px;
+            //     padding-bottom: 1em ;
+            //     // text-align: center;
+            // }
+        }
+
+        &__links {
+            display: flex;
+            gap: 0.5em;
+
+            @include font-family(400);
+            @include media("sm-mob") {
+                padding: 1em 0px;
+                // align-items: center;
+            }
+            @include media("md-mob") {
+                padding: 1em 0px;
+                // align-items: center;
+            }
+            @include media("lg-mob") {
+                padding: 1em 0px;
+                // align-items: center;
+            }
+
+            a {
+                color: variables.$starhospitals-brand-secondary;
+            }
+        }
+
+        &__description {
+            @include font-family(400);
+            padding: 2.5em 0px;
+            font-size: 15px;
+            line-height: 25px;
+
+            p {
+                @include font-family(400);
+                font-size: 15px;
+                line-height: 25px;
+                @include media("sm-mob") {
+                    text-align: justify;
+                }
+                @include media("md-mob") {
+                    text-align: justify;
+                }@include media("lg-mob") {
+                    text-align: justify;
+                }
+            }
+
+            a {
+                color: variables.$starhospitals-brand-secondary;
+            }
+            li {
+                padding: 0.5em 0px;
+                &::marker {
+                    color: variables.$starhospitals-brand-primary;
+                }
+            }
+
+            @include media("sm-mob") {
+                padding: 1em 0px;
+
+                text-align: justify;
+            }
+            @include media("md-mob") {
+                padding: 1em 0px;
+
+                text-align: justify;
+            }
+            @include media("lg-mob") {
+                padding: 1em 0px;
+
+                text-align: justify;
+            }
+            @include media("x-sm-tab") {
+                padding: 1em 0px;
+
+                text-align: justify;
+            }
+            @include media("sm-tab") {
+                padding: 1em 0px;
+
+                text-align: justify;
+            }
+            @include media("md-tab") {
+                padding: 1em 0px;
+
+                text-align: justify;
+            }
+            @include media("lg-tab") {
+                padding: 1em 0px;
+
+                text-align: justify;
+            }
+            
+        }
+    }
+}

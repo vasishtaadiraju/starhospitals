@@ -1,0 +1,41 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+.auto-complete{
+    position: absolute;
+    border: 1px solid rgb(209, 203, 203);
+    top: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 0.5em;
+    z-index: 2000;
+    left: 0;
+
+    &__list{
+        overflow: hidden;
+        margin: 0px;
+        padding: 0px;
+        &__item{
+            padding: 0.75em 0.75em;
+            list-style-type: none;
+            // border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.5s;
+            @include font-family(500);
+            margin-top: 0.25em;
+            font-size: 12px;
+            &--active{
+                background-color: variables.$starhospitals-brand-primary;
+                color: white;
+            }
+
+            &:hover{
+                background-color: variables.$starhospitals-brand-primary;
+                color: white;
+
+            }
+        }
+    }
+}

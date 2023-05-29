@@ -62,7 +62,7 @@ $visible-cards:1;
             position: absolute;
             width: 35%;
             top: 50%;
-            left: 10%;
+            left: 5%;
             background-color: white;
             min-height: 50%;
             transform: translateY(-60%);
@@ -171,9 +171,10 @@ $visible-cards:1;
 
             a{
                 @include btn-primary(variables.$starhospitals-brand-secondary,'white');
-                width: max-content;
+                width: 50%;
                 margin-top: 2rem;
                 font-size: 15px;
+                padding: 1em;
                 @include media('sm-mob')
                 {
                     font-size: 13px;

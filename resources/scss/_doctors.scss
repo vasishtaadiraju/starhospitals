@@ -32,10 +32,19 @@
 
 }
 
+.doctors-root{
+    padding:3rem 0px
+
+    &--secondary{
+        background-color: variables.$starhospitals-ui-background;
+
+    }
+}
 .doctors{
 
     @include centerSection;
     // padding: 2em 0px;
+    // z-index: -1;
     
 
     &__cards-wrapper{
@@ -58,6 +67,7 @@
     border-radius: 10px;
     margin: 1em calc(5%/3) 0px 0px;
     gap: 1em;
+    background-color: white;
 
     &--primary{
         display: block;
@@ -67,12 +77,14 @@
         -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.10);
         margin:0.5em;
         &__doctor-img{
-            width: 100%
+            width: 100%;
+
         };
         
         &__content{
             padding: 1em 0px;
             cursor: pointer;
+            @include font-family(400)
         }
     }
     &__lt{

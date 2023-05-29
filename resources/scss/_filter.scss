@@ -33,32 +33,70 @@
     min-height: 8rem;
     background-color: variables.$starhospitals-brand-primary;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 0px 5%;
+    
+
     @include media("sm-mob") {
         flex-direction: column;
         padding: 1em 0px;
         gap: 1em;
+        width: 90%;
+        margin: 0px auto;
+        // border: 1px solid black;
+        margin-top: 3em;
+        border-radius: 10px;
+        @include box-shadow;
+    background-color: white;
     }
     @include media("md-mob") {
         flex-direction: column;
         padding: 1em 0px;
         gap: 1em;
+        width: 90%;
+        margin: 0px auto;
+        // border: 1px solid black;
+        margin-top: 3em;
+        border-radius: 10px;
+        @include box-shadow;
+    background-color: white;
     }
     @include media("lg-mob") {
         flex-direction: column;
         padding: 1em 0px;
         gap: 1em;
+        width: 90%;
+        margin: 0px auto;
+        // border: 1px solid black;
+        margin-top: 3em;
+        border-radius: 10px;
+        @include box-shadow;
+    background-color: white;
     }
     @include media("x-sm-tab") {
         flex-direction: column;
         padding: 1em 0px;
         gap: 1em;
+        width: 90%;
+        margin: 0px auto;
+        // border: 1px solid black;
+        margin-top: 3em;
+        border-radius: 10px;
+        @include box-shadow;
+    background-color: white;
     }
     @include media("md-tab") {
         flex-direction: column;
         padding: 1em 0px;
         gap: 1em;
+        width: 90%;
+        margin: 0px auto;
+        // border: 1px solid black;
+        margin-top: 3em;
+        border-radius: 10px;
+        @include box-shadow;
+    background-color: white;
     }
     form {
         display: block;
@@ -67,6 +105,67 @@
         flex: 0 0 20%;
         display: flex;
         align-items: center;
+        @include font-family(400);
+
+
+       
+
+        h2{
+        @include font-family(700);
+
+        @include media("sm-mob") {
+        font-size: 20px;
+            
+
+        }
+        @include media("md-mob") {
+        font-size: 20px;
+            
+
+        }
+        @include media("lg-mob") {
+        font-size: 20px;
+            
+
+        }
+        @include media("x-sm-tab") {
+        font-size: 20px;
+            
+
+        }
+        @include media("md-tab") {
+        font-size: 20px;
+            
+
+        }
+        }
+        &--mobile{
+            padding: 0px 1em;
+            justify-content: space-between;
+            gap: 0.5em;
+
+            display:none;
+            @include media("sm-mob") {
+                display:flex;
+    
+            }
+            @include media("md-mob") {
+                display:flex
+    
+            }
+            @include media("lg-mob") {
+                display:flex
+    
+            }
+            @include media("x-sm-tab") {
+                display:flex
+    
+            }
+            @include media("md-tab") {
+                display:flex
+    
+            }
+        }
     }
     &__submit-btn {
         @include btn-primary(white, variables.$starhospitals-brand-secondary);
@@ -80,18 +179,62 @@
         // margin-right: 15rem;
         @include media("sm-mob") {
             padding: 1em;
+            font-size: 12px;
+        width: max-content;
+        display:none;
+
         }
         @include media("md-mob") {
             padding: 1em;
+            font-size: 12px;
+        width: max-content;
+        display:none;
+
         }
         @include media("lg-mob") {
             padding: 1em;
+            font-size: 12px;
+        width: max-content;
+        display:none;
+
         }
         @include media("x-sm-tab") {
             padding: 1em;
+            font-size: 12px;
+        width: max-content;
+        display:none;
+
         }
         @include media("md-tab") {
             padding: 1em;
+            font-size: 12px;
+        width: max-content;
+        display:none;
+
+        }
+
+        &--mobile{
+            display: none;
+            @include media("sm-mob") {
+                display:block;;
+    
+            }
+            @include media("md-mob") {
+                display:block;
+    
+            }
+            @include media("lg-mob") {
+                display:block;
+    
+            }
+            @include media("x-sm-tab") {
+                display:block;
+    
+            }
+            @include media("md-tab") {
+                display:block;
+    
+            }
         }
     }
 }
@@ -146,7 +289,7 @@
         // align-items: center;
         // padding: 0.25em;
 
-        // img {
+        // svg {
         //     padding: 0.25em;
         // }
 

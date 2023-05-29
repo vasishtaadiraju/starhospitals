@@ -24,8 +24,23 @@
         // padding: 1em 0px;
         // border: 1px solid black;
         h2 {
-            @include font-family(600);
+            // @include font-family(700);
             padding-bottom: 1em;
+            // text-align: center;
+            @include media("sm-mob") {
+                text-align: center;
+            }
+            @include media("md-mob") {
+                text-align: center;
+            }
+            @include media("x-sm-tab") {
+                text-align: center;
+            }
+            @include media("sm-tab") {
+                text-align: center;
+            }
+
+
         }
         ul {
             list-style-type: none;

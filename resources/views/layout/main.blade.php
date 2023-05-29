@@ -8,15 +8,21 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="@yield('meta-description', ' ')">
     <title>@yield('meta-title', 'Star Hospitals')</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"> --}}
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
     @vite(['resources/scss/appointments.scss', 'resources/js/app.js'])
     @yield('css')
     @stack('page-schema')
+    {{-- <style>
+        @font-face {
+        src: url('{{Vite::asset('resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf')}}') format('ttf');
+        font-family: "PlusJakartaSans-Regular";
+        }
+    </style> --}}
 </head>
 
 <body>

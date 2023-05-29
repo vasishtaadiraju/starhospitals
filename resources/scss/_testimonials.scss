@@ -1,0 +1,38 @@
+
+@use "utils/variables" as variables;
+@import 'utils/utils';
+
+@import "utils/media-queries";
+.testimonials{
+@include centerSection;
+&__card{
+    // padding: 2em !important;
+    margin: 0px 0.5em !important;
+    &__image-wrapper{
+        width: 100%;
+        img{
+            width: 100% !important
+        }
+    }
+    
+    // margin:0px 1em;
+    &__content{
+        @include font-family(400);
+
+        h3{
+            // font-size: ;
+        }
+        p{
+            padding: 1em 0px;
+            // font-size: 15px;
+        }
+    }
+}
+}
+// .testimonials__card.slick-slide{
+//     margin: 0px 1em;
+// }
+.testimonials__card.slick-slide img {
+    width: 100% !important;
+    // margin: 0px !important;
+}

@@ -11,9 +11,12 @@ class Blogs extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $content , $blogs;
+
+    public function __construct($content,$blogs)
     {
-        //
+        $this->content = $content;        
+        $this->blogs = $blogs;
     }
 
     /**

@@ -6,6 +6,7 @@
 .heading{
 
     @include centerSection;
+    width: 80%;
     &__title,&__sub-title{
         text-align: center;
         font-family: variables.$starhospitals-brand-secondary-font;
@@ -26,6 +27,42 @@
             font-size: 14px;
             margin: 1em 0px;
             line-height: 25px;
+        text-align: justify;
+
+        }
+        @include media('md-mob')
+        {
+            font-size: 14px;
+            margin: 1em 0px;
+            line-height: 25px;
+        text-align: justify;
+            
+        }
+        @include media('lg-mob')
+        {
+            font-size: 14px;
+            margin: 1em 0px;
+            line-height: 25px;
+        text-align: justify;
+            
+        }
+
+        @include media('x-sm-tab')
+        {
+            font-size: 14px;
+            margin: 1em 0px;
+            line-height: 25px;
+        text-align: justify;
+            
+        }
+
+        @include media('sm-tab')
+        {
+            font-size: 14px;
+            margin: 1em 0px;
+            line-height: 25px;
+        text-align: justify;
+            
         }
     }
 

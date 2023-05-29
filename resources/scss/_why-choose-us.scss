@@ -51,9 +51,10 @@
         flex-wrap: wrap;
         &__card {
             flex: 0 0 calc(97% / 2);
-            margin-top: 0.5em;
-            padding: 1em;
+            // margin-top: 0.5em;
+            padding: 0.5em 1em;
             // border: 1px solid blue;
+            height: max-content;
             border-radius: 10px;
             box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.4);
             -webkit-box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.4);
@@ -112,10 +113,17 @@
     &__image-wrapper {
         width: 80%;
         margin: 0px auto;
-        @include media('sm-tab')
+        @include media('sm-mob')
         {
             width: 100%;
         }
+        @include media("md-mob") {
+            width: 100%;
+        }
+        @include media("lg-tab") {
+            width: 100%;
+        }
+        
         img {
             width: 100%;
             // height: 100%;
@@ -153,3 +161,6 @@
         }
     }
 }
+
+
+

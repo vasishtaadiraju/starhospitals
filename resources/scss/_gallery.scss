@@ -1,0 +1,16 @@
+@use "utils/variables" as variables;
+@import 'utils/utils';
+@import "utils/media-queries";
+// @import "slick-slider";
+.gallery{
+    width: 80%;
+    margin: 0px auto;
+
+    &__image-wrapper{
+        // margin: 0.5em 0px;
+        img{
+            width: 100%;
+            padding: 0.5em;
+        }
+    }
+}

@@ -15,6 +15,9 @@ $footer-columns: 5;
     @include media("md-mob") {
         padding: 1em 0px;
     }
+    @include media("lg-mob") {
+        padding: 1em 0px;
+    }
     @include media("x-sm-tab") {
         padding: 1em 0px;
     }
@@ -23,11 +26,15 @@ $footer-columns: 5;
         height: 100%;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
 
         @include media("sm-mob") {
             flex-direction: column;
         }
         @include media("md-mob") {
+            flex-direction: column;
+        }
+        @include media("lg-mob") {
             flex-direction: column;
         }
         @include media("x-sm-tab") {
@@ -58,18 +65,29 @@ $footer-columns: 5;
                 align-items: flex-start;
                 padding: 1em;
             }
+            @include media("lg-mob") {
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: flex-start;
+                padding: 1em;
+                margin-bottom: 2em;
+                overflow: hidden;
+            }
             @include media("x-sm-tab") {
                 flex-direction: row;
                 justify-content: space-around;
                 align-items: flex-start;
                 padding: 1em;
             }
-            img {
-                width: 80%;
+            img , svg{
+                width: 60%;
                 @include media("sm-mob") {
                     width: 30%;
                 }
                 @include media("md-mob") {
+                    width: 30%;
+                }
+                @include media("lg-mob") {
                     width: 30%;
                 }
                 @include media("x-sm-tab") {
@@ -82,6 +100,10 @@ $footer-columns: 5;
                     margin: 0px 2em;
                 }
                 @include media("md-mob") {
+                    width: 50% !important;
+                    margin: 0px 2em;
+                }
+                @include media("lg-mob") {
                     width: 50% !important;
                     margin: 0px 2em;
                 }
@@ -105,6 +127,10 @@ $footer-columns: 5;
                 margin-top: 0.5em;
                 gap: 0.5em;
             }
+            @include media("lg-mob") {
+                margin-top: 0.5em;
+                gap: 0.5em;
+            }
             @include media("x-sm-tab") {
                 margin-top: 0.5em;
                 gap: 0.5em;
@@ -122,6 +148,9 @@ $footer-columns: 5;
                 @include media("md-mob") {
                     font-size: 14px;
                 }
+                @include media("lg-mob") {
+                    font-size: 14px;
+                }
                 @include media("x-sm-tab") {
                     font-size: 14px;
                 }
@@ -135,6 +164,13 @@ $footer-columns: 5;
                         margin: 1em 0px;
                     }
                     @include media("md-mob") {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        margin: 1em 0px;
+                    }
+                    @include media("lg-mob") {
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -164,8 +200,14 @@ $footer-columns: 5;
                             max-height: 0px;
                             overflow: hidden;
                         }
+                        @include media("lg-mob") {
+                            max-height: 0px;
+                            overflow: hidden;
+                        }
                         @include media("x-sm-tab") {
                             max-height: 0px;
+                            overflow: hidden;
+
                         }
 
                         &--active{
@@ -174,6 +216,10 @@ $footer-columns: 5;
 
                             }
                             @include media("md-mob") {
+                                max-height: 12rem !important;
+
+                            }
+                            @include media("lg-mob") {
                                 max-height: 12rem !important;
 
                             }
@@ -196,6 +242,9 @@ $footer-columns: 5;
                             display: block;
                         }
                         @include media("md-mob") {
+                            display: block;
+                        }
+                        @include media("lg-mob") {
                             display: block;
                         }
                         @include media("x-sm-tab") {
@@ -252,6 +301,9 @@ $footer-columns: 5;
             @include media("md-mob") {
                 display: none !important;
             }
+            @include media("lg-mob") {
+                display: none !important;
+            }
             @include media("x-sm-tab") {
                 display: none !important;
             }
@@ -264,6 +316,12 @@ $footer-columns: 5;
             text-align: center;
         }
         @include media("md-mob") {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        @include media("lg-mob") {
             display: flex;
             align-items: center;
             flex-direction: column;
