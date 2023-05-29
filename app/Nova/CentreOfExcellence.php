@@ -63,6 +63,15 @@ class CentreOfExcellence extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
 
+            Image::make('Homepage Image', 'homepage_image')
+                ->disk('public')
+                ->hideFromIndex()
+                ->rules('nullable', 'image', 'max:1024'),
+
+            Text::make('Homepage Image Alt', 'homepage_image_alt')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:100'),
+
             Image::make('Banner Desktop', 'banner_desktop')
                 ->disk('public')
                 ->hideFromIndex()

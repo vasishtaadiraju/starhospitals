@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name', 50);
             $table->text('icon_image')->nullable();
             $table->string('icon_image_alt', 100)->nullable();
+            $table->string('homepage_image')->nullable();
+            $table->string('homepage_image_alt', 100)->nullable();
             $table->string('banner_desktop', 100)->nullable();
             $table->string('banner_desktop_alt', 100)->nullable();
             $table->string('banner_mobile', 100)->nullable();
