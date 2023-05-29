@@ -52,7 +52,7 @@ class Blog extends Resource
 
             Text::make('Title', 'title')
                 ->sortable()
-                ->rules('required', 'string', 'max:50'),
+                ->rules('required', 'string', 'max:150'),
 
             Text::make('Author', 'author')
                 ->sortable()
@@ -122,6 +122,11 @@ class Blog extends Resource
                 ->trueValue('yes')
                 ->falseValue('no')
                 ->hideFromIndex(),
+
+            Number::make('Homepage Order Number', 'homepage_order_number')
+                ->min(1)
+                ->hideFromIndex()
+                ->rules('nullable', 'integer', 'numeric'),
 
             Boolean::make('Status', 'status')
                 ->trueValue('active')

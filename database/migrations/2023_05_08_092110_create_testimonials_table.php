@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->enum('homepage', ['yes', 'no']);
+            $table->tinyInteger('homepage_order_number', false, true)->nullable()->unique();
             $table->enum('status', ['active', 'inactive']);
             $table->timestamps();
             $table->softDeletes();

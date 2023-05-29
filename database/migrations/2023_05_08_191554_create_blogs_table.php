@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 50);
+            $table->string('title', 150);
             $table->string('author', 50);
             $table->string('designation', 50);
             $table->text('address');
@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('meta_title')->nullable();
             $table->text('meta_description', 50)->nullable();
             $table->enum('homepage', ['yes', 'no']);
+            $table->tinyInteger('homepage_order_number', false, true)->nullable()->unique();
             $table->enum('status', ['active', 'inactive']);
             $table->timestamps();
             $table->softDeletes();

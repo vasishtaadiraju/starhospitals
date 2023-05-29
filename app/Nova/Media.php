@@ -93,6 +93,11 @@ class Media extends Resource
                 ->falseValue('no')
                 ->hideFromIndex(),
 
+            Number::make('Homepage Order Number', 'homepage_order_number')
+                ->min(1)
+                ->hideFromIndex()
+                ->rules('nullable', 'integer', 'numeric'),
+
             Boolean::make('Status', 'status')
                 ->trueValue('active')
                 ->falseValue('inactive'),
