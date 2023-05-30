@@ -3,7 +3,6 @@
 namespace App\Nova;
 
 use App\Models\Branch;
-use App\Models\Region;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rules;
@@ -305,18 +304,18 @@ class User extends Resource
     public function actions(NovaRequest $request)
     {
         return [
-            ExportAsCsv::make()->nameable()->withFormat(function ($model) {
-                $doctor = [];
-                $doctor['Name'] = $model->name;
+            // ExportAsCsv::make()->nameable()->withFormat(function ($model) {
+            //     $doctor = [];
+            //     $doctor['Name'] = $model->name;
 
-                $regions = DB::table('region_user')->where('user_id', $model->id)->get(['region_id', 'order_number']);
+            //     $regions = DB::table('region_user')->where('user_id', $model->id)->get(['region_id', 'order_number']);
 
-                foreach ($regions as $key => $region) {
-                    $doctor['Region ' . $key + 1] = Region::where('id', $region->region_id)->pluck('name')->first();
-                }
+            //     foreach ($regions as $key => $region) {
+            //         $doctor['Region ' . $key + 1] = Region::where('id', $region->region_id)->pluck('name')->first();
+            //     }
 
-                return $doctor;
-            })->showInline(),
+            //     return $doctor;
+            // })->showInline(),
 
             Actions\DataSync::make()->showInline()
         ];

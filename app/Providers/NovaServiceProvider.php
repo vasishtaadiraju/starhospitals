@@ -6,6 +6,7 @@ use App\Nova\AboutUs;
 use App\Nova\Blog;
 use App\Nova\Branch;
 use App\Nova\CentreOfExcellence;
+use App\Nova\FAQ;
 use App\Nova\Homepage;
 use App\Nova\Media;
 use App\Nova\Region;
@@ -58,6 +59,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 MenuSection::resource(Blog::class),
 
                 MenuSection::resource(Media::class),
+
+                MenuSection::resource(FAQ::class)->icon('question-mark-circle'),
             ];
         });
 
