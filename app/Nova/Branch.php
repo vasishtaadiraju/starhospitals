@@ -116,6 +116,11 @@ class Branch extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
 
+            Image::make('Card Image', 'card_image')
+                ->disk('public')
+                ->hideFromIndex()
+                ->rules('nullable', 'image', 'max:1024'),
+
             Trix::make('About', 'about')
                 ->withFiles('public')
                 ->hideFromIndex()
