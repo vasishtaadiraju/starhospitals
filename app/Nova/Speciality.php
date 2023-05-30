@@ -82,6 +82,10 @@ class Speciality extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
 
+            Text::make('Banner text', 'banner_text')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:255'),
+
             Trix::make('Description', 'description')
                 ->withFiles('public')
                 ->hideFromIndex()

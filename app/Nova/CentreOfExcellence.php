@@ -90,6 +90,10 @@ class CentreOfExcellence extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
 
+            Text::make('Banner text', 'banner_text')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:255'),
+
             Textarea::make('Short Description', 'short_description')
                 ->rows(4)
                 ->hideFromIndex()

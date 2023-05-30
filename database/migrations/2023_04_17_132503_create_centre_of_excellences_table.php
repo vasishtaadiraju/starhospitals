@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('banner_desktop_alt', 100)->nullable();
             $table->string('banner_mobile', 100)->nullable();
             $table->string('banner_mobile_alt', 100)->nullable();
+            $table->string('banner_text')->nullable();
             $table->string('short_description')->nullable();
             $table->text('long_description')->nullable();
             $table->string('description_image', 100)->nullable();
