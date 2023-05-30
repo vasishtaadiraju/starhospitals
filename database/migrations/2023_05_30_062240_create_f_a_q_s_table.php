@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('question');
             $table->text('answer');
+            $table->enum('aboutpage', ['yes', 'no']);
+            $table->tinyInteger('aboutpage_order_number', false, true)->nullable()->unique();
+            $table->enum('contactpage', ['yes', 'no']);
+            $table->tinyInteger('contactpage_order_number', false, true)->nullable()->unique();
             $table->timestamps();
             $table->softDeletes();
         });

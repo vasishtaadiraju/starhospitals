@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
@@ -53,6 +54,26 @@ class FAQ extends Resource
                 ->rows(6)
                 ->hideFromIndex()
                 ->rules('required', 'string'),
+
+            Boolean::make('Show in About page', 'aboutpage')
+                ->trueValue('yes')
+                ->falseValue('no')
+                ->hideFromIndex(),
+
+            Number::make('About page Order Number', 'aboutpage_order_number')
+                ->min(1)
+                ->hideFromIndex()
+                ->rules('nullable', 'integer', 'numeric'),
+
+            Boolean::make('Show in Contact page', 'contactpage')
+                ->trueValue('yes')
+                ->falseValue('no')
+                ->hideFromIndex(),
+
+            Number::make('Contact page Order Number', 'contactpage_order_number')
+                ->min(1)
+                ->hideFromIndex()
+                ->rules('nullable', 'integer', 'numeric'),
 
             BelongsToMany::make('Region', 'regions')
                 ->searchable()
