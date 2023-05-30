@@ -26,6 +26,7 @@ return new class extends Migration
             $table->text('long_description')->nullable();
             $table->string('description_image', 100)->nullable();
             $table->string('description_image_alt', 100)->nullable();
+            $table->string('our_locations_text')->nullable();
             $table->tinyInteger('order_number', false, true)->nullable();
             $table->string('slug', 50)->nullable();
             $table->string('meta_title')->nullable();

@@ -23,7 +23,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('description_image', 100)->nullable();
             $table->string('description_image_alt', 100)->nullable();
-            $table->tinyInteger('order_number', false, true)->nullable();
+            $table->string('our_locations_text')->nullable();
             $table->string('slug', 50)->nullable();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();

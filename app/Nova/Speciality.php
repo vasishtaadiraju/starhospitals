@@ -96,6 +96,10 @@ class Speciality extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
 
+            Text::make('Our locations text', 'our_locations_text')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:255'),
+
             Text::make('Slug', 'slug')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:50'),
