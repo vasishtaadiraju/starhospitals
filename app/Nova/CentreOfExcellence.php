@@ -93,7 +93,7 @@ class CentreOfExcellence extends Resource
             Textarea::make('Short Description', 'short_description')
                 ->rows(4)
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string', 'max:255'),
 
             Trix::make('Long Description', 'long_description')
                 ->withFiles('public')
