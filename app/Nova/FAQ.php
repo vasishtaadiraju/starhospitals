@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class FAQ extends Resource
@@ -50,8 +51,7 @@ class FAQ extends Resource
             Text::make('Question', 'question')
                 ->rules('required', 'string'),
 
-            Textarea::make('Answer', 'answer')
-                ->rows(6)
+            Trix::make('Answer', 'answer')
                 ->hideFromIndex()
                 ->rules('required', 'string'),
 
