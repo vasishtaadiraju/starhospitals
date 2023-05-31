@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
             $table->string('title', 50);
+            $table->string('patient_name', 50);
+            $table->string('feedback');
             $table->enum('type', ['image', 'video']);
             $table->string('image')->nullable();
             $table->string('image_alt', 100)->nullable();

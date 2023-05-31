@@ -52,8 +52,15 @@ class Testimonial extends Resource
             ID::make()->sortable(),
 
             Text::make('Title', 'title')
-                ->sortable()
                 ->rules('required', 'string', 'max:100'),
+
+            Text::make('Patient Name', 'patient_name')
+                ->hideFromIndex()
+                ->rules('required', 'string', 'max:50'),
+
+            Text::make('Feedback', 'feedback')
+                ->hideFromIndex()
+                ->rules('required', 'string'),
 
             Select::make('Type', 'type')->options([
                 'image' => 'Image',
