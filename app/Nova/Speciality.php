@@ -216,7 +216,9 @@ class Speciality extends Resource
      */
     public function actions(NovaRequest $request)
     {
-        return [];
+        return [
+            new Actions\DoctorSync
+        ];
     }
 
     public static function redirectAfterCreate(NovaRequest $request, $resource)
