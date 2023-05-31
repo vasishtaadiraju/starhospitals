@@ -13,6 +13,10 @@ class Media extends Model
 
     protected $table = 'media';
 
+    protected $casts = [
+        'published_date' => 'date'
+    ];
+
     public function users()
     {
         return $this->belongsToMany(User::class, 'media_user', 'media_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();

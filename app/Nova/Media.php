@@ -187,4 +187,14 @@ class Media extends Resource
     {
         return [];
     }
+
+    public static function redirectAfterCreate(NovaRequest $request, $resource)
+    {
+        return '/resources/media/';
+    }
+
+    public static function redirectAfterUpdate(NovaRequest $request, $resource)
+    {
+        return '/resources/media/';
+    }
 }

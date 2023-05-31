@@ -13,6 +13,10 @@ class Blog extends Model
 
     protected $table = 'blogs';
 
+    protected $casts = [
+        'published_date' => 'date'
+    ];
+
     public function users()
     {
         return $this->belongsToMany(User::class, 'blog_user', 'blog_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();

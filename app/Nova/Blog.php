@@ -72,7 +72,9 @@ class Blog extends Resource
             Image::make('Image', 'image')
                 ->disk('public')
                 ->hideFromIndex()
-                ->rules('required', 'image', 'max:1024'),
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable'),
 
             Text::make('Image Alt', 'image_alt')
                 ->hideFromIndex()
@@ -86,7 +88,9 @@ class Blog extends Resource
             Image::make('Banner Desktop', 'banner_desktop')
                 ->disk('public')
                 ->hideFromIndex()
-                ->rules('required', 'image', 'max:1024'),
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable'),
 
             Text::make('Banner Desktop Alt', 'banner_desktop_alt')
                 ->hideFromIndex()
@@ -95,7 +99,9 @@ class Blog extends Resource
             Image::make('Banner Mobile', 'banner_mobile')
                 ->disk('public')
                 ->hideFromIndex()
-                ->rules('required', 'image', 'max:1024'),
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable'),
 
             Text::make('Banner Mobile Alt', 'banner_mobile_alt')
                 ->hideFromIndex()
@@ -148,7 +154,7 @@ class Blog extends Resource
                     ];
                 }),
 
-            BelongsToMany::make('Branch', 'branch')
+            BelongsToMany::make('Branch', 'branches')
                 ->searchable()
                 ->fields(function () {
                     return [
@@ -216,5 +222,15 @@ class Blog extends Resource
     public function actions(NovaRequest $request)
     {
         return [];
+    }
+
+    public static function redirectAfterCreate(NovaRequest $request, $resource)
+    {
+        return '/resources/blogs/';
+    }
+
+    public static function redirectAfterUpdate(NovaRequest $request, $resource)
+    {
+        return '/resources/blogs/';
     }
 }
