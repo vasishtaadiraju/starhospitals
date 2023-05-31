@@ -52,7 +52,7 @@ class Media extends Resource
 
             Text::make('Title', 'title')
                 ->sortable()
-                ->rules('required', 'string', 'max:100'),
+                ->rules('required', 'string', 'max:150'),
 
             Text::make('Media Name', 'media_name')
                 ->sortable()

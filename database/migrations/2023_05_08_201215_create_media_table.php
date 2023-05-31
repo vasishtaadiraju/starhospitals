@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('media', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 50);
+            $table->string('title', 150);
             $table->string('media_name', 50);
             $table->string('image');
             $table->string('image_alt', 100)->nullable();
