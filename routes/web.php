@@ -1,5 +1,9 @@
 <?php
 
+
+use App\Http\Controllers\Web\AboutUsController;
+use App\Http\Controllers\web\CoeController;
+use App\Http\Controllers\Web\ContactUsController;
 use App\Http\Controllers\Web\HomeController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -21,14 +25,7 @@ Route::get('/doctor/book-an-appointment', function () {
     $users = User::paginate(10);
     return view('book-an-appointment.book-appointment',['users'=>$users]);
 });
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+Route::get('/about',[AboutUsController::class,'index'])->name('about');
+Route::get('/contact',[ContactUsController::class,'index'])->name('contact');
 
-Route::get('/contact', function () {
-    return view('contact-us');
-})->name('contact');
-
-Route::get('/speciality', function () {
-    return view('speciality');
-})->name('speciality');
+Route::get('/centers-of-excellence/{slug}',[CoeController::class,'index'])->name('coe');

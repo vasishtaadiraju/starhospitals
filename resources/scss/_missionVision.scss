@@ -124,7 +124,7 @@
         }
 
         h2{
-            @include font-family(600);
+            // @include font-family(600);
             @include media('sm-mob')
         {
             text-align: center

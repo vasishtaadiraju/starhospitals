@@ -11,9 +11,11 @@ class Testimonials extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+
+     public $testimonials;
+    public function __construct($testimonials)
     {
-        //
+        $this->testimonials = $testimonials;
     }
 
     /**

@@ -11,9 +11,10 @@ class Faqs extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $faqs;
+    public function __construct($faqs)
     {
-        //
+        $this->faqs = $faqs;
     }
 
     /**

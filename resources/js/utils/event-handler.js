@@ -27,12 +27,12 @@ function handleAjaxError(response) {
     }
 }
 
-export async function httpRequest(url ,type, body, headers) {
+export async function httpRequest(url ,method, body, headers) {
     let response;
     let data = {};
-    if (type == "POST") {
+    if (method == "POST") {
         data = {
-            method: type,
+            method: method,
             body: JSON.stringify(body),
             // {
             //     title: "test-tile",
@@ -43,8 +43,8 @@ export async function httpRequest(url ,type, body, headers) {
                 "Content-type": "application/json; charset=UTF-8",
             },
         };
-        if (type == "GET") {
-            data = { method: type };
+        if (method == "GET") {
+            data = { method: method };
         }
     }
     response = await fetch(url, data);

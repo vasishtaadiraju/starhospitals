@@ -77,18 +77,18 @@
     }
   }
   .slick-prev {
-    // left: -35px;
+    left: -35px;
     @include media('sm-mob')
     {
-    left: -14px;
+    left: -27px;
     }
     @include media('md-mob')
     {
-    left: -14px;
+    left: -27px;
     }
     @include media('x-sm-tab')
     {
-    left: -14px;
+    left: -27px;
     }
 }
   .slick-prev::before {
@@ -105,19 +105,20 @@
   }
 
   .slick-next {
+    right: -35px;;
     @include media('sm-mob')
     {
-      right: -14px;
+      right: -27px;
 
     }
     @include media('md-mob')
     {
-      right: -14px;
+      right: -27px;
 
     }
     @include media('x-sm-tab')
     {
-      right: -14px;
+      right: -27px;
 
     }
     

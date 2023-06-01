@@ -3,15 +3,29 @@
     <div class="blogs blogs-slider">
         @foreach ($blogs as $item)
             <div class="blogs__card">
-                <a href=""><img class="blogs__image" src="{{ Vite::asset('resources/images/blogs/blog.png') }}"
+                <a href=""><img class="blogs__image" src="{{config('variables.asset').$item->image}}"
                         alt=""> </a>
-                <p class="blogs__category"> <a href="">Neurology</a> </p>
+                <p class="blogs__category"> <a href="">Cardiac Sciences</a> </p>
                 @php
                     $date = date_create($item->published_date);
                 @endphp
-                <p class="blogs__author-published"> <a href="">{{ $item->author }} |
-                        {{ date_format($date, 'M d, Y') }}
-                    </a> </p>
+                <p class="blogs__author-published"> <a href="">{{ $item->author }} 
+                    </a> <span>|</span> <a href="#">
+                        {{ date_format($date, 'M d, Y') }}</a> </p>
+                <p class="blogs__description">{{ $item->title }}</p>
+            </div>
+        @endforeach
+        @foreach ($blogs as $item)
+            <div class="blogs__card">
+                <a href=""><img class="blogs__image" src="{{config('variables.asset').$item->image}}"
+                        alt=""> </a>
+                <p class="blogs__category"> <a href="">Cardiac Sciences</a> </p>
+                @php
+                    $date = date_create($item->published_date);
+                @endphp
+                <p class="blogs__author-published"> <a href="">{{ $item->author }} 
+                    </a> <span>|</span> <a href="#">
+                        {{ date_format($date, 'M d, Y') }}</a> </p>
                 <p class="blogs__description">{{ $item->title }}</p>
             </div>
         @endforeach

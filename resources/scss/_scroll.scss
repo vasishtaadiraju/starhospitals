@@ -1,0 +1,117 @@
+@use "utils/variables" as variables;
+@import 'utils/utils';
+
+@import "utils/media-queries";
+
+.scroll{
+    background-color: variables.$starhospitals-brand-primary;
+    height: 6rem;
+    @include media('sm-mob')
+    {
+        height: 6rem;
+    }
+    @include media('md-mob')
+    {
+        height: 6rem;
+    }
+    @include media('lg-mob')
+    {
+        height: 6rem;
+    }
+    @include media('x-sm-tab')
+    {
+        height: 6rem;
+    }
+    @include media('sm-tab')
+    {
+        height: 6rem;
+    }
+
+    &__wrapper{
+        width: 60%;
+        height: 100%;
+        margin: 0px auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        @include media('sm-mob')
+    {
+        width: 90%;
+       
+    }
+    @include media('md-mob')
+    {
+        width: 90%;
+       
+    }
+    @include media('lg-mob')
+    {
+        width: 90%;
+       
+    }
+    @include media('x-sm-tab')
+    {
+        width: 90%;
+       
+    }
+    @include media('sm-tab')
+    {
+        width: 90%;
+       
+    }
+    }
+
+    &_tabs{
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        @include media('sm-mob')
+        {
+            padding: 0.5em 0px; 
+            flex: 0 0 calc(98%/2);
+        }
+        @include media('md-mob')
+        {
+            padding: 0.5em 0px; 
+            flex: 0 0 calc(98%/2);
+        }
+        @include media('lg-mob')
+        {
+            padding: 0.5em 0px; 
+            flex: 0 0 calc(98%/2);
+        }
+        @include media('x-sm-tab')
+        {
+            padding: 0.5em 0px; 
+            flex: 0 0 calc(98%/2);
+        }
+        @include media('sm-tab')
+        {
+            padding: 0.5em 0px; 
+            flex: 0 0 calc(98%/2);
+        }
+        @include font-family(500);
+        a{
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            @include media('sm-mob')
+            {
+                font-size: 10px
+            }
+            @include media('md-mob')
+            {
+                font-size: 10px
+            }
+            @include media('lg-mob')
+            {
+                font-size: 10px
+            }
+            @include media('x-sm-tab')
+            {
+                font-size: 10px
+            }
+        };
+    }
+}

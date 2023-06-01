@@ -478,12 +478,14 @@
                 <li class="footer__columns__option__label footer__columns__option__label--dropdown">Centers of
                     Excellence
                     <ul class="footer__columns__option__label--dropdown__option">
-                        <li class="footer__columns__option__item"><a href="">Cardiology</a></li>
-                        <li class="footer__columns__option__item"><a href="">Emergency Services</a></li>
+                        @foreach ($coes as $item)
+                        <li class="footer__columns__option__item"><a href="">{{$item->name}}</a></li>
+                        @endforeach
+                        {{-- <li class="footer__columns__option__item"><a href="">Emergency Services</a></li>
                         <li class="footer__columns__option__item"><a href="">Gastroenterology</a></li>
                         <li class="footer__columns__option__item"><a href="">Neurology</a></li>
                         <li class="footer__columns__option__item"><a href="">Nephrology</a></li>
-                        <li class="footer__columns__option__item"><a href="">Pulmonology</a></li>
+                        <li class="footer__columns__option__item"><a href="">Pulmonology</a></li> --}}
 
                     </ul>
                 </li>
@@ -523,8 +525,8 @@
 
         <div class="footer__columns">
             <ul class="footer__columns__option">
-                <li class="footer__columns__option__label --active">Specialities
-                    <ul>
+                <li class="footer__columns__option__label footer__columns__option__label--dropdown">Specialities
+                    <ul class="footer__columns__option__label--dropdown__option">
                         <li class="footer__columns__option__item"><a href="">Cardiologists in Hyderabad</a>
                         </li>
                         <li class="footer__columns__option__item"><a href="">Gastroenterologists in
@@ -549,10 +551,13 @@
         <div class="footer__columns">
             <ul class="footer__columns__option">
 
-                <li class="footer__columns__option__label">Locations
+                <li class="footer__columns__option__label footer__columns__option__label--dropdown">Locations
                     <ul class="footer__columns__option__label--dropdown__option">
-                        <li class="footer__columns__option__item"><a href="">Banjara Hills</a></li>
-                        <li class="footer__columns__option__item"><a href="">Financial District</a></li>
+                        @foreach ($branches as $item)
+                        <li class="footer__columns__option__item"><a href="">{{$item->name}}</a></li>
+                            
+                        @endforeach
+                        {{-- <li class="footer__columns__option__item"><a href="">Financial District</a></li> --}}
                     </ul>
                 </li>
             </ul>

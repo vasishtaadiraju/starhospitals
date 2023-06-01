@@ -4,7 +4,7 @@
     <div class="consultation">
         
         <div class="consultation__card">
-            <h2>Book A Consultation</h2>
+            <h2 class="section-heading">Book A Consultation</h2>
             <p class="consultation__card__info">Lorem ipsum dolor sit amet consectetur. Pharetra hac gravida vestibulum donec accumsan morbi. In aliquam turpis pellentesque ultricies imperdiet accumsan sociis.</p>
             <div class="consultation__card__contact-info">
                 <ul class="consultation__card__contact-info__list">

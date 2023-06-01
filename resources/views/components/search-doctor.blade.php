@@ -1,34 +1,40 @@
 <form action="">
     <div class="search-doctor">
-        <div class="search-doctor__submit-btn-container search-doctor__submit-btn-container--mobile ">
-            <h2>Want a Consultation ?</h2>
-            <button class="search-doctor__submit-btn search-doctor__submit-btn--mobile">
+        <div class="search-doctor__submit-btn-container search-doctor__submit-btn-container--mobile">
+            <h2 class="section-heading">Want a Consultation ?</h2>
+            {{-- <button class="search-doctor__submit-btn search-doctor__submit-btn--mobile">
                 Book Now
-            </button>
+            </button> --}}
         </div>
         <div class="filter filter--type-secondary">
             <div class="filter__fields-wrapper">
 
                 <img src="{{ Vite::asset('resources/images/Icons/sthetoscope.png') }}" alt="">
 
-                <select type="text" placeholder="Enter Doctor Name">
-                    <option value="">Speciality</option>
+                <select type="text" class="location-select-box" placeholder="Enter Doctor Name">
+                    <option value="">Select Location</option>
+                    @foreach ($branches as $item)
+                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="filter__fields-wrapper">
 
                 <img src="{{ Vite::asset('resources/images/Icons/sthetoscope.png') }}" alt="">
 
-                <select type="text" placeholder="Enter Doctor Name">
-                    <option value="">Center of Excellence</option>
+                <select type="text" class="speciality-select-box" placeholder="Enter Doctor Name">
+                    <option value="">Select Speciality</option>
+                    @foreach ($coes as $item)
+                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="filter__fields-wrapper">
 
                 <img src="{{ Vite::asset('resources/images/Icons/location.png') }}" alt="">
 
-                <select type="text" placeholder="Enter Doctor Name">
-                    <option value="">Filter by Location</option>
+                <select type="text" class="doctor-select-box" placeholder="Enter Doctor Name">
+                    <option value="">Select Doctor</option>
                 </select>
             </div>
 

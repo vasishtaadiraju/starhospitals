@@ -11,9 +11,10 @@ class FindUs extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $branches;
+    public function __construct($branches)
     {
-        //
+        $this->branches = $branches;
     }
 
     /**

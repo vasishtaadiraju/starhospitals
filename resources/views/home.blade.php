@@ -1,16 +1,23 @@
 @extends('layout.main')
 @section('content')
 <x-slider :$content/>
-<x-search-doctor />
+<x-search-doctor :$branches :$coes/>
 <x-gap/>
+
+
 <x-about-coe  :$coes/>
+
 <x-gap/>
-<x-our-specialists :$content/>
+<x-our-specialists :$content :$branches  :$coes/>
 <x-gap/>
+
+
 <x-why-choose-us :$content/>
+
 <x-gap/>
 <x-highlights/>
 {{-- <x-gap/> --}}
+
 <x-about-us :$content/>
 <x-gap/>
 <x-reviews :$content  :$reviews/>

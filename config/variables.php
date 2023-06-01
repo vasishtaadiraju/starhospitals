@@ -1,4 +1,4 @@
 <?php 
 return [
-    'asset' => env('ASSET_URL'),
+    'asset' => env('VITE_ASSET_URL'),
 ];

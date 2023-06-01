@@ -7,10 +7,15 @@
 
     @include centerSection;
     width: 80%;
+
+    &--secondary{
+        width:70%;
+    }
     &__title,&__sub-title{
         text-align: center;
         font-family: variables.$starhospitals-brand-secondary-font;
-        color: variables.$starhospitals-text-primary;
+        color: variables.$section-heading-desc;
+        line-height:20px
     }
 
     &__title{
@@ -21,7 +26,7 @@
     }
     &__sub-title{
         font-weight: 400 !important;
-        margin: 2em 0px;
+        margin: 3em 0px 4em 0px;
         @include media('sm-mob')
         {
             font-size: 14px;

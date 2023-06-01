@@ -11,9 +11,11 @@ class AboutSpeciality extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $content;
+
+    public function __construct($content)
     {
-        //
+        $this->content = $content;
     }
 
     /**

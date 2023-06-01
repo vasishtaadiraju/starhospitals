@@ -6,14 +6,18 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class filter extends Component
+class Filter extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $branches , $coes ,$content;
+
+    public function __construct($branches,$coes,$content)
     {
-        //
+        $this->branches = $branches;
+        $this->coes = $coes;
+        $this->content = $content;
     }
 
     /**

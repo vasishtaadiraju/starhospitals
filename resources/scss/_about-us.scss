@@ -26,6 +26,10 @@ about-root{
     {
         flex-direction: column;
     }
+    @include media('md-tab')
+    {
+        flex-direction: column;
+    }
     &__image-wrapper{
         padding: 2em;
         position: relative;
@@ -178,7 +182,8 @@ about-root{
             line-height: 22px;
             @include media('sm-mob')
             {
-                text-align: center;
+                text-align: justify;
+
                 font-size: 13px
             } 
             @include media('md-mob')
@@ -196,10 +201,10 @@ about-root{
 
         &__read-more{
             @include btn-primary(red,transparent);
-            width: max-content;
-            margin-top: 1em;
+            width: 167px;
+            margin-top: 2em;
             margin-left: 0px;
-            padding: 0.75em 1em;
+            padding: 1em 1em;
             @include media('sm-mob')
             {
                 margin: 0px auto;

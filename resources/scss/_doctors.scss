@@ -45,7 +45,11 @@
     @include centerSection;
     // padding: 2em 0px;
     // z-index: -1;
-    
+    // margin: 1em 0px;
+    &--primary{
+        width:80%;
+        // padding-bottom: 5em;
+    }
 
     &__cards-wrapper{
         width: 100%;
@@ -71,20 +75,62 @@
 
     &--primary{
         display: block;
+        // position:relative;
         // border: 1px solid gray;
         box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
         -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
         -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.10);
-        margin:0.5em;
+        margin:1em;
+        // margin-left: 0px;
+        padding:0px !important;
+
+        @include media('sm-mob')
+        {
+            margin: 1em;
+        }
         &__doctor-img{
-            width: 100%;
+            width: 100% !important;
+            border-radius:10px 10px 0px 0px;
 
         };
         
         &__content{
-            padding: 1em 0px;
+            padding: 2em;
             cursor: pointer;
-            @include font-family(400)
+            @include font-family(400);
+            height:14rem;
+            display:flex !important;
+            flex-direction:column;
+            justify-content:space-between !important;
+            
+            h4{
+                // font-size:16px;
+                // line-height: 30px;
+                // min-height: 30px;
+            }
+
+            
+        }
+
+        &__speciality{
+            font-size:14px;
+            line-height:20px;
+            font-weight:400;
+
+        }
+        &__location{
+            font-size:12px;
+            padding-top:0.75em;
+            color: variables.$starhospitals-text-secondary;
+        }
+       
+
+        &__button-wrapper{
+            // padding-top:2em;
+            // position:absolute;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
         }
     }
     &__lt{
@@ -175,7 +221,7 @@
             align-items: center;
             color: variables.$starhospitals-text-primary;
             font-family: variables.$starhospitals-brand-secondary-font;
-            font-weight: 500;
+            font-weight: 700;
             font-size: 12px;
             margin-top: 1em;
             @include media("sm-mob") {

@@ -11,9 +11,12 @@ class SearchDoctor extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $branches , $coes;
+
+    public function __construct($branches,$coes)
     {
-        //
+        $this->branches = $branches;
+        $this->coes = $coes;
     }
 
     /**

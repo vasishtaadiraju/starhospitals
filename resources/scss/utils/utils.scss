@@ -6,6 +6,11 @@
     // src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
     src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
   }
+  @font-face {
+    font-family: 'Plus Jakarta Sans Bold';
+    // src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBold.ttf') format('truetype');
+  }
 @mixin centerSection{
     width: variables.$starhospitals-component-width;
     margin: 0px auto;
@@ -38,6 +43,7 @@
         width: 100%;
         height: 80%;
         background: none;
+
     }
 }
 
@@ -99,6 +105,7 @@ place-items: center;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 select {
@@ -235,8 +242,9 @@ body{
 }
 
 .section-heading{
-        @include font-family(700);
-
+        font-family: 'Plus Jakarta Sans Bold';
+        font-weight: 400 !important;
+        font-size: 36px;
         @include media("sm-mob") {
         font-size: 20px;
             
@@ -253,7 +261,7 @@ body{
 
         }
         @include media("x-sm-tab") {
-        font-size: 20px;
+        font-size: 30px;
             
 
         }
@@ -281,4 +289,9 @@ body{
     cursor: pointer;
 
     }
+}
+
+input,select{
+    @include font-family(500);
+
 }

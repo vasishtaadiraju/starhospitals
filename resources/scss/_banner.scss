@@ -43,7 +43,7 @@
     &__content {
         position: absolute;
         top: 50%;
-        left: 10%;
+        left: 7.5%;
         transform: translateY(-50%);
         width: 30%;
         @include media("sm-mob") {

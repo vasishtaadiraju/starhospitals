@@ -22,15 +22,16 @@
     @include media('x-sm-tab')
     {
         flex-direction: column-reverse;
+        gap:3rem;
     }
     @include media('sm-tab')
     {
         flex-direction: column;
-        gap: 1em;
+        gap: 3em;
     }
     @include media('md-tab')
     {
-        flex-direction: column-reverse;
+        // flex-direction: column-reverse;
     }
 
     &__heading-mobile{
@@ -72,8 +73,12 @@
                 flex: 0 0 100%;
                 // margin-left: 0px auto
             }
+            @include media('md-tab')
+            {
+                // flex: 0 0 30%;
+            }
         h2{
-            @include font-family(600);
+            // @include font-family(600);
             @include media('sm-mob')
             {
                 display: none;
@@ -107,10 +112,11 @@
 
         }
         &__contact-info{
-            width: 70%;
+            width: 90%;
             background-color: variables.$starhospitals-brand-primary;
         border-radius: 20px;
-        padding: 1em;
+        padding: 3em;
+        padding-top: 4em;
         margin-top: 1em;
         @include media('sm-mob')
         {
@@ -138,6 +144,9 @@
                         position: absolute;
                         left: 0.5em;
                         // top: 0px;
+                        margin-right: 0.75em;
+                        height: 20px;
+                        width: 20px;
                     }
 
                     ul{
@@ -148,6 +157,11 @@
                             padding: 0.25em 0px;
                          @include font-family(400);
                          font-size: 12px;
+
+                         a{
+                        color: variables.$starhospitals-ui-tertiary;
+                    
+                         }
 
                         }
                     }
@@ -197,6 +211,12 @@
             padding:1em;
             padding-bottom: 2em;
             flex:0 0 100%
+        }
+        @include media('md-tab')
+        {
+            padding:1em;
+            // padding-bottom: 2em;
+            flex:0 0 50%
         }
         &__title{
             @include font-family(600);
@@ -278,6 +298,8 @@
                 border-radius: 10px;
                 padding: 1em 1em;
                 flex: 0 0 calc(95%/2);
+                color: gray;
+                font-weight: 500;
                 @include media('sm-mob')
                 {
                     margin-bottom: 2em;

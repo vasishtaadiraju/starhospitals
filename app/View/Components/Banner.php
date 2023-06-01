@@ -11,9 +11,11 @@ class Banner extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $imgurl,$text;
+    public function __construct($imgurl,$text)
     {
-        //
+        $this->imgurl = $imgurl;
+        $this->text = $text;
     }
 
     /**

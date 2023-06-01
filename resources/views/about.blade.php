@@ -1,10 +1,10 @@
 @extends('layout.main')
 @section('content')
-<x-banner/>
+<x-banner :imgurl='$about->banner_desktop' :text="$about->banner_text"/>
 <x-gap/>
-<x-mission-vision/>
+<x-mission-vision :$about/>
 <x-gap/>
-<x-chairman-desk/>
+<x-chairman-desk :$about/>
 {{-- <x-gap/> --}}
 <div class="ui-background">
     <x-awards/>
@@ -12,11 +12,11 @@
 </div>
 
 <x-gap/>
-<x-about-star/>
+<x-about-star :$about/>
 <x-gap/>
 
 <div class="ui-background">
-    <x-locations/>
+    <x-locations :$about :locations='$branches'/>
 
 </div>
 <x-gap/>
@@ -25,7 +25,7 @@
 <x-gap/>
 
 <div class="ui-background">
-    <x-faqs/>
+    <x-faqs :$about :$faqs/>
 
 
 </div>

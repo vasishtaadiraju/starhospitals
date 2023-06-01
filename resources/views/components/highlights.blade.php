@@ -26,7 +26,7 @@
                     
                     
              </div>
-                <div>
+                <div class="highlights__card__text">
                     <h1>15+</h1>
                     <p>Years of Experience</p>
                 </div>
@@ -52,7 +52,7 @@
                     </svg>
                     
             </div>
-               <div>
+               <div class="highlights__card__text">
                    <h1>85,000+</h1>
                    <p>Surgeries</p>
                </div>
@@ -74,7 +74,7 @@
                 </svg>
                 
         </div>
-           <div>
+           <div class="highlights__card__text">
                <h1>600+</h1>
                <p>Beds</p>
            </div>
@@ -93,8 +93,8 @@
             </svg>
             
     </div>
-       <div>
-           <h1>25 Lakhs+</h1>
+       <div class="highlights__card__text">
+           <h1 >25 Lakhs+</h1>
            <p>Happy Patients</p>
        </div>
 </div>

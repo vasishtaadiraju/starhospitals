@@ -11,11 +11,13 @@ class OurSpecialists extends Component
     /**
      * Create a new component instance.
      */
-    public $content;
+    public $content,$branches,$coes;
 
-    public function __construct($content)
+    public function __construct($content,$branches,$coes)
     {
         $this->content = $content;
+        $this->branches = $branches;
+        $this->coes = $coes;
     }
 
     /**

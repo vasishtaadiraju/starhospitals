@@ -6,7 +6,7 @@
 .about-star{
     @include centerSection;
     display: flex;
-    gap: 2em;
+    gap: 5em;
     @include media('sm-mob')
     {
         flex-direction: column;
@@ -24,6 +24,10 @@
         flex-direction: column;
     }
     @include media('sm-tab')
+    {
+        flex-direction: column;
+    }
+    @include media('md-tab')
     {
         flex-direction: column;
     }
@@ -102,7 +106,7 @@
     &__content-container{
         h2{
             padding-bottom: 1em;
-            @include font-family(600);
+            // @include font-family(600);
             @include media('sm-mob')
             {
                 text-align: center

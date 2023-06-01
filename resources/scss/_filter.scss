@@ -30,12 +30,13 @@
 }
 
 .search-doctor {
-    min-height: 8rem;
+    min-height: 9rem;
     background-color: variables.$starhospitals-brand-primary;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 5%;
+    padding-left:7.5%;
+    padding-right:4%;
     
 
     @include media("sm-mob") {
@@ -110,41 +111,41 @@
 
        
 
-        h2{
-        @include font-family(700);
+        // h2{
+        // // @include font-family(700);
 
-        @include media("sm-mob") {
-        font-size: 20px;
+        // @include media("sm-mob") {
+        // font-size: 20px;
             
 
-        }
-        @include media("md-mob") {
-        font-size: 20px;
+        // }
+        // @include media("md-mob") {
+        // font-size: 20px;
             
 
-        }
-        @include media("lg-mob") {
-        font-size: 20px;
+        // }
+        // @include media("lg-mob") {
+        // font-size: 20px;
             
 
-        }
-        @include media("x-sm-tab") {
-        font-size: 20px;
+        // }
+        // @include media("x-sm-tab") {
+        // font-size: 20px;
             
 
-        }
-        @include media("md-tab") {
-        font-size: 20px;
+        // }
+        // @include media("md-tab") {
+        // font-size: 20px;
             
 
-        }
-        }
+        // }
+        // }
         &--mobile{
             padding: 0px 1em;
             justify-content: space-between;
             gap: 0.5em;
 
-            display:none;
+            display:none; 
             @include media("sm-mob") {
                 display:flex;
     
@@ -172,44 +173,44 @@
         border: none;
         outline: none;
         font-size: 15px;
-        padding: 0.85em 0px;
-        font-weight: 400;
+        padding: 1em 0px;
+        font-weight: 600;
         cursor: pointer;
-        width: 100%;
+        width: 90%;
         // margin-right: 15rem;
         @include media("sm-mob") {
             padding: 1em;
             font-size: 12px;
         width: max-content;
-        display:none;
+        // display:none;
 
         }
         @include media("md-mob") {
             padding: 1em;
             font-size: 12px;
         width: max-content;
-        display:none;
+        // display:none;
 
         }
         @include media("lg-mob") {
             padding: 1em;
             font-size: 12px;
         width: max-content;
-        display:none;
+        // display:none;
 
         }
         @include media("x-sm-tab") {
             padding: 1em;
             font-size: 12px;
         width: max-content;
-        display:none;
+        // display:none;
 
         }
         @include media("md-tab") {
             padding: 1em;
             font-size: 12px;
         width: max-content;
-        display:none;
+        // display:none;
 
         }
 
@@ -231,6 +232,10 @@
                 display:block;
     
             }
+            @include media("sm-tab") {
+                display:block;
+    
+            }
             @include media("md-tab") {
                 display:block;
     
@@ -240,6 +245,7 @@
 }
 .filter {
     @include centerSection;
+    width:79%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

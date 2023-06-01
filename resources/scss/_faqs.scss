@@ -5,6 +5,7 @@
 
 .faqs{
     @include centerSection;
+    width: 80%;
     margin-top: 3em;
 
     &__card{
@@ -33,18 +34,21 @@
             }
         }
         &__answer{
-            padding: 0px 1em;
+            padding: 0em 2em;
             // padding-top: 2em;
             @include font-family(400);
             line-height: 25px;
             max-height: 0px;
             overflow: hidden;
             // padding: 0;
-            transition: max-height 1s;
+            transition: all 1s;
             text-align: justify;
 
             &--active{
+                // padding: 2em 1px;
                 max-height: 50rem;
+                margin: 2em 0px;
+
             //     padding: 1em;
             // padding-top: 2em;
 

@@ -1,7 +1,7 @@
-<div class="about-speciality">
+<div class="about-speciality" id="overview">
 <div class="about-speciality__image-wrapper">
     <div class="about-speciality__image-wrapper__image">
-        <img class="" src="{{Vite::asset('resources/images/about/speciality/about-speciality.png')}}" alt="">
+        <img class="" src="{{ config('variables.asset') . $content->description_image }}" alt="{{$content->description_image_alt}}">
 
     </div>
     <svg class="about-speciality__image-wrapper__dot-right" width="115" height="75" viewBox="0 0 115 75" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -203,19 +203,15 @@
         
 </div>
 <div class="about-speciality__content">
-<h2 class="about-speciality__content__heading section-heading">Cardiac Sciences</h2>
+<h2 class="about-speciality__content__heading section-heading">{{$content->name}}</h2>
 <div class="about-speciality__content__links">
-    <a href="#" class="">Banjara Hills</a> | <a href="#" class="">Banjara Hills</a>
+    @foreach ($content->branches as $item)
+    <a href="#" class="">{{$item->name}}</a> | 
+    @endforeach
+    {{-- | <a href="#" class="">Banjara Hills</a> --}}
 </div>
 <div class="about-speciality__content__description">
-    Lorem ipsum dolor sit amet consectetur. Nunc amet sed nibh gravida eros venenatis. Sed interdum dignissim nibh adipiscing ut at mattis. Ut sapien integer bibendum viverra. Purus in lacus neque a urna platea. Quis at ac quis vitae elit. Mauris urna vel et sed vitae magna vitae velit turpis.
-
-Id netus est molestie viverra et. <a href="">Integer</a>  diam turpis a penatibus dictumst pretium. Blandit feugiat eget pellentesque hendrerit ut amet risus tempor. Pharetra aliquam dis erat interdum purus quisque. Ac bibendum facilisi diam malesuada auctor nam. Lorem commodo sed eu cras sit massa ac. Aenean odio egestas elementum eget hendrerit. Ultrices vitae lacus facilisis viverra. Mauris sed ultricies ullamcorper accumsan nibh vulputate egestas gravida. Nec viverra tellus massa nunc feugiat nulla dignissim.
-
-Fermentum adipiscing dictum nec sit. Fermentum tincidunt faucibus cras auctor. Sapien ut est faucibus tortor ultrices commodo eget ultrices eleifend. Lectus in enim etiam ac tempor. Fermentum donec gravida blandit neque in. Sem vivamus lorem feugiat purus porttitor ut tempus faucibus dictum. Nisi ultricies tincidunt amet cras egestas. Vitae gravida urna vitae pulvinar vivamus aliquam donec commodo sapien. Consequat eu eget lacus facilisis arcu consectetur nec laoreet. In vitae feugiat ullamcorper mi bibendum rhoncus.
-    <li>dkkdslkldgs</li>
-    <li>dkkdslkldgs</li>
-    <li>dkkdslkldgs</li>
+ {!!$content->long_description!!}
 </div>
 </div>
 </div>

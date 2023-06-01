@@ -10,3 +10,4 @@ import './about-coe';
 import './faqs';
 import './footer';
 import './auto-complete';
+import './doctors';
