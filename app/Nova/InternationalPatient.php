@@ -95,7 +95,7 @@ class InternationalPatient extends Resource
 
             Text::make('Description', 'key_highlight' . $number . '_description')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:100')
+                ->rules('required', 'string', 'max:150')
         ];
     }
 
