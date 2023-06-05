@@ -19,6 +19,10 @@ return new class extends Migration
             $table->tinyInteger('aboutpage_order_number', false, true)->nullable()->unique();
             $table->enum('contactpage', ['yes', 'no']);
             $table->tinyInteger('contactpage_order_number', false, true)->nullable()->unique();
+            $table->enum('internationalpage', ['yes', 'no']);
+            $table->tinyInteger('internationalpage_order_number', false, true)->nullable()->unique();
+            $table->enum('careerpage', ['yes', 'no']);
+            $table->tinyInteger('careerpage_order_number', false, true)->nullable()->unique();
             $table->timestamps();
             $table->softDeletes();
         });

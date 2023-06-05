@@ -75,6 +75,26 @@ class FAQ extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'integer', 'numeric'),
 
+            Boolean::make('Show in International page', 'internationalpage')
+                ->trueValue('yes')
+                ->falseValue('no')
+                ->hideFromIndex(),
+
+            Number::make('International page Order Number', 'internationalpage_order_number')
+                ->min(1)
+                ->hideFromIndex()
+                ->rules('nullable', 'integer', 'numeric'),
+
+            Boolean::make('Show in Career page', 'careerpage')
+                ->trueValue('yes')
+                ->falseValue('no')
+                ->hideFromIndex(),
+
+            Number::make('Career page Order Number', 'careerpage_order_number')
+                ->min(1)
+                ->hideFromIndex()
+                ->rules('nullable', 'integer', 'numeric'),
+
             BelongsToMany::make('Region', 'regions')
                 ->searchable()
                 ->fields(function () {

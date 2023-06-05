@@ -5,9 +5,11 @@ namespace App\Providers;
 use App\Nova\AboutUs;
 use App\Nova\Blog;
 use App\Nova\Branch;
+use App\Nova\Career;
 use App\Nova\CentreOfExcellence;
 use App\Nova\FAQ;
 use App\Nova\Homepage;
+use App\Nova\InternationalPatient;
 use App\Nova\Media;
 use App\Nova\Region;
 use App\Nova\Role;
@@ -39,10 +41,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             return [
                 MenuSection::dashboard(Main::class)->icon('chart-bar'),
 
-                MenuSection::resource(Homepage::class)->icon('home'),
-
-                MenuSection::resource(AboutUs::class)->icon('identification'),
-
                 MenuSection::resource(User::class)->icon('user-group'),
 
                 MenuSection::make('Location', [
@@ -61,6 +59,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 MenuSection::resource(Media::class),
 
                 MenuSection::resource(FAQ::class)->icon('question-mark-circle'),
+
+                MenuSection::resource(Homepage::class)->icon('home'),
+
+                MenuSection::resource(AboutUs::class)->icon('identification'),
+
+                MenuSection::resource(InternationalPatient::class),
+
+                MenuSection::resource(Career::class),
             ];
         });
 
