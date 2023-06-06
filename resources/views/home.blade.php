@@ -1,4 +1,7 @@
 @extends('layout.main')
+@section('css')
+@vite(['resources/scss/homepage.scss', 'resources/js/app.js'])
+@endsection
 @section('content')
 <x-slider :$content/>
 <x-search-doctor :$branches :$coes/>

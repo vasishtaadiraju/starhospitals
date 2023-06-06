@@ -6,6 +6,14 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/scss/appointments.scss',
+                'resources/scss/homepage.scss',
+                'resources/scss/speciality.scss',
+                'resources/scss/international-patients.scss',
+                'resources/scss/about.scss',
+                'resources/scss/contact.scss',
+                'resources/scss/career.scss',
+                'resources/scss/find-doctor.scss',
+                'resources/scss/branch.scss',
                 'resources/css/app.css',
                 'resources/js/app.js',
                 ],

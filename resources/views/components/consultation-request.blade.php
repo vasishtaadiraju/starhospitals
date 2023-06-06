@@ -64,7 +64,7 @@
                 <button class="consultation__form__submit">Request a Call Back</button>
             </form>
             <p class="consultation__form__note">You will receive a confirmation message on your phone</p>
-            <img src="{{Vite::asset('resources/images/Icons/texture.png')}}" alt="" class="consultation__form__texture">
+            <img src="" data-src="{{Vite::asset('resources/images/Icons/texture.png')}}" alt="" class="consultation__form__texture">
         </div>
         <div class="consultation__heading-mobile">
     <x-heading :title="'Book a Consultation'" :description="'

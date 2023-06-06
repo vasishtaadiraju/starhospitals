@@ -25,6 +25,15 @@
             
 
         }
+        @include media("sm-tab") {
+            width: 60%;
+            margin-top:0px;
+
+            
+
+        }
+
+        
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -33,7 +42,7 @@
         justify-content: space-between;
         flex-wrap: nowrap;
     }
-    align-items: center;
+    // align-items: center;
     &__card {
         flex: 0 0 35%;
         background-color: white;
@@ -59,7 +68,7 @@
 
         }
         @include media("sm-tab") {
-            flex: 0 0 calc(95% / 3);
+            flex: 0 0 calc(95% / 2);
             margin-top: 2em;
 
         }

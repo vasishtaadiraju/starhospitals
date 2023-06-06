@@ -145,10 +145,10 @@ $footer-columns: 5;
                     width: 50% !important;
                     margin: 0px 2em;
                 }
-                @include media("sm-tab") {
-                    width: 50% !important;
-                    margin: 0px 2em;
-                }
+                // @include media("sm-tab") {
+                //     width: 50% !important;
+                //     margin: 0px 2em;
+                // }
             }
         }
 

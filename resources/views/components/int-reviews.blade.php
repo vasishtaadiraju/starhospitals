@@ -2,7 +2,7 @@
     <div class="int-reviews__slide-item">
         <div class="int-reviews__card">
             <div class="int-reviews__card__image-wrapper ctg-video">
-                <img src="{{Vite::asset('resources/images/testimonials/international/Rectangle 12.png')}}" alt="">
+                <img src="" data-src="{{Vite::asset('resources/images/testimonials/international/Rectangle 12.png')}}" alt="">
                 <div class="int-reviews__card__image-wrapper__circle int-reviews__card__image-wrapper__circle--red"></div>
                 <div class="int-reviews__card__image-wrapper__circle int-reviews__card__image-wrapper__circle--blue"></div>
             </div>
@@ -21,7 +21,7 @@
     <div class="int-reviews__slide-item">
         <div class="int-reviews__card">
             <div class="int-reviews__card__image-wrapper">
-                <img src="{{Vite::asset('resources/images/testimonials/international/Rectangle 12.png')}}" alt="">
+                <img src="" data-src="{{Vite::asset('resources/images/testimonials/international/Rectangle 12.png')}}" alt="">
                 <div class="int-reviews__card__image-wrapper__circle int-reviews__card__image-wrapper__circle--red"></div>
                 <div class="int-reviews__card__image-wrapper__circle int-reviews__card__image-wrapper__circle--blue"></div>
             </div>

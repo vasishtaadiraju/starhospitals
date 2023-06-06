@@ -4,7 +4,7 @@
 
     @foreach ($locations as $item)
     <div class="locations__card">
-        <img src="{{ config('variables.asset') . $item->card_image }}" alt="">
+        <img src="" data-src="{{ config('variables.asset') . $item->card_image }}" alt="">
         <div class="locations__card__content-wrapper">
             <h3>{{$item->name}}</h3>
             <p>{{$item->address}}</p>
@@ -16,7 +16,7 @@
     @endforeach
     
     {{-- <div class="locations__card">
-        <img src="{{Vite::asset('resources/images/about/hospital-image.png')}}" alt="">
+        <img src="" data-src="{{Vite::asset('resources/images/about/hospital-image.png')}}" alt="">
         <div class="locations__card__content-wrapper">
             <h3>Financial District</h3>
             <p>Full Address</p>
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="locations__card">
-        <img src="{{Vite::asset('resources/images/about/hospital-image.png')}}" alt="">
+        <img src="" data-src="{{Vite::asset('resources/images/about/hospital-image.png')}}" alt="">
         <div class="locations__card__content-wrapper">
             <h3>Financial District</h3>
             <p>Full Address</p>

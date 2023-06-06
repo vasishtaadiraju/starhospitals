@@ -2,7 +2,7 @@
 
 <div class="facilities">
     <div class="facilities__image">
-        <img src="{{ Vite::asset('resources/images/int-patients/Rectangle 96.png') }}" alt="">
+        <img src="" data-src="{{ Vite::asset('resources/images/int-patients/Rectangle 96.png') }}" alt="">
     </div>
     <div class="facilities__content">
         <ul>

@@ -12,7 +12,7 @@
     <x-heading :title="'Meet Our Specialists, Financial District'" :description="$content->meet_our_specialist_text" />
         {{-- <x-filter :$content :branches=[] :coes=[] /> --}}
         <div style="height:1em"></div>
-        <div class="doctors doctors--primary specialists-slider financial-slider" >
+        <div class="doctors doctors--primary  financial-slider" >
         
         </div>
        {{-- <button class="view-all-btn">

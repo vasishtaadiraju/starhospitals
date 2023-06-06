@@ -3,7 +3,7 @@
 
     @foreach ($media as $item)
         <div class="media__card">
-            <a href=""><img class="media__image" src="{{ config('variables.asset') . $item->image }}"
+            <a href=""><img class="media__image" src="" data-src="{{ config('variables.asset') . $item->image }}"
                     alt=""></a>
             @php
                 $date = date_create($item->published_date);
@@ -17,7 +17,7 @@
     @endforeach
     @foreach ($media as $item)
         <div class="media__card">
-            <a href=""><img class="media__image" src="{{ config('variables.asset') . $item->image }}"
+            <a href=""><img class="media__image" src="" data-src="{{ config('variables.asset') . $item->image }}"
                     alt=""></a>
             @php
                 $date = date_create($item->published_date);
@@ -30,7 +30,7 @@
     @endforeach
 
     {{-- <div class="media__card">
-        <a href=""><img class="media__image" src="{{ Vite::asset('resources/images/media/media.png') }}"
+        <a href=""><img class="media__image" src="" data-src="{{ Vite::asset('resources/images/media/media.png') }}"
                 alt=""></a>
 
         <p class="media__date"> <a href="">WELTHI | MARCH 10 ,2023</a> </p>
@@ -40,7 +40,7 @@
 
     </div>
     <div class="media__card">
-        <a href=""><img class="media__image" src="{{ Vite::asset('resources/images/media/media.png') }}"
+        <a href=""><img class="media__image" src="" data-src="{{ Vite::asset('resources/images/media/media.png') }}"
                 alt=""></a>
 
         <p class="media__date"> <a href="">WELTHI | MARCH 10 ,2023</a> </p>
@@ -50,7 +50,7 @@
 
     </div>
     <div class="media__card">
-        <a href=""><img class="media__image" src="{{ Vite::asset('resources/images/media/media.png') }}"
+        <a href=""><img class="media__image" src="" data-src="{{ Vite::asset('resources/images/media/media.png') }}"
                 alt=""></a>
 
         <p class="media__date"> <a href="">WELTHI | MARCH 10 ,2023</a> </p>
@@ -60,7 +60,7 @@
 
     </div>
     <div class="media__card">
-        <a href=""><img class="media__image" src="{{ Vite::asset('resources/images/media/media.png') }}"
+        <a href=""><img class="media__image" src="" data-src="{{ Vite::asset('resources/images/media/media.png') }}"
                 alt=""></a>
 
         <p class="media__date"> <a href="">WELTHI | MARCH 10 ,2023</a> </p>

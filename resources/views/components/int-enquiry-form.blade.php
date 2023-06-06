@@ -3,7 +3,7 @@
             <h2 class="section-heading">Enquiry Form</h2>
             <p>Lorem ipsum dolor sit amet consectetur. Pharetra hac gravida vestibulum donec accumsan morbi. In aliquam turpis pellentesque ultricies imperdiet accumsan sociis.</p>
     
-                <img src="{{Vite::asset('resources/images/int-patients/Rectangle 97.png')}}" alt="">
+                <img src="" data-src="{{Vite::asset('resources/images/int-patients/Rectangle 97.png')}}" alt="">
            
         </div>
         <div class="int-enquiry-form__content">

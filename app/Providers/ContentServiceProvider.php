@@ -30,7 +30,11 @@ class ContentServiceProvider extends ServiceProvider
         });
         view()->composer('home', function($view) {
             $view->with(['coes' => $this->menu_coes,'branches'=>$this->menu_branches]);
-        });view()->composer('book-an-appointment.book-appointment', function($view) {
+        });
+        view()->composer('book-an-appointment.find-doctor', function($view) {
+            $view->with(['coes' => $this->menu_coes,'branches'=>$this->menu_branches]);
+        });
+        view()->composer('branch', function($view) {
             $view->with(['coes' => $this->menu_coes,'branches'=>$this->menu_branches]);
         });
         view()->composer('coe', function($view) {

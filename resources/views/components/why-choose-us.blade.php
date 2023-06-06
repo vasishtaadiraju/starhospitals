@@ -4,7 +4,7 @@
         @if(isset($content->choose1_icon) && $content->choose1_icon != null)
         <div class="choose-us__benifits__card">
             <div class="choose-us__benifits__card__icon-wrapper">
-                {{-- <img src="{{ config('variables.asset') . $content->choose1_icon }}" alt="">
+                {{-- <img src="" data-src="{{ config('variables.asset') . $content->choose1_icon }}" alt="">
                  --}}
                  {!!$content->choose1_icon !!}
             </div>
@@ -18,7 +18,7 @@
         @if(isset($content->choose2_icon) && $content->choose2_icon != null)
         <div class="choose-us__benifits__card">
             <div class="choose-us__benifits__card__icon-wrapper">
-                {{-- <img src="{{ config('variables.asset') . $content->choose2_icon }}" alt="">
+                {{-- <img src="" data-src="{{ config('variables.asset') . $content->choose2_icon }}" alt="">
                  --}}
                  {!!$content->choose2_icon !!}
             </div>
@@ -32,7 +32,7 @@
         @if(isset($content->choose3_icon) && $content->choose3_icon != null)
         <div class="choose-us__benifits__card">
             <div class="choose-us__benifits__card__icon-wrapper">
-                {{-- <img src="{{ config('variables.asset') . $content->choose3_icon }}" alt="">
+                {{-- <img src="" data-src="{{ config('variables.asset') . $content->choose3_icon }}" alt="">
                  --}}
                  {!!$content->choose3_icon !!}
             </div>
@@ -46,7 +46,7 @@
         @if(isset($content->choose4_icon) && $content->choose4_icon != null)
         <div class="choose-us__benifits__card">
             <div class="choose-us__benifits__card__icon-wrapper">
-                {{-- <img src="{{ config('variables.asset') . $content->choose4_icon }}" alt="">
+                {{-- <img src="" data-src="{{ config('variables.asset') . $content->choose4_icon }}" alt="">
                  --}}
                  {!!$content->choose4_icon !!}
             </div>
@@ -68,12 +68,12 @@
         {{-- Dots --}}
         
         <div class="choose-us__image-wrapper">
-            <img src="{{ config('variables.asset') . $content->why_choose_us_image }}" alt="{{$content->why_choose_us_image_alt}}">
+            <img src="" data-src="{{ config('variables.asset') . $content->why_choose_us_image }}" alt="{{$content->why_choose_us_image_alt}}">
         </div>
 
-        <img class="choose-us__image-container__dots-left" src="{{ Vite::asset('resources/images/Icons/Dots(1).png') }}"
+        <img class="choose-us__image-container__dots-left" src="" data-src="{{ Vite::asset('resources/images/Icons/Dots(1).png') }}"
             alt="">
         <img class="choose-us__image-container__dots-right"
-            src="{{ Vite::asset('resources/images/Icons/Dots(1).png') }}" alt="">
+            src="" data-src="{{ Vite::asset('resources/images/Icons/Dots(1).png') }}" alt="">
     </div>
 </div>

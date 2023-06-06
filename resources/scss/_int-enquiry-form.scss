@@ -20,6 +20,9 @@
     @include media("x-sm-tab") {
         flex-direction: column;
     }
+    @include media("sm-tab") {
+        gap: 2em;
+    }
 
     &__image {
         flex: 0 0 50%;
@@ -36,7 +39,7 @@
             flex: 0 0 90%;
         }
         @include media("sm-tab") {
-            flex: 0 0 90%;
+            // flex: 0 0 35%;
         }
         @include media("md-tab") {
             flex: 0 0 40%;
@@ -56,7 +59,7 @@
                 text-align: center;
              }
              @include media("sm-tab") {
-                text-align: center;
+                // text-align: center;
              }
         }
 
@@ -93,7 +96,7 @@
                 font-size: 14px;
             }
             @include media("sm-tab") {
-               text-align: center;
+            //    text-align: center;
                 width: 100%;
                 font-size: 14px;
             }
@@ -119,9 +122,9 @@
             @include media("x-sm-tab") {
                display: none;
             }
-            @include media("sm-tab") {
-               display: none;
-            }
+            // @include media("sm-tab") {
+            //    display: none;
+            // }
             
         }
     }
@@ -150,8 +153,8 @@
             margin-top: 3em;
         }
         @include media("sm-tab") {
-            flex: 0 0 90%;
-            margin-top: 3em;
+            flex: 0 0 50%;
+            // margin-top: 3em;
         }
         @include media("md-tab") {
             flex: 0 0 55%;

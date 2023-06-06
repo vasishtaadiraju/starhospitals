@@ -1,7 +1,7 @@
 <div class="filter">
     <div class="filter__fields-wrapper" style="position: relative">
 
-        <img src="{{ Vite::asset('resources/images/Icons/search-doc.png') }}" alt="">
+        <img src="" data-src="{{ Vite::asset('resources/images/Icons/search-doc.png') }}" alt="">
 
         <input type="text" class="auto-complete-input" placeholder="Search Doctor">
         <div class="auto-complete">
@@ -12,7 +12,7 @@
     </div>
     {{-- <div class="filter__fields-wrapper">
         
-            <img src="{{Vite::asset('resources/images/Icons/sthetoscope.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/Icons/sthetoscope.png')}}" alt="">
         
         <select type="text" placeholder="Enter Doctor Name"> 
             <option value="">Center of Excellence</option>
@@ -20,7 +20,7 @@
     </div> --}}
     <div class="filter__fields-wrapper">
 
-        <img src="{{ Vite::asset('resources/images/Icons/location.png') }}" alt="">
+        <img src="" data-src="{{ Vite::asset('resources/images/Icons/location.png') }}" alt="">
 
         <select type="text" class="location-select-box" id="location-select-box" placeholder="Enter Doctor Name">
             <option value="">Filter by Location</option>
@@ -33,7 +33,7 @@
     </div>
     <div class="filter__fields-wrapper">
 
-        <img src="{{ Vite::asset('resources/images/Icons/sthetoscope.png') }}" alt="">
+        <img src="" data-src="{{ Vite::asset('resources/images/Icons/sthetoscope.png') }}" alt="">
 
         <select type="text" class="speciality-select-box" id="speciality-select-box" placeholder="Enter Doctor Name">
             <option value="">Filter by Speciality</option>

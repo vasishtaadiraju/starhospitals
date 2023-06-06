@@ -1,8 +1,14 @@
 @extends('layout.main')
+@section('css')
+    @vite(['resources/scss/career.scss', 'resources/js/app.js'])
+@endsection
 @section('content')
     <x-banner :imgurl="Vite::asset('resources/images/banner/international/Rectangle 4.png')" :text="'International Patients | Star Hospitals'" />
     <x-gap />
+<div class="ui-background">
+
     <x-recruitment-form />
+</div>
     <x-gap />
 
 
@@ -184,7 +190,7 @@
 
 
             <div class="choose-us__image-wrapper choose-us__image-wrapper--secondary">
-                <img src="{{ Vite::asset('resources/images/int-patients/wepik-export-20230424074108 1.png') }}"
+                <img src="" data-src="{{ Vite::asset('resources/images/int-patients/wepik-export-20230424074108 1.png') }}"
                     alt="Choose Us">
             </div>
 
@@ -195,5 +201,12 @@
         </div>
     </div>
 
-    <x-gap/>
+    <x-gap />
+<div class="ui-background">
+
+    <x-testimonials :testimonials=[] />
+</div>
+    <x-gap />
+    <x-faqs :faqs='$faqs' />
+    <x-gap />
 @endsection

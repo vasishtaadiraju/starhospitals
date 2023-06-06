@@ -1,9 +1,9 @@
 <div class="vision-mission">
     <div class="vision-mission__image-container">
-        <img class="vision-mission__image-first" src="{{Vite::asset('resources/images/vision-mission/vision.png')}}" alt="">
-        <img class="vision-mission__image-second" src="{{Vite::asset('resources/images/vision-mission/mission.png')}}" alt="">
-        <img class="vision-mission__dot-first" src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt=""> 
-        <img class="vision-mission__dot-second" src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt="">
+        <img class="vision-mission__image-first" src="" data-src="{{Vite::asset('resources/images/vision-mission/vision.png')}}" alt="">
+        <img class="vision-mission__image-second" src="" data-src="{{Vite::asset('resources/images/vision-mission/mission.png')}}" alt="">
+        <img class="vision-mission__dot-first" src="" data-src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt=""> 
+        <img class="vision-mission__dot-second" src="" data-src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt="">
     </div>
     <div class="vision-mission__content-container">
         <div class="vision-mission__card">
@@ -20,10 +20,10 @@
 
 {{-- <div class="vision-mission">
     <div class="vision-mission__image-container">
-        <img class="vision-mission__image-first" src="{{Vite::asset('resources/images/vision-mission/vision.png')}}" alt="">
-        <img class="vision-mission__image-second" src="{{Vite::asset('resources/images/vision-mission/mission.png')}}" alt="">
-        <img class="vision-mission__dot-first" src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt="">
-        <img class="vision-mission__dot-second" src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt="">
+        <img class="vision-mission__image-first" src="" data-src="{{Vite::asset('resources/images/vision-mission/vision.png')}}" alt="">
+        <img class="vision-mission__image-second" src="" data-src="{{Vite::asset('resources/images/vision-mission/mission.png')}}" alt="">
+        <img class="vision-mission__dot-first" src="" data-src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt="">
+        <img class="vision-mission__dot-second" src="" data-src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt="">
     </div>
     <div class="vision-mission__content-container">
         <div class="vision-mission__card">

@@ -1,7 +1,7 @@
 <div class="header">
     <div class="header__main">
         <div class="header__main__card header__main__card--logo">
-           {{-- <a href="/"> <img  src="{{ Vite::asset('resources/images/logo.svg') }}" alt=""> </a> --}}
+           {{-- <a href="/"> <img  src="" data-src="{{ Vite::asset('resources/images/logo.svg') }}" alt=""> </a> --}}
            <a href="/">
             <svg class="header__main--fixed--logo" width="128" height="90" viewBox="0 0 128 90" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1079_3)">
@@ -54,7 +54,7 @@
 <div class="header__nav header__nav--fixed">
     <ul class="header__nav__options">
         <li class="header__nav__option header__nav__option--dropdown">
-            <a href="#">Centers of Excellence</a>
+            <a href="#centre-of-excellences">Centers of Excellence</a>
             <ul class="header__nav__option--dropdown__options">
                 @foreach ($coes as $item)
                 <li class=""><a
@@ -109,8 +109,8 @@
         {{-- ================================================nav --}}
         <div class="header__main__card header__main__card--emergency header__main--fixed--hide">
             <a href=""> <div>
-                 <img src="{{ Vite::asset('resources/images/Icons/emergency.png') }}" alt="">
-                 <p>Emergency HelpLine
+                 <img src="" data-src="{{ Vite::asset('resources/images/Icons/emergency.png') }}" alt="">
+                 <p>Emergency HelpLine <br>
                      <span>1800 1027827</span>
                  </p>
              </div> </a>
@@ -125,7 +125,7 @@
              <form action="">
                  <div class="filter__fields-wrapper">
  
-                     {{-- <img src="{{ Vite::asset('resources/images/Icons/search.png') }}" alt=""> --}}
+                     {{-- <img src="" data-src="{{ Vite::asset('resources/images/Icons/search.png') }}" alt=""> --}}
                      <svg width="30" height="30" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                          <path d="M16.031 14.6168L20.3137 18.8995L18.8995 20.3137L14.6168 16.031C13.0769 17.263 11.124 18 9 18C4.032 18 0 13.968 0 9C0 4.032 4.032 0 9 0C13.968 0 18 4.032 18 9C18 11.124 17.263 13.0769 16.031 14.6168ZM14.0247 13.8748C15.2475 12.6146 16 10.8956 16 9C16 5.1325 12.8675 2 9 2C5.1325 2 2 5.1325 2 9C2 12.8675 5.1325 16 9 16C10.8956 16 12.6146 15.2475 13.8748 14.0247L14.0247 13.8748Z" fill="black"/>
                          </svg>
@@ -139,7 +139,7 @@
              <svg width="24" height="24" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                  <path d="M16.031 14.6168L20.3137 18.8995L18.8995 20.3137L14.6168 16.031C13.0769 17.263 11.124 18 9 18C4.032 18 0 13.968 0 9C0 4.032 4.032 0 9 0C13.968 0 18 4.032 18 9C18 11.124 17.263 13.0769 16.031 14.6168ZM14.0247 13.8748C15.2475 12.6146 16 10.8956 16 9C16 5.1325 12.8675 2 9 2C5.1325 2 2 5.1325 2 9C2 12.8675 5.1325 16 9 16C10.8956 16 12.6146 15.2475 13.8748 14.0247L14.0247 13.8748Z" fill="black"/>
                  </svg>
-             {{-- <img  id="nav-toggle" src="{{Vite::asset('resources/images/Icons/nav.png')}}" alt=""> --}}
+             {{-- <img  id="nav-toggle" src="" data-src="{{Vite::asset('resources/images/Icons/nav.png')}}" alt=""> --}}
              <svg id="nav-toggle" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                  <path d="M0 0H18V2H0V0ZM0 7H18V9H0V7ZM0 14H18V16H0V14Z" fill="black"/>
                  </svg>
@@ -149,7 +149,7 @@
     <div class="header__nav " id="star-navbar">
         <ul class="header__nav__options">
             <li class="header__nav__option header__nav__option--dropdown">
-                <a href="#">Centers of Excellence</a>
+                <a href="#centre-of-excellences">Centers of Excellence</a>
                 <ul class="header__nav__option--dropdown__options">
                     {{-- header__nav__option--nested-dropdown
                     header__nav__option--dropdown  --}}

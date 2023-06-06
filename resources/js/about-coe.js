@@ -264,9 +264,9 @@ domSelector('.coes__list__item','click',async function() {
         let coe_id = this.childNodes[1].getAttribute('data-id');
         let cards = await printCoe(coe_id);
 
-{/* <img  src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt=""> */}
+{/* <img  src="" data-src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt=""> */}
 
-{/* <img  src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt=""> */}
+{/* <img  src="" data-src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt=""> */}
 if(this.querySelector('.coes__description__wrapper--mobile') == null)
 {
         this.childNodes[1].insertAdjacentHTML("afterend",  cards.mobile);

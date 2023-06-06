@@ -1,9 +1,9 @@
 <div class="footer">
     <div class="footer__wrapper">
         <div class="footer__columns footer__columns--logo">
-            {{-- <img class="footer__columns--logo--star" src="{{Vite::asset('resources/images/logo.svg')}}" alt="">
-            <img src="{{Vite::asset('resources/images/logo/NABH-Logo 1.png')}}" alt="">
-            <img src="{{Vite::asset('resources/images/logo/Layer 1.png')}}" alt=""> --}}
+            {{-- <img class="footer__columns--logo--star" src="" data-src="{{Vite::asset('resources/images/logo.svg')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/logo/NABH-Logo 1.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/logo/Layer 1.png')}}" alt=""> --}}
             {{-- <svg width="128" height="86" viewBox="0 0 128 86" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <rect width="128" height="85.1376" fill="url(#pattern0)"/>
                 <defs>
@@ -15,8 +15,8 @@
                 </svg> --}}
                 
 
-                <img class="footer__columns--logo--star" src="{{Vite::asset('resources/images/logo.svg')}}" alt="">
-            <img src="{{ Vite::asset('resources/images/logo/NABH-Logo 1.png') }}" alt="">
+                <img class="footer__columns--logo--star" src="" data-src="{{Vite::asset('resources/images/logo.svg')}}" alt="">
+            <img src="" data-src="{{ Vite::asset('resources/images/logo/NABH-Logo 1.png') }}" alt="">
 
 
 
@@ -450,7 +450,7 @@
             <ul class="footer__columns__option">
                 <li class="footer__columns__option__label">Patient Care & Services
                     <ul class="footer__columns__option__label--dropdown__option">
-                        <li class="footer__columns__option__item"><a href="">Find a Doctor</a></li>
+                        <li class="footer__columns__option__item"><a href="{{route('find-doctor')}}">Find a Doctor</a></li>
                         <li class="footer__columns__option__item"><a href="">Book a Video Consultation</a></li>
                         <li class="footer__columns__option__item"><a href="">24 x 7 Consultation</a></li>
                         <li class="footer__columns__option__item"><a href="">Admission & Discharge Process</a>

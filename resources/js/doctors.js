@@ -115,15 +115,13 @@ async function printDoctors(body, selectBox, className) {
 }
 }
 
-// function printOptions()
-// {
+function printOptions(body,nodeClass)
+{
 
-// }
+}
 
 async function handleChange(type) {
     
-    
-   
         let coe_id = this.parentNode.parentNode.querySelector(
             ".speciality-select-box"
         ).value;
@@ -132,7 +130,6 @@ async function handleChange(type) {
         ).value;
         let speciality_id = "";
         let body = { coe_id, branch_id, speciality_id };
-    
         if (this.parentNode.parentNode.querySelector(".doctor-select-box") != null) {
             this.parentNode.parentNode.querySelector(".doctor-select-box").innerHTML = "";
             printDoctors(body, true,'.doctor-select-box');

@@ -3,7 +3,7 @@
 <div class="int-highlights__wrapper">
     <div class="int-highlights__card">
         <div class="int-highlights__card__image-wrapper">
-            {{-- <img src="{{Vite::asset('resources/images/int-patients\red-cross 1.svg')}}" alt=""> --}}
+            {{-- <img src="" data-src="{{Vite::asset('resources/images/int-patients\red-cross 1.svg')}}" alt=""> --}}
 
             {!!$content->key_highlight1_icon!!}
         </div>
@@ -14,7 +14,7 @@
     </div>
     <div class="int-highlights__card">
         <div class="int-highlights__card__image-wrapper">
-            {{-- <img src="{{Vite::asset('resources/images/int-patients\red-cross 1.svg')}}" alt=""> --}}
+            {{-- <img src="" data-src="{{Vite::asset('resources/images/int-patients\red-cross 1.svg')}}" alt=""> --}}
 
             {!!$content->key_highlight2_icon!!}
         </div>
@@ -25,7 +25,7 @@
     </div>
     <div class="int-highlights__card">
         <div class="int-highlights__card__image-wrapper">
-            {{-- <img src="{{Vite::asset('resources/images/int-patients\red-cross 1.svg')}}" alt=""> --}}
+            {{-- <img src="" data-src="{{Vite::asset('resources/images/int-patients\red-cross 1.svg')}}" alt=""> --}}
 
             {!!$content->key_highlight3_icon!!}
         </div>
@@ -36,7 +36,7 @@
     </div>
     <div class="int-highlights__card">
         <div class="int-highlights__card__image-wrapper">
-            {{-- <img src="{{Vite::asset('resources/images/int-patients\red-cross 1.svg')}}" alt=""> --}}
+            {{-- <img src="" data-src="{{Vite::asset('resources/images/int-patients\red-cross 1.svg')}}" alt=""> --}}
 
             {!!$content->key_highlight4_icon!!}
         </div>

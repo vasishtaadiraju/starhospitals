@@ -537,9 +537,10 @@ $fixed-header-height:6rem;
                     // animation: growRight 300ms ease-in-out forwards;
                     background-color: white;
                     // border: white;
-                    border-radius: 12px;
+                    border-radius: 5px;
                     transform-origin: top center;
                     z-index: 3000;
+                    padding: 1em 0px;
                     @include media("sm-mob") {
                         top: 100%;
                         position: relative;
@@ -577,7 +578,8 @@ $fixed-header-height:6rem;
                         position: relative;
                         a {
                         border-radius: 10px;
-
+                            transition: all 1s;
+                            margin-top: 0.25em;
                             @include dropdown-link;
                             @include media("sm-mob") {
                                 padding: 1em;
