@@ -1,4 +1,4 @@
-<x-heading :title="'Why Choose Us'" :description="'Experience quality healthcare at its finest, with a team of experts in a modern facility, delivering personalized and compassionate care.'" />
+<x-heading :title="'Why Choose Us'" :description="''" />
 <div class="choose-us">
     <div class="choose-us__benifits">
         @if(isset($content->choose1_icon) && $content->choose1_icon != null)

@@ -11,7 +11,7 @@ import './faqs';
 import './footer';
 import './auto-complete';
 import './doctors';
-import './book-an-appointment';
+// import './book-an-appointment';
 
 
 

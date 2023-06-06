@@ -8,8 +8,9 @@
     width: 87%;
     margin-left: 7.5%;
     &__slider-item {
-        display: flex;
+        display: flex !important;
         gap: 2em;
+        margin: 0px 1em;
 
         @include media("sm-mob") {
             flex-direction: column;

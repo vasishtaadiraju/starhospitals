@@ -98,7 +98,7 @@
         };
         
         &__content{
-            padding: 2em;
+            padding: 1.5em 1em;
             cursor: pointer;
             @include font-family(400);
             height:14rem;
@@ -140,6 +140,7 @@
                 // line-height: 30px;
                 // min-height: 30px;
                 // font-weight: 500;
+                // min-height: 2.5em;
             }
 
             

@@ -2,9 +2,14 @@ let screenWidth = screen.width;
 $('.slider').slick({
     dots:true,
     arrows:false,
+    autoplay:true,
 }) 
 
-
+$('.virtual-tour-slider').slick({
+    dots:false,
+    arrows:true,
+ 
+})
 $('.int-reviews').slick({
     dots:false,
     arrows:true,

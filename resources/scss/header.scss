@@ -8,7 +8,7 @@ $fixed-header-height:6rem;
     display: none;
     position: absolute;
     list-style-type: none;
-    min-width: 100%;
+    min-width: 12rem;
     border-radius: 10px;
     background-color: variables.$starhospitals-text-inverted;
     @content;
@@ -24,6 +24,7 @@ $fixed-header-height:6rem;
 @mixin dropdown-link() {
     display: block;
     padding: 0.5em 0.5em;
+    padding-left: 1em;
     // background-color: black;
     color: variables.$starhospitals-ui-secondary;
     width: 100%;
@@ -339,7 +340,7 @@ $fixed-header-height:6rem;
 
         &--fixed {
             @include fixed-header;
-            width: 100%;
+            width: 106%;
             height: 100%;
             padding: 0em 7.5%;
             z-index: 3500;
@@ -577,9 +578,10 @@ $fixed-header-height:6rem;
                     li {
                         position: relative;
                         a {
-                        border-radius: 10px;
+                            border-radius: 10px;
                             transition: all 1s;
                             margin-top: 0.25em;
+                            
                             @include dropdown-link;
                             @include media("sm-mob") {
                                 padding: 1em;

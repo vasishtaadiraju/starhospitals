@@ -10,7 +10,7 @@ async function printDoctors(body, selectBox, className) {
         body
     );
     response.data.forEach((result) => {
-        if (selectBox) {
+        if (selectBox == true) {
             let doctorOption = `<option value="">${result.name}</option>`
             document
                 .querySelector(className)
@@ -115,13 +115,66 @@ async function printDoctors(body, selectBox, className) {
 }
 }
 
-function printOptions(body,nodeClass)
+async function printOptions(node)
 {
 
+    let type = node.getAttribute('data-type');
+    let coe_id = "";
+    let branch_id = "";
+    let selected_coe_id = node.parentNode.parentNode.querySelector(".speciality-select-box").value;
+    let selected_branch_id = node.parentNode.parentNode.querySelector(".location-select-box").value;
+        console.log(node);
+
+    if(type == 'coe')
+    {
+       coe_id = node.value;
+       console.log(coe_id);
+       branch_id = "";
+       console.log(type);
+       
+    }
+    if (type == 'location')
+    {
+        branch_id = node.value;
+        coe_id = "";
+    }
+
+    let body = {coe_id,branch_id};
+    console.log(body);
+    // let type = node.parentNode.parentNode.querySelector(".speciality-select-box").getAttribute('data-');
+    const response = await httpRequest(
+        "/api/getBranchCoeSpecialityById",
+        "POST",
+        body
+    );
+
+    console.log(response);
+
+    if(type == "coe")
+    {
+        node.parentNode.parentNode.querySelector(".location-select-box").innerHTML = ""
+        response.data.branches.forEach((result) => {
+            let option = `<option value="${result.id}" ${result.id == selected_branch_id ? `selected` : ``}>${result.name}</option>`;
+
+            node.parentNode.parentNode.querySelector(".location-select-box").insertAdjacentHTML("beforeend", option);
+
+        });
+    }
+    if(type == 'location')
+    {
+        node.parentNode.parentNode.querySelector(".speciality-select-box").innerHTML = ""
+        response.data.coes.forEach((result) => {
+            let option = `<option value="${result.id}" ${result.id == selected_coe_id ? `selected` : ``}>${result.name}</option>`;
+
+            node.parentNode.parentNode.querySelector(".speciality-select-box").insertAdjacentHTML("beforeend", option);
+
+        });
+    }
 }
 
 async function handleChange(type) {
-    
+    printOptions(this);
+
         let coe_id = this.parentNode.parentNode.querySelector(
             ".speciality-select-box"
         ).value;
@@ -130,9 +183,10 @@ async function handleChange(type) {
         ).value;
         let speciality_id = "";
         let body = { coe_id, branch_id, speciality_id };
+
         if (this.parentNode.parentNode.querySelector(".doctor-select-box") != null) {
             this.parentNode.parentNode.querySelector(".doctor-select-box").innerHTML = "";
-            printDoctors(body, true,'.doctor-select-box');
+            printDoctors(body,true,'.doctor-select-box');
         } else {
             $(".specialists-slider").slick("unslick");
     
@@ -145,7 +199,7 @@ async function handleChange(type) {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    if(document.querySelector(".coe-page") != undefined && document.querySelector(".coe-page").getAttribute('data-page-type') == 'coe')
+    if(document.querySelector(".coe-page") != undefined && document.querySelector(".coe-page").getAttribute('data-page-type') == 'Coe')
     {
         // $(".financial-slider").slick("unslick");
         // $(".banjara-hills-slider").slick("unslick");

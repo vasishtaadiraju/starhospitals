@@ -22,7 +22,7 @@
 
         <img src="" data-src="{{ Vite::asset('resources/images/Icons/location.png') }}" alt="">
 
-        <select type="text" class="location-select-box" id="location-select-box" placeholder="Enter Doctor Name">
+        <select type="text" class="location-select-box" id="location-select-box" data-type="location" placeholder="Enter Doctor Name">
             <option value="">Filter by Location</option>
 
             @foreach ($branches as $item)
@@ -35,7 +35,7 @@
 
         <img src="" data-src="{{ Vite::asset('resources/images/Icons/sthetoscope.png') }}" alt="">
 
-        <select type="text" class="speciality-select-box" id="speciality-select-box" placeholder="Enter Doctor Name">
+        <select type="text" class="speciality-select-box" id="speciality-select-box" data-type="coe" placeholder="Enter Doctor Name">
             <option value="">Filter by Speciality</option>
             @foreach ($coes as $item)
             <option value="{{$item->id}}" @if(isset($content->page_type) && $content->page_type == 'Coe' && $item->id == $content->id) selected @endif>{{$item->name}}</option>

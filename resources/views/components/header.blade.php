@@ -54,7 +54,7 @@
 <div class="header__nav header__nav--fixed">
     <ul class="header__nav__options">
         <li class="header__nav__option header__nav__option--dropdown">
-            <a href="#centre-of-excellences">Centers of Excellence</a>
+            <a href="#centre-of-excellences">Centers of Excellences</a>
             <ul class="header__nav__option--dropdown__options">
                 @foreach ($coes as $item)
                 <li class=""><a
@@ -91,12 +91,36 @@
         <li class="header__nav__option">
             <a href="#">Health Checkups</a>
         </li>
+        <li class="header__nav__option header__nav__option--dropdown">
+            <a href="#centre-of-excellences">Locations</a>
+            <ul class="header__nav__option--dropdown__options">
+                @foreach ($branches as $item)
+                <li class=""><a
+                    href="{{route('coe',$item->slug)}}">{{$item->name}}</a>
+                {{-- <ul>
+                    <li><a href="#">Abc</a>
+                    </li>
+                    <li><a href="#">Abc</a></li>
+                    <li><a href="#">Abc</a></li>
+                </ul> --}}
+            </li>   
+                @endforeach
+                
+                {{-- <li class="header__nav__option--dropdown header__nav__option--nested-dropdown"><a href="#">Test 2</a>
+                    <ul>
+                        <li><a href="#">Shibli</a></li>
+                        <li><a href="#">Abc</a></li>
+                        <li><a href="#">Abc</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Abc</a></li>
+                <li><a href="#">Abc</a></li> --}}
+            </ul>
+        </li>
         <li class="header__nav__option">
             <a href="{{route('about')}}">About</a>
         </li>
-        <li class="header__nav__option">
-            <a href="{{route('contact')}}">Contact Us</a>
-        </li>
+        
     </ul>
 </div>
 
@@ -149,7 +173,7 @@
     <div class="header__nav " id="star-navbar">
         <ul class="header__nav__options">
             <li class="header__nav__option header__nav__option--dropdown">
-                <a href="#centre-of-excellences">Centers of Excellence</a>
+                <a href="#centre-of-excellences">Centers of Excellences</a>
                 <ul class="header__nav__option--dropdown__options">
                     {{-- header__nav__option--nested-dropdown
                     header__nav__option--dropdown  --}}
@@ -162,7 +186,7 @@
                         <li><a href="#">Abc</a></li>
                         <li><a href="#">Abc</a></li>
                     </ul> --}}
-                </li>
+                    </li>
                     @endforeach
                     
                     {{-- <li class="header__nav__option--dropdown header__nav__option--nested-dropdown"><a href="#">Test 2</a>
@@ -188,8 +212,33 @@
             <li class="header__nav__option">
                 <a href="#">Health Checkups</a>
             </li>
-            <li class="header__nav__option">
+            <li class="header__nav__option header__nav__option--dropdown">
                 <a href="#">Locations</a>
+                <ul class="header__nav__option--dropdown__options">
+                    {{-- header__nav__option--nested-dropdown
+                    header__nav__option--dropdown  --}}
+                    @foreach ($branches as $item)
+                    <li class=""><a
+                        href="{{route('branch',$item->slug)}}">{{$item->name}}</a>
+                    {{-- <ul>
+                        <li><a href="#">Abc</a>
+                        </li>
+                        <li><a href="#">Abc</a></li>
+                        <li><a href="#">Abc</a></li>
+                    </ul> --}}
+                    </li>
+                    @endforeach
+                    
+                    {{-- <li class="header__nav__option--dropdown header__nav__option--nested-dropdown"><a href="#">Test 2</a>
+                        <ul>
+                            <li><a href="#">Shibli</a></li>
+                            <li><a href="#">Abc</a></li>
+                            <li><a href="#">Abc</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Abc</a></li>
+                    <li><a href="#">Abc</a></li> --}}
+                </ul>
             </li>
             <li class="header__nav__option">
                 <a href="{{route('about')}}">About</a>

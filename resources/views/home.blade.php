@@ -23,7 +23,7 @@
 
 <x-about-us :$content/>
 <x-gap/>
-<x-reviews :$content  :$reviews/>
+<x-testimonials  :testimonials=[]/>
 <x-gap/>
 <x-blogs :$content :$blogs/>
 <x-gap/>

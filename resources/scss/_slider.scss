@@ -62,7 +62,7 @@ $visible-cards:1;
 
         &__content{
             position: absolute;
-            width: 35%;
+            width: 37%;
             top: 50%;
             left: 7.5%;
             background-color: white;
@@ -152,7 +152,7 @@ $visible-cards:1;
                 font-size: 40px;
                 line-height: 52.5px;
                 font-family: 'Plus Jakarta Sans Bold';
-                font-weight: 700;
+                font-weight: 800;
                 @include media('sm-mob')
                 {
                     font-size: 20px;

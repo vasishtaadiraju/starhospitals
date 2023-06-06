@@ -1,4 +1,4 @@
-<div class="ui-background coe-page" id="find-doctors" data-page-type="coe" data-coe-id="{{$content->id}}">
+<div class="ui-background coe-page" id="find-doctors" data-page-type="Coe" data-coe-id="{{$content->id}}">
     <x-heading :title="'Meet Our Specialists, Banjara Hills'" :description="$content->meet_our_specialist_text" />
     {{-- <x-filter :$content :branches=[] :coes=[] /> --}}
     <div style="height:1em"></div>
