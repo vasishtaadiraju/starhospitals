@@ -11,8 +11,6 @@ use App\Nova\FAQ;
 use App\Nova\Homepage;
 use App\Nova\InternationalPatient;
 use App\Nova\Media;
-use App\Nova\Region;
-use App\Nova\Role;
 use App\Nova\Speciality;
 use App\Nova\Testimonial;
 use App\Nova\User;
@@ -44,7 +42,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 MenuSection::resource(User::class)->icon('user-group'),
 
                 MenuSection::make('Location', [
-                    MenuItem::resource(Region::class),
+                    // MenuItem::resource(Region::class),
                     MenuItem::resource(Branch::class)
                 ])->icon('location-marker')->collapsable(),
 
@@ -99,7 +97,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         Gate::define('viewNova', function ($user) {
             return in_array($user->email, [
-                //
+                'admin@gmail.com'
             ]);
         });
     }
