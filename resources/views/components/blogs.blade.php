@@ -1,4 +1,4 @@
-<div class="ui-background">
+
     <x-heading :title="'Blogs'" :description="$content->blog_text" />
     <div class="blogs blogs-slider">
         @foreach ($blogs as $item)
@@ -60,4 +60,4 @@
              <p class="blogs__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum corrupti voluptates quidem enim officiis pro</p>
          </div> --}}
     </div>
-</div>
+

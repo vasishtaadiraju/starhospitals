@@ -23,7 +23,7 @@
         height: 40vh;
     }
     @include media("lg-tab") {
-        height: 40vh;
+        height: 50vh;
     }
 
     &__image {
@@ -74,7 +74,8 @@
         }
         h1 {
             color: variables.$starhospitals-text-inverted;
-            @include font-family(700);
+            // @include font-family(700);
+            font-family: 'Plus Jakarta Sans Bold';
             font-size: 40px;
             line-height: 60px;
             @include media("sm-mob") {

@@ -57,7 +57,7 @@
         @include media('sm-mob')
         {
             
-            padding: 1em;
+            padding: 2em;
             flex: 0 0 100%;
             justify-content: flex-start;
             margin-top: 3em;
@@ -68,7 +68,7 @@
         @include media('md-mob')
         {
             
-            padding: 1em;
+            padding: 2em;
             flex: 0 0 100%;
             justify-content: flex-start;
             margin-top: 3em;
@@ -78,7 +78,7 @@
         @include media('lg-mob')
         {
             
-            padding: 1em;
+            padding: 2em;
             flex: 0 0 100%;
             justify-content: flex-start;
             margin-top: 3em;
@@ -88,7 +88,7 @@
         @include media('x-sm-tab')
         {
             
-            padding: 1em;
+            padding: 2em;
             flex: 0 0 100%;
             justify-content: flex-start;
             margin-top: 3em;
@@ -98,7 +98,7 @@
         @include media('sm-tab')
         {
             
-            padding: 1em;
+            padding: 2em;
             flex: 0 0 100%;
             justify-content: flex-start;
             margin-top: 3em;
@@ -110,9 +110,30 @@
             display: flex;
             gap: 3rem;
             flex-direction: column;
+            @include media('sm-mob')
+        {
+            
+            gap: 1em;
+            
+            
         }
+        @include media('md-mob')
+        {
+            
+            gap: 1em;
+            
+        }
+        @include media('lg-mob')
+        {
+            
+            gap: 1em;
+            
+        }
+       }
+        }
+    
 
-    }
+    
     &__form-wrapper{
         // border: 1px solid black;
         flex: 0 0 70%;

@@ -1,0 +1,167 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+
+.int-highlights {
+    // min-height: 80vh;
+    width: 100%;
+    background-color: variables.$starhospitals-brand-primary;
+    padding: 6rem 0px;
+    @include media("x-sm-tab") {
+        padding-bottom: 0rem;
+    }
+    @include media("sm-tab") {
+        padding-bottom: 0rem;
+    }
+    @include media("md-tab") {
+        padding-bottom: 0rem;
+    }
+
+    h1 {
+        color: white;
+        text-align: center;
+        padding-bottom: 4rem;
+    }
+    &__wrapper {
+        @include centerSection;
+        // height: 80vh;
+        width: 95%;
+        margin-left: 7.5%;
+        display: flex;
+        // justify-content: space-between;  
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 4em;
+        @include media("sm-mob") {
+            flex-direction: column;
+            gap: 3rem;
+        }
+        @include media("md-mob") {
+            flex-direction: column;
+            gap: 3rem;
+        }
+        @include media("lg-mob") {
+            flex-direction: column;
+            gap: 3rem;
+        }
+    }
+
+    &__card {
+        flex: 0 0 calc(100% / 5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include media("sm-mob") {
+            flex-direction: row;
+            gap: 1em;
+        }
+        @include media("md-mob") {
+            flex-direction: row;
+            gap: 1em;
+        }
+        @include media("lg-mob") {
+            flex-direction: row;
+            gap: 1em;
+        }
+        @include media("x-sm-tab") {
+            flex: 0 0 calc(100% / 2.5);
+            padding-bottom: 6rem;
+        }
+        @include media("sm-tab") {
+            flex: 0 0 calc(100% / 2.5);
+            padding-bottom: 6rem;
+        }
+        @include media("md-tab") {
+            flex: 0 0 calc(100% / 2.5);
+            padding-bottom: 6rem;
+        }
+        &__image-wrapper {
+            background-color: white;
+            // width: 7.5rem;
+            // height:7.5rem;
+            padding: 1em;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            img {
+                @include media("sm-mob") {
+                    width: 3rem;
+                    // height: 3rem;
+                }
+                @include media("md-mob") {
+                    width: 3rem;
+                    // height: 3rem;
+                }
+                @include media("lg-mob") {
+                    width: 3rem;
+                    // height: 3rem;
+                }
+            }
+            @include media("sm-mob") {
+                // width: 5rem;
+                // height: 5rem;
+            }
+            @include media("md-mob") {
+                // width: 5rem;
+                // height: 5rem;
+            }
+            @include media("lg-mob") {
+                // width: 5rem;
+                // height: 5rem;
+            }
+        }
+
+        &__content {
+            color: white;
+
+            h2 {
+                @include font-family(600);
+                font-size: 20px;
+                text-align: center;
+                line-height: 25.5px;
+                padding: 0.75em 0px;
+                @include media("sm-mob") {
+                    font-size: 16px;
+                    text-align: left;
+                }
+                @include media("md-mob") {
+                    font-size: 16px;
+                    text-align: left;
+                }
+                @include media("lg-mob") {
+                    font-size: 16px;
+                    text-align: left;
+                }
+            }
+            p {
+                text-align: center;
+                @include font-family(400);
+                font-size: 14px;
+                line-height: 17.64px;
+                width: 80%;
+                margin: 0px auto;
+
+                // padding: 1em;
+                @include media("sm-mob") {
+                    text-align: left;
+                font-size: 12px;
+                width: 100%;
+
+                }
+                @include media("md-mob") {
+                    text-align: left;
+                font-size: 12px;
+                width: 100%;
+
+                }
+                @include media("lg-mob") {
+                    text-align: left;
+                font-size: 12px;
+                width: 100%;
+
+                }
+            }
+        }
+    }
+}

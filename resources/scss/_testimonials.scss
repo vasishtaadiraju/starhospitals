@@ -26,12 +26,14 @@ width: 80%;
     &__content{
         @include font-family(400);
 
-        h3{
-            // font-size: ;
+        h4{
+            font-size: 14px;
+            line-height: 25px;
+
         }
         p{
             padding: 1em 0px;
-            // font-size: 15px;
+            font-size: 12px;
         }
     }
 }

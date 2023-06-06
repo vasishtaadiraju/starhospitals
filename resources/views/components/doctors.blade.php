@@ -1,7 +1,7 @@
 <x-heading :title="'Book an Appointment'" :description="'Our healthcare specialists are equipped with the knowledge and skills to provide you with the support you require. From consultation to diagnosis to treatments, our experts are dedicated to helping you.'"/>
-<x-filter :content='null' :branches='[]' :coes='[]'/>
+<x-filter :content='null' :$branches :$coes />
 <div class="doctors">
-    <div class="doctors__cards-wrapper @if ($type == 'flex')
+    <div class="doctors__cards-wrapper doctor-appointment-cards-wrapper @if ($type == 'flex')
     doctors__cards-wrapper--flex-list
     @else
     doctor-slide

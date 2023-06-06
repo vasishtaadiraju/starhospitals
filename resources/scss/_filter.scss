@@ -22,10 +22,10 @@
         @include fields-width(2);
     }
     @include media("md-tab") {
-        @include fields-width(2);
+        @include fields-width(3);
     }
     @include media("lg-tab") {
-        @include fields-width(2);
+        @include fields-width(3);
     }
 }
 
@@ -87,18 +87,18 @@
         @include box-shadow;
     background-color: white;
     }
-    @include media("md-tab") {
-        flex-direction: column;
-        padding: 1em 0px;
-        gap: 1em;
-        width: 90%;
-        margin: 0px auto;
-        // border: 1px solid black;
-        margin-top: 3em;
-        border-radius: 10px;
-        @include box-shadow;
-    background-color: white;
-    }
+    // @include media("md-tab") {
+    //     flex-direction: column;
+    //     padding: 1em 0px;
+    //     gap: 1em;
+    //     width: 90%;
+    //     margin: 0px auto;
+    //     // border: 1px solid black;
+    //     margin-top: 3em;
+    //     border-radius: 10px;
+    //     @include box-shadow;
+    // background-color: white;
+    // }
     form {
         display: block;
     }
@@ -134,11 +134,12 @@
             
 
         // }
-        // @include media("md-tab") {
-        // font-size: 20px;
+        @include media("sm-tab") {
             
+            flex : 1;
+            margin-left: 1em;
 
-        // }
+        }
         // }
         &--mobile{
             padding: 0px 1em;
@@ -162,10 +163,10 @@
                 display:flex
     
             }
-            @include media("md-tab") {
-                display:flex
+            // @include media("md-tab") {
+            //     display:flex
     
-            }
+            // }
         }
     }
     &__submit-btn {
@@ -275,10 +276,10 @@
             gap: 1em;
             flex-direction: column;
         }
-        @include media("md-tab") {
-            gap: 1em;
-            flex-direction: column;
-        }
+        // @include media("md-tab") {
+        //     gap: 1em;
+        //     flex-direction: column;
+        // }
     }
     &__fields-wrapper {
         // flex: 0 0 calc(90%/4);

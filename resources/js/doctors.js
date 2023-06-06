@@ -3,7 +3,7 @@ import { httpRequest } from "./utils/event-handler";
 
 import BushraUrl from "../images/doctors/doctor.png";
 
-async function printDoctors(body, selectBox) {
+async function printDoctors(body, selectBox, className) {
     const response = await httpRequest(
         "/api/getDoctorByBranchCoeSpeciality",
         "POST",
@@ -13,7 +13,7 @@ async function printDoctors(body, selectBox) {
         if (selectBox) {
             let doctorOption = `<option value="">${result.name}</option>`
             document
-                .querySelector(".doctor-select-box")
+                .querySelector(className)
                 .insertAdjacentHTML("beforeend", doctorOption);
         } else {
             let coeName = [];
@@ -58,10 +58,7 @@ async function printDoctors(body, selectBox) {
          
      </div>`;
             document
-                .querySelector(".specialists-slider")
-                .insertAdjacentHTML("beforeend", doctorCard);
-                document
-                .querySelector(".specialists-slider")
+                .querySelector(className)
                 .insertAdjacentHTML("beforeend", doctorCard);
         }
     });
@@ -69,13 +66,22 @@ async function printDoctors(body, selectBox) {
     // $('.specialists-slider').slick('refresh')
     if(selectBox != true)
     {
-    $(".specialists-slider").slick({
+    $(className).slick({
         // dots:true,
         arrows: true,
         slidesToShow: 4,
-        responsive: [
+        responsive: [{
+            breakpoint: 1275,
+            settings: {
+                // dots: true,
+                arrows: true,
+                centerMode: true,
+                centerPadding: '0px',
+                slidesToShow: 3
+            }
+        },
             {
-                breakpoint: 1025,
+                breakpoint: 1024,
                 settings: {
                     // dots: true,
                     arrows: true,
@@ -109,36 +115,66 @@ async function printDoctors(body, selectBox) {
 }
 }
 
+// function printOptions()
+// {
+
+// }
+
 async function handleChange(type) {
-    let coe_id = this.parentNode.parentNode.querySelector(
-        ".speciality-select-box"
-    ).value;
-    let branch_id = this.parentNode.parentNode.querySelector(
-        ".location-select-box"
-    ).value;
-    let speciality_id = "";
-    let body = { coe_id, branch_id, speciality_id };
-
-    if (this.parentNode.parentNode.querySelector(".doctor-select-box") != null) {
-        this.parentNode.parentNode.querySelector(".doctor-select-box").innerHTML = "";
-        printDoctors(body, true);
-    } else {
-        $(".specialists-slider").slick("unslick");
-
-        document.querySelector(".specialists-slider").innerHTML = "";
-        printDoctors(body, false);
-    }
+    
+    
+   
+        let coe_id = this.parentNode.parentNode.querySelector(
+            ".speciality-select-box"
+        ).value;
+        let branch_id = this.parentNode.parentNode.querySelector(
+            ".location-select-box"
+        ).value;
+        let speciality_id = "";
+        let body = { coe_id, branch_id, speciality_id };
+    
+        if (this.parentNode.parentNode.querySelector(".doctor-select-box") != null) {
+            this.parentNode.parentNode.querySelector(".doctor-select-box").innerHTML = "";
+            printDoctors(body, true,'.doctor-select-box');
+        } else {
+            $(".specialists-slider").slick("unslick");
+    
+            document.querySelector(".specialists-slider").innerHTML = "";
+            printDoctors(body, false,'.specialists-slider');
+        }
+    
+    
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    let branch_id = document.getElementById("location-select-box").value;
+
+    if(document.querySelector(".coe-page") != undefined && document.querySelector(".coe-page").getAttribute('data-page-type') == 'coe')
+    {
+        // $(".financial-slider").slick("unslick");
+        // $(".banjara-hills-slider").slick("unslick");
+
+        let coe_id = document.querySelector(".coe-page").getAttribute('data-coe-id');
+        let branch_id = 1;
+        let speciality_id = "";
+        let body = { coe_id, branch_id, speciality_id }; 
+        printDoctors(body, false,'.banjara-hills-slider');
+        branch_id = 2;
+        body = { coe_id, branch_id, speciality_id }; 
+        printDoctors(body, false,'.financial-slider');
+
+    }
+    else
+    {
+        let branch_id = document.getElementById("location-select-box").value;
     let coe_id = document.getElementById("speciality-select-box").value;
     let speciality_id = "";
     let body = { branch_id, coe_id, speciality_id };
     $(".specialists-slider").slick("unslick");
 
     document.querySelector(".specialists-slider").innerHTML = "";
-    printDoctors(body);
+    printDoctors(body,false,'.specialists-slider');
+    }
+    
 });
 
 domSelector(".speciality-select-box", "change", handleChange);

@@ -73,9 +73,9 @@
                 flex: 0 0 100%;
                 // margin-left: 0px auto
             }
-            @include media('md-tab')
+            @include media('lg-tab')
             {
-                // flex: 0 0 30%;
+                flex: 0 0 50%;
             }
         h2{
             // @include font-family(600);
@@ -217,6 +217,12 @@
             padding:1em;
             // padding-bottom: 2em;
             flex:0 0 50%
+        }
+        @include media('lg-tab')
+        {
+            padding:1em;
+            // padding-bottom: 2em;
+            flex:0 0 45%
         }
         &__title{
             @include font-family(600);

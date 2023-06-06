@@ -1,7 +1,7 @@
 <x-heading :title="'Why Choose Us'" :description="'Experience quality healthcare at its finest, with a team of experts in a modern facility, delivering personalized and compassionate care.'" />
 <div class="choose-us">
     <div class="choose-us__benifits">
-        @if($content->choose1_icon != null)
+        @if(isset($content->choose1_icon) && $content->choose1_icon != null)
         <div class="choose-us__benifits__card">
             <div class="choose-us__benifits__card__icon-wrapper">
                 {{-- <img src="{{ config('variables.asset') . $content->choose1_icon }}" alt="">
@@ -15,7 +15,7 @@
 
         </div>
         @endif
-        @if($content->choose2_icon != null)
+        @if(isset($content->choose2_icon) && $content->choose2_icon != null)
         <div class="choose-us__benifits__card">
             <div class="choose-us__benifits__card__icon-wrapper">
                 {{-- <img src="{{ config('variables.asset') . $content->choose2_icon }}" alt="">
@@ -29,7 +29,7 @@
 
         </div>
         @endif
-        @if($content->choose3_icon != null)
+        @if(isset($content->choose3_icon) && $content->choose3_icon != null)
         <div class="choose-us__benifits__card">
             <div class="choose-us__benifits__card__icon-wrapper">
                 {{-- <img src="{{ config('variables.asset') . $content->choose3_icon }}" alt="">
@@ -43,7 +43,7 @@
 
         </div>
         @endif
-        @if($content->choose4_icon != null)
+        @if(isset($content->choose4_icon) && $content->choose4_icon != null)
         <div class="choose-us__benifits__card">
             <div class="choose-us__benifits__card__icon-wrapper">
                 {{-- <img src="{{ config('variables.asset') . $content->choose4_icon }}" alt="">
@@ -66,6 +66,7 @@
     <div class="choose-us__image-container">
 
         {{-- Dots --}}
+        
         <div class="choose-us__image-wrapper">
             <img src="{{ config('variables.asset') . $content->why_choose_us_image }}" alt="{{$content->why_choose_us_image_alt}}">
         </div>

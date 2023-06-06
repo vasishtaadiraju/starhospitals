@@ -30,6 +30,10 @@ about-root{
     {
         flex-direction: column;
     }
+    @include media('lg-tab')
+    {
+        flex-direction: column;
+    }
     &__image-wrapper{
         padding: 2em;
         position: relative;

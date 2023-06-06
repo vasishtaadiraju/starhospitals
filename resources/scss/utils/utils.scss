@@ -72,7 +72,7 @@ place-items: center;
     display: block;
     color: $color;
     background-color: $background-color;
-
+    outline: none;
 }
 
 @mixin font-family($font-weight)
@@ -106,6 +106,7 @@ place-items: center;
     padding: 0px;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    // font-size: 62.5%;
 }
 
 select {
@@ -134,8 +135,26 @@ a{
 
 body{
     overflow-x: hidden;
+    // font-size: 5rem;
 }
 
+
+
+input,select{
+    @include font-family(500);
+    font-size: 12px;
+}
+
+    .error-message{
+        color: red;
+        padding-left: 1em;
+        @include font-family(400);
+        font-size: 12px;
+    }
+
+    .error-field{
+        border: 1px solid red !important;
+    }
 .gap{
     height: 5rem;
 }
@@ -245,6 +264,7 @@ body{
         font-family: 'Plus Jakarta Sans Bold';
         font-weight: 400 !important;
         font-size: 36px;
+        line-height: 30.5px;
         @include media("sm-mob") {
         font-size: 20px;
             
@@ -256,20 +276,20 @@ body{
 
         }
         @include media("lg-mob") {
-        font-size: 20px;
+        font-size:20px;
             
 
         }
-        @include media("x-sm-tab") {
-        font-size: 30px;
+        // @include media("x-sm-tab") {
+        // font-size: 30px;
             
 
-        }
-        @include media("md-tab") {
-        font-size: 20px;
+        // }
+        // @include media("md-tab") {
+        // font-size: 20px;
             
 
-        }
+        // }
 }
 
 .ctg-video{
@@ -287,11 +307,7 @@ body{
         width: 50px;
         font-size: 12px;
     cursor: pointer;
+    z-index: 255;
 
     }
-}
-
-input,select{
-    @include font-family(500);
-
 }

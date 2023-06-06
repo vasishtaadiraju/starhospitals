@@ -38,7 +38,7 @@
         <select type="text" class="speciality-select-box" id="speciality-select-box" placeholder="Enter Doctor Name">
             <option value="">Filter by Speciality</option>
             @foreach ($coes as $item)
-            <option value="{{$item->id}}" @if($content->page_type == 'Coe' && $item->id == $content->id) selected @endif>{{$item->name}}</option>
+            <option value="{{$item->id}}" @if(isset($content->page_type) && $content->page_type == 'Coe' && $item->id == $content->id) selected @endif>{{$item->name}}</option>
                 
             @endforeach
         </select>

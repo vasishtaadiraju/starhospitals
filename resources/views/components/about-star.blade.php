@@ -1,5 +1,5 @@
 
-    <div class="about-star">
+    {{-- <div class="about-star">
         <div class="about-star__image-container">
             <img src="{{Vite::asset('resources/images/about-star.png')}}" alt="">
             <svg class="about-star__image-container__play-btn" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -10,10 +10,10 @@
             <h2 class="section-heading">14 Years of Star Hospitals</h2>
             <p>We are proud to be an institution with a tradition of high standards of team excellence in patient-centred care, teaching and research. We bring together a dedicated team of expert physicians, nurses and other healthcare professionals to provide the highest standards of medical treatment. At Star Hospitals, our team is dedicated to providing personalized care and support because we understand that good health is essential to living a fulfilling life. Our doctors, nurses and other medical staff are highly trained and experienced and use their expertise to provide the best care possible. We believe everyone deserves to feel good and we strive to make that happen. If you're looking for a team that truly cares about your health and well-being, look no further than Star Hospitals. We are committed to providing you with the care, support and guidance you need to live your best life.</p>
         </div>
-    </div>
+    </div> --}}
 
 
- {{-- <div class="about-star">
+ <div class="about-star">
     @if(!empty($about->video_thumbnail))
         <div class="about-star__image-container">
             <img src="{{config('variables.asset').$about->video_thumbnail}}" alt="">
@@ -26,7 +26,7 @@
             <p>{!! $about->description !!}</p>
         </div>
         @endif
-    </div> --}}
+    </div>
 
 
 

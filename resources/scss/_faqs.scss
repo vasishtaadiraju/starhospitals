@@ -43,7 +43,18 @@
             // padding: 0;
             transition: all 1s;
             text-align: justify;
-
+            @include media('sm-mob')
+            {
+                font-size: 14px;
+            }
+            @include media('md-mob')
+            {
+                font-size: 14px;
+            }
+            @include media('lg-mob')
+            {
+                font-size: 14px;
+            }
             &--active{
                 // padding: 2em 1px;
                 max-height: 50rem;

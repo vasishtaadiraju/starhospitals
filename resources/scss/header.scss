@@ -196,14 +196,18 @@ $fixed-header-height:6rem;
                     flex: 0 0 40%;
                 }
                 @include media("x-sm-tab") {
-                    flex: 0 0 40%;
+                    flex: 0 0 35%;
                 }
                 @include media("sm-tab") {
-                    flex: 0 0 30%;
+                    flex: 0 0 25%;
                 }
-                // @include media("md-tab") {
-                //     flex: 0 0 30%;
-                // }
+                @include media("md-tab") {
+                    flex: 0 0 18%;
+                }
+                @include media("lg-tab") {
+                    flex: 0 0 20%;
+                    margin-right: 1.5em;
+                }
                 div {
                     display: flex;
                     justify-content: center;
@@ -284,6 +288,11 @@ $fixed-header-height:6rem;
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
+                // gap: 1em;
+                @include media("sm-tab") {
+                    gap: 2em;
+                    margin-right: 2em;
+                }
             }
             &--mob-hide {
                 @include media("sm-mob") {
@@ -513,6 +522,9 @@ $fixed-header-height:6rem;
                 @include media("md-tab") {
                     color: black;
                 }
+                @include media("lg-tab") {
+                   font-size: 14px;
+                }
             }
 
             &--dropdown {
@@ -523,6 +535,9 @@ $fixed-header-height:6rem;
                     @include dropdown-Options-wrapper;
                     animation: growDown 300ms ease-in-out forwards;
                     // animation: growRight 300ms ease-in-out forwards;
+                    background-color: white;
+                    // border: white;
+                    border-radius: 12px;
                     transform-origin: top center;
                     z-index: 3000;
                     @include media("sm-mob") {
@@ -714,8 +729,22 @@ $fixed-header-height:6rem;
             // padding: 5em 0px;
             z-index: 3500;
             margin-left: -7%;
+            @include media('lg-tab')
+            {
+            flex: 0 0 98%;
+
+                font-size: 12px;
+                margin-left: -10%;
+
+            }
             a {
                 color: black;
+
+                @include media('lg-tab')
+                {
+                    font-size: 12px;
+                    // margin-left: 2em;
+                }
             }
         }
     }

@@ -58,7 +58,7 @@
             <ul class="header__nav__option--dropdown__options">
                 @foreach ($coes as $item)
                 <li class=""><a
-                    href="#">{{$item->name}}</a>
+                    href="{{route('coe',$item->slug)}}">{{$item->name}}</a>
                 {{-- <ul>
                     <li><a href="#">Abc</a>
                     </li>
@@ -86,7 +86,7 @@
             <a href="#">Procedures</a>
         </li>
         <li class="header__nav__option">
-            <a href="#">International Patients</a>
+            <a href="{{route('international_patient')}}">International Patients</a>
         </li>
         <li class="header__nav__option">
             <a href="#">Health Checkups</a>
@@ -183,7 +183,7 @@
                 <a href="#">Procedures</a>
             </li>
             <li class="header__nav__option">
-                <a href="#">International Patients</a>
+                <a href="{{route('international_patient')}}">International Patients</a>
             </li>
             <li class="header__nav__option">
                 <a href="#">Health Checkups</a>

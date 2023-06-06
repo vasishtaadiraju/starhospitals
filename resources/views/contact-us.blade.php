@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('content')
-<x-banner :imgurl='$about->banner_desktop' :text="''"/>
+<x-banner :imgurl="config('variables.asset') .$about->banner_desktop" :text="''"/>
 <x-gap/>
 <x-contact-us/>
 <x-gap/>

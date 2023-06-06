@@ -17,12 +17,12 @@
             <img src="{{Vite::asset('resources/images/doctors/doctor.png')}}" alt="">
         </div>
         <div class="chairman-desk__content-container">
-            @if(!empty($about->chairman_desk_title))
+            {{-- @if(!empty($about->chairman_desk_title)) --}}
             <h2>{{ $about->chairman_desk_title }}</h2>
-            @endif
-            @if(!empty($about->chairman_desk_description))
+            {{-- @endif --}}
+            {{-- @if(!empty($about->chairman_desk_description)) --}}
             <p>{!! $about->chairman_desk_description !!}</p>
-            @endif
+            {{-- @endif --}}
         </div>
     </div>
 </div>

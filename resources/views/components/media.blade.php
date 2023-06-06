@@ -8,7 +8,8 @@
             @php
                 $date = date_create($item->published_date);
             @endphp
-            <p class="media__date"> <a href="">{{ $item->media_name }} | {{ date_format($date, 'M d, Y') }}</a> </p>
+                        <p class="media__date"> <a href="">{{ $item->media_name }} </a> <span>|</span> <a href="#"> {{ date_format($date, 'M d, Y') }}</a> </p>
+
             <p class="media__description">{{ $item->title }}</p>
             <a class="media__read-more" href="{{ $item->link }}">Read More</a>
 
@@ -21,7 +22,7 @@
             @php
                 $date = date_create($item->published_date);
             @endphp
-            <p class="media__date"> <a href="">{{ $item->media_name }} | {{ date_format($date, 'M d, Y') }}</a> </p>
+            <p class="media__date"> <a href="">{{ $item->media_name }} </a> <span>|</span> <a href="#"> {{ date_format($date, 'M d, Y') }}</a> </p>
             <p class="media__description">{{ $item->title }}</p>
             <a class="media__read-more" href="{{ $item->link }}">Read More</a>
 

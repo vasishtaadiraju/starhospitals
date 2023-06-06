@@ -1,0 +1,239 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+
+.int-enquiry-form {
+    @include centerSection;
+    display: flex;
+    justify-content: space-between;
+
+    @include media("sm-mob") {
+        flex-direction: column;
+    }
+    @include media("md-mob") {
+        flex-direction: column;
+    }
+    @include media("lg-mob") {
+        flex-direction: column;
+    }
+    @include media("x-sm-tab") {
+        flex-direction: column;
+    }
+
+    &__image {
+        flex: 0 0 50%;
+        @include media("sm-mob") {
+            flex: 0 0 90%;
+        }
+        @include media("md-mob") {
+            flex: 0 0 90%;
+        }
+        @include media("lg-mob") {
+            flex: 0 0 90%;
+        }
+        @include media("x-sm-tab") {
+            flex: 0 0 90%;
+        }
+        @include media("sm-tab") {
+            flex: 0 0 90%;
+        }
+        @include media("md-tab") {
+            flex: 0 0 40%;
+        }
+        h2 {
+            margin-bottom: 1.5em;
+            @include media("sm-mob") {
+                text-align: center;
+            }
+            @include media("md-mob") {
+                text-align: center;
+             }
+             @include media("lg-mob") {
+                text-align: center;
+             }
+             @include media("x-sm-tab") {
+                text-align: center;
+             }
+             @include media("sm-tab") {
+                text-align: center;
+             }
+        }
+
+        p {
+            @include font-family(400);
+            font-size: 16px;
+            line-height: 20px;
+            width: 90%;
+            @include media("sm-mob") {
+                text-align: center;
+                width: 100%;
+                font-size: 14px;
+
+            }
+
+            @include media("sm-mob") {
+               text-align: center;
+                width: 100%;
+                font-size: 14px;
+            }
+            @include media("md-mob") {
+               text-align: center;
+                width: 100%;
+                font-size: 14px;
+            }
+            @include media("lg-mob") {
+               text-align: center;
+                width: 100%;
+                font-size: 14px;
+            }
+            @include media("x-sm-tab") {
+               text-align: center;
+                width: 100%;
+                font-size: 14px;
+            }
+            @include media("sm-tab") {
+               text-align: center;
+                width: 100%;
+                font-size: 14px;
+            }
+            
+        }
+
+        img {
+            margin-top: 5rem;
+            width: 100%;
+            @include media("sm-mob") {
+                display: none;
+            }
+
+            @include media("sm-mob") {
+               display: none;
+            }
+            @include media("md-mob") {
+               display: none;
+            }
+            @include media("lg-mob") {
+               display: none;
+            }
+            @include media("x-sm-tab") {
+               display: none;
+            }
+            @include media("sm-tab") {
+               display: none;
+            }
+            
+        }
+    }
+
+    &__content {
+        flex: 0 0 38%;
+        @include media("sm-mob") {
+            flex: 0 0 90%;
+            margin-top: 3em;
+            margin-top: 3em;
+        }
+        @include media("sm-mob") {
+            flex: 0 0 90%;
+            margin-top: 3em;
+        }
+        @include media("md-mob") {
+            flex: 0 0 90%;
+            margin-top: 3em;
+        }
+        @include media("lg-mob") {
+            flex: 0 0 90%;
+            margin-top: 3em;
+        }
+        @include media("x-sm-tab") {
+            flex: 0 0 90%;
+            margin-top: 3em;
+        }
+        @include media("sm-tab") {
+            flex: 0 0 90%;
+            margin-top: 3em;
+        }
+        @include media("md-tab") {
+            flex: 0 0 55%;
+        }
+        border: 1.75px solid variables.$starhospitals-brand-primary;
+        // height: 100%;
+        border-radius: 20px;
+        padding: 2em;
+
+        &__wrapper {
+            h3 {
+                font-family: 'Plus Jakarta Sans Bold';
+                font-weight: 400;
+                font-size: 20px;
+                @include media("sm-mob") {
+                    text-align: center;
+                    font-size: 16px;
+                }
+                @include media("md-mob") {
+                    text-align: center;
+                    font-size: 16px;
+                }
+                @include media("lg-mob") {
+                    text-align: center;
+                    font-size: 16px;
+                }
+                @include media("x-sm-tab") {
+                    text-align: center;
+                    font-size: 16px;
+                }
+                @include media("sm-tab") {
+                    text-align: center;
+                    font-size: 16px;
+                }
+                @include media("md-tab") {
+                    text-align: center;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &__fields {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25em;
+            margin-top: 2rem;
+
+            input,
+            select {
+                padding: 1.5em 0px;
+                @include media("sm-mob") {
+                    padding: 1em 0px;
+                }
+
+
+            }
+
+            &--country {
+                // flex: 0 0 3% !important;
+                width: 25%;
+            }
+            &--contact {
+                flex: 1 !important;
+            }
+        }
+
+        &__submit {
+            @include btn-primary(white, red);
+            width: 7rem;
+            padding: 1em 2em;
+            border-radius: 25px;
+            border: none;
+            margin: 2.5em auto;
+        }
+
+        p {
+            @include font-family(400);
+            text-align: center;
+            font-size: 14px;
+            @include media("sm-mob") {
+                font-size: 12px;
+            }
+        }
+    }
+}

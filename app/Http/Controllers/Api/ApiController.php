@@ -53,7 +53,8 @@ class ApiController extends Controller
             // $speciality_id = $request->speciality_id;
             $doctors = [];
             $user_query = User::query();
-            // $pagination = $user_query->paginate(10);
+            $pagination = null;
+           
             if ($coe_id != null) {
                 $user_query->whereHas('coes', function ($query) use ($coe_id) {
                     $query->where('centre_of_excellences.id', $coe_id);
@@ -65,17 +66,30 @@ class ApiController extends Controller
                     $query->where('branches.id', $branch_id);
                 });
             }
-            $doctors = $user_query->with([
+            $user_query->with([
                 'coes' => function ($query) {
                     $query->select('name');
                 },
                 'branches' => function ($query) {
                     $query->select('name');
                 }
-            ])->join('branch_user','users.id' , '=' , 'branch_user.user_id')->orderBy('order_number','DESC')->get(['users.id', 'name', 'slug','designation','branch_user.order_number','large_image'])->unique()->take(20);
+            ])->join('branch_user','users.id' , '=' , 'branch_user.user_id')->orderBy('order_number','DESC');
+            if($request->paginate == true)
+            {
+            $pagination = $pagination = $user_query->paginate(2);
+            };
+            $doctors =  $user_query->get(['users.id', 'name', 'slug','designation','branch_user.order_number','large_image'])->unique()->take(20);
 
-                // if()
-            return response($doctors, 200);
+                if($request->paginate == true)
+                {
+                    return response($pagination, 200);
+
+                }
+                else
+                {
+                    return response($doctors, 200);
+
+                }
         } catch (\Throwable $th) {
             return response($th->getMessage(), 500);
 

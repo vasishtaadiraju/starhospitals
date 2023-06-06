@@ -39,7 +39,7 @@
                 @include media("sm-mob") {
                     margin: 0px auto;
 
-                    height: 21rem !important;
+                    height: 15rem !important;
 
                     width: 100%;
                 }
@@ -90,9 +90,9 @@
             // border: 2px solid blue;
             height: 80%;
             border-radius: 10px;
-            box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.4);
-            -webkit-box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.4);
-            -moz-box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.4);
+            box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.05);
+            -webkit-box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.05);
+            -moz-box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.05);
             z-index: -1;
             width: 100%;
             padding: 0px 1em;
@@ -141,11 +141,14 @@
         &__read-more {
             display: block;
             padding: 1em 0px;
+            padding-bottom: 3px;
+            width: max-content;
             @include font-family(600);
             color: variables.$starhospitals-brand-secondary;
             font-size: 13px;
-            text-decoration: underline;
-            text-decoration-color: #004e9e;
+            // text-decoration: underline;
+            // text-decoration-color: #004e9e;
+            border-bottom: 2px solid variables.$starhospitals-brand-primary;
         }
     }
 }

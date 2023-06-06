@@ -7,9 +7,24 @@
     @include centerSection;
     width: 50%;
     margin-top: 5em;
-    @include media("sm-tab") {
-        width: 90%;
+    @include media("sm-mob") {
+        width: 70%;
+        margin-top:0px;
     }
+        @include media("md-mob") {
+            width: 70%;
+            margin-top:0px;
+
+            
+
+        }
+        @include media("lg-mob") {
+            width: 70%;
+            margin-top:0px;
+
+            
+
+        }
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -45,6 +60,11 @@
         }
         @include media("sm-tab") {
             flex: 0 0 calc(95% / 3);
+            margin-top: 2em;
+
+        }
+        @include media("lg-tab") {
+            flex: 0 0 40%;
             margin-top: 2em;
 
         }

@@ -2,9 +2,11 @@
 
 
 use App\Http\Controllers\Web\AboutUsController;
+use App\Http\Controllers\web\CareerController;
 use App\Http\Controllers\web\CoeController;
 use App\Http\Controllers\Web\ContactUsController;
 use App\Http\Controllers\Web\HomeController;
+use App\Http\Controllers\web\InternationalPatientController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +31,5 @@ Route::get('/about',[AboutUsController::class,'index'])->name('about');
 Route::get('/contact',[ContactUsController::class,'index'])->name('contact');
 
 Route::get('/centers-of-excellence/{slug}',[CoeController::class,'index'])->name('coe');
+Route::get('/international-patient',[InternationalPatientController::class,'index'])->name('international_patient');
+Route::get('/career',[CareerController::class,'index'])->name('career');

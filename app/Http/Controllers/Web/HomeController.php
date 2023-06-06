@@ -21,7 +21,7 @@ class HomeController extends Controller
             $query->select('name');
         }])->where('status', 'active')->get(['title', 'author', 'image', 'image_alt', 'slug', 'published_date']);
         $media = Media::where('homepage', 'yes')->where('status', 'active')->get(['id', 'title', 'media_name', 'image', 'image_alt', 'media_link', 'published_date', 'slug']);
-        $reviews = Testimonial::where('homepage', 'yes')->where('status', 'active')->get(['id','title','type','image','image_alt','thumbnail','video_link','slug']);
+        $reviews = Testimonial::where('homepage', 'yes')->where('status', 'active')->get(['id','title','type','image','image_alt','thumbnail','video_link','slug','patient_name','feedback']);
         if($content == null)
         {
             abort(404);
