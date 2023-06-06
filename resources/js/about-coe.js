@@ -4,50 +4,47 @@ import { httpRequest, debounce, removeClass } from "./utils/event-handler";
 
 
 
-
-
-var myFunction = 
-domSelector('.coes__list__item','click',async function() {
-        let coe_id = this.childNodes[1].getAttribute('data-id');
-        let response = await httpRequest('/api/getCOE','POST',{coe_id});
+async function printCoe(coe_id)
+{
+    let response = await httpRequest('/api/getCOE','POST',{coe_id});
         
-              // this.childNodes[1].insertAdjacentHTML("afterend",  htmlData);
-        document.querySelector('.coes__description--desktop').innerHTML = "";
-        console.log(response);
-        let htmlData = `<div class="coes__description__wrapper coes__description__wrapper--mobile">
-    
-        <img class="coes__description__image" src="${import.meta.env.VITE_ASSET_URL}${response.data.homepage_image}" alt="${response.data.homepage_image_alt}">
-        <h2 class="coes__description__title">${response.data.name}</h2>
-        <p class="coes__description__content">
-    ${response.data.short_description}
-        
-        </p>
+    // this.childNodes[1].insertAdjacentHTML("afterend",  htmlData);
+document.querySelector('.coes__description--desktop').innerHTML = "";
+console.log(response);
+let htmlData = `<div class="coes__description__wrapper coes__description__wrapper--mobile">
+
+<img class="coes__description__image" src="${import.meta.env.VITE_ASSET_URL}${response.data.homepage_image}" alt="${response.data.homepage_image_alt}">
+<h2 class="coes__description__title">${response.data.name}</h2>
+<p class="coes__description__content">
+${response.data.short_description}
+
+</p>
 
 
 
 
 
 
-        
-    </div>`
+
+</div>`
 
 
-    let desktopHTML =  `<div class="coes__description__wrapper">
+let desktopHTML =  `<div class="coes__description__wrapper">
 
-    <img class="coes__description__image" src="${import.meta.env.VITE_ASSET_URL}${response.data.homepage_image}" alt="${response.data.homepage_image_alt}" alt="">
-    <h3 class="coes__description__title">${response.data.name}</h3>
-    <p class="coes__description__content">
-    ${response.data.short_description}
-    </p>
-
-
-
+<img class="coes__description__image" src="${import.meta.env.VITE_ASSET_URL}${response.data.homepage_image}" alt="${response.data.homepage_image_alt}" alt="">
+<h3 class="coes__description__title">${response.data.name}</h3>
+<p class="coes__description__content">
+${response.data.short_description}
+</p>
 
 
 
-   
-    
-    <svg class="coes_dots-left" width="75" height="115" viewBox="0 0 75 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+
+
+
+
+<svg class="coes_dots-left" width="75" height="115" viewBox="0 0 75 115" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="72.5" cy="62.5" r="2.5" transform="rotate(90 72.5 62.5)" fill="#004E9E"/>
 <circle cx="32.5" cy="62.5" r="2.5" transform="rotate(90 32.5 62.5)" fill="#004E9E"/>
 <circle cx="52.5" cy="62.5" r="2.5" transform="rotate(90 52.5 62.5)" fill="#004E9E"/>
@@ -245,19 +242,61 @@ domSelector('.coes__list__item','click',async function() {
 </svg>
 </div>
 <a href="/centers-of-excellence/${response.data.slug}" class="view-all-btn">
-                Learn More
-            </a>`
-{/* <img  src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt=""> */}
+      Learn More
+  </a>`
 
-{/* <img  src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt=""> */}
+
+  return {
+    'mobile':htmlData,
+    'desktop':desktopHTML
+  }
+}
+
+
+
+
+
+
+
+
+
+domSelector('.coes__list__item','click',async function() {
+        let coe_id = this.childNodes[1].getAttribute('data-id');
+        let cards = await printCoe(coe_id);
+
+{/* <img  src="" data-src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt=""> */}
+
+{/* <img  src="" data-src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt=""> */}
 if(this.querySelector('.coes__description__wrapper--mobile') == null)
 {
-        this.childNodes[1].insertAdjacentHTML("afterend",  htmlData);
+        this.childNodes[1].insertAdjacentHTML("afterend",  cards.mobile);
 
 }
-document.querySelector('.coes__description--desktop').insertAdjacentHTML("beforeend",desktopHTML);
+
+
+document.querySelector('.coes__description--desktop').insertAdjacentHTML("beforeend",cards.desktop);
     
 
         // console.log(this.childNodes);
         this.childNodes[2].classList.toggle("coes__description__wrapper--mobile--active");
 });
+
+
+
+
+// Default COE
+document.addEventListener("DOMContentLoaded", async () => {
+
+  
+    let coe_id = document.querySelector(
+        ".coes__list__item li"
+    ).getAttribute('data-id');
+
+    let cards = await printCoe(coe_id);
+    document.querySelector('.coes__description--desktop').insertAdjacentHTML("beforeend",cards.desktop);
+  
+    
+    
+});
+
+

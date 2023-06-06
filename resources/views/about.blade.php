@@ -1,10 +1,13 @@
 @extends('layout.main')
+@section('css')
+@vite(['resources/scss/about.scss', 'resources/js/app.js'])
+@endsection
 @section('content')
-<x-banner :imgurl='$about->banner_desktop' :text="$about->banner_text"/>
+<x-banner :imgurl="config('variables.asset') .$about->banner_desktop" :text="$about->banner_text"/>
 <x-gap/>
-<x-mission-vision :$about/>
+<x-mission-vision :$about />
 <x-gap/>
-<x-chairman-desk :$about/>
+<x-chairman-desk :$about />
 {{-- <x-gap/> --}}
 <div class="ui-background">
     <x-awards/>
@@ -12,7 +15,7 @@
 </div>
 
 <x-gap/>
-<x-about-star :$about/>
+<x-about-star :$about />
 <x-gap/>
 
 <div class="ui-background">

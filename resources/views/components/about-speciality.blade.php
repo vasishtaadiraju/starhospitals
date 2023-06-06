@@ -1,7 +1,11 @@
 <div class="about-speciality" id="overview">
 <div class="about-speciality__image-wrapper">
     <div class="about-speciality__image-wrapper__image">
-        <img class="" src="{{ config('variables.asset') . $content->description_image }}" alt="{{$content->description_image_alt}}">
+
+        <img class="" src="" data-src=" @if ($content->page_type == 'Coe')            
+        {{ config('variables.asset') . $content->description_image }}
+        @elseif($content->page_type == 'Branch') {{ config('variables.asset') . $content->about_image }}
+        @endif" alt="{{$content->about_image_alt}}">
 
     </div>
     <svg class="about-speciality__image-wrapper__dot-right" width="115" height="75" viewBox="0 0 115 75" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -204,14 +208,22 @@
 </div>
 <div class="about-speciality__content">
 <h2 class="about-speciality__content__heading section-heading">{{$content->name}}</h2>
+@if (isset($content->branches))
 <div class="about-speciality__content__links">
+    
     @foreach ($content->branches as $item)
     <a href="#" class="">{{$item->name}}</a> | 
     @endforeach
     {{-- | <a href="#" class="">Banjara Hills</a> --}}
-</div>
+</div>  
+@endif
+
 <div class="about-speciality__content__description">
+    @if ($content->page_type == 'Coe')  
  {!!$content->long_description!!}
+ @elseif($content->page_type == 'Branch') 
+ {!!$content->about!!}
+@endif
 </div>
 </div>
 </div>

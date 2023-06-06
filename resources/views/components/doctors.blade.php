@@ -1,14 +1,14 @@
 <x-heading :title="'Book an Appointment'" :description="'Our healthcare specialists are equipped with the knowledge and skills to provide you with the support you require. From consultation to diagnosis to treatments, our experts are dedicated to helping you.'"/>
-<x-filter :content='null' :branches='[]' :coes='[]'/>
+<x-filter :content='null' :$branches :$coes />
 <div class="doctors">
-    <div class="doctors__cards-wrapper @if ($type == 'flex')
+    <div class="doctors__cards-wrapper doctor-appointment-cards-wrapper @if ($type == 'flex')
     doctors__cards-wrapper--flex-list
     @else
     doctor-slide
     @endif">
         <div class="doctors-card">
             <a href="" class="doctors-card__lt">
-                <img src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
+                <img src="" data-src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
                 <div class="doctors-card__lt__details">
                     <p>35 yrs <span>Experience</span></p>
                     <p>Rs. 500 <span>Fees</span> </p>
@@ -21,18 +21,18 @@
                 <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
 
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
                     <span>View Full Profile</span>
                 </div>
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
                     <span>Book an Appointment</span>
                 </div>
             </div>
         </div>
         <div class="doctors-card">
             <a href="" class="doctors-card__lt">
-                <img src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
+                <img src="" data-src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
                 <div class="doctors-card__lt__details">
                     <p>35 yrs <span>Experience</span></p>
                     <p>Rs. 500 <span>Fees</span> </p>
@@ -45,18 +45,18 @@
                 <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
 
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
                     <span>View Full Profile</span>
                 </div>
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
                     <span>Book an Appointment</span>
                 </div>
             </div>
         </div>
         <div class="doctors-card">
             <a href="" class="doctors-card__lt">
-                <img src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
+                <img src="" data-src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
                 <div class="doctors-card__lt__details">
                     <p>35 yrs <span>Experience</span></p>
                     <p>Rs. 500 <span>Fees</span> </p>
@@ -69,18 +69,18 @@
                 <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
 
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
                     <span>View Full Profile</span>
                 </div>
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
                     <span>Book an Appointment</span>
                 </div>
             </div>
         </div>
         <div class="doctors-card">
             <a href="" class="doctors-card__lt">
-                <img src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
+                <img src="" data-src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
                 <div class="doctors-card__lt__details">
                     <p>35 yrs <span>Experience</span></p>
                     <p>Rs. 500 <span>Fees</span> </p>
@@ -93,18 +93,18 @@
                 <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
 
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
                     <span>View Full Profile</span>
                 </div>
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
                     <span>Book an Appointment</span>
                 </div>
             </div>
         </div>
         <div class="doctors-card">
             <a href="" class="doctors-card__lt">
-                <img src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
+                <img src="" data-src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
                 <div class="doctors-card__lt__details">
                     <p>35 yrs <span>Experience</span></p>
                     <p>Rs. 500 <span>Fees</span> </p>
@@ -117,18 +117,18 @@
                 <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
 
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
                     <span>View Full Profile</span>
                 </div>
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
                     <span>Book an Appointment</span>
                 </div>
             </div>
         </div>
         <div class="doctors-card">
             <a href="" class="doctors-card__lt">
-                <img src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
+                <img src="" data-src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
                 <div class="doctors-card__lt__details">
                     <p>35 yrs <span>Experience</span></p>
                     <p>Rs. 500 <span>Fees</span> </p>
@@ -141,18 +141,18 @@
                 <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
 
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
                     <span>View Full Profile</span>
                 </div>
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
                     <span>Book an Appointment</span>
                 </div>
             </div>
         </div>
         <div class="doctors-card">
             <a href="" class="doctors-card__lt">
-                <img src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
+                <img src="" data-src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
                 <div class="doctors-card__lt__details">
                     <p>35 yrs <span>Experience</span></p>
                     <p>Rs. 500 <span>Fees</span> </p>
@@ -165,18 +165,18 @@
                 <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
 
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
                     <span>View Full Profile</span>
                 </div>
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
                     <span>Book an Appointment</span>
                 </div>
             </div>
         </div>
         <div class="doctors-card">
             <a href="" class="doctors-card__lt">
-                <img src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
+                <img src="" data-src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
                 <div class="doctors-card__lt__details">
                     <p>35 yrs <span>Experience</span></p>
                     <p>Rs. 500 <span>Fees</span> </p>
@@ -189,11 +189,11 @@
                 <p class="doctors-card__rt__location"> <a href=""> Banjara Hills </a></p>
 
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
                     <span>View Full Profile</span>
                 </div>
                 <div class="doctors-card__rt__btn">
-                    <img src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
                     <span>Book an Appointment</span>
                 </div>
             </div>

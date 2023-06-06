@@ -1,6 +1,6 @@
 <div class="talk-doctor" id="consult-our-expert">
     <div class="talk-doctor__image-wrapper">
-        <img src="{{Vite::asset('resources/images/talk-doctor.png')}}" alt="">
+        <img src="" data-src="{{Vite::asset('resources/images/talk-doctor.png')}}" alt="">
     </div>
     <div class="talk-doctor__form-wrapper">
         <div class="talk-doctor__form-wrapper__content">

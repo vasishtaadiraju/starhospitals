@@ -11,9 +11,11 @@ class AboutStar extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $about;
+
+    public function __construct($about)
     {
-        //
+        $this->about = $about;
     }
 
     /**

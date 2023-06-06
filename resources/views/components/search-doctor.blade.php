@@ -9,9 +9,9 @@
         <div class="filter filter--type-secondary">
             <div class="filter__fields-wrapper">
 
-                <img src="{{ Vite::asset('resources/images/Icons/sthetoscope.png') }}" alt="">
+                <img src="" data-src="{{ Vite::asset('resources/images/Icons/sthetoscope.png') }}" alt="">
 
-                <select type="text" class="location-select-box" placeholder="Enter Doctor Name">
+                <select type="text" class="location-select-box" data-type="location" placeholder="Enter Doctor Name">
                     <option value="">Select Location</option>
                     @foreach ($branches as $item)
                         <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -20,9 +20,9 @@
             </div>
             <div class="filter__fields-wrapper">
 
-                <img src="{{ Vite::asset('resources/images/Icons/sthetoscope.png') }}" alt="">
+                <img src="" data-src="{{ Vite::asset('resources/images/Icons/sthetoscope.png') }}" alt="">
 
-                <select type="text" class="speciality-select-box" placeholder="Enter Doctor Name">
+                <select type="text" class="speciality-select-box" data-type="coe" placeholder="Enter Doctor Name">
                     <option value="">Select Speciality</option>
                     @foreach ($coes as $item)
                         <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -31,7 +31,7 @@
             </div>
             <div class="filter__fields-wrapper">
 
-                <img src="{{ Vite::asset('resources/images/Icons/location.png') }}" alt="">
+                <img src="" data-src="{{ Vite::asset('resources/images/Icons/location.png') }}" alt="">
 
                 <select type="text" class="doctor-select-box" placeholder="Enter Doctor Name">
                     <option value="">Select Doctor</option>

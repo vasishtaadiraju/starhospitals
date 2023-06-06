@@ -1,7 +1,7 @@
 {{-- <div class="chairman-desk">
     <div class="chairman-desk__wrapper">
         <div class="chairman-desk__image-container">
-            <img src="{{Vite::asset('resources/images/doctors/doctor.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/doctors/doctor.png')}}" alt="">
         </div>
         <div class="chairman-desk__content-container">
             <h2>From Chairman's Desk</h2>
@@ -14,15 +14,15 @@
 <div class="chairman-desk">
     <div class="chairman-desk__wrapper">
         <div class="chairman-desk__image-container">
-            <img src="{{Vite::asset('resources/images/doctors/doctor.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/doctors/doctor.png')}}" alt="">
         </div>
         <div class="chairman-desk__content-container">
-            @if(!empty($about->chairman_desk_title))
-            <h2>{{ $about->chairman_desk_title }}</h2>
-            @endif
-            @if(!empty($about->chairman_desk_description))
+            {{-- @if(!empty($about->chairman_desk_title)) --}}
+            <h2 class="section-heading">{{ $about->chairman_desk_title }}</h2>
+            {{-- @endif --}}
+            {{-- @if(!empty($about->chairman_desk_description)) --}}
             <p>{!! $about->chairman_desk_description !!}</p>
-            @endif
+            {{-- @endif --}}
         </div>
     </div>
 </div>

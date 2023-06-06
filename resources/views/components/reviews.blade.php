@@ -4,7 +4,7 @@
     @foreach ($reviews as $item)
     <div class="reviews__card">
         <div class="reviews__card__image-wrapper @if($item->type == 'video') ctg-video @endif">
-                <img src="{{ config('variables.asset') . $item->thumbnail }}"  alt="">
+            @if($item->type == 'video')  <a href="{{$item->video_link}}"> @endif    <img src="" data-src="{{ config('variables.asset') . $item->thumbnail }}"  alt=""> @if($item->type == 'video') </a>@endif
         </div>
         <div class="reviews__card__text-wrapper">
 
@@ -19,9 +19,9 @@
     </div>  
     @endforeach
     
-    <div class="reviews__card">
+    {{-- <div class="reviews__card">
         <div class="reviews__card__image-wrapper">
-                <img src="{{Vite::asset('resources/images/review/review.png')}}" alt="">
+                <img src="" data-src="{{Vite::asset('resources/images/review/review.png')}}" alt="">
         </div>
         <div class="reviews__card__text-wrapper">
 
@@ -36,7 +36,7 @@
     </div>
     <div class="reviews__card">
         <div class="reviews__card__image-wrapper">
-                <img src="{{Vite::asset('resources/images/review/review.png')}}" alt="">
+                <img src="" data-src="{{Vite::asset('resources/images/review/review.png')}}" alt="">
         </div>
         <div class="reviews__card__text-wrapper">
 
@@ -51,7 +51,7 @@
     </div>
     <div class="reviews__card">
         <div class="reviews__card__image-wrapper">
-                <img src="{{Vite::asset('resources/images/review/review.png')}}" alt="">
+                <img src="" data-src="{{Vite::asset('resources/images/review/review.png')}}" alt="">
         </div>
         <div class="reviews__card__text-wrapper">
 
@@ -63,6 +63,6 @@
                 </div>
         </div>
         
-    </div>
+    </div> --}}
     
 </div>

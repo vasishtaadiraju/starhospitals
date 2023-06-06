@@ -4,7 +4,7 @@
 @import "utils/media-queries";
 $visible-cards:1;
 .slider{
-    // width: 100%;
+    width: 100%;
     // height: 60vh;
     // background-color: black;
     // display: flex;
@@ -30,6 +30,7 @@ $visible-cards:1;
             position: absolute;
             bottom: 0;
         }
+        
     }
 
     &__item{
@@ -42,8 +43,9 @@ $visible-cards:1;
         }
         @include media('md-mob')
         {
-            height: 40vh;
+            height: 65vh;
         }
+        
         // @include media('x-sm-tab')
         // {
         //     height: 40vh;
@@ -60,7 +62,7 @@ $visible-cards:1;
 
         &__content{
             position: absolute;
-            width: 35%;
+            width: 37%;
             top: 50%;
             left: 7.5%;
             background-color: white;
@@ -135,10 +137,22 @@ $visible-cards:1;
                 left: 5%;
             
             }
+            @include media('lg-tab')
+            {
+                width: 60%;
+                // padding: 1em;
+                min-height: max-content;
+
+                left: 5%;
+            
+            }
 
             h1{
-                @include font-family(700);
+                // @include font-family(700);
                 font-size: 40px;
+                line-height: 52.5px;
+                font-family: 'Plus Jakarta Sans Bold';
+                font-weight: 800;
                 @include media('sm-mob')
                 {
                     font-size: 20px;
@@ -207,6 +221,11 @@ $visible-cards:1;
                     margin-top: 1em;
                 }
                 @include media('lg-mob')
+                {
+                    font-size: 13px;
+                    margin-top: 1em;
+                }
+                @include media('x-sm-tab')
                 {
                     font-size: 13px;
                     margin-top: 1em;

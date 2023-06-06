@@ -1,0 +1,235 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+
+.our-process {
+    @include centerSection;
+    width: 77%;
+    margin-left: 15%;
+
+    @include media("sm-mob") {
+        width: 85%;
+        margin: 0px auto;
+    }
+    @include media("md-mob") {
+        width: 85%;
+        margin: 0px auto;
+    }
+    @include media("lg-mob") {
+        width: 85%;
+        margin: 0px auto;
+    }
+    @include media("x-sm-tab") {
+        width: 85%;
+        margin: 0px auto;
+    }
+    @include media("md-tab") {
+        width: 85%;
+        margin: 0px auto;
+    }
+
+    &__list-mob {
+        display: none;
+        @include media("sm-mob") {
+            display: block;
+        }
+        @include media("md-mob") {
+            display: block;
+        }
+        @include media("lg-mob") {
+            display: block;
+        }
+        @include media("x-sm-tab") {
+            display: block;
+        }
+    }
+    &__cards-container {
+        min-height: 15rem;
+        width: 100%;
+        display: flex;
+        @include media("sm-mob") {
+            display: none;
+        }
+        @include media("md-mob") {
+            display: none;
+        }
+        @include media("lg-mob") {
+            display: none;
+        }
+        @include media("x-sm-tab") {
+            display: none;
+        }
+        &__card {
+            flex: 0 0 calc(100% / 6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5em;
+            // height: 100%;
+            padding: 2em 0px;
+            @include media("sm-mob") {
+                flex-direction: row;
+                padding: 0.5em 0px;
+            }
+            @include media("md-mob") {
+                flex-direction: row;
+                padding: 0.5em 0px;
+            }
+            @include media("lg-mob") {
+                flex-direction: row;
+                padding: 0.5em 0px;
+            }
+            @include media("x-sm-tab") {
+                flex-direction: row;
+                padding: 0.5em 0px;
+            }
+
+            div {
+                &:first-child {
+                    svg {
+                        @include media("sm-mob") {
+                            height: 20px;
+                            width: 20px;
+                        }
+                        @include media("md-mob") {
+                            height: 20px;
+                            width: 20px;
+                        }
+                        @include media("lg-mob") {
+                            height: 20px;
+                            width: 20px;
+                        }
+                        @include media("x-sm-tab") {
+                            height: 20px;
+                            width: 20px;
+                        }
+                    }
+                }
+
+                svg {
+                    @include media("sm-mob") {
+                        height: 50px;
+                        width: 50px;
+                    }
+                    @include media("md-mob") {
+                        height: 50px;
+                        width: 50px;
+                    }
+                    @include media("lg-mob") {
+                        height: 50px;
+                        width: 50px;
+                    }
+                    @include media("x-sm-tab") {
+                        height: 50px;
+                        width: 50px;
+                    }
+                }
+            }
+
+            p {
+                @include font-family(600);
+                text-align: center;
+                padding: 0px 1em;
+                @include media("sm-mob") {
+                    padding: 0;
+                    font-size: 14px;
+                    text-align: left;
+                }
+                @include media("md-mob") {
+                    padding: 0;
+                    font-size: 14px;
+                    text-align: left;
+                }
+                @include media("lg-mob") {
+                    padding: 0;
+                    font-size: 14px;
+                    text-align: left;
+                }
+                @include media("x-sm-tab") {
+                    padding: 0;
+                    font-size: 14px;
+                    text-align: left;
+                }
+            }
+        }
+    }
+    &__pattern-container {
+        min-height: 9.5rem;
+        width: 100%;
+        display: flex;
+        @include media("sm-mob") {
+            display: none;
+        }
+        @include media("md-mob") {
+            display: none;
+        }
+        @include media("lg-mob") {
+            display: none;
+        }
+        @include media("x-sm-tab") {
+            display: none;
+        }
+        &__cards {
+            flex: 0 0 calc(100% / 6);
+            // border: 10px  solid #B1D7FE;
+
+            &--odd {
+                border-top: 10px solid #b1d7fe;
+            }
+            &--even {
+                border: 10px solid #b1d7fe;
+                border-top: none;
+            }
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+    &__segment-container {
+        min-height: 8rem;
+        width: 100%;
+        display: flex;
+        @include media("sm-mob") {
+            display: none;
+        }
+        @include media("md-mob") {
+            display: none;
+        }
+        @include media("lg-mob") {
+            display: none;
+        }
+        @include media("x-sm-tab") {
+            display: none;
+        }
+        &__card {
+            flex: 0 0 calc(100% / 6);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            &__segment {
+                height: 100%;
+                width: 0.5px;
+                border: 1px solid #004e9e;
+                position: relative;
+                &::after {
+                    content: " ";
+                    display: block;
+                    position: absolute;
+                    background-color: white;
+                    width: 12px;
+                    height: 12px;
+                    border: 3px solid #004e9e;
+                    border-radius: 50%;
+                    top: -2px;
+                    left: -8px;
+                }
+
+                &--bottom {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}

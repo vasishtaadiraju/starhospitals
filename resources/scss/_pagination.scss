@@ -34,12 +34,24 @@
 
         li{
             list-style-type: none;
-            a{
-                padding: 0.5em 1em;
-                font-family: variables.$starhospitals-brand-secondary-font;
-                font-weight: 600;
-            }
+            
         }
+
+        &__link{
+            padding: 0.5em 1em;
+            font-family: variables.$starhospitals-brand-secondary-font;
+            font-weight: 600;
+
+            &--active{
+                background-color: variables.$starhospitals-brand-secondary;
+                border-radius: 10px;
+                margin-left: 0.25em;
+                color: white;
+            }
+
+        }
+
+        
     }
 
     &__buttons{

@@ -41,6 +41,11 @@
         gap: 2em;
         padding: 1em;
     }
+    @include media("lg-tab") {
+        width:85%;
+        margin-top: 2em;
+
+    }
     &__submit{
         border-radius: 10px !important;
         width:max-content;
@@ -51,24 +56,27 @@
         // flex: 0 0 20%;
         // height: 31rem;
         @include media("sm-mob") {
-            height: auto;
+            height: 22rem;
         }
         @include media("md-mob") {
-            height: auto;
+            height: 22rem;
         }
         @include media("lg-mob") {
-            height: auto;
+            height: 22rem;
         }
         img {
             height: 100%;
             @include media("sm-mob") {
                 width: 100%;
+                border-radius: 20px;
             }
             @include media("md-mob") {
                 width: 100%;
+                border-radius: 20px;
             }
             @include media("lg-mob") {
                 width: 100%;
+                border-radius: 20px;
             }
         }
     }

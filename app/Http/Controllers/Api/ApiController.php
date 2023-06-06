@@ -47,13 +47,14 @@ class ApiController extends Controller
     {
 
         try {
-            
+
             $branch_id = $request->branch_id;
             $coe_id = $request->coe_id;
             // $speciality_id = $request->speciality_id;
             $doctors = [];
             $user_query = User::query();
-            // $pagination = $user_query->paginate(10);
+            $pagination = null;
+
             if ($coe_id != null) {
                 $user_query->whereHas('coes', function ($query) use ($coe_id) {
                     $query->where('centre_of_excellences.id', $coe_id);
@@ -65,17 +66,27 @@ class ApiController extends Controller
                     $query->where('branches.id', $branch_id);
                 });
             }
-            $doctors = $user_query->with([
+            $user_query->with([
                 'coes' => function ($query) {
                     $query->select('name');
                 },
                 'branches' => function ($query) {
                     $query->select('name');
                 }
-            ])->join('branch_user','users.id' , '=' , 'branch_user.user_id')->orderBy('order_number','DESC')->get(['users.id', 'name', 'slug','designation','branch_user.order_number','large_image'])->unique()->take(20);
+            ])->join('branch_user', 'users.id', '=', 'branch_user.user_id')->orderBy('order_number', 'DESC');
+            if ($request->paginate == true) {
+                $pagination = $pagination = $user_query->paginate(2);
+            }
+            ;
+            $doctors = $user_query->get(['users.id', 'name', 'slug', 'designation', 'branch_user.order_number', 'large_image'])->unique()->take(20);
 
-                // if()
-            return response($doctors, 200);
+            if ($request->paginate == true) {
+                return response($pagination, 200);
+
+            } else {
+                return response($doctors, 200);
+
+            }
         } catch (\Throwable $th) {
             return response($th->getMessage(), 500);
 
@@ -87,13 +98,35 @@ class ApiController extends Controller
     {
         try {
             $coe_id = $request->coe_id;
-            $coe = CentreOfExcellence::where('status','active')->where('id',$coe_id)->first();
+            $coe = CentreOfExcellence::where('status', 'active')->where('id', $coe_id)->first();
 
-        return response($coe,200);
+            return response($coe, 200);
         } catch (\Throwable $th) {
             //throw $th;
-            return response($th->getMessage(),500);
+            return response($th->getMessage(), 500);
         }
-        
+
+    }
+
+    function getBranchCoeSpecialityById(Request $request)
+    {
+        $coe_id = $request->coe_id;
+        $branch_id = $request->branch_id;
+        $response = [];
+        if ($coe_id != null) {
+            $response = CentreOfExcellence::where('status', 'active')->where('id', $coe_id)->with([
+                'branches' => function ($query) {
+                    $query->where('status', 'active')->orderBy('branches.order_number')->select('branches.id', 'name', 'slug', 'address', 'card_image')->take(2);
+                }
+            ])->first('id');
+        } elseif ($branch_id != null) {
+            $response = Branch::where('status', 'active')->where('id', $branch_id)->with([
+                'coes' => function ($query) {
+                    $query->where('status', 'active')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image')->take(2);
+                }
+            ])->first('id');
+        }
+
+        return response($response,200);
     }
 }

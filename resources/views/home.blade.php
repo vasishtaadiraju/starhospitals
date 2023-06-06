@@ -1,4 +1,7 @@
 @extends('layout.main')
+@section('css')
+@vite(['resources/scss/homepage.scss', 'resources/js/app.js'])
+@endsection
 @section('content')
 <x-slider :$content/>
 <x-search-doctor :$branches :$coes/>
@@ -20,7 +23,7 @@
 
 <x-about-us :$content/>
 <x-gap/>
-<x-reviews :$content  :$reviews/>
+<x-testimonials  :testimonials=[]/>
 <x-gap/>
 <x-blogs :$content :$blogs/>
 <x-gap/>

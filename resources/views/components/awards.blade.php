@@ -2,7 +2,7 @@
 <div class="awards-accolades">
     <div class="awards-accolades__card">
         <div class="awards-accolades__card__image">
-            <img src="{{Vite::asset('resources/images/awards/awards.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/awards/awards.png')}}" alt="">
         </div>
         <div class="awards-accolades__card__content">
                 <h2>Award name</h2>
@@ -11,7 +11,7 @@
     </div>
     <div class="awards-accolades__card awards-accolades__card--even">
         <div class="awards-accolades__card__image">
-            <img src="{{Vite::asset('resources/images/awards/awards.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/awards/awards.png')}}" alt="">
         </div>
         <div class="awards-accolades__card__content">
                 <h2>Award name</h2>

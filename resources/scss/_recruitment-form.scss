@@ -1,0 +1,158 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+.recruitment {
+    @include centerSection;
+    width: 65%;
+    min-height: 95vh;
+    display: flex;
+    margin-left: calc(37% / 2);
+    @include media("sm-mob") {
+        flex-direction: column;
+        width: 90%;
+        margin: 0px auto;
+    }
+    @include media("md-mob") {
+        flex-direction: column;
+        width: 90%;
+        margin: 0px auto;
+    }
+    @include media("lg-mob") {
+        flex-direction: column;
+        width: 90%;
+        margin: 0px auto;
+    }
+    @include media("x-sm-tab") {
+        flex-direction: column;
+        width: 90%;
+        margin: 0px auto;
+    }
+    @include media("sm-tab") {
+        width: 80%;
+        margin: 0px auto;
+    }
+    @include media("md-tab") {
+        width: 80%;
+        margin: 0px auto;
+    }
+    &__reviews {
+        flex: 0 0 45%;
+        background-color: variables.$starhospitals-brand-primary;
+        border-radius: 20px 0px 0px 20px;
+        display: flex;
+        align-items: center;
+        @include media("sm-mob") {
+            display: none;
+        }
+        @include media("md-mob") {
+            display: none;
+        }
+        @include media("lg-mob") {
+            display: none;
+        }
+        @include media("x-sm-mob") {
+            display: none;
+        }
+        &__card {
+            position: relative;
+            background-color: white;
+            width: 53%;
+            margin-left: 2.5em;
+            border-radius: 10px;
+            display: flex;
+            gap: 1.5em;
+            padding: 1em 0.75em;
+            align-items: center;
+            // text-align: justify;
+            &__arrow {
+                position: absolute;
+                bottom: -11px;
+            }
+
+            p {
+                @include font-family(400);
+                font-size: 12px;
+            }
+
+            &--middle {
+                margin-top: 6rem;
+                margin-left: 10rem;
+                width: 51%;
+            }
+
+            &--bottom {
+                margin-top: 8rem;
+                margin-left: 6rem;
+                width: 67%;
+                padding-right: 2.25em;
+            }
+        }
+
+        &__card-wrapper {
+        }
+    }
+
+    &__form {
+        padding: 5em;
+        padding-right: 2em;
+        flex: 1;
+        @include media("sm-mob") {
+            padding: 1em;
+        }
+        @include media("md-mob") {
+            padding: 1em;
+        }
+        @include media("lg-mob") {
+            padding: 1em;
+        }
+        @include media("x-sm-tab") {
+            padding: 1em;
+        }
+
+        h2 {
+            @include media("sm-mob") {
+                text-align: center;
+            }
+            @include media("md-mob") {
+                text-align: center;
+            }
+            @include media("lg-mob") {
+                text-align: center;
+            }
+            @include media("x-sm-tab") {
+                text-align: center;
+            }
+        }
+        &__wrapper {
+            margin-top: 4em;
+
+            input {
+                padding: 1.25em 0.5em;
+                margin-bottom: 1.25em;
+            }
+        }
+
+        &__submit-btn {
+            @include btn-primary(
+                white,
+                variables.$starhospitals-brand-secondary
+            );
+            padding: 1.25em 1em;
+            width: 166px;
+            margin: 0px auto;
+            border: none;
+            margin-top: 3em;
+        }
+
+        p {
+            @include font-family(400);
+            margin-top: 5em;
+            text-align: center;
+
+            a {
+                color: variables.$starhospitals-brand-secondary;
+            }
+        }
+    }
+}

@@ -2,15 +2,34 @@ let screenWidth = screen.width;
 $('.slider').slick({
     dots:true,
     arrows:false,
+    autoplay:true,
 }) 
 
+$('.virtual-tour-slider').slick({
+    dots:false,
+    arrows:true,
+ 
+})
+$('.int-reviews').slick({
+    dots:false,
+    arrows:true,
+}) 
 $('.specialists-slider').slick({
     // dots:true,
     arrows:true,
     slidesToShow:4,
     infinite:true,
     responsive: [{
-        breakpoint: 1025,
+        breakpoint: 1275,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 3
+        }
+    },{
+        breakpoint: 1024,
         settings: {
             // dots: true,
             arrows: true,
@@ -47,6 +66,15 @@ $('.blogs-slider').slick({
     arrows:true,
     slidesToShow:3,
     responsive: [{
+        breakpoint: 1275,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 2
+        }
+    },{
         breakpoint: 1025,
         settings: {
             // dots: true,
@@ -120,6 +148,15 @@ $('.media-slider').slick({
     arrows:true,
     slidesToShow:3,
     responsive: [{
+        breakpoint: 1275,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 2
+        }
+    },{
         breakpoint: 1025,
         settings: {
             // dots: true,
@@ -157,6 +194,15 @@ $('.reviews-slider').slick({
     arrows:true,
     slidesToShow:2,
     responsive: [{
+        breakpoint: 1275,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 1
+        }
+    },{
         breakpoint: 1025,
         settings: {
             // dots: true,
