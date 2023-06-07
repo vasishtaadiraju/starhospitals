@@ -15,20 +15,7 @@
                 <p class="blogs__description">{{ $item->title }}</p>
             </div>
         @endforeach
-        @foreach ($blogs as $item)
-            <div class="blogs__card">
-                <a href=""><img class="blogs__image" src="" data-src="{{config('variables.asset').$item->image}}"
-                        alt=""> </a>
-                <p class="blogs__category"> <a href="">Cardiac Sciences</a> </p>
-                @php
-                    $date = date_create($item->published_date);
-                @endphp
-                <p class="blogs__author-published"> <a href="">{{ $item->author }} 
-                    </a> <span>|</span> <a href="#">
-                        {{ date_format($date, 'M d, Y') }}</a> </p>
-                <p class="blogs__description">{{ $item->title }}</p>
-            </div>
-        @endforeach
+       
 
         {{-- <div class="blogs__card">
             <a href=""><img class="blogs__image" src="" data-src="{{Vite::asset('resources/images/blogs/blog.png')}}" alt=""> </a> 

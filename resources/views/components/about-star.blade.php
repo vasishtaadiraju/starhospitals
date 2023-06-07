@@ -22,7 +22,7 @@
                 </svg>
         </div>
         <div class="about-star__content-container">
-            <h2>{{ $about->title }}</h2>
+            <h2 class="section-heading">{{ $about->title }}</h2>
             <p>{!! $about->description !!}</p>
         </div>
         @endif

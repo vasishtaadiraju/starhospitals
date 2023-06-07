@@ -54,7 +54,7 @@
 <div class="header__nav header__nav--fixed">
     <ul class="header__nav__options">
         <li class="header__nav__option header__nav__option--dropdown">
-            <a href="#centre-of-excellences">Centers of Excellences</a>
+            <a href="#centre-of-excellences">Centers of Excellence</a>
             <ul class="header__nav__option--dropdown__options">
                 @foreach ($coes as $item)
                 <li class=""><a
@@ -173,7 +173,7 @@
     <div class="header__nav " id="star-navbar">
         <ul class="header__nav__options">
             <li class="header__nav__option header__nav__option--dropdown">
-                <a href="#centre-of-excellences">Centers of Excellences</a>
+                <a href="#centre-of-excellences">Centers of Excellence</a>
                 <ul class="header__nav__option--dropdown__options">
                     {{-- header__nav__option--nested-dropdown
                     header__nav__option--dropdown  --}}

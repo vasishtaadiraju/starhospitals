@@ -9,7 +9,7 @@
             {{-- faqs__card__answer--active --}}
             <div class="faqs__card__answer ">
                 
-                    {{$item->answer}}
+                    {!!$item->answer!!}
 
                 
             </div>
