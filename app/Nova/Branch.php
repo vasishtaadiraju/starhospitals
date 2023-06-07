@@ -59,8 +59,8 @@ class Branch extends Resource
                 ->sortable()
                 ->rules('required', 'string', 'max:50'),
 
-            BelongsTo::make('Region')
-                ->withoutTrashed(),
+            // BelongsTo::make('Region')
+            //     ->withoutTrashed(),
 
             Text::make('Contact', 'contact')
                 ->hideFromIndex()
@@ -85,16 +85,12 @@ class Branch extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'image', 'max:1024'),
 
-            Text::make('Background Image Desktop Alt', 'bg_image_desktop_alt')
-                ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:100'),
-
             Image::make('Background Image Mobile', 'bg_image_mobile')
                 ->disk('public')
                 ->hideFromIndex()
                 ->rules('nullable', 'image', 'max:1024'),
 
-            Text::make('Background Image Mobile Alt', 'bg_image_mobile_alt')
+            Text::make('Background Image Alt', 'bg_image_alt')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
 
@@ -103,16 +99,16 @@ class Branch extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'image', 'max:1024'),
 
-            Text::make('Banner Desktop Alt', 'banner_desktop_alt')
-                ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:100'),
-
             Image::make('Banner Mobile', 'banner_mobile')
                 ->disk('public')
                 ->hideFromIndex()
                 ->rules('nullable', 'image', 'max:1024'),
 
-            Text::make('Banner Mobile Alt', 'banner_mobile_alt')
+            Text::make('Banner Alt', 'banner_alt')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:100'),
+
+                Text::make('Banner Text', 'banner_text')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
 
