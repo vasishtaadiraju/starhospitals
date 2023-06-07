@@ -205,6 +205,8 @@
             input,
             select {
                 padding: 1.5em 0px;
+                padding-left: 1em;
+                @include font-family(600);
                 @include media("sm-mob") {
                     padding: 1em 0px;
                 }

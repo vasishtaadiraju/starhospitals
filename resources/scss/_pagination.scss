@@ -84,7 +84,7 @@
     p{
         text-align: right;
         padding: 1em;
-
+        @include font-family(400);
         @include media("sm-mob") {
             text-align: center;
 

@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-input">
                     <select class="form-input__field form-input__field--w-1"  type="text">
-                        <option value="">Country</option>
+                        <option value="">Department</option>
                     </select>
                 </div>
                 <div class="form-input">
