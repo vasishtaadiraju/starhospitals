@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('css')
-    @vite(['resources/scss/find-doctor.scss', 'resources/js/app.js'])
+    @vite(['resources/scss/find-doctor.scss', 'resources/js/app-book.js'])
 @endsection
 @section('content')
 <x-gap/>

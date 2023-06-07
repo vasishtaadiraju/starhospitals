@@ -16,6 +16,7 @@ export default defineConfig({
                 'resources/scss/branch.scss',
                 'resources/css/app.css',
                 'resources/js/app.js',
+                'resources/js/app-book.js',
                 ],
             refresh: true,
         }),

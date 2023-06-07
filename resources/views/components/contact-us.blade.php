@@ -53,15 +53,15 @@
                     
                 </div>
                 <div class="form-input">
-                    <input class="form-input__field form-input__field--w-2" type="text">
-                    <input class="form-input__field form-input__field--w-2" type="text">
+                    <input class="form-input__field form-input__field--w-2" placeholder="Name" type="text">
+                    <input class="form-input__field form-input__field--w-2" placeholder="Phone number" type="text">
                 </div>
                 <div class="form-input">
-                    <input class="form-input__field form-input__field--w-2" type="text">
-                    <input class="form-input__field form-input__field--w-2" type="text">
+                    <input class="form-input__field form-input__field--w-2" placeholder="Email" type="text">
+                    <input class="form-input__field form-input__field--w-2" placeholder="Subject" type="text">
                 </div>
                 <div class="form-input">
-                    <textarea name="" class="form-input__field form-input__field--w-1" id="" cols="30" rows="10"></textarea>
+                    <textarea name="" class="form-input__field form-input__field--w-1" id="" placeholder="Write your message" cols="30" rows="10"></textarea>
                 </div>
 
                 <div class="form-input">

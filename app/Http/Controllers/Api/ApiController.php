@@ -122,7 +122,7 @@ class ApiController extends Controller
         } elseif ($branch_id != null) {
             $response = Branch::where('status', 'active')->where('id', $branch_id)->with([
                 'coes' => function ($query) {
-                    $query->where('status', 'active')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image')->take(2);
+                    $query->where('status', 'active')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
                 }
             ])->first('id');
         }
