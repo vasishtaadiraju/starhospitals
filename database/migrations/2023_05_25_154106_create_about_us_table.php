@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('banner_alt', 100)->nullable();
             $table->string('banner_text', 50)->nullable();
             $table->string('vision_title', 50)->nullable();
-            $table->string('vision_description')->nullable();
+            $table->text('vision_description')->nullable();
             $table->string('mission_title', 50)->nullable();
-            $table->string('mission_description')->nullable();
+            $table->text('mission_description')->nullable();
             $table->string('chairman_desk_title', 50)->nullable();
             $table->text('chairman_desk_description')->nullable();
             $table->string('video_thumbnail')->nullable();
