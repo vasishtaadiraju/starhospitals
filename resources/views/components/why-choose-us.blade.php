@@ -68,6 +68,7 @@
         {{-- Dots --}}
         
         <div class="choose-us__image-wrapper">
+            {{--  --}}
             <img src="" data-src="{{ config('variables.asset') . $content->why_choose_us_image }}" alt="{{$content->why_choose_us_image_alt}}">
         </div>
 

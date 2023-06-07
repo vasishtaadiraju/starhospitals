@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
 use App\Models\Branch;
-use App\Models\Faq;
+use App\Models\FAQ;
 use Illuminate\Http\Request;
 
 class AboutUsController extends Controller

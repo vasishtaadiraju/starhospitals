@@ -96,7 +96,7 @@
             <ul class="header__nav__option--dropdown__options">
                 @foreach ($branches as $item)
                 <li class=""><a
-                    href="{{route('coe',$item->slug)}}">{{$item->name}}</a>
+                    href="{{route('branch',$item->slug)}}">{{$item->name}}</a>
                 {{-- <ul>
                     <li><a href="#">Abc</a>
                     </li>

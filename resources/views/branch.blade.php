@@ -15,10 +15,10 @@
  <div class="ui-background">
 <x-doctors :type="'flex'" :$branches  :$coes/>
  </div>
-<x-gap/>
+{{-- <x-gap/> --}}
 
 
-<x-why-choose-us :$content/>
+{{-- <x-why-choose-us :$content/> --}}
 
 <x-gap/>
 <div class="ui-background">
