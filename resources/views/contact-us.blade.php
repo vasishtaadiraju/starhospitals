@@ -3,7 +3,7 @@
 @vite(['resources/scss/contact.scss', 'resources/js/app.js'])
 @endsection
 @section('content')
-<x-banner :imgurl="config('variables.asset') .$about->banner_desktop" :text="''"/>
+<x-banner :imgurl="Vite::asset('resources/images/banner/contact-us.png')" :text="''"/>
 
 <div class="ui-background">
 
