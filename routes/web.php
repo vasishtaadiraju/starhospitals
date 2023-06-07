@@ -2,13 +2,13 @@
 
 
 use App\Http\Controllers\Web\AboutUsController;
-use App\Http\Controllers\web\BranchController;
-use App\Http\Controllers\web\CareerController;
-use App\Http\Controllers\web\CoeController;
+use App\Http\Controllers\Web\BranchController;
+use App\Http\Controllers\Web\CareerController;
+use App\Http\Controllers\Web\CoeController;
 use App\Http\Controllers\Web\ContactUsController;
 use App\Http\Controllers\Web\FormController;
 use App\Http\Controllers\Web\HomeController;
-use App\Http\Controllers\web\InternationalPatientController;
+use App\Http\Controllers\Web\InternationalPatientController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
