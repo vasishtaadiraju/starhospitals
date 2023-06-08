@@ -65,12 +65,14 @@ class InternationalPatient extends Resource
             Image::make('Desktop', 'banner_desktop')
                 ->disk('public')
                 ->hideFromIndex()
-                ->rules('required', 'image', 'max:1024'),
+                ->rules('required', 'image', 'max:1024')
+                ->updateRules('nullable', 'images', 'max:1024'),
 
             Image::make('Mobile', 'banner_mobile')
                 ->disk('public')
                 ->hideFromIndex()
-                ->rules('required', 'image', 'max:1024'),
+                ->rules('required', 'image', 'max:1024')
+                ->updateRules('nullable', 'images', 'max:1024'),
 
             Text::make('Alt', 'banner_alt')
                 ->hideFromIndex()
