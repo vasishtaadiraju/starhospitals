@@ -4,7 +4,7 @@
 @import "utils/media-queries";
 
 .banner {
-    height: 45vh;
+    height: 60vh;
     width: 100%;
     position: relative;
     @include media("sm-mob") {
@@ -17,13 +17,13 @@
         height: 30vh;
     }
     @include media("x-sm-tab") {
-        height: 40vh;
+        height: 30vh;
     }
     @include media("sm-tab") {
         height: 75vh;
     }
     @include media("md-tab") {
-        height: 40vh;
+        height: 50vh;
     }
     @include media("lg-tab") {
         height: 50vh;
@@ -70,7 +70,14 @@
 
         }
         @include media("x-sm-tab") {
-            width: 60%;
+            position: absolute;
+            height: 100%;
+            top: 0;
+            width: 100%;
+            transform: translateY(0%);
+            background-color:  #004E9EBF;
+            left: 0;
+            padding-left: 3em;
         }
         @include media("sm-tab") {
             width: 60%;
@@ -91,7 +98,7 @@
                 // color: black;
                 line-height: 35px;
                 font-size: 25px;
-                margin-top: 25%;
+                margin-top: 15%;
                 margin-left: 2rem;
 
             }
@@ -99,7 +106,23 @@
                 // color: black;
                 font-size: 25px;
                 line-height: 35px;
-                margin-top: 25%;
+                margin-top: 15%;
+                margin-left: 2rem;
+                
+            }
+            @include media("lg-mob") {
+                // color: black;
+                font-size: 25px;
+                line-height: 35px;
+                margin-top: 15%;
+                margin-left: 2rem;
+                
+            }
+            @include media("x-sm-tab") {
+                // color: black;
+                font-size: 25px;
+                line-height: 35px;
+                margin-top: 15%;
                 margin-left: 2rem;
                 
             }

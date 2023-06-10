@@ -69,7 +69,7 @@
 
         </ul>
     </div>
-    <div class="coes__description coes__description--desktop"id="coe-list">
+    <div class="coes__description coes__description--desktop">
         {{-- <div class="coes__description__wrapper">
 
                 <img class="coes__description__image" src="" data-src="{{Vite::asset('resources/images/homepage/heart.png')}}" alt="">

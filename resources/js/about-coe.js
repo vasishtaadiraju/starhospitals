@@ -11,9 +11,9 @@ async function printCoe(coe_id)
     // this.childNodes[1].insertAdjacentHTML("afterend",  htmlData);
 document.querySelector('.coes__description--desktop').innerHTML = "";
 console.log(response);
-let htmlData = `<div class="coes__description__wrapper coes__description__wrapper--mobile">
+let htmlData = `<div class="coes__description__wrapper coes__description__wrapper--mobile" >
 
-<img class="coes__description__image" src="${import.meta.env.VITE_ASSET_URL}${response.data.homepage_image}" alt="${response.data.homepage_image_alt}">
+<img class="coes__description__image" id="coe-list" src="${import.meta.env.VITE_ASSET_URL}${response.data.homepage_image}" alt="${response.data.homepage_image_alt}">
 <h2 class="coes__description__title">${response.data.name}</h2>
 <p class="coes__description__content">
 ${response.data.short_description}
@@ -32,9 +32,9 @@ ${response.data.short_description}
 `
 
 
-let desktopHTML =  `<div class="coes__description__wrapper">
+let desktopHTML =  `<div class="coes__description__wrapper" >
 
-<img class="coes__description__image" src="${import.meta.env.VITE_ASSET_URL}${response.data.homepage_image}" alt="${response.data.homepage_image_alt}" alt="">
+<img class="coes__description__image" id="coe-list" src="${import.meta.env.VITE_ASSET_URL}${response.data.homepage_image}" alt="${response.data.homepage_image_alt}" alt="">
 <h3 class="coes__description__title">${response.data.name}</h3>
 <p class="coes__description__content">
 ${response.data.short_description}

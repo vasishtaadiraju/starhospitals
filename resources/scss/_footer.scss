@@ -128,13 +128,19 @@ $footer-columns: 5;
                     width: 16%;
                 }
             }
+
+            
             &--star {
                 @include media("sm-mob") {
-                    width: 50% !important;
+                    width: 65% !important;
+                    padding: 50%;
                     margin: 0px 2em;
                 }
                 @include media("md-mob") {
-                    width: 50% !important;
+                    width: 65% !important;
+                    padding: 5%;
+                    ;
+                    
                     margin: 0px 2em;
                 }
                 @include media("lg-mob") {

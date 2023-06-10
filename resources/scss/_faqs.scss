@@ -15,7 +15,20 @@
         // animation: growDown 300ms ease-in-out forwards;
         transition: all 1s;
         max-height: 5rem;
-
+        @include media('sm-mob')
+        {
+            margin-bottom: 2em;
+        }
+        @include media('sm-mob')
+        {
+            margin-bottom: 2em;
+            
+        }
+        @include media('sm-mob')
+        {
+            margin-bottom: 2em;
+            
+        }
         &--active{
             max-height: 50rem;
         }

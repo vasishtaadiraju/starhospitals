@@ -108,6 +108,13 @@ place-items: center;
     box-sizing: border-box;
     scroll-behavior: smooth;
     // font-size: 62.5%;
+    @media screen and (min-width: 2560px) and (max-width: 3839px) {
+       
+            font-size: 100%;
+            font-size: 107.5%;
+          
+    }
+   
 }
 
 select {

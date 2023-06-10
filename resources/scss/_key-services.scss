@@ -64,19 +64,19 @@
             margin: 0px 0px 1em 0em;
         }
         @include media("x-sm-tab") {
-            flex: 0 0 calc(95% / 3);
+            flex: 0 0 calc(85% / 3);
            
         }
         @include media("sm-tab") {
-            flex: 0 0 calc(95% / 3);
+            flex: 0 0 calc(87% / 3);
            
         }
         @include media("md-tab") {
-            flex: 0 0 calc(95% / 3);
+            flex: 0 0 calc(90% / 3);
            
         }
         @include media("lg-tab") {
-            flex: 0 0 calc(95% / 3);
+            flex: 0 0 calc(90% / 3);
            
         }
         svg {
