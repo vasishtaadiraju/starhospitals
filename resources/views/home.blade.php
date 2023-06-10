@@ -14,7 +14,7 @@
 <x-about-coe  :$coes/>
 
 <x-gap/>
-<x-our-specialists :$content :$branches  :$coes :$breadcrum/>
+<x-our-specialists :$content :$branches  :$coes/>
 {{-- <x-gap/> --}}
 <x-highlights/>
 
