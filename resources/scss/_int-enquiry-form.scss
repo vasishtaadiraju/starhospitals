@@ -208,7 +208,7 @@
                 padding-left: 1em;
                 @include font-family(600);
                 @include media("sm-mob") {
-                    padding: 1em 0px;
+                    padding: 1em 1em;
                 }
 
 
@@ -224,10 +224,10 @@
         }
 
         &__submit {
-            @include btn-primary(white, red);
+            @include btn-primary(white, variables.$starhospitals-brand-secondary);
             width: 7rem;
             padding: 1em 2em;
-            border-radius: 25px;
+            border-radius: 10px;
             border: none;
             margin: 2.5em auto;
         }

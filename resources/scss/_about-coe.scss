@@ -132,9 +132,19 @@
                     display: block;
                 }
             }
+
+            &__read-more-btn{
+                width: max-content;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 7.5px 0px !important;
+                margin: 1.5em auto !important;
+            }
         }
         &__image {
             width: 100%;
+            border-radius: 5px;
         }
 
         &__title {

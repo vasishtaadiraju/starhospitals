@@ -401,6 +401,7 @@ $fixed-header-height:6rem;
             height: initial;
             @include fixed-header;
             @include mobile-nav;
+            padding-top: 2rem;
             overflow-y: scroll !important;
             &::-webkit-scrollbar {
                 display: none;
@@ -410,6 +411,7 @@ $fixed-header-height:6rem;
             height: initial;
             @include fixed-header;
             @include mobile-nav;
+            padding-top: 2rem;
             overflow-y: scroll !important;
             &::-webkit-scrollbar {
                 display: none;
@@ -419,6 +421,7 @@ $fixed-header-height:6rem;
             height: initial;
             @include fixed-header;
             @include mobile-nav;
+            padding-top: 2rem;
             overflow-y: scroll !important;
             &::-webkit-scrollbar {
                 display: none;
@@ -428,6 +431,7 @@ $fixed-header-height:6rem;
             height: initial;
             @include fixed-header;
             @include mobile-nav;
+            padding-top: 2rem;
             overflow-y: scroll !important;
             &::-webkit-scrollbar {
                 display: none;
@@ -437,6 +441,7 @@ $fixed-header-height:6rem;
             height: initial;
             @include fixed-header;
             @include mobile-nav;
+            padding-top: 2rem;
             overflow-y: scroll !important;
             &::-webkit-scrollbar {
                 display: none;
@@ -447,6 +452,7 @@ $fixed-header-height:6rem;
             @include fixed-header;
             @include mobile-nav;
             overflow-y: scroll !important;
+            padding-top: 2rem;
             &::-webkit-scrollbar {
                 display: none;
             }

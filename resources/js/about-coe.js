@@ -24,7 +24,7 @@ ${response.data.short_description}
 
 
 
-<a href="/centers-of-excellence/${response.data.slug}" class="view-all-btn">
+<a href="/centers-of-excellence/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
       Learn More
   </a>
 

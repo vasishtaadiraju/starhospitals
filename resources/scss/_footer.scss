@@ -61,33 +61,33 @@ $footer-columns: 5;
             flex: 0 0 10%;
             @include media("sm-mob") {
                 flex-direction: row;
-                justify-content: space-around;
+                // justify-content: space-around;
                 align-items: flex-start;
-                // padding: 1em;
+                gap: 1em;
             }
             @include media("md-mob") {
                 flex-direction: row;
-                justify-content: space-around;
+                // justify-content: space-around;
                 align-items: flex-start;
-                // padding: 1em;
+                gap: 1em;
             }
             @include media("lg-mob") {
                 flex-direction: row;
-                justify-content: space-around;
+                // justify-content: space-around;
                 align-items: flex-start;
-                // padding: 1em;
+                gap: 1em;
                 margin-bottom: 2em;
                 overflow: hidden;
             }
             @include media("x-sm-tab") {
                 flex-direction: row;
-                justify-content: space-around;
+                // justify-content: space-around;
                 align-items: flex-start;
                 // padding: 1em;
             }
             @include media("sm-tab") {
                 flex-direction: row;
-                justify-content: space-around;
+                // justify-content: space-around;
                 align-items: flex-start;
                 // padding: 1em;
             }
@@ -95,7 +95,7 @@ $footer-columns: 5;
                 width: 60%;
                 margin: 0px auto;
                 &:first-child{
-                    width: 100%;
+                    // width: 100%;
                     @include media("sm-mob") {
                         width: 30%;
                     }
@@ -129,26 +129,48 @@ $footer-columns: 5;
                 }
             }
 
-            
+
             &--star {
+                img{
+                    width: 100% !important;
+                    // margin: 0px 10%;
+                    // display: block;
                 @include media("sm-mob") {
-                    width: 65% !important;
-                    padding: 50%;
-                    margin: 0px 2em;
+                    width: 50% !important;
+                    margin: 0px 25%;
                 }
                 @include media("md-mob") {
-                    width: 65% !important;
-                    padding: 5%;
-                    ;
-                    
-                    margin: 0px 2em;
+
+                    width: 50% !important;
+                margin: 0px 25%;
                 }
                 @include media("lg-mob") {
                     width: 50% !important;
-                    margin: 0px 2em;
+                    margin: 0px 25%;
                 }
                 @include media("x-sm-tab") {
                     width: 50% !important;
+                    margin: 0px 25%;
+                }
+                }
+                @include media("sm-mob") {
+                    width: 100% !important;
+                    // padding: 50%;
+                    margin: 0px 2em;
+                }
+                @include media("md-mob") {
+                    width: 100% !important;
+                    padding: 5%;
+                    ;
+
+                    margin: 0px 2em;
+                }
+                @include media("lg-mob") {
+                    width: 100% !important;
+                    margin: 0px 2em;
+                }
+                @include media("x-sm-tab") {
+                    width: 100% !important;
                     margin: 0px 2em;
                 }
                 // @include media("sm-tab") {
@@ -243,9 +265,9 @@ $footer-columns: 5;
                         margin: 1em 0px;
                     }
                 }
-                
+
                 &--dropdown {
-                    
+
                     &__option{
                         margin: 1em 0px;
 
@@ -352,13 +374,13 @@ $footer-columns: 5;
         justify-content: center;
         width: 100%;
         font-size: 13px;
-        
+
         span {
             padding: 0.5em 1em;
-            display: block; 
+            display: block;
             display: flex;
             align-items: center;
-            
+
             a {
                 color: variables.$starhospitals-ui-tertiary;
             }

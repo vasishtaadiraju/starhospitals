@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="@yield('meta-description', ' ')">
     <title>@yield('meta-title', 'Star Hospitals')</title>
+    <link rel="icon" href="https://financial-district.starhospitals.in/wp-content/uploads/2023/02/cropped-favicon-32x32.png" sizes="32x32">
     {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"

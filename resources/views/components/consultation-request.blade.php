@@ -58,7 +58,7 @@
                     <select name="" id="">
                         <option value="Department">Department</option>
                     </select>
-                    <input type="date" placeholder="Date">
+                    <input type="date" placeholder="mm/dd/yy" >
                 </div>
     
                 <button class="consultation__form__submit">Request a Call Back</button>

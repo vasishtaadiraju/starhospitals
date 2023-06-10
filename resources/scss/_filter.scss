@@ -9,13 +9,13 @@
 @mixin fields-width-query() {
     @include fields-width(4);
     @include media("sm-mob") {
-        @include fields-width(2);
+        @include fields-width(1);
     }
     @include media("md-mob") {
-        @include fields-width(2);
+        @include fields-width(1);
     }
     @include media("lg-mob") {
-        @include fields-width(2);
+        @include fields-width(1);
     }
 
     @include media("x-sm-tab") {

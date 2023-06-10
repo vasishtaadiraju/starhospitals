@@ -127,7 +127,7 @@ select {
     background-size: 10px;
     background-position: calc(100% - 1em) !important;
     padding-right: 2em !important;
-    padding-left: 1em;
+    // padding-left: 1em;
   }
 
   
@@ -165,6 +165,21 @@ input,select{
     }
 .gap{
     height: 5rem;
+    @include media('sm-mob')
+    {
+        height: 2.5rem;
+
+    }
+    @include media('md-mob')
+    {
+    height: 2.5rem;
+        
+    }
+    @include media('lg-mob')
+    {
+    height: 2.5rem;
+        
+    }
 }
 
 .form-input{
@@ -266,6 +281,19 @@ input,select{
         background-color: variables.$starhospitals-ui-background;
         // background-color:gray
         // z-index: 400;
+
+    @include media('sm-mob'){
+        padding:2.5rem 0px;
+
+    }
+    @include media('md-mob'){
+    padding:2.5rem 0px;
+        
+    }
+    @include media('lg-mob'){
+    padding:2.5rem 0px;
+        
+    }
 }
 
 .section-heading{

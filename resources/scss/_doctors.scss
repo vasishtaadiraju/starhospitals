@@ -107,22 +107,22 @@
             justify-content:space-between !important;
             @include media('sm-mob')
             {
-                padding: 0.5em 0.75em 1em 0.5em;
+                padding: 0.5em 0.75em 1em 1em;
                 height: 13rem;
             }
             @include media('md-mob')
             {
-                padding: 0.5em 0.5em 1em 0.5em;
+                padding: 0.5em 0.5em 1em 1em;
                 height: 13rem;
             }
             @include media('lg-mob')
             {
-                padding: 0.5em 0.5em 1em 0.5em;
-                height: 11rem;
+                padding: 0.5em 0.5em 1em 1em;
+                height: 13rem;
             }
             @include media('x-sm-tab')
             {
-                padding: 0.5em 0.5em 1em 0.5em;
+                padding: 0.5em 0.5em 1em 1em;
                 height: 11rem;
             }
             @include media('sm-tab')
@@ -189,11 +189,11 @@
         margin-top: 8px;
         @include media('sm-mob')
         {
-            flex: 0 0 37%;
+            flex: 0 0 40%;
         }
         @include media('md-mob')
         {
-            flex: 0 0 40%;
+            flex: 0 0 43%;
         }
         @include media('lg-mob')
         {
@@ -201,7 +201,7 @@
         }
         img{
             width: 60%;
-            // border-radius: 50%;
+            border-radius: 50%;
         };
         &__details{
             width: 90%;
@@ -240,11 +240,18 @@
 
     &__rt{
         font-family: variables.$starhospitals-brand-secondary-font;
-        flex: 0 0 60%;
+        // flex: 0 0 60%;
+        flex: 1;
         
         // padding: 0.25em; 
         h2{
             min-height: 2.5em;
+            @include media('sm-mob')
+            {
+                
+                line-height: 15px;
+                min-height: 2em;
+            }
             @include media('md-tab')
                 {
                     min-height: 1.75em;
@@ -254,7 +261,11 @@
                 font-weight: 400;
                 font-size: 18px;
                 font-family: 'Plus Jakarta Sans Bold';
-
+                @include media('sm-mob')
+                {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
                 @include media('md-tab')
                 {
                     font-size: 16px;

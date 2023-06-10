@@ -2,14 +2,19 @@
 
     @if($content->banner1_desktop != null)
     <div class="slider__item">
+    
         <img class="slider__image" src="" data-src="{{config('variables.asset').$content->banner1_desktop}}" alt="">
 
         <div class="slider__item__content">
-            <h1 class="section-heading">{{$content->banner1_title}}</h1>
+
+            <div class="slider__item__content__wrapper">
+                <h1 class="section-heading">{{$content->banner1_title}}</h1>
 
                 <p>{{$content->banner1_description}}</p>
                 
                 <a href="{{$content->banner1_link}}" class="btn-primary">Explore More</a>
+            </div>
+           
             </div>
 
     </div>

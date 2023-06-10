@@ -33,7 +33,8 @@
             max-height: 50rem;
         }
         &__questions{
-            padding: 1.5em;
+            padding: 1em;
+            padding-right: 2em;
             list-style-type: none;
             background-color: variables.$starhospitals-brand-primary;
             border-radius: 10px;
@@ -47,7 +48,7 @@
                 content: "❯";
                 display: block;
                 position: absolute;
-                right: 2%;
+                right: 1em;
                 top: 35%;
                 color: variables.$starhospitals-ui-tertiary;
                 transform: rotate(90deg);
