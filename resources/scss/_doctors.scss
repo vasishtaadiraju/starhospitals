@@ -107,8 +107,8 @@
             justify-content:space-between !important;
             @include media('sm-mob')
             {
-                padding: 0.5em 0.5em 1em 0.5em;
-                height: 11rem;
+                padding: 0.5em 0.75em 1em 0.5em;
+                height: 13rem;
             }
             @include media('md-mob')
             {

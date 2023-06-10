@@ -60,7 +60,7 @@
             flex: 0 0 calc(95% / 2);
             // margin-top: 0.5em;
             padding: 0.5em 1em;
-            // border: 1px solid blue;
+            border: 1px solid blue;
             min-height: 12rem;
             margin-bottom: 2em;
             border-radius: 10px;
@@ -72,23 +72,22 @@
                 display: flex;
                 align-items: center;
                 gap: 1em;
-                min-height: max-content;
+                min-height: 7rem;
+                margin-bottom: 0em;
             }
             @include media("md-mob") {
                 flex: 0 0 100%;
                 display: flex;
                 align-items: center;
                 gap: 1em;
-                min-height: max-content;
-
+                min-height: 7rem;
             }
             @include media("lg-mob") {
                 flex: 0 0 100%;
                 display: flex;
                 align-items: center;
                 gap: 1em;
-                min-height: max-content;
-
+                min-height: 7rem;
             }
             @include media("x-sm-tab") {
                 margin-bottom: 2em;
@@ -101,7 +100,6 @@
             }
             @include media("x-sm-desktop") {
                 margin-bottom: 3em;
-
             }
 
             &__icon-wrapper {
