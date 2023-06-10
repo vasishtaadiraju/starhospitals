@@ -15,10 +15,10 @@
 
 <x-gap/>
 <x-our-specialists :$content :$branches  :$coes/>
-<x-gap/>
+{{-- <x-gap/> --}}
 <x-highlights/>
 
-
+<x-gap/>
 <x-why-choose-us :$content/>
 
 <x-gap/>
