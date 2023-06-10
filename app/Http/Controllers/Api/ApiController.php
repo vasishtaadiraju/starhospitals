@@ -84,7 +84,7 @@ class ApiController extends Controller
             if ($request->paginate == true) {
 
                 $ids =  $user_query->distinct()->pluck('users.id');
-                $pagination = $user_query->whereIn('users.id',$ids)->paginate(9,['users.id', 'name', 'slug', 'designation', 'large_image']);
+                $pagination = $user_query->whereIn('users.id',$ids)->paginate(9,['users.id', 'name', 'slug', 'designation', 'large_image','experience']);
 
                 // $pagination = $pagination = $user_query->whereIn->distinct(['users.id'])->paginate(2);
                 // dd($ids);
