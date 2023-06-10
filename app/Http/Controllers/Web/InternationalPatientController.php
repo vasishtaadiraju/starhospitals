@@ -12,9 +12,15 @@ class InternationalPatientController extends Controller
     function index()
     {
         $content = InternationalPatient::first();
-        $faqs = FAQ::where('internationalpage','yes')->get();
+        $faqs = FAQ::where('internationalpage','yes')->get();    
+        $breadcrum = "<div class='banner__breadcrum'>
+        <a href='#'>Home</a>
+        <span>❯</span>
+        <a href='#'>International Patients</a>
+    </div>";
         return view('international-patients',[
             'faqs'=>$faqs,
+            'breadcrum'=>$breadcrum,
             'content' => $content,
         ]);
     }

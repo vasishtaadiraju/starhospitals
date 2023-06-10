@@ -3,7 +3,7 @@
 @vite(['resources/scss/about.scss', 'resources/js/app.js'])
 @endsection
 @section('content')
-<x-banner :imgurl="config('variables.asset') .$about->banner_desktop" :text="$about->banner_text"/>
+<x-banner :imgurl="config('variables.asset') .$about->banner_desktop" :text="$about->banner_text" :$breadcrum/>
 <x-gap/>
 <x-mission-vision :$about />
 <x-gap/>

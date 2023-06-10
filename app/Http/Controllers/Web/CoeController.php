@@ -55,9 +55,14 @@ class CoeController extends Controller
             
         <a href="#consult-our-expert" class="scroll-to-view">Consult our Expert</a>
     </div>';
-
+    $breadcrum = "<div class='banner__breadcrum'>
+    <a href='#'>Home</a>
+    <span>❯</span>
+    <a href='#'>{$content->name}</a>
+</div>";
         return view('coe', [
             'content' => $content,
+            'breadcrum'=>$breadcrum,
             'tabs'=>$tabs,
         ]);
     }

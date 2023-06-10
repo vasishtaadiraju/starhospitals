@@ -16,10 +16,16 @@ class AboutUsController extends Controller
         $branches = Branch::where('status','active')->get();
         $faqs = Faq::where('aboutpage','yes')->get();
 
+        $breadcrum = "<div class='banner__breadcrum'>
+    <a href='#'>Home</a>
+    <span>❯</span>
+    <a href='#'>About Us</a>
+</div>";
         return view('about', [
             'about' => $about,
             'branches' => $branches,
-            'faqs' => $faqs
+            'faqs' => $faqs,
+            'breadcrum'=>$breadcrum,
         ]);
     }
 }
