@@ -158,7 +158,7 @@
 
         {{-- ================================================nav --}}
         <div class="header__main__card header__main__card--emergency header__main--fixed--hide">
-            <a href="">
+            <a href="tel:1800 1027827">
                 <div>
                     <img src="" data-src="{{ Vite::asset('resources/images/Icons/emergency.png') }}"
                         alt="">

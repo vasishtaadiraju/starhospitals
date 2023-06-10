@@ -241,7 +241,7 @@ $fixed-header-height:6rem;
                     }
 
                     p {
-                        color: variables.$starhospitals-ui-tertiary;
+                        color: variables.$starhospitals-text-inverted;
                         line-height: 22px;
                         @include media("sm-mob") {
                             line-height: 15px;
