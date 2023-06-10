@@ -24,11 +24,13 @@
         <img class="slider__image" src="" data-src="{{config('variables.asset').$content->banner2_desktop}}" alt="">
 
         <div class="slider__item__content">
+            <div class="slider__item__content__wrapper">
             <h1 class="section-heading">{{$content->banner2_title}}</h1>
 
                 <p>{{$content->banner2_description}}</p>
                 
                 <a href="{{$content->banner2_link}}" class="btn-primary">Explore More</a>
+            </div>
             </div>
 
     </div>
@@ -38,11 +40,13 @@
         <img class="slider__image" src="" data-src="{{config('variables.asset').$content->banner3_desktop}}" alt="">
 
         <div class="slider__item__content">
+            <div class="slider__item__content__wrapper">
             <h1 class="section-heading">{{$content->banner3_title}}</h1>
 
                 <p>{{$content->banner3_description}}</p>
                 
                 <a href="{{$content->banner3_link}}" class="btn-primary">Explore More</a>
+            </div>
             </div>
 
     </div>
@@ -52,11 +56,13 @@
         <img class="slider__image" src="" data-src="{{config('variables.asset').$content->banner4_desktop}}" alt="">
 
         <div class="slider__item__content">
+            <div class="slider__item__content__wrapper">
             <h1 class="section-heading">{{$content->banner4_title}}</h1>
 
                 <p>{{$content->banner4_description}}</p>
                 
                 <a href="{{$content->banner4_link}}" class="btn-primary">Explore More</a>
+            </div>
             </div>
 
     </div>
