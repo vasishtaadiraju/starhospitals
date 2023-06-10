@@ -6,7 +6,7 @@
 <x-banner :imgurl="config('variables.asset') .$content->banner_desktop" :text="$content->banner_text"/>
 <x-int-highlight :$content/>
 <x-gap/>
-<x-key-services/>
+<x-key-services :coes='[]' />
  <x-gap/>
 {{--<x-int-reviews/> --}}
 <div class="ui-background">

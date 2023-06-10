@@ -26,6 +26,8 @@
 </head>
 
 <body>
+
+    
     <x-header :$coes :$branches/>
     @yield('content')
     <x-footer :$coes :$branches/>

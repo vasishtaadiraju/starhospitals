@@ -1,0 +1,33 @@
+.video-player{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.671);
+    z-index: 4000;
+
+    span{
+        font-family: 'Plus Jakarta Sans Bold';
+        font-weight: 700;
+        color: white;
+        padding: 0.5em 1em;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.178);
+        width: max-content;
+        float: right;
+        cursor: pointer;
+
+        &:hover{
+            background-color: rgba(196, 193, 193, 0.493);
+            color: black;
+        }
+    }
+
+    &__container{
+        width: 90%;
+        margin: 0px auto;
+        margin-top: 2%;
+        height: 90%;
+    }
+}

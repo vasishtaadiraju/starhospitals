@@ -4,14 +4,14 @@
 @import "utils/media-queries";
 
 .banner {
-    height: 75vh;
+    height: 45vh;
     width: 100%;
     position: relative;
     @include media("sm-mob") {
-        height: 40vh;
+        height: 30vh;
     }
     @include media("md-mob") {
-        height: 40vh;
+        height: 35vh;
     }
     @include media("x-sm-tab") {
         height: 40vh;
@@ -30,13 +30,13 @@
         width: 100%;
         height: 100%;
         @include media("sm-mob") {
-            position: absolute;
+            // position: absolute;
             bottom: 0;
-            height: 60%;
+            // height: 60%;
         }
         @include media("md-mob") {
-            position: absolute;
-            height: 60%;
+            // position: absolute;
+            // height: 60%;
             bottom: 0;
         }
     }
@@ -49,16 +49,22 @@
         @include media("sm-mob") {
             position: absolute;
             top: 0;
-            height: 40%;
-            width: 80%;
+            height: 100%;
+            width: 100%;
             transform: translateY(0%);
+            background-color:  #004E9EBF;
+            left: 0;
+
         }
         @include media("md-mob") {
             position: absolute;
-            height: 40%;
+            height: 100%;
             top: 0;
-            width: 80%;
+            width: 100%;
             transform: translateY(0%);
+            background-color:  #004E9EBF;
+            left: 0;
+
         }
         @include media("x-sm-tab") {
             width: 60%;
@@ -79,15 +85,20 @@
             font-size: 40px;
             line-height: 60px;
             @include media("sm-mob") {
-                color: black;
+                // color: black;
                 line-height: 35px;
                 font-size: 25px;
+                margin-top: 25%;
+                margin-left: 2rem;
 
             }
             @include media("md-mob") {
-                color: black;
+                // color: black;
                 font-size: 25px;
                 line-height: 35px;
+                margin-top: 25%;
+                margin-left: 2rem;
+                
             }
         }
     }

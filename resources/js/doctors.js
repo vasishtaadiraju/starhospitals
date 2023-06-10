@@ -19,8 +19,12 @@ async function printDoctors(body, selectBox, className) {
             let coeName = [];
             let branchName = [];
 
-            result.coes.forEach((coe) => {
-                coeName.push(`<a href="#"> ${coe.name}</a>`);
+            result.coes.forEach((coe,index) => {
+                if(index == 0 || index == 1)
+                {
+                    coeName.push(`<a href="#"> ${coe.name}</a>`);
+
+                }
             });
             result.branches.forEach((branch) => {
                 branchName.push(`<a href="#"> ${branch.name}</a>`);

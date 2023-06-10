@@ -17,6 +17,8 @@ export function removeClass(elementClass, removeClass) {
 
 
 
+
+
 function handleAjaxError(response) {
   return  response;
 }

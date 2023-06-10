@@ -66,6 +66,13 @@ class ApiController extends Controller
                     $query->where('branches.id', $branch_id);
                 });
             }
+
+            if($branch_id  == null)
+            {
+                $user_query->whereHas('branches', function ($query) {
+                    $query->where('branches.id',1);
+                });
+            }
             $user_query->with([
                 'coes' => function ($query) {
                     $query->select('name');
@@ -73,12 +80,29 @@ class ApiController extends Controller
                 'branches' => function ($query) {
                     $query->select('name');
                 }
-            ])->join('branch_user', 'users.id', '=', 'branch_user.user_id')->orderBy('order_number', 'DESC');
+            ]);
             if ($request->paginate == true) {
-                $pagination = $pagination = $user_query->paginate(2);
+
+                $ids =  $user_query->distinct()->pluck('users.id');
+                $pagination = $user_query->whereIn('users.id',$ids)->paginate(9,['users.id', 'name', 'slug', 'designation', 'large_image']);
+
+                // $pagination = $pagination = $user_query->whereIn->distinct(['users.id'])->paginate(2);
+                // dd($ids);
+                // $pagination = User::whereIn('users.id',$ids)->with([
+                //     'coes' => function ($query) {
+                //         $query->select('name');
+                //     },
+                //     'branches' => function ($query) {
+                //         $query->select('name');
+                //     }
+                // ])->join('branch_user', 'users.id', '=', 'branch_user.user_id')->orderBy('order_number', 'DESC')->get()->unique();
             }
-            ;
-            $doctors = $user_query->get(['users.id', 'name', 'slug', 'designation', 'branch_user.order_number', 'large_image'])->unique()->take(20);
+            else
+            {
+            
+            $doctors = $user_query->join('branch_user', 'users.id', '=', 'branch_user.user_id')->orderBy('branch_user.order_number','DESC')->get(['users.id', 'name', 'slug', 'designation', 'branch_user.order_number', 'large_image'])->unique()->take(20);
+
+            }
 
             if ($request->paginate == true) {
                 return response($pagination, 200);

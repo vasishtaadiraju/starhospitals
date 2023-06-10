@@ -203,7 +203,15 @@
         @include media("x-sm-tab") {
             padding: 1em;
             font-size: 12px;
-        width: max-content;
+            width: max-content;
+        // display:none;
+
+        }
+        @include media("sm-tab") {
+            padding: 1em;
+            font-size: 12px;
+            width: max-content;
+            margin-top: 0.5em;
         // display:none;
 
         }

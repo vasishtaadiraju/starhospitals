@@ -128,19 +128,24 @@
             @include media('sm-tab')
             {
                 padding: 0.5em 0.5em 1em 0.5em;
-                height: 11rem;
+                height: 13rem;
             }
             @include media('lg-tab')
             {
                 padding: 0.5em 0.5em 1em 0.5em;
-                height: 11rem;
+                height: 13rem;
             }
             h4{
-                // font-size:16px;
                 // line-height: 30px;
                 // min-height: 30px;
                 // font-weight: 500;
-                // min-height: 2.5em;
+                min-height: 2.75em;
+
+                @include media('x-sm-desktop')
+                {
+                    font-size: 14px;
+                    
+                }
             }
 
             
@@ -150,7 +155,12 @@
             font-size:14px;
             line-height:20px;
             font-weight:400;
-
+            min-height: 3em;
+            @include media('x-sm-desktop')
+            {
+                font-size: 12px;
+                
+            }
         }
         &__location{
             font-size:12px;
@@ -234,12 +244,21 @@
         
         // padding: 0.25em; 
         h2{
-            
+            min-height: 2.5em;
+            @include media('md-tab')
+                {
+                    min-height: 1.75em;
+                }
             a{
                 color: variables.$starhospitals-text-primary;
                 font-weight: 400;
                 font-size: 18px;
                 font-family: 'Plus Jakarta Sans Bold';
+
+                @include media('md-tab')
+                {
+                    font-size: 16px;
+                }
                
             }
             // line-height: 1rem;

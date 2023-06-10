@@ -32,6 +32,13 @@
             
 
         }
+        @include media("sm-tab") {
+            width: 60%;
+            margin-top:0px;
+
+            
+
+        }
 
         
     display: flex;
@@ -68,11 +75,15 @@
 
         }
         @include media("sm-tab") {
-            flex: 0 0 calc(95% / 2);
+            flex: 0 0 calc(95%/2);
             margin-top: 2em;
 
         }
         @include media("lg-tab") {
+            flex: 0 0 40%;
+            margin-top: 2em;
+        }
+        @include media("x-sm-desktop") {
             flex: 0 0 40%;
             margin-top: 2em;
 

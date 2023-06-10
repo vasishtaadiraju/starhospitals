@@ -46,6 +46,21 @@
             @content;
         }
     }
+
+    @else if ($type =='x-sm-desktop')
+    {
+        @media screen and (min-width: 1366px) and (max-width: 1439px) {
+            @content;
+        }
+    }
+    @else if ($type =='sm-desktop')
+    {
+        @media screen and (min-width: 1440px) and (max-width: 1679px) {
+            @content;
+
+        }
+    }
+    
 }
 
 

@@ -12,6 +12,7 @@ import './footer';
 import './auto-complete';
 // import './doctors';
 import './book-an-appointment';
+import './scroll';
 
 
 

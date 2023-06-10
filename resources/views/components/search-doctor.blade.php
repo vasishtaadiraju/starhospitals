@@ -1,5 +1,5 @@
 <form action="">
-    <div class="search-doctor">
+    <div class="search-doctor" id="centre-of-excellences">
         <div class="search-doctor__submit-btn-container search-doctor__submit-btn-container--mobile">
             <h2 class="section-heading">Want a Consultation ?</h2>
             {{-- <button class="search-doctor__submit-btn search-doctor__submit-btn--mobile">

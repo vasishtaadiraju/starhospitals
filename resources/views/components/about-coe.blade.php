@@ -1,6 +1,6 @@
-<div class="coes" id="centre-of-excellences">
+<div class="coes" >
     <div class="coes__list">
-        <h2 class="section-heading">Centres of Excellence</h2>
+        <h2 class="section-heading" >Centres of Excellence</h2>
         <ul>
             {{-- coes__description__wrapper--mobile coes__description__wrapper--mobile--active --}}
             {{-- <div class="coes__list__item">
@@ -25,7 +25,7 @@
 
             @foreach ($coes as $item)
                 <div class="coes__list__item">
-                    <li data-id="{{ $item->id }}">
+                    <li data-id="{{ $item->id }}" >
                         {!! $item->icon_image !!}
                         {{-- {{!!!!} --}}
                         {{ $item->name }}
@@ -69,7 +69,7 @@
 
         </ul>
     </div>
-    <div class="coes__description coes__description--desktop">
+    <div class="coes__description coes__description--desktop"id="coe-list">
         {{-- <div class="coes__description__wrapper">
 
                 <img class="coes__description__image" src="" data-src="{{Vite::asset('resources/images/homepage/heart.png')}}" alt="">

@@ -13,7 +13,7 @@
     </div> --}}
 
 
- <div class="about-star">
+ <div class="about-star play-video">
     @if(!empty($about->video_thumbnail))
         <div class="about-star__image-container">
             <img src="" data-src="{{config('variables.asset').$about->video_thumbnail}}" alt="">

@@ -57,7 +57,8 @@
     }
     @include media('sm-tab')
     {
-        width: 90%;
+        width: 95%;
+        gap: 1em;
        
     }
     @include media('lg-tab')

@@ -28,7 +28,8 @@
                     </select>
                 </div>
                 <div class="form-input">
-                    <input class="form-input__field form-input__field--w-1" placeholder="Upload report" type="text">
+                    <input class="form-input__field form-input__field--w-1 file-upload-field" placeholder="Upload report" type="text" readonly>
+                    <input type="file" name="report" id="" hidden>
                 </div>
 
                 

@@ -24,8 +24,17 @@
 
     &__wrapper {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         flex-wrap: wrap;
+        @include media("sm-mob") {
+            justify-content: space-between;
+        }
+        @include media("md-mob") {
+            justify-content: space-between;
+        }
+        @include media("lg-mob") {
+            justify-content: space-between;
+        }
     }
     &__card {
         box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
@@ -36,8 +45,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 0px 0px 2em 0em;
+        margin: 0px 1.25em 2em 0em;
         border-radius: 20px;
+
         @include media("sm-mob") {
             flex: 0 0 calc(95% / 2);
             padding: 1em 0px;

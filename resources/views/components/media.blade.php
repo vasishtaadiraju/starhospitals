@@ -14,7 +14,7 @@
             <a class="media__read-more" href="{{ $item->link }}">Read More</a>
 
         </div>
-    @endforeach
+        @endforeach
  
 
     {{-- <div class="media__card">

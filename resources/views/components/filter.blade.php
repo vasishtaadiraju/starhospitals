@@ -26,7 +26,9 @@
             <option value="">Filter by Location</option>
 
             @foreach ($branches as $item)
-            <option value="{{$item->id}}">{{$item->name}}</option>
+            <option value="{{$item->id}}" @if (session('branch_id') == $item->id)
+                selected
+            @endif>{{$item->name}}</option>
                 
             @endforeach
         </select>
@@ -38,7 +40,9 @@
         <select type="text" class="speciality-select-box" id="speciality-select-box" data-type="coe" placeholder="Enter Doctor Name">
             <option value="">Filter by Speciality</option>
             @foreach ($coes as $item)
-            <option value="{{$item->id}}" @if(isset($content->page_type) && $content->page_type == 'Coe' && $item->id == $content->id) selected @endif>{{$item->name}}</option>
+            <option value="{{$item->id}}" @if (session('coe_id') == $item->id)
+                selected
+            @endif>{{$item->name}}</option>
                 
             @endforeach
         </select>

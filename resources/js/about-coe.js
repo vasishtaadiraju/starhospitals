@@ -26,7 +26,10 @@ ${response.data.short_description}
 
 
 
-</div>`
+</div>
+<a href="/centers-of-excellence/${response.data.slug}" class="view-all-btn">
+      Learn More
+  </a>`
 
 
 let desktopHTML =  `<div class="coes__description__wrapper">

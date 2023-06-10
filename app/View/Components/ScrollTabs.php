@@ -11,9 +11,13 @@ class ScrollTabs extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $tabs;
+    public function __construct($tabs)
     {
-        //
+        $this->tabs = $tabs;
+        // $this->tab_two = $tab_two;
+        // $this->tab_three = $tab_three;
+        // $this->tab_four = $tab_four;
     }
 
     /**
