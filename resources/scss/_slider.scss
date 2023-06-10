@@ -45,6 +45,10 @@ $visible-cards:1;
         {
             height: 30vh;
         }
+        @include media('md-mob')
+        {
+            height: 30vh;
+        }
         
         // @include media('x-sm-tab')
         // {

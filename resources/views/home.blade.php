@@ -6,17 +6,17 @@
 <x-slider :$content/>
 <x-search-doctor :$branches :$coes/>
 <x-gap/>
-<div class="ui-background">
+{{-- <div class="ui-background"> --}}
 
-<x-highlights/>
-</div>
-<x-gap/>
+{{-- </div> --}}
+{{-- <x-gap/> --}}
 
 <x-about-coe  :$coes/>
 
 <x-gap/>
 <x-our-specialists :$content :$branches  :$coes/>
 <x-gap/>
+<x-highlights/>
 
 
 <x-why-choose-us :$content/>

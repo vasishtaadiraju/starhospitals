@@ -1,4 +1,4 @@
-<x-heading :title="'Virtual Tour'" :description="'Lorem ipsum dolor sit amet consectetur. Pharetra hac gravida vestibulum donec accumsan morbi. In aliquam turpis pellentesque ultricies imperdiet accumsan sociis.'" />
+<x-heading :title="'Virtual Tour'" :description="'Have a look at the infrastructure and facilities provided by STAR Hospitals, Hyderabad, to care for International Patients.'" />
 
 <div class="virtual-tour virtual-tour-slider">
 

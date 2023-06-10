@@ -1,4 +1,4 @@
-<x-heading :title="'Our Process'" :description="'Lorem ipsum dolor sit amet consectetur. Pharetra hac gravida vestibulum donec accumsan morbi. In aliquam turpis pellentesque ultricies imperdiet accumsan sociis.'" />
+<x-heading :title="'Our Process'" :description="'STAR Hospitals offers exceptional medical care and support services to patients from all over the world. With leading doctors from the field of medicine and surgery, we provide international patients with the highest standard of medical care and treatments tailored to suit the unique needs of our patients. Here is how you can avail the medical facilities at STAR Hospitals.'" />
 
 <div class="our-process">
     <div class="our-process__cards-container">

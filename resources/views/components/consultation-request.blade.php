@@ -5,7 +5,7 @@
         
         <div class="consultation__card">
             <h2 class="section-heading">Book A Consultation</h2>
-            <p class="consultation__card__info">Lorem ipsum dolor sit amet consectetur. Pharetra hac gravida vestibulum donec accumsan morbi. In aliquam turpis pellentesque ultricies imperdiet accumsan sociis.</p>
+            <p class="consultation__card__info">Our empathetic and excellent healthcare services will not disappoint you, this is our promise. Get in touch with us, the best multispeciality hospital near you, for any queries or discrepancies</p>
             <div class="consultation__card__contact-info">
                 <ul class="consultation__card__contact-info__list">
                     <li class="consultation__card__contact-info__list__item">

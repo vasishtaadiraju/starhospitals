@@ -1,7 +1,7 @@
 <div class="int-enquiry-form">
         <div class="int-enquiry-form__image">
             <h2 class="section-heading">Enquiry Form</h2>
-            <p>Lorem ipsum dolor sit amet consectetur. Pharetra hac gravida vestibulum donec accumsan morbi. In aliquam turpis pellentesque ultricies imperdiet accumsan sociis.</p>
+            <p>If you have any further queries about the medical services or facilities we provide for our international patients, fill out the inquiry form to contact our medical staff for guidance.</p>
     
                 <img src="" data-src="{{Vite::asset('resources/images/int-patients/Rectangle 97.png')}}" alt="">
            

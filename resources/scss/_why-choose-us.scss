@@ -72,18 +72,23 @@
                 display: flex;
                 align-items: center;
                 gap: 1em;
+                min-height: max-content;
             }
             @include media("md-mob") {
                 flex: 0 0 100%;
                 display: flex;
                 align-items: center;
                 gap: 1em;
+                min-height: max-content;
+
             }
             @include media("lg-mob") {
                 flex: 0 0 100%;
                 display: flex;
                 align-items: center;
                 gap: 1em;
+                min-height: max-content;
+
             }
             @include media("x-sm-tab") {
                 margin-bottom: 2em;

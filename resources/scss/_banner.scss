@@ -8,10 +8,13 @@
     width: 100%;
     position: relative;
     @include media("sm-mob") {
+        height: 27vh;
+    }
+    @include media("sm-mob") {
         height: 30vh;
     }
-    @include media("md-mob") {
-        height: 35vh;
+    @include media("lg-mob") {
+        height: 30vh;
     }
     @include media("x-sm-tab") {
         height: 40vh;
