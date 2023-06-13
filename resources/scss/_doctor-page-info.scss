@@ -14,6 +14,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        flex: 0 0 40%;
         // padding-right: 1em;
     }
 
@@ -96,7 +97,7 @@
         font-family: "Plus Jakarta Sans";
         font-size: 20px;
         font-weight: 600;
-        line-height: 24px;
+        line-height: 30px;
         margin-bottom: 1em;
         @include media("x-sm-desktop") {
             font-size: 13px !important;

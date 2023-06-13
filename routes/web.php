@@ -39,4 +39,4 @@ Route::get('/condition-treatments',[ConditionsController::class, 'index']);
 Route::get('/locations/{slug}',[BranchController::class,'index'])->name('branch');
 Route::get('/international-patient',[InternationalPatientController::class,'index'])->name('international_patient');
 Route::get('/career',[CareerController::class,'index'])->name('career');
-Route::get('/doctor',[DoctorController::class,'index'])->name('doctor');
+Route::get('/doctor/{slug}',[DoctorController::class,'index'])->name('doctor');
