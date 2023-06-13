@@ -50,8 +50,23 @@ async function printDoctors(url,body) {
             let coeName = [];
             let branchName = [];
 
-            result.coes.forEach((coe) => {
-                coeName.push(`<a href="#"> ${coe.name}</a>`);
+            result.coes.forEach((coe,index) => {
+                if(coe.specialities.length  == 0 )
+                {
+                    coeName.push(`<a href="#"> ${coe.name}</a> |`);
+
+                }
+                else
+                {
+                    result.specialities.forEach((speciality,index)=>{
+                        
+                        if(!coeName.includes(`<a href="#"> ${speciality.name} , </a>`))
+                        {
+                            coeName.push(`<a href="#"> ${speciality.name } , </a>`)
+
+                        }
+                    })
+                }
             });
             result.branches.forEach((branch) => {
                 branchName.push(`<a href="#"> ${branch.name}</a>`);

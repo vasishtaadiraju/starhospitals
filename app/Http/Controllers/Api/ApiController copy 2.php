@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Branch;
 use App\Models\CentreOfExcellence;
 use App\Models\User;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
 
@@ -67,37 +68,30 @@ class ApiController extends Controller
                 });
             }
 
-            if ($branch_id == null) {
+            if($branch_id  == null)
+            {
                 $user_query->whereHas('branches', function ($query) {
-                    $query->where('branches.id', 1);
+                    $query->where('branches.id',1);
                 });
             }
             $user_query->with([
                 'coes' => function ($query) {
-                    $query->with([
-                        'specialities' => function ($query) {
-                            $query->where('status', 'active')->select('specialities.id', 'name');
-                        }
-                    ])->select('centre_of_excellences.id', 'name');
+                    $query->select('name');
                 },
                 'branches' => function ($query) {
                     $query->select('name');
-                },
-                'specialities' => function ($query) {
-                    $query->where('status', 'active')->with([
-                        'coes' => function ($query) {
-                            $query->select('centre_of_excellences.id')->pluck('centre_of_excellences.id');
-                        }
-                    ])->select('specialities.id', 'name');
                 }
             ]);
             if ($request->paginate == true) {
 
-                $ids = $user_query->distinct()->pluck('users.id');
-                $pagination = $user_query->whereIn('users.id', $ids)->join('branch_user', 'users.id', '=', 'branch_user.user_id')->distinct(['users.id'])->orderBy('branch_user.order_number')->select('users.id','name','designation','experience')->paginate(9);
-            } else {
-
-                $doctors = $user_query->join('branch_user', 'users.id', '=', 'branch_user.user_id')->orderBy('branch_user.order_number', 'DESC')->get(['users.id', 'name', 'slug', 'designation', 'branch_user.order_number', 'large_image'])->unique()->take(20);
+                // $ids =  $user_query->distinct()->pluck('users.id');
+                // ->whereIn('users.id',$ids)
+                $pagination = $user_query->join('branch_user', 'users.id', '=', 'branch_user.user_id')->distinct(['users.id'])->orderBy('branch_user.order_number')->select('users.id','name','designation','experience')->paginate(9);
+            }
+            else
+            {
+            
+            $doctors = $user_query->join('branch_user', 'users.id', '=', 'branch_user.user_id')->orderBy('branch_user.order_number','DESC')->get(['users.id', 'name', 'slug', 'designation', 'branch_user.order_number', 'large_image'])->unique()->take(20);
 
             }
 
@@ -148,6 +142,6 @@ class ApiController extends Controller
             ])->first('id');
         }
 
-        return response($response, 200);
+        return response($response,200);
     }
 }

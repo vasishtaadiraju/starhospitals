@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Branch::class, 'branch_user', 'user_id', 'branch_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
+
+    public function specialities()
+    {
+        return $this->belongsToMany(Speciality::class, 'speciality_user', 'user_id', 'speciality_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+    }
 }
