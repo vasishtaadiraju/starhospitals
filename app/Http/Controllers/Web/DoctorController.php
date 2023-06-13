@@ -30,10 +30,13 @@ class DoctorController extends Controller
                 ])->select('specialities.id', 'name');
             }
         ])->first();
-        $breadcrum = "<div class='banner__breadcrum'>
+        
+        $breadcrum = "<div class='banner__breadcrum banner__breadcrum--blue'>
     <a href='#'>Home</a>
     <span>❯</span>
     <a href='#'>Doctor</a>
+    <span>❯</span>
+    <a href='#'>{$content->name}</a>
 </div>";
         return view('doctor-profile',[
             'content'=>$content,

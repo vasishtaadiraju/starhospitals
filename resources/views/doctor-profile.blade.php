@@ -3,7 +3,7 @@
 @vite(['resources/scss/doctor-profile.scss', 'resources/js/app.js'])
 @endsection
 @section('content')
-<x-banner :imgurl="Vite::asset('resources/images/banner/doc-profile.png')" :text="''" :$breadcrum/>
+<x-banner :imgurl="Vite::asset('resources/images/banner/doc-profile.png')" :text="'Doctors | Star Hospitals'" :$breadcrum/>
 
 <x-gap/>
 
@@ -115,7 +115,7 @@
       </div>
   
       <div class="d-p-achievement__details">
-          <h1 class="section-heading d-p-achievement__details__title">Qualifications</h1>
+          <h1 class="section-heading d-p-achievement__details__title" id="qualifications">Qualifications</h1>
   
           {{-- <ul class="d-p-achievement__details__list">
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>

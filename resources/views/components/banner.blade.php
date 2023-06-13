@@ -1,6 +1,8 @@
 <div class="banner" >
     <img class="banner__image" src="" data-src="{{$imgurl}}" alt="">
-    <div class="banner__content">
+    <div class="banner__content @if (request()->route()->getName() == 'doctor')
+        banner__content--blue
+    @endif">
 
         <div class="banner__content__wrapper">
             <h1 class="section-heading">{{$text}}</h1>

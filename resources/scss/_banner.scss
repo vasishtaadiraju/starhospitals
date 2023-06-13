@@ -51,6 +51,8 @@
         width: 35%;
         display: flex;
         align-items: center;
+
+        
         @include media("sm-mob") {
             position: absolute;
             top: 0;
@@ -144,6 +146,14 @@
                 
             }
         }
+
+        &--blue{
+
+            h1{
+                color: #004E9E;
+
+            }
+        }
     }
 
     &__breadcrum {
@@ -166,6 +176,14 @@
                 font-size: 25px;
                 font-size: 13px;
             }
+        }
+
+
+        &--blue{
+            a,
+        span {
+            color: #004E9EBF;
+        }
         }
     }
 }
