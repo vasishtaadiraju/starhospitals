@@ -72,6 +72,7 @@
         display: flex;
         align-items: center;
         gap: 0.5em;
+        font-family: 'Plus Jakarta Sans Bold';
         @include media('sm-mob')
         {
             padding: 0.5em 0px; 
@@ -97,11 +98,11 @@
             padding: 0.5em 0px; 
             flex: 0 0 calc(98%/2);
         }
-        @include font-family(500);
+        
         a{
             color: white;
-            font-size: 15px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 700;
             @include media('sm-mob')
             {
                 font-size: 10px

@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="consultation__form">
-            <p class="consultation__form__title">Please fill in your detils</p>
+            <p class="consultation__form__title">Please fill in your details</p>
             <form action="#">
                 <div class="consultation__form__fields">
                     <input type="text" placeholder="Name">

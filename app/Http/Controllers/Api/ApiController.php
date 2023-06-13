@@ -84,18 +84,7 @@ class ApiController extends Controller
             if ($request->paginate == true) {
 
                 $ids =  $user_query->distinct()->pluck('users.id');
-                $pagination = $user_query->whereIn('users.id',$ids)->paginate(9,['users.id', 'name', 'slug', 'designation', 'large_image','experience']);
-
-                // $pagination = $pagination = $user_query->whereIn->distinct(['users.id'])->paginate(2);
-                // dd($ids);
-                // $pagination = User::whereIn('users.id',$ids)->with([
-                //     'coes' => function ($query) {
-                //         $query->select('name');
-                //     },
-                //     'branches' => function ($query) {
-                //         $query->select('name');
-                //     }
-                // ])->join('branch_user', 'users.id', '=', 'branch_user.user_id')->orderBy('order_number', 'DESC')->get()->unique();
+                $pagination = $user_query->whereIn('users.id',$ids)->join('branch_user', 'users.id', '=', 'branch_user.user_id')->distinct('users.id')->orderBy('branch_user.order_number')->paginate(9,['users.id', 'name', 'slug', 'designation', 'large_image','experience','branch_user.order_number']);
             }
             else
             {

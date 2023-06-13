@@ -149,24 +149,21 @@ $visible-cards: 1;
                 font-size: 40px;
                 line-height: 45.5px;
                 font-family: "Plus Jakarta Sans Bold";
-                font-weight: 800;
+                font-weight: 700;
                 @include media("sm-mob") {
                     font-size: 20px;
                     line-height: 25px;
                     color: white;
-                   
                 }
                 @include media("md-mob") {
                     font-size: 20px;
                     line-height: 25px;
                     color: white;
-                   
                 }
                 @include media("lg-mob") {
                     font-size: 20px;
                     line-height: 25px;
                     color: white;
-                   
                 }
 
                 @include media("x-sm-tab") {
@@ -180,7 +177,6 @@ $visible-cards: 1;
                     font-size: 20px;
                     line-height: 25px;
                     color: white;
-                   
                 }
             }
 
@@ -223,40 +219,61 @@ $visible-cards: 1;
                     variables.$starhospitals-brand-secondary,
                     "white"
                 );
-                width: 40%;
+                font-family: "Plus Jakarta Sans Bold";
+                min-width: 183px;
+                height: 53px;
+                width: max-content;
                 margin-top: 2rem;
                 font-size: 15px;
-                padding: 1em;
+                padding: 16px 40px 16px 40px;
                 background-color: white;
+                display: flex;
+                align-items: center;  
+                justify-content: center;
                 @include media("sm-mob") {
                     font-size: 13px;
                     margin-top: 1em;
                     border: none;
-                    padding: 0.5em 1em;
+                    min-width: 133px;
+                    height: 40px;
+                    padding: 10px 15px;
+                    width: max-content;
                 }
                 @include media("md-mob") {
                     font-size: 13px;
                     margin-top: 1em;
                     border: none;
-                    padding: 0.5em 1em;
+                    min-width: 133px;
+                    height: 40px;
+                    padding: 10px 15px;
+                    width: max-content;
                 }
                 @include media("lg-mob") {
                     font-size: 13px;
                     margin-top: 1em;
                     border: none;
-                    padding: 0.5em 1em;
+                    min-width: 133px;
+                    height: 40px;
+                    padding: 10px 15px;
+                    width: max-content;
                 }
                 @include media("x-sm-tab") {
                     font-size: 13px;
                     margin-top: 1em;
                     border: none;
+                    min-width: 133px;
+                    height: 40px;
+                    padding: 10px 15px;
                     width: max-content;
                 }
                 @include media("sm-tab") {
                     font-size: 13px;
                     margin-top: 1em;
                     border: none;
-                    padding: 0.5em 1em;
+                    min-width: 133px;
+                    height: 40px;
+                    padding: 10px 15px;
+                    width: max-content;
                 }
             }
         }

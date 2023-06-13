@@ -5,6 +5,8 @@
 @section('content')
 <x-slider :$content/>
 <x-search-doctor :$branches :$coes/>
+<x-highlights/>
+
 <x-gap/>
 {{-- <div class="ui-background"> --}}
 
@@ -16,7 +18,6 @@
 <x-gap/>
 <x-our-specialists :$content :$branches  :$coes/>
 {{-- <x-gap/> --}}
-<x-highlights/>
 
 <x-gap/>
 <x-why-choose-us :$content/>
@@ -28,7 +29,10 @@
 <x-gap/>
 <x-testimonials  :testimonials=[]/>
 <x-gap/>
+<div class="ui-background">
+
 <x-blogs :$content :$blogs/>
+</div>
 <x-gap/>
 <x-media :$content :$media />
 <x-gap/>

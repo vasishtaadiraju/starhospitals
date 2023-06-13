@@ -1,0 +1,34 @@
+@extends('layout.main')
+@section('css')
+@vite(['resources/scss/condition.scss', 'resources/js/app.js'])
+@endsection
+@section('content')
+    <x-conditions-tabs/>
+    <x-conditions-image-slider/>
+    <x-gap/>
+
+    <div class="conditions-content">
+ 
+            <p>    <span style="font-family: Okta-neue;">﻿</span><span style="font-family: docs-Merriweather; font-size: 13px; white-space: pre-wrap;">In yet another medical marvel reported out of India, Hyderabad is home to South East Asia’s smallest baby.  Baby girl Cherry was born to proud parents Nitika and Saurabh hailing from Chhattisgarh and delivered at <a href="https://www.rainbowhospitals.in/" target="_blank"><b>Rainbow Children’s Hospital</b></a> in Hyderabad. She was born premature at 25 weeks gestation (nearly 4 months earlier than expected date), under the extensive care received at the hands of a multi-disciplinary team of medical experts led by Dr. Dinesh Kumar Chirla, Director Intensive Care Services at Rainbow Hospitals. The baby was discharged weighing 1.980 Kg. 
+
+This was Nitika’s 5th pregnancy after 4 failed ones. This was her only chance to have a live baby. Around 24 weeks the ultrasound showed that there was very less amniotic fluid around baby. She weighed just 350 grams. The blood flow from mother to baby was severely compromised.  There was no way baby would have survived in womb. Parents consulted many hospitals and doctors. No one gave any chance for survival. They were then referred to Rainbow Children’s Hospital.
+
+Parents met <a href="https://www.rainbowhospitals.in/pediatric-hospital/speciality/pediatric-neurology-hospital" target="_blank"><b>Neonatologist</b></a> in Rainbow Children’s Hospital. The team said that they routinely manage babies born as early as 24 to 25 weeks of gestation. The smallest baby saved earlier at Rainbow was 449 grams. Considering the situation the Neonatal team was ready to take up the case. However, to ensure any chance of survival she should deliver in Perinatal Centre at Rainbow. Nitika was shifted in ambulance and brought to<a href="https://www.rainbowhospitals.in/our-centre/hyderabad/banjara-hills-road" target="_blank"><b> Rainbow Children's Hospital, Banjara Hills, Hyderabad.</b></a>
+
+The Perinatal team comprising of anesthetist, senior gynecologist and neonatologist all came together to make a detail plan of delivery. On 27th February, Nitika delivered baby girl weighing 375 grams. She was only 20cms in length and fitted in the palm. Parents were assured that “We are going to go through this journey together”.
+
+Speaking about Cherry's case, Dr. Ramesh Kancharla, Chairman and Managing Director, Rainbow Group of Hospitals said, “We are able to send baby born with birth weight as small as 375 grams home because of our advance perinatal center”. He said “close to 20 years of hard work has gone in to developing such expertise to save small babies. We need team of committed Obstetrician, anesthetist, fetal medicine specialist and neonatologist to achieve such results”. He said “a very dedicated and committed Nursing team was instrumental in saving cherry. The Neonatal Intensive Care unit is the most advance and well equipped in the country and has the most qualified team of expert neonatologist”. He also mentioned “Rainbow is striving each year in establishing clinical excellence in Neonatal, Pediatric and Obstetric care and raising the benchmark”.
+
+Elaborating on the case, Dr Dinesh Kumar Chirla, Director <a href="https://www.rainbowhospitals.in/pediatric-hospital/speciality/pediatric-intensive-care-unit-hospital" target="_blank"><b>Intensive Care Services, Rainbow Hospital</b></a> said, “The initial 3-4 days post birth are very crucial as babies are most fragile during this time. Specially, in this case, there were many health challenges like a drop in oxygen and BP level. Owing to the size of the baby, we had to find the smallest possible breathing tube to be inserted. Moreover, baby had a hear problem (PDA)which is normally closes in everyone after birth did not close an was large in Cherry's case causing oxygenation problem for which we had to give special medication and keep the baby under a ventilator for breathing support. Fortunately for this child, there was no bleeding in the brain. .”
+
+On Day 5 Cherry had bleeding in her lungs and needed to be shifted to special ventilator called High Frequency Oscillation ventilator. She was successfully managed. However she needed ventilator for nearly 105 days. She had many emergencies from which she was successfully saved.
+
+Cherry's case was a particularly complicated one with multiple hurdles including jaundice, feeding difficulties, multiple blood transfusion and chronic lung disease. With expert care from the medical team at Rainbow Hospitals, Cherry steadily gained weight and moved towards normalcy. She was discharged home after spending 128 days in hospital. She is breathing without support. She is feeding directly. She is maintaining temperature and looks like any other normal baby. The doctors expect her to be normal like any other baby. On follow up she weighed 2.14 kg.
+
+Expressing her joy, Cherry's mother Nitika exclaimed, "We had completely lost hope until we met the doctors at Rainbow Hospital. I never thought I would see my baby alive. After going through so many odds, she finally is coming home. I am extremely thankful to the team of experts at Rainbow Hospital who took immense care of her, and we have decided to keep the name Cherry." Cherry’s father persistence, patience and blind faith was the key factor in baby’s survival.  Expressing his happiness on sending Cherry home, Dr Dinesh Kumar Chirla, Director Intensive Care Services, Rainbow Hospitals thanked his team and said, “We are able to send Cherry home because of TEAM work. Round the clock cover by expert Neonatologist and excellent nursing care with support of advance infrastructure and inhouse obstetric and fetal medicine team. was key in sending Cherry home”. 
+
+From its inception, Rainbow Hospitals has saved well over 5000 preterm babies, some of them who were too small and critical to survive. To observe the occasion of “World Prematurity Day” in 2016, Rainbow Hospitals, mobilized a gathering of 445 kids born Premature under one roof to observe and to raise awareness about issues associated with the premature birth. It is the largest ever gathering of prematurely born babies under one roof. This broke the four year old record of 386 babies set out in Argentina in the year 2012. The record is very special recognition to the dedicated service rendered by the doctors, nurses and staff at Rainbow Hospitals who believe that every child has the right to survive.</span>
+             
+            <span style="font-family: Okta-neue;">﻿</span></p>            
+    </div>
+@endsection

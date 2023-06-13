@@ -1,0 +1,14 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+.conditions-image-slider {
+    @include centerSection;
+    width: 81%;
+
+    img{
+        margin-right: 0.5em;
+        padding: 1em;
+    }
+
+}

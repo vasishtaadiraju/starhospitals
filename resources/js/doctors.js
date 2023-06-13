@@ -20,11 +20,11 @@ async function printDoctors(body, selectBox, className) {
             let branchName = [];
 
             result.coes.forEach((coe,index) => {
-                if(index == 0 || index == 1)
-                {
+                // if(index == 0 || index == 1)
+                // {
                     coeName.push(`<a href="#"> ${coe.name}</a>`);
 
-                }
+                // }
             });
             result.branches.forEach((branch) => {
                 branchName.push(`<a href="#"> ${branch.name}</a>`);
@@ -36,7 +36,8 @@ async function printDoctors(body, selectBox, className) {
          <div class="doctors-card--primary__content">
          <div class="doctors-card--primary__info">
              <h4><a href="">${result.name}</a></h4>
-           
+            <p class="doctors-card--primary__designation"><a href=""> ${result.designation} </a></p>
+
              <p class="doctors-card--primary__speciality">${coeName.toString()} </p>
              <p class="doctors-card--primary__location">${branchName.toString()}</p>
      </div>

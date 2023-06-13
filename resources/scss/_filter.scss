@@ -31,7 +31,8 @@
 
 .search-doctor {
     min-height: 9rem;
-    background-color: variables.$starhospitals-brand-primary;
+    background-color: #ffff;
+    box-shadow: 0px 4px 20px rgba(224, 224, 224, 0.7);
     display: flex;
     justify-content: space-between;
     align-items: center;

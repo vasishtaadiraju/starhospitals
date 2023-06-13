@@ -59,8 +59,94 @@ $('.specialists-slider').slick({
         }
     }
 ]
-})  
+}) 
 
+
+
+$('.condition-tabs-slider').slick({
+    // dots:true,
+    arrows:true,
+    slidesToShow:4,
+    responsive: [{
+        breakpoint: 1275,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 4
+        }
+    },{
+        breakpoint: 1025,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 4
+        }
+    },
+    {
+        breakpoint: 769,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 2
+        }
+    },
+    {
+        breakpoint: 601,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 2
+        }
+    }
+]
+})
+
+
+$('.conditions-image-slider').slick({
+    // dots:true,
+    arrows:false,
+    autoplay:true,
+    slidesToShow:3,
+    responsive: [{
+        breakpoint: 1025,
+        settings: {
+            // dots: true,
+            // arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 2
+        }
+    },
+    {
+        breakpoint: 768,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 2
+        }
+    },
+    {
+        breakpoint: 601,
+        settings: {
+            // dots: true,
+            arrows: false,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 1
+        }
+    }
+]
+})
 $('.blogs-slider').slick({
     // dots:true,
     arrows:true,

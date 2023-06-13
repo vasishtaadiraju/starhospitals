@@ -10,6 +10,11 @@
   @font-face {
     font-family: 'Plus Jakarta Sans Bold';
     // src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Plus Jakarta Sans Semi Bold';
+    // src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
     src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBold.ttf') format('truetype');
   }
 @mixin centerSection{
@@ -271,10 +276,49 @@ input,select{
 
 .view-all-btn{
         @include btn-primary(red,transparent);
-        width: 8rem;
-        padding: 1em 0px;
+        min-width: 167px;
+        width: max-content;
+        height: 52px;
+        padding: 16px 40px;
         margin: 0px auto;
         margin-top: 3em;
+        display: flex;
+        align-items: center;
+        @include media('sm-mob')
+        {
+            min-width: 117px;
+            width: max-content;
+            height: 40px;
+            padding: 10px 15px;
+        }
+        @include media('md-mob')
+        {
+            min-width: 117px;
+            width: max-content;
+            height: 40px;
+            padding: 10px 15px; 
+        }
+        @include media('lg-mob')
+        {
+            min-width: 117px;
+            width: max-content;
+            height: 40px;
+            padding: 10px 15px;   
+        }
+        @include media('x-sm-tab')
+        {
+            min-width: 117px;
+            width: max-content;
+            height: 40px;
+            padding: 10px 15px; 
+        }
+        @include media('sm-tab')
+        {
+            min-width: 117px;
+            width: max-content;
+            height: 40px;
+            padding: 10px 15px; 
+        }
 }
 .ui-background{
     padding:5rem 0px;
@@ -297,8 +341,8 @@ input,select{
 }
 
 .section-heading{
-        font-family: 'Plus Jakarta Sans Bold';
-        font-weight: 400 !important;
+        font-family: 'Plus Jakarta Sans Semi Bold';
+        font-weight: 600 !important;
         font-size: 36px;
         line-height: 30.5px;
         @include media("sm-mob") {
@@ -357,4 +401,25 @@ input,select{
     padding-right: 2em !important;
     padding-left: 1em;
     cursor: pointer;
+}
+
+
+p{
+    @include media('sm-mob')
+    {
+        font-size: 14px;
+    } @include media('md-mob')
+    {
+        font-size: 14px;
+        
+    } @include media('lg-mob')
+    {
+        font-size: 14px;
+        
+    }
+    @include media('x-sm-mob')
+    {
+        font-size: 14px;
+        
+    }
 }

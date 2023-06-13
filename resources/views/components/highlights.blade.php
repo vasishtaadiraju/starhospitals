@@ -1,4 +1,6 @@
 <div class="highlights">
+    <h1 class="section-heading">Key Highlights</h1>
+
     <div class="highlights__container">
         <div class="highlights__card">
              <div class="highlights__card__icon">

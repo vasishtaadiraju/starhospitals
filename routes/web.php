@@ -5,6 +5,7 @@ use App\Http\Controllers\Web\AboutUsController;
 use App\Http\Controllers\Web\BranchController;
 use App\Http\Controllers\Web\CareerController;
 use App\Http\Controllers\Web\CoeController;
+use App\Http\Controllers\Web\ConditionsController;
 use App\Http\Controllers\Web\ContactUsController;
 use App\Http\Controllers\Web\FormController;
 use App\Http\Controllers\Web\HomeController;
@@ -33,9 +34,7 @@ Route::get('/centers-of-excellence/{slug}',[CoeController::class,'index'])->name
 Route::post('/',[FormController::class,'homeForm'])->name('home.form');
 Route::post('/centers-of-excellence',[FormController::class,'talkToDoctor'])->name('coe.form');
 Route::post('/contact',[FormController::class,'contactForm'])->name('contact.form');
-Route::get('/condition-treatments', function(){
-    return view('condition-treatments');
-});
+Route::get('/condition-treatments',[ConditionsController::class, 'index']);
 Route::get('/locations/{slug}',[BranchController::class,'index'])->name('branch');
 Route::get('/international-patient',[InternationalPatientController::class,'index'])->name('international_patient');
 Route::get('/career',[CareerController::class,'index'])->name('career');
