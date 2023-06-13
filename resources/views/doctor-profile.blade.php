@@ -62,11 +62,11 @@
     </div>
     <div class="d-p-info__col-3">
       <ul class="d-p-info__col-3__scroll-tabs">
-          <li class="d-p-info__col-3__scroll-tabs__item d-p-info__col-3__scroll-tabs__item--active"><a href="#">Qualifications</a></li>
-          <li class="d-p-info__col-3__scroll-tabs__item"><a href="#">Experience</a></li>
-          <li class="d-p-info__col-3__scroll-tabs__item"><a href="#">Field of Expertise</a></li>
-          <li class="d-p-info__col-3__scroll-tabs__item"><a href="#">Research & Publications</a></li>
-          <li class="d-p-info__col-3__scroll-tabs__item"><a href="#">Certifications & Memberships</a></li>
+          <li class="d-p-info__col-3__scroll-tabs__item d-p-info__col-3__scroll-tabs__item--active"><a href="#qualification" class="scroll-to-view">Qualifications</a></li>
+          <li class="d-p-info__col-3__scroll-tabs__item"><a href="#experience" class="scroll-to-view">Experience</a></li>
+          <li class="d-p-info__col-3__scroll-tabs__item"><a href="#expertise" class="scroll-to-view">Field of Expertise</a></li>
+          <li class="d-p-info__col-3__scroll-tabs__item"><a href="#research">Research & Publications</a></li>
+          <li class="d-p-info__col-3__scroll-tabs__item"><a href="#certifications">Certifications & Memberships</a></li>
       </ul>
     </div>
   </div>
