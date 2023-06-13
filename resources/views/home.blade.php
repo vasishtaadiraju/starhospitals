@@ -5,6 +5,8 @@
 @section('content')
 <x-slider :$content/>
 <x-search-doctor :$branches :$coes/>
+
+
 <x-highlights/>
 
 <x-gap/>

@@ -16,16 +16,21 @@
     gap: 4em;
     @include media('sm-mob')
     {
-        padding: 2em 0px
+        padding: 2em 0px;
+        gap: 2em;
     }
 
     @include media('md-mob')
     {
-        padding: 2em 0px
+        padding: 2em 0px;
+        gap: 2em;
+
     }
     @include media('x-sm-tab')
     {
-        padding: 2em 0px
+        padding: 2em 0px;
+        gap: 2em;
+
     }
 
     &__container {
@@ -108,11 +113,23 @@
                 font-size: 40px;
                 @include media('sm-mob')
                 {
-                    font-size: 30px;
+                    font-size: 20px;
+                }
+                @include media('md-mob')
+                {
+                    font-size: 20px;
+                }
+                @include media('lg-mob')
+                {
+                    font-size: 20px;
                 }
                 @include media('x-sm-tab')
                 {
-                    font-size: 30px;
+                    font-size: 20px;
+                }
+                @include media('sm-tab')
+                {
+                    font-size: 20px;
                 }
             }
             p{
@@ -120,11 +137,24 @@
                 font-size: 20px;
                 @include media('sm-mob')
                 {
-                    font-size: 18px;
+                    font-size: 15px;
+                }
+                @include media('md-mob')
+                {
+                    font-size: 15px;
+                }
+                @include media('lg-mob')
+                {
+                    font-size: 15px;
                 }
                 @include media('x-sm-tab')
                 {
-                    font-size: 18px;
+                    font-size: 15px;
+                }
+               
+                @include media('sm-tab')
+                {
+                    font-size: 15px;
                 }
             }
         }
