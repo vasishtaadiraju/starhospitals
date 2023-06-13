@@ -14,6 +14,7 @@ export default defineConfig({
                 'resources/scss/career.scss',
                 'resources/scss/find-doctor.scss',
                 'resources/scss/branch.scss',
+                'resources/scss/doctor-profile.scss',
                 'resources/css/app.css',
                 'resources/js/app.js',
                 'resources/js/app-book.js',
