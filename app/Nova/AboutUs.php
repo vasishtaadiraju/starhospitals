@@ -62,14 +62,20 @@ class AboutUs extends Resource
     {
         return [
             Image::make('Desktop image', 'banner_desktop')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable')
+                ->prunable(),
 
             Image::make('Mobile image', 'banner_mobile')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable')
+                ->prunable(),
 
             Text::make('Alt', 'banner_alt')
                 ->hideFromIndex()
@@ -77,20 +83,16 @@ class AboutUs extends Resource
 
             Text::make('Text', 'banner_text')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:50')
+                ->rules('required', 'string', 'max:50')
         ];
     }
 
     public function vmc($key)
     {
         return [
-            Text::make('Title', $key . '_title')
+            Textarea::make('Description', $key)
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:50'),
-
-            Textarea::make('Description', $key . '_description')
-                ->hideFromIndex()
-                ->rules('nullable', 'string')
+                ->rules('required', 'string')
         ];
     }
 
@@ -98,21 +100,24 @@ class AboutUs extends Resource
     {
         return [
             Image::make('Thumbnail', 'video_thumbnail')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable')
+                ->prunable(),
 
             URL::make('Link', 'video_link')
                 ->hideFromIndex()
-                ->rules('nullable', 'url'),
+                ->rules('required', 'url'),
 
             Text::make('Title', 'title')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:50'),
+                ->rules('required', 'string', 'max:50'),
 
             Textarea::make('Description', 'description')
                 ->hideFromIndex()
-                ->rules('nullable', 'string')
+                ->rules('required', 'string')
         ];
     }
 
@@ -122,7 +127,7 @@ class AboutUs extends Resource
             Textarea::make('Text', $key . '_text')
                 ->rows(2)
                 ->hideFromIndex()
-                ->rules('nullable', 'string')
+                ->rules('required', 'string')
         ];
     }
 

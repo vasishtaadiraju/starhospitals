@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string('key_highlight4_title', 50);
             $table->string('key_highlight4_description', 150);
             $table->string('virtual_tour_text');
-            $table->string('our_process_text');
+            $table->text('our_process_text');
             $table->text('facilities_text');
             $table->text('reviews_text');
             $table->text('enquiry_form_text');

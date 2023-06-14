@@ -5,13 +5,10 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\FormData;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -51,84 +48,28 @@ class Testimonial extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Title', 'title')
-                ->rules('required', 'string', 'max:100'),
+            Text::make('Text', 'text')
+                ->rules('required', 'string'),
 
             Text::make('Patient Name', 'patient_name')
                 ->hideFromIndex()
                 ->rules('required', 'string', 'max:50'),
 
-            Text::make('Feedback', 'feedback')
-                ->hideFromIndex()
-                ->rules('required', 'string'),
-
-            Select::make('Type', 'type')->options([
-                'image' => 'Image',
-                'video' => 'Video'
-            ]),
-
             Image::make('Image', 'image')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->hide()
-                ->dependsOn(
-                    ['type'],
-                    function (Image $field, NovaRequest $request, FormData $formData) {
-                        if ($formData->type === 'image') {
-                            $field->show()->rules('required', 'image', 'max:1024');
-                        }
-                    }
-                ),
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable')
+                ->prunable(),
 
             Text::make('Image Alt', 'image_alt')
                 ->hideFromIndex()
-                ->hide()
-                ->dependsOn(
-                    ['type'],
-                    function (Text $field, NovaRequest $request, FormData $formData) {
-                        if ($formData->type === 'image') {
-                            $field->show()->rules('required', 'string', 'max:100');
-                        }
-                    }
-                ),
-
-            Image::make('Thumbnail', 'thumbnail')
-                ->disk('public')
-                ->hideFromIndex()
-                ->hide()
-                ->dependsOn(
-                    ['type'],
-                    function (Image $field, NovaRequest $request, FormData $formData) {
-                        if ($formData->type === 'video') {
-                            $field->show()->rules('required', 'image', 'max:1024');
-                        }
-                    }
-                ),
+                ->rules('nullable', 'string', 'max:100'),
 
             URL::make('Video Link', 'video_link')
                 ->hideFromIndex()
-                ->hide()
-                ->dependsOn(
-                    ['type'],
-                    function (URL $field, NovaRequest $request, FormData $formData) {
-                        if ($formData->type === 'video') {
-                            $field->show()->rules('required', 'active_url', 'max:100');
-                        }
-                    }
-                ),
-
-            Text::make('Slug', 'slug')
-                ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:50'),
-
-            Text::make('Meta Title', 'meta_title')
-                ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:255'),
-
-            Textarea::make('Meta Description', 'meta_description')
-                ->rows(3)
-                ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'url'),
 
             Boolean::make('Show in Homepage', 'homepage')
                 ->trueValue('yes')
@@ -140,19 +81,21 @@ class Testimonial extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'integer', 'numeric'),
 
+            Boolean::make('Show in International Page', 'internationalpage')
+                ->trueValue('yes')
+                ->falseValue('no')
+                ->hideFromIndex(),
+
+            Number::make('International Page Order Number', 'internationalpage_order_number')
+                ->min(1)
+                ->hideFromIndex()
+                ->rules('nullable', 'integer', 'numeric'),
+
             Boolean::make('Status', 'status')
                 ->trueValue('active')
                 ->falseValue('inactive'),
 
-            BelongsToMany::make('Users', 'users')
-                ->searchable()
-                ->fields(function () {
-                    return [
-                        Number::make('Order Number', 'order_number')
-                    ];
-                }),
-
-            BelongsToMany::make('Region', 'regions')
+            BelongsToMany::make('Doctor', 'doctors')
                 ->searchable()
                 ->fields(function () {
                     return [

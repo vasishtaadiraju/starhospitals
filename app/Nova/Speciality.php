@@ -4,7 +4,6 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
@@ -14,6 +13,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Panel;
 
 class Speciality extends Resource
 {
@@ -55,54 +55,177 @@ class Speciality extends Resource
                 ->sortable()
                 ->rules('required', 'string', 'max:50'),
 
-            Avatar::make('Icon Image', 'icon_image')
-                ->disk('public')
-                ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+            new Panel('Icon', $this->icon()),
+            new Panel('Banner', $this->banner()),
+            new Panel('Description', $this->description()),
+            new Panel('Our Doctors', $this->our_doctors()),
+            new Panel('Services and Treatments', $this->services_treatments()),
+            new Panel('Our Locations', $this->our_locations()),
+            new Panel('Reviews', $this->reviews()),
+            new Panel('Blogs', $this->blogs()),
+            new Panel('Media', $this->media()),
+            new Panel('SEO', $this->seo()),
 
-            Text::make('Icon Image Alt', 'icon_image_alt')
-                ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:100'),
+            Boolean::make('Status', 'status')
+                ->trueValue('active')
+                ->falseValue('inactive'),
 
-            Image::make('Banner Desktop', 'banner_desktop')
-                ->disk('public')
-                ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+            BelongsToMany::make('Doctor', 'doctors')
+                ->searchable()
+                ->fields(function () {
+                    return [
+                        Number::make('Order Number', 'order_number')
+                    ];
+                }),
 
-            Text::make('Banner Desktop Alt', 'banner_desktop_alt')
-                ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:100'),
+            BelongsToMany::make('Branch', 'branches')
+                ->searchable()
+                ->fields(function () {
+                    return [
+                        Number::make('Order Number', 'order_number')
+                    ];
+                }),
 
-            Image::make('Banner Mobile', 'banner_mobile')
-                ->disk('public')
-                ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+            BelongsToMany::make('Centre of Excellence', 'coes')
+                ->searchable()
+                ->fields(function () {
+                    return [
+                        Number::make('Order Number', 'order_number')
+                    ];
+                }),
+        ];
+    }
 
-            Text::make('Banner Mobile Alt', 'banner_mobile_alt')
+    protected function icon()
+    {
+        return [
+            Text::make('Image', 'icon_image')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:100'),
+                ->rules('nullable', 'string'),
+        ];
+    }
 
-            Text::make('Banner text', 'banner_text')
+    protected function banner()
+    {
+        return [
+            Image::make('Desktop', 'banner_desktop')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:255'),
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable')
+                ->prunable(),
 
+            Image::make('Mobile', 'banner_mobile')
+                ->disk('s3')
+                ->hideFromIndex()
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable'),
+
+            Text::make('Text', 'banner_text')
+                ->hideFromIndex()
+                ->rules('required', 'string', 'max:255'),
+        ];
+    }
+
+    protected function description()
+    {
+        return [
             Trix::make('Description', 'description')
-                ->withFiles('public')
+                ->hideFromIndex()
+                ->rules('required', 'string'),
+
+            Image::make('Image', 'description_image')
+                ->disk('s3')
+                ->hideFromIndex()
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable')
+                ->prunable(),
+        ];
+    }
+
+    protected function our_doctors()
+    {
+        return [
+            Text::make('Text', 'our_doctors_text')
+                ->hideFromIndex()
+                ->rules('required', 'string'),
+        ];
+    }
+
+    protected function services_treatments()
+    {
+        return [
+            Image::make('Image1', 'services_treatments_image1')
+                ->disk('s3')
+                ->hideFromIndex()
+                ->rules('nullable', 'image', 'max:1024')
+                ->prunable(),
+
+            Image::make('Image2', 'services_treatments_image2')
+                ->disk('s3')
+                ->hideFromIndex()
+                ->rules('nullable', 'image', 'max:1024')
+                ->prunable(),
+
+            Trix::make('Description', 'services_treatments')
+                ->hideFromIndex()
+                ->rules('required', 'string'),
+        ];
+    }
+
+    protected function our_locations()
+    {
+        return [
+            Text::make('Text', 'our_locations_text')
+                ->hideFromIndex()
+                ->rules('required', 'string'),
+        ];
+    }
+
+    protected function reviews()
+    {
+        return [
+            Text::make('Text', 'reviews_text')
+                ->hideFromIndex()
+                ->rules('required', 'string'),
+        ];
+    }
+
+    protected function blogs()
+    {
+        return [
+            Text::make('Text', 'blogs_text')
+                ->hideFromIndex()
+                ->rules('required', 'string'),
+        ];
+    }
+
+    protected function media()
+    {
+        return [
+            Text::make('Text', 'media_text')
+                ->hideFromIndex()
+                ->rules('required', 'string'),
+        ];
+    }
+
+    protected function seo()
+    {
+        return [
+            Text::make('Icon Image Alt', 'icon_image_alt')
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
 
-            Image::make('Description Image', 'description_image')
-                ->disk('public')
+            Text::make('Banner Alt', 'banner_alt')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('nullable', 'string', 'max:100'),
 
             Text::make('Description Image Alt', 'description_image_alt')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
-
-            Text::make('Our locations text', 'our_locations_text')
-                ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:255'),
 
             Text::make('Slug', 'slug')
                 ->hideFromIndex()
@@ -136,42 +259,6 @@ class Speciality extends Resource
             Text::make('Schema Keywords', 'schema_keywords')
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
-
-            Boolean::make('Status', 'status')
-                ->trueValue('active')
-                ->falseValue('inactive'),
-
-            BelongsToMany::make('User', 'users')
-                ->searchable()
-                ->fields(function () {
-                    return [
-                        Number::make('Order Number', 'order_number')
-                    ];
-                }),
-
-            BelongsToMany::make('Region', 'regions')
-                ->searchable()
-                ->fields(function () {
-                    return [
-                        Number::make('Order Number', 'order_number')
-                    ];
-                }),
-
-            BelongsToMany::make('Branch', 'branches')
-                ->searchable()
-                ->fields(function () {
-                    return [
-                        Number::make('Order Number', 'order_number')
-                    ];
-                }),
-
-            BelongsToMany::make('Centre of Excellence', 'coes')
-                ->searchable()
-                ->fields(function () {
-                    return [
-                        Number::make('Order Number', 'order_number')
-                    ];
-                }),
         ];
     }
 
@@ -231,16 +318,16 @@ class Speciality extends Resource
         return '/resources/specialities/';
     }
 
-    public static function indexQuery(NovaRequest $request, $query)
-    {
-        if (DB::table('role_user')->where('user_id', $request->user()->id)->where('role_id', 2)->exists()) {
-            $branch_id = $request->user()->branch_id;
+    // public static function indexQuery(NovaRequest $request, $query)
+    // {
+    //     if (DB::table('role_user')->where('user_id', $request->user()->id)->where('role_id', 2)->exists()) {
+    //         $branch_id = $request->user()->branch_id;
 
-            $speciality_ids = DB::table('branch_speciality')->where('branch_id', $branch_id)->pluck('speciality_id')->toArray();
+    //         $speciality_ids = DB::table('branch_speciality')->where('branch_id', $branch_id)->pluck('speciality_id')->toArray();
 
-            return $query->whereIn('id', $speciality_ids);
-        }
+    //         return $query->whereIn('id', $speciality_ids);
+    //     }
 
-        return $query;
-    }
+    //     return $query;
+    // }
 }

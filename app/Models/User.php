@@ -46,26 +46,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function regions()
-    {
-        return $this->belongsToMany(Region::class, 'region_user', 'user_id', 'region_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
-    }
-
-    public function branches()
-    {
-        return $this->belongsToMany(Branch::class, 'branch_user', 'user_id', 'branch_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
-    }
-
-    public function coes()
-    {
-        return $this->belongsToMany(CentreOfExcellence::class, 'coe_user', 'user_id', 'coe_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
-    }
-
-    public function specialities()
-    {
-        return $this->belongsToMany(Speciality::class, 'speciality_user', 'user_id', 'speciality_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
-    }
-
     public function roles()
     {
         return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id', 'id', 'id')->withTimestamps();

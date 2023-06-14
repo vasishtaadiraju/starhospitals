@@ -225,14 +225,6 @@ class User extends Resource
                 ->help('Please select the branch, only if this user is a branch admin.')
                 ->hideFromIndex(),
 
-            BelongsToMany::make('Region', 'regions')
-                ->searchable()
-                ->fields(function () {
-                    return [
-                        Number::make('Order Number', 'order_number')
-                    ];
-                }),
-
             BelongsToMany::make('Branch', 'branches')
                 ->searchable()
                 ->fields(function () {

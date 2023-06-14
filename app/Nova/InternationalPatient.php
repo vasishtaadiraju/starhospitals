@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
 
@@ -63,14 +64,20 @@ class InternationalPatient extends Resource
     {
         return [
             Image::make('Desktop', 'banner_desktop')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable')
+                ->prunable(),
 
             Image::make('Mobile', 'banner_mobile')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable')
+                ->prunable(),
 
             Text::make('Alt', 'banner_alt')
                 ->hideFromIndex()
@@ -111,7 +118,7 @@ class InternationalPatient extends Resource
     protected function ourProcess()
     {
         return [
-            Text::make('Text', 'our_process_text')
+            Textarea::make('Text', 'our_process_text')
                 ->hideFromIndex()
                 ->rules('required', 'string'),
         ];
@@ -120,7 +127,7 @@ class InternationalPatient extends Resource
     protected function facilities()
     {
         return [
-            Text::make('Text', 'facilities_text')
+            Textarea::make('Text', 'facilities_text')
                 ->hideFromIndex()
                 ->rules('required', 'string'),
         ];
@@ -129,7 +136,7 @@ class InternationalPatient extends Resource
     protected function reviews()
     {
         return [
-            Text::make('Text', 'reviews_text')
+            Textarea::make('Text', 'reviews_text')
                 ->hideFromIndex()
                 ->rules('required', 'string'),
         ];
@@ -138,7 +145,7 @@ class InternationalPatient extends Resource
     protected function enquiryForm()
     {
         return [
-            Text::make('Text', 'enquiry_form_text')
+            Textarea::make('Text', 'enquiry_form_text')
                 ->hideFromIndex()
                 ->rules('required', 'string'),
         ];
@@ -147,7 +154,7 @@ class InternationalPatient extends Resource
     protected function faq()
     {
         return [
-            Text::make('Text', 'faq_text')
+            Textarea::make('Text', 'faq_text')
                 ->hideFromIndex()
                 ->rules('required', 'string'),
         ];

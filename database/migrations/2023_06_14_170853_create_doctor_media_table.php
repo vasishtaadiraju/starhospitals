@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blog_region', function (Blueprint $table) {
+        Schema::create('doctor_media', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('blog_id')->constrained('blogs')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('region_id')->constrained('regions')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('doctor_id')->constrained('doctors')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('media_id')->constrained('media')->onUpdate('cascade')->onDelete('cascade');
             $table->smallInteger('order_number')->nullable();
             $table->timestamps();
         });
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('blog_region');
+        Schema::dropIfExists('doctor_media');
     }
 };

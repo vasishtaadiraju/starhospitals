@@ -4,19 +4,17 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\Email;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Panel;
 
 class Branch extends Resource
 {
@@ -40,7 +38,7 @@ class Branch extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'region.name'
+        'id', 'name'
     ];
 
     /**
@@ -59,90 +57,188 @@ class Branch extends Resource
                 ->sortable()
                 ->rules('required', 'string', 'max:50'),
 
+            new Panel('Banner', $this->banner()),
+            new Panel('About', $this->about()),
+            new Panel('Highlights', $this->highlights()),
+            new Panel('Why Choose Us', $this->whyChooseUs()),
+            new Panel('Why Choose Us - Card 1', $this->whyChooseUsCard(1)),
+            new Panel('Why Choose Us - Card 2', $this->whyChooseUsCard(2)),
+            new Panel('Why Choose Us - Card 3', $this->whyChooseUsCard(3)),
+            new Panel('Why Choose Us - Card 4', $this->whyChooseUsCard(4)),
+            new Panel('SEO', $this->seo()),
+
             // BelongsTo::make('Region')
             //     ->withoutTrashed(),
 
-            Text::make('Contact', 'contact')
-                ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:20'),
+            Boolean::make('Status', 'status')
+                ->trueValue('active')
+                ->falseValue('inactive'),
 
-            Text::make('Address', 'address')
-                ->hideFromIndex()
-                ->rules('nullable', 'string'),
+            BelongsToMany::make('Doctor', 'doctors')
+                ->searchable()
+                ->fields(function () {
+                    return [
+                        Number::make('Order Number', 'order_number')
+                    ];
+                }),
 
-            Email::make('Email', 'email')
-                ->hideFromIndex()
-                ->rules('nullable', 'string', 'email:rfc,strict,dns,filter', 'max:100')
-                ->creationRules('unique:branches,email')
-                ->updateRules('unique:branches,email,{{resourceId}}'),
+            BelongsToMany::make('Centre of Excellence', 'coes')
+                ->searchable()
+                ->fields(function () {
+                    return [
+                        Number::make('Order Number', 'order_number')
+                    ];
+                }),
 
-            Number::make('Order Number', 'order_number')
-                ->hideFromIndex()
-                ->rules('nullable', 'integer', 'numeric'),
+            BelongsToMany::make('Speciality', 'specialities')
+                ->searchable()
+                ->fields(function () {
+                    return [
+                        Number::make('Order Number', 'order_number')
+                    ];
+                }),
+        ];
+    }
 
-            Image::make('Background Image Desktop', 'bg_image_desktop')
-                ->disk('public')
+    protected function banner()
+    {
+        return [
+            Image::make('Desktop', 'banner_desktop')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('required', 'image', 'max:1024'),
 
-            Image::make('Background Image Mobile', 'bg_image_mobile')
-                ->disk('public')
+            Image::make('Mobile', 'banner_mobile')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('required', 'image', 'max:1024'),
 
-            Text::make('Background Image Alt', 'bg_image_alt')
+            Text::make('Text', 'banner_text')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:100'),
+                ->rules('required', 'string', 'max:50'),
 
-            Image::make('Banner Desktop', 'banner_desktop')
-                ->disk('public')
-                ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
-
-            Image::make('Banner Mobile', 'banner_mobile')
-                ->disk('public')
-                ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
-
-            Text::make('Banner Alt', 'banner_alt')
-                ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:100'),
-
-                Text::make('Banner Text', 'banner_text')
-                ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:100'),
-
-            Image::make('Card Image', 'card_image')
-                ->disk('public')
-                ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
-
-            Trix::make('About', 'about')
-                ->withFiles('public')
-                ->hideFromIndex()
-                ->rules('nullable', 'string'),
-
-            Image::make('About Image', 'about_image')
-                ->disk('public')
-                ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
-
-            Text::make('About Image Alt', 'about_image_alt')
+            Text::make('Alt', 'banner_alt')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
+        ];
+    }
 
-            Number::make('Number of Doctors', 'no_of_doctors')
+    protected function about()
+    {
+        return [
+            Trix::make('Description', 'about')
                 ->hideFromIndex()
-                ->rules('nullable', 'integer', 'numeric'),
+                ->rules('required', 'string'),
 
-            Number::make('Number of Nurses', 'no_of_nurses')
+            Image::make('Desktop Image', 'about_image_desktop')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'integer', 'numeric'),
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable'),
 
-            Number::make('Number of Beds', 'no_of_beds')
+            Image::make('Mobile Image', 'about_image_mobile')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'integer', 'numeric'),
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable'),
 
+            Text::make('Image Alt', 'about_image_alt')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:100'),
+        ];
+    }
+
+    protected function highlights()
+    {
+        return [
+            Text::make('Years of experience', 'experience')
+                ->hideFromIndex()
+                ->rules('required', 'string', 'max:5'),
+
+            Text::make('Surgeries', 'surgeries')
+                ->hideFromIndex()
+                ->rules('required', 'string', 'max:5'),
+
+            Text::make('Beds', 'beds')
+                ->hideFromIndex()
+                ->rules('required', 'string', 'max:5'),
+
+            Text::make('Happy patients', 'happy_patients')
+                ->hideFromIndex()
+                ->rules('required', 'string', 'max:5'),
+        ];
+    }
+
+    public function whyChooseUs()
+    {
+        return [
+            Image::make('Image', 'why_choose_us_image')
+                ->disk('s3')
+                ->hideFromIndex()
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable'),
+
+            Text::make('Image Alt', 'why_choose_us_image_alt')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:100'),
+        ];
+    }
+
+    protected function whyChooseUsCard($card_number)
+    {
+        return [
+            Text::make('Icon', 'why_choose_us_card' . $card_number . '_icon')
+                ->rows(5)
+                ->hideFromIndex()
+                ->rules('required', 'string'),
+
+            Text::make('Title', 'why_choose_us_card' . $card_number . '_title')
+                ->hideFromIndex()
+                ->rules('required', 'string', 'max:50'),
+
+            Textarea::make('Description', 'why_choose_us_card' . $card_number . '_description')
+                ->rows(3)
+                ->hideFromIndex()
+                ->rules('required', 'string', 'max:120'),
+        ];
+    }
+
+    protected function reviews()
+    {
+        return [
+            Textarea::make('Text', 'reviews_text')
+                ->rows(3)
+                ->hideFromIndex()
+                ->rules('required', 'string', 'max:255'),
+        ];
+    }
+
+    protected function blogs()
+    {
+        return [
+            Textarea::make('Text', 'blogs_text')
+                ->rows(3)
+                ->hideFromIndex()
+                ->rules('required', 'string', 'max:255'),
+        ];
+    }
+
+    protected function faq()
+    {
+        return [
+            Textarea::make('Text', 'faq_text')
+                ->rows(3)
+                ->hideFromIndex()
+                ->rules('required', 'string', 'max:255'),
+        ];
+    }
+
+    protected function seo()
+    {
+        return [
             URL::make('UTM link', 'utm_link')
                 ->hideFromIndex()
                 ->rules('nullable', 'url'),
@@ -204,33 +300,6 @@ class Branch extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
 
-            Boolean::make('Status', 'status')
-                ->trueValue('active')
-                ->falseValue('inactive'),
-
-            BelongsToMany::make('User', 'users')
-                ->searchable()
-                ->fields(function () {
-                    return [
-                        Number::make('Order Number', 'order_number')
-                    ];
-                }),
-
-            BelongsToMany::make('Centre of Excellence', 'coes')
-                ->searchable()
-                ->fields(function () {
-                    return [
-                        Number::make('Order Number', 'order_number')
-                    ];
-                }),
-
-            BelongsToMany::make('Speciality', 'specialities')
-                ->searchable()
-                ->fields(function () {
-                    return [
-                        Number::make('Order Number', 'order_number')
-                    ];
-                }),
         ];
     }
 
@@ -278,11 +347,6 @@ class Branch extends Resource
         return [];
     }
 
-    public function subtitle()
-    {
-        return "Region: {$this->region->name}";
-    }
-
     public static function redirectAfterCreate(NovaRequest $request, $resource)
     {
         return '/resources/branches/';
@@ -293,12 +357,12 @@ class Branch extends Resource
         return '/resources/branches/';
     }
 
-    public static function indexQuery(NovaRequest $request, $query)
-    {
-        if (DB::table('role_user')->where('user_id', $request->user()->id)->where('role_id', 2)->exists()) {
-            return $query->where('id', $request->user()->branch_id);
-        }
+    // public static function indexQuery(NovaRequest $request, $query)
+    // {
+    //     if (DB::table('role_user')->where('user_id', $request->user()->id)->where('role_id', 2)->exists()) {
+    //         return $query->where('id', $request->user()->branch_id);
+    //     }
 
-        return $query;
-    }
+    //     return $query;
+    // }
 }

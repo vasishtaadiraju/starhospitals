@@ -25,49 +25,12 @@ class DataSync extends Action
     public function handle(ActionFields $fields, Collection $models)
     {
         foreach ($models as $model) {
-            $region_ids = DB::table('region_user')->where('user_id', $model->id)->pluck('region_id');
-            $branch_ids = DB::table('branch_user')->where('user_id', $model->id)->pluck('branch_id');
-            $coe_ids = DB::table('coe_user')->where('user_id', $model->id)->pluck('coe_id');
-            $speciality_ids = DB::table('speciality_user')->where('user_id', $model->id)->pluck('speciality_id');
-            $testimonial_ids = DB::table('testimonial_user')->where('user_id', $model->id)->pluck('testimonial_id');
-            $blog_ids = DB::table('blog_user')->where('user_id', $model->id)->pluck('blog_id');
-            $media_ids = DB::table('media_user')->where('user_id', $model->id)->pluck('media_id');
-
-            foreach ($region_ids as $region_id) {
-
-                foreach ($testimonial_ids as $testimonial_id) {
-                    if (!(DB::table('region_testimonial')->where('region_id', $region_id)->where('testimonial_id', $testimonial_id)->exists())) {
-                        DB::table('region_testimonial')->insert([
-                            'region_id' => $region_id,
-                            'testimonial_id' => $testimonial_id,
-                            'created_at' => now(),
-                            'updated_at' => now()
-                        ]);
-                    }
-                }
-
-                foreach ($blog_ids as $blog_id) {
-                    if (!(DB::table('blog_region')->where('region_id', $region_id)->where('blog_id', $blog_id)->exists())) {
-                        DB::table('blog_region')->insert([
-                            'region_id' => $region_id,
-                            'blog_id' => $blog_id,
-                            'created_at' => now(),
-                            'updated_at' => now()
-                        ]);
-                    }
-                }
-
-                foreach ($media_ids as $media_id) {
-                    if (!(DB::table('media_region')->where('region_id', $region_id)->where('media_id', $media_id)->exists())) {
-                        DB::table('media_region')->insert([
-                            'region_id' => $region_id,
-                            'media_id' => $media_id,
-                            'created_at' => now(),
-                            'updated_at' => now()
-                        ]);
-                    }
-                }
-            }
+            $branch_ids = DB::table('branch_doctor')->where('doctor_id', $model->id)->pluck('branch_id');
+            $coe_ids = DB::table('coe_doctor')->where('doctor_id', $model->id)->pluck('coe_id');
+            $speciality_ids = DB::table('doctor_speciality')->where('doctor_id', $model->id)->pluck('speciality_id');
+            $testimonial_ids = DB::table('doctor_testimonial')->where('doctor_id', $model->id)->pluck('testimonial_id');
+            $blog_ids = DB::table('doctor_blog')->where('doctor_id', $model->id)->pluck('blog_id');
+            $media_ids = DB::table('doctor_media')->where('doctor_id', $model->id)->pluck('media_id');
 
             foreach ($branch_ids as $branch_id) {
 

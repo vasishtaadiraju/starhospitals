@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('region_speciality', function (Blueprint $table) {
+        Schema::create('coe_doctor', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('region_id')->constrained('regions')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('speciality_id')->constrained('specialities')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('doctor_id')->constrained('doctors')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('coe_id')->constrained('centre_of_excellences')->onUpdate('cascade')->onDelete('cascade');
             $table->smallInteger('order_number')->nullable();
             $table->timestamps();
         });
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('region_speciality');
+        Schema::dropIfExists('coe_doctor');
     }
 };

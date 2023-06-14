@@ -7,13 +7,13 @@ use App\Nova\Blog;
 use App\Nova\Branch;
 use App\Nova\Career;
 use App\Nova\CentreOfExcellence;
+use App\Nova\Doctor;
 use App\Nova\FAQ;
 use App\Nova\Homepage;
 use App\Nova\InternationalPatient;
 use App\Nova\Media;
 use App\Nova\Speciality;
 use App\Nova\Testimonial;
-use App\Nova\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Dashboards\Main;
@@ -39,7 +39,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             return [
                 MenuSection::dashboard(Main::class)->icon('chart-bar'),
 
-                MenuSection::resource(User::class)->icon('user-group'),
+                MenuSection::resource(Doctor::class)->icon('user-group'),
 
                 MenuSection::make('Location', [
                     // MenuItem::resource(Region::class),
@@ -50,11 +50,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
                 MenuSection::resource(Speciality::class),
 
-                MenuSection::resource(Testimonial::class),
+                MenuSection::resource(Testimonial::class)->icon('document-text'),
 
-                MenuSection::resource(Blog::class),
+                MenuSection::resource(Blog::class)->icon('annotation'),
 
-                MenuSection::resource(Media::class),
+                MenuSection::resource(Media::class)->icon('newspaper'),
 
                 MenuSection::resource(FAQ::class)->icon('question-mark-circle'),
 
@@ -64,7 +64,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
                 MenuSection::resource(InternationalPatient::class),
 
-                MenuSection::resource(Career::class),
+                MenuSection::resource(Career::class)->icon('academic-cap'),
             ];
         });
 

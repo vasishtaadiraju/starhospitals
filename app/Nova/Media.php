@@ -51,17 +51,18 @@ class Media extends Resource
             ID::make()->sortable(),
 
             Text::make('Title', 'title')
-                ->sortable()
                 ->rules('required', 'string', 'max:150'),
 
             Text::make('Media Name', 'media_name')
-                ->sortable()
                 ->rules('required', 'string', 'max:100'),
 
             Image::make('Image', 'image')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable')
+                ->prunable(),
 
             Text::make('Image Alt', 'image_alt')
                 ->hideFromIndex()
@@ -102,15 +103,7 @@ class Media extends Resource
                 ->trueValue('active')
                 ->falseValue('inactive'),
 
-            BelongsToMany::make('Users', 'users')
-                ->searchable()
-                ->fields(function () {
-                    return [
-                        Number::make('Order Number', 'order_number')
-                    ];
-                }),
-
-            BelongsToMany::make('Region', 'regions')
+            BelongsToMany::make('Doctors', 'doctors')
                 ->searchable()
                 ->fields(function () {
                     return [

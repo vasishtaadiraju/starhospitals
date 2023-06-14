@@ -17,14 +17,9 @@ class Media extends Model
         'published_date' => 'date'
     ];
 
-    public function users()
+    public function doctors()
     {
-        return $this->belongsToMany(User::class, 'media_user', 'media_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
-    }
-
-    public function regions()
-    {
-        return $this->belongsToMany(Region::class, 'media_region', 'media_id', 'region_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+        return $this->belongsToMany(Doctor::class, 'doctor_media', 'media_id', 'doctor_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 
     public function branches()

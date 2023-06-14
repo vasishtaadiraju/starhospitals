@@ -4,26 +4,25 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
+use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Region extends Resource
+class Doctor extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Region>
+     * @var class-string<\App\Models\Doctor>
      */
-    public static $model = \App\Models\Region::class;
+    public static $model = \App\Models\Doctor::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -50,65 +49,93 @@ class Region extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()
-                ->sortable(),
+            ID::make()->sortable(),
 
             Text::make('Name', 'name')
-                ->sortable()
-                ->rules('required', 'string', 'max:50'),
+                ->rules('required', 'string', 'max:100'),
 
-            Text::make('Short Description', 'short_description')
+            Image::make('Small Image', 'small_image')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:255'),
+                ->rules('image', 'max:1024')
+                ->creationRules('nullable')
+                ->updateRules('nullable')
+                ->prunable(),
 
-            Trix::make('Long Description', 'long_description')
-                ->withFiles('public')
+            Text::make('Small Image Alt', 'small_image_alt')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:100'),
+
+            Image::make('Large Image', 'large_image')
+                ->disk('s3')
+                ->hideFromIndex()
+                ->rules('image', 'max:1024')
+                ->creationRules('nullable')
+                ->updateRules('nullable')
+                ->prunable(),
+
+            Text::make('Large Image Alt', 'large_image_alt')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:100'),
+
+            Text::make('Designation', 'designation')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:100'),
+
+            Trix::make('Qualification', 'qualification')
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
 
-            Avatar::make('Icon Image', 'icon_image')
-                ->disk('public')
+            Text::make('Experience', 'experience')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('nullable', 'string', 'max:5'),
 
-            Text::make('Icon Image Alt', 'icon_image_alt')
+            Trix::make('Experience Description', 'experience_description')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:100'),
+                ->rules('nullable', 'string'),
 
-            Image::make('Image', 'image')
-                ->disk('public')
-                ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
-
-            Text::make('Image Alt', 'image_alt')
-                ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:100'),
-
-            Number::make('Latitude', 'latitude')
+            Number::make('Fee', 'fee')
                 ->hideFromIndex()
                 ->rules('nullable', 'integer', 'numeric'),
 
-            Number::make('Longitude', 'longitude')
+            Trix::make('Expertise', 'expertise')
+                ->hideFromIndex()
+                ->rules('nullable', 'string'),
+
+            Trix::make('Research & Publications', 'research_publications')
+                ->hideFromIndex()
+                ->rules('nullable', 'string'),
+
+            Trix::make('Certifications & Memberships', 'certifications_memberships')
+                ->hideFromIndex()
+                ->rules('nullable', 'string'),
+
+                Number::make('Order Number', 'order_number')
                 ->hideFromIndex()
                 ->rules('nullable', 'integer', 'numeric'),
+
+            Text::make('Blogs Text', 'blogs_text')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:255'),
+
+            Text::make('Media Text', 'media_text')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:255'),
 
             Text::make('Slug', 'slug')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:50'),
+                ->rules('nullable', 'string'),
 
             Text::make('Meta Title', 'meta_title')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:255'),
 
             Textarea::make('Meta Description', 'meta_description')
+                ->rows(3)
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
 
-            Number::make('Order Number', 'order_number')
-                ->hideFromIndex()
-                ->rules('nullable', 'integer'),
-
-            Text::make('Schema Headline', 'schema_headline')
+            URL::make('Canonical', 'canonical')
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
 
@@ -124,17 +151,52 @@ class Region extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
 
-            Text::make('Schema Keywords', 'schema_keywords')
+            Text::make('Schema Opening Hours', 'schema_openingHours')
+                ->hideFromIndex()
+                ->rules('nullable', 'string'),
+
+            Text::make('Schema Address Locality', 'schema_addressLocality')
+                ->hideFromIndex()
+                ->rules('nullable', 'string'),
+
+            Text::make('Schema Region', 'schema_addressRegion')
+                ->hideFromIndex()
+                ->rules('nullable', 'string'),
+
+            Text::make('Schema Postal Code', 'schema_postalCode')
+                ->hideFromIndex()
+                ->rules('nullable', 'string'),
+
+            Text::make('Schema Street Address', 'schema_streetAddress')
+                ->hideFromIndex()
+                ->rules('nullable', 'string'),
+
+            Text::make('Schema Telephone', 'schema_telephone')
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
 
             Boolean::make('Status', 'status')
                 ->trueValue('active')
-                ->falseValue('inactive'),
+                ->falseValue('inactive')
+                ->filterable(),
 
-            HasMany::make('Branch'),
+            // Select::make('Branch', 'branch_id')
+            //     ->options(function () {
 
-            BelongsToMany::make('User', 'users')
+            //         $branch_select = [];
+            //         $branches = Branch::get(['id', 'name']);
+
+            //         foreach ($branches as $branch) {
+            //             $branch_select[$branch->id] = $branch->name;
+            //         }
+
+            //         return $branch_select;
+            //     })
+            //     ->displayUsingLabels()
+            //     ->help('Please select the branch, only if this user is a branch admin.')
+            //     ->hideFromIndex(),
+
+            BelongsToMany::make('Branch', 'branches')
                 ->searchable()
                 ->fields(function () {
                     return [
@@ -201,29 +263,18 @@ class Region extends Resource
      */
     public function actions(NovaRequest $request)
     {
-        return [];
+        return [
+            Actions\DataSync::make()->showInline()
+        ];
     }
 
     public static function redirectAfterCreate(NovaRequest $request, $resource)
     {
-        return '/resources/regions/';
+        return '/resources/doctors/';
     }
 
     public static function redirectAfterUpdate(NovaRequest $request, $resource)
     {
-        return '/resources/regions/';
-    }
-
-    public static function indexQuery(NovaRequest $request, $query)
-    {
-        // if (DB::table('role_user')->where('user_id', $request->user()->id)->where('role_id', 2)->exists()) {
-        //     $branch_id = $request->user()->branch_id;
-
-        //     $region_ids = DB::table('branches')->where('region_id', $branch_id)->pluck('region_id')->toArray();
-
-        //     return $query->whereIn('id', $region_ids);
-        // }
-
-        return $query;
+        return '/resources/doctors/';
     }
 }

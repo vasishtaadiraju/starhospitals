@@ -13,14 +13,9 @@ class Speciality extends Model
 
     protected $table = 'specialities';
 
-    public function users()
+    public function doctors()
     {
-        return $this->belongsToMany(User::class, 'speciality_user', 'speciality_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
-    }
-
-    public function regions()
-    {
-        return $this->belongsToMany(Region::class, 'region_speciality', 'speciality_id', 'region_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+        return $this->belongsToMany(Doctor::class, 'speciality_user', 'speciality_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 
     public function branches()

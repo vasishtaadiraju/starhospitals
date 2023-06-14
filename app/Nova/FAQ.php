@@ -8,7 +8,6 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -95,14 +94,6 @@ class FAQ extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'integer', 'numeric'),
 
-            BelongsToMany::make('Region', 'regions')
-                ->searchable()
-                ->fields(function () {
-                    return [
-                        Number::make('Order Number', 'order_number')
-                    ];
-                }),
-
             BelongsToMany::make('Branch', 'branches')
                 ->searchable()
                 ->fields(function () {
@@ -127,7 +118,7 @@ class FAQ extends Resource
                     ];
                 }),
 
-            BelongsToMany::make('User', 'users')
+            BelongsToMany::make('Doctor', 'doctors')
                 ->searchable()
                 ->fields(function () {
                     return [

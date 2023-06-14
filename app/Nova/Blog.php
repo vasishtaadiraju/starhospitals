@@ -51,16 +51,13 @@ class Blog extends Resource
             ID::make()->sortable(),
 
             Text::make('Title', 'title')
-                ->sortable()
                 ->rules('required', 'string', 'max:150'),
 
             Text::make('Author', 'author')
-                ->sortable()
                 ->hideFromIndex()
                 ->rules('required', 'string', 'max:50'),
 
             Text::make('Designation', 'designation')
-                ->sortable()
                 ->hideFromIndex()
                 ->rules('required', 'string', 'max:50'),
 
@@ -70,7 +67,7 @@ class Blog extends Resource
                 ->rules('required', 'string'),
 
             Image::make('Image', 'image')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
                 ->creationRules('required')
@@ -81,12 +78,11 @@ class Blog extends Resource
                 ->rules('nullable', 'string', 'max:100'),
 
             Trix::make('Description', 'description')
-                ->withFiles('public')
                 ->hideFromIndex()
                 ->rules('required', 'string'),
 
             Image::make('Banner Desktop', 'banner_desktop')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
                 ->creationRules('required')
@@ -97,7 +93,7 @@ class Blog extends Resource
                 ->rules('nullable', 'string', 'max:100'),
 
             Image::make('Banner Mobile', 'banner_mobile')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
                 ->creationRules('required')
@@ -138,15 +134,7 @@ class Blog extends Resource
                 ->trueValue('active')
                 ->falseValue('inactive'),
 
-            BelongsToMany::make('Users', 'users')
-                ->searchable()
-                ->fields(function () {
-                    return [
-                        Number::make('Order Number', 'order_number')
-                    ];
-                }),
-
-            BelongsToMany::make('Region', 'regions')
+            BelongsToMany::make('Doctor', 'doctors')
                 ->searchable()
                 ->fields(function () {
                     return [

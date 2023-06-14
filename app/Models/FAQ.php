@@ -13,11 +13,6 @@ class FAQ extends Model
 
     protected $table = 'faqs';
 
-    public function regions()
-    {
-        return $this->belongsToMany(Region::class, 'faq_region', 'faq_id', 'region_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
-    }
-
     public function branches()
     {
         return $this->belongsToMany(Branch::class, 'branch_faq', 'faq_id', 'branch_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
@@ -33,8 +28,8 @@ class FAQ extends Model
         return $this->belongsToMany(Speciality::class, 'faq_speciality', 'faq_id', 'speciality_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 
-    public function users()
+    public function doctors()
     {
-        return $this->belongsToMany(User::class, 'faq_user', 'faq_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+        return $this->belongsToMany(Doctor::class, 'faq_user', 'faq_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 }

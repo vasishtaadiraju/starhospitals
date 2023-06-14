@@ -58,7 +58,8 @@ class Homepage extends Resource
             new Panel('About Us', $this->aboutUs()),
             new Panel('Reviews', $this->text('review')),
             new Panel('Blogs', $this->text('blog')),
-            new Panel('Media', $this->text('media'))
+            new Panel('Media', $this->text('media')),
+            new Panel('Contact', $this->text('contact'))
         ];
     }
 
@@ -66,14 +67,16 @@ class Homepage extends Resource
     {
         return [
             Image::make('Desktop image', 'banner' . $number . '_desktop')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('nullable', 'image', 'max:1024')
+                ->prunable(),
 
             Image::make('Mobile image', 'banner' . $number . '_mobile')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('nullable', 'image', 'max:1024')
+                ->prunable(),
 
             Text::make('Alt', 'banner' . $number . '_alt')
                 ->hideFromIndex()
@@ -98,7 +101,7 @@ class Homepage extends Resource
         return [
             Text::make('Text', 'meet_our_specialist_text')
                 ->hideFromIndex()
-                ->rules('nullable', 'string')
+                ->rules('required', 'string')
         ];
     }
 
@@ -106,9 +109,11 @@ class Homepage extends Resource
     {
         return [
             Image::make('Image', 'why_choose_us_image')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable'),
 
             Text::make('Alt', 'why_choose_us_image_alt')
                 ->hideFromIndex()
@@ -121,15 +126,15 @@ class Homepage extends Resource
         return [
             Text::make('Icon', 'choose' . $number . '_icon')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('required', 'string'),
 
             Text::make('Title', 'choose' . $number . '_title')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:50'),
+                ->rules('required', 'string', 'max:50'),
 
             Text::make('Description', 'choose' . $number . '_description')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:120')
+                ->rules('required', 'string', 'max:120')
         ];
     }
 
@@ -139,20 +144,18 @@ class Homepage extends Resource
             Image::make('Thumbnail', 'about_thumbnail')
                 ->disk('public')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('image', 'max:1024')
+                ->creationRules('required')
+                ->updateRules('nullable'),
 
             URL::make('Video link', 'about_video_link')
                 ->hideFromIndex()
-                ->rules('nullable', 'url'),
-
-            Text::make('Title', 'about_title')
-                ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:20'),
+                ->rules('required', 'url'),
 
             Textarea::make('Description', 'about_description')
                 ->rows(4)
                 ->hideFromIndex()
-                ->rules('nullable', 'string')
+                ->rules('required', 'string')
         ];
     }
 
@@ -162,7 +165,7 @@ class Homepage extends Resource
             Textarea::make('Text', $key . '_text')
                 ->rows(2)
                 ->hideFromIndex()
-                ->rules('nullable', 'string')
+                ->rules('required', 'string')
         ];
     }
 

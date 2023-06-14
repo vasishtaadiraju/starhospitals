@@ -13,14 +13,9 @@ class Testimonial extends Model
 
     protected $table = 'testimonials';
 
-    public function users()
+    public function doctors()
     {
-        return $this->belongsToMany(User::class, 'testimonial_user', 'testimonial_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
-    }
-
-    public function regions()
-    {
-        return $this->belongsToMany(Region::class, 'region_testimonial', 'testimonial_id', 'region_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+        return $this->belongsToMany(Doctor::class, 'doctor_testimonial', 'testimonial_id', 'doctor_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 
     public function branches()

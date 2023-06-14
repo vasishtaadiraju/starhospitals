@@ -17,14 +17,9 @@ class Blog extends Model
         'published_date' => 'date'
     ];
 
-    public function users()
+    public function doctors()
     {
-        return $this->belongsToMany(User::class, 'blog_user', 'blog_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
-    }
-
-    public function regions()
-    {
-        return $this->belongsToMany(Region::class, 'blog_region', 'blog_id', 'region_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+        return $this->belongsToMany(Doctor::class, 'blog_doctor', 'blog_id', 'doctor_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 
     public function branches()
