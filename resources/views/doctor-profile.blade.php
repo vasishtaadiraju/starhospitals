@@ -167,13 +167,15 @@
       <div class="d-p-achievement__details">
           <h1 class="section-heading d-p-achievement__details__title">Experience</h1>
   
-          <ul class="d-p-achievement__details__list">
+
+          {{$content->experience_description}}
+          {{-- <ul class="d-p-achievement__details__list">
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
-          </ul>
+          </ul> --}}
   
   
           <a href="#" class="d-p-achievement__details__btn">Show more Experience</a>
@@ -220,14 +222,14 @@
   
       <div class="d-p-achievement__details">
           <h1 class="section-heading d-p-achievement__details__title">Field of Expertise</h1>
-  
-          <ul class="d-p-achievement__details__list">
+          {{$content->expertise}}
+          {{-- <ul class="d-p-achievement__details__list">
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
-          </ul>
+          </ul> --}}
   
   
           <a href="#" class="d-p-achievement__details__btn">Show more Field of Expertise</a>
@@ -257,13 +259,14 @@
     <div class="d-p-achievement__details">
         <h1 class="section-heading d-p-achievement__details__title">Research & Publications</h1>
 
-        <ul class="d-p-achievement__details__list">
+        {{$content->publications}}
+        {{-- <ul class="d-p-achievement__details__list">
             <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
             <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
             <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
             <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
             <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
-        </ul>
+        </ul> --}}
 
 
         <a href="#" class="d-p-achievement__details__btn">Show more research & publications</a>
@@ -289,14 +292,14 @@
 
     <div class="d-p-achievement__details">
         <h1 class="section-heading d-p-achievement__details__title">Certifications & Memberships</h1>
-
-        <ul class="d-p-achievement__details__list">
+        {{$content->certifications}}
+        {{-- <ul class="d-p-achievement__details__list">
             <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
             <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
             <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
             <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
             <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
-        </ul>
+        </ul> --}}
 
 
         <a href="#" class="d-p-achievement__details__btn">Show more Certifications & Memberships</a>

@@ -94,10 +94,10 @@ class ApiController extends Controller
             if ($request->paginate == true) {
 
                 $ids = $user_query->distinct()->pluck('users.id');
-                $pagination = $user_query->whereIn('users.id', $ids)->join('branch_user', 'users.id', '=', 'branch_user.user_id')->distinct(['users.id'])->orderBy('branch_user.order_number')->select('users.id','name','designation','experience')->paginate(9);
+                $pagination = $user_query->whereIn('users.id', $ids)->join('branch_user', 'users.id', '=', 'branch_user.user_id')->distinct(['users.id'])->orderBy('branch_user.order_number')->select('users.id','name','designation','experience','large_image')->paginate(9,['branch_user.order_number']);
             } else {
 
-                $doctors = $user_query->join('branch_user', 'users.id', '=', 'branch_user.user_id')->orderBy('branch_user.order_number', 'DESC')->get(['users.id', 'name', 'slug', 'designation', 'branch_user.order_number', 'large_image'])->unique()->take(20);
+                $doctors = $user_query->join('branch_user', 'users.id', '=', 'branch_user.user_id')->orderBy('branch_user.order_number', 'DESC')->get(['users.id', 'name', 'slug', 'designation', 'branch_user.order_number','small_image'])->unique()->take(20);
 
             }
 

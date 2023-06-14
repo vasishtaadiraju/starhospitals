@@ -22,7 +22,7 @@ class ContentServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->menu_coes = CentreOfExcellence::where('status','active')->orderBy('order_number')->get(['id','name','slug','icon_image']);
+        $this->menu_coes = CentreOfExcellence::where('status','active')->orderBy('order_number')->with('specialities')->get(['id','name','slug','icon_image']);
         $this->menu_branches = Branch::where('status','active')->orderBy('order_number')->get(['id','name','slug']);
 
         view()->composer('layout.main', function($view) {
