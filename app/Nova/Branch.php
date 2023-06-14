@@ -54,7 +54,6 @@ class Branch extends Resource
                 ->sortable(),
 
             Text::make('Name', 'name')
-                ->sortable()
                 ->rules('required', 'string', 'max:50'),
 
             new Panel('Banner', $this->banner()),
@@ -191,7 +190,6 @@ class Branch extends Resource
     {
         return [
             Text::make('Icon', 'why_choose_us_card' . $card_number . '_icon')
-                ->rows(5)
                 ->hideFromIndex()
                 ->rules('required', 'string'),
 

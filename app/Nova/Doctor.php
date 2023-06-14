@@ -110,7 +110,7 @@ class Doctor extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
 
-                Number::make('Order Number', 'order_number')
+            Number::make('Order Number', 'order_number')
                 ->hideFromIndex()
                 ->rules('nullable', 'integer', 'numeric'),
 
