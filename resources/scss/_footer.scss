@@ -50,6 +50,24 @@ $footer-columns: 5;
 
     &__columns {
         flex: 0 0 calc(105% / $footer-columns);
+
+        &:first-child {
+            @include media("sm-mob") {
+                margin-bottom: 3rem;
+            }
+            @include media("md-mob") {
+                margin-bottom: 3rem;
+            }
+            @include media("lg-mob") {
+                margin-bottom: 3rem;
+            }
+            @include media("x-sm-tab") {
+                margin-bottom: 3rem;
+            }
+            @include media("sm-tab") {
+                width: 16%;
+            }
+        }
         &--logo {
             display: flex;
             flex-direction: column;
@@ -91,10 +109,11 @@ $footer-columns: 5;
                 align-items: flex-start;
                 // padding: 1em;
             }
-            img , svg{
+            img,
+            svg {
                 width: 60%;
                 margin: 0px auto;
-                &:first-child{
+                &:first-child {
                     // width: 100%;
                     @include media("sm-mob") {
                         width: 30%;
@@ -129,29 +148,27 @@ $footer-columns: 5;
                 }
             }
 
-
             &--star {
-                img{
+                img {
                     width: 100% !important;
                     // margin: 0px 10%;
                     // display: block;
-                @include media("sm-mob") {
-                    width: 50% !important;
-                    margin: 0px 25%;
-                }
-                @include media("md-mob") {
-
-                    width: 50% !important;
-                margin: 0px 25%;
-                }
-                @include media("lg-mob") {
-                    width: 50% !important;
-                    margin: 0px 25%;
-                }
-                @include media("x-sm-tab") {
-                    width: 50% !important;
-                    margin: 0px 25%;
-                }
+                    @include media("sm-mob") {
+                        width: 50% !important;
+                        margin: 0px 25%;
+                    }
+                    @include media("md-mob") {
+                        width: 50% !important;
+                        margin: 0px 25%;
+                    }
+                    @include media("lg-mob") {
+                        width: 50% !important;
+                        margin: 0px 25%;
+                    }
+                    @include media("x-sm-tab") {
+                        width: 50% !important;
+                        margin: 0px 25%;
+                    }
                 }
                 @include media("sm-mob") {
                     width: 100% !important;
@@ -161,8 +178,6 @@ $footer-columns: 5;
                 @include media("md-mob") {
                     width: 100% !important;
                     padding: 5%;
-                    ;
-
                     margin: 0px 2em;
                 }
                 @include media("lg-mob") {
@@ -267,11 +282,10 @@ $footer-columns: 5;
                 }
 
                 &--dropdown {
-
-                    &__option{
+                    &__option {
                         margin: 1em 0px;
 
-                    transition: max-height 1s;
+                        transition: max-height 1s;
                         @include media("sm-mob") {
                             max-height: 0px;
                             overflow: hidden;
@@ -287,37 +301,29 @@ $footer-columns: 5;
                         @include media("x-sm-tab") {
                             max-height: 0px;
                             overflow: hidden;
-
                         }
                         @include media("sm-tab") {
                             max-height: 0px;
                             overflow: hidden;
-
                         }
 
-                        &--active{
+                        &--active {
                             @include media("sm-mob") {
                                 max-height: 12rem !important;
-
                             }
                             @include media("md-mob") {
                                 max-height: 12rem !important;
-
                             }
                             @include media("lg-mob") {
                                 max-height: 12rem !important;
-
                             }
                             @include media("x-sm-tab") {
                                 max-height: 12rem !important;
-
                             }
                             @include media("sm-tab") {
                                 max-height: 12rem !important;
-
                             }
                         }
-
                     }
                     &::after {
                         content: "❯";
@@ -386,7 +392,7 @@ $footer-columns: 5;
             }
         }
 
-        &__pipe{
+        &__pipe {
             @include media("sm-mob") {
                 display: none !important;
             }

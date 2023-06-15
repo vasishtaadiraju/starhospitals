@@ -30,7 +30,7 @@ class Blog extends Model
 
     public function coes()
     {
-        return $this->belongsToMany(User::class, 'blog_coe', 'blog_id', 'coe_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+        return $this->belongsToMany(CentreOfExcellence::class, 'blog_coe', 'blog_id', 'coe_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 
     public function specialities()

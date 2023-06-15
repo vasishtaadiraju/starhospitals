@@ -35,6 +35,12 @@
         margin: 0px auto;
         gap: 3em;
     }
+    @include media("sm-tab") {
+        flex-direction: column;
+        width: 85%;
+        margin: 0px auto;
+        gap: 3em;
+    }
     @include media("md-tab") {
         gap: 2em;
     }
@@ -54,6 +60,9 @@
             flex: 0 0 100%;
         }
         @include media("x-sm-tab") {
+            flex: 0 0 100%;
+        }
+        @include media("sm-tab") {
             flex: 0 0 100%;
         }
         @include media("md-tab") {
@@ -83,6 +92,9 @@
         @include media("x-sm-tab") {
             flex: 0 0 100%;
         }
+        @include media("sm-tab") {
+            flex: 0 0 100%;
+        }
         @include media("md-tab") {
             gap: 1.5em;
             flex:0 0 40%;
@@ -106,6 +118,9 @@
             flex: 0 0 100%;
         }
         @include media("x-sm-tab") {
+            flex: 0 0 100%;
+        }
+        @include media("sm-tab") {
             flex: 0 0 100%;
         }
         @include media("md-tab") {
@@ -184,6 +199,10 @@
             font-size: 25px !important;
             margin-bottom: 0.25em;
         }
+        @include media("sm-tab") {
+            font-size: 25px !important;
+            margin-bottom: 0.25em;
+        }
         @include media("md-tab") {
             font-size: 25px !important;
             margin-bottom: 0.25em;
@@ -212,6 +231,9 @@
         @include media("x-sm-tab") {
             font-size: 18px !important;
         }
+        @include media("sm-tab") {
+            font-size: 18px !important;
+        }
         @include media("md-tab") {
             font-size: 18px !important;
         }
@@ -236,6 +258,9 @@
             font-size: 15px !important;
         }
         @include media("x-sm-tab") {
+            font-size: 15px !important;
+        }
+        @include media("sm-tab") {
             font-size: 15px !important;
         }
         @include media("md-tab") {
@@ -308,6 +333,9 @@
                 @include media("x-sm-tab") {
                     font-size: 15px !important;
                 }
+                @include media("sm-tab") {
+                    font-size: 15px !important;
+                }
                 @include media("md-tab") {
                     font-size: 10px !important;
                 }
@@ -331,6 +359,9 @@
             gap: 1.5em;
         }
         @include media("x-sm-tab") {
+            gap: 1.5em;
+        }
+        @include media("sm-tab") {
             gap: 1.5em;
         }
         &__btn {
@@ -409,6 +440,9 @@
         @include media("x-sm-tab") {
             gap: 1em;
         }
+        @include media("sm-tab") {
+            gap: 1em;
+        }
         svg {
             flex: 0 0 10%;
             width: 50px !important;
@@ -433,9 +467,13 @@
             @include media("x-sm-tab") {
                 font-size: 15px;
             }
+            @include media("sm-tab") {
+                font-size: 15px;
+            }
             @include media("md-tab") {
                 font-size: 20px;
             }
+            
             @include media("x-sm-desktop") {
                 font-size: 20px;
             }
@@ -462,6 +500,9 @@
             @include media("x-sm-tab") {
                 padding-right: 1em;
             }
+            @include media("sm-tab") {
+                padding-right: 1em;
+            }
             
         }
     }
@@ -485,7 +526,10 @@
         @include media("lg-mob") {
             padding: 0em 0.5em;
         }
-        @include media("x-sm-mob") {
+        @include media("x-sm-tab") {
+            padding: 0em 0.5em;
+        }
+        @include media("sm-tab") {
             padding: 0em 0.5em;
         }
         &--active {
@@ -505,6 +549,9 @@
                 font-size: 18px !important  ;
             }
             @include media("x-sm-tab") {
+                font-size: 18px !important  ;
+            }
+            @include media("sm-tab") {
                 font-size: 18px !important  ;
             }
         }
@@ -546,6 +593,10 @@
                 // width: 100%;
             }
             @include media("x-sm-tab") {
+                font-size: 12px !important  ;
+                // width: 100%;
+            }
+            @include media("sm-tab") {
                 font-size: 12px !important  ;
                 // width: 100%;
             }
