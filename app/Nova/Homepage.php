@@ -142,7 +142,7 @@ class Homepage extends Resource
     {
         return [
             Image::make('Thumbnail', 'about_thumbnail')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
                 ->creationRules('nullable')
