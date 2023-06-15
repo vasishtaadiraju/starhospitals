@@ -85,16 +85,13 @@
                     <a href="#coe-list" class="scroll-to-view">Centers of Excellence</a>
                     <ul class="header__nav__option--dropdown__options">
                         @foreach ($coes as $item)
-                            <li class="header__nav__option--dropdown header__nav__option--nested-dropdown"><a href="{{ route('coe', $item->slug) }}">{{ $item->name }}</a>
-                                <ul>
+                            <li class=""><a href="{{ route('coe', $item->slug) }}">{{ $item->name }}</a>
+                                {{-- <ul>
                                     @foreach ($item->specialities as $speciality)
-                            <li><a href="#">{{$speciality->name}}</a> </li>
-
+                                        <li><a href="#">{{ $speciality->name }}</a> </li>
                                     @endforeach
-{{--                    
-                    <li><a href="#">Abc</a></li>
-                    <li><a href="#">Abc</a></li> --}}
-                </ul>
+                                   
+                                </ul> --}}
                             </li>
                         @endforeach
 
@@ -217,15 +214,15 @@
                     {{-- header__nav__option--nested-dropdown
                     header__nav__option--dropdown  --}}
                     @foreach ($coes as $item)
-                        <li class="header__nav__option--dropdown header__nav__option--nested-dropdown"><a href="{{ route('coe', $item->slug) }}">{{ $item->name }}</a>
-                            <ul>
+                        <li class=""><a href="{{ route('coe', $item->slug) }}">{{ $item->name }}</a>
+                            {{-- <ul>
                                 @foreach ($item->specialities as $speciality)
-                                <li><a href="#">{{$speciality->name}}</a>
-                                </li>
+                                    <li><a href="#">{{ $speciality->name }}</a>
+                                    </li>
                                 @endforeach
-                        
-                       
-                    </ul>
+
+
+                            </ul> --}}
                         </li>
                     @endforeach
 
