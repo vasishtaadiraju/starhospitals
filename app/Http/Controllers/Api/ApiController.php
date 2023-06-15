@@ -95,7 +95,7 @@ class ApiController extends Controller
             if ($request->paginate == true) {
 
                 $ids = $user_query->distinct()->pluck('doctors.id');
-                $pagination = $user_query->whereIn('doctors.id', $ids)->join('branch_doctor', 'doctors.id', '=', 'branch_doctor.user_id')->distinct('branch_doctor.doctor_id')->select(['doctors.id','name','designation','experience','large_image'])->paginate(9);
+                $pagination = $user_query->whereIn('doctors.id', $ids)->join('branch_doctor', 'doctors.id', '=', 'branch_doctor.doctor_id')->distinct('branch_doctor.doctor_id')->select(['doctors.id','name','designation','experience','large_image'])->paginate(9);
                 // $pagination = $user_query->whereIn('doctors.id', $ids)->join('branch_doctor', 'doctors.id', '=', 'branch_doctor.user_id')->distinct('branch_doctor.user_id')->select(['doctors.id','name','designation','experience','large_image'])->paginate(9);
             } else {
 
