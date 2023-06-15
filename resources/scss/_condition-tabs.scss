@@ -40,7 +40,7 @@
             font-size: 12px;
             padding: 10px 15px;
         }
-        @include media('x-sm-mob')
+        @include media('x-sm-tab')
         {
             min-width: initial;
             font-size: 12px;
@@ -54,6 +54,12 @@
         @include media('md-tab')
         {
             min-width: initial;
+            
+        }
+        @include media('x-sm-desktop')
+        {
+            
+            font-size: 14px;
             
         }
         &--active{

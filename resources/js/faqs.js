@@ -11,3 +11,10 @@ domSelector('.faqs__card','click',function() {
         this.childNodes[3].classList.toggle("faqs__card__answer--active");
         this.classList.toggle("faqs__card--active");
 });
+
+
+domSelector('.d-p-achievement__tab','click',function(){
+        this.nextElementSibling.classList.toggle('d-p-achievement__details--active')
+
+        console.log(this.nextElementSibling);
+})

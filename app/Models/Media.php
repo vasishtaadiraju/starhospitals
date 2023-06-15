@@ -13,9 +13,9 @@ class Media extends Model
 
     protected $table = 'media';
 
-    public function users()
+    public function doctors()
     {
-        return $this->belongsToMany(User::class, 'media_user', 'media_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+        return $this->belongsToMany(Doctor::class, 'media_doctor', 'media_id', 'doctor_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 
     public function regions()

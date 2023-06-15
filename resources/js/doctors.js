@@ -42,11 +42,11 @@ async function printDoctors(body, selectBox, className) {
             });
             // 
             let doctorCard = `<div class="doctors-card doctors-card--primary">
-        <a href=""><img class="doctors-card--primary__doctor-img" style="width:100%" src="${import.meta.env.VITE_ASSET_URL}${result.small_image}" alt="" /></a> 
+        <a href="/doctor/${result.slug}"><img class="doctors-card--primary__doctor-img" style="width:100%" src="${import.meta.env.VITE_ASSET_URL}${result.small_image}" alt="" /></a> 
  
          <div class="doctors-card--primary__content">
          <div class="doctors-card--primary__info">
-             <h4><a href="">${result.name}</a></h4>
+             <h4><a href="/doctor/${result.slug}">${result.name}</a></h4>
             <p class="doctors-card--primary__designation"><a href=""> ${result.designation} </a></p>
 
              <p class="doctors-card--primary__speciality">${coeName.toString()} </p>

@@ -18,9 +18,9 @@ class Branch extends Model
         return $this->belongsTo(Region::class, 'region_id', 'id');
     }
 
-    public function users()
+    public function doctors()
     {
-        return $this->belongsToMany(User::class, 'branch_user', 'branch_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+        return $this->belongsToMany(Doctor::class, 'branch_doctor', 'branch_id', 'doctor_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 
     public function coes()

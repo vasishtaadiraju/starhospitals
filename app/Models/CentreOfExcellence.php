@@ -13,9 +13,9 @@ class CentreOfExcellence extends Model
 
     protected $table = 'centre_of_excellences';
 
-    public function users()
+    public function doctors()
     {
-        return $this->belongsToMany(User::class, 'coe_user', 'coe_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+        return $this->belongsToMany(Doctor::class, 'coe_doctor', 'coe_id', 'doctor_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 
     public function regions()

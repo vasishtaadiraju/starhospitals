@@ -32,8 +32,8 @@ class FAQ extends Model
         return $this->belongsToMany(Speciality::class, 'faq_speciality', 'faq_id', 'speciality_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 
-    public function users()
+    public function doctors()
     {
-        return $this->belongsToMany(User::class, 'faq_user', 'faq_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+        return $this->belongsToMany(Doctor::class, 'faq_doctor', 'faq_id', 'doctor_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 }

@@ -9,15 +9,57 @@
     min-height: 2rem;
     display: flex;
     gap: 3.5em;
-    font-family: 'Plus Jakarta Sans';
+    font-family: "Plus Jakarta Sans";
+
+    @include media("sm-mob") {
+        flex-direction: column;
+        width: 85%;
+        margin: 0px auto;
+        gap: 3em;
+    }
+    @include media("md-mob") {
+        flex-direction: column;
+        width: 85%;
+        margin: 0px auto;
+        gap: 3em;
+    }
+    @include media("lg-mob") {
+        flex-direction: column;
+        width: 85%;
+        margin: 0px auto;
+        gap: 3em;
+    }
+    @include media("x-sm-tab") {
+        flex-direction: column;
+        width: 85%;
+        margin: 0px auto;
+        gap: 3em;
+    }
+    @include media("md-tab") {
+        gap: 2em;
+    }
     &__col-1 {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         flex: 0 0 30%;
         // padding-right: 1em;
-
-        img{
+        @include media("sm-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("md-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("lg-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("x-sm-tab") {
+            flex: 0 0 100%;
+        }
+        @include media("md-tab") {
+            flex: 0 0 25%;
+        }
+        img {
             width: 100%;
             border-radius: 10px;
         }
@@ -26,9 +68,25 @@
     &__col-2 {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
         flex: 0 0 35%;
-        // padding-right: 1em;
+        gap: 3rem;
+        @include media("sm-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("md-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("lg-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("x-sm-tab") {
+            flex: 0 0 100%;
+        }
+        @include media("md-tab") {
+            gap: 1.5em;
+            flex:0 0 40%;
+        }
     }
 
     &__col-3 {
@@ -38,7 +96,21 @@
         border: 1px solid #bdbdbd;
         border-radius: 20px;
         padding: 2em;
-
+        @include media("sm-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("md-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("lg-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("x-sm-tab") {
+            flex: 0 0 100%;
+        }
+        @include media("md-tab") {
+            flex: 0 0 30%;
+        }
         @include media("x-sm-desktop") {
             flex: 0 0 25%;
         }
@@ -46,8 +118,12 @@
         &__scroll-tabs {
             &__item {
                 list-style-type: none;
-                padding: 1.5em 0px 1.25em 0px;
+                padding: 1em 0px 1.5em 0px;
                 border-bottom: 0.7px solid #e0e0e0;
+                @include media("md-tab") {
+                    padding: 0.5em 0px 1em 0px;
+
+                }
                 @include media("x-sm-desktop") {
                     padding: 1.25em 0px 1em 0px;
                 }
@@ -58,6 +134,9 @@
                     font-size: 16px;
                     line-height: 20px;
                     color: #757575;
+                    @include media("md-tab") {
+                        font-size: 13px !important;
+                    }
                     @include media("x-sm-desktop") {
                         font-size: 14px !important;
                     }
@@ -88,7 +167,27 @@
     &__name {
         line-height: 40px;
         font-size: 32px;
-        margin-bottom: 1em;
+        margin-bottom: 0.5em;
+        @include media("sm-mob") {
+            font-size: 25px !important;
+            margin-bottom: 0.25em;
+        }
+        @include media("md-mob") {
+            font-size: 25px !important;
+            margin-bottom: 0.25em;
+        }
+        @include media("lg-mob") {
+            font-size: 25px !important;
+            margin-bottom: 0.25em;
+        }
+        @include media("x-sm-tab") {
+            font-size: 25px !important;
+            margin-bottom: 0.25em;
+        }
+        @include media("md-tab") {
+            font-size: 25px !important;
+            margin-bottom: 0.25em;
+        }
         @include media("x-sm-desktop") {
             font-size: 30px !important;
             margin-bottom: 0.5em;
@@ -100,7 +199,22 @@
         font-size: 24px;
         font-weight: 600;
         line-height: 30px;
-        margin-bottom: 0.5em;
+        margin-bottom: 0.25em;
+        @include media("sm-mob") {
+            font-size: 18px !important;
+        }
+        @include media("md-mob") {
+            font-size: 18px !important;
+        }
+        @include media("lg-mob") {
+            font-size: 18px !important;
+        }
+        @include media("x-sm-tab") {
+            font-size: 18px !important;
+        }
+        @include media("md-tab") {
+            font-size: 18px !important;
+        }
         @include media("x-sm-desktop") {
             font-size: 15px !important;
         }
@@ -108,10 +222,26 @@
 
     &__speciality {
         font-family: "Plus Jakarta Sans";
-        font-size: 20px;
+        font-size: 15px;
         font-weight: 600;
-        line-height: 30px;
-        margin-bottom: 1em;
+        line-height: 25px;
+        margin-bottom: 0.5em;
+        @include media("sm-mob") {
+            font-size: 15px !important;
+        }
+        @include media("md-mob") {
+            font-size: 15px !important;
+        }
+        @include media("lg-mob") {
+            font-size: 15px !important;
+        }
+        @include media("x-sm-tab") {
+            font-size: 15px !important;
+        }
+        @include media("md-tab") {
+            font-size: 15px !important;
+        }
+
         @include media("x-sm-desktop") {
             font-size: 13px !important;
         }
@@ -148,6 +278,14 @@
             color: #424242;
             font-size: 12px;
             gap: 0.5em;
+            @include media("md-tab") {
+                min-height: 30px;
+                height: 30px;
+                min-width: 50px;
+                width: max-content;
+              font-size: 10px;
+              gap: 0.25em !important;
+            }
             span {
                 font-family: "Plus Jakarta Sans";
                 font-style: normal;
@@ -156,6 +294,23 @@
                 line-height: 25px;
 
                 color: #004e9e;
+
+                @include media("sm-mob") {
+                    font-size: 15px !important;
+                }
+                @include media("md-mob") {
+                    font-size: 15px !important;
+                }
+                @include media("lg-mob") {
+                    font-size: 15px !important;
+                }
+
+                @include media("x-sm-tab") {
+                    font-size: 15px !important;
+                }
+                @include media("md-tab") {
+                    font-size: 10px !important;
+                }
             }
         }
     }
@@ -164,10 +319,25 @@
         display: flex;
         flex-direction: column;
         gap: 1em;
+        @include media("sm-mob") {
+            gap: 1.5em;
+        }
+
+        @include media("md-mob") {
+            gap: 1.5em;
+        }
+
+        @include media("lg-mob") {
+            gap: 1.5em;
+        }
+        @include media("x-sm-tab") {
+            gap: 1.5em;
+        }
         &__btn {
             display: flex;
             align-items: center;
             gap: 0.5em;
+
             span {
                 font-family: "Plus Jakarta Sans Bold";
                 font-style: normal;
@@ -186,21 +356,160 @@
     @include centerSection;
     width: 60%;
     margin-left: 7.5%;
-    margin-top: 3em;
-    border-bottom: 1px solid #004e9e;
-    min-height: 5rem;
-    display: flex;
+    margin-top: 1em;
+    // min-height: 5rem;
     gap: 2em;
+    @include media("sm-mob") {
+        width: 85%;
+        margin: 0em auto;
+        // margin-top: 3em;
+
+        gap: 1em;
+    }
+    @include media("md-mob") {
+        width: 85%;
+        margin: 0em auto;
+        // margin-top: 3em;
+
+        gap: 1em;
+    }
+    @include media("lg-mob") {
+        width: 85%;
+        margin: 0em auto;
+        // margin-top: 3em;
+
+        gap: 1em;
+    }
+    @include media("x-sm-tab") {
+        width: 85%;
+        margin: 0em auto;
+        // margin-top: 3em;
+
+        gap: 1em;
+    }
+
+    &__tab {
+        display: flex;
+        gap: 2em;
+        border-bottom: 0.7px solid #004e9e;
+        align-items: center !important  ;
+        justify-content: center;
+        // min-height: 5rem;
+        cursor: pointer;
+        padding-bottom: 1em;
+        @include media("sm-mob") {
+            gap: 1em;
+        }
+        @include media("md-mob") {
+            gap: 1em;
+        }
+        @include media("lg-mob") {
+            gap: 1em;
+        }
+        @include media("x-sm-tab") {
+            gap: 1em;
+        }
+        svg {
+            flex: 0 0 10%;
+            width: 50px !important;
+            height: 50px !important;
+        }
+        h1 {
+            display: flex;
+            align-items: center !important;
+            height: max-content;
+            padding: 0;
+            justify-content: center;
+            font-size: 30px;
+            @include media("sm-mob") {
+                font-size: 15px;
+            }
+            @include media("md-mob") {
+                font-size: 15px;
+            }
+            @include media("lg-mob") {
+                font-size: 15px;
+            }
+            @include media("x-sm-tab") {
+                font-size: 15px;
+            }
+            @include media("md-tab") {
+                font-size: 20px;
+            }
+            @include media("x-sm-desktop") {
+                font-size: 20px;
+            }
+
+        }
+        span {
+            font-weight: 600;
+            font-size: 30px;
+            font-family: "Plus Jakarta Sans Bold";
+            flex: 1;
+            display: flex;
+            align-items: center !important  ;
+            justify-content: flex-end;
+            padding-right: 2em;
+            @include media("sm-mob") {
+                padding-right: 1em;
+            }
+            @include media("md-mob") {
+                padding-right: 1em;
+            }
+            @include media("lg-mob") {
+                padding-right: 1em;
+            }
+            @include media("x-sm-tab") {
+                padding-right: 1em;
+            }
+            
+        }
+    }
 
     &__details {
-        padding: 0.5em 0px;
-        padding-bottom: 3em;
-        font-family: 'Plus Jakarta Sans';
-        &__title {
-            padding-bottom: 1em;
+        padding: 0em 5.5em;
+        // padding-bottom: 3em;
+        font-family: "Plus Jakarta Sans";
+        margin-top: 1em;
+        max-height: 0em;
+        transition: max-height 0.5s;
+        overflow: hidden;
+        @include media("sm-mob") {
+            padding: 0em 0.5em;
         }
 
-        &__list {
+        @include media("md-mob") {
+            padding: 0em 0.5em;
+        }
+
+        @include media("lg-mob") {
+            padding: 0em 0.5em;
+        }
+        @include media("x-sm-mob") {
+            padding: 0em 0.5em;
+        }
+        &--active {
+            max-height: 80rem;
+        }
+        &__title {
+            padding-bottom: 1em;
+            @include media("sm-mob") {
+                font-size: 18px !important  ;
+            }
+            @include media("md-mob") {
+                font-size: 18px !important  ;
+            }
+
+
+            @include media("lg-mob") {
+                font-size: 18px !important  ;
+            }
+            @include media("x-sm-tab") {
+                font-size: 18px !important  ;
+            }
+        }
+
+        ul {
             li {
                 font-family: "Plus Jakarta Sans";
                 font-style: normal;
@@ -224,6 +533,22 @@
             color: #e3000f;
             border-bottom: 0.7px solid #004e9e;
             padding-top: 2em;
+            @include media("sm-mob") {
+                font-size: 12px !important  ;
+                // width: 100%;
+            }
+            @include media("md-mob") {
+                font-size: 12px !important  ;
+                // width: 100%;
+            }
+            @include media("lg-mob") {
+                font-size: 12px !important  ;
+                // width: 100%;
+            }
+            @include media("x-sm-tab") {
+                font-size: 12px !important  ;
+                // width: 100%;
+            }
         }
     }
 }

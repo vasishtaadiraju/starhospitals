@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Branch;
 use App\Models\CentreOfExcellence;
+use App\Models\Doctor;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
@@ -17,7 +18,7 @@ class ApiController extends Controller
 
         try {
             $name = $request->text;
-            $user = User::where('status', 'active')->where(function ($query) use ($name) {
+            $user = Doctor::where('status', 'active')->where(function ($query) use ($name) {
                 $question = 'querty';
 
                 if (!empty($name)) {
@@ -52,7 +53,7 @@ class ApiController extends Controller
             $coe_id = $request->coe_id;
             // $speciality_id = $request->speciality_id;
             $doctors = [];
-            $user_query = User::query();
+            $user_query = Doctor::query();
             $pagination = null;
 
             if ($coe_id != null) {
@@ -93,11 +94,12 @@ class ApiController extends Controller
             ]);
             if ($request->paginate == true) {
 
-                $ids = $user_query->distinct()->pluck('users.id');
-                $pagination = $user_query->whereIn('users.id', $ids)->join('branch_user', 'users.id', '=', 'branch_user.user_id')->distinct(['users.id'])->orderBy('branch_user.order_number')->select('users.id','name','designation','experience','large_image')->paginate(9,['branch_user.order_number']);
+                $ids = $user_query->distinct()->pluck('doctors.id');
+                $pagination = $user_query->whereIn('doctors.id', $ids)->join('branch_doctor', 'doctors.id', '=', 'branch_doctor.user_id')->distinct('branch_doctor.doctor_id')->select(['doctors.id','name','designation','experience','large_image'])->paginate(9);
+                // $pagination = $user_query->whereIn('doctors.id', $ids)->join('branch_doctor', 'doctors.id', '=', 'branch_doctor.user_id')->distinct('branch_doctor.user_id')->select(['doctors.id','name','designation','experience','large_image'])->paginate(9);
             } else {
 
-                $doctors = $user_query->join('branch_user', 'users.id', '=', 'branch_user.user_id')->orderBy('branch_user.order_number', 'DESC')->get(['users.id', 'name', 'slug', 'designation', 'branch_user.order_number','small_image'])->unique()->take(20);
+                $doctors = $user_query->join('branch_doctor', 'doctors.id', '=', 'branch_doctor.doctor_id')->orderBy('branch_doctor.order_number', 'DESC')->get(['doctors.id', 'name', 'slug', 'designation', 'branch_doctor.order_number','small_image'])->unique()->take(20);
 
             }
 
