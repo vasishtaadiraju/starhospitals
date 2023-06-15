@@ -42,8 +42,13 @@
                 </p>
             </div>
             <div class="d-p-info__btn-wrapper">
+                @if($content->experience != null)
                 <p class="d-p-info__btn-wrapper__btn"> <span>{{ $content->experience }}</span> Years of Experience</p>
-                <p class="d-p-info__btn-wrapper__btn"> <span>Rs.500</span> Fees</p>
+                @endif
+                @if($content->fee != null)
+
+                <p class="d-p-info__btn-wrapper__btn"> <span>Rs. {{$content->fee}}</span> Fees</p>
+                @endif
             </div>
 
             <div class="d-p-info__appointment-wrapper">
@@ -172,7 +177,7 @@
           </ul> --}}
 
             <div>
-                {{ $content->qualification }}
+                {!! $content->qualification !!}
             </div>
         </div>
     </div>
@@ -228,7 +233,7 @@
         <div class="d-p-achievement__details">
 
 
-            {{ $content->experience_description }}
+            {!! $content->experience_description !!}
             {{-- <ul class="d-p-achievement__details__list">
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
@@ -283,7 +288,7 @@
         </div>
 
         <div class="d-p-achievement__details">
-            {{ $content->expertise }}
+            {!! $content->expertise !!}
         </div>
     </div>
 
@@ -312,7 +317,7 @@
 
         <div class="d-p-achievement__details">
 
-            {{ $content->publications }}
+            {!! content->publications !!}
         </div>
     </div>
 
@@ -337,7 +342,7 @@
         </div>
 
         <div class="d-p-achievement__details">
-            {{ $content->certifications }}
+            {!! $content->certifications !!}
         </div>
     </div>
 
@@ -356,7 +361,7 @@
         <x-media :$content :media='$content->media' />
     </div>
 
-    <x-gap />
+  
 
 
     {{-- <x-faqs :faqs='$content->faqs' /> --}}
