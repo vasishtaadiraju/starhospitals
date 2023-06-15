@@ -26,7 +26,7 @@ class Testimonial extends Resource
      *
      * @var string
      */
-    public static $title = 'title';
+    public static $title = 'text';
 
     /**
      * The columns that should be searched.
@@ -34,7 +34,7 @@ class Testimonial extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'title'
+        'id', 'text'
     ];
 
     /**
