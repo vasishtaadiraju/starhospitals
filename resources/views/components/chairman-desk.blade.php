@@ -18,10 +18,10 @@
         </div>
         <div class="chairman-desk__content-container">
             {{-- @if(!empty($about->chairman_desk_title)) --}}
-            <h2 class="section-heading">{{ $about->chairman_desk_title }}</h2>
+            <h2 class="section-heading">From Chairman’s Desk</h2>
             {{-- @endif --}}
             {{-- @if(!empty($about->chairman_desk_description)) --}}
-            <p>{!! $about->chairman_desk_description !!}</p>
+            <p>{!! $about->chairman_desk !!}</p>
             {{-- @endif --}}
         </div>
     </div>

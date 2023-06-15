@@ -7,12 +7,12 @@
     </div>
     <div class="vision-mission__content-container">
         <div class="vision-mission__card">
-            <h2 class="section-heading">{{$about->vision_title}}</h2>
-            <p>{{$about->vision_description}}</p>
+            <h2 class="section-heading">Vision</h2>
+            <p>{{$about->vision}}</p>
         </div>
         <div class="vision-mission__card">
-            <h2 class="section-heading">{{$about->mission_title}}</h2>
-            <p>{{$about->mission_description}}</p>
+            <h2 class="section-heading">Mission</h2>
+            <p>{{$about->mission}}</p>
         </div>
     </div>
 </div>
