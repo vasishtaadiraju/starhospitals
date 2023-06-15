@@ -101,7 +101,7 @@
             padding: 1.5em 1em;
             cursor: pointer;
             @include font-family(400);
-            height:15rem;
+            min-height:17rem;
             display:flex !important;
             flex-direction:column;
             justify-content:space-between !important;
@@ -154,6 +154,7 @@
             font-size:14px;
             line-height:20px;
             font-weight:400;
+            min-height: 3em;
             @include media('x-sm-desktop')
             {
                 font-size: 12px;
