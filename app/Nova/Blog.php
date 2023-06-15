@@ -71,7 +71,8 @@ class Blog extends Resource
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
                 ->creationRules('required')
-                ->updateRules('nullable'),
+                ->updateRules('nullable')
+                ->prunable(),
 
             Text::make('Image Alt', 'image_alt')
                 ->hideFromIndex()
@@ -86,7 +87,8 @@ class Blog extends Resource
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
                 ->creationRules('required')
-                ->updateRules('nullable'),
+                ->updateRules('nullable')
+                ->prunable(),
 
             Text::make('Banner Desktop Alt', 'banner_desktop_alt')
                 ->hideFromIndex()
@@ -97,7 +99,8 @@ class Blog extends Resource
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
                 ->creationRules('required')
-                ->updateRules('nullable'),
+                ->updateRules('nullable')
+                ->prunable(),
 
             Text::make('Banner Mobile Alt', 'banner_mobile_alt')
                 ->hideFromIndex()
@@ -159,6 +162,14 @@ class Blog extends Resource
                 }),
 
             BelongsToMany::make('Speciality', 'specialities')
+                ->searchable()
+                ->fields(function () {
+                    return [
+                        Number::make('Order Number', 'order_number')
+                    ];
+                }),
+
+            BelongsToMany::make('Condition', 'conditions')
                 ->searchable()
                 ->fields(function () {
                     return [

@@ -62,7 +62,8 @@ class ConditionImage extends Resource
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
                 ->creationRules('required')
-                ->updateRules('nullable'),
+                ->updateRules('nullable')
+                ->prunable(),
 
             Number::make('Order Number', 'order_number')
                 ->hideFromIndex()

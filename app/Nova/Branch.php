@@ -56,6 +56,7 @@ class Branch extends Resource
             Text::make('Name', 'name')
                 ->rules('required', 'string', 'max:50'),
 
+            new Panel('Card', $this->card()),
             new Panel('Banner', $this->banner()),
             new Panel('About', $this->about()),
             new Panel('Highlights', $this->highlights()),
@@ -102,18 +103,46 @@ class Branch extends Resource
         ];
     }
 
+    protected function card()
+    {
+        return [
+            Image::make('Image', 'card_image')
+                ->disk('s3')
+                ->hideFromIndex()
+                ->rules('image', 'max:1024')
+                ->creationRules('nullable')
+                ->updateRules('nullable')
+                ->prunable(),
+
+            Textarea::make('Address', 'address')
+                ->rows(4)
+                ->hideFromIndex()
+                ->rules('nullable', 'string'),
+
+            Text::make('Alt', 'card_image_alt')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:100'),
+        ];
+    }
+
     protected function banner()
     {
         return [
             Image::make('Desktop', 'banner_desktop')
                 ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('image', 'max:1024')
+                ->creationRules('nullable')
+                ->updateRules('nullable')
+                ->prunable(),
 
             Image::make('Mobile', 'banner_mobile')
                 ->disk('s3')
                 ->hideFromIndex()
-                ->rules('nullable', 'image', 'max:1024'),
+                ->rules('image', 'max:1024')
+                ->creationRules('nullable')
+                ->updateRules('nullable')
+                ->prunable(),
 
             Text::make('Text', 'banner_text')
                 ->hideFromIndex()
@@ -137,14 +166,16 @@ class Branch extends Resource
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
                 ->creationRules('nullable')
-                ->updateRules('nullable'),
+                ->updateRules('nullable')
+                ->prunable(),
 
             Image::make('Mobile Image', 'about_image_mobile')
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
                 ->creationRules('nullable')
-                ->updateRules('nullable'),
+                ->updateRules('nullable')
+                ->prunable(),
 
             Text::make('Image Alt', 'about_image_alt')
                 ->hideFromIndex()
@@ -181,7 +212,8 @@ class Branch extends Resource
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
                 ->creationRules('nullable')
-                ->updateRules('nullable'),
+                ->updateRules('nullable')
+                ->prunable(),
 
             Text::make('Image Alt', 'why_choose_us_image_alt')
                 ->hideFromIndex()

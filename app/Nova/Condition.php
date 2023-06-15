@@ -56,7 +56,8 @@ class Condition extends Resource
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
                 ->creationRules('nullable')
-                ->updateRules('nullable'),
+                ->updateRules('nullable')
+                ->prunable(),
 
             Text::make('Short Description', 'short_description')
                 ->rules('nullable', 'string', 'max:255'),
@@ -73,7 +74,15 @@ class Condition extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
 
-            Text::make('Slug', 'slug')
+            Text::make('Symptoms & Causes Slug', 'symptoms_causes_slug')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:50'),
+
+            Text::make('Diagnosis & Treatment Slug', 'diagnosis_treatment_slug')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:50'),
+
+            Text::make('Care at Star Hospitals Slug', 'care_at_star_hospitals_slug')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:50'),
 

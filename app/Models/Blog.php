@@ -36,4 +36,9 @@ class Blog extends Model
     {
         return $this->belongsToMany(Speciality::class, 'blog_speciality', 'blog_id', 'speciality_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
+
+    public function conditions()
+    {
+        return $this->belongsToMany(Condition::class, 'blog_condition', 'blog_id', 'condition_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+    }
 }
