@@ -60,12 +60,12 @@ class Career extends Resource
     {
         return [
             Image::make('Desktop', 'banner_desktop')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
                 ->rules('nullable', 'image', 'max:1024'),
 
             Image::make('Mobile', 'banner_mobile')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
                 ->rules('nullable', 'image', 'max:1024'),
 
@@ -87,7 +87,7 @@ class Career extends Resource
                 ->rules('nullable', 'string', 'max:255'),
 
             Image::make('Image', 'why_star_image')
-                ->disk('public')
+                ->disk('s3')
                 ->hideFromIndex()
                 ->rules('nullable', 'image', 'max:1024'),
 
