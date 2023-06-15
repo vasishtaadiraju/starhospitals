@@ -108,16 +108,16 @@ class Branch extends Resource
             Image::make('Desktop', 'banner_desktop')
                 ->disk('s3')
                 ->hideFromIndex()
-                ->rules('required', 'image', 'max:1024'),
+                ->rules('nullable', 'image', 'max:1024'),
 
             Image::make('Mobile', 'banner_mobile')
                 ->disk('s3')
                 ->hideFromIndex()
-                ->rules('required', 'image', 'max:1024'),
+                ->rules('nullable', 'image', 'max:1024'),
 
             Text::make('Text', 'banner_text')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:50'),
+                ->rules('nullable', 'string', 'max:50'),
 
             Text::make('Alt', 'banner_alt')
                 ->hideFromIndex()
@@ -130,20 +130,20 @@ class Branch extends Resource
         return [
             Trix::make('Description', 'about')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
 
             Image::make('Desktop Image', 'about_image_desktop')
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable'),
 
             Image::make('Mobile Image', 'about_image_mobile')
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable'),
 
             Text::make('Image Alt', 'about_image_alt')
@@ -157,19 +157,19 @@ class Branch extends Resource
         return [
             Text::make('Years of experience', 'experience')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:5'),
+                ->rules('nullable', 'string', 'max:5'),
 
             Text::make('Surgeries', 'surgeries')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:5'),
+                ->rules('nullable', 'string', 'max:5'),
 
             Text::make('Beds', 'beds')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:5'),
+                ->rules('nullable', 'string', 'max:5'),
 
             Text::make('Happy patients', 'happy_patients')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:5'),
+                ->rules('nullable', 'string', 'max:5'),
         ];
     }
 
@@ -180,7 +180,7 @@ class Branch extends Resource
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable'),
 
             Text::make('Image Alt', 'why_choose_us_image_alt')
@@ -194,16 +194,16 @@ class Branch extends Resource
         return [
             Text::make('Icon', 'why_choose_us_card' . $card_number . '_icon')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
 
             Text::make('Title', 'why_choose_us_card' . $card_number . '_title')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:50'),
+                ->rules('nullable', 'string', 'max:50'),
 
             Textarea::make('Description', 'why_choose_us_card' . $card_number . '_description')
                 ->rows(3)
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:120'),
+                ->rules('nullable', 'string', 'max:120'),
         ];
     }
 
@@ -213,7 +213,7 @@ class Branch extends Resource
             Textarea::make('Text', 'reviews_text')
                 ->rows(3)
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:255'),
+                ->rules('nullable', 'string', 'max:255'),
         ];
     }
 
@@ -223,7 +223,7 @@ class Branch extends Resource
             Textarea::make('Text', 'blogs_text')
                 ->rows(3)
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:255'),
+                ->rules('nullable', 'string', 'max:255'),
         ];
     }
 
@@ -233,7 +233,7 @@ class Branch extends Resource
             Textarea::make('Text', 'faq_text')
                 ->rows(3)
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:255'),
+                ->rules('nullable', 'string', 'max:255'),
         ];
     }
 

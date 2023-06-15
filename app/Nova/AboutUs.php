@@ -65,7 +65,7 @@ class AboutUs extends Resource
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable')
                 ->prunable(),
 
@@ -73,7 +73,7 @@ class AboutUs extends Resource
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable')
                 ->prunable(),
 
@@ -83,7 +83,7 @@ class AboutUs extends Resource
 
             Text::make('Text', 'banner_text')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:50')
+                ->rules('nullable', 'string', 'max:50')
         ];
     }
 
@@ -92,7 +92,7 @@ class AboutUs extends Resource
         return [
             Textarea::make('Description', $key)
                 ->hideFromIndex()
-                ->rules('required', 'string')
+                ->rules('nullable', 'string')
         ];
     }
 
@@ -103,21 +103,21 @@ class AboutUs extends Resource
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable')
                 ->prunable(),
 
             URL::make('Link', 'video_link')
                 ->hideFromIndex()
-                ->rules('required', 'url'),
+                ->rules('nullable', 'url'),
 
             Text::make('Title', 'title')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:50'),
+                ->rules('nullable', 'string', 'max:50'),
 
             Textarea::make('Description', 'description')
                 ->hideFromIndex()
-                ->rules('required', 'string')
+                ->rules('nullable', 'string')
         ];
     }
 
@@ -127,7 +127,7 @@ class AboutUs extends Resource
             Textarea::make('Text', $key . '_text')
                 ->rows(2)
                 ->hideFromIndex()
-                ->rules('required', 'string')
+                ->rules('nullable', 'string')
         ];
     }
 

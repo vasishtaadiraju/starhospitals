@@ -13,27 +13,27 @@ return new class extends Migration
     {
         Schema::create('careers', function (Blueprint $table) {
             $table->id();
-            $table->string('banner_desktop');
-            $table->string('banner_mobile');
+            $table->string('banner_desktop')->nullable();
+            $table->string('banner_mobile')->nullable();
             $table->string('banner_alt', 100)->nullable();
-            $table->string('banner_text', 50);
-            $table->string('why_star_text');
-            $table->string('why_star_image');
-            $table->string('why_star_image_alt', 100);
-            $table->text('why_star_card1_icon');
-            $table->string('why_star_card1_title', 50);
-            $table->string('why_star_card1_description', 100);
-            $table->text('why_star_card2_icon');
-            $table->string('why_star_card2_title', 50);
-            $table->string('why_star_card2_description', 100);
-            $table->text('why_star_card3_icon');
-            $table->string('why_star_card3_title', 50);
-            $table->string('why_star_card3_description', 100);
-            $table->text('why_star_card4_icon');
-            $table->string('why_star_card4_title', 50);
-            $table->string('why_star_card4_description', 100);
-            $table->string('workforce_text');
-            $table->string('faq_text');
+            $table->string('banner_text', 50)->nullable();
+            $table->string('why_star_text')->nullable();
+            $table->string('why_star_image')->nullable();
+            $table->string('why_star_image_alt', 100)->nullable();
+            $table->text('why_star_card1_icon')->nullable();
+            $table->string('why_star_card1_title', 50)->nullable();
+            $table->string('why_star_card1_description', 100)->nullable();
+            $table->text('why_star_card2_icon')->nullable();
+            $table->string('why_star_card2_title', 50)->nullable();
+            $table->string('why_star_card2_description', 100)->nullable();
+            $table->text('why_star_card3_icon')->nullable();
+            $table->string('why_star_card3_title', 50)->nullable();
+            $table->string('why_star_card3_description', 100)->nullable();
+            $table->text('why_star_card4_icon')->nullable();
+            $table->string('why_star_card4_title', 50)->nullable();
+            $table->string('why_star_card4_description', 100)->nullable();
+            $table->string('workforce_text')->nullable();
+            $table->string('faq_text')->nullable();
             $table->timestamps();
         });
     }

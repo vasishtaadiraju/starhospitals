@@ -13,20 +13,20 @@ return new class extends Migration
     {
         Schema::create('about_us', function (Blueprint $table) {
             $table->id();
-            $table->string('banner_desktop');
-            $table->string('banner_mobile');
+            $table->string('banner_desktop')->nullable();
+            $table->string('banner_mobile')->nullable();
             $table->string('banner_alt', 100)->nullable();
-            $table->string('banner_text', 50);
-            $table->text('vision');
-            $table->text('mission');
-            $table->text('chairman_desk');
-            $table->string('video_thumbnail');
-            $table->string('video_link');
-            $table->string('title', 50);
-            $table->text('description');
-            $table->string('our_locations_text');
-            $table->string('photo_gallery_text');
-            $table->string('faq_text');
+            $table->string('banner_text', 50)->nullable();
+            $table->text('vision')->nullable();
+            $table->text('mission')->nullable();
+            $table->text('chairman_desk')->nullable();
+            $table->string('video_thumbnail')->nullable();
+            $table->string('video_link')->nullable();
+            $table->string('title', 50)->nullable();
+            $table->text('description')->nullable();
+            $table->string('our_locations_text')->nullable();
+            $table->string('photo_gallery_text')->nullable();
+            $table->string('faq_text')->nullable();
             $table->timestamps();
         });
     }

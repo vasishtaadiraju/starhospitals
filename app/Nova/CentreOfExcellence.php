@@ -101,24 +101,24 @@ class CentreOfExcellence extends Resource
         return [
             Number::make('Order Number', 'order_number')
                 ->hideFromIndex()
-                ->rules('required', 'integer', 'numeric'),
+                ->rules('nullable', 'integer', 'numeric'),
 
             Text::make('Icon Image', 'icon_image')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
 
             Image::make('Image', 'homepage_image')
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable')
                 ->prunable(),
 
             Textarea::make('Description', 'homepage_description')
                 ->rows(5)
                 ->hideFromIndex()
-                ->rules('required', 'string')
+                ->rules('nullable', 'string')
         ];
     }
 
@@ -129,7 +129,7 @@ class CentreOfExcellence extends Resource
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable')
                 ->prunable(),
 
@@ -137,13 +137,13 @@ class CentreOfExcellence extends Resource
                 ->disk('public')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable')
                 ->prunable(),
 
             Text::make('Text', 'banner_text')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:255'),
+                ->rules('nullable', 'string', 'max:255'),
         ];
     }
 
@@ -152,17 +152,17 @@ class CentreOfExcellence extends Resource
         return [
             Text::make('Title', 'title')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:255'),
+                ->rules('nullable', 'string', 'max:255'),
 
             Trix::make('Description', 'description')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
 
             Image::make('Image', 'description_image')
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable')
                 ->prunable(),
         ];
@@ -173,7 +173,7 @@ class CentreOfExcellence extends Resource
         return [
             Text::make('Text', 'our_doctors_text')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:255'),
+                ->rules('nullable', 'string', 'max:255'),
         ];
     }
 
@@ -194,7 +194,7 @@ class CentreOfExcellence extends Resource
 
             Trix::make('Description', 'services_treatments')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
         ];
     }
 
@@ -203,7 +203,7 @@ class CentreOfExcellence extends Resource
         return [
             Text::make('Text', 'our_locations_text')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:255'),
+                ->rules('nullable', 'string', 'max:255'),
         ];
     }
 
@@ -212,7 +212,7 @@ class CentreOfExcellence extends Resource
         return [
             Text::make('Text', 'reviews_text')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:255'),
+                ->rules('nullable', 'string', 'max:255'),
         ];
     }
 
@@ -221,7 +221,7 @@ class CentreOfExcellence extends Resource
         return [
             Text::make('Text', 'blogs_text')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:255'),
+                ->rules('nullable', 'string', 'max:255'),
         ];
     }
 
@@ -230,7 +230,7 @@ class CentreOfExcellence extends Resource
         return [
             Text::make('Text', 'media_text')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:255'),
+                ->rules('nullable', 'string', 'max:255'),
         ];
     }
 

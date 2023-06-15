@@ -67,7 +67,7 @@ class InternationalPatient extends Resource
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable')
                 ->prunable(),
 
@@ -75,7 +75,7 @@ class InternationalPatient extends Resource
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable')
                 ->prunable(),
 
@@ -85,7 +85,7 @@ class InternationalPatient extends Resource
 
             Text::make('Text', 'banner_text')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:50'),
+                ->rules('nullable', 'string', 'max:50'),
         ];
     }
 
@@ -94,15 +94,15 @@ class InternationalPatient extends Resource
         return [
             Text::make('Icon', 'key_highlight' . $number . '_icon')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
 
             Text::make('Title', 'key_highlight' . $number . '_title')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:50'),
+                ->rules('nullable', 'string', 'max:50'),
 
             Text::make('Description', 'key_highlight' . $number . '_description')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:150')
+                ->rules('nullable', 'string', 'max:150')
         ];
     }
 
@@ -111,7 +111,7 @@ class InternationalPatient extends Resource
         return [
             Text::make('Text', 'virtual_tour_text')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
         ];
     }
 
@@ -120,7 +120,7 @@ class InternationalPatient extends Resource
         return [
             Textarea::make('Text', 'our_process_text')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
         ];
     }
 
@@ -129,7 +129,7 @@ class InternationalPatient extends Resource
         return [
             Textarea::make('Text', 'facilities_text')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
         ];
     }
 
@@ -138,7 +138,7 @@ class InternationalPatient extends Resource
         return [
             Textarea::make('Text', 'reviews_text')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
         ];
     }
 
@@ -147,7 +147,7 @@ class InternationalPatient extends Resource
         return [
             Textarea::make('Text', 'enquiry_form_text')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
         ];
     }
 
@@ -156,7 +156,7 @@ class InternationalPatient extends Resource
         return [
             Textarea::make('Text', 'faq_text')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
         ];
     }
 

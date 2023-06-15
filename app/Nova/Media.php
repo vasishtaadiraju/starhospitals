@@ -51,16 +51,16 @@ class Media extends Resource
             ID::make()->sortable(),
 
             Text::make('Title', 'title')
-                ->rules('required', 'string', 'max:150'),
+                ->rules('nullable', 'string', 'max:150'),
 
             Text::make('Media Name', 'media_name')
-                ->rules('required', 'string', 'max:100'),
+                ->rules('nullable', 'string', 'max:100'),
 
             Image::make('Image', 'image')
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable')
                 ->prunable(),
 
@@ -70,11 +70,11 @@ class Media extends Resource
 
             URL::make('Media Link', 'media_link')
                 ->hideFromIndex()
-                ->rules('required', 'active_url'),
+                ->rules('nullable', 'active_url'),
 
             Date::make('Published date', 'published_date')
                 ->hideFromIndex()
-                ->rules('required', 'date'),
+                ->rules('nullable', 'date'),
 
             Text::make('Slug', 'slug')
                 ->hideFromIndex()

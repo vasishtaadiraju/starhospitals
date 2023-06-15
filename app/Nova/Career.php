@@ -62,12 +62,12 @@ class Career extends Resource
             Image::make('Desktop', 'banner_desktop')
                 ->disk('public')
                 ->hideFromIndex()
-                ->rules('required', 'image', 'max:1024'),
+                ->rules('nullable', 'image', 'max:1024'),
 
             Image::make('Mobile', 'banner_mobile')
                 ->disk('public')
                 ->hideFromIndex()
-                ->rules('required', 'image', 'max:1024'),
+                ->rules('nullable', 'image', 'max:1024'),
 
             Text::make('Alt', 'banner_alt')
                 ->hideFromIndex()
@@ -75,7 +75,7 @@ class Career extends Resource
 
             Text::make('Text', 'banner_text')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:50'),
+                ->rules('nullable', 'string', 'max:50'),
         ];
     }
 
@@ -84,12 +84,12 @@ class Career extends Resource
         return [
             Text::make('Text', 'why_star_text')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:255'),
+                ->rules('nullable', 'string', 'max:255'),
 
             Image::make('Image', 'why_star_image')
                 ->disk('public')
                 ->hideFromIndex()
-                ->rules('required', 'image', 'max:1024'),
+                ->rules('nullable', 'image', 'max:1024'),
 
             Text::make('Alt', 'why_star_image_alt')
                 ->hideFromIndex()
@@ -102,15 +102,15 @@ class Career extends Resource
         return [
             Text::make('Icon', 'why_star_card' . $number . '_icon')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
 
             Text::make('Title', 'why_star_card' . $number . '_title')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:50'),
+                ->rules('nullable', 'string', 'max:50'),
 
             Text::make('Description', 'why_star_card' . $number . '_description')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:100')
+                ->rules('nullable', 'string', 'max:100')
         ];
     }
 
@@ -119,7 +119,7 @@ class Career extends Resource
         return [
             Text::make('Text', 'workforce_text')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
         ];
     }
 
@@ -128,7 +128,7 @@ class Career extends Resource
         return [
             Text::make('Text', 'faq_text')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
         ];
     }
 

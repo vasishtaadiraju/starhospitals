@@ -101,7 +101,7 @@ class Homepage extends Resource
         return [
             Text::make('Text', 'meet_our_specialist_text')
                 ->hideFromIndex()
-                ->rules('required', 'string')
+                ->rules('nullable', 'string')
         ];
     }
 
@@ -112,7 +112,7 @@ class Homepage extends Resource
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable'),
 
             Text::make('Alt', 'why_choose_us_image_alt')
@@ -126,15 +126,15 @@ class Homepage extends Resource
         return [
             Text::make('Icon', 'choose' . $number . '_icon')
                 ->hideFromIndex()
-                ->rules('required', 'string'),
+                ->rules('nullable', 'string'),
 
             Text::make('Title', 'choose' . $number . '_title')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:50'),
+                ->rules('nullable', 'string', 'max:50'),
 
             Text::make('Description', 'choose' . $number . '_description')
                 ->hideFromIndex()
-                ->rules('required', 'string', 'max:120')
+                ->rules('nullable', 'string', 'max:120')
         ];
     }
 
@@ -145,17 +145,17 @@ class Homepage extends Resource
                 ->disk('public')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable'),
 
             URL::make('Video link', 'about_video_link')
                 ->hideFromIndex()
-                ->rules('required', 'url'),
+                ->rules('nullable', 'url'),
 
             Textarea::make('Description', 'about_description')
                 ->rows(4)
                 ->hideFromIndex()
-                ->rules('required', 'string')
+                ->rules('nullable', 'string')
         ];
     }
 
@@ -165,7 +165,7 @@ class Homepage extends Resource
             Textarea::make('Text', $key . '_text')
                 ->rows(2)
                 ->hideFromIndex()
-                ->rules('required', 'string')
+                ->rules('nullable', 'string')
         ];
     }
 
