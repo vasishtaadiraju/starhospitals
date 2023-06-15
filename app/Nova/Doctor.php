@@ -106,7 +106,7 @@ class Doctor extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
 
-            Trix::make('Certifications & Memberships', 'certifications_memberships')
+            Trix::make('Awards, Certifications & Memberships', 'certifications_memberships')
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
 
