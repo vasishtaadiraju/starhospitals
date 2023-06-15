@@ -7,6 +7,8 @@ use App\Nova\Blog;
 use App\Nova\Branch;
 use App\Nova\Career;
 use App\Nova\CentreOfExcellence;
+use App\Nova\Condition;
+use App\Nova\ConditionImage;
 use App\Nova\Doctor;
 use App\Nova\FAQ;
 use App\Nova\Homepage;
@@ -65,6 +67,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 MenuSection::resource(InternationalPatient::class),
 
                 MenuSection::resource(Career::class)->icon('academic-cap'),
+
+                MenuSection::resource(Condition::class),
+
+                MenuSection::resource(ConditionImage::class),
             ];
         });
 
