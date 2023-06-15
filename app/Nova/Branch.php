@@ -237,18 +237,6 @@ class Branch extends Resource
     protected function seo()
     {
         return [
-            URL::make('UTM link', 'utm_link')
-                ->hideFromIndex()
-                ->rules('nullable', 'url'),
-
-            URL::make('Map link', 'map_link')
-                ->hideFromIndex()
-                ->rules('nullable', 'url'),
-
-            URL::make('Embed map link', 'embed_map_link')
-                ->hideFromIndex()
-                ->rules('nullable', 'url'),
-
             Text::make('Slug', 'slug')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:50'),
