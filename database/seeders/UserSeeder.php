@@ -103,5 +103,50 @@ class UserSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'Shayani',
+            'email' => 'shayani.de@starhospitals.co.in',
+            'password' => Hash::make('StarHospitals@123'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('role_user')->insert([
+            'user_id' => 8,
+            'role_id' => 1,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Naresh',
+            'email' => 'nareshreddy.c@starhospitals.co.in',
+            'password' => Hash::make('StarHospitals@123'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('role_user')->insert([
+            'user_id' => 9,
+            'role_id' => 1,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Ashok',
+            'email' => 'ashokvardhan.k@starhospitals.co.in',
+            'password' => Hash::make('StarHospitals@123'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('role_user')->insert([
+            'user_id' => 10,
+            'role_id' => 1,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
     }
 }
