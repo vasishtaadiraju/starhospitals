@@ -139,7 +139,7 @@ class ApiController extends Controller
         if ($coe_id != null) {
             $response = CentreOfExcellence::where('status', 'active')->where('id', $coe_id)->with([
                 'branches' => function ($query) {
-                    $query->where('status', 'active')->orderBy('branches.order_number')->select('branches.id', 'name', 'slug', 'card_image')->take(2);
+                    $query->where('status', 'active')->orderBy('branches.order_number')->select('branches.id', 'name', 'slug')->take(2);
                 }
             ])->first('id');
         } elseif ($branch_id != null) {
