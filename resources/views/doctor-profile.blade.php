@@ -317,7 +317,7 @@
 
         <div class="d-p-achievement__details">
 
-            {!! content->publications !!}
+            {!! $content->publications !!}
         </div>
     </div>
 

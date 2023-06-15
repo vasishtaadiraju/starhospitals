@@ -29,7 +29,7 @@
 
 <x-about-us :$content/>
 <x-gap/>
-<x-testimonials  :testimonials=[]/>
+<x-testimonials  :testimonials='$reviews'/>
 <x-gap/>
 <div class="ui-background">
 

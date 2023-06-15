@@ -4,7 +4,7 @@
 
     @foreach ($locations as $item)
     <div class="locations__card">
-        <img src="" data-src="{{ config('variables.asset') . $item->card_image }}" alt="">
+        <img src="" data-src="{{ config('variables.asset') . $item->banner_image }}" alt="">
         <div class="locations__card__content-wrapper">
             <h3>{{$item->name}}</h3>
             <p>{{$item->address}}</p>

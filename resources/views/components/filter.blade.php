@@ -28,7 +28,7 @@
             @foreach ($branches as $item)
             <option value="{{$item->id}}" @if (session('branch_id') == $item->id)
                 selected
-            @endif>{{$item->name}}</option>
+            @elseif($item->id == 1) selected @endif>{{$item->name}}</option>
                 
             @endforeach
         </select>

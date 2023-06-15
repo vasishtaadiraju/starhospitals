@@ -5,7 +5,7 @@
             <div class="blogs__card">
                 <a href=""><img class="blogs__image" src="" data-src="{{config('variables.asset').$item->image}}"
                         alt=""> </a>
-                <p class="blogs__category"> <a href="">{{strtoupper('Cardiac Sciences')}} </a> </p>
+                <p class="blogs__category"> <a href="">@if(count($item->coes) > 0){{  strtoupper($item->coes[0]->name)}} @endif </a> </p>
                 @php
                     $date = date_create($item->published_date);
                 @endphp
