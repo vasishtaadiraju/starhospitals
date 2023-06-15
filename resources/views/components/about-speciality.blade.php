@@ -220,7 +220,7 @@
 
 <div class="about-speciality__content__description">
     @if ($content->page_type == 'Coe')  
- {!!$content->long_description!!}
+ {!!$content->description!!}
  @elseif($content->page_type == 'Branch') 
  {!!$content->about!!}
 @endif

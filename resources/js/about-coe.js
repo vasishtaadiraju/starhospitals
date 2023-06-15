@@ -16,7 +16,7 @@ let htmlData = `<div class="coes__description__wrapper coes__description__wrappe
 <img class="coes__description__image" id="coe-list" src="${import.meta.env.VITE_ASSET_URL}${response.data.homepage_image}" alt="${response.data.homepage_image_alt}">
 <h2 class="coes__description__title">${response.data.name}</h2>
 <p class="coes__description__content">
-${response.data.short_description}
+${response.data.homepage_description}
 
 </p>
 
@@ -37,7 +37,7 @@ let desktopHTML =  `<div class="coes__description__wrapper" >
 <img class="coes__description__image" id="coe-list" src="${import.meta.env.VITE_ASSET_URL}${response.data.homepage_image}" alt="${response.data.homepage_image_alt}" alt="">
 <h3 class="coes__description__title">${response.data.name}</h3>
 <p class="coes__description__content">
-${response.data.short_description}
+${response.data.homepage_description}
 </p>
 
 
