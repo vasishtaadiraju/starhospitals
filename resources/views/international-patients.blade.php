@@ -20,12 +20,12 @@
 <x-facilities :$content />
 </div>
 <x-gap/>
-<x-testimonials  :testimonials=[]/>
+<x-testimonials :$content   :testimonials=[]/>
 <x-gap/>
 <div class="ui-background">
 <x-int-enquiry-form :$content />
 </div>
 <x-gap/>
-<x-faqs :faqs='$faqs'/> 
+<x-faqs :$content :faqs='$faqs'/> 
 <x-gap/>
 @endsection

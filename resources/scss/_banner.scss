@@ -111,6 +111,9 @@
         @include media("lg-tab") {
             width: 60%;
         }
+        @include media("x-sm-desktop") {
+            width: 40%;
+        }
         h1 {
             color: variables.$starhospitals-text-inverted;
             // @include font-family(700);

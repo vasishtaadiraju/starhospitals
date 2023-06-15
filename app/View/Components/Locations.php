@@ -11,10 +11,11 @@ class Locations extends Component
     /**
      * Create a new component instance.
      */
-    public $locations;
-    public function __construct($locations)
+    public $locations,$content;
+    public function __construct($locations,$content)
     {
         $this->locations = $locations;
+        $this->content = $content;
     }
 
     /**

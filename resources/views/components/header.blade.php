@@ -85,13 +85,16 @@
                     <a href="#coe-list" class="scroll-to-view">Centers of Excellence</a>
                     <ul class="header__nav__option--dropdown__options">
                         @foreach ($coes as $item)
-                            <li class=""><a href="{{ route('coe', $item->slug) }}">{{ $item->name }}</a>
-                                {{-- <ul>
-                    <li><a href="#">Abc</a>
-                    </li>
+                            <li class="header__nav__option--dropdown header__nav__option--nested-dropdown"><a href="{{ route('coe', $item->slug) }}">{{ $item->name }}</a>
+                                <ul>
+                                    @foreach ($item->specialities as $speciality)
+                            <li><a href="#">{{$speciality->name}}</a> </li>
+
+                                    @endforeach
+{{--                    
                     <li><a href="#">Abc</a></li>
-                    <li><a href="#">Abc</a></li>
-                </ul> --}}
+                    <li><a href="#">Abc</a></li> --}}
+                </ul>
                             </li>
                         @endforeach
 
@@ -214,17 +217,19 @@
                     {{-- header__nav__option--nested-dropdown
                     header__nav__option--dropdown  --}}
                     @foreach ($coes as $item)
-                        <li class=""><a href="{{ route('coe', $item->slug) }}">{{ $item->name }}</a>
-                            {{-- <ul>
-                        <li><a href="#">Abc</a>
-                        </li>
-                        <li><a href="#">Abc</a></li>
-                        <li><a href="#">Abc</a></li>
-                    </ul> --}}
+                        <li class="header__nav__option--dropdown header__nav__option--nested-dropdown"><a href="{{ route('coe', $item->slug) }}">{{ $item->name }}</a>
+                            <ul>
+                                @foreach ($item->specialities as $speciality)
+                                <li><a href="#">{{$speciality->name}}</a>
+                                </li>
+                                @endforeach
+                        
+                       
+                    </ul>
                         </li>
                     @endforeach
 
-                    {{-- <li class="header__nav__option--dropdown header__nav__option--nested-dropdown"><a href="#">Test 2</a>
+                    {{-- <li class=""><a href="#">Test 2</a>
                         <ul>
                             <li><a href="#">Shibli</a></li>
                             <li><a href="#">Abc</a></li>

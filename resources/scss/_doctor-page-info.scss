@@ -513,7 +513,7 @@
         font-family: "Plus Jakarta Sans";
         margin-top: 1em;
         max-height: 0em;
-        transition: max-height 0.5s;
+        transition: all 0.5s;
         overflow: hidden;
         @include media("sm-mob") {
             padding: 0em 0.5em;
@@ -534,9 +534,10 @@
         }
         &--active {
             max-height: 80rem;
+            padding-bottom: 2rem;
         }
         &__title {
-            padding-bottom: 1em;
+            padding-bottom: 1rem;
             @include media("sm-mob") {
                 font-size: 18px !important  ;
             }

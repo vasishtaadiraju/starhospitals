@@ -136,7 +136,7 @@ async function printOptions(node)
         coe_id = "";
     }
 
-    let body = {coe_id,branch_id};
+    let body = {coe_id,branch_id,type};
     console.log(body);
     // let type = node.parentNode.parentNode.querySelector(".speciality-select-box").getAttribute('data-');
     const response = await httpRequest(

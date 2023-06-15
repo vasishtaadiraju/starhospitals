@@ -11,4 +11,10 @@ class ConditionsController extends Controller
     {
         return view('services-and-treatments.condition');
     }
+
+
+    function landingPage()
+    {
+        return view('services-and-treatments.index');
+    }
 }

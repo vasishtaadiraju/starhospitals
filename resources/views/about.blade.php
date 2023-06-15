@@ -19,7 +19,7 @@
 <x-gap/>
 
 <div class="ui-background">
-    <x-locations :$about :locations='$branches'/>
+    <x-locations :content="$about" :locations='$branches'/>
 
 </div>
 <x-gap/>
@@ -28,7 +28,7 @@
 <x-gap/>
 
 <div class="ui-background">
-    <x-faqs :$about :$faqs/>
+    <x-faqs :content="$about" :$faqs/>
 
 
 </div>

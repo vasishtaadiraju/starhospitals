@@ -153,9 +153,10 @@ async function printOptions(node)
     {
         branch_id = node.value;
         coe_id = "";
+
     }
 
-    let body = {coe_id,branch_id};
+    let body = {coe_id,branch_id,type};
     console.log(body);
     // let type = node.parentNode.parentNode.querySelector(".speciality-select-box").getAttribute('data-');
     const response = await httpRequest(
@@ -168,7 +169,7 @@ async function printOptions(node)
 
     if(type == "coe")
     {
-        node.parentNode.parentNode.querySelector(".location-select-box").innerHTML = ""
+        node.parentNode.parentNode.querySelector(".location-select-box").innerHTML = `<option value="">Select Location</option>`
         response.data.branches.forEach((result) => {
             let option = `<option value="${result.id}" ${result.id == selected_branch_id ? `selected` : ``}>${result.name}</option>`;
 
@@ -178,7 +179,7 @@ async function printOptions(node)
     }
     if(type == 'location')
     {
-        node.parentNode.parentNode.querySelector(".speciality-select-box").innerHTML = ""
+        node.parentNode.parentNode.querySelector(".speciality-select-box").innerHTML = `<option value="">Select Centre of Excellence</option>`
         response.data.coes.forEach((result) => {
             let option = `<option value="${result.id}" ${result.id == selected_coe_id ? `selected` : ``}>${result.name}</option>`;
 

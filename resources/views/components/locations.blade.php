@@ -1,4 +1,4 @@
-<x-heading :title="'Our Locations'" :description="'Lorem ipsum dolor sit amet consectetur. Pharetra hac gravida vestibulum donec accumsan morbi. In aliquam turpis pellentesque ultricies imperdiet accumsan sociis.'" />
+<x-heading :title="'Our Locations'" :description="$content->our_locations_text" />
 
 <div class="locations">
 

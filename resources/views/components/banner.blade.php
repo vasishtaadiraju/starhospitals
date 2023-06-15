@@ -1,5 +1,5 @@
 <div class="banner" >
-    <img class="banner__image" src="" data-src="{{$imgurl}}" alt="">
+    <img class="banner__image" src="" data-src="{{$imgurl}}"  alt="">
     <div class="banner__content @if (request()->route()->getName() == 'doctor')
         banner__content--blue
     @endif">

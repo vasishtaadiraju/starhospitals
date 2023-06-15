@@ -143,7 +143,7 @@
 
 <x-gap/>
 <div class="ui-background">
-<x-testimonials  :testimonials='$content->testimonials'/>
+<x-testimonials :$content  :testimonials='$content->testimonials'/>
 </div>
 <x-gap/>
 
@@ -154,7 +154,7 @@
 
 <div class="ui-background">
 
-<x-faqs :faqs='$content->faqs'/> 
+<x-faqs :$content  :faqs='$content->faqs'/> 
 </div>
 
 

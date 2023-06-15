@@ -11,13 +11,13 @@
 {{-- <x-our-specialists :$content :branches='$content->branches' :$coes/> --}}
     <x-coe-specialists :$content/>
 <x-gap/>
-<x-locations :locations='$content->branches'/>
+<x-locations :$content  :locations='$content->branches'/>
 <x-gap/>
 <div class="ui-background">
 <x-talk-doctor :$content :$coes/>
 </div>
 <x-gap/>
-<x-testimonials  :testimonials='$content->testimonials'/>
+<x-testimonials :$content   :testimonials='$content->testimonials'/>
 <x-gap/>
 <div class="ui-background">
 
@@ -28,7 +28,7 @@
 <x-gap/>
 <div class="ui-background">
 
-<x-faqs :faqs='$content->faqs'/> 
+<x-faqs :$content :faqs='$content->faqs'/> 
 </div>
 
 

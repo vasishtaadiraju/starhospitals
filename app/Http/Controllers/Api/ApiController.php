@@ -135,21 +135,37 @@ class ApiController extends Controller
     {
         $coe_id = $request->coe_id;
         $branch_id = $request->branch_id;
+        $type = $request->type;
         $response = [];
-        if ($coe_id != null) {
+        if ($type == 'coe' && $coe_id != null) {
             $response = CentreOfExcellence::where('status', 'active')->where('id', $coe_id)->with([
                 'branches' => function ($query) {
                     $query->where('status', 'active')->orderBy('branches.order_number')->select('branches.id', 'name', 'slug')->take(2);
                 }
             ])->first('id');
-        } elseif ($branch_id != null) {
+        } elseif ($type == 'location' && $branch_id != null) {
             $response = Branch::where('status', 'active')->where('id', $branch_id)->with([
                 'coes' => function ($query) {
                     $query->where('status', 'active')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
                 }
             ])->first('id');
         }
-
+        elseif($type == 'coe' && $coe_id == null)
+        {
+            $response = CentreOfExcellence::where('status', 'active')->with([
+                'branches' => function ($query) {
+                    $query->where('status', 'active')->orderBy('branches.order_number')->select('branches.id', 'name', 'slug')->take(2);
+                }
+            ])->first('id');
+        }
+        elseif ($type == 'location' && $branch_id == null) {
+            $response = Branch::where('status', 'active')->with([
+                'coes' => function ($query) {
+                    $query->where('status', 'active')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+                }
+            ])->first('id');
+        }
+        
         return response($response, 200);
     }
 }

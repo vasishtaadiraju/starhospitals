@@ -1,4 +1,4 @@
-<x-heading :title="'Frequently Asked Questions'" :description="'Lorem ipsum dolor sit amet consectetur. Pharetra hac gravida vestibulum donec accumsan morbi. In aliquam turpis pellentesque ultricies imperdiet accumsan sociis.'" />
+<x-heading :title="'Frequently Asked Questions'" :description="$content->faq_text" />
 {{-- <x-gap/> --}}
 <div class="faqs">
     <ul class="faqs__list-wrapper">
