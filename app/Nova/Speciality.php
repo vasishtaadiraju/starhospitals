@@ -215,10 +215,6 @@ class Speciality extends Resource
     protected function seo()
     {
         return [
-            Text::make('Icon Image Alt', 'icon_image_alt')
-                ->hideFromIndex()
-                ->rules('nullable', 'string'),
-
             Text::make('Banner Alt', 'banner_alt')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
