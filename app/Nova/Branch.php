@@ -64,6 +64,9 @@ class Branch extends Resource
             new Panel('Why Choose Us - Card 2', $this->whyChooseUsCard(2)),
             new Panel('Why Choose Us - Card 3', $this->whyChooseUsCard(3)),
             new Panel('Why Choose Us - Card 4', $this->whyChooseUsCard(4)),
+            new Panel('Reviews', $this->reviews()),
+            new Panel('Blogs', $this->blogs()),
+            new Panel('FAQ', $this->faq()),
             new Panel('SEO', $this->seo()),
 
             // BelongsTo::make('Region')
