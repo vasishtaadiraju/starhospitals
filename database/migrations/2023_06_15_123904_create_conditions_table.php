@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('conditions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('image')->nullable();
+            $table->string('short_description')->nullable();
             $table->text('symptoms_causes')->nullable();
             $table->text('diagnosis_treatment')->nullable();
             $table->text('care_at_star_hospitals')->nullable();

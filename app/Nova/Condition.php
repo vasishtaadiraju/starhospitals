@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
@@ -49,6 +50,16 @@ class Condition extends Resource
 
             Text::make('Name', 'name')
                 ->rules('required', 'string', 'max:255'),
+
+            Image::make('Image', 'image')
+                ->disk('s3')
+                ->hideFromIndex()
+                ->rules('image', 'max:1024')
+                ->creationRules('nullable')
+                ->updateRules('nullable'),
+
+            Text::make('Short Description', 'short_description')
+                ->rules('nullable', 'string', 'max:255'),
 
             Trix::make('Symptoms & Causes', 'symptoms_causes')
                 ->hideFromIndex()
