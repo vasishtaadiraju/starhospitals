@@ -11,7 +11,7 @@ class CoeController extends Controller
     function index($slug)
     {
         $content = CentreOfExcellence::where('status','active')->where('slug',$slug)->with(['branches'=>function($query){
-            $query->where('status','active')->orderBy('branches.order_number')->select('branches.id','name','slug','address','card_image')->take(2);
+            $query->where('status','active')->orderBy('branches.order_number')->select('branches.id','name','slug','card_image')->take(2);
         },'faqs','blogs'=>function($query){
             $query->where('status','active')->orderBy('blog_coe.order_number')->select('title', 'author', 'image', 'image_alt', 'slug', 'published_date');
         },'media'=>function($query){
