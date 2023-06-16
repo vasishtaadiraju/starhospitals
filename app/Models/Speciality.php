@@ -15,7 +15,7 @@ class Speciality extends Model
 
     public function doctors()
     {
-        return $this->belongsToMany(Doctor::class, 'speciality_user', 'speciality_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+        return $this->belongsToMany(Doctor::class, 'doctor_speciality', 'speciality_id', 'user_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 
     public function branches()
