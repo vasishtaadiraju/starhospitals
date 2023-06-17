@@ -14,7 +14,11 @@ return new class extends Migration
         Schema::create('specialities', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
+            $table->tinyInteger('order_number', false, true)->nullable();
             $table->text('icon_image')->nullable();
+            $table->string('homepage_image')->nullable();
+            $table->string('homepage_image_alt', 100)->nullable();
+            $table->text('homepage_description')->nullable();
             $table->string('banner_desktop')->nullable();
             $table->string('banner_mobile')->nullable();
             $table->string('banner_alt', 100)->nullable();

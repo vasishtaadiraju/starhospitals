@@ -224,15 +224,15 @@ class Branch extends Resource
     protected function whyChooseUsCard($card_number)
     {
         return [
-            Text::make('Icon', 'why_choose_us_card' . $card_number . '_icon')
+            Text::make('Icon', 'choose' . $card_number . '_icon')
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
 
-            Text::make('Title', 'why_choose_us_card' . $card_number . '_title')
+            Text::make('Title', 'choose' . $card_number . '_title')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:50'),
 
-            Textarea::make('Description', 'why_choose_us_card' . $card_number . '_description')
+            Textarea::make('Description', 'choose' . $card_number . '_description')
                 ->rows(3)
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:120'),

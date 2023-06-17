@@ -55,7 +55,7 @@ class Speciality extends Resource
                 ->sortable()
                 ->rules('required', 'string', 'max:50'),
 
-            new Panel('Icon', $this->icon()),
+            new Panel('Homepage', $this->homepage()),
             new Panel('Banner', $this->banner()),
             new Panel('Description', $this->description()),
             new Panel('Our Doctors', $this->our_doctors()),
@@ -96,12 +96,29 @@ class Speciality extends Resource
         ];
     }
 
-    protected function icon()
+    protected function homepage()
     {
         return [
-            Text::make('Image', 'icon_image')
+            Number::make('Order Number', 'order_number')
+                ->hideFromIndex()
+                ->rules('nullable', 'integer', 'numeric'),
+
+            Text::make('Icon Image', 'icon_image')
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
+
+            Image::make('Image', 'homepage_image')
+                ->disk('s3')
+                ->hideFromIndex()
+                ->rules('image', 'max:1024')
+                ->creationRules('nullable')
+                ->updateRules('nullable')
+                ->prunable(),
+
+            Textarea::make('Description', 'homepage_description')
+                ->rows(5)
+                ->hideFromIndex()
+                ->rules('nullable', 'string')
         ];
     }
 
@@ -215,6 +232,10 @@ class Speciality extends Resource
     protected function seo()
     {
         return [
+            Text::make('Homepage Image Alt', 'homepage_image_alt')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:100'),
+
             Text::make('Banner Alt', 'banner_alt')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
