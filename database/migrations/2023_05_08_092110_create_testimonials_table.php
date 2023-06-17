@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('text');
             $table->string('patient_name', 50);
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('image_alt', 100)->nullable();
             $table->string('video_link')->nullable();
             $table->enum('homepage', ['yes', 'no']);

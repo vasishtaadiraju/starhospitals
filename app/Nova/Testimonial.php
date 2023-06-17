@@ -59,7 +59,7 @@ class Testimonial extends Resource
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
-                ->creationRules('required')
+                ->creationRules('nullable')
                 ->updateRules('nullable')
                 ->prunable(),
 
