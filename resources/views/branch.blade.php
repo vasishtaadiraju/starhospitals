@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('css')
-@vite(['resources/scss/branch.scss', 'resources/js/app-book.js'])
+@vite(['resources/scss/branch.scss', 'resources/js/branch.js'])
 @endsection
 @section('content')
 <x-banner :imgurl="config('variables.asset') .$content->banner_desktop" :text="$content->banner_text" :$breadcrum/>  
@@ -137,23 +137,15 @@
 <x-doctors :type="'flex'" :$branches  :$coes/>
  </div>
 <x-gap/>
-
-
-<x-why-choose-us :content='null' />
-
+<x-why-choose-us :content='$content' />
 <x-gap/>
 <div class="ui-background">
 <x-testimonials :$content  :testimonials='$content->testimonials'/>
 </div>
 <x-gap/>
-
-
 <x-blogs :$content :blogs='$content->blogs'/>
-
 <x-gap/>
-
 <div class="ui-background">
-
 <x-faqs :$content  :faqs='$content->faqs'/> 
 </div>
 

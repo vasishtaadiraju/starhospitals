@@ -13,8 +13,3 @@ domSelector('.faqs__card','click',function() {
 });
 
 
-domSelector('.d-p-achievement__tab','click',function(){
-        this.nextElementSibling.classList.toggle('d-p-achievement__details--active')
-
-        console.log(this.nextElementSibling);
-})

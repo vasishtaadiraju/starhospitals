@@ -4,9 +4,9 @@ import { httpRequest, debounce, removeClass } from "./utils/event-handler";
 
 
 
-async function printCoe(coe_id)
+async function printCoe(id,type)
 {
-    let response = await httpRequest('/api/getCOE','POST',{coe_id});
+    let response = await httpRequest('/api/getCoeSpeciality','POST',{id,type});
         
     // this.childNodes[1].insertAdjacentHTML("afterend",  htmlData);
 document.querySelector('.coes__description--desktop').innerHTML = "";
@@ -23,10 +23,12 @@ ${response.data.homepage_description}
 
 
 
+${type == 'coe' ? `<a href="/specialities/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
+Learn More
+</a>` : `<a href="/specialities/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
+Learn More
+</a>`}
 
-<a href="/centers-of-excellence/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
-      Learn More
-  </a>
 
 </div>
 `
@@ -244,9 +246,11 @@ ${response.data.homepage_description}
 <circle cx="2.5" cy="12.5" r="2.5" transform="rotate(90 2.5 12.5)" fill="#004E9E"/>
 </svg>
 </div>
-<a href="/centers-of-excellence/${response.data.slug}" class="view-all-btn">
-      Learn More
-  </a>`
+${type == 'coe' ? `<a href="/specialities/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
+Learn More
+</a>` : `<a href="/specialities/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
+Learn More
+</a>`}`
 
 
   return {
@@ -264,8 +268,9 @@ ${response.data.homepage_description}
 
 
 domSelector('.coes__list__item','click',async function() {
-        let coe_id = this.childNodes[1].getAttribute('data-id');
-        let cards = await printCoe(coe_id);
+        let id = this.childNodes[1].getAttribute('data-id');
+        let type = this.getAttribute('data-type');
+        let cards = await printCoe(id,type);
 
 {/* <img  src="" data-src="{{Vite::asset('resources/images/Icons/Dots(1).png')}}" alt=""> */}
 
@@ -294,8 +299,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     let coe_id = document.querySelector(
         ".coes__list__item li"
     ).getAttribute('data-id');
+    let type = document.querySelector(
+      ".coes__list__item"
+  ).getAttribute('data-type');
 
-    let cards = await printCoe(coe_id);
+    let cards = await printCoe(coe_id,type);
     document.querySelector('.coes__description--desktop').insertAdjacentHTML("beforeend",cards.desktop);
   
     

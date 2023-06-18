@@ -10,13 +10,12 @@ async function inputHandler(e) {
   }
   document.getElementsByClassName("auto-complete__list")[0].innerHTML = "";
   let result = await httpRequest("/api/getDoctorSuggetion","POST",{'text':this.value});
-  console.log(result.data);
 
 
     
         result.data.forEach(element => {
             
-            let list = `<li class="auto-complete__list__item" data-id="${element.id}">${element.name}</li>`
+            let list = `<li class="auto-complete__list__item" data-id="${element.id}" data-slug="${element.slug}">${element.name}</li>`
             this.nextElementSibling.childNodes[1].insertAdjacentHTML("beforeend", list);
 
         })
@@ -28,8 +27,12 @@ async function inputHandler(e) {
 function handleClick()
 {
     this.parentNode.parentNode.previousElementSibling.value = this.innerHTML;
-    document.getElementsByClassName("auto-complete__list")[0].innerHTML = "";
     let id  = this.getAttribute('data-id');
+    let slug  = this.getAttribute('data-slug');
+    document.getElementsByClassName("auto-complete__list")[0].innerHTML = "";
+    
+
+    window.location.href = `/doctors/${slug}`;
     console.log(id);
     
 

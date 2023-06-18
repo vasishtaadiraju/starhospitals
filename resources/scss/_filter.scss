@@ -271,7 +271,7 @@
         flex: 0 0 70%;
 
         .filter__fields-wrapper {
-            flex: 0 0 calc(95% / 3);
+            flex: 0 0 calc(95% / 4);
         }
         @include media("sm-mob") {
             gap: 1em;

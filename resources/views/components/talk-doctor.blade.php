@@ -4,7 +4,7 @@
     </div>
     <div class="talk-doctor__form-wrapper">
         <div class="talk-doctor__form-wrapper__content">
-            <h2 class="section-heading" >Talk to a Heart Doctor</h2>
+            <h2 class="section-heading" >Talk to a {{$content->name}} Doctor</h2>
             <form action="">
                 <div class="talk-doctor-form">
                     <div class="form-input">

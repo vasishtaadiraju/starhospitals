@@ -32,4 +32,24 @@ class Speciality extends Model
     {
         return $this->belongsToMany(CentreOfExcellence::class, 'coe_speciality', 'speciality_id', 'coe_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
+
+    public function faqs()
+    {
+        return $this->belongsToMany(FAQ::class, 'faq_speciality', 'speciality_id', 'faq_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+    }
+
+    public function blogs()
+    {
+        return $this->belongsToMany(Blog::class, 'blog_speciality', 'speciality_id', 'blog_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+    }
+
+    public function media()
+    {
+        return $this->belongsToMany(Media::class, 'media_speciality', 'speciality_id', 'media_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+    }
+
+    public function testimonials()
+    {
+        return $this->belongsToMany(Testimonial::class, 'speciality_testimonial', 'speciality_id', 'testimonial_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+    }
 }

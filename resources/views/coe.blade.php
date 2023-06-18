@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('css')
-@vite(['resources/scss/speciality.scss', 'resources/js/app.js'])
+@vite(['resources/scss/speciality.scss', 'resources/js/speciality.js'])
 @endsection
 @section('content')
 <x-banner :imgurl="config('variables.asset') .$content->banner_desktop" :text="$content->banner_text" :$breadcrum/>  
@@ -11,6 +11,11 @@
 {{-- <x-our-specialists :$content :branches='$content->branches' :$coes/> --}}
     <x-coe-specialists :$content/>
 <x-gap/>
+@if (count($content->specialities) > 0)
+<x-key-services :coes='$content->specialities' />
+<x-gap/>
+    
+@endif
 <x-locations :$content  :locations='$content->branches'/>
 <x-gap/>
 <div class="ui-background">

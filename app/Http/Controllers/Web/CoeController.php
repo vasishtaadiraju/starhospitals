@@ -18,6 +18,9 @@ class CoeController extends Controller
             $query->where('status','active')->orderBy('coe_media.order_number')->select('media.id', 'title', 'media_name', 'image', 'image_alt', 'media_link', 'published_date', 'slug');
         },'testimonials'=>function($query){
             $query->where('status','active')->orderBy('coe_testimonial.order_number');
+        },
+        'specialities'=>function($query){
+            $query->where('status','active')->select('specialities.id','slug','name','icon_image');
         }])->first();
 
         // return response($content);

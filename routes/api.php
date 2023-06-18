@@ -21,7 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/getDoctorSuggetion',[ApiController::class , 'getDoctorSuggetion']);
 Route::post('/getDoctorByBranchCoeSpeciality',[ApiController::class , 'getDoctorByBranchCoeSpeciality']);
-Route::post('/getCOE',[ApiController::class , 'getCOE']);
+Route::post('/getCoeSpeciality',[ApiController::class , 'getCoeSpeciality']);
 Route::post('/getBranchCoeSpecialityById',[ApiController::class , 'getBranchCoeSpecialityById']);
+Route::post('/getConditionsByCOESpeciality',[ApiController::class , 'getConditionsByCOESpeciality']);
 
 

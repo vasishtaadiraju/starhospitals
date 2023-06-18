@@ -481,9 +481,9 @@
                 <li class="footer__columns__option__label footer__columns__option__label--dropdown">Centers of
                     Excellence
                     <ul class="footer__columns__option__label--dropdown__option">
-                        @foreach ($coes as $item)
+                        {{-- @foreach ($coes as $item)
                         <li class="footer__columns__option__item"><a href="">{{$item->name}}</a></li>
-                        @endforeach
+                        @endforeach --}}
                         {{-- <li class="footer__columns__option__item"><a href="">Emergency Services</a></li>
                         <li class="footer__columns__option__item"><a href="">Gastroenterology</a></li>
                         <li class="footer__columns__option__item"><a href="">Neurology</a></li>

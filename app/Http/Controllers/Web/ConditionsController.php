@@ -3,18 +3,59 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Branch;
+use App\Models\CentreOfExcellence;
+use App\Models\Condition;
 use Illuminate\Http\Request;
 
 class ConditionsController extends Controller
 {
-    function index()
+    function index($slug)
     {
-        return view('services-and-treatments.condition');
+      
+        $content = Condition::where('diagnosis_treatment_slug',$slug)->orWhere('symptoms_causes_slug',$slug)->first();
+
+        $coes = [];
+        $branches = [];
+        if($content->diagnosis_treatment_slug == $slug && $content->diagnosis_treatment != null)
+        {
+           
+            $content->type = 'diagnosis';
+        }
+        else if($content->symptoms_causes_slug == $slug && $content->symptoms_causes != null)
+        {
+            
+            $content->type = 'symptoms';
+        }
+        else if($content->care_at_star_hospitals_slug == $slug && $content->care_at_star_hospitals != null)
+        {
+            
+            $content->type = 'care';
+        }
+        else{
+            abort(404);
+        }
+        // dd();
+        if(request()->route()->getName() == 'department')
+        {
+            $content->type = 'department';
+            $coes = CentreOfExcellence::where('status','active')->get(['id','name']);
+            $branches = Branch::where('status','active')->get(['id','name']);
+            
+        }
+        return view('services-and-treatments.condition',[
+            'content'=>$content,
+            'coes'=>$coes,
+            'branches'=>$branches,
+        ]);
     }
 
 
     function landingPage()
     {
-        return view('services-and-treatments.index');
+        $coes = CentreOfExcellence::get(['id','name']);
+        return view('services-and-treatments.index',[
+            'coes'=>$coes,
+        ]);
     }
 }

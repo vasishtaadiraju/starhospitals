@@ -22,9 +22,20 @@
 
                 <img src="" data-src="{{ Vite::asset('resources/images/Icons/sthetoscope.png') }}" alt="">
 
-                <select type="text" class="speciality-select-box" data-type="coe" placeholder="Enter Doctor Name">
-                    <option value="">Select Speciality</option>
+                <select type="text" class="coe-select-box" data-type="coe" placeholder="Enter Doctor Name">
+                    <option value="">Select coe</option>
                     @foreach ($coes as $item)
+                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="filter__fields-wrapper">
+
+                <img src="" data-src="{{ Vite::asset('resources/images/Icons/sthetoscope.png') }}" alt="">
+
+                <select type="text" class="speciality-select-box" data-type="speciality" placeholder="Enter Doctor Name">
+                    <option value="">Select coe</option>
+                    @foreach ([] as $item)
                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                     @endforeach
                 </select>

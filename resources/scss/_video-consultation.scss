@@ -1,0 +1,371 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+
+.video-consultation {
+    @include centerSection;
+    width: 73%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.05);
+    -moz-box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.05);
+
+    @include media('sm-mob')
+    {
+        flex-direction: column;
+        width: 90%;
+        margin: 0px auto;
+    }
+    @include media("md-mob") {
+        flex-direction: column;
+        width: 90%;
+        margin: 0px auto;
+    }
+    @include media("lg-mob") {
+        flex-direction: column;
+        width: 90%;
+        margin: 0px auto;
+    }
+    @include media("x-sm-tab") {
+        flex-direction: column;
+        width: 90%;
+        margin: 0px auto;
+    }
+    @include media("sm-tab") {
+        flex-direction: column;
+        width: 90%;
+        margin: 0px auto;
+    }
+    @include media("md-tab") {
+        flex-direction: column;
+        width: 90%;
+        margin: 0px auto;
+    }
+    &__col-1 {
+        flex: 0 0 45.5%;
+
+
+        background-color: variables.$starhospitals-brand-primary;
+        padding: 4.5rem 0px;
+        @include media("sm-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("md-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("lg-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("x-sm-tab") {
+            flex: 0 0 100%;
+        }
+        @include media("sm-tab") {
+            flex: 0 0 100%;
+        }
+        @include media("md-tab") {
+            flex: 0 0 100%;
+        }
+
+        &__details-wrapper {
+            width: 63%;
+            margin: 0px auto;
+            @include media("sm-mob") {
+                width:90%;
+            }
+            @include media("md-mob") {
+                width:90%;
+            }
+            @include media("lg-mob") {
+                width:90%;
+            }
+            @include media("x-sm-tab") {
+                width:90%;
+            }
+            @include media("sm-tab") {
+                width:90%;
+            }
+            @include media("md-tab") {
+                flex: 0 0 100%;
+            }
+
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        h1 {
+            margin-top: 1.4rem;
+            @include font-family(600);
+            font-size: 2rem;
+            color: #ffff;
+            margin-bottom: 1.5rem;
+            @include media("sm-mob") {
+                font-size: 25px !important;
+                margin-bottom: 0.25em;
+            }
+            @include media("md-mob") {
+                font-size: 25px !important;
+                margin-bottom: 0.25em;
+            }
+            @include media("lg-mob") {
+                font-size: 25px !important;
+                margin-bottom: 0.25em;
+            }
+            @include media("x-sm-tab") {
+                font-size: 25px !important;
+                margin-bottom: 0.25em;
+            }
+            @include media("sm-tab") {
+                font-size: 25px !important;
+                margin-bottom: 0.25em;
+            }
+            @include media("md-tab") {
+                font-size: 22px !important;
+                line-height: 30px !important;
+                margin-bottom: 0.25em;
+            }
+            @include media("lg-tab") {
+                font-size: 28px !important;
+                line-height: 30px !important;
+                margin-bottom: 0.75em;
+            }
+            @include media("x-sm-desktop") {
+                font-size: 30px !important;
+                margin-bottom: 0.5em;
+            }
+        }
+
+        &__designation {
+            @include font-family(600);
+            font-size: 1.5rem;
+            color: #ffff;
+            margin-bottom: 0.5rem;
+            line-height: 30px;
+            @include media("sm-mob") {
+                font-size: 18px !important;
+            }
+            @include media("md-mob") {
+                font-size: 18px !important;
+            }
+            @include media("lg-mob") {
+                font-size: 18px !important;
+            }
+            @include media("x-sm-tab") {
+                font-size: 18px !important;
+            }
+            @include media("sm-tab") {
+                font-size: 18px !important;
+            }
+            @include media("md-tab") {
+                font-size: 18px !important;
+            }
+            @include media("lg-tab") {
+                font-size: 20px !important;
+            }
+            @include media("x-sm-desktop") {
+                font-size: 15px !important;
+            }
+        }
+
+        &__specialty {
+            font-family: "Plus Jakarta Sans";
+            font-style: "Regular";
+            font-size: 1.25rem;
+            color: white;
+            margin-bottom: 1.25rem;
+            @include media("sm-mob") {
+                font-size: 15px !important;
+            }
+            @include media("md-mob") {
+                font-size: 15px !important;
+            }
+            @include media("lg-mob") {
+                font-size: 15px !important;
+            }
+            @include media("x-sm-tab") {
+                font-size: 15px !important;
+            }
+            @include media("sm-tab") {
+                font-size: 15px !important;
+            }
+            @include media("md-tab") {
+                font-size: 15px !important;
+            }
+    
+            // @include media("x-sm-desktop") {
+            //     font-size: 13px !important;
+            // }
+        }
+        
+        &__location {
+            font-family: "Plus Jakarta Sans";
+            font-style: "Regular";
+            font-size: 0.75rem;
+            color: white;
+        }
+
+        &__btn {
+            margin-top: 3.75rem;
+            @include media("sm-mob") {
+                margin-top: 2rem;
+            }
+            @include media("md-mob") {
+                margin-top: 2rem;
+            }
+            @include media("lg-mob") {
+                margin-top: 2rem;
+            }
+            @include media("x-sm-tab") {
+                margin-top: 2rem;
+            }
+            @include media("sm-tab") {
+                margin-top: 2rem;
+            }
+            @include media("md-tab") {
+                margin-top: 2rem;
+            }
+        }
+
+        &__btm-content {
+            margin-top: 14.25rem;
+            @include media("sm-mob") {
+                display: none;
+            }
+            @include media("md-mob") {
+                display: none;
+            }
+            @include media("lg-mob") {
+                display: none;
+            }
+            @include media("x-sm-tab") {
+                display: none;
+            }
+            @include media("sm-tab") {
+                display: none;
+            }
+            @include media("md-tab") {
+                display: none;
+            }
+            p,
+            a {
+                font-size: 14px;
+                font-weight: 400;
+                font-family: "Plus Jakarta Sans";
+                color: #ffff;
+                text-align: center;
+                width: 100%;
+                display: block;
+            }
+
+            a {
+                // width: 100%;
+                min-height: 50px;
+                display: flex;
+                align-items: center;
+
+                justify-content: center;
+            }
+        }
+    }
+
+    &__col-2 {
+        flex: 0 0 55.5%;
+        display: flex;
+        align-items: center;
+        &__form-wrapper {
+            width: 70%;
+            margin: 0px auto;
+            @include media("sm-mob") {
+                width: 90%;
+            }
+            @include media("md-mob") {
+                width: 90%;
+            }
+            @include media("lg-mob") {
+                width: 90%;
+            }
+            @include media("x-sm-tab") {
+                width: 90%;
+            }
+            @include media("sm-tab") {
+                width: 90%;
+            }
+            @include media("md-tab") {
+                width: 90%;
+            }
+        }
+    }
+
+
+}
+
+
+.form-fields {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.form-submit-button {
+    min-height: 52px;
+    min-width: 137px;
+    // width: 137;
+    border-radius: 10px;
+    padding: 16px 40px 16px 40px;
+    border: none;
+    background-color: variables.$starhospitals-brand-secondary;
+    color: #ffff;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 700;   
+    margin-top: 3.5rem;
+    margin-left: 50%;
+    transform: translate(-50%);
+
+}
+.form-fields-wrapper {
+    margin-top: 1rem;
+    input , select{
+        min-height: 50px;
+        border: 1.7px solid #e0e0e0;
+        background-color: #fafafa;
+        border-radius: 10px;
+        width: 100%;
+        padding: 0px 1em;
+        outline: none;
+        font-family: 'Plus Jakarta Sans';
+    }
+
+
+    select{
+        -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    background: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0007 13.1714L16.9505 8.22168L18.3647 9.63589L12.0007 15.9999L5.63672 9.63589L7.05094 8.22168L12.0007 13.1714Z' fill='black'/%3E%3C/svg%3E%0A") !important;
+    background-repeat: no-repeat !important;
+    background-size: 25px;
+    background-position: calc(100% - 1em) !important;
+    padding-right: 2em !important;
+    }
+
+    &--col-0 {
+        flex: 1;
+
+        margin-left: 7%;
+    }
+    &--col-1 {
+        flex: 0 0 calc(100% / 1);
+    }
+
+    &--col-2 {
+        flex: 0 0 calc(93% / 2);
+    }
+    &--col-3 {
+        flex: 0 0 calc(93% / 3);
+    }
+}

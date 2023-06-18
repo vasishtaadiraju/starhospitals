@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('css')
-@vite(['resources/scss/homepage.scss', 'resources/js/app.js'])
+@vite(['resources/scss/homepage.scss', 'resources/js/home.js'])
 @endsection
 @section('content')
 <x-slider :$content/>
@@ -29,7 +29,9 @@
 
 <x-about-us :$content/>
 <x-gap/>
-<x-testimonials :$content  :testimonials='$reviews'/>
+{{-- <x-testimonials :$content  :testimonials='$reviews'/> --}}
+<x-testimonials-secondary :$content  :testimonials='$reviews'/>
+
 <x-gap/>
 <div class="ui-background">
 

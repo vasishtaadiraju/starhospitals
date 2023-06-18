@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('css')
-    @vite(['resources/scss/doctor-profile.scss', 'resources/js/app.js'])
+    @vite(['resources/scss/doctor-profile.scss', 'resources/js/doctor-profile.js'])
 @endsection
 @section('content')
     <x-banner :imgurl="Vite::asset('resources/images/banner/doc-profile.png')" :text="'Doctors | Star Hospitals'" :$breadcrum />
@@ -22,6 +22,7 @@
     <div class="d-p-info">
         <div class="d-p-info__col-1">
             <img data-src="{{ config('variables.asset') . $content->large_image }}" alt="">
+            {{-- {{ config('variables.asset') . $content->large_image }} --}}
         </div>
         <div class="d-p-info__col-2">
 
@@ -67,7 +68,7 @@
             <ul class="d-p-info__col-3__scroll-tabs">
                 <li class="d-p-info__col-3__scroll-tabs__item d-p-info__col-3__scroll-tabs__item--active"><a
                         href="#qualification" class="scroll-to-view">Qualifications</a></li>
-                <li class="d-p-info__col-3__scroll-tabs__item"><a href="#experience" class="scroll-to-view">Experience</a>
+                <li class="d-p-info__col-3__scroll-tabs__item"><a href="#experience" >Experience</a>
                 </li>
                 <li class="d-p-info__col-3__scroll-tabs__item"><a href="#expertise" class="scroll-to-view">Field of
                         Expertise</a></li>
@@ -163,11 +164,11 @@
                     </clipPath>
                 </defs>
             </svg>
-            <h1 class="section-heading" id="qualification">Qualifications</h1>
+            <h1 class="section-heading">Qualifications</h1>
             <span>+</span>
         </div>
 
-        <div class="d-p-achievement__details ">
+        <div class="d-p-achievement__details" id="qualification">
             {{-- <ul class="d-p-achievement__details__list">
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
@@ -176,7 +177,7 @@
               <li> <strong>MBBS,</strong> JJM Medical College, Davangere </li>
           </ul> --}}
 
-            <div>
+            <div >
                 {!! $content->qualification !!}
             </div>
         </div>
@@ -230,7 +231,7 @@
 
         </div>
 
-        <div class="d-p-achievement__details">
+        <div class="d-p-achievement__details" id="experience">
 
 
             {!! $content->experience_description !!}
@@ -287,7 +288,7 @@
             <span>+</span>
         </div>
 
-        <div class="d-p-achievement__details">
+        <div class="d-p-achievement__details" id="expertise">
             {!! $content->expertise !!}
         </div>
     </div>
@@ -315,7 +316,7 @@
 
         </div>
 
-        <div class="d-p-achievement__details">
+        <div class="d-p-achievement__details" id="research">
 
             {!! $content->publications !!}
         </div>
@@ -341,7 +342,7 @@
 
         </div>
 
-        <div class="d-p-achievement__details">
+        <div class="d-p-achievement__details" id="certifications">
             {!! $content->certifications !!}
         </div>
     </div>

@@ -11,12 +11,12 @@ class TalkDoctor extends Component
     /**
      * Create a new component instance.
      */
-    public $content,$coes;
+    public $content;
 
-    public function __construct($content,$coes)
+    public function __construct($content)
     {
         $this->content = $content;
-        $this->coes = $coes;
+        
     }
 
     /**

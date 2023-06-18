@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('css')
-@vite(['resources/scss/about.scss', 'resources/js/app.js'])
+@vite(['resources/scss/about.scss', 'resources/js/about.js'])
 @endsection
 @section('content')
 <x-banner :imgurl="config('variables.asset') .$about->banner_desktop" :text="$about->banner_text" :$breadcrum/>

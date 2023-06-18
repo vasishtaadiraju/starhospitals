@@ -41,8 +41,8 @@ $fixed-header-height:6rem;
     display: block;
     position: absolute;
     right: 10px;
-    top: 0;
-    color: variables.$starhospitals-ui-tertiary;
+    top: 10%;
+    // color: variables.$starhospitals-ui-tertiary;
 }
 
 @keyframes growRight {
@@ -132,6 +132,18 @@ $fixed-header-height:6rem;
 
         &__card {
             // flex: 0 0 calc(50% / 4);
+
+            &--social{
+                // border: 1px solid blue;
+                    display:     flex;
+                    align-items: center; 
+                    
+                    
+                    .footer__social-icons{
+                        margin: 0px;
+                        align-items: center;
+                    }
+                   }
             @include media("sm-mob") {
                 flex: 0 0 calc(50% / 2);
             }
@@ -612,7 +624,8 @@ $fixed-header-height:6rem;
                                 @include option-hover;
 
                                 &::after {
-                                    color: variables.$starhospitals-text-inverted;
+                                    // @include dropdown-arrow;
+                                    color: variables.$starhospitals-text-inverted !important;
                                 }
                             }
 
@@ -627,10 +640,12 @@ $fixed-header-height:6rem;
                 &:hover &__options {
                     display: block;
                 }
-
                 &::after {
                     @include dropdown-arrow;
                     transform: rotate(90deg);
+                    color: #ffff;
+                    
+                    
                     @include media("sm-mob") {
                         transform: rotate(0deg);
                         color: black;
@@ -668,17 +683,71 @@ $fixed-header-height:6rem;
                         right: 5%;
                     }
                 }
+                
             }
 
             &--nested-dropdown {
                 position: relative;
+
+                &::after {
+                    @include dropdown-arrow;
+                    transform: rotate(90deg);
+                    
+                    
+                    
+                    @include media("sm-mob") {
+                        transform: rotate(0deg);
+                        color: black;
+                        top: 25%;
+                        right: 5%;
+                    }
+                    @include media("md-mob") {
+                        transform: rotate(0deg);
+                        color: black;
+                        top: 25%;
+                        right: 5%;
+                    }
+                    @include media("lg-mob") {
+                        transform: rotate(0deg);
+                        color: black;
+                        top: 25%;
+                        right: 5%;
+                    }
+                    @include media("x-sm-tab") {
+                        transform: rotate(0deg);
+                        color: black;
+                        top: 25%;
+                        right: 5%;
+                    }
+                    @include media("sm-tab") {
+                        transform: rotate(0deg);
+                        color: black;
+                        top: 25%;
+                        right: 5%;
+                    }
+                    @include media("md-tab") {
+                        transform: rotate(0deg);
+                        color: black;
+                        top: 25%;
+                        right: 5%;
+                    }
+                }
+
+                &:hover{
+                    &::after {
+                        color: white;
+
+                    }
+                }
                 ul {
                     animation: growDown 300ms ease-in-out forwards;
                     // transform-origin: top center;
                     @include dropdown-Options-wrapper;
-                    left: 100%;
+                    left: 99.9%;
                     top: 0;
                     z-index: -1;
+                    padding: 0.5em 0px;
+                    border-radius: 5px;
                     @include media("sm-mob") {
                         position: initial;
                         padding-left: 1em;
@@ -709,9 +778,14 @@ $fixed-header-height:6rem;
                 }
 
                 &::after {
-                    @include dropdown-arrow;
+                    // @include dropdown-arrow;
                     transform: rotate(0deg);
-                    color: black;
+                    // color: black;
+
+                    &:hover{
+                        color: white;
+                    }
+                    
                     @include media("sm-mob") {
                         right: 5%;
                         top: 6%;
@@ -763,6 +837,12 @@ $fixed-header-height:6rem;
                 {
                     font-size: 12px;
                     // margin-left: 2em;
+                }
+            }
+
+            .header__nav__option--dropdown{
+                &::after{
+                    color: black;
                 }
             }
         }

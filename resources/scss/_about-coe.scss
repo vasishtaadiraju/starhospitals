@@ -9,6 +9,17 @@
 
     &__list {
         flex: 0 0 45%;
+       
+
+        &__wrapper{
+            height: 80vh;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            &::-webkit-scrollbar{
+                display: none;
+            }
+        }
+        
         @include media("sm-mob") {
             flex: 0 0 100%;
         }

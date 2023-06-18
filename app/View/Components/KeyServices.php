@@ -13,7 +13,7 @@ class KeyServices extends Component
      */
     public $coes;
 
-    public function __construct($coes)
+    public function __construct($coes = null)
     {
         $this->coes = $coes;
     }
