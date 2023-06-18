@@ -69,11 +69,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
                 MenuSection::resource(Career::class)->icon('academic-cap'),
 
-                // MenuSection::resource(Condition::class),
+                MenuSection::resource(Condition::class),
 
-                // MenuSection::resource(ConditionImage::class),
+                MenuSection::resource(ConditionImage::class),
 
-                // MenuSection::resource(DoctorOrder::class),
+                MenuSection::resource(DoctorOrder::class),
             ];
         });
 
