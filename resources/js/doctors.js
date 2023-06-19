@@ -167,6 +167,8 @@ async function printOptions(node) {
     }
 
     let body = { coe_id, branch_id, type };
+
+    console.log(body);
     const response = await httpRequest(
         "/api/getBranchCoeSpecialityById",
         "POST",
@@ -228,6 +230,21 @@ async function printOptions(node) {
                 });
             }
         });
+
+        if(response.data.specialities.length > 0){
+            node.parentNode.parentNode.querySelector(
+                ".speciality-select-box"
+            ).innerHTML = ``;
+            response.data.specialities.forEach((speciality) => {
+                let option = `<option value="${speciality.id}" ${
+                    speciality.id == selected_branch_id ? `selected` : ``
+                }>${speciality.name}</option>`;
+
+                node.parentNode.parentNode
+                    .querySelector(".speciality-select-box")
+                    .insertAdjacentHTML("beforeend", option);
+            });
+        }
     }
     let speciality_id = node.parentNode.parentNode.querySelector(
         ".speciality-select-box"
