@@ -54,6 +54,10 @@ class Doctor extends Resource
             Text::make('Name', 'name')
                 ->rules('required', 'string', 'max:100'),
 
+            Number::make('HIS ID', 'his_id')
+                ->hideFromIndex()
+                ->rules('nullable', 'integer', 'numeric'),
+
             Image::make('Small Image', 'small_image')
                 ->disk('s3')
                 ->hideFromIndex()
@@ -121,6 +125,11 @@ class Doctor extends Resource
             Text::make('Media Text', 'media_text')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:255'),
+
+            Boolean::make('Available for Video Consultation', 'video_consultation')
+                ->trueValue('yes')
+                ->falseValue('no')
+                ->filterable(),
 
             Text::make('Slug', 'slug')
                 ->hideFromIndex()

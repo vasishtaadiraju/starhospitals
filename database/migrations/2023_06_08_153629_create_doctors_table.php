@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
+            $table->integer('his_id')->nullable();
             $table->string('designation', 100)->nullable();
             $table->text('qualification')->nullable();
             $table->string('experience', 5)->nullable();
@@ -29,6 +30,7 @@ return new class extends Migration
             $table->integer('order_number')->nullable();
             $table->string('blogs_text')->nullable();
             $table->string('media_text')->nullable();
+            $table->enum('video_consultation', ['yes', 'no']);
             $table->string('canonical')->nullable();
             $table->string('slug')->nullable()->unique();
             $table->string('meta_title')->nullable();
