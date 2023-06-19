@@ -129,6 +129,7 @@ class Doctor extends Resource
             Boolean::make('Available for Video Consultation', 'video_consultation')
                 ->trueValue('yes')
                 ->falseValue('no')
+                ->hideFromIndex()
                 ->filterable(),
 
             Text::make('Slug', 'slug')
