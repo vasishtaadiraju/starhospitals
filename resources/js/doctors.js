@@ -161,7 +161,9 @@ async function printOptions(node) {
     }
     if (type == "location") {
         branch_id = node.value;
-        coe_id = "";
+        coe_id = node.parentNode.parentNode.querySelector(
+            ".coe-select-box"
+        ).value;
     }
 
     let body = { coe_id, branch_id, type };

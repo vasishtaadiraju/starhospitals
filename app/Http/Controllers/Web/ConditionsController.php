@@ -19,19 +19,19 @@ class ConditionsController extends Controller
 
         $coes = [];
         $branches = [];
-        if($content->diagnosis_treatment_slug == $slug && $content->diagnosis_treatment != null)
+        if($content->diagnosis_treatment_slug == $slug && $content->diagnosis_treatment != null && request()->route()->getName() == 'condition')
         {
            
             $content->type = 'diagnosis';
         }
-        else if($content->doctors_departments_slug == $slug)
+        else if($content->doctors_departments_slug == $slug && request()->route()->getName() == 'department')
         {
             
             $content->type = 'department';
             $coes = CentreOfExcellence::where('status','active')->get(['id','name']);
             $branches = Branch::where('status','active')->get(['id','name']);
         }
-        else if($content->care_at_star_hospitals_slug == $slug && $content->care_at_star_hospitals != null)
+        else if($content->care_at_star_hospitals_slug == $slug && $content->care_at_star_hospitals != null  && request()->route()->getName() == 'care')
         {
             
             $content->type = 'care';

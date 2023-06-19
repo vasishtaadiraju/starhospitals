@@ -205,14 +205,32 @@ class ApiController extends Controller
                 },
             ])->first('id');
         } elseif ($type == 'location' && $branch_id != null) {
-            $response = Branch::where('status', 'active')->where('id', $branch_id)->with([
-                'coes' => function ($query) {
-                    $query->where('status', 'active')->with('specialities')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
-                },
-                'specialities' => function ($query) {
-                    $query->select('specialities.id', 'name', 'slug', 'icon_image');
-                },
-            ])->first('id');
+
+            if($coe_id != null)
+            {
+                $response = Branch::where('status', 'active')->where('id', $branch_id)->with([
+                    'coes' => function ($query) {
+                        $query->where('status', 'active')->with('specialities')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+                    },
+                    'specialities' => function ($query) use ($coe_id) {
+                        $query->whereHas('coes',function($query) use ($coe_id){
+                            $query->where('coe_id',$coe_id);
+                        })->select('specialities.id', 'name', 'slug', 'icon_image');
+                    },
+                ])->first('id');  
+            }
+            else
+            {
+                $response = Branch::where('status', 'active')->where('id', $branch_id)->with([
+                    'coes' => function ($query) {
+                        $query->where('status', 'active')->with('specialities')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+                    },
+                    'specialities' => function ($query) {
+                        $query->select('specialities.id', 'name', 'slug', 'icon_image');
+                    },
+                ])->first('id');
+            }
+            
 
 
         } elseif ($type == 'coe' && $coe_id == null) {
