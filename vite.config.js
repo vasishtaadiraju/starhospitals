@@ -22,7 +22,6 @@ export default defineConfig({
                 'resources/js/home.js',
                 'resources/js/branch.js',
                 'resources/js/speciality.js',
-                'resources/js/coe.js',
                 'resources/js/about.js',
                 'resources/js/int-patients.js',
                 ],
