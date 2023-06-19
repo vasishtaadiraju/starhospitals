@@ -65,7 +65,7 @@
 
 <div class="conditions-root">
 
-    <div class="conditions-root__cards">
+    {{-- <div class="conditions-root__cards">
         <img data-src="{{Vite::asset('resources\images\conditions-treatment\wepik-export-20230424074108 2.png')}}" alt="">
 
         <div class="conditions-root__cards__details">
@@ -160,7 +160,7 @@
                 Read More
             </a>
         </div>
-    </div>
+    </div> --}}
     
     
 </div>

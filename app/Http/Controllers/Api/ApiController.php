@@ -214,7 +214,7 @@ class ApiController extends Controller
                     },
                     'specialities' => function ($query) use ($coe_id) {
                         $query->whereHas('coes',function($query) use ($coe_id){
-                            $query->where('coe_id',$coe_id);
+                            $query->where('centre_of_excellences.id',$coe_id);
                         })->select('specialities.id', 'name', 'slug', 'icon_image');
                     },
                 ])->first('id');  
