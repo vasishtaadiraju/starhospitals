@@ -38,7 +38,7 @@ class ApiController extends Controller
 
 
                 }
-            })->select('id', 'name')->take(10)->get();
+            })->select('id', 'name','slug')->take(10)->get();
             return response($user, 200);
         } catch (\Throwable $th) {
             return response($th->getMessage(), 500);

@@ -8,22 +8,25 @@
         @if(count($coes) > 0 || $coes != null)
         
         @foreach ($coes as $coe)
-           <a href="{{route('coe',$coe->slug)}}" class="key-services__card">
-            {!! $coe->icon_image !!}
-
-
-                <p>{{$coe->name}}</p>
-            </a>
+           
             @if (isset($coes->specialities) && count($coes->specialities) > 0)
                     @foreach ($coes->specialities as $speciality)
-                    <a href="{{route('coe',$coe->slug)}}" class="key-services__card">
+                    <a href="{{route('speciality',$coe->slug)}}" class="key-services__card">
                         {!! $coe->icon_image !!}
 
         
                         <p>{{$coe->name}}</p>
                     </a>
                     @endforeach
-            @endif
+
+                    @else
+                    <a href="{{route('speciality',$coe->slug)}}" class="key-services__card">
+                        {!! $coe->icon_image !!}
+            
+            
+                            <p>{{$coe->name}}</p>
+                        </a>
+                    @endif
         @endforeach
         @else
         <div class="key-services__card">

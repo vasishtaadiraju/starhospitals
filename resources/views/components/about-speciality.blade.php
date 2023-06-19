@@ -219,7 +219,7 @@
 @endif
 
 <div class="about-speciality__content__description">
-    @if ($content->page_type == 'Coe')  
+    @if ($content->page_type == 'Coe' || $content->page_type == 'speciality')  
  {!!$content->description!!}
  @elseif($content->page_type == 'Branch') 
  {!!$content->about!!}

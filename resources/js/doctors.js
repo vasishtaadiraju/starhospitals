@@ -319,8 +319,15 @@ document.addEventListener("DOMContentLoaded", () => {
         let branch_id = document.getElementById("location-select-box").value;
         let coe_id = document.getElementById("coe-select-box").value;
         let speciality_id = "";
-        printOptions(document.getElementById("location-select-box"));
-        let body = { branch_id, coe_id, speciality_id };
+        // console.log();
+        // document.getElementsByClassName("location-select-box").forEach(element=>{
+        //     printOptions(this);
+
+        // })
+
+        printOptions(document.getElementsByClassName("location-select-box")[0])
+        printOptions(document.getElementsByClassName("location-select-box")[1])
+        // let body = { branch_id, coe_id, speciality_id };
         $(".specialists-slider").slick("unslick");
 
         document.querySelector(".specialists-slider").innerHTML = "";

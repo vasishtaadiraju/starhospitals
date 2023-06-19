@@ -325,3 +325,4 @@
     </div>
 </div>
 <div class="header-gap"></div>
+<x-floating-buttons/>

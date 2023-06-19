@@ -1,0 +1,122 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+
+
+.floating-btn{
+    position: fixed;
+    z-index: 3500;
+    width: 6.25%;
+    height: 38.22%;
+    right: 0px;
+    top: 43.11%;
+    border-radius: 20px 0px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    @include media('sm-mob')
+    {
+        flex-direction: row;
+        width: 100%;
+        // bottom: 100% !important;
+        right: initial;
+        top: 91%;
+        left: 0;
+        height: 10vh;
+        border-radius: 0px;
+        background-color: #ffff;
+    }
+    @include media('md-mob')
+    {
+        flex-direction: row;
+        width: 100%;
+        // bottom: 100% !important;
+        right: initial;
+        top: 91%;
+        left: 0;
+        height: 10vh;
+        border-radius: 0px;
+        background-color: #ffff;
+    }
+    @include media('lg-mob')
+    {
+        flex-direction: row;
+        width: 100%;
+        // bottom: 100% !important;
+        right: initial;
+        top: 91%;
+        left: 0;
+        height: 10vh;
+        border-radius: 0px;
+        background-color: #ffff;
+    }
+    @include media('x-sm-tab')
+    {
+        flex-direction: row;
+        width: 100%;
+        // bottom: 100% !important;
+        right: initial;
+        top: 91%;
+        left: 0;
+        height: 10vh;
+        border-radius: 0px;
+        background-color: #ffff;
+    }
+    @include media('sm-tab')
+    {
+    width: 10.25%;
+        
+    }
+    @include media('md-tab')
+    {
+    width: 10.25%;
+        
+    }
+    
+    &__item{
+        display: block;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    padding: 0.5em;
+    gap: 0.5em;
+        border-bottom: 1px solid #ffff;
+        background-color: variables.$starhospitals-brand-primary;
+        @include media('sm-mob')
+        {
+            border-right: 1px solid #ffff;
+
+        }
+        @include media('md-mob')
+        {
+            border-right: 1px solid #ffff;
+            
+        }
+        @include media('lg-mob')
+        {
+            border-right: 1px solid #ffff;
+            
+        }
+        @include media('x-sm-tab')
+        {
+            border-right: 1px solid #ffff;
+            
+        }
+        &--hide-b{
+
+            border: none;
+        }
+        span{
+            font-size: 12px;
+            font-family: 'Plus Jakarta Sans Regular';
+            font-weight: 500;
+            color: #ffff;
+        }
+    }
+
+}

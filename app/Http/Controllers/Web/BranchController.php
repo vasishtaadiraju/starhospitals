@@ -12,7 +12,9 @@ class BranchController extends Controller
     {
         $content = Branch::where('status', 'active')->where('slug', $slug)->with([
             'coes' => function ($query) {
-                $query->where('status', 'active')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image')->take(2);
+                $query->where('status', 'active')->with(['specialities'=>function($query){
+                    $query->select('specialities.id','name','slug');
+                }])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image')->take(2);
             },
             'faqs',
             'blogs' => function ($query) {

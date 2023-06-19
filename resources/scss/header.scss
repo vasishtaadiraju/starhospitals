@@ -1,6 +1,7 @@
 @use "utils/variables" as variables;
 @import "utils/utils";
 @import "utils/media-queries";
+@import "floating-buttons";
 $main-header-height: 8rem;
 $fixed-header-height:6rem;
 
