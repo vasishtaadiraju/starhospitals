@@ -198,7 +198,7 @@ class Speciality extends Resource
         return [
             Text::make('Text', 'our_locations_text')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string', 'max:255'),
         ];
     }
 
@@ -207,7 +207,7 @@ class Speciality extends Resource
         return [
             Text::make('Text', 'reviews_text')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string', 'max:255'),
         ];
     }
 
@@ -216,7 +216,7 @@ class Speciality extends Resource
         return [
             Text::make('Text', 'blogs_text')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string', 'max:255'),
         ];
     }
 
@@ -225,7 +225,7 @@ class Speciality extends Resource
         return [
             Text::make('Text', 'media_text')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string', 'max:255'),
         ];
     }
 
@@ -246,7 +246,9 @@ class Speciality extends Resource
 
             Text::make('Slug', 'slug')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:50'),
+                ->rules('nullable', 'string', 'max:100')
+                ->creationRules('unique:specialities,slug')
+                ->updateRules('unique:specialities,slug,{{resourceId}}'),
 
             Text::make('Meta Title', 'meta_title')
                 ->hideFromIndex()

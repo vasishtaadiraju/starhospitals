@@ -76,15 +76,27 @@ class Condition extends Resource
 
             Text::make('Symptoms & Causes Slug', 'symptoms_causes_slug')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:50'),
+                ->rules('nullable', 'string', 'max:50')
+                ->creationRules('unique:conditions,symptoms_causes_slug')
+                ->updateRules('unique:conditions,symptoms_causes_slug,{{resourceId}}'),
 
             Text::make('Diagnosis & Treatment Slug', 'diagnosis_treatment_slug')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:50'),
+                ->rules('nullable', 'string', 'max:50')
+                ->creationRules('unique:conditions,diagnosis_treatment_slug')
+                ->updateRules('unique:conditions,diagnosis_treatment_slug,{{resourceId}}'),
+
+            Text::make('Doctors & Departments Slug', 'doctors_departments_slug')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:50')
+                ->creationRules('unique:conditions,doctors_departments_slug')
+                ->updateRules('unique:conditions,doctors_departments_slug,{{resourceId}}'),
 
             Text::make('Care at Star Hospitals Slug', 'care_at_star_hospitals_slug')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:50'),
+                ->rules('nullable', 'string', 'max:50')
+                ->creationRules('unique:conditions,care_at_star_hospitals_slug')
+                ->updateRules('unique:conditions,care_at_star_hospitals_slug,{{resourceId}}'),
 
             Text::make('Meta Title', 'meta_title')
                 ->hideFromIndex()

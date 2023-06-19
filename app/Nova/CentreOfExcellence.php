@@ -251,7 +251,9 @@ class CentreOfExcellence extends Resource
 
             Text::make('Slug', 'slug')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:50'),
+                ->rules('nullable', 'string', 'max:50')
+                ->creationRules('unique:centre_of_excellences,slug')
+                ->updateRules('unique:centre_of_excellences,slug,{{resourceId]}'),
 
             Text::make('Meta Title', 'meta_title')
                 ->hideFromIndex()

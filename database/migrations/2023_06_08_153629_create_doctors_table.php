@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string('blogs_text')->nullable();
             $table->string('media_text')->nullable();
             $table->string('canonical')->nullable();
-            $table->string('slug')->nullable();
+            $table->string('slug')->nullable()->unique();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->string('schema_name')->nullable();

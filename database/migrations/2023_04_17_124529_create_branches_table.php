@@ -47,7 +47,7 @@ return new class extends Migration
             $table->string('blogs_text')->nullable();
             $table->string('faq_text')->nullable();
             $table->tinyInteger('order_number', false, true)->nullable();
-            $table->string('slug', 50)->nullable();
+            $table->string('slug', 50)->nullable()->unique();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->string('schema_name')->nullable();

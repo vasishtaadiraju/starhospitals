@@ -19,9 +19,10 @@ return new class extends Migration
             $table->text('symptoms_causes')->nullable();
             $table->text('diagnosis_treatment')->nullable();
             $table->text('care_at_star_hospitals')->nullable();
-            $table->string('symptoms_causes_slug', 50)->nullable();
-            $table->string('diagnosis_treatment_slug', 50)->nullable();
-            $table->string('care_at_star_hospitals_slug', 50)->nullable();
+            $table->string('symptoms_causes_slug', 50)->nullable()->unique();
+            $table->string('diagnosis_treatment_slug', 50)->nullable()->unique();
+            $table->string('doctors_departments_slug', 50)->nullable()->unique();
+            $table->string('care_at_star_hospitals_slug', 50)->nullable()->unique();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->enum('status', ['active', 'inactive']);

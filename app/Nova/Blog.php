@@ -112,7 +112,9 @@ class Blog extends Resource
 
             Text::make('Slug', 'slug')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:100'),
+                ->rules('nullable', 'string', 'max:100')
+                ->creationRules('unique:blogs,slug')
+                ->updateRules('unique:blogs,slug,{{resourceId}}'),
 
             Text::make('Meta Title', 'meta_title')
                 ->hideFromIndex()

@@ -124,7 +124,9 @@ class Doctor extends Resource
 
             Text::make('Slug', 'slug')
                 ->hideFromIndex()
-                ->rules('nullable', 'string'),
+                ->rules('nullable', 'string', 'max:255')
+                ->creationRules('unique:doctors,slug')
+                ->updateRules('unique:doctors,slug,{{resourceId}}'),
 
             Text::make('Meta Title', 'meta_title')
                 ->hideFromIndex()

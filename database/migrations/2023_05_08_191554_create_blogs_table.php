@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('banner_mobile');
             $table->string('banner_mobile_alt', 100)->nullable();
             $table->date('published_date');
-            $table->string('slug', 100)->nullable();
+            $table->string('slug', 100)->nullable()->unique();
             $table->string('meta_title')->nullable();
             $table->text('meta_description', 50)->nullable();
             $table->enum('homepage', ['yes', 'no']);

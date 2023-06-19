@@ -78,7 +78,9 @@ class Media extends Resource
 
             Text::make('Slug', 'slug')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:50'),
+                ->rules('nullable', 'string', 'max:50')
+                ->creationRules('unique:media,slug')
+                ->updateRules('unique:media,slug,{{resourceId}}'),
 
             Text::make('Meta Title', 'meta_title')
                 ->hideFromIndex()
