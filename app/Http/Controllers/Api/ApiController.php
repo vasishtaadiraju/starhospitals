@@ -10,6 +10,7 @@ use App\Models\Doctor;
 use App\Models\DoctorOrder;
 use App\Models\Speciality;
 use App\Models\User;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
 
@@ -152,9 +153,9 @@ class ApiController extends Controller
                             }
                         ])->select('specialities.id', 'name');
                     }
-                ])->select('id', 'name', 'slug', 'designation', 'small_image', 'large_image');
+                ])->select('id', 'name', 'slug', 'designation', 'small_image', 'large_image','experience');
             }
-        ])->orderBy('order_number')->where('branch_id', $branch_id);
+        ])->orderBy(DB::raw('ISNULL(order_number), order_number'), 'ASC')->where('branch_id', $branch_id);
 
 
 
@@ -251,7 +252,7 @@ class ApiController extends Controller
             });
         }
 
-        $response = $conditions_query->where('status', 'active')->paginate();
+        $response = $conditions_query->whereNotNull('diagnosis_treatment_slug')->where('status', 'active')->paginate();
 
         return response($response, 200);
 

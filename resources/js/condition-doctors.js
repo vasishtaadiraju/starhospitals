@@ -7,7 +7,6 @@ import BushraUrl from "../images/doctors/doctor.png";
 
 function printLinks(links,previousLink,nextLink,from,to,total)
 {
-console.log(links);
 document.querySelector('.pagination__pages').innerHTML = "";
 if(previousLink == null)
 {
@@ -41,7 +40,6 @@ async function printDoctors(url,body) {
         body
     );
 
-    console.log(response);
     printLinks(response.data.links,response.data.prev_page_url,response.data.next_page_url,response.data.from,response.data.to,response.data.total);
     document
                 .querySelector('.doctor-appointment-cards-wrapper').innerHTML = "";
@@ -120,15 +118,11 @@ async function printOptions(node)
     let branch_id = "";
     let selected_coe_id = node.parentNode.parentNode.querySelector(".coe-select-box").value;
     let selected_branch_id = node.parentNode.parentNode.querySelector(".location-select-box").value;
-    let selected_speciality_id = node.parentNode.parentNode.querySelector(".speciality-select-box").value;
-        console.log(node);
 
     if(type == 'coe')
     {
        coe_id = node.value;
-       console.log(coe_id);
        branch_id = "";
-       console.log(type);
        
     }
     if (type == 'location')
@@ -138,7 +132,6 @@ async function printOptions(node)
     }
 
     let body = {coe_id,branch_id,type};
-    console.log(body);
     // let type = node.parentNode.parentNode.querySelector(".coe-select-box").getAttribute('data-');
     const response = await httpRequest(
         "/api/getBranchCoeSpecialityById",
@@ -146,7 +139,6 @@ async function printOptions(node)
         body
     );
 
-    console.log(response);
 
     if(type == "coe")
     {
@@ -173,25 +165,25 @@ async function printOptions(node)
     if(type == 'location')
     {
         node.parentNode.parentNode.querySelector(".coe-select-box").innerHTML = ``
-        response.data.coes.forEach((result , index) => {
-            let option = `<option value="${result.id}" ${result.id == selected_coe_id ? `selected` : ``}>${result.name}</option>`;
+        // response.data.coes.forEach((result , index) => {
+        //     let option = `<option value="${result.id}" ${result.id == selected_coe_id ? `selected` : ``}>${result.name}</option>`;
 
-            node.parentNode.parentNode.querySelector(".coe-select-box").insertAdjacentHTML("beforeend", option);
-            if (index == 0) {
-                node.parentNode.parentNode.querySelector(
-                    ".speciality-select-box"
-                ).innerHTML = ``;
-                result.specialities.forEach((speciality) => {
-                    let option = `<option value="${speciality.id}" ${
-                        speciality.id == selected_speciality_id ? `selected` : ``
-                    }>${speciality.name}</option>`;
+        //     node.parentNode.parentNode.querySelector(".coe-select-box").insertAdjacentHTML("beforeend", option);
+        //     if (index == 0) {
+        //         node.parentNode.parentNode.querySelector(
+        //             ".speciality-select-box"
+        //         ).innerHTML = ``;
+        //         result.specialities.forEach((speciality) => {
+        //             let option = `<option value="${speciality.id}" ${
+        //                 speciality.id == selected_branch_id ? `selected` : ``
+        //             }>${speciality.name}</option>`;
 
-                    node.parentNode.parentNode
-                        .querySelector(".speciality-select-box")
-                        .insertAdjacentHTML("beforeend", option);
-                });
-            }
-        });
+        //             node.parentNode.parentNode
+        //                 .querySelector(".speciality-select-box")
+        //                 .insertAdjacentHTML("beforeend", option);
+        //         });
+        //     }
+        // });
     }
 
 
@@ -206,7 +198,7 @@ async function printOptions(node)
     ).value;
     let paginate = true;
     // let speciality_id = "";
-    let doctorBody = { coe_id, branch_id, speciality_id,paginate};
+    let doctorBody = { coe_id, branch_id, speciality_id, paginate};
 
         $(".specialists-slider").slick("unslick");
         printDoctors('/api/getDoctorByBranchCoeSpeciality',doctorBody);
@@ -233,7 +225,6 @@ async function handleChange(type) {
 function handlePageClicks(e)
 {
     e.preventDefault();
-    console.log(this.getAttribute('href'));
     let coe_id = document.querySelector(
         ".coe-select-box"
     ).value;
@@ -241,8 +232,12 @@ function handlePageClicks(e)
         ".location-select-box"
     ).value;
     let paginate = true;
-    let speciality_id = "";
-    let body = { coe_id, branch_id, speciality_id,paginate};
+    let speciality_id = node.parentNode.parentNode.querySelector(
+        ".speciality-select-box"
+    ).value;
+    // let speciality_id = "";
+    let condition_id = document.getElementById('condition-value').value;
+    let body = { coe_id, branch_id, speciality_id,condition_id,paginate};
 
         // $(".specialists-slider").slick("unslick");
         printDoctors(this.getAttribute('href'),body);
@@ -253,15 +248,17 @@ function handlePageClicks(e)
 document.addEventListener("DOMContentLoaded", () => {
 
   
-    let coe_id = document.querySelector(
-        ".coe-select-box"
-    ).value;
-    let branch_id = document.querySelector(
-        ".location-select-box"
-    ).value;
-    let paginate = true;
-    let speciality_id = "";
-    let body = { coe_id, branch_id, speciality_id,paginate};
+    // let coe_id = document.querySelector(
+    //     ".coe-select-box"
+    // ).value;
+    // let branch_id = document.querySelector(
+    //     ".location-select-box"
+    // ).value;
+    // let paginate = true;
+    // let speciality_id = document.querySelector(
+    //     ".location-select-box"
+    // ).value;
+    // let body = { coe_id, branch_id, speciality_id,paginate};
     printOptions(document.querySelector(
         ".location-select-box"
     ))
@@ -272,7 +269,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 domSelector(".coe-select-box", "change", handleChange);
 domSelector(".location-select-box", "change", handleChange);
-domSelector(".speciality-select-box", "change", handleChange);
 
 
 domSelector(".pagination__buttons a",'click',handlePageClicks);

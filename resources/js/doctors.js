@@ -311,7 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .getAttribute("data-coe-id");
         }
         let body = { coe_id, branch_id, speciality_id };
-        // printDoctors(body, false, ".banjara-hills-slider");
+        printDoctors(body, false, ".banjara-hills-slider");
         branch_id = 2;
         body = { coe_id, branch_id, speciality_id };
         printDoctors(body, false, ".financial-slider");

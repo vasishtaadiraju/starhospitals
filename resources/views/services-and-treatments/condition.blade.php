@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('css')
-    @vite(['resources/scss/condition.scss', 'resources/js/app.js'])
+    @vite(['resources/scss/condition.scss', 'resources/js/condition.js'])
 @endsection
 @section('content')
     <x-gap />
@@ -8,7 +8,7 @@
         @php
             $slug = "";
         @endphp
-        @if ($content->symptoms_causes != null)
+        {{-- @if ($content->symptoms_causes != null)
             <a href="{{ route('condition', $content->symptoms_causes_slug) }}"
                 class="condition-tabs__wrapper @if ($content->type == 'symptoms') condition-tabs__wrapper--active @endif ">Symptoms
                 & Causes</a>
@@ -17,11 +17,10 @@
                 $slug = $content->symptoms_causes_slug;
                     
                 @endphp
-        @endif
+        @endif --}}
         @if ($content->diagnosis_treatment != null)
             <a href="{{ route('condition', $content->diagnosis_treatment_slug) }}"
-                class="condition-tabs__wrapper @if ($content->type == 'diagnosis') condition-tabs__wrapper--active @endif ">Diagnosis
-                & Treatment</a>
+                class="condition-tabs__wrapper @if ($content->type == 'diagnosis') condition-tabs__wrapper--active @endif ">Overview</a>
                 @php
                 $slug = $content->diagnosis_treatment_slug;
                     
@@ -30,12 +29,12 @@
 
         {{-- <a href="#" class="condition-tabs__wrapper">Diagnosis & Treatment</a> --}}
         
-            <a href="{{ route('department',$slug) }}"
+            <a href="{{ route('department',$content->doctors_departments_slug) }}"
                 class="condition-tabs__wrapper @if ($content->type == 'department') condition-tabs__wrapper--active @endif">Doctors
                 & Departments</a>
         
         @if ($content->care_at_star_hospitals != null)
-            <a href="{{ route('condition', $content->care_at_star_hospitals_slug) }}"
+            <a href="{{ route('care', $content->care_at_star_hospitals_slug) }}"
                 class="condition-tabs__wrapper @if ($content->type == 'care') condition-tabs__wrapper--active @endif">Care
                 at Star Hospitals</a>
                 @php
@@ -69,6 +68,6 @@
     @endif
     
     
-
+    <input type="hidden" id="condition-value" name="" value="{{$content->id}}">
     
 @endsection

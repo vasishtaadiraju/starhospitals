@@ -47,13 +47,15 @@ async function printConditions(url,body) {
                 .querySelector('.conditions-root').innerHTML = "";
     response.data.data.forEach((result) => {
             let slug = "";
+
+           
            if(result.symptoms_causes_slug != null)
            {
             slug  = result.symptoms_causes_slug;
            }
            else if(result.diagnosis_treatment_slug != null)
            {
-            slug  = result.symptoms_causes_slug;
+            slug  = result.diagnosis_treatment_slug ;
            }
            
 
@@ -67,7 +69,7 @@ async function printConditions(url,body) {
              ${result.short_description}
          </p>
 
-         <a href="/condition-treatments/${slug}" class="conditions-root__cards__details__read-more">
+         <a href="/tests-procedures/${slug}" class="conditions-root__cards__details__read-more">
              Read More
          </a>
      </div>

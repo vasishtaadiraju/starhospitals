@@ -13,7 +13,9 @@ class ConditionsController extends Controller
     function index($slug)
     {
       
-        $content = Condition::where('diagnosis_treatment_slug',$slug)->orWhere('symptoms_causes_slug',$slug)->first();
+        $content = Condition::where('diagnosis_treatment_slug',$slug)->orWhere('symptoms_causes_slug',$slug)->orWhere('doctors_departments_slug',$slug)->orWhere('care_at_star_hospitals_slug',$slug)->with(['coes'=>function($query){
+                $query->where('status','active')->select('centre_of_excellences.id','name','slug');
+        }])->first();
 
         $coes = [];
         $branches = [];
@@ -22,10 +24,12 @@ class ConditionsController extends Controller
            
             $content->type = 'diagnosis';
         }
-        else if($content->symptoms_causes_slug == $slug && $content->symptoms_causes != null)
+        else if($content->doctors_departments_slug == $slug)
         {
             
-            $content->type = 'symptoms';
+            $content->type = 'department';
+            $coes = CentreOfExcellence::where('status','active')->get(['id','name']);
+            $branches = Branch::where('status','active')->get(['id','name']);
         }
         else if($content->care_at_star_hospitals_slug == $slug && $content->care_at_star_hospitals != null)
         {
@@ -36,13 +40,6 @@ class ConditionsController extends Controller
             abort(404);
         }
         // dd();
-        if(request()->route()->getName() == 'department')
-        {
-            $content->type = 'department';
-            $coes = CentreOfExcellence::where('status','active')->get(['id','name']);
-            $branches = Branch::where('status','active')->get(['id','name']);
-            
-        }
         return view('services-and-treatments.condition',[
             'content'=>$content,
             'coes'=>$coes,
