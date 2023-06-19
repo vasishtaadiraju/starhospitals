@@ -11,4 +11,24 @@ class DoctorOrder extends Model
     use HasFactory, Actionable;
 
     protected $table = 'doctor_orders';
+
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class, 'doctor_id', 'id');
+    }
+
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class, 'branch_id', 'id');
+    }
+
+    public function coe()
+    {
+        return $this->belongsTo(CentreOfExcellence::class, 'coe_id', 'id');
+    }
+
+    public function speciality()
+    {
+        return $this->belongsTo(Speciality::class, 'speciality_id', 'id');
+    }
 }

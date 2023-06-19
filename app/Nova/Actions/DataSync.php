@@ -29,7 +29,7 @@ class DataSync extends Action
             $coe_ids = DB::table('coe_doctor')->where('doctor_id', $model->id)->pluck('coe_id');
             $speciality_ids = DB::table('doctor_speciality')->where('doctor_id', $model->id)->pluck('speciality_id');
             $testimonial_ids = DB::table('doctor_testimonial')->where('doctor_id', $model->id)->pluck('testimonial_id');
-            $blog_ids = DB::table('doctor_blog')->where('doctor_id', $model->id)->pluck('blog_id');
+            $blog_ids = DB::table('blog_doctor')->where('doctor_id', $model->id)->pluck('blog_id');
             $media_ids = DB::table('doctor_media')->where('doctor_id', $model->id)->pluck('media_id');
 
             foreach ($branch_ids as $branch_id) {
@@ -102,6 +102,22 @@ class DataSync extends Action
                         ]);
                     }
                 }
+
+                if (!(DB::table('coe_speciality')->where('coe_id', $coe_id)->exists())) {
+
+                    foreach ($branch_ids as $branch_id) {
+
+                        if (!(DB::table('doctor_orders')->where('doctor_id', $model->id)->where('branch_id', $branch_id)->where('coe_id', $coe_id)->exists())) {
+                            DB::table('doctor_orders')->insert([
+                                'doctor_id' => $model->id,
+                                'branch_id' => $branch_id,
+                                'coe_id' => $coe_id,
+                                'created_at' => now(),
+                                'updated_at' => now()
+                            ]);
+                        }
+                    }
+                }
             }
 
             foreach ($speciality_ids as $speciality_id) {
@@ -133,6 +149,19 @@ class DataSync extends Action
                         DB::table('media_speciality')->insert([
                             'speciality_id' => $speciality_id,
                             'media_id' => $media_id,
+                            'created_at' => now(),
+                            'updated_at' => now()
+                        ]);
+                    }
+                }
+
+                foreach ($branch_ids as $branch_id) {
+
+                    if (!(DB::table('doctor_orders')->where('doctor_id', $model->id)->where('branch_id', $branch_id)->where('speciality_id', $speciality_id)->exists())) {
+                        DB::table('doctor_orders')->insert([
+                            'doctor_id' => $model->id,
+                            'branch_id' => $branch_id,
+                            'speciality_id' => $speciality_id,
                             'created_at' => now(),
                             'updated_at' => now()
                         ]);

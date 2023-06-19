@@ -6,7 +6,11 @@ use App\Models\Branch;
 use App\Models\CentreOfExcellence;
 use App\Models\Doctor;
 use App\Models\Speciality;
+use App\Nova\Doctor as NovaDoctor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\FormData;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
@@ -48,6 +52,11 @@ class DoctorOrder extends Resource
         return [
             ID::make()->sortable(),
 
+            BelongsTo::make('Doctor', 'doctor')
+                ->withoutTrashed()
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
+
             Select::make('Doctor', 'doctor_id')->options(function () {
                 $doctors = Doctor::where('status', 'active')->get(['id', 'name']);
                 $doctor_pair = [];
@@ -57,40 +66,105 @@ class DoctorOrder extends Resource
                 }
 
                 return $doctor_pair;
-            }),
+            })
+                ->hideFromIndex()
+                ->hideFromDetail(),
 
-            Select::make('Branch', 'branch_id')->options(function () {
-                $branches = Branch::where('status', 'active')->get(['id', 'name']);
-                $branch_pair = [];
+            BelongsTo::make('Branch', 'branch')
+                ->withoutTrashed()
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
 
-                foreach ($branches as $branch) {
-                    $branch_pair[$branch->id] = $branch->name;
-                }
+            // Select::make('Branch', 'branch_id')->options(function () {
+            //     $branches = Branch::where('status', 'active')->get(['id', 'name']);
+            //     $branch_pair = [];
 
-                return $branch_pair;
-            }),
+            //     foreach ($branches as $branch) {
+            //         $branch_pair[$branch->id] = $branch->name;
+            //     }
 
-            Select::make('Centre of Excellence', 'coe_id')->options(function () {
-                $coes = CentreOfExcellence::where('status', 'active')->get(['id', 'name']);
-                $coe_pair = [];
+            //     return $branch_pair;
+            // }),
 
-                foreach ($coes as $coe) {
-                    $coe_pair[$coe->id] = $coe->name;
-                }
+            Select::make('Branch', 'branch_id')
+                ->dependsOn('doctor_id', function (Select $field, NovaRequest $request, FormData $formData) {
+                    $doctor_id = (int) $formData->resource(NovaDoctor::uriKey(), $formData->doctor_id);
+                    $branch_ids = DB::table('branch_doctor')->where('doctor_id', $doctor_id)->pluck('branch_id');
+                    $branches = Branch::whereIn('id', $branch_ids)->where('status', 'active')->get(['id', 'name']);
+                    $branch_pair = [];
 
-                return $coe_pair;
-            }),
+                    foreach ($branches as $branch) {
+                        $branch_pair[$branch->id] = $branch->name;
+                    }
 
-            Select::make('Speciality', 'speciality_id')->options(function () {
-                $specialities = Speciality::where('status', 'active')->get(['id', 'name']);
-                $spciality_pair = [];
+                    $field->options($branch_pair);
+                })
+                ->hideFromIndex()
+                ->hideFromDetail(),
 
-                foreach ($specialities as $spciality) {
-                    $spciality_pair[$spciality->id] = $spciality->name;
-                }
+            BelongsTo::make('Centre of Excellence', 'coe')
+                ->withoutTrashed()
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
 
-                return $spciality_pair;
-            }),
+            // Select::make('Centre of Excellence', 'coe_id')->options(function () {
+            //     $coes = CentreOfExcellence::where('status', 'active')->get(['id', 'name']);
+            //     $coe_pair = [];
+
+            //     foreach ($coes as $coe) {
+            //         $coe_pair[$coe->id] = $coe->name;
+            //     }
+
+            //     return $coe_pair;
+            // }),
+
+            Select::make('Centre of Excellence', 'coe_id')
+                ->dependsOn('doctor_id', function (Select $field, NovaRequest $request, FormData $formData) {
+                    $doctor_id = (int) $formData->resource(NovaDoctor::uriKey(), $formData->doctor_id);
+                    $coe_ids = DB::table('coe_doctor')->where('doctor_id', $doctor_id)->pluck('coe_id');
+                    $coes = CentreOfExcellence::whereIn('id', $coe_ids)->where('status', 'active')->get(['id', 'name']);
+                    $coe_pair = [];
+
+                    foreach ($coes as $coe) {
+                        $coe_pair[$coe->id] = $coe->name;
+                    }
+
+                    $field->options($coe_pair);
+                })
+                ->hideFromIndex()
+                ->hideFromDetail(),
+
+            BelongsTo::make('Speciality', 'speciality')
+                ->withoutTrashed()
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
+
+            // Select::make('Speciality', 'speciality_id')->options(function () {
+            //     $specialities = Speciality::where('status', 'active')->get(['id', 'name']);
+            //     $spciality_pair = [];
+
+            //     foreach ($specialities as $spciality) {
+            //         $spciality_pair[$spciality->id] = $spciality->name;
+            //     }
+
+            //     return $spciality_pair;
+            // }),
+
+            Select::make('Speciality', 'speciality_id')
+                ->dependsOn('doctor_id', function (Select $field, NovaRequest $request, FormData $formData) {
+                    $doctor_id = (int) $formData->resource(NovaDoctor::uriKey(), $formData->doctor_id);
+                    $speciality_ids = DB::table('doctor_speciality')->where('doctor_id', $doctor_id)->pluck('speciality_id');
+                    $specialities = Speciality::whereIn('id', $speciality_ids)->where('status', 'active')->get(['id', 'name']);
+                    $speciality_pair = [];
+
+                    foreach ($specialities as $speciality) {
+                        $speciality_pair[$speciality->id] = $speciality->name;
+                    }
+
+                    $field->options($speciality_pair);
+                })
+                ->hideFromIndex()
+                ->hideFromDetail(),
 
             Number::make('Order Number', 'order_number')
                 ->min(1)
