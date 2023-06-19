@@ -16,7 +16,7 @@
 <x-gap/>
 <div class="ui-background">
 
-<x-faqs :$about :$faqs/>
+<x-faqs :content="$about"  :$faqs/>
 </div>
 {{-- <x-gap/> --}}
 
