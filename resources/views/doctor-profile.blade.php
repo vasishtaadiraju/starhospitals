@@ -64,9 +64,7 @@
             </div>
 
             <div class="d-p-info__appointment-wrapper">
-                <a target="_blank" href="https://api.starhs.in/patient-portal/doctors/info/{{$branch_slug == 'financial-district' ? `nanakramguda` : $branch_slug}}/{{
-                    $content->his_id
-                }}" class="d-p-info__appointment-wrapper__btn">
+                <a target="_blank" href="https://api.starhs.in/patient-portal/doctors/info/@if($branch_slug == 'financial-district'){{'nanakramguda'}}@else{{$branch_slug}}@endif/{{$content->his_id}}" class="d-p-info__appointment-wrapper__btn">
                     <img src="" data-src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
                     <span>Book a Physical Consultation</span>
                 </a>
