@@ -49,6 +49,6 @@ Route::get('/locations/{slug}',[BranchController::class,'index'])->name('branch'
 Route::get('/international-patient',[InternationalPatientController::class,'index'])->name('international_patient');
 Route::get('/career',[CareerController::class,'index'])->name('career');
 Route::get('/doctors/{branch_slug}/{speciality_slug}/{slug}',[DoctorController::class,'index'])->name('doctor');
-Route::get('/doctor/book-a-video-consultation/{slug}',[DoctorController::class,'videoConsultation'])->name('doctor.book-video-consultation');
+Route::get('/doctors/book-a-video-consultation/{slug}',[DoctorController::class,'videoConsultation'])->name('doctor.book-video-consultation');
 
 
