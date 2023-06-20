@@ -56,7 +56,7 @@
                 <div class="form-fields">
                     <div class="form-fields-wrapper form-fields-wrapper--col-2">
                         <div class="form-fields-wrapper ">
-                            <input type="text"
+                            <input type="text" placeholder="Name"
                                 class="@error('name')
                             error-field
                         @enderror"
@@ -68,7 +68,7 @@
                     </div>
                     <div class="form-fields-wrapper form-fields-wrapper--col-2">
                         <div class="form-fields-wrapper ">
-                            <input
+                            <input placeholder="Phone Number"
                                 type="text"class="@error('contact')
                             error-field
                         @enderror"
@@ -83,7 +83,7 @@
                 <div class="form-fields">
                     <div class="form-fields-wrapper form-fields-wrapper--col-2">
                         <div class="form-fields-wrapper ">
-                            <input
+                            <input placeholder="Email"
                                 type="text"class="@error('email')
                             error-field
                         @enderror"
@@ -95,7 +95,7 @@
                     </div>
                     <div class="form-fields-wrapper form-fields-wrapper--col-2">
                         <div class="form-fields-wrapper ">
-                            <input
+                            <input placeholder="Subject"
                                 type="text"class="@error('subject')
                             error-field
                         @enderror"
@@ -109,7 +109,7 @@
                 <div class="form-fields">
                     <div class="form-fields-wrapper form-fields-wrapper--col-1">
                         <div class="form-fields-wrapper ">
-                            <textarea placeholder="Type your Message"
+                            <textarea placeholder="Write your Message"
                                 type="text"class="@error('message')
                             error-field
                         @enderror"

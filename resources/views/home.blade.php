@@ -41,7 +41,7 @@
 <x-gap/>
 <x-media :$content :$media /> --}}
 <x-gap/>
-<x-consultation-request/>
+<x-consultation-request :$coes />
 @endsection
 
 

@@ -761,7 +761,22 @@
                 @enderror
                 <div class="form-input">
                     <select class="form-input__field form-input__field--w-1" name="department" type="text">
-                        <option value="">Department</option>
+                      <option value="">Speciality</option>
+                      @foreach ($coes as $item)
+                          @if (count($item->specialities) > 0)
+                              
+                          <optgroup label="{{$item->name}}">
+
+                              @foreach ($item->specialities as $speciality)
+                                  <option value="{{$speciality->name}}">{{$speciality->name}}</option>
+                              @endforeach
+                          </optgroup>
+                          @else
+
+                          <option value="{{$item->name}}">{{$item->name}}</option>
+                          @endif
+                          
+                      @endforeach
                     </select>
                 </div>
                 @error('department')

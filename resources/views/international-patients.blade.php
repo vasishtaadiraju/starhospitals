@@ -23,7 +23,7 @@
 {{-- <x-testimonials :$content   :testimonials=[]/>
 <x-gap/> --}}
 {{-- <div class="ui-background"> --}}
-<x-int-enquiry-form :$content />
+<x-int-enquiry-form :$content :$coes/>
 {{-- </div> --}}
 <x-gap/>
 <x-faqs :$content :faqs='$faqs'/> 

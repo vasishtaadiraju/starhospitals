@@ -11,11 +11,12 @@ class IntEnquiryForm extends Component
     /**
      * Create a new component instance.
      */
-    public $content;
+    public $content, $coes;
 
-    public function __construct($content)
+    public function __construct($content, $coes)
     {
         $this->content = $content;
+        $this->coes = $coes;
     }
 
     /**

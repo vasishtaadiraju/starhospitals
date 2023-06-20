@@ -105,9 +105,24 @@
                             <select placeholder="Speciality"
                                 type="text"class="@error('department')
                             error-field
-                        @enderror"
+                                 @enderror"
                                 name="department"> 
-                                
+                                <option value="">Speciality</option>
+                                @foreach ($coes as $item)
+                                    @if (count($item->specialities) > 0)
+                                        
+                                    <optgroup label="{{$item->name}}">
+
+                                        @foreach ($item->specialities as $speciality)
+                                            <option value="{{$speciality->name}}">{{$speciality->name}}</option>
+                                        @endforeach
+                                    </optgroup>
+                                    @else
+
+                                    <option value="{{$item->name}}">{{$item->name}}</option>
+                                    @endif
+                                    
+                                @endforeach
                             </select>
                             @error('name')
                                 <span class="error-message">{{ $message }}</span>

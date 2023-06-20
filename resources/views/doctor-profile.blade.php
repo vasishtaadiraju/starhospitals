@@ -70,10 +70,14 @@
                     <img src="" data-src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
                     <span>Book a Physical Consultation</span>
                 </a>
-                <a class="d-p-info__appointment-wrapper__btn">
+
+                @if ($content->video_consultation == 'yes')
+                <a href="/doctors/book-a-video-consultation" class="d-p-info__appointment-wrapper__btn">
                     <img src="#" data-src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
                     <span>Book a Video Consultation</span>
-                </a>
+                </a>   
+                @endif
+                
             </div>
 
         </div>
