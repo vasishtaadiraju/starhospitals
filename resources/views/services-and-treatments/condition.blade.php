@@ -70,7 +70,7 @@
     <x-doctors :type="'flex'" :$branches  :$coes/>
     @endif
     
-    
+    <x-gap/>
     <input type="hidden" id="condition-value" name="" value="{{$content->id}}">
     
 @endsection

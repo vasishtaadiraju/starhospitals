@@ -4,8 +4,8 @@
             {{-- {{ config('variables.asset') . $content->description_image }} --}}
             <img class="" src=""
                 data-src=" @if ($content->page_type == 'Coe' || $content->page_type == 'speciality') {{ config('variables.asset') . $content->description_image }}
-        @elseif($content->page_type == 'Branch') {{ config('variables.asset') . $content->about_image }} @endif"
-                alt="{{ $content->about_image_alt }}">
+        @elseif($content->page_type == 'Branch') {{ config('variables.asset') . $content->about_image_desktop }} @endif"
+                alt="{{ $content->about_image_desktop_alt }}">
                 <svg class="about-speciality__image-wrapper__dot-right" width="115" height="75" viewBox="0 0 115 75"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="62.5" cy="2.5" r="2.5" fill="#004E9E" />
