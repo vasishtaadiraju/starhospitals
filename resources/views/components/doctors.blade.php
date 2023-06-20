@@ -6,7 +6,7 @@
     @else
     doctor-slide
     @endif">
-        <div class="doctors-card">
+        {{-- <div class="doctors-card">
             <a href="" class="doctors-card__lt">
                 <img src="" data-src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">
                 <div class="doctors-card__lt__details">
@@ -197,7 +197,7 @@
                     <span>Book an Appointment</span>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 <x-gap/>

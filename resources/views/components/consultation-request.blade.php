@@ -61,7 +61,7 @@
                 <div class="form-fields">
                     <div class="form-fields-wrapper form-fields-wrapper--col-2">
                         <div class="form-fields-wrapper ">
-                            <input type="text"
+                            <input placeholder="Name" type="text"
                                 class="@error('name')
                             error-field
                         @enderror"
@@ -76,7 +76,7 @@
                 <div class="form-fields">
                     <div class="form-fields-wrapper form-fields-wrapper--col-2">
                         <div class="form-fields-wrapper ">
-                            <input
+                            <input placeholder="Email"
                                 type="text"class="@error('email')
                             error-field
                         @enderror"
@@ -88,12 +88,12 @@
                     </div>
                     <div class="form-fields-wrapper form-fields-wrapper--col-2">
                         <div class="form-fields-wrapper ">
-                            <input
-                                type="text"class="@error('mobile')
+                            <input placeholder="Phone Number"
+                                type="text"class="@error('contact')
                             error-field
                         @enderror"
                                 name="contact">
-                            @error('mobile')
+                            @error('contact')
                                 <span class="error-message">{{ $message }}</span>
                             @enderror
                         </div>
@@ -102,11 +102,13 @@
                 <div class="form-fields">
                     <div class="form-fields-wrapper form-fields-wrapper--col-2">
                         <div class="form-fields-wrapper ">
-                            <input
+                            <select placeholder="Speciality"
                                 type="text"class="@error('department')
                             error-field
                         @enderror"
-                                name="department">
+                                name="department"> 
+                                
+                            </select>
                             @error('name')
                                 <span class="error-message">{{ $message }}</span>
                             @enderror
@@ -115,7 +117,7 @@
                     <div class="form-fields-wrapper form-fields-wrapper--col-2">
                         <div class="form-fields-wrapper ">
                             <input
-                                type="text"class="@error('date')
+                                type="date"class="@error('date')
                             error-field
                         @enderror"
                                 name="date">

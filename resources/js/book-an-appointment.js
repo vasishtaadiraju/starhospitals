@@ -112,7 +112,7 @@ async function printDoctors(url,body) {
          <p class="doctors-card__rt__speciality"><a href="">${coeName.toString()}</a></p>
          <p class="doctors-card__rt__location"> <a href="">${branchName.toString()}</a></p>
 
-         <a href="https://api.starhs.in/patient-portal/doctors/info/${branch_slug}/${
+         <a href="https://api.starhs.in/patient-portal/doctors/info/${branch_slug == 'financial-district' ? `nanakramguda` : `${branch_slug}`}/${
             result.doctor.his_id
         }" class="doctors-card__rt__btn">
          <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
