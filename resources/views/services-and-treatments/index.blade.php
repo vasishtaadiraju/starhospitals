@@ -4,6 +4,7 @@
 @endsection
 @section('content')
 <x-gap/>
+<x-heading :title="'Treatments & Procedures'" :description="''"/>
 
 {{-- =======================================================Filters ========================================== --}}
 <div class="filter">

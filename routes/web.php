@@ -39,7 +39,7 @@ Route::post('/',[FormController::class,'homeForm'])->name('home.form');
 Route::post('/contact',[FormController::class,'contactForm'])->name('contact.form');
 
 // ======================================Services and Treatment ============================
-Route::get('/condition-treatments/landing',[ConditionsController::class, 'landingPage']);
+Route::get('/condition-treatments',[ConditionsController::class, 'landingPage'])->name('condition.landing');
 Route::get('/tests-procedures/{slug}',[ConditionsController::class, 'index'])->name('condition');
 Route::get('/doctors-departments/{slug}',[ConditionsController::class, 'index'])->name('department');
 Route::get('/care-at-star-hospitals/{slug}',[ConditionsController::class, 'index'])->name('care');

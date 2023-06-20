@@ -4,6 +4,8 @@
 @endsection
 @section('content')
     {{-- <x-banner/> --}}
+<x-banner :imgurl="'condition'" :text="$content->name" :$breadcrum/>
+
     <x-gap />
     <div class="condition-tabs condition-tabs-slider ">
         @php

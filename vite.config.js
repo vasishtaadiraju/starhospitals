@@ -11,6 +11,7 @@ export default defineConfig({
                 'resources/scss/international-patients.scss',
                 'resources/scss/about.scss',
                 'resources/scss/contact.scss',
+                'resources/scss/condition.scss',
                 'resources/scss/career.scss',
                 'resources/scss/find-doctor.scss',
                 'resources/scss/branch.scss',

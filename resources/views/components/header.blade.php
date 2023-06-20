@@ -115,7 +115,8 @@
                     <a href="#">Doctors</a>
                 </li>
                 <li class="header__nav__option">
-                    <a href="#">Procedures</a>
+                    <a href="{{route('condition.landing')}}">Treatments & Procedures</a>
+
                 </li>
                 <li class="header__nav__option">
                     <a href="{{ route('international_patient') }}">International Patients</a>
@@ -282,7 +283,7 @@
                 <a href="#">Doctors</a>
             </li>
             <li class="header__nav__option">
-                <a href="#">Procedures</a>
+                <a href="{{route('condition.landing')}}">Treatments & Procedures</a>
             </li>
             <li class="header__nav__option">
                 <a href="{{ route('international_patient') }}">International Patients</a>

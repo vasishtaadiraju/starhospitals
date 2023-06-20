@@ -45,11 +45,16 @@ class ConditionsController extends Controller
         else{
             abort(404);
         }
-        // dd();
+        $breadcrum = "<div class='banner__breadcrum'>
+    <a href='#'>Home</a>
+    <span>❯</span>
+    <a href='#'>{$content->name}</a>
+</div>";
         return view('services-and-treatments.condition',[
             'content'=>$content,
             'coes'=>$coes,
             'branches'=>$branches,
+            'breadcrum'=>$breadcrum
         ]);
     }
 
