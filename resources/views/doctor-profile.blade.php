@@ -64,14 +64,16 @@
             </div>
 
             <div class="d-p-info__appointment-wrapper">
-                <div class="d-p-info__appointment-wrapper__btn">
-                    <img src="#" data-src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
+                <a target="_blank" href="https://api.starhs.in/patient-portal/doctors/info/{{$branch_slug == 'financial-district' ? `nanakramguda` : $branch_slug}}/{{
+                    $content->his_id
+                }}" class="d-p-info__appointment-wrapper__btn">
+                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
                     <span>Book a Physical Consultation</span>
-                </div>
-                <div class="d-p-info__appointment-wrapper__btn">
+                </a>
+                <a class="d-p-info__appointment-wrapper__btn">
                     <img src="#" data-src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
                     <span>Book a Video Consultation</span>
-                </div>
+                </a>
             </div>
 
         </div>

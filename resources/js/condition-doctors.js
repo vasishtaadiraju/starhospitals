@@ -116,12 +116,14 @@ async function printDoctors(url,body) {
          </svg>
              <span>Book a Physical Consultation</span>
          </a>
-         <a href="/doctors/book-a-video-consultation/${result.doctor.slug}" class="doctors-card__rt__btn">
-         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-         <path d="M7.14702 0V2H13.2446V0H15.2771V2H19.3421C19.9034 2 20.3584 2.44772 20.3584 3V19C20.3584 19.5523 19.9034 20 19.3421 20H1.04946C0.488203 20 0.0332031 19.5523 0.0332031 19V3C0.0332031 2.44772 0.488203 2 1.04946 2H5.1145V0H7.14702ZM18.3259 10H2.06572V18H18.3259V10ZM6.13076 12V14H4.09824V12H6.13076ZM11.2121 12V14H9.17954V12H11.2121ZM16.2934 12V14H14.2608V12H16.2934ZM5.1145 4H2.06572V8H18.3259V4H15.2771V6H13.2446V4H7.14702V6H5.1145V4Z" fill="#E3000F"/>
-         </svg>
+         ${result.doctor.video_consultation == 'yes' ? `<a href="/doctors/book-a-video-consultation" class="doctors-card__rt__btn">
+               
+             <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.2283 7.25L15.2771 5V11L12.2283 8.75V11H5.1145V5H12.2283V7.25ZM3.85721 14H18.3259V2H2.06572V15.3851L3.85721 14ZM4.56018 16L0.0332031 19.5V1C0.0332031 0.44772 0.488203 0 1.04946 0H19.3421C19.9034 0 20.3584 0.44772 20.3584 1V15C20.3584 15.5523 19.9034 16 19.3421 16H4.56018Z" fill="#E3000F"/>
+</svg>
+
              <span>Book a Video Consultation</span>
-         </a>
+         </a>` : ``}
      </div>
  </div>`
             document

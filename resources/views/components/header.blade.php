@@ -1,8 +1,8 @@
-<marquee style="position: fixed" width="100%" behavior="scroll" bgcolor="#E3000F">  
-    <span><b style="color: #fff; font-weight: 600 !important;font-family:'Plus Jakarta Sans';font-size:14px">Please note that STAR Hospitals does not accept online payments and will never ask for an OTP over phone. Please make all payments directly at the hospital.</b></span>
+
+<marquee style="position: fixed" width="100%"  behavior="scroll" bgcolor="#E3000F">  
+    <span><b style="color: #fff; font-weight: 400 !important;font-family:'Plus Jakarta Sans';font-size:12px">Please note that STAR Hospitals does not accept online payments and will never ask for an OTP over phone. Please make all payments directly at the hospital.</b></span>
     </marquee>
 <div class="header">
-    
     <div class="header__main">
         
         <div class="header__main__card header__main__card--logo">

@@ -105,6 +105,9 @@ $fixed-header-height: 6rem;
         -webkit-transition: height 0.5s;
         -moz-transition: height 0.5s;
         transition: height 0.5s;
+        // padding-top: 1em;
+        // margin-top: 1em;
+        
         @include media("sm-mob") {
             @include fixed-header;
             width: 100%;

@@ -66,38 +66,38 @@ class DoctorController extends Controller
     }
 
 
-    function videoConsultation($slug)
+    function videoConsultation()
     {
-        $content = Doctor::where('status', 'active')->where('slug', $slug)->with([
-            'coes' => function ($query) {
-                $query->with([
-                    'specialities' => function ($query) {
-                        $query->where('status', 'active')->select('specialities.id', 'name');
-                    }
-                ])->select('centre_of_excellences.id', 'name');
-            },
-            'branches' => function ($query) {
-                $query->select('name');
-            },
-            'specialities' => function ($query) {
-                $query->where('status', 'active')->with([
-                    'coes' => function ($query) {
-                        $query->select('centre_of_excellences.id')->pluck('centre_of_excellences.id');
-                    }
-                ])->select('specialities.id', 'name');
-            }
-        ])->first();
+        // $content = Doctor::where('status', 'active')->where('slug', $slug)->with([
+        //     'coes' => function ($query) {
+        //         $query->with([
+        //             'specialities' => function ($query) {
+        //                 $query->where('status', 'active')->select('specialities.id', 'name');
+        //             }
+        //         ])->select('centre_of_excellences.id', 'name');
+        //     },
+        //     'branches' => function ($query) {
+        //         $query->select('name');
+        //     },
+        //     'specialities' => function ($query) {
+        //         $query->where('status', 'active')->with([
+        //             'coes' => function ($query) {
+        //                 $query->select('centre_of_excellences.id')->pluck('centre_of_excellences.id');
+        //             }
+        //         ])->select('specialities.id', 'name');
+        //     }
+        // ])->first();
 
 
-        $breadcrum = "<div class='banner__breadcrum banner__breadcrum--blue'>
+        $breadcrum = "<div class='banner__breadcrum banner__breadcrum--blue' style='margin-top:1.5rem;margin-left:5%;font-family:Plus Jakarta Sans;font-size:13px'>
     <a href='#'>Home</a>
     <span>❯</span>
     <a href='#'>Doctor</a>
     <span>❯</span>
-    <a href='#'>{$content->name}</a>
+    <a href='#'>Book a Video Consultation</a>
 </div>";
         return view('book-an-appointment.video-consultation', [
-            'content' => $content,
+            // 'content' => $content,
             'breadcrum' => $breadcrum,
         ]);
     }

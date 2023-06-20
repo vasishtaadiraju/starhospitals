@@ -153,7 +153,7 @@ class ApiController extends Controller
                             }
                         ])->select('specialities.id', 'name','slug');
                     }
-                ])->select('id', 'name', 'slug', 'designation', 'small_image', 'large_image','experience','fee','his_id');
+                ])->select('id', 'name', 'slug', 'designation', 'small_image', 'large_image','experience','fee','his_id','video_consultation');
             }
         ])->orderBy(DB::raw('ISNULL(order_number), order_number'), 'ASC')->where('branch_id', $branch_id);
 
