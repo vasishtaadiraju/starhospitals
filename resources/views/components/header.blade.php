@@ -120,9 +120,9 @@
                 <li class="header__nav__option">
                     <a href="{{ route('international_patient') }}">International Patients</a>
                 </li>
-                <li class="header__nav__option">
+                {{-- <li class="header__nav__option">
                     <a href="#">Health Checkups</a>
-                </li>
+                </li> --}}
                 <li class="header__nav__option header__nav__option--dropdown">
                     <a href="#centre-of-excellences">Locations</a>
                     <ul class="header__nav__option--dropdown__options">
@@ -287,9 +287,9 @@
             <li class="header__nav__option">
                 <a href="{{ route('international_patient') }}">International Patients</a>
             </li>
-            <li class="header__nav__option">
+            {{-- <li class="header__nav__option">
                 <a href="#">Health Checkups</a>
-            </li>
+            </li> --}}
             <li class="header__nav__option header__nav__option--dropdown">
                 <a href="#">Locations</a>
                 <ul class="header__nav__option--dropdown__options">
