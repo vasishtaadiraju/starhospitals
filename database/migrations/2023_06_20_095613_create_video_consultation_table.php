@@ -11,14 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('international_patient_enquiry_form', function (Blueprint $table) {
+        Schema::create('video_consultation', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('country_code');
+            $table->string('firstname', 100);
+            $table->string('lastname', 100);
+            $table->string('guardian_name');
+            $table->string('country_code', 10);
             $table->string('contact', 20);
             $table->string('email', 150);
-            $table->string('department', 100);
-            $table->string('report');
+            $table->string('branch');
+            $table->string('coe');
+            $table->string('speciality');
+            $table->string('doctor');
+            $table->date('date');
             $table->timestamps();
         });
     }
@@ -28,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('international_patient_enquiry_form');
+        Schema::dropIfExists('video_consultation');
     }
 };
