@@ -45,6 +45,7 @@
     float: left;
     gap: 0.5em;
     background-color: white;
+
     @content;
     img , svg {
         // padding: 0.25em;
@@ -58,6 +59,7 @@
         color: variables.$starhospitals-text-tertiary;
         width: 100%;
         height: 80%;
+        min-height: 2rem;
         background: none;
 
     }

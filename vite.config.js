@@ -23,6 +23,7 @@ export default defineConfig({
                 'resources/js/branch.js',
                 'resources/js/speciality.js',
                 'resources/js/condition.js',
+                'resources/js/condition-landing.js',
                 'resources/js/about.js',
                 'resources/js/int-patients.js',
                 ],

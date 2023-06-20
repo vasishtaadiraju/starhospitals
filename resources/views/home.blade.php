@@ -32,13 +32,14 @@
 {{-- <x-testimonials :$content  :testimonials='$reviews'/> --}}
 <x-testimonials-secondary :$content  :testimonials='$reviews'/>
 
-<x-gap/>
+{{-- <x-gap/> --}}
+{{-- 
 <div class="ui-background">
 
 <x-blogs :$content :$blogs/>
 </div>
 <x-gap/>
-<x-media :$content :$media />
+<x-media :$content :$media /> --}}
 <x-gap/>
 <x-consultation-request/>
 @endsection

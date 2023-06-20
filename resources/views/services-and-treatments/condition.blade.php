@@ -3,6 +3,7 @@
     @vite(['resources/scss/condition.scss', 'resources/js/condition.js'])
 @endsection
 @section('content')
+    {{-- <x-banner/> --}}
     <x-gap />
     <div class="condition-tabs condition-tabs-slider ">
         @php

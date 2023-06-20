@@ -28,7 +28,13 @@ class ConditionsController extends Controller
         {
             
             $content->type = 'department';
-            $coes = CentreOfExcellence::where('status','active')->get(['id','name']);
+            $coes = CentreOfExcellence::whereHas('conditions',function ($query) use($content){
+                $query->where('conditions.id',$content->id);
+            })->where('status','active')->with(['specialities'=>function ($query) use($content){
+                $query->where('specialities.id',$content->id)->where('status','active');
+            },])->get(['id','name']);
+
+            // return response($coes);
             $branches = Branch::where('status','active')->get(['id','name']);
         }
         else if($content->care_at_star_hospitals_slug == $slug && $content->care_at_star_hospitals != null  && request()->route()->getName() == 'care')

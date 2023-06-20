@@ -18,7 +18,7 @@
         <div class="about__content">
             <h2 class="about__content__heading section-heading">About Star Hospitals</h2>
             <p>{!!$content->about_description!!}</p>
-            <a href="#" class="about__content__read-more">Learn More</a>
+            <a href="{{ route('about') }}" class="about__content__read-more">Learn More</a>
         </div>
     </div>
 </div>

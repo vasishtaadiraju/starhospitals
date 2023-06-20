@@ -22,14 +22,15 @@
 {{-- <x-testimonials />
      --}}
      <x-testimonials-secondary :$content   :testimonials='$content->testimonials'/>
-<x-gap/>
+ <x-gap/>
+ {{--
 <div class="ui-background">
 
 <x-blogs :$content :blogs='$content->blogs'/>
 </div>
 <x-gap/>
 <x-media :$content :media='$content->media'/> 
-<x-gap/>
+<x-gap/> --}}
 <div class="ui-background">
 
 <x-faqs :$content :faqs='$content->faqs'/> 

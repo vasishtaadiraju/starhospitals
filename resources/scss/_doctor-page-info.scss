@@ -331,7 +331,31 @@
         //     font-size: 12px !important;
         // }
     }
-
+    &__selectbox{
+        input , select{
+            min-height: 50px;
+            border: 1.7px solid #e0e0e0;
+            background-color: #fafafa;
+            border-radius: 10px;
+            width: 50%;
+            padding: 0px 1em;
+            outline: none;
+            font-family: 'Plus Jakarta Sans';
+        }
+    
+    
+        select{
+            -webkit-appearance: none;
+        -moz-appearance: none;
+        position: relative;
+        background: transparent;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0007 13.1714L16.9505 8.22168L18.3647 9.63589L12.0007 15.9999L5.63672 9.63589L7.05094 8.22168L12.0007 13.1714Z' fill='black'/%3E%3C/svg%3E%0A") !important;
+        background-repeat: no-repeat !important;
+        background-size: 25px;
+        background-position: calc(100% - 1em) !important;
+        padding-right: 2em !important;
+        }
+    }
     &__btn-wrapper {
         display: flex;
         gap: 2em;

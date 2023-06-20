@@ -33,6 +33,11 @@ class CentreOfExcellence extends Model
         return $this->belongsToMany(Speciality::class, 'coe_speciality', 'coe_id', 'speciality_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 
+    public function conditions()
+    {
+        return $this->belongsToMany(Condition::class, 'coe_condition', 'coe_id', 'condition_id', 'id', 'id')->withTimestamps();
+    }
+
     public function faqs()
     {
         return $this->belongsToMany(FAQ::class, 'coe_faq', 'coe_id', 'faq_id', 'id', 'id')->withPivot('order_number')->withTimestamps();

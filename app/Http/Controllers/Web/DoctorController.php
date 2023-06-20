@@ -8,10 +8,16 @@ use Illuminate\Http\Request;
 
 class DoctorController extends Controller
 {
-    function index($slug)
+    function index($branch_slug,$speciality_slug,$slug)
     {
-
-        $content = Doctor::where('status', 'active')->where('slug', $slug)->with([
+        // dd($branch_slug);
+        $content = Doctor::where('status', 'active')->where('slug', $slug)->whereHas('branches', function ($query) use ($branch_slug) {
+            $query->where('branches.slug', $branch_slug);
+            })->whereHas('specialities', function ($query) use ($speciality_slug) {
+                            $query->where('specialities.slug', $speciality_slug);
+                        })->orWhereHas('coes', function ($query) use ($speciality_slug) {
+                            $query->where('centre_of_excellences.slug', $speciality_slug);
+                        })->with([
             'coes' => function ($query) {
                 $query->with([
                     'specialities' => function ($query) {
@@ -20,7 +26,7 @@ class DoctorController extends Controller
                 ])->select('centre_of_excellences.id', 'name');
             },
             'branches' => function ($query) {
-                $query->select('name');
+                $query->select('name','slug');
             },
             'specialities' => function ($query) {
                 $query->where('status', 'active')->with([
@@ -40,6 +46,10 @@ class DoctorController extends Controller
             }
         ])->first();
 
+        if($content == null)
+        {
+            abort(404); 
+        }
         $breadcrum = "<div class='banner__breadcrum banner__breadcrum--blue'>
     <a href='#'>Home</a>
     <span>❯</span>
@@ -50,6 +60,8 @@ class DoctorController extends Controller
         return view('doctor-profile', [
             'content' => $content,
             'breadcrum' => $breadcrum,
+            'branch_slug' => $branch_slug,
+            'speciality_slug' => $speciality_slug,
         ]);
     }
 

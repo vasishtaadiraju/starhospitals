@@ -24,5 +24,6 @@ Route::post('/getDoctorByBranchCoeSpeciality',[ApiController::class , 'getDoctor
 Route::post('/getCoeSpeciality',[ApiController::class , 'getCoeSpeciality']);
 Route::post('/getBranchCoeSpecialityById',[ApiController::class , 'getBranchCoeSpecialityById']);
 Route::post('/getConditionsByCOESpeciality',[ApiController::class , 'getConditionsByCOESpeciality']);
+Route::post('/getCOESpecilityBranchByCondition',[ApiController::class , 'getCOESpecilityBranchByCondition']);
 
 

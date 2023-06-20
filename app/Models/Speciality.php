@@ -32,7 +32,10 @@ class Speciality extends Model
     {
         return $this->belongsToMany(CentreOfExcellence::class, 'coe_speciality', 'speciality_id', 'coe_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
-
+    public function conditions()
+    {
+        return $this->belongsToMany(Condition::class, 'condition_speciality', 'speciality_id', 'condition_id', 'id', 'id')->withTimestamps();
+    }
     public function faqs()
     {
         return $this->belongsToMany(FAQ::class, 'faq_speciality', 'speciality_id', 'faq_id', 'id', 'id')->withPivot('order_number')->withTimestamps();

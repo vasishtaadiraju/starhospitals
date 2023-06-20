@@ -27,6 +27,7 @@ class Branch extends Model
     {
         return $this->belongsToMany(CentreOfExcellence::class, 'branch_coe', 'branch_id', 'coe_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
+    
 
     public function specialities()
     {

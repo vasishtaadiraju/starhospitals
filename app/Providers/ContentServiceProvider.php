@@ -22,7 +22,9 @@ class ContentServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->menu_coes = CentreOfExcellence::where('status','active')->orderBy('order_number')->with('specialities')->get(['id','name','slug','icon_image']);
+        $this->menu_coes = CentreOfExcellence::where('status','active')->orderBy('order_number')->with(['specialities'=>function($query){
+            $query->where('status','active')->orderByPivot('coe_speciality.order_number');
+        }])->get(['id','name','slug','icon_image']);
         $this->menu_branches = Branch::where('status','active')->orderBy('order_number')->get(['id','name','slug']);
 
         view()->composer('layout.main', function($view) {
@@ -38,6 +40,9 @@ class ContentServiceProvider extends ServiceProvider
             $view->with(['coes' => $this->menu_coes,'branches'=>$this->menu_branches]);
         });
         view()->composer('coe', function($view) {
+            $view->with(['coes' => $this->menu_coes]);
+        });
+        view()->composer('international-patients', function($view) {
             $view->with(['coes' => $this->menu_coes]);
         });
     }

@@ -6,7 +6,7 @@
 <x-banner :imgurl="config('variables.asset') .$content->banner_desktop" :text="$content->banner_text" :$breadcrum/>
 <x-int-highlight :$content/>
 <x-gap/>
-<x-key-services :coes='[]' />
+<x-key-services :coes='$coes' />
  <x-gap/>
 {{--<x-int-reviews/> --}}
 <div class="ui-background">
@@ -20,11 +20,11 @@
 <x-facilities :$content />
 </div>
 <x-gap/>
-<x-testimonials :$content   :testimonials=[]/>
-<x-gap/>
-<div class="ui-background">
+{{-- <x-testimonials :$content   :testimonials=[]/>
+<x-gap/> --}}
+{{-- <div class="ui-background"> --}}
 <x-int-enquiry-form :$content />
-</div>
+{{-- </div> --}}
 <x-gap/>
 <x-faqs :$content :faqs='$faqs'/> 
 <x-gap/>

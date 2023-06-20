@@ -141,19 +141,19 @@ class ApiController extends Controller
                             'specialities' => function ($query) {
                                 $query->where('status', 'active')->select('specialities.id', 'name');
                             }
-                        ])->select('centre_of_excellences.id', 'name');
+                        ])->select('centre_of_excellences.id', 'name','slug');
                     },
                     'branches' => function ($query) {
-                        $query->select('name');
+                        $query->select('branches.id','name','slug');
                     },
                     'specialities' => function ($query) {
                         $query->where('status', 'active')->with([
                             'coes' => function ($query) {
                                 $query->select('centre_of_excellences.id')->pluck('centre_of_excellences.id');
                             }
-                        ])->select('specialities.id', 'name');
+                        ])->select('specialities.id', 'name','slug');
                     }
-                ])->select('id', 'name', 'slug', 'designation', 'small_image', 'large_image','experience');
+                ])->select('id', 'name', 'slug', 'designation', 'small_image', 'large_image','experience','fee');
             }
         ])->orderBy(DB::raw('ISNULL(order_number), order_number'), 'ASC')->where('branch_id', $branch_id);
 
@@ -266,7 +266,7 @@ class ApiController extends Controller
         }
 
         if ($speciality_id != null) {
-            $conditions_query->whereHas('specialities', function ($query) use ($coe_id) {
+            $conditions_query->whereHas('specialities', function ($query) use ($speciality_id) {
                 $query->where('specialities.id', $speciality_id);
             });
         }
@@ -275,5 +275,86 @@ class ApiController extends Controller
 
         return response($response, 200);
 
+    }
+
+    function getCOESpecilityBranchByCondition(Request $request)
+    {
+        $branch_id = $request->branch_id;
+        $coe_id = $request->coe_id;
+        $condition_id = $request->condition_id;
+        $type = $request->type;
+        $response = [];
+        if ($type == 'coe' && $coe_id != null) {
+            $response = CentreOfExcellence::whereHas('conditions',function($query) use ($condition_id){
+                $query->where('conditions.id',$condition_id);
+            })->where('status', 'active')->where('id', $coe_id)->with([
+                'branches' => function ($query) {
+                    $query->where('status', 'active')->orderBy('branches.order_number')->select('branches.id', 'name', 'slug')->take(2);
+                },
+                'specialities' => function ($query) {
+                    $query->select('specialities.id', 'name', 'slug', 'icon_image');
+                },
+            ])->first('id');
+        } elseif ($type == 'location' && $branch_id != null) {
+
+            if($coe_id != null)
+            {
+                $response = Branch::where('status', 'active')->where('id', $branch_id)->with([
+                    'coes' => function ($query) use ($condition_id){
+                        $query->whereHas('conditions',function($query) use ($condition_id){
+                            $query->where('conditions.id',$condition_id);
+                        })->where('status', 'active')->with(['specialities'=>function($query) use ($condition_id){
+                            $query->whereHas('conditions',function($query) use ($condition_id){
+                                $query->where('conditions.id',$condition_id);
+                            })->where('status', 'active')->select('specialities.id','name','slug');
+                        }])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+                    },
+                    'specialities' => function ($query) use ($coe_id) {
+                        $query->whereHas('coes',function($query) use ($coe_id){
+                            $query->where('centre_of_excellences.id',$coe_id);             
+
+                        })->select('specialities.id', 'name', 'slug', 'icon_image');
+                    },
+                ])->first('id');  
+            }
+            else
+            {
+                $response = Branch::where('status', 'active')->where('id', $branch_id)->with([
+                    'coes' => function ($query) use ($condition_id) {
+                        $query->whereHas('conditions',function($query) use ($condition_id){
+                            $query->where('conditions.id',$condition_id);
+                        })->where('status', 'active')->with(['specialities'=>function($query) use ($condition_id){
+                            $query->whereHas('conditions',function($query) use ($condition_id){
+                                $query->where('conditions.id',$condition_id);
+                            })->where('status', 'active')->select('specialities.id','name','slug');
+                        }])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+                    },
+                    // 'specialities' => function ($query) {
+                    //     $query->select('specialities.id', 'name', 'slug', 'icon_image');
+                    // },
+                ])->first('id');
+            }
+            
+
+
+        } elseif ($type == 'coe' && $coe_id == null) {
+            $response = CentreOfExcellence::whereHas('conditions',function($query) use ($condition_id){
+                $query->where('condition.id',$condition_id);
+            })->where('status', 'active')->with([
+                'branches' => function ($query) {
+                    $query->where('status', 'active')->orderBy('branches.order_number')->select('branches.id', 'name', 'slug')->take(2);
+                }
+            ])->first('id');
+        } elseif ($type == 'location' && $branch_id == null) {
+            $response = Branch::whereHas('conditions',function($query) use ($condition_id){
+                $query->where('condition.id',$condition_id);
+            })->where('status', 'active')->with([
+                'coes' => function ($query) {
+                    $query->where('status', 'active')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+                }
+            ])->first('id');
+        }
+
+            return response($response,200);
     }
 }

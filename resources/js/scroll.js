@@ -5,4 +5,4 @@ domSelector('.scroll-to-view','click',function(e) {
     let section = document.querySelector(element);
     ;console.log(section); 
     section.scrollIntoView(false);
-})
+})  

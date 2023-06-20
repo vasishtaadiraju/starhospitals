@@ -1,6 +1,16 @@
 import "./utils/event-handler";
 import { httpRequest } from "./utils/event-handler";
+import.meta.glob([
+    '../images/**',
+    '../fonts/**',
+  ]);
+import "./app";
+import './bootstrap';
+import './header.js';
+import './slider';
 
+import './footer';
+import "./condition-doctors";
 import BushraUrl from "../images/doctors/doctor.png";
 
 

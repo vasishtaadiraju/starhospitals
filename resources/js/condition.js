@@ -7,7 +7,4 @@ import './bootstrap';
 import './header.js';
 import './slider';
 
-import './footer';
-
-import "./condition-landing";
 import "./condition-doctors";

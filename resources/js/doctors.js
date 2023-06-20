@@ -18,30 +18,45 @@ async function printDoctors(body, selectBox, className) {
         } else {
             let coeName = [];
             let branchName = [];
+            let branch_slug = "";
+            let speciality_slug = "";
+            // let coe_slug = "";
 
             result.doctor.coes.forEach((coe, index) => {
                 if (coe.specialities.length == 0) {
-                    coeName.push(`<a href="#"> ${coe.name}</a> |`);
+                    coeName.push(`<a href="#"> ${coe.name}</a> ${index != result.doctor.specialities.length -1  ? `,` : ``} `);
+                    if(coe.id == body.coe_id)
+                    {
+                        speciality_slug = coe.slug;
+                    }
                 } else {
                     result.doctor.specialities.forEach((speciality, index) => {
+                        if(speciality.id == body.speciality_id)
+                    {
+                        speciality_slug = speciality.slug;
+                    }
                         if (
                             !coeName.includes(
-                                `<a href="#"> ${speciality.name} , </a>`
+                                `<a href="#"> ${speciality.name} ${index != result.doctor.specialities.length -1 ? `,` : ``} </a>`
                             )
                         ) {
                             coeName.push(
-                                `<a href="#"> ${speciality.name} , </a>`
+                                `<a href="#"> ${speciality.name} ${index != result.doctor.specialities.length -1  ? `,` : ``} </a>`
                             );
                         }
                     });
                 }
             });
-            result.doctor.branches.forEach((branch) => {
-                branchName.push(`<a href="#"> ${branch.name}</a>`);
+            result.doctor.branches.forEach((branch,index) => {
+                if(branch.id == body.branch_id)
+                {
+                    branch_slug = branch.slug;
+                }
+                branchName.push(`<a href="#"> ${branch.name}</a> ${index != result.doctor.branches.length -1  ? `,` : ``} `);
             });
             //
             let doctorCard = `<div class="doctors-card doctors-card--primary">
-        <a href="/doctor/${
+        <a href="/doctors/${branch_slug}/${speciality_slug}/${
             result.doctor.slug
         }"><img class="doctors-card--primary__doctor-img" style="width:100%" src="${
                 import.meta.env.VITE_ASSET_URL
@@ -49,7 +64,7 @@ async function printDoctors(body, selectBox, className) {
  
          <div class="doctors-card--primary__content">
          <div class="doctors-card--primary__info">
-             <h4><a href="/doctor/${result.doctor.slug}">${
+             <h4><a href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}">${
                 result.doctor.name
             }</a></h4>
             <p class="doctors-card--primary__designation"><a href=""> ${
@@ -60,7 +75,7 @@ async function printDoctors(body, selectBox, className) {
              <p class="doctors-card--primary__location">${branchName.toString()}</p>
      </div>
              <div class="doctors-card--primary__button-wrapper" >
-             <a href="/doctor/${
+             <a href="/doctors/${branch_slug}/${speciality_slug}/${
                  result.doctor.slug
              }" class="doctors-card__rt__btn">
                 
@@ -70,7 +85,7 @@ async function printDoctors(body, selectBox, className) {
 
                  <span>Book a Physical Consultation</span>
              </a>
-             <a href="/doctor/book-a-video-consultation/${
+             <a href="/doctors/book-a-video-consultation/${
                  result.doctor.slug
              }" class="doctors-card__rt__btn">
                
@@ -231,7 +246,7 @@ async function printOptions(node) {
             }
         });
 
-        if(response.data.specialities.length > 0){
+        if(response.data.specialities != undefined && response.data.specialities.length > 0){
             node.parentNode.parentNode.querySelector(
                 ".speciality-select-box"
             ).innerHTML = ``;

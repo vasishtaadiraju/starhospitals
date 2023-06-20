@@ -52,6 +52,17 @@
                 @endif
             </div>
 
+            <div class="d-p-info__selectbox">
+                <select name="location" id="change-location-box">
+                    @foreach ($content->branches as $branch)
+                    <option data-url="{{route('doctor',[$branch->slug,$speciality_slug,$content->slug])}}" value="{{ $branch->slug }}" @if ($branch->slug == $branch_slug)
+                        selected
+                    @endif>{{ $branch->name }}</option>
+                    
+                    @endforeach
+                </select>
+            </div>
+
             <div class="d-p-info__appointment-wrapper">
                 <div class="d-p-info__appointment-wrapper__btn">
                     <img src="#" data-src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
@@ -355,12 +366,12 @@
 
 
 
-    <x-blogs :$content :blogs='$content->blogs' />
+    {{-- <x-blogs :$content :blogs='$content->blogs' />
     <x-gap />
     <div class="ui-background">
 
         <x-media :$content :media='$content->media' />
-    </div>
+    </div> --}}
 
   
 

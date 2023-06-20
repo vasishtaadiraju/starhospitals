@@ -174,7 +174,7 @@
             </a>
         </div>
         <div class="header__main__card header__main__card--mob-hide header__main--fixed--hide">
-            <p>Request a Call Back</p>
+            <p> <a href="#request-a-callback" class="scroll-to-view">Request a Call Back</a> </p>
         </div>
         <div class="header__main__card header__main__card--social header__main__card--mob-hide header__main--fixed--hide">
             {{-- <p>Get a Second Medical Opinion</p> --}}
