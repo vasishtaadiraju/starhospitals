@@ -40,8 +40,13 @@ class ConditionsController extends Controller
             $branches = Branch::where('status','active')->get(['id','name']);
 
             $faqs = FAQ::whereHas('conditions',function($query) use ($content){
-                $query->where('condition_id',$content->id);
+                $query->where('conditions.id',$content->id);
             })->get();
+
+            if($faqs == null)
+            {
+                $faqs = [];
+            }
         }
         else if($content->care_at_star_hospitals_slug == $slug && $content->care_at_star_hospitals != null  && request()->route()->getName() == 'care')
         {
