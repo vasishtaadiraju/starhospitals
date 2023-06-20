@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('firstname', 100);
             $table->string('lastname', 100);
             $table->string('guardian_name');
-            $table->string('country_code', 10);
+            $table->integer('country_code');
             $table->string('contact', 20);
             $table->string('email', 150);
             $table->string('branch');
