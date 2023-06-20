@@ -3,6 +3,12 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\HospitalTalkToDoctor;
+use App\Jobs\InternationalToHospital;
+use App\Jobs\RequestCallbackToHospital;
+use App\Jobs\RequestCallbackToUser;
+use App\Jobs\VideoConsultationToHospital;
+use App\Jobs\VideoConsultationToUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
@@ -29,6 +35,9 @@ class FormController extends Controller
       'updated_at' => now()
     ]);
 
+    // dispatch(new RequestCallbackToHospital($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('department'), $request->input('date')))->delay(now()->addMinute());
+    // dispatch(new RequestCallbackToUser($request->input('email')))->delay(now()->addMinute());
+
     return redirect()->route('home')->with('success', 'Request submitted successfully!!');
   }
 
@@ -51,6 +60,9 @@ class FormController extends Controller
       'created_at' => now(),
       'updated_at' => now()
     ]);
+
+    // dispatch(new HospitalTalkToDoctor($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('speciality'), $request->input('message')))->delay(now()->addMinute());
+    // dispatch(new RequestCallbackToUser($request->input('email')))->delay(now()->addMinute());
 
     return redirect()->route('coe')->with('success', 'Request submitted successfully!!');
   }
@@ -102,6 +114,9 @@ class FormController extends Controller
       'updated_at' => now()
     ]);
 
+    // dispatch(new InternationalToHospital($request->input('name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('department'), $request->input('report')))->delay(now()->addMinute());
+    // dispatch(new RequestCallbackToUser($request->input('email')))->delay(now()->addMinute());
+
     return redirect()->route('international_patient')->with('success', 'Request submitted successfully!!');
   }
 
@@ -136,6 +151,9 @@ class FormController extends Controller
       'created_at' => now(),
       'updated_at' => now()
     ]);
+
+    // dispatch(new VideoConsultationToHospital($request->input('firstname'), $request->input('lastname'), $request->input('guardian_name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('branch'), $request->input('coe'), $request->input('speciality'), $request->input('doctor'), $request->input('date')))->delay(now()->addMinute());
+    // dispatch(new VideoConsultationToUser($request->input('email')))->delay(now()->addMinute());
 
     return redirect()->route('home')->with('success', 'Request submitted successfully!!');
   }
