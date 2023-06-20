@@ -111,7 +111,7 @@ class FormController extends Controller
       'firstname' => 'required|string|max:100',
       'lastname' => 'required|string|max:100',
       'guardian_name' => 'required|string|max:255',
-      'country_code' => 'required|string|max:10',
+      'country_code' => 'required|integer|numeric',
       'contact' => 'required|string|max:20',
       'email' => 'required|string|email:rfc,strict,dns,filter|max:150',
       'branch' => 'required|string|max:255',
