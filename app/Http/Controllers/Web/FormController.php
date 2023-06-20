@@ -13,7 +13,7 @@ class FormController extends Controller
   {
     $request->validate([
       'name' => 'required|string|max:255',
-      'mobile' => 'required|string|max:20',
+      'contact' => 'required|string|max:20',
       'email' => 'required|string|email:rfc,strict,dns,filter|max:150',
       'department' => 'required|string|max:100',
       'date' => 'required|date',
