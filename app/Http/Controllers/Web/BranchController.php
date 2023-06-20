@@ -13,7 +13,7 @@ class BranchController extends Controller
         $content = Branch::where('status', 'active')->where('slug', $slug)->with([
             'coes' => function ($query) {
                 $query->where('status', 'active')->with(['specialities'=>function($query){
-                    $query->select('specialities.id','name','slug');
+                    $query->select('specialities.id','name','slug','icon_image');
                 }])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image')->take(2);
             },
             'faqs',
@@ -27,6 +27,8 @@ class BranchController extends Controller
                 $query->where('status', 'active')->orderBy('branch_testimonial.order_number');
             }
         ])->first();
+
+        // return response($content);
 
         // return response($content);
         if ($content == null) {
