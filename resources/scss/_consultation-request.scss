@@ -267,6 +267,7 @@
             display: flex;
             justify-content: space-between;
             margin: 2em 0px;
+            // flex-direction: column;
             @include media('sm-mob')
             {
                 flex-direction: column;
@@ -349,6 +350,7 @@
             @include font-family(400);
             font-size: 12px;
             color: variables.$starhospitals-text-secondary;
+            margin-top: 2em;
         }
     }
 }

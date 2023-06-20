@@ -75,8 +75,8 @@ async function printDoctors(body, selectBox, className) {
              <p class="doctors-card--primary__location">${branchName.toString()}</p>
      </div>
              <div class="doctors-card--primary__button-wrapper" >
-             <a href="/doctors/${branch_slug}/${speciality_slug}/${
-                 result.doctor.slug
+             <a href="https://api.starhs.in/patient-portal/doctors/info/${branch_slug}/${
+                 result.doctor.his_id
              }" class="doctors-card__rt__btn">
                 
                  <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">

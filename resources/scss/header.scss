@@ -3,7 +3,7 @@
 @import "utils/media-queries";
 @import "floating-buttons";
 $main-header-height: 8rem;
-$fixed-header-height:6rem;
+$fixed-header-height: 6rem;
 
 @mixin dropdown-Options-wrapper() {
     display: none;
@@ -134,17 +134,16 @@ $fixed-header-height:6rem;
         &__card {
             // flex: 0 0 calc(50% / 4);
 
-            &--social{
+            &--social {
                 // border: 1px solid blue;
-                    display:     flex;
-                    align-items: center; 
-                    
-                    
-                    .footer__social-icons{
-                        margin: 0px;
-                        align-items: center;
-                    }
-                   }
+                display: flex;
+                align-items: center;
+
+                .footer__social-icons {
+                    margin: 0px;
+                    align-items: center;
+                }
+            }
             @include media("sm-mob") {
                 flex: 0 0 calc(50% / 2);
             }
@@ -191,15 +190,14 @@ $fixed-header-height:6rem;
                 }
 
                 &--fixed {
-
                     img {
-                        width: 80% ;
+                        width: 80%;
                         height: 100%;
                     }
                 }
             }
             &--emergency {
-                flex:0 0 calc(60%/4);
+                flex: 0 0 calc(60% / 4);
                 @include media("sm-mob") {
                     flex: 0 0 40%;
                 }
@@ -222,10 +220,8 @@ $fixed-header-height:6rem;
                     flex: 0 0 20%;
                     margin-right: 1.5em;
                 }
-                @include media('x-sm-desktop')
-                {
+                @include media("x-sm-desktop") {
                     flex: 0 0 18%;
-                    
                 }
                 div {
                     display: flex;
@@ -269,16 +265,13 @@ $fixed-header-height:6rem;
                             @include font-family(700);
                             font-size: 16px;
                             @include media("sm-mob") {
-                            font-size: 11px;
-                                
+                                font-size: 11px;
                             }
                             @include media("md-mob") {
-                            font-size: 11px;
-                                
+                                font-size: 11px;
                             }
                             @include media("lg-mob") {
-                            font-size: 11px;
-                                
+                                font-size: 11px;
                             }
                         }
                     }
@@ -363,10 +356,11 @@ $fixed-header-height:6rem;
             padding: 0em 7.5%;
             z-index: 3500;
             height: $fixed-header-height;
-            @include media('x-sm-desktop')
-            {
+            box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
+            -webkit-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
+            -moz-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
+            @include media("x-sm-desktop") {
                 width: 110%;
-                
             }
             &--logo {
                 width: 80% !important;
@@ -552,7 +546,7 @@ $fixed-header-height:6rem;
                     color: black;
                 }
                 @include media("lg-tab") {
-                   font-size: 14px;
+                    font-size: 14px;
                 }
             }
 
@@ -570,6 +564,9 @@ $fixed-header-height:6rem;
                     transform-origin: top center;
                     z-index: 3000;
                     padding: 1em 0px;
+                    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
+                    -webkit-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
+                    -moz-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
                     @include media("sm-mob") {
                         top: 100%;
                         position: relative;
@@ -609,7 +606,7 @@ $fixed-header-height:6rem;
                             // border-radius: 10px;
                             transition: all 1s;
                             margin-top: 0.25em;
-                            
+
                             @include dropdown-link;
                             @include media("sm-mob") {
                                 padding: 1em;
@@ -645,8 +642,7 @@ $fixed-header-height:6rem;
                     @include dropdown-arrow;
                     transform: rotate(90deg);
                     color: #ffff;
-                    
-                    
+
                     @include media("sm-mob") {
                         transform: rotate(0deg);
                         color: black;
@@ -684,7 +680,6 @@ $fixed-header-height:6rem;
                         right: 5%;
                     }
                 }
-                
             }
 
             &--nested-dropdown {
@@ -693,9 +688,7 @@ $fixed-header-height:6rem;
                 &::after {
                     @include dropdown-arrow;
                     transform: rotate(90deg);
-                    
-                    
-                    
+
                     @include media("sm-mob") {
                         transform: rotate(0deg);
                         color: black;
@@ -734,10 +727,9 @@ $fixed-header-height:6rem;
                     }
                 }
 
-                &:hover{
+                &:hover {
                     &::after {
                         color: white;
-
                     }
                 }
                 ul {
@@ -749,6 +741,9 @@ $fixed-header-height:6rem;
                     z-index: -1;
                     padding: 0.5em 0px;
                     border-radius: 5px;
+                    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
+                    -webkit-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
+                    -moz-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
                     @include media("sm-mob") {
                         position: initial;
                         padding-left: 1em;
@@ -783,10 +778,10 @@ $fixed-header-height:6rem;
                     transform: rotate(0deg);
                     // color: black;
 
-                    &:hover{
+                    &:hover {
                         color: white;
                     }
-                    
+
                     @include media("sm-mob") {
                         right: 5%;
                         top: 6%;
@@ -823,26 +818,23 @@ $fixed-header-height:6rem;
             // padding: 5em 0px;
             z-index: 3500;
             margin-left: -7%;
-            @include media('lg-tab')
-            {
-            flex: 0 0 98%;
+            @include media("lg-tab") {
+                flex: 0 0 98%;
 
                 font-size: 12px;
                 margin-left: -10%;
-
             }
             a {
                 color: black;
 
-                @include media('lg-tab')
-                {
+                @include media("lg-tab") {
                     font-size: 12px;
                     // margin-left: 2em;
                 }
             }
 
-            .header__nav__option--dropdown{
-                &::after{
+            .header__nav__option--dropdown {
+                &::after {
                     color: black;
                 }
             }

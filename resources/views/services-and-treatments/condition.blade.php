@@ -68,6 +68,9 @@
 
     @else
     <x-doctors :type="'flex'" :$branches  :$coes/>
+    <x-gap/>
+<x-faqs :$content :faqs='$content->faqs'/> 
+
     @endif
     
     <x-gap/>

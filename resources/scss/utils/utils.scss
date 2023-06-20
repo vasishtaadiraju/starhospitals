@@ -178,7 +178,7 @@ input,select{
     }
 
     .error-field{
-        border: 1px solid red !important;
+        border: 0.7px solid red !important;
     }
 .gap{
     height: 5rem;
@@ -433,5 +433,78 @@ p{
     {
         font-size: 14px;
         
+    }
+}
+
+
+
+// =============================== form fields ====================
+
+.form-fields {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.form-submit-button {
+    min-height: 52px;
+    min-width: 137px;
+    // width: 137;
+    border-radius: 10px;
+    padding: 16px 40px 16px 40px;
+    border: none;
+    background-color: variables.$starhospitals-brand-secondary;
+    color: #ffff;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 700;   
+    margin-top: 3.5rem;
+    margin-left: 50%;
+    transform: translate(-50%);
+
+}
+.form-fields-wrapper {
+    margin-top: 1rem;
+    input , select , textarea{
+        min-height: 50px;
+        border: 0.7px solid #e0e0e0;
+        background-color: #fafafa;
+        border-radius: 10px;
+        width: 100%;
+        padding: 0px 1em;
+        outline: none;
+        font-family: 'Plus Jakarta Sans';
+    }
+
+    textarea{
+        min-height: 5rem;
+    }
+
+
+    select{
+        -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    background: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0007 13.1714L16.9505 8.22168L18.3647 9.63589L12.0007 15.9999L5.63672 9.63589L7.05094 8.22168L12.0007 13.1714Z' fill='black'/%3E%3C/svg%3E%0A") !important;
+    background-repeat: no-repeat !important;
+    background-size: 25px;
+    background-position: calc(100% - 1em) !important;
+    padding-right: 2em !important;
+    }
+
+    &--col-0 {
+        flex: 1;
+
+        margin-left: 7%;
+    }
+    &--col-1 {
+        flex: 0 0 calc(100% / 1);
+    }
+
+    &--col-2 {
+        flex: 0 0 calc(93% / 2);
+    }
+    &--col-3 {
+        flex: 0 0 calc(93% / 3);
     }
 }

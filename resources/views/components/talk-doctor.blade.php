@@ -5,29 +5,82 @@
     <div class="talk-doctor__form-wrapper">
         <div class="talk-doctor__form-wrapper__content">
             <h2 class="section-heading" >Talk to a {{$content->name}} Doctor</h2>
-            <form action="">
-                <div class="talk-doctor-form">
-                    <div class="form-input">
-                        <input class="form-input__field form-input__field--w-2" type="text" placeholder="Name">
-                        <input class="form-input__field form-input__field--w-2" type="text" placeholder="Phone Number">
+            <form action="/talkToDoctor" method="post">
+                @csrf
+                
+                <div class="form-fields">
+                    <div class="form-fields-wrapper form-fields-wrapper--col-2">
+                        <div class="form-fields-wrapper ">
+                            <input placeholder="Name"
+                                type="text"class="@error('name')
+                            error-field
+                        @enderror"
+                                name="name">
+                            @error('name')
+                                <span class="error-message">{{ $message }}</span>
+                            @enderror
+                        </div>
                     </div>
-                    <div class="form-input">
-                        
-                        <select class="form-input__field form-input__field--w-1" name="" id="" disabled>
-                            
-                            <option value="{{$content->id}}"selected >{{$content->name}}</option>
-                                
-                            
-                        </select>
-                    </div>
-                    <div class="form-input" id="consult-our-expert">
-                        <textarea name="" class="form-input__field form-input__field--w-1" id="" cols="30" rows="10" placeholder="Type Your Message"></textarea>
-                    </div>
-    
-                    <div class="form-input">
-                        <button class="contact-us__form__submit talk-doctor__submit">Submit</button>
+                    <div class="form-fields-wrapper form-fields-wrapper--col-2">
+                        <div class="form-fields-wrapper ">
+                            <input placeholder="Phone Number"
+                                type="text"  class="@error('contact')
+                            error-field
+                        @enderror"
+                                name="contact">
+                            @error('contact')
+                                <span class="error-message">{{ $message }}</span>
+                            @enderror
+                        </div>
                     </div>
                 </div>
+                <div class="form-fields">
+                    <div class="form-fields-wrapper form-fields-wrapper--col-1">
+                        <div class="form-fields-wrapper ">
+                            <input placeholder="Email"
+                                type="text"class="@error('email')
+                            error-field
+                        @enderror"
+                                name="email">
+                            @error('email')
+                                <span class="error-message">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-fields">
+                    <div class="form-fields-wrapper form-fields-wrapper--col-1">
+                        <div class="form-fields-wrapper ">
+                            <input
+                                type="text"class="@error('department')
+                            error-field
+                        @enderror"
+                                name="department" value="{{$content->name}}" disabled>
+                            @error('department')
+                                <span class="error-message">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="form-fields">
+                    <div class="form-fields-wrapper form-fields-wrapper--col-1">
+                        <div class="form-fields-wrapper ">
+                            <textarea placeholder="Type your Message"
+                                type="text"class="@error('message')
+                            error-field
+                        @enderror"
+                                name="message"> </textarea>
+                            @error('name')
+                                <span class="error-message">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    
+                </div>
+                <button class="form-submit-button">Submit</button>
             </form>
         </div>
         

@@ -36,90 +36,32 @@
 
         <div class="contact-us__form">
             <h2 class="section-heading">Contact Us</h2>
-            <form action="/contactForm" method="post">
-                @csrf
+            <form action="">
                 <div class="form-input contact-us__form__radio">
                     <div class="form-input__radio form-input__field--w-3">
-                        <input class="form-input__field" id="feedback" name="type" type="radio" checked>
-                        <label for="feedback">Feedback</label>
+                        <input class="form-input__field" name="enquiry-type" type="radio" checked>
+                        <label for="">Feedback</label>
                     </div>
                     <div class="form-input__radio form-input__field--w-3">
-                        <input class="form-input__field" id="complaint" name="type" type="radio">
-                        <label for="complaint">Complaint</label>
+                        <input class="form-input__field" name="enquiry-type" type="radio">
+                        <label for="">Complaint</label>
                     </div>
                     <div class="form-input__radio form-input__field--w-3">
-                        <input class="form-input__field" id="enquiry" name="type" type="radio">
-                        <label for="enquiry">Enquiry</label>
+                        <input class="form-input__field" name="enquiry-type" type="radio">
+                        <label for="">Enquiry</label>
                     </div>
                     
                 </div>
-                <div class="form-fields">
-                    <div class="form-fields-wrapper form-fields-wrapper--col-2">
-                        <div class="form-fields-wrapper ">
-                            <input type="text"
-                                class="@error('name')
-                            error-field
-                        @enderror"
-                                name="name">
-                            @error('name')
-                                <span class="error-message">{{ $message }}</span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="form-fields-wrapper form-fields-wrapper--col-2">
-                        <div class="form-fields-wrapper ">
-                            <input
-                                type="text"class="@error('contact')
-                            error-field
-                        @enderror"
-                                name="contact">
-                            @error('contact')
-                                <span class="error-message">{{ $message }}</span>
-                            @enderror
-                        </div>
-                    </div>
-
+                <div class="form-input">
+                    <input class="form-input__field form-input__field--w-2" placeholder="Name" type="text">
+                    <input class="form-input__field form-input__field--w-2" placeholder="Phone number" type="text">
                 </div>
-                <div class="form-fields">
-                    <div class="form-fields-wrapper form-fields-wrapper--col-2">
-                        <div class="form-fields-wrapper ">
-                            <input
-                                type="text"class="@error('email')
-                            error-field
-                        @enderror"
-                                name="email">
-                            @error('email')
-                                <span class="error-message">{{ $message }}</span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="form-fields-wrapper form-fields-wrapper--col-2">
-                        <div class="form-fields-wrapper ">
-                            <input
-                                type="text"class="@error('subject')
-                            error-field
-                        @enderror"
-                                name="subject">
-                            @error('subject')
-                                <span class="error-message">{{ $message }}</span>
-                            @enderror
-                        </div>
-                    </div>
+                <div class="form-input">
+                    <input class="form-input__field form-input__field--w-2" placeholder="Email" type="text">
+                    <input class="form-input__field form-input__field--w-2" placeholder="Subject" type="text">
                 </div>
-                <div class="form-fields">
-                    <div class="form-fields-wrapper form-fields-wrapper--col-1">
-                        <div class="form-fields-wrapper ">
-                            <textarea placeholder="Type your Message"
-                                type="text"class="@error('message')
-                            error-field
-                        @enderror"
-                                name="message"> </textarea>
-                            @error('name')
-                                <span class="error-message">{{ $message }}</span>
-                            @enderror
-                        </div>
-                    </div>
-                    
+                <div class="form-input">
+                    <textarea name="" class="form-input__field form-input__field--w-1" id="" placeholder="Write your message" cols="30" rows="10"></textarea>
                 </div>
 
                 <div class="form-input">

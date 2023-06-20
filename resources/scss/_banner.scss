@@ -34,8 +34,13 @@
             display: none;
         }
 
-        background-image: linear-gradient(to right,variables.$starhospitals-brand-primary ,rgba(0, 79, 158, 0.705));
+        // background-image: linear-gradient(to right,variables.$starhospitals-brand-primary ,rgba(0, 79, 158, 0.705));
+        background: linear-gradient(to right,hsla(231, 85%, 24%, 1) 0%, hsla(214, 92%, 47%, 1) 100%, );
 
+        background: -moz-linear-gradient(to right,hsla(231, 85%, 24%, 1) 0%, hsla(214, 92%, 47%, 1) 100%, );
+        
+        background: -webkit-linear-gradient(to right,hsla(231, 85%, 24%, 1) 0%, hsla(214, 92%, 47%, 1) 100%);
+        
         .banner__content{
             background-color: transparent;
         }

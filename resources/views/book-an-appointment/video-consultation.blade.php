@@ -58,7 +58,7 @@
         </div>
         <div class="video-consultation__col-2">
             <div class="video-consultation__col-2__form-wrapper">
-<form action="">
+            <form action="">
 
                 <div class="form-fields">
                     <div class="form-fields-wrapper form-fields-wrapper--col-2">

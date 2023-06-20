@@ -27,6 +27,11 @@ class FAQ extends Model
         return $this->belongsToMany(CentreOfExcellence::class, 'coe_faq', 'faq_id', 'coe_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 
+    public function conditions()
+    {
+        return $this->belongsToMany(Condition::class, 'condition_faq', 'faq_id', 'condition_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+    }
+
     public function specialities()
     {
         return $this->belongsToMany(Speciality::class, 'faq_speciality', 'faq_id', 'speciality_id', 'id', 'id')->withPivot('order_number')->withTimestamps();

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Branch;
 use App\Models\CentreOfExcellence;
 use App\Models\Condition;
+use App\Models\FAQ;
 use Illuminate\Http\Request;
 
 class ConditionsController extends Controller
@@ -19,6 +20,7 @@ class ConditionsController extends Controller
 
         $coes = [];
         $branches = [];
+        $faqs = [];
         if($content->diagnosis_treatment_slug == $slug && $content->diagnosis_treatment != null && request()->route()->getName() == 'condition')
         {
            
@@ -36,6 +38,10 @@ class ConditionsController extends Controller
 
             // return response($coes);
             $branches = Branch::where('status','active')->get(['id','name']);
+
+            $faqs = FAQ::whereHas('conditions',function($query) use ($content){
+                $query->where('condition_id',$content->id);
+            })->get();
         }
         else if($content->care_at_star_hospitals_slug == $slug && $content->care_at_star_hospitals != null  && request()->route()->getName() == 'care')
         {
@@ -54,7 +60,8 @@ class ConditionsController extends Controller
             'content'=>$content,
             'coes'=>$coes,
             'branches'=>$branches,
-            'breadcrum'=>$breadcrum
+            'breadcrum'=>$breadcrum,
+            'faqs'=>$faqs,
         ]);
     }
 
