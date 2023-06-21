@@ -458,8 +458,10 @@
                         <li class="footer__columns__option__item"><a href="{{route('doctor.book-video-consultation')}}">Book a Video Consultation</a></li>
                         <li class="footer__columns__option__item"><a href="{{route('about')}}"> About Us</a></li>
                         
-                        {{-- <li class="footer__columns__option__item"><a href="">24 x 7 Consultation</a></li>
-                        <li class="footer__columns__option__item"><a href="">Admission & Discharge Process</a>
+                        <li class="footer__columns__option__item"><a href="{{route('contact')}}">Contact</a></li>
+                        <li class="footer__columns__option__item"><a href="{{route('international_patient')}}">International Patients</a></li>
+                        <li class="footer__columns__option__item"><a href="{{route('condition.landing')}}">Treatments & Tests</a></li>
+                      {{--  <li class="footer__columns__option__item"><a href="">Admission & Discharge Process</a>
                         </li>
                         <li class="footer__columns__option__item"><a href="">Insurance & Empanelment</a></li>
                         <li class="footer__columns__option__item"><a href="">Patient Guide</a></li>
@@ -473,7 +475,20 @@
             </ul>
         </div>
 
-
+        <div class="footer__columns">
+            <ul class="footer__columns__option">
+  
+                  <li class="footer__columns__option__label footer__columns__option__label--dropdown">Locations
+                      <ul class="footer__columns__option__label--dropdown__option">
+                          @foreach ($branches as $item)
+                          <li class="footer__columns__option__item"><a href="">{{$item->name}}</a></li>
+                              
+                          @endforeach
+                           <li class="footer__columns__option__item"><a href="">Financial District</a></li> 
+                      </ul>
+                  </li>
+              </ul> 
+          </div>
 
 
 
@@ -573,6 +588,22 @@
 
             </ul>
         </div>
+        
+        
+        <div class="footer__columns footer__columns--logo">
+
+
+        </div>
+        <div class="footer__columns footer__columns--logo">
+
+
+        </div>
+        <div class="footer__columns footer__columns--logo">
+
+
+        </div>
+
+        
 
         <div class="footer__columns">
             <ul class="footer__columns__option">
@@ -625,26 +656,6 @@
                 </li>
             </ul>
         </div>
-        {{-- <div class="footer__columns footer__columns--logo">
-
-
-        </div> --}}
-        {{-- <div class="footer__columns">
-        <!--    <ul class="footer__columns__option">
-
-                <li class="footer__columns__option__label footer__columns__option__label--dropdown">Locations
-                    <ul class="footer__columns__option__label--dropdown__option">
-                        @foreach ($branches as $item)
-                        <li class="footer__columns__option__item"><a href="">{{$item->name}}</a></li>
-                            
-                        @endforeach
-                         <li class="footer__columns__option__item"><a href="">Financial District</a></li> 
-                    </ul>
-                </li>
-            </ul> -->
-        </div> --}}
-
-
 
 
 

@@ -30,6 +30,11 @@
     }
 
     &--condition {
+    height: 50vh;
+        h1{
+            width: 100% !important;
+        }
+
         img {
             display: none;
         }
