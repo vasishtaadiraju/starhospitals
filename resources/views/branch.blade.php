@@ -147,9 +147,9 @@
 {{-- <x-gap/>
 <x-blogs :$content :blogs='$content->blogs'/>  --}}
 <x-gap/>
-<div class="ui-background">
+{{-- <div class="ui-background"> --}}
 <x-faqs :$content  :faqs='$content->faqs'/> 
-</div>
+{{-- </div> --}}
 
 
 @endsection
