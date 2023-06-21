@@ -1,6 +1,6 @@
 
-<marquee style="position: fixed" width="100%"  behavior="scroll" bgcolor="#E3000F">  
-    <span><b style="color: #fff; font-weight: 400 !important;font-family:'Plus Jakarta Sans';font-size:12px">Please note that STAR Hospitals does not accept online payments and will never ask for an OTP over phone. Please make all payments directly at the hospital.</b></span>
+<marquee style="position: fixed;padding:5px 0px" width="100%"  behavior="scroll" bgcolor="#E3000F">  
+    <span><b style="color: #fff; font-weight: 600 !important;font-family:'Plus Jakarta Sans';font-size:12px;">Please note that STAR Hospitals does not accept online payments and will never ask for an OTP over phone. Please make all payments directly at the hospital.</b></span>
     </marquee>
 <div class="header">
     <div class="header__main">
@@ -117,7 +117,7 @@
                     </ul>
                 </li>
                 <li class="header__nav__option">
-                    <a href="#">Doctors</a>
+                    <a href="{{route('find-doctor')}}">Doctors</a>
                 </li>
                 <li class="header__nav__option">
                     <a href="{{route('condition.landing')}}">Treatments & Tests</a>
@@ -285,7 +285,7 @@
                 </ul>
             </li>
             <li class="header__nav__option">
-                <a href="#">Doctors</a>
+                <a href="{{route('find-doctor')}}">Doctors</a>
             </li>
             <li class="header__nav__option">
                 <a href="{{route('condition.landing')}}">Treatments & Tests</a>

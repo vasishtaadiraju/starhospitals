@@ -2,7 +2,7 @@
 @import "utils/utils";
 @import "utils/media-queries";
 @import "floating-buttons";
-$main-header-height: 8rem;
+$main-header-height: 9.5rem;
 $fixed-header-height: 6rem;
 
 @mixin dropdown-Options-wrapper() {
@@ -112,26 +112,35 @@ $fixed-header-height: 6rem;
             @include fixed-header;
             width: 100%;
             padding: 1em;
+            height: $fixed-header-height;
         }
         @include media("md-mob") {
             @include fixed-header;
             width: 100%;
             padding: 1em;
+            height: $fixed-header-height;
+
         }
         @include media("x-sm-tab") {
             @include fixed-header;
             width: 100%;
             padding: 1em;
+            height: $fixed-header-height;
+
         }
         @include media("sm-tab") {
             @include fixed-header;
             width: 100%;
             padding: 1em;
+            height: $fixed-header-height;
+
         }
         @include media("md-tab") {
             @include fixed-header;
             width: 100%;
             padding: 1em;
+            height: $fixed-header-height;
+
         }
 
         &__card {
