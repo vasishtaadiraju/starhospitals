@@ -137,7 +137,8 @@ class Blog extends Resource
 
             Boolean::make('Status', 'status')
                 ->trueValue('active')
-                ->falseValue('inactive'),
+                ->falseValue('inactive')
+                ->filterable(),
 
             BelongsToMany::make('Doctor', 'doctors')
                 ->searchable()

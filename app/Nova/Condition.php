@@ -108,7 +108,8 @@ class Condition extends Resource
 
             Boolean::make('Status', 'status')
                 ->trueValue('active')
-                ->falseValue('inactive'),
+                ->falseValue('inactive')
+                ->filterable(),
 
             BelongsToMany::make('Centre of Excellence', 'coes')
                 ->searchable(),
