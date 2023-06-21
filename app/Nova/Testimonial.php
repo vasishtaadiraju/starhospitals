@@ -104,7 +104,7 @@ class Testimonial extends Resource
                     ];
                 }),
 
-            BelongsToMany::make('Branch', 'branch')
+            BelongsToMany::make('Branch', 'branches')
                 ->searchable()
                 ->fields(function () {
                     return [
