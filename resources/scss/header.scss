@@ -73,19 +73,19 @@ $fixed-header-height: 6rem;
 
 .header-gap {
     @include media("sm-mob") {
-        height: $main-header-height;
+        height: $fixed-header-height;
     }
     @include media("md-mob") {
-        height: $main-header-height;
+        height: $fixed-header-height;
     }
     @include media("x-sm-tab") {
-        height: $main-header-height;
+        height: $fixed-header-height;
     }
     @include media("sm-tab") {
-        height: $main-header-height;
+        height: $fixed-header-height;
     }
     @include media("md-tab") {
-        height: $main-header-height;
+        height: $fixed-header-height;
     }
 }
 .header {
