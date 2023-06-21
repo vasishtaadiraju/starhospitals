@@ -140,7 +140,9 @@
 <x-why-choose-us :content='$content' />
 <x-gap/>
 <div class="ui-background">
-<x-testimonials :$content  :testimonials='$content->testimonials'/>
+{{-- <x-testimonials :$content  :testimonials='$content->testimonials'/> --}}
+<x-testimonials-secondary :$content   :testimonials='$content->testimonials'/>
+
 </div>
 {{-- <x-gap/>
 <x-blogs :$content :blogs='$content->blogs'/>  --}}
