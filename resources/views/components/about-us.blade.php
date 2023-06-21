@@ -9,7 +9,7 @@
             <img class="about__image__dots-right" src="" data-src="{{ Vite::asset('resources/images/Icons/Dots(1).png') }}"
                 alt="">
 
-            <img class="about__image" src="" data-src="{{ config('variables.asset') . $content->about_thumbnail }}" alt="{{$content->about_thumbnail_alt}}">
+            <img class="about__image play-video" data-video-link="{{$content->about_video_link}}" src="" data-src="{{ config('variables.asset') . $content->about_thumbnail }}" alt="{{$content->about_thumbnail_alt}}">
 
 
 

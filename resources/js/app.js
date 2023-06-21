@@ -41,11 +41,12 @@ domSelector('.play-video','click',videoPlayer);
 
 function videoPlayer()
 {
+    let src = this.getAttribute('data-video-link')
     const playerHtml = `
     <div class="video-player">
         <span id="video-player-close">X</span>
         <div class="video-player__container">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/trJWh0iCQTY" title="YouTube video player" frameborder="0" allow="accelerometer;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="100%" height="100%" src="${src}" title="YouTube video player" frameborder="0" allow="accelerometer;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
     `
