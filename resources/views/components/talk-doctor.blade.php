@@ -21,7 +21,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="form-fields-wrapper form-fields-wrapper--col-2">
+                    <div class="form-fields-wrapper form-fields-wrapper--col-2" >
                         <div class="form-fields-wrapper ">
                             <input placeholder="Phone Number"
                                 type="text"  class="@error('contact')
@@ -50,7 +50,7 @@
                     
                 </div>
                 <div class="form-fields">
-                    <div class="form-fields-wrapper form-fields-wrapper--col-1">
+                    <div class="form-fields-wrapper form-fields-wrapper--col-1" id="consult-our-expert">
                         <div class="form-fields-wrapper ">
                             <input
                                 type="text"class="@error('department')

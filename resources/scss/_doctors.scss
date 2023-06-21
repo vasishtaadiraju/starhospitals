@@ -101,7 +101,7 @@
 
         &__content{
             padding: 1.5em 1em;
-            cursor: pointer;
+            // cursor: pointer;
             @include font-family(400);
             min-height:16rem;
             display:flex !important;

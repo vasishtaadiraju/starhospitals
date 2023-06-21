@@ -47,11 +47,11 @@ async function printDoctors(body, selectBox, className) {
                     }
                         if (
                             !coeName.includes(
-                                `<a href="#"> ${speciality.name} ${index != result.doctor.specialities.length -1 ? `,` : ``} </a>`
+                                `<a > ${speciality.name} ${index != result.doctor.specialities.length -1 ? `,` : ``} </a>`
                             )
                         ) {
                             coeName.push(
-                                `<a href="#"> ${speciality.name} ${index != result.doctor.specialities.length -1  ? `,` : ``} </a>`
+                                `<a > ${speciality.name} ${index != result.doctor.specialities.length -1  ? `,` : ``} </a>`
                             );
                         }
                     });
@@ -62,7 +62,9 @@ async function printDoctors(body, selectBox, className) {
                 {
                     branch_slug = branch.slug;
                 }
-                branchName.push(`<a href="#"> ${branch.name}</a> ${index != result.doctor.branches.length -1  ? `,` : ``} `);
+                branchName.push(`<a href="/doctors/${branch.slug}/${speciality_slug}/${
+                    result.doctor.slug
+                }"> ${branch.name}</a> ${index != result.doctor.branches.length -1  ? `` : ``} `);
             });
             //
             let doctorCard = `<div class="doctors-card doctors-card--primary">
@@ -77,7 +79,7 @@ async function printDoctors(body, selectBox, className) {
              <h4><a href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}">${
                 result.doctor.name
             }</a></h4>
-            <p class="doctors-card--primary__designation"><a href=""> ${
+            <p class="doctors-card--primary__designation"><a href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}"> ${
                 result.doctor.designation
             } </a></p>
 

@@ -70,11 +70,11 @@ async function printDoctors(url,body) {
 
                          if (
                             !coeName.includes(
-                                `<a href="#"> ${speciality.name} ${index != result.doctor.specialities.length -1 ? `,` : ``} </a>`
+                                `<a> ${speciality.name} ${index != result.doctor.specialities.length -1 ? `,` : ``} </a>`
                             )
                         ) {
                             coeName.push(
-                                `<a href="#"> ${speciality.name} ${index != result.doctor.specialities.length -1  ? `,` : ``} </a>`
+                                `<a > ${speciality.name} ${index != result.doctor.specialities.length -1  ? `,` : ``} </a>`
                             );
                         }
                     })
@@ -85,7 +85,9 @@ async function printDoctors(url,body) {
                 {
                     branch_slug = branch.slug;
                 }
-                branchName.push(`<a href="#"> ${branch.name}</a> ${index != result.doctor.branches.length -1  ? `,` : ``} `);
+                branchName.push(`<a href="/doctors/${branch.slug}/${speciality_slug}/${
+                    result.doctor.slug
+                }"> ${branch.name}</a> ${index != result.doctor.branches.length -1  ? `,` : ``} `);
             });
             // 
            
@@ -104,7 +106,9 @@ async function printDoctors(url,body) {
          <h2><a href="/doctors/${branch_slug}/${speciality_slug}/${
             result.doctor.slug
         }">${result.doctor.name}</a></h2>
-         <p class="doctors-card__rt__designation"><a href=""> ${result.doctor.designation} </a></p>
+         <p class="doctors-card__rt__designation"><a href="/doctors/${branch_slug}/${speciality_slug}/${
+            result.doctor.slug
+        }"> ${result.doctor.designation} </a></p>
          <p class="doctors-card__rt__speciality"><a href="">${coeName.toString()}</a></p>
          <p class="doctors-card__rt__location"> <a href="">${branchName.toString()}</a></p>
 
