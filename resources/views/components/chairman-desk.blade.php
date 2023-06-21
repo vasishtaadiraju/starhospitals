@@ -14,7 +14,7 @@
 <div class="chairman-desk">
     <div class="chairman-desk__wrapper">
         <div class="chairman-desk__image-container">
-            <img src="" data-src="{{Vite::asset('resources/images/doctors/doctor.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/chairman.webp')}}" alt="">
         </div>
         <div class="chairman-desk__content-container">
             {{-- @if(!empty($about->chairman_desk_title)) --}}

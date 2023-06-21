@@ -135,7 +135,7 @@
                                 type="date"class="@error('date')
                             error-field
                         @enderror"
-                                name="date">
+                                name="date" min="{{date("Y-m-d")}}">
                             @error('date')
                                 <span class="error-message">{{ $message }}</span>
                             @enderror

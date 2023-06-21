@@ -45,7 +45,13 @@
     }
 
     &__image-container {
+        // flex: 0 0 30%;
+        // display: flex;
+        // align-items: center;
         img {
+            width: 100%;
+            border-radius:10px;
+            // aspect-ratio: 1;
             @include media("sm-mob") {
                 width: 100%;
             }
@@ -86,8 +92,9 @@
         p {
             
             line-height: 28px;
-            @include font-family(400);
+            font-family: 'Plus Jakarta Sans Regular';
             font-style:normal;
+            // font-size: 14PX;;
             @include media("sm-mob") {
                 text-align: justify;
             }
