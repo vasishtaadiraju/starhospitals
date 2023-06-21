@@ -309,19 +309,19 @@ $footer-columns: 5;
 
                         &--active {
                             @include media("sm-mob") {
-                                max-height: 12rem !important;
+                                max-height: 50rem !important;
                             }
                             @include media("md-mob") {
-                                max-height: 12rem !important;
+                                max-height: 50rem !important;
                             }
                             @include media("lg-mob") {
-                                max-height: 12rem !important;
+                                max-height: 50rem !important;
                             }
                             @include media("x-sm-tab") {
-                                max-height: 12rem !important;
+                                max-height: 50rem !important;
                             }
                             @include media("sm-tab") {
-                                max-height: 12rem !important;
+                                max-height: 50rem !important;
                             }
                         }
                     }

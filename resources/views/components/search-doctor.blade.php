@@ -1,4 +1,4 @@
-<form action="">
+{{-- <form action=""> --}}
     <div class="search-doctor" id="centre-of-excellences">
         <div class="search-doctor__submit-btn-container search-doctor__submit-btn-container--mobile">
             <h2 class="section-heading">Want a Consultation ?</h2>
@@ -17,7 +17,7 @@
                 <select type="text" class="location-select-box" data-type="location" placeholder="Enter Doctor Name">
                     {{-- <option value="">Select Location</option> --}}
                     @foreach ($branches as $item)
-                        <option value="{{ $item->id }}" @if (session('branch_id') == $item->id)
+                        <option data-slug="{{$item->slug}}" value="{{ $item->id }}" @if (session('branch_id') == $item->id)
                             selected
                         @elseif($item->id == 1) selected @endif>{{ $item->name }}</option>
                     @endforeach
@@ -65,11 +65,11 @@
 
         </div>
         <div class="search-doctor__submit-btn-container">
-            <button class="search-doctor__submit-btn">
+            <button class="search-doctor__submit-btn" >
                 Book an Appointment
             </button>
         </div>
 
     </div>
 
-</form>
+{{-- </form> --}}

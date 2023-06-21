@@ -4,7 +4,7 @@
 <div class="key-services">
 
 
-    <div class="key-services__wrapper">
+    <div class="key-services__wrapper" id="key-services">
         @if(count($coes) > 0 || $coes != null)
         
         @foreach ($coes as $item)

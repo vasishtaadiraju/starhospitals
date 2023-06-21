@@ -169,12 +169,14 @@ function handlePageClicks(e)
     let coe_id = document.querySelector(
         ".speciality-select-box"
     ).value;
-    let branch_id = document.querySelector(
-        ".location-select-box"
-    ).value;
+    // let branch_id = document.querySelector(
+    //     ".location-select-box"
+    // ).value;
     let paginate = true;
-    let speciality_id = "";
-    let body = { coe_id, branch_id, speciality_id,paginate};
+    let speciality_id = document.querySelector(
+            ".speciality-select-box"
+        ).value;
+    let body = { coe_id, speciality_id,paginate};
 
         // $(".specialists-slider").slick("unslick");
         printConditions(this.getAttribute('href'),body);

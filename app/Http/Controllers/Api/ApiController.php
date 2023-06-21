@@ -39,7 +39,25 @@ class ApiController extends Controller
 
 
                 }
-            })->select('id', 'name','slug')->take(10)->get();
+            })->with([
+                'coes' => function ($query) {
+                    $query->with([
+                        'specialities' => function ($query) {
+                            $query->where('status', 'active')->select('specialities.id', 'name');
+                        }
+                    ])->select('centre_of_excellences.id', 'name','slug');
+                },
+                'branches' => function ($query) {
+                    $query->select('branches.id','name','slug');
+                },
+                'specialities' => function ($query) {
+                    $query->where('status', 'active')->with([
+                        'coes' => function ($query) {
+                            $query->select('centre_of_excellences.id')->pluck('centre_of_excellences.id');
+                        }
+                    ])->select('specialities.id', 'name','slug');
+                }
+            ])->select('id', 'name','slug')->take(10)->get();
             return response($user, 200);
         } catch (\Throwable $th) {
             return response($th->getMessage(), 500);
@@ -271,7 +289,7 @@ class ApiController extends Controller
             });
         }
 
-        $response = $conditions_query->whereNotNull('diagnosis_treatment_slug')->where('status', 'active')->paginate();
+        $response = $conditions_query->whereNotNull('diagnosis_treatment_slug')->where('status', 'active')->paginate(8);
 
         return response($response, 200);
 

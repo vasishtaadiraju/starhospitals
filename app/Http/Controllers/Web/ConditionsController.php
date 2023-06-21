@@ -42,7 +42,7 @@ class ConditionsController extends Controller
             $faqs = FAQ::whereHas('conditions',function($query) use ($content){
                 $query->where('conditions.id',$content->id);
             })->get();
-
+            // dd($faqs);
             if($faqs == null)
             {
                 $faqs = [];

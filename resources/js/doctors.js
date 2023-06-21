@@ -11,7 +11,17 @@ async function printDoctors(body, selectBox, className) {
     );
     response.data.forEach((result) => {
         if (selectBox == true) {
-            let doctorOption = `<option value="">${result.doctor.name}</option>`;
+           let branch_slug =  document.getElementsByClassName("location-select-box")[0].options[document.getElementsByClassName("location-select-box")[0].selectedIndex].getAttribute('data-slug');
+            console.log(branch_slug);
+           let coe_slug =  document.getElementsByClassName("coe-select-box")[0].options[document.getElementsByClassName("coe-select-box")[0].selectedIndex].getAttribute('data-slug');
+           let speciality_slug =  document.getElementsByClassName("speciality-select-box")[0].options[document.getElementsByClassName("speciality-select-box")[0].selectedIndex].getAttribute('data-slug');
+    // window.location.href = e.target.options[e.target.selectedIndex].getAttribute('data-url');
+
+            if(speciality_slug == "")
+            {
+                speciality_slug == coe_slug;
+            }
+            let doctorOption = `<option value="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}">${result.doctor.name}</option>`;
             document
                 .querySelector(className)
                 .insertAdjacentHTML("beforeend", doctorOption);
@@ -104,6 +114,8 @@ async function printDoctors(body, selectBox, className) {
         }
     });
 
+
+    
     // $('.specialists-slider').slick('refresh')
     if (selectBox != true) {
         $(className).slick({
@@ -194,7 +206,7 @@ async function printOptions(node) {
             ".location-select-box"
         ).innerHTML = ``;
         response.data.branches.forEach((result) => {
-            let option = `<option value="${result.id}" ${
+            let option = `<option data-slug="${result.slug}" value="${result.id}" ${
                 result.id == selected_branch_id ? `selected` : ``
             }>${result.name}</option>`;
 
@@ -206,7 +218,7 @@ async function printOptions(node) {
             ".speciality-select-box"
         ).innerHTML = ``;
         response.data.specialities.forEach((result) => {
-            let option = `<option value="${result.id}" ${
+            let option = `<option data-slug="${result.slug}" value="${result.id}" ${
                 result.id == selected_branch_id ? `selected` : ``
             }>${result.name}</option>`;
 
@@ -221,7 +233,7 @@ async function printOptions(node) {
             ".coe-select-box"
         ).innerHTML = ``;
         response.data.coes.forEach((result, index) => {
-            let option = `<option value="${result.id}" ${
+            let option = `<option data-slug="${result.slug}" value="${result.id}" ${
                 result.id == selected_coe_id ? `selected` : ``
             }>${result.name}</option>`;
 
@@ -234,7 +246,7 @@ async function printOptions(node) {
                     ".speciality-select-box"
                 ).innerHTML = ``;
                 result.specialities.forEach((speciality) => {
-                    let option = `<option value="${speciality.id}" ${
+                    let option = `<option data-slug="${speciality.slug}"  value="${speciality.id}" ${
                         speciality.id == selected_branch_id ? `selected` : ``
                     }>${speciality.name}</option>`;
 
@@ -250,7 +262,7 @@ async function printOptions(node) {
                 ".speciality-select-box"
             ).innerHTML = ``;
             response.data.specialities.forEach((speciality) => {
-                let option = `<option value="${speciality.id}" ${
+                let option = `<option data-slug="${speciality.slug}" value="${speciality.id}" ${
                     speciality.id == selected_branch_id ? `selected` : ``
                 }>${speciality.name}</option>`;
 

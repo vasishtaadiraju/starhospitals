@@ -455,15 +455,17 @@
                 <li class="footer__columns__option__label footer__columns__option__label--dropdown">Patient Care & Services
                     <ul class="footer__columns__option__label--dropdown__option">
                         <li class="footer__columns__option__item"><a href="{{route('find-doctor')}}">Find a Doctor</a></li>
-                        <li class="footer__columns__option__item"><a href="">Book a Video Consultation</a></li>
-                        <li class="footer__columns__option__item"><a href="">24 x 7 Consultation</a></li>
+                        <li class="footer__columns__option__item"><a href="{{route('doctor.book-video-consultation')}}">Book a Video Consultation</a></li>
+                        <li class="footer__columns__option__item"><a href="{{route('about')}}"> About Us</a></li>
+                        
+                        {{-- <li class="footer__columns__option__item"><a href="">24 x 7 Consultation</a></li>
                         <li class="footer__columns__option__item"><a href="">Admission & Discharge Process</a>
                         </li>
                         <li class="footer__columns__option__item"><a href="">Insurance & Empanelment</a></li>
                         <li class="footer__columns__option__item"><a href="">Patient Guide</a></li>
                         <li class="footer__columns__option__item"><a href="">Visitor Guide</a></li>
                         <li class="footer__columns__option__item"><a href="">FAQs</a></li>
-                        <li class="footer__columns__option__item"><a href="">Get a Vaccination</a></li>
+                        <li class="footer__columns__option__item"><a href="">Get a Vaccination</a></li> --}}
 
                     </ul>
                 </li>
@@ -478,12 +480,25 @@
 
         <div class="footer__columns">
             <ul class="footer__columns__option">
-                <li class="footer__columns__option__label footer__columns__option__label--dropdown">Centers of
-                    Excellence
+                <li class="footer__columns__option__label footer__columns__option__label--dropdown" data-speciality="second-speciality">Specialities
+
+
+                    @php
+                        
+                        $i = 0;
+                    @endphp
                     <ul class="footer__columns__option__label--dropdown__option">
-                        {{-- @foreach ($coes as $item)
-                        <li class="footer__columns__option__item"><a href="">{{$item->name}}</a></li>
-                        @endforeach --}}
+                        @foreach ($coes as $item)
+
+                        @foreach ($item->specialities as $speciality)
+                        @if($i <= 14)
+                        <li class="footer__columns__option__item"><a href="{{route('speciality',$speciality->slug)}}">{{$speciality->name}}</a></li>   
+                        @php
+                            $i++;
+                        @endphp
+                        @endif
+                        @endforeach
+                        @endforeach
                         {{-- <li class="footer__columns__option__item"><a href="">Emergency Services</a></li>
                         <li class="footer__columns__option__item"><a href="">Gastroenterology</a></li>
                         <li class="footer__columns__option__item"><a href="">Neurology</a></li>
@@ -503,24 +518,24 @@
 
 
 
-        <div class="footer__columns">
+    <!--    <div class="footer__columns">
             <ul class="footer__columns__option">
                 <li class="footer__columns__option__label footer__columns__option__label--dropdown">Quick Links
                     <ul class="footer__columns__option__label--dropdown__option">
-                        <li class="footer__columns__option__item"><a href=""> About Us</a></li>
-                        <li class="footer__columns__option__item"><a href="">CSR</a></li>
+                        {{-- <li class="footer__columns__option__item"><a href="{{route('about')}}"> About Us</a></li> --}}
+                        {{-- <li class="footer__columns__option__item"><a href="">CSR</a></li>
                         <li class="footer__columns__option__item"><a href="">Careers</a></li>
                         <li class="footer__columns__option__item"><a href="">Bio Medical Waste</a></li>
                         <li class="footer__columns__option__item"><a href="">Research & Publications</a></li>
                         <li class="footer__columns__option__item"><a href="">Quality & Accreditation</a></li>
                         <li class="footer__columns__option__item"><a href="">Testimonials</a></li>
-                        <li class="footer__columns__option__item"><a href="">Doctor Videos</a></li>
+                        <li class="footer__columns__option__item"><a href="">Doctor Videos</a></li> --}}
 
                     </ul>
                 </li>
 
             </ul>
-        </div>
+        </div> -->
 
 
 
@@ -528,9 +543,9 @@
 
         <div class="footer__columns">
             <ul class="footer__columns__option">
-                <li class="footer__columns__option__label footer__columns__option__label--dropdown">Specialities
+                <li class="footer__columns__option__label" id="second-speciality">
                     <ul class="footer__columns__option__label--dropdown__option">
-                        <li class="footer__columns__option__item"><a href="">Cardiologists in Hyderabad</a>
+                        {{-- <li class="footer__columns__option__item"><a href="">Cardiologists in Hyderabad</a>
                         </li>
                         <li class="footer__columns__option__item"><a href="">Gastroenterologists in
                                 Hyderabad</a></li>
@@ -538,72 +553,26 @@
                         <li class="footer__columns__option__item"><a href="">Nephrologists in Hyderabad</a>
                         </li>
                         <li class="footer__columns__option__item"><a href="">Pulmonologists in Hyderabad</a>
-                        </li>
+                        </li> --}}
+                        @php
+                            $j = 0;                        @endphp
+                        @foreach ($coes as $item)
 
-                    </ul>
-                </li>
-
-            </ul>
-        </div>
-
-
-        <div class="footer__columns footer__columns--logo">
-
-
-        </div>
-        <div class="footer__columns">
-            <ul class="footer__columns__option">
-
-                <li class="footer__columns__option__label footer__columns__option__label--dropdown">Locations
-                    <ul class="footer__columns__option__label--dropdown__option">
-                        @foreach ($branches as $item)
-                        <li class="footer__columns__option__item"><a href="">{{$item->name}}</a></li>
-                            
+                        @foreach ($item->specialities as $speciality)
+                        @if($j > $i)
+                        <li class="footer__columns__option__item"><a href="{{route('speciality',$speciality->slug)}}">{{$speciality->name}}</a></li>   
+                        
+                        @endif
+                        @php
+                            $j++;
+                        @endphp
                         @endforeach
-                        {{-- <li class="footer__columns__option__item"><a href="">Financial District</a></li> --}}
+                        @endforeach
                     </ul>
                 </li>
+
             </ul>
         </div>
-
-
-
-
-
-
-        <div class="footer__columns">
-            <ul class="footer__columns__option">
-
-                <li class="footer__columns__option__label footer__columns__option__label--dropdown">News & Media
-                    <ul class="footer__columns__option__label--dropdown__option">
-                        <li class="footer__columns__option__item"><a href="">News Articles</a></li>
-
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-
-
-
-
-
-
-
-        <div class="footer__columns">
-            <ul class="footer__columns__option">
-
-                <li class="footer__columns__option__label footer__columns__option__label--dropdown">Blog
-                    <ul class="footer__columns__option__label--dropdown__option">
-                        <li class="footer__columns__option__item"><a href="">Star Blog</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-
-
-
 
         <div class="footer__columns">
             <ul class="footer__columns__option">
@@ -656,6 +625,65 @@
                 </li>
             </ul>
         </div>
+        {{-- <div class="footer__columns footer__columns--logo">
+
+
+        </div> --}}
+        {{-- <div class="footer__columns">
+        <!--    <ul class="footer__columns__option">
+
+                <li class="footer__columns__option__label footer__columns__option__label--dropdown">Locations
+                    <ul class="footer__columns__option__label--dropdown__option">
+                        @foreach ($branches as $item)
+                        <li class="footer__columns__option__item"><a href="">{{$item->name}}</a></li>
+                            
+                        @endforeach
+                         <li class="footer__columns__option__item"><a href="">Financial District</a></li> 
+                    </ul>
+                </li>
+            </ul> -->
+        </div> --}}
+
+
+
+
+
+
+        {{-- <div class="footer__columns">
+          <!--  <ul class="footer__columns__option">
+
+                <li class="footer__columns__option__label footer__columns__option__label--dropdown">News & Media
+                    <ul class="footer__columns__option__label--dropdown__option">
+                        <li class="footer__columns__option__item"><a href="">News Articles</a></li>
+
+                    </ul>
+                </li>
+            </ul> -->
+        </div> --}}
+
+
+
+
+
+
+
+
+        {{-- <div class="footer__columns">
+          <!--  <ul class="footer__columns__option">
+
+                <li class="footer__columns__option__label footer__columns__option__label--dropdown">Blog
+                    <ul class="footer__columns__option__label--dropdown__option">
+                        <li class="footer__columns__option__item"><a href="">Star Blog</a></li>
+                    </ul>
+                </li>
+            </ul> -->
+        </div> --}}
+
+
+
+
+
+        
     </div>
     <p class="footer__copyright">
 

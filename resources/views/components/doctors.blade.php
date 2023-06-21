@@ -5,7 +5,7 @@
     doctors__cards-wrapper--flex-list
     @else
     doctor-slide
-    @endif">
+    @endif" id="our-doctors">
         {{-- <div class="doctors-card">
             <a href="" class="doctors-card__lt">
                 <img src="" data-src="{{ Vite::asset('resources/images/doctors/Bushra.png') }}" alt="">

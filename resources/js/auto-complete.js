@@ -14,8 +14,17 @@ async function inputHandler(e) {
 
     
         result.data.forEach(element => {
-            
-            let list = `<li class="auto-complete__list__item" data-id="${element.id}" data-slug="${element.slug}">${element.name}</li>`
+            let speciality_slug = "";
+            if(element.specialities.length == 0)
+            {
+                speciality_slug = element.coes[0].slug;
+            }
+            else
+            {
+                speciality_slug = element.specialities[0].slug;
+
+            }
+            let list = `<li class="auto-complete__list__item" data-id="${element.id}" data-slug="/doctors/${element.branches[0].slug}/${speciality_slug}/${element.slug}">${element.name}</li>`
             this.nextElementSibling.childNodes[1].insertAdjacentHTML("beforeend", list);
 
         })
@@ -29,10 +38,11 @@ function handleClick()
     this.parentNode.parentNode.previousElementSibling.value = this.innerHTML;
     let id  = this.getAttribute('data-id');
     let slug  = this.getAttribute('data-slug');
+    console.log(slug);
     document.getElementsByClassName("auto-complete__list")[0].innerHTML = "";
     
 
-    window.location.href = `/doctors/${slug}`;
+    window.location.href = slug;
     console.log(id);
     
 
