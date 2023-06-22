@@ -13,6 +13,7 @@ class SpecialityController extends Controller
     {
 
         $content = null;
+        $specialities = [];
 
         if(CentreOfExcellence::where('slug',$slug)->where('status','active')->exists())
         {
@@ -51,6 +52,8 @@ class SpecialityController extends Controller
             }])->first();
             $content->page_type = 'speciality';
             session(['speciality_id'=>$content->id]);
+
+            
         }
         else
         {

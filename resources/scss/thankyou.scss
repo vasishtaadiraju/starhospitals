@@ -1,0 +1,57 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+@import "heading";
+@import "filter";
+@import "doctors";
+@import "footer";
+@import "header";
+@import "banner";
+
+.thankyou {
+    h1 {
+        font-family: "Plus Jakarta Sans";
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 45px;
+        letter-spacing: 0em;
+        text-align: center;
+        margin-bottom: 0.5em;
+        // margin-top: 2rem;
+    }
+
+    p {
+        width:   80%;
+        margin:  0px auto;
+        font-family: "Plus Jakarta Sans";
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #424242;
+        margin-bottom: 1em;
+        
+
+        
+    }
+    &__description{
+        width: 80%;
+        margin: 0px auto;
+        font-family: 'Plus Jakarta Sans';
+        font-size: 20px !important;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 0em;
+        text-align: center;
+        margin-top: 2rem;
+        
+    }
+    div {
+        width: 80%;
+        margin: 0px auto;
+        display: flex;
+        justify-content: center;
+    }
+}

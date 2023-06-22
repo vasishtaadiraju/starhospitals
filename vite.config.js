@@ -16,6 +16,7 @@ export default defineConfig({
                 'resources/scss/find-doctor.scss',
                 'resources/scss/branch.scss',
                 'resources/scss/doctor-profile.scss',
+                'resources/scss/thankyou.scss',
                 'resources/css/app.css',
                 'resources/js/doctor-profile.js',
                 'resources/js/app.js',

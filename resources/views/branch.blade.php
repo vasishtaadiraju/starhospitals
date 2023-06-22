@@ -151,5 +151,6 @@
 <x-faqs :$content  :faqs='$content->faqs'/> 
 {{-- </div> --}}
 
+<x-gap/>
 
 @endsection

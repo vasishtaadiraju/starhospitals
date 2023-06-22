@@ -59,3 +59,9 @@ Route::controller(FormController::class)->group(function () {
     Route::post('/internationalPatientEnquiryForm', 'internationalPatientEnquiryForm');
     Route::post('/videoConsultation', 'videoConsultation');
 });
+Route::get('/thank-you',function(){
+    return view('thank-you');
+});
+Route::get('/terms-and-conditions',function(){
+    return view('terms-and-condition');
+});
