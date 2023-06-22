@@ -15,6 +15,7 @@ use App\Jobs\VideoConsultationToUser;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
 class FormController extends Controller
@@ -169,7 +170,7 @@ class FormController extends Controller
 
   public function patient(Request $request)
   {
-    $request->validate([
+    $validation = Validator::make($request->all(), [
       'name' => 'required|string|max:255',
       'contact' => 'required|string|max:20',
       'email' => 'required|string|email:rfc,strict,dns,filter|max:255',
@@ -178,6 +179,12 @@ class FormController extends Controller
       'doctor' => 'required|string|max:255',
       'href' => 'required|url'
     ]);
+
+    if ($validation->fails()) {
+      return response()->json([
+        'message' => $validation->errors()
+      ], 422);
+    }
 
     DB::table('patients')->insert([
       'name' => $request->input('name'),
