@@ -37,7 +37,7 @@ class RequestCallbackToUser extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.mail.requestCallbackToUser',
+            view: 'mail.requestCallbackToUser',
         );
     }
 

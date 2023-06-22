@@ -49,7 +49,7 @@ class VideoConsultationToHospital extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.mail.videoConsultationToHospital',
+            view: 'mail.videoConsultationToHospital',
         );
     }
 

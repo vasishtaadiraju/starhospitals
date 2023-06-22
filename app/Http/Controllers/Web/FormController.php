@@ -3,12 +3,16 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\ContactFormToHospital;
+use App\Jobs\ContactFormToUser;
 use App\Jobs\HospitalTalkToDoctor;
 use App\Jobs\InternationalToHospital;
 use App\Jobs\RequestCallbackToHospital;
 use App\Jobs\RequestCallbackToUser;
+use App\Jobs\UserTalkToDoctor;
 use App\Jobs\VideoConsultationToHospital;
 use App\Jobs\VideoConsultationToUser;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
@@ -19,6 +23,7 @@ class FormController extends Controller
   {
     $request->validate([
       'name' => 'required|string|max:255',
+      'country_code' => 'required|string|max:5',
       'contact' => 'required|string|max:20',
       'email' => 'required|string|email:rfc,strict,dns,filter|max:150',
       'department' => 'required|string|max:100',
@@ -27,6 +32,7 @@ class FormController extends Controller
 
     DB::table('request_callback_form')->insert([
       'name' => $request->input('name'),
+      'country_code' => $request->input('country_code'),
       'contact' => $request->input('contact'),
       'email' => $request->input('email'),
       'department' => $request->input('department'),
@@ -35,7 +41,7 @@ class FormController extends Controller
       'updated_at' => now()
     ]);
 
-    // dispatch(new RequestCallbackToHospital($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('department'), $request->input('date')))->delay(now()->addMinute());
+    // dispatch(new RequestCallbackToHospital($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('department'), $request->input('date')))->delay(Carbon::now()->addMinute());
     // dispatch(new RequestCallbackToUser($request->input('email')))->delay(now()->addMinute());
 
     return redirect()->route('home')->with('success', 'Request submitted successfully!!');
@@ -62,7 +68,7 @@ class FormController extends Controller
     ]);
 
     // dispatch(new HospitalTalkToDoctor($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('speciality'), $request->input('message')))->delay(now()->addMinute());
-    // dispatch(new RequestCallbackToUser($request->input('email')))->delay(now()->addMinute());
+    // dispatch(new UserTalkToDoctor($request->input('email')))->delay(now()->addMinute());
 
     return redirect()->route('coe')->with('success', 'Request submitted successfully!!');
   }
@@ -89,6 +95,9 @@ class FormController extends Controller
       'updated_at' => now()
     ]);
 
+    // dispatch(new ContactFormToHospital($request->input('type'), $request->input('name'), $request->input('contact'), $request->input('email'), $request->input('subject'), $request->input('message')))->delay(now()->addMinute());
+    // dispatch(new ContactFormToUser($request->input('email')))->delay(now()->addMinute());
+
     return redirect()->route('contact')->with('success', 'Request submitted successfully!!');
   }
 
@@ -109,7 +118,7 @@ class FormController extends Controller
       'contact' => $request->input('contact'),
       'email' => $request->input('email'),
       'department' => $request->input('department'),
-      'report' => $request->file('report')->store('InternationalPatient', 's3'),
+      'report' => $request->file('report')->store('InternationalPatient', 'public'),
       'created_at' => now(),
       'updated_at' => now()
     ]);
@@ -156,5 +165,31 @@ class FormController extends Controller
     // dispatch(new VideoConsultationToUser($request->input('email')))->delay(now()->addMinute());
 
     return redirect()->route('home')->with('success', 'Request submitted successfully!!');
+  }
+
+  public function patient(Request $request)
+  {
+    $request->validate([
+      'name' => 'required|string|max:255',
+      'contact' => 'required|string|max:20',
+      'email' => 'required|string|email:rfc,strict,dns,filter|max:255',
+      'branch' => 'required|string|max:255',
+      'speciality' => 'required|string|max:255',
+      'doctor' => 'required|string|max:255',
+      'href' => 'required|url'
+    ]);
+
+    DB::table('patients')->insert([
+      'name' => $request->input('name'),
+      'contact' => $request->input('contact'),
+      'email' => $request->input('email'),
+      'branch' => $request->input('branch'),
+      'speciality' => $request->input('speciality'),
+      'doctor' => $request->input('doctor'),
+    ]);
+
+    return response()->json([
+      'href' => $request->input('href')
+    ], 200);
   }
 }

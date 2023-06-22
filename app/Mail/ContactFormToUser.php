@@ -37,7 +37,7 @@ class ContactFormToUser extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.mail.contactFormToUser',
+            view: 'mail.contactFormToUser',
         );
     }
 

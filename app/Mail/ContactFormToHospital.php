@@ -44,7 +44,7 @@ class ContactFormToHospital extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.mail.contactFormToHospital',
+            view: 'mail.contactFormToHospital',
         );
     }
 

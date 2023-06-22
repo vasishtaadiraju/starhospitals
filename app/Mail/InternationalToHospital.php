@@ -44,7 +44,7 @@ class InternationalToHospital extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.mail.internationalToHospital',
+            view: 'mail.internationalToHospital',
         );
     }
 

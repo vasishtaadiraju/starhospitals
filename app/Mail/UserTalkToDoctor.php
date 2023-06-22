@@ -37,7 +37,7 @@ class UserTalkToDoctor extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.mail.userTalkToDoctor',
+            view: 'mail.userTalkToDoctor',
         );
     }
 
