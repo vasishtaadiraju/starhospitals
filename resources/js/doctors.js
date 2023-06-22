@@ -1,14 +1,132 @@
 import "./utils/event-handler";
-import { httpRequest } from "./utils/event-handler";
+import { handleFormSubmit, httpRequest, showForm } from "./utils/event-handler";
 
 import BushraUrl from "../images/doctors/doctor.png";
 
+
+// function showForm()
+// {
+//     let speciality = this.getAttribute('data-speciality');
+//     let branch = this.getAttribute('data-branch');
+//     let name = this.getAttribute('data-name');
+//     let href = this.getAttribute('data-href');
+//     const formHtml = `<div class="p-enq">
+//         <span class="p-enq__close">X</span>
+//         <div class="p-enq__wrapper">
+//             <h2>Please Fill in Your Details</h2>
+//             <form class="patient-enquiry-form" action="/api/patient" method="post">
+                
+//                 <div class="form-fields">
+//                     <div class="form-fields-wrapper form-fields-wrapper--col-1">
+//                         <div class="form-fields-wrapper ">
+//                             <input placeholder="Name" type="text"
+//                                 class=""
+//                                 name="name">
+//                         <span class="error-message"> </span/>
+
+                            
+//                         </div>
+//                     </div>
+    
+//                 </div>
+//                 <div class="form-fields">
+//                     <div class="form-fields-wrapper form-fields-wrapper--col-1">
+//                         <div class="form-fields-wrapper ">
+//                             <input placeholder="Email"
+//                                 type="text"class=""
+//                                 name="email">
+//                         <span class="error-message"> </span/>
+
+                           
+//                         </div>
+//                     </div>
+//                     <div class="form-fields-wrapper form-fields-wrapper--col-1">
+//                         <div class="form-fields-wrapper ">
+//                             <input placeholder="Phone Number"
+//                                 type="text"class=""
+//                                 name="contact">
+//                         <span class="error-message"> </span/>
+
+                           
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <div class="form-fields">
+//                     <div class="form-fields-wrapper form-fields-wrapper--col-2">
+//                         <div class="form-fields-wrapper ">
+                            
+//                         <input placeholder="Speciality" 
+//                         type="text"class=""
+//                         name="speciality" value="${speciality}" disabled>
+//                         <span class="error-message"> </span/>
+
+//                         </div>
+//                     </div>
+//                     <div class="form-fields-wrapper form-fields-wrapper--col-2">
+//                         <div class="form-fields-wrapper ">
+//                             <input
+//                                 type="text"class=""
+//                                 name="branch" value="${branch}" placeholder="Branch" disabled>
+//                         <span class="error-message"> </span/>
+                            
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <div class="form-fields">
+//                     <div class="form-fields-wrapper form-fields-wrapper--col-1">
+//                         <div class="form-fields-wrapper ">
+                            
+//                         <input placeholder="Doctor Name" 
+//                         type="text"class=""
+//                         name="doctor" value="${name}" disabled>
+//                         </div>
+//                         <span class="error-message"> </span/>
+//                     </div>
+                    
+//                 </div>
+//                 <input type="hidden" value="${href}" name="href"/>
+//                 <button class="form-submit-button" >Submit</button>
+//             </form>
+//         </div>
+//     </div>
+//         `
+        
+//         document.querySelector('body').insertAdjacentHTML('afterbegin',formHtml);
+//         document.querySelector('.p-enq__close').addEventListener('click',async function(){
+//             this.parentNode.remove();
+//         })
+//         // document.querySelector('.p-enq').addEventListener('click',function(){
+//         //     this.remove();
+//         // })
+
+//         document.querySelector('.patient-enquiry-form').addEventListener('submit',async function(e){
+//             let formResponse = await handleFormSubmit(e);
+
+//             console.log(formResponse);
+//             if(formResponse.status.status == 200)
+//             {
+//                 window.open(formResponse.data.href,'_blank');
+//             }
+//         });
+// }
+
 async function printDoctors(body, selectBox, className) {
+    let formDetails = {};
     const response = await httpRequest(
         "/api/getDoctorByBranchCoeSpeciality",
         "POST",
         body
     );
+    if((className == ".banjara-hills-slider" || className == ".financial-slider")  && response.data.length == 0)
+    {
+        
+
+        // console.log(document.querySelector(className).previousElementSibling.previousElementSibling);
+        document.querySelector(className).previousElementSibling.previousElementSibling.remove()
+        document.querySelector(className).previousElementSibling.remove()
+        document.querySelector(className).remove()
+        
+    }
     response.data.forEach((result) => {
         if (selectBox == true) {
            let branch_slug =  document.getElementsByClassName("location-select-box")[0].options[document.getElementsByClassName("location-select-box")[0].selectedIndex].getAttribute('data-slug');
@@ -38,12 +156,16 @@ async function printDoctors(body, selectBox, className) {
                     if(coe.id == body.coe_id)
                     {
                         speciality_slug = coe.slug;
+                        formDetails.speciality  = coe.name;
+
                     }
                 } else {
                     result.doctor.specialities.forEach((speciality, index) => {
                         if(speciality.id == body.speciality_id)
                     {
                         speciality_slug = speciality.slug;
+                        formDetails.speciality  = speciality.name;
+
                     }
                         if (
                             !coeName.includes(
@@ -61,12 +183,17 @@ async function printDoctors(body, selectBox, className) {
                 if(branch.id == body.branch_id)
                 {
                     branch_slug = branch.slug;
+                    formDetails.branch  = branch.name;
+
                 }
                 branchName.push(`<a href="/doctors/${branch.slug}/${speciality_slug}/${
                     result.doctor.slug
                 }"> ${branch.name}</a> ${index != result.doctor.branches.length -1  ? `` : ``} `);
             });
             //
+
+            
+
             let doctorCard = `<div class="doctors-card doctors-card--primary">
         <a href="/doctors/${branch_slug}/${speciality_slug}/${
             result.doctor.slug
@@ -87,16 +214,16 @@ async function printDoctors(body, selectBox, className) {
              <p class="doctors-card--primary__location">${branchName.toString()}</p>
      </div>
              <div class="doctors-card--primary__button-wrapper" >
-             <a target="_blank" href="https://api.starhs.in/patient-portal/doctors/info/${branch_slug == 'financial-district' ? `nanakramguda` : `${branch_slug}`}/${
+             <div target="_blank" data-name="${result.doctor.name}" data-speciality="${formDetails.speciality}" data-branch="${formDetails.branch}" data-href="https://api.starhs.in/patient-portal/doctors/info/${branch_slug == 'financial-district' ? `nanakramguda` : `${branch_slug}`}/${
                 result.doctor.his_id
-            }" class="doctors-card__rt__btn">
+            }" class="doctors-card__rt__btn doctor-physical-btn">
                 
                  <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M7.14702 0V2H13.2446V0H15.2771V2H19.3421C19.9034 2 20.3584 2.44772 20.3584 3V19C20.3584 19.5523 19.9034 20 19.3421 20H1.04946C0.488203 20 0.0332031 19.5523 0.0332031 19V3C0.0332031 2.44772 0.488203 2 1.04946 2H5.1145V0H7.14702ZM18.3259 10H2.06572V18H18.3259V10ZM6.13076 12V14H4.09824V12H6.13076ZM11.2121 12V14H9.17954V12H11.2121ZM16.2934 12V14H14.2608V12H16.2934ZM5.1145 4H2.06572V8H18.3259V4H15.2771V6H13.2446V4H7.14702V6H5.1145V4Z" fill="#E3000F"/>
 </svg>
 
                  <span>Book a Physical Consultation</span>
-             </a>
+             </div>
              ${result.doctor.video_consultation == 'yes' ? `<a href="/doctors/book-a-video-consultation" class="doctors-card__rt__btn">
                
              <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -116,7 +243,9 @@ async function printDoctors(body, selectBox, className) {
         }
     });
 
-
+        // domSelector('.')
+        domSelector(".doctor-physical-btn", "click", showForm);
+        
     
     // $('.specialists-slider').slick('refresh')
     if (selectBox != true) {

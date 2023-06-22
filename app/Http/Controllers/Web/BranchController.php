@@ -14,7 +14,7 @@ class BranchController extends Controller
             'coes' => function ($query) {
                 $query->where('status', 'active')->with(['specialities'=>function($query){
                     $query->select('specialities.id','name','slug','icon_image');
-                }])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image')->take(2);
+                }])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
             },
             'faqs',
             'blogs' => function ($query) {

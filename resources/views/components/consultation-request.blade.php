@@ -142,7 +142,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="form-submit-button">Submit</button>
+                <button class="form-submit-button" >Submit</button>
             </form>
             <p class="consultation__form__note">You will receive a confirmation message on your email</p>
             <img src="" data-src="{{ Vite::asset('resources/images/Icons/texture.png') }}" alt=""

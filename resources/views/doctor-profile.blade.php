@@ -51,23 +51,30 @@
                 <p class="d-p-info__btn-wrapper__btn"> <span>Rs. {{$content->fee}}</span> Fees</p>
                 @endif
             </div>
-
+            @php
+                $branch_name = "";
+            @endphp
             <div class="d-p-info__selectbox">
                 <select name="location" id="change-location-box">
                     @foreach ($content->branches as $branch)
                     <option data-url="{{route('doctor',[$branch->slug,$speciality_slug,$content->slug])}}" value="{{ $branch->slug }}" @if ($branch->slug == $branch_slug)
                         selected
-                    @endif>{{ $branch->name }}</option>
+                        @php
+                            $branch_name = $branch->name;
+                        @endphp
+                    @endif>{{ $branch->name }}
+                
+                </option>
                     
                     @endforeach
                 </select>
             </div>
 
             <div class="d-p-info__appointment-wrapper">
-                <a target="_blank" href="https://api.starhs.in/patient-portal/doctors/info/@if($branch_slug == 'financial-district'){{'nanakramguda'}}@else{{$branch_slug}}@endif/{{$content->his_id}}" class="d-p-info__appointment-wrapper__btn">
+                <div target="_blank" data-name="{{$content->name}}" data-speciality="{{count($content->specialities) > 0 ? $content->specialities[0]->name : $content->coes[0]->name}}" data-branch="{{$branch_name}}" data-href="https://api.starhs.in/patient-portal/doctors/info/@if($branch_slug == 'financial-district'){{'nanakramguda'}}@else{{$branch_slug}}@endif/{{$content->his_id}}" class="d-p-info__appointment-wrapper__btn doctor-physical-btn">
                     <img src="" data-src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
                     <span>Book a Physical Consultation</span>
-                </a>
+                </div>
 
                 @if ($content->video_consultation == 'yes')
                 <a href="/doctors/book-a-video-consultation" class="d-p-info__appointment-wrapper__btn">

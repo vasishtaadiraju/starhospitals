@@ -1,5 +1,5 @@
 import "./utils/event-handler";
-import { httpRequest } from "./utils/event-handler";
+import { httpRequest, showForm } from "./utils/event-handler";
 
 import BushraUrl from "../images/doctors/doctor.png";
 
@@ -34,6 +34,8 @@ links.forEach((link,index)=>{
 })
 }
 async function printDoctors(url,body) {
+    let formDetails = {};
+
     const response = await httpRequest(
         url,
         "POST",
@@ -57,6 +59,8 @@ async function printDoctors(url,body) {
                     if(coe.id == body.coe_id)
                     {
                         speciality_slug = coe.slug;
+                        formDetails.speciality  = coe.name;
+
                     }
 
                 }
@@ -66,6 +70,8 @@ async function printDoctors(url,body) {
                         if(speciality.id == body.speciality_id)
                         {
                             speciality_slug = speciality.slug;
+                        formDetails.speciality  = speciality.name;
+
                         }
 
                          if (
@@ -84,6 +90,8 @@ async function printDoctors(url,body) {
                 if(branch.id == body.branch_id)
                 {
                     branch_slug = branch.slug;
+                    formDetails.branch  = branch.name;
+
                 }
                 branchName.push(`<a href="/doctors/${branch.slug}/${speciality_slug}/${
                     result.doctor.slug
@@ -112,14 +120,14 @@ async function printDoctors(url,body) {
          <p class="doctors-card__rt__speciality"><a href="">${coeName.toString()}</a></p>
          <p class="doctors-card__rt__location"> <a href="">${branchName.toString()}</a></p>
 
-         <a target="_blank" href="https://api.starhs.in/patient-portal/doctors/info/${branch_slug == 'financial-district' ? `nanakramguda` : `${branch_slug}`}/${
+         <div target="_blank" data-name="${result.doctor.name}" data-speciality="${formDetails.speciality}" data-branch="${formDetails.branch}" data-href="https://api.starhs.in/patient-portal/doctors/info/${branch_slug == 'financial-district' ? `nanakramguda` : `${branch_slug}`}/${
             result.doctor.his_id
-        }" class="doctors-card__rt__btn">
+        }" class="doctors-card__rt__btn doctor-physical-btn">
          <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
          <path d="M7.14702 0V2H13.2446V0H15.2771V2H19.3421C19.9034 2 20.3584 2.44772 20.3584 3V19C20.3584 19.5523 19.9034 20 19.3421 20H1.04946C0.488203 20 0.0332031 19.5523 0.0332031 19V3C0.0332031 2.44772 0.488203 2 1.04946 2H5.1145V0H7.14702ZM18.3259 10H2.06572V18H18.3259V10ZM6.13076 12V14H4.09824V12H6.13076ZM11.2121 12V14H9.17954V12H11.2121ZM16.2934 12V14H14.2608V12H16.2934ZM5.1145 4H2.06572V8H18.3259V4H15.2771V6H13.2446V4H7.14702V6H5.1145V4Z" fill="#E3000F"/>
          </svg>
              <span>Book a Physical Consultation</span>
-         </a>
+         </div>
          ${result.doctor.video_consultation == 'yes' ? `<a href="/doctors/book-a-video-consultation" class="doctors-card__rt__btn">
                
              <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -135,6 +143,7 @@ async function printDoctors(url,body) {
                 .insertAdjacentHTML("beforeend", doctorCard);
         }
     );
+    domSelector(".doctor-physical-btn", "click", showForm);
 
 
  

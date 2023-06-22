@@ -47,7 +47,9 @@
     &__title,&__sub-title{
         text-align: center;
         font-family: variables.$starhospitals-brand-secondary-font;
-        color: variables.$section-heading-desc;
+        // color: variables.$section-heading-desc;
+    color:variables.$starhospitals-text-primary;
+
         line-height:20px
     }
 

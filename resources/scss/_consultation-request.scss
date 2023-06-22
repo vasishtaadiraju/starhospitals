@@ -336,7 +336,7 @@
             padding: 1em;
             width: 50%;
             margin: 3em auto;
-
+            cursor: pointer !important;
             @include media('sm-mob')
             {
                 width: 80%;

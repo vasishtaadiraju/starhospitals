@@ -219,7 +219,7 @@ class ApiController extends Controller
                     $query->where('status', 'active')->orderBy('branches.order_number')->select('branches.id', 'name', 'slug')->take(2);
                 },
                 'specialities' => function ($query) {
-                    $query->select('specialities.id', 'name', 'slug', 'icon_image');
+                    $query->select('specialities.id', 'name', 'slug', 'icon_image')->orderByPivot('coe_speciality.order_number');
                 },
             ])->first('id');
         } elseif ($type == 'location' && $branch_id != null) {
@@ -228,13 +228,15 @@ class ApiController extends Controller
             {
                 $response = Branch::where('status', 'active')->where('id', $branch_id)->with([
                     'coes' => function ($query) {
-                        $query->where('status', 'active')->with('specialities')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+                        $query->where('status', 'active')->with(['specialities'=> function ($query) {
+                            $query->orderByPivot('coe_speciality.order_number')->select('specialities.id', 'name', 'slug', 'icon_image','coe_speciality.order_number');
+                        },])->orderBy('centre_of_excellences.order_number')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
                     },
                     'specialities' => function ($query) use ($coe_id) {
                         $query->whereHas('coes',function($query) use ($coe_id){
                             $query->where('centre_of_excellences.id',$coe_id);             
 
-                        })->select('specialities.id', 'name', 'slug', 'icon_image');
+                        })->orderByPivot('branch_speciality.order_number')->select('specialities.id', 'name', 'slug', 'icon_image');
                     },
                 ])->first('id');  
             }
@@ -242,7 +244,9 @@ class ApiController extends Controller
             {
                 $response = Branch::where('status', 'active')->where('id', $branch_id)->with([
                     'coes' => function ($query) {
-                        $query->where('status', 'active')->with('specialities')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+                        $query->where('status', 'active')->with(['specialities'=> function ($query) {
+                            $query->select('specialities.id', 'name', 'slug', 'icon_image')->orderByPivot('coe_speciality.order_number');
+                        },])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
                     },
                     // 'specialities' => function ($query) {
                     //     $query->select('specialities.id', 'name', 'slug', 'icon_image');

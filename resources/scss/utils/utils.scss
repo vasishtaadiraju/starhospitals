@@ -41,7 +41,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0.25em;
+    padding: 0.25em 0.75em;
     float: left;
     gap: 0.5em;
     background-color: white;
@@ -49,6 +49,9 @@
     @content;
     img , svg {
         // padding: 0.25em;
+        // color: gray !important;
+        // background-color: gray;
+        // fill: currentColor !important;
     }
     
 
@@ -91,6 +94,7 @@ place-items: center;
     color: $color;
     background-color: $background-color;
     outline: none;
+    cursor: pointer;
 }
 
 @mixin font-family($font-weight)
@@ -161,9 +165,13 @@ a{
 body{
     overflow-x: hidden;
     // font-size: 5rem;
+    color:variables.$starhospitals-text-primary;
+    // color: red
+
 }
 
-
+// h1,h2,h3,h4,h5,h6,p,span,div{
+// }
 
 input,select{
     @include font-family(500);
@@ -357,6 +365,7 @@ input,select{
         font-weight: 600 !important;
         font-size: 36px;
         line-height: 30.5px;
+
         @include media("sm-mob") {
         font-size: 20px;
             
@@ -461,6 +470,7 @@ p{
     margin-top: 3.5rem;
     margin-left: 50%;
     transform: translate(-50%);
+    cursor: pointer;
 
 }
 .form-fields-wrapper {

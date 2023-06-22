@@ -50,7 +50,7 @@
             
         </select> --}}
 
-        <button class="filter__fields-wrapper conditions-search" style="width:100%;height:100%;border:none;background-color:#E3000F;color:white;border-radius:5px;padding:1em 0px;text-align:center;font-family:'Plus Jakarta Sans Bold';display:flex;justify-content:center">Search</button>
+        <button class="filter__fields-wrapper conditions-search" style="width:100%;height:100%;border:none;background-color:#E3000F;color:white;border-radius:5px;padding:1em 0px;text-align:center;font-family:'Plus Jakarta Sans Bold';display:flex;justify-content:center;cursor:pointer">Search</button>
     
 </div>
 

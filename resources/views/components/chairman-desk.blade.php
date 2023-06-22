@@ -15,10 +15,12 @@
     <div class="chairman-desk__wrapper">
         <div class="chairman-desk__image-container">
             <img src="" data-src="{{Vite::asset('resources/images/chairman.webp')}}" alt="">
+                <h2>Dr. Gopichand Mannam</h2>
+                <p>Managing Director, Star Hospitals</p>
         </div>
         <div class="chairman-desk__content-container">
             {{-- @if(!empty($about->chairman_desk_title)) --}}
-            <h2 class="section-heading">From Chairman’s Desk</h2>
+            <h2 class="section-heading">From the Managing Director's Desk</h2>
             {{-- @endif --}}
             {{-- @if(!empty($about->chairman_desk_description)) --}}
             <p>{!! $about->chairman_desk !!}</p>

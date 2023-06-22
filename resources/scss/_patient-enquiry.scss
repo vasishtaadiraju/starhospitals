@@ -1,0 +1,43 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+
+.p-enq{
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: #004f9e44;
+
+    z-index: 3600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__close{
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding:0.75em 1em;
+        background-color: #004f9e9d;
+        font-family: 'Plus Jakarta Sans Bold';
+        color: #ffff;
+        cursor: pointer;
+    }
+    &__wrapper{
+        // width: 40%;
+        // pointer-events: none;
+        h2{
+            font-family: 'Plus Jakarta Sans';
+        }
+        background-color: #ffff;
+        padding: 2em;
+        border-radius: 10px;
+        // border: 1px solid #004E9E;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    }
+}

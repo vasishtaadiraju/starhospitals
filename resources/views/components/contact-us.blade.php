@@ -40,18 +40,20 @@
                 @csrf
                 <div class="form-input contact-us__form__radio">
                     <div class="form-input__radio form-input__field--w-3">
-                        <input class="form-input__field" id="feedback" name="type" type="radio" checked>
+                        <input class="form-input__field" id="feedback" name="type" value="feedback" type="radio" checked>
                         <label for="feedback">Feedback</label>
                     </div>
                     <div class="form-input__radio form-input__field--w-3">
-                        <input class="form-input__field" id="complaint" name="type" type="radio">
+                        <input class="form-input__field" id="complaint" name="type" value="complaint" type="radio">
                         <label for="complaint">Complaint</label>
                     </div>
                     <div class="form-input__radio form-input__field--w-3">
-                        <input class="form-input__field" id="enquiry" name="type" type="radio">
+                        <input class="form-input__field" id="enquiry" name="type" value="enquiry" type="radio">
                         <label for="enquiry">Enquiry</label>
                     </div>
-                    
+                    @error('type')
+                                <span class="error-message">{{ $message }}</span>
+                            @enderror
                 </div>
                 <div class="form-fields">
                     <div class="form-fields-wrapper form-fields-wrapper--col-2">
