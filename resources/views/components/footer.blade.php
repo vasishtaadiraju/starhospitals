@@ -473,22 +473,23 @@
                 </li>
 
             </ul>
+            {{-- <div class="footer__columns"> --}}
+                <ul class="footer__columns__option">
+      
+                      <li class="footer__columns__option__label footer__columns__option__label--dropdown">Locations
+                          <ul class="footer__columns__option__label--dropdown__option">
+                              @foreach ($branches as $item)
+                              <li class="footer__columns__option__item"><a href="{{route('branch',$item->slug)}}">{{$item->name}}</a></li>
+                                  
+                              @endforeach
+                               {{-- <li class="footer__columns__option__item"><a href="">Financial District</a></li>  --}}
+                          </ul>
+                      </li>
+                  </ul> 
+            {{-- </div> --}}
         </div>
 
-        <div class="footer__columns">
-            <ul class="footer__columns__option">
-  
-                  <li class="footer__columns__option__label footer__columns__option__label--dropdown">Locations
-                      <ul class="footer__columns__option__label--dropdown__option">
-                          @foreach ($branches as $item)
-                          <li class="footer__columns__option__item"><a href="">{{$item->name}}</a></li>
-                              
-                          @endforeach
-                           <li class="footer__columns__option__item"><a href="">Financial District</a></li> 
-                      </ul>
-                  </li>
-              </ul> 
-          </div>
+        
 
 
 
@@ -524,6 +525,7 @@
                 </li>
 
             </ul>
+            
         </div>
 
 
@@ -590,6 +592,25 @@
         </div>
         
         
+        
+        
+        
+        
+        
+        {{-- <div class="footer__columns">
+            <ul class="footer__columns__option">
+  
+                  <li class="footer__columns__option__label footer__columns__option__label--dropdown">Locations
+                      <ul class="footer__columns__option__label--dropdown__option">
+                          @foreach ($branches as $item)
+                          <li class="footer__columns__option__item"><a href="{{route('branch',$item->slug)}}">{{$item->name}}</a></li>
+                              
+                          @endforeach
+                      </ul>
+                  </li>
+              </ul> 
+        </div> --}}
+        
         <div class="footer__columns footer__columns--logo">
 
 
@@ -602,7 +623,6 @@
 
 
         </div>
-
         
 
         <div class="footer__columns">

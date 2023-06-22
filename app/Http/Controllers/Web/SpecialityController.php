@@ -17,7 +17,7 @@ class SpecialityController extends Controller
         if(CentreOfExcellence::where('slug',$slug)->where('status','active')->exists())
         {
             $content = CentreOfExcellence::where('status','active')->where('slug',$slug)->with(['branches'=>function($query){
-                $query->where('status','active')->orderBy('branches.order_number')->select('branches.id','name','slug','banner_mobile')->take(2);
+                $query->where('status','active')->orderBy('branches.order_number')->select('branches.id','name','slug','card_image','address')->take(2);
             },'faqs','blogs'=>function($query){
                 $query->where('status','active')->orderBy('blog_coe.order_number')->select('title', 'author', 'image', 'image_alt', 'slug', 'published_date');
             },'media'=>function($query){
@@ -41,7 +41,7 @@ class SpecialityController extends Controller
         {
             
             $content = Speciality::where('status','active')->where('slug',$slug)->with(['branches'=>function($query){
-                $query->where('status','active')->orderBy('branches.order_number')->select('branches.id','name','slug','banner_mobile')->take(2);
+                $query->where('status','active')->orderBy('branches.order_number')->select('branches.id','name','slug','card_image','address')->take(2);
             },'faqs','blogs'=>function($query){
                 $query->where('status','active')->orderBy('blog_speciality.order_number')->select('title', 'author', 'image', 'image_alt', 'slug', 'published_date');
             },'media'=>function($query){
