@@ -38,7 +38,7 @@ class DoctorOrder extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'doctor.name'
     ];
 
     /**
