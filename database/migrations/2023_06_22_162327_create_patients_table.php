@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('request_callback_form', function (Blueprint $table) {
+        Schema::create('patients', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
-            $table->string('country_code', 5);
+            $table->string('name');
             $table->string('contact', 20);
-            $table->string('email', 150);
-            $table->string('department', 100);
-            $table->date('date');
+            $table->string('email');
+            $table->string('branch');
+            $table->string('speciality');
+            $table->string('doctor');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('request_callback_form');
+        Schema::dropIfExists('patients');
     }
 };

@@ -368,7 +368,9 @@ class Branch extends Resource
      */
     public function actions(NovaRequest $request)
     {
-        return [];
+        return [
+            Actions\TagAllSpeciality::make()->showInline()
+        ];
     }
 
     public static function redirectAfterCreate(NovaRequest $request, $resource)

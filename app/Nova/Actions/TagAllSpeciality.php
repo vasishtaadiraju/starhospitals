@@ -2,7 +2,6 @@
 
 namespace App\Nova\Actions;
 
-use App\Models\Branch;
 use App\Models\CentreOfExcellence;
 use App\Models\Speciality;
 use Illuminate\Bus\Queueable;
@@ -32,25 +31,21 @@ class TagAllSpeciality extends Action
             $speciality_ids = Speciality::where('status', 'active')->pluck('id');
 
             foreach ($coe_ids as $coe_id) {
-                if (!(DB::table('branch_coe')->where('branch_id', $model->id)->where('coe_id', $coe_id)->exists())) {
-                    DB::table('branch_coe')->insert([
-                        'coe_id' => $coe_id,
-                        'branch_id' => $model->id,
-                        'created_at' => now(),
-                        'updated_at' => now()
-                    ]);
-                }
+                DB::table('branch_coe')->insert([
+                    'coe_id' => $coe_id,
+                    'branch_id' => $model->id,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]);
             }
 
             foreach ($speciality_ids as $speciality_id) {
-                if (!(DB::table('branch_speciality')->where('branch_id', $model->id)->where('speciality_id', $speciality_id)->exists())) {
-                    DB::table('branch_speciality')->insert([
-                        'speciality_id' => $speciality_id,
-                        'branch_id' => $model->id,
-                        'created_at' => now(),
-                        'updated_at' => now()
-                    ]);
-                }
+                DB::table('branch_speciality')->insert([
+                    'speciality_id' => $speciality_id,
+                    'branch_id' => $model->id,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]);
             }
         }
     }

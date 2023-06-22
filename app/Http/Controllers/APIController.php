@@ -24,4 +24,9 @@ class APIController extends Controller
             'updated_at' => now()
         ]);
     }
+
+    public function truncateBranchCOESpecialityMapping() {
+        DB::table('branch_coe')->truncate();
+        DB::table('branch_speciality')->truncate();
+    }
 }
