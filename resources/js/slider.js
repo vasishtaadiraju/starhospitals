@@ -454,9 +454,3 @@ if(screenWidth < 769)
 }
 
 
-document.querySelector('.slick-next').addEventListener('click',function(){
-    console.log();
-    // this.previousElementSibling.querySelector('.slick-track').style.width
-    // this.previousElementSibling.querySelector('.slick-track').style.transform  = `translate3d(-1736px, 0px, 0px)`;
-    // return;
-})
