@@ -3,8 +3,10 @@
     @vite(['resources/scss/find-doctor.scss', 'resources/js/condition-landing.js'])
 @endsection
 @section('content')
+<x-banner :imgurl="'condition'" :text="'Treatments & Tests'" :$breadcrum/>
+
 <x-gap/>
-<x-heading :title="'Treatments & Tests'" :description="''"/>
+{{-- <x-heading :title="''" :description="''"/> --}}
 
 {{-- =======================================================Filters ========================================== --}}
 <div class="filter">

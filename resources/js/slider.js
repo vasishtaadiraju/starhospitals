@@ -19,6 +19,8 @@ $('.specialists-slider').slick({
     arrows:true,
     slidesToShow:4,
     infinite:true,
+    centerMode: true,
+
     responsive: [{
         breakpoint: 1275,
         settings: {
@@ -372,6 +374,8 @@ $('.key-services-slider').slick({
     rows:2,
     slidesToScroll:1,
     infinite:true,
+    centerMode: true,
+    centerPadding: '0px',
     responsive: [{
         breakpoint: 1025,
         settings: {

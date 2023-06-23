@@ -16,7 +16,7 @@ class ContactUsController extends Controller
         $faqs = Faq::where('contactpage', 'yes')->get();
         $branches = Branch::where('status','active')->get();
         $breadcrum = "<div class='banner__breadcrum'>
-    <a href='#'>Home</a>
+    <a href='/'>Home</a>
     <span>❯</span>
     <a href='#'>Contact Us</a>
 </div>";

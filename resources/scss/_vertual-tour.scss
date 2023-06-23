@@ -52,7 +52,7 @@
         img {
             margin: 1em 0px;
             width: 100%;
-
+            border-radius: 10px;
             @include media("sm-mob") {
                 width: 100%;
             }
@@ -75,6 +75,7 @@
     }
     &__sm-image {
         flex: 1;
+        // height: 50%;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -83,6 +84,8 @@
         img {
             flex: 0 0 48%;
             width: 48%;
+            // height: 100%;
+            border-radius: 10px;
 
             @include media("sm-mob") {
                 flex: 0 0 48%;

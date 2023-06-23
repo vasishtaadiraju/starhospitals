@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Branch;
 use App\Models\Doctor;
+use App\Models\Speciality;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
@@ -46,14 +48,21 @@ class DoctorController extends Controller
             }
         ])->first();
 
+        $branch = Branch::where('status','active')->where('slug',$branch_slug)->first(['id','name']);
+        $speciality = Speciality::where('status','active')->where('slug',$speciality_slug)->first(['id','name']);
+
         if($content == null)
         {
             abort(404); 
         }
         $breadcrum = "<div class='banner__breadcrum banner__breadcrum--blue'>
-    <a href='#'>Home</a>
+    <a href='/'>Home</a>
     <span>❯</span>
-    <a href='#'>Doctor</a>
+    <a href='#'>Doctors</a>
+    <span>❯</span>
+    <a href='/locations/{$branch_slug}'>{$branch->name}</a>
+    <span>❯</span>
+    <a href='/locations/{$speciality_slug}'>{$speciality->name}</a>
     <span>❯</span>
     <a href='#'>{$content->name}</a>
 </div>";

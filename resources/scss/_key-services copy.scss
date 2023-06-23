@@ -7,16 +7,13 @@
     @include centerSection;
     width: 75%;
     @include media("sm-mob") {
-        width: 80%;
+        width: 90%;
     }
     @include media("md-mob") {
-        width: 80%;
+        width: 90%;
     }
     @include media("lg-mob") {
-        width: 80%;
-    }
-    @include media("x-sm-tab") {
-        width: 80%;
+        width: 90%;
     }
     // margin-left: 15%;
     h1 {
@@ -26,15 +23,8 @@
     }
 
     &__wrapper {
-
-        &--speciality{
-            display: flex;
-
-        }
-        margin: 0px auto;
-        // margin-left: 50%;
-        // transform: translate(-50%);
-        justify-content: center;
+        display: flex;
+        justify-content: flex-start;
         flex-wrap: wrap;
         @include media("sm-mob") {
             justify-content: space-between;
@@ -45,30 +35,23 @@
         @include media("lg-mob") {
             justify-content: space-between;
         }
-
-        &__card-wrapper {
-            // margin: 0.5em 5em;
-            padding: 1em;
-        }
     }
     &__card {
         box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
         -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
         -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
         padding: 2em 0em;
-        width: 100%;
-        // flex: 0 0 calc(90% / 5);
+        flex: 0 0 calc(90% / 5);
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 0px 1.25em 2em 0em;
         border-radius: 20px;
-        min-height: 13rem;
 
         @include media("sm-mob") {
             flex: 0 0 calc(95% / 2);
             padding: 1em 0px;
             margin: 0px 0px 1em 0em;
-            min-height: 10rem;
         }
         @include media("md-mob") {
             flex: 0 0 calc(95% / 2);
@@ -82,30 +65,34 @@
         }
         @include media("x-sm-tab") {
             flex: 0 0 calc(85% / 3);
+           
         }
         @include media("sm-tab") {
             flex: 0 0 calc(87% / 3);
+           
         }
         @include media("md-tab") {
             flex: 0 0 calc(90% / 3);
+           
         }
         @include media("lg-tab") {
             flex: 0 0 calc(90% / 3);
+           
         }
         svg {
             width: 64px;
             height: 64px;
             @include media("sm-mob") {
                 width: 50px;
-                height: 50px;
+            height: 50px;
             }
             @include media("md-mob") {
                 width: 50px;
-                height: 50px;
+            height: 50px;
             }
             @include media("lg-mob") {
                 width: 50px;
-                height: 50px;
+            height: 50px;
             }
             // margin: 0px auto;
         }

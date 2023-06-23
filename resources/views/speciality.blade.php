@@ -13,6 +13,8 @@
 <x-gap/>
 <x-services-treatment :$content />
 <x-gap/>
+<x-key-services :$coes />
+<x-gap/>
 <x-locations :$content  :locations='$content->branches'/>
 <x-gap/>
 <div class="ui-background">

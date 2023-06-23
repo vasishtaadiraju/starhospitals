@@ -13,8 +13,8 @@ class BranchController extends Controller
         $content = Branch::where('status', 'active')->where('slug', $slug)->with([
             'coes' => function ($query) {
                 $query->where('status', 'active')->with(['specialities'=>function($query){
-                    $query->select('specialities.id','name','slug','icon_image');
-                }])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+                    $query->where('status','active')->select('specialities.id','name','slug','icon_image');
+                }])->where('status','active')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
             },
             'faqs',
             'blogs' => function ($query) {
@@ -71,7 +71,9 @@ class BranchController extends Controller
     </div>';
 
         $breadcrum = "<div class='banner__breadcrum'>
-    <a href='#'>Home</a>
+    <a href='/'>Home</a>
+    <span>❯</span>
+    <a href='#'>Locations</a>
     <span>❯</span>
     <a href='#'>{$content->name}</a>
 </div>";

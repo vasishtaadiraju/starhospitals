@@ -14,7 +14,7 @@ async function handleBranchChange(){
         "POST",
         body
     );
-    document.querySelector(".coe-select-box").innerHTML = `<option value="">Speciality</option>`
+    document.querySelector(".coe-select-box").innerHTML = `<option value="">Centres of Excellence</option>`
     
     response.data.coes.forEach((result,index )=>{
         let option = "";
@@ -41,6 +41,7 @@ async function handleCoeChange(){
         body
     );
     document.querySelector(".speciality-select-box").innerHTML = `<option value="">Speciality</option>`
+    
     
     response.data.specialities.forEach((result,index )=>{
         let option = "";

@@ -27,11 +27,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[HomeController::class,'index'])->name('home');
-Route::get('/doctor/book-an-appointment', function () {
+Route::get('/find-a-doctor', function () {
     return view('book-an-appointment.find-doctor');
 })->name('find-doctor');
-Route::get('/about',[AboutUsController::class,'index'])->name('about');
-Route::get('/contact',[ContactUsController::class,'index'])->name('contact');
+Route::get('/about-us',[AboutUsController::class,'index'])->name('about');
+Route::get('/contact-us',[ContactUsController::class,'index'])->name('contact');
 // Route::get('/centers-of-excellence/{slug}',[CoeController::class,'index'])->name('coe');
 Route::get('/specialities/{slug}',[SpecialityController::class,'index'])->name('speciality');
 Route::post('/',[FormController::class,'homeForm'])->name('home.form');
@@ -63,5 +63,10 @@ Route::get('/thank-you',function(){
     return view('thank-you');
 });
 Route::get('/terms-and-conditions',function(){
-    return view('terms-and-condition');
+    $breadcrum = "<div class='banner__breadcrum'>
+    <a href='/'>Home</a>
+    <span>❯</span>
+    <a >Terms & Conditions</a>
+</div>";
+    return view('terms-and-condition',['breadcrum'=>$breadcrum]);
 });

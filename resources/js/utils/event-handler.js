@@ -98,7 +98,7 @@ export function showForm()
                     </div>
                 </div>
                 <div class="form-fields">
-                    <div class="form-fields-wrapper form-fields-wrapper--col-2">
+                    <div class="form-fields-wrapper form-fields-wrapper--col-1">
                         <div class="form-fields-wrapper ">
                             
                         <input placeholder="Speciality" 
@@ -108,7 +108,7 @@ export function showForm()
 
                         </div>
                     </div>
-                    <div class="form-fields-wrapper form-fields-wrapper--col-2">
+                    <div class="form-fields-wrapper form-fields-wrapper--col-1">
                         <div class="form-fields-wrapper ">
                             <input
                                 type="text"class=""
@@ -145,13 +145,19 @@ export function showForm()
         //     this.remove();
         // })
 
+        let formNode = this.parentNode;
+
         document.querySelector('.patient-enquiry-form').addEventListener('submit',async function(e){
             let formResponse = await handleFormSubmit(e);
 
             console.log(formResponse);
             if(formResponse.status.status == 200)
             {
+                // console.log(formNode);
+                document.querySelector('.p-enq').remove()
+                // formNode.remove();
                 window.open(formResponse.data.href,'_blank');
+                
             }
         });
 }

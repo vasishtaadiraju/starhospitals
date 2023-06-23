@@ -53,11 +53,11 @@
                     <div class="form-fields-wrapper form-fields-wrapper--col-1" id="consult-our-expert">
                         <div class="form-fields-wrapper ">
                             <input
-                                type="text"class="@error('department')
+                                type="text"class="@error('speciality')
                             error-field
                         @enderror"
-                                name="department" value="{{$content->name}}" disabled>
-                            @error('department')
+                                name="speciality" value="{{$content->name}}" disabled>
+                            @error('speciality')
                                 <span class="error-message">{{ $message }}</span>
                             @enderror
                         </div>

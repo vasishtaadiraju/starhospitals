@@ -1,14 +1,18 @@
 {{-- <h1 class="section-heading key-services">Our Key Services</h1> --}}
 <x-heading :title="'Our Key Services'" :description="''" />
-
 <div class="key-services">
 
 
-    <div class="key-services__wrapper key-services-slider" id="key-services">
+    <div class="key-services__wrapper @if (request()->route()->getName() == 'speciality')
+        key-services__wrapper--speciality
+        @else
+        key-services-slider
+    @endif" id="key-services">
         @if(count($coes) > 0 || $coes != null)
         
         @foreach ($coes as $item)
                     @if (count($item->specialities) > 0)
+                    
                         @foreach ($item->specialities as $speciality)
                         
                             <div class="key-services__wrapper__card-wrapper">
@@ -21,11 +25,14 @@
                             
                         @endforeach
                     @else
+                    <div class="key-services__wrapper__card-wrapper">
+
                     <a href="{{route('speciality',$item->slug)}}" class="key-services__card">
                         {!! $item->icon_image !!}
             
                         <p>{{ $item->name }}</p>
                     </a>
+                </div>
                     @endif
                 @endforeach
         @else

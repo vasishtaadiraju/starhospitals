@@ -125,9 +125,22 @@ async function printDoctors(body, selectBox, className) {
         document.querySelector(className).previousElementSibling.previousElementSibling.remove()
         document.querySelector(className).previousElementSibling.remove()
         document.querySelector(className).remove()
+
+       if(document.querySelector('.coe-page').childElementCount == 1)
+       {
+        document.querySelector('.coe-page').previousElementSibling.remove();
+        document.querySelector('.coe-page').remove();
+       }
+        console.log( );
         
     }
+
+    
     response.data.forEach((result) => {
+        if(result.doctor == null)
+        {
+            return;
+        }
         if (selectBox == true) {
            let branch_slug =  document.getElementsByClassName("location-select-box")[0].options[document.getElementsByClassName("location-select-box")[0].selectedIndex].getAttribute('data-slug');
             console.log(branch_slug);

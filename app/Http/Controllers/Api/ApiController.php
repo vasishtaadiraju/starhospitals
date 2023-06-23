@@ -155,7 +155,7 @@ class ApiController extends Controller
             'doctor' => function ($query) {
                 $query->with([
                     'coes' => function ($query) {
-                        $query->with([
+                        $query->where('status','active')->with([
                             'specialities' => function ($query) {
                                 $query->where('status', 'active')->select('specialities.id', 'name');
                             }
@@ -171,7 +171,7 @@ class ApiController extends Controller
                             }
                         ])->select('specialities.id', 'name','slug');
                     }
-                ])->select('id', 'name', 'slug', 'designation', 'small_image', 'large_image','experience','fee','his_id','video_consultation');
+                ])->where('status','active')->select('id', 'name', 'slug', 'designation', 'small_image', 'large_image','experience','fee','his_id','video_consultation');
             }
         ])->orderBy(DB::raw('ISNULL(order_number), order_number'), 'ASC')->where('branch_id', $branch_id);
 
@@ -293,7 +293,7 @@ class ApiController extends Controller
             });
         }
 
-        $response = $conditions_query->whereNotNull('diagnosis_treatment_slug')->where('status', 'active')->paginate(8);
+        $response = $conditions_query->whereNotNull('diagnosis_treatment_slug')->where('status', 'active')->orderBy('diagnosis_treatment')->paginate(8);
 
         return response($response, 200);
 

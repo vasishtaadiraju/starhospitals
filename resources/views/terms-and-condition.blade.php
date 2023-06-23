@@ -3,9 +3,5 @@
     @vite(['resources/scss/thankyou.scss', 'resources/js/app.js'])
 @endsection
 @section('content')
-<x-banner :imgurl="Vite::asset('resources/images/banner/t&c.png')" :text="'Terms & Conditions | Star Hospitals'" :breadcrum='<div class="banner__breadcrum">
-    <a href="#">Home</a>
-    <span>❯</span>
-    <a href="#">Terms & Conditions</a>
-</div>' />  
+<x-banner :imgurl="Vite::asset('resources/images/banner/t&c.png')" :text="'Terms & Conditions | Star Hospitals'" :$breadcrum />  
 @endsection

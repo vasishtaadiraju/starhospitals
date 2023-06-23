@@ -561,16 +561,16 @@
         <div class="footer__columns">
             <ul class="footer__columns__option">
                 <li class="footer__columns__option__label" id="second-speciality">
-                    <ul class="footer__columns__option__label--dropdown__option">
+                    <ul class="footer__columns__option__label--dropdown__option speciality-second-column" style="">
                         {{-- <li class="footer__columns__option__item"><a href="">Cardiologists in Hyderabad</a>
                         </li>
                         <li class="footer__columns__option__item"><a href="">Gastroenterologists in
                                 Hyderabad</a></li>
                         <li class="footer__columns__option__item"><a href="">Neurologists in Hyderabad</a></li>
                         <li class="footer__columns__option__item"><a href="">Nephrologists in Hyderabad</a>
-                        </li>
-                        <li class="footer__columns__option__item"><a href="">Pulmonologists in Hyderabad</a>
-                        </li> --}}
+                        </li>--}}
+                        
+
                         @php
                             $j = 0;                        @endphp
                         @foreach ($coes as $item)
@@ -722,4 +722,9 @@
         <span class="footer__copyright__pipe">|</span>
         <span> © 2008-2023 Star Hospitals, All Rights Reserved</span>
     </p>
+</div>
+<div class="scroll-top-top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M7.83336 3.52325L7.83336 13.6666L6.16669 13.6666L6.16669 3.52325L1.69669 7.99325L0.518357 6.81492L7.00002 0.333253L13.4817 6.81492L12.3034 7.99325L7.83336 3.52325Z" fill="white"/>
+        </svg>
 </div>

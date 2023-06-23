@@ -1,6 +1,6 @@
 <x-heading :title="'Reviews From Our Patients'" :description="$content->review_text" />
 
-<div class="t-sec testimonials-slider">
+<div class="t-sec testimonials-slider" id="patient-reviews">
     @foreach ($testimonials as $item)
     <div class="t-sec__card">
         <svg width="40" height="31" viewBox="0 0 40 31" fill="none" xmlns="http://www.w3.org/2000/svg">

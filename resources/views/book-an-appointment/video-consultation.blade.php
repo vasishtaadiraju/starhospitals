@@ -366,7 +366,7 @@
                         </div>
                         <div class="form-fields-wrapper form-fields-wrapper--col-1">
                             <div class="form-fields-wrapper ">
-                                <select type="text" name="speciaity" class="speciality-select-box">
+                                <select type="text" name="speciality" class="speciality-select-box">
                                     <option value="">Speciality</option>
                                 </select>
                                 @error('speciality')
@@ -389,8 +389,8 @@
                         </div>
                         <div class="form-fields-wrapper form-fields-wrapper--col-1">
                             <div class="form-fields-wrapper ">
-                                <input type="date">
-                                @error('date')
+                                <input type="date" name="date">
+                                @error('date')  
                                 <span class="error-message">{{ $message }}</span>
                                 @enderror
                             </div>

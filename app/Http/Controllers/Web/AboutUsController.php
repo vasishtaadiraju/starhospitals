@@ -17,7 +17,7 @@ class AboutUsController extends Controller
         $faqs = Faq::where('aboutpage','yes')->get();
 
         $breadcrum = "<div class='banner__breadcrum'>
-    <a href='#'>Home</a>
+    <a href='/'>Home</a>
     <span>❯</span>
     <a href='#'>About Us</a>
 </div>";

@@ -57,9 +57,11 @@ class ConditionsController extends Controller
             abort(404);
         }
         $breadcrum = "<div class='banner__breadcrum'>
-    <a href='#'>Home</a>
+    <a href='/'>Home</a>
     <span>❯</span>
-    <a href='#'>{$content->name}</a>
+    <a >Tests Procedures</a>
+    <span>❯</span>
+    <a >{$content->name}</a>
 </div>";
         return view('services-and-treatments.condition',[
             'content'=>$content,
@@ -74,8 +76,16 @@ class ConditionsController extends Controller
     function landingPage()
     {
         $coes = CentreOfExcellence::get(['id','name']);
+        $breadcrum = "<div class='banner__breadcrum'>
+        <a href='/'>Home</a>
+        <span>❯</span>
+        <a >Tests Procedures</a>
+        <span>❯</span>
+        <a >Treatments and Tests</a>
+    </div>";
         return view('services-and-treatments.index',[
             'coes'=>$coes,
+            'breadcrum'=>$breadcrum,
         ]);
     }
 }

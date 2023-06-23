@@ -4,25 +4,25 @@
 
     <div class="virtual-tour__slider-item">
         <div class="virtual-tour__lg-image">
-            <img src="" data-src="{{Vite::asset('resources/images/int-patients/Rectangle 80.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/gallery/virtual-tour/img-6.jpg')}}" alt="">
         </div>
         <div class="virtual-tour__sm-image">
-            <img src="" data-src="{{Vite::asset('resources/images/int-patients/Rectangle 81.png')}}" alt="">
-            <img src="" data-src="{{Vite::asset('resources/images/int-patients/Rectangle 82.png')}}" alt="">
-            <img src="" data-src="{{Vite::asset('resources/images/int-patients/Rectangle 83.png')}}" alt="">
-            <img src="" data-src="{{Vite::asset('resources/images/int-patients/Rectangle 84.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/gallery/virtual-tour/img-small-2.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/gallery/virtual-tour/img-small-4.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/gallery/virtual-tour/img-small-5.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/gallery/virtual-tour/img-small-7.png')}}" alt="">
     
         </div>
     </div>
     <div class="virtual-tour__slider-item">
         <div class="virtual-tour__lg-image">
-            <img src="" data-src="{{Vite::asset('resources/images/int-patients/Rectangle 80.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/gallery/virtual-tour/img-8.jpg')}}" alt="">
         </div>
         <div class="virtual-tour__sm-image">
-            <img src="" data-src="{{Vite::asset('resources/images/int-patients/Rectangle 81.png')}}" alt="">
-            <img src="" data-src="{{Vite::asset('resources/images/int-patients/Rectangle 82.png')}}" alt="">
-            <img src="" data-src="{{Vite::asset('resources/images/int-patients/Rectangle 83.png')}}" alt="">
-            <img src="" data-src="{{Vite::asset('resources/images/int-patients/Rectangle 84.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/gallery/virtual-tour/img-small-3.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/gallery/virtual-tour/img-small-9.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/gallery/virtual-tour/img-small-10.png')}}" alt="">
+            <img src="" data-src="{{Vite::asset('resources/images/gallery/virtual-tour/img-small-1.png')}}" alt="">
     
         </div>
     </div>

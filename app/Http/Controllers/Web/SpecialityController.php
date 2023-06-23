@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\CentreOfExcellence;
+use App\Models\CoeSpeciality;
 use App\Models\Speciality;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class SpecialityController extends Controller
     {
 
         $content = null;
-        $specialities = [];
+        $coes = [];
 
         if(CentreOfExcellence::where('slug',$slug)->where('status','active')->exists())
         {
@@ -53,6 +54,11 @@ class SpecialityController extends Controller
             $content->page_type = 'speciality';
             session(['speciality_id'=>$content->id]);
 
+            $coe_id= CoeSpeciality::where('speciality_id',$content->id)->pluck('coe_id');
+
+            $coes= CentreOfExcellence::where('id',$coe_id)->where('status','active')->with(['specialities'=>function($query) use ($content){
+                $query->where('status','active')->where('specialities.id','!=',$content->id)->select('specialities.id','name','slug','icon_image');
+            }])->get(['id','slug','name']);
             
         }
         else
@@ -99,6 +105,7 @@ class SpecialityController extends Controller
             'content' => $content,
             'breadcrum'=>$breadcrum,
             'tabs'=>$tabs,
+            'coes'=>$coes,
         ]);
     }
 }

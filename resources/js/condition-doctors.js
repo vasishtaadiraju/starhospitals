@@ -46,7 +46,10 @@ async function printDoctors(url,body) {
     document
                 .querySelector('.doctor-appointment-cards-wrapper').innerHTML = "";
     response.data.data.forEach((result) => {
-        
+        if(result.doctor == null)
+        {
+            return;
+        }
             let coeName = [];
             let branchName = [];
             let branch_slug = "";
