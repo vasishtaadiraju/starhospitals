@@ -379,7 +379,8 @@ class FormController extends Controller
     }
 
     DB::table('patients')->insert([
-      'country_code' => $request->input('name'),
+      'name' => $request->input('name'),
+      'country_code' => $request->input('country_code'),
       'contact' => $request->input('contact'),
       'email' => $request->input('email'),
       'branch' => $request->input('branch'),
