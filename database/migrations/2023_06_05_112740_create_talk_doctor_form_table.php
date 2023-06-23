@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('talk_doctor_form', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('country_code', 5);
+            $table->integer('country_code');
             $table->string('contact', 15);
+            $table->string('email');
             $table->string('speciality');
             $table->text('message');
             $table->string('utm_source')->nullable();

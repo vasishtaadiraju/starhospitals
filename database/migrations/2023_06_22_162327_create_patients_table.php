@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('country_code', 5);
+            $table->integer('country_code');
             $table->string('contact', 15);
             $table->string('email');
             $table->string('branch');

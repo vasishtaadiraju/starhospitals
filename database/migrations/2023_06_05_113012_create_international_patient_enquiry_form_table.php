@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('international_patient_enquiry_form', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('country_code');
+            $table->integer('country_code');
             $table->string('contact', 15);
             $table->string('email');
             $table->string('department');

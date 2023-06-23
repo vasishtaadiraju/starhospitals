@@ -187,7 +187,7 @@ class Branch extends Resource
     protected function highlights()
     {
         return [
-            Text::make('Years of experience', 'experience')
+            Text::make('Skilled & Experienced doctors', 'skilled_experienced_doctors')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:5'),
 

@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('about_image_desktop')->nullable();
             $table->string('about_image_mobile')->nullable();
             $table->string('about_image_alt', 100)->nullable();
-            $table->string('experience', 5)->nullable();
+            $table->string('skilled_experienced_doctors', 5)->nullable();
             $table->string('surgeries', 5)->nullable();
             $table->string('beds', 5)->nullable();
             $table->string('happy_patients', 10)->nullable();
