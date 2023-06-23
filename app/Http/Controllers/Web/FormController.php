@@ -244,7 +244,7 @@ class FormController extends Controller
       'contact' => $request->input('contact'),
       'email' => $request->input('email'),
       'department' => $request->input('department'),
-      'report' => $request->file('report')->store('InternationalPatient', 'public'),
+      'report' => $request->file('report')->store('InternationalPatient', 's3'),
       'utm_source' => $utm_source,
       'utm_medium' => $utm_medium,
       'utm_campaign' => $utm_campaign,
