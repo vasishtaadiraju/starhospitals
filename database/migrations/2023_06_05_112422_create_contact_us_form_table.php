@@ -14,11 +14,18 @@ return new class extends Migration
         Schema::create('contact_us_form', function (Blueprint $table) {
             $table->id();
             $table->enum('type', ['feedback', 'complaint', 'enquiry']);
-            $table->string('name', 100);
-            $table->string('contact', 20);
-            $table->string('email', 150);
+            $table->string('name');
+            $table->string('country_code', 5);
+            $table->string('contact', 15);
+            $table->string('email');
             $table->string('subject');
             $table->text('message');
+            $table->string('utm_source')->nullable();
+            $table->string('utm_medium')->nullable();
+            $table->string('utm_campaign')->nullable();
+            $table->string('utm_term')->nullable();
+            $table->string('utm_content')->nullable();
+            $table->string('utm_lms')->nullable();
             $table->timestamps();
         });
     }

@@ -13,17 +13,23 @@ return new class extends Migration
     {
         Schema::create('video_consultation', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname', 100);
-            $table->string('lastname', 100);
+            $table->string('firstname');
+            $table->string('lastname');
             $table->string('guardian_name');
-            $table->integer('country_code');
-            $table->string('contact', 20);
-            $table->string('email', 150);
+            $table->string('country_code', 5);
+            $table->string('contact', 15);
+            $table->string('email');
             $table->string('branch');
             $table->string('coe');
             $table->string('speciality');
             $table->string('doctor');
             $table->date('date');
+            $table->string('utm_source')->nullable();
+            $table->string('utm_medium')->nullable();
+            $table->string('utm_campaign')->nullable();
+            $table->string('utm_term')->nullable();
+            $table->string('utm_content')->nullable();
+            $table->string('utm_lms')->nullable();
             $table->timestamps();
         });
     }

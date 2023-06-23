@@ -14,11 +14,17 @@ return new class extends Migration
         Schema::create('international_patient_enquiry_form', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('country_code');
-            $table->string('contact', 20);
-            $table->string('email', 150);
-            $table->string('department', 100);
+            $table->string('country_code');
+            $table->string('contact', 15);
+            $table->string('email');
+            $table->string('department');
             $table->string('report');
+            $table->string('utm_source')->nullable();
+            $table->string('utm_medium')->nullable();
+            $table->string('utm_campaign')->nullable();
+            $table->string('utm_term')->nullable();
+            $table->string('utm_content')->nullable();
+            $table->string('utm_lms')->nullable();
             $table->timestamps();
         });
     }
