@@ -238,13 +238,15 @@ class FormController extends Controller
       $utm_lms = session('utm_lms');
     }
 
+    $report = $request->file('report')->store('InternationalPatient', 's3');
+
     DB::table('international_patient_enquiry_form')->insert([
       'name' => $request->input('name'),
       'country_code' => $request->input('country_code'),
       'contact' => $request->input('contact'),
       'email' => $request->input('email'),
       'department' => $request->input('department'),
-      'report' => $request->file('report')->store('InternationalPatient', 's3'),
+      'report' => $report,
       'utm_source' => $utm_source,
       'utm_medium' => $utm_medium,
       'utm_campaign' => $utm_campaign,
@@ -255,7 +257,7 @@ class FormController extends Controller
       'updated_at' => now()
     ]);
 
-    dispatch(new InternationalToHospital($request->input('name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('department'), $request->input('report')));
+    dispatch(new InternationalToHospital($request->input('name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('department'), $report));
     dispatch(new RequestCallbackToUser($request->input('email')));
 
     return redirect('international-patients/thank-you');
