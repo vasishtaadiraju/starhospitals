@@ -81,7 +81,10 @@ $footer-columns: 5;
                 margin-bottom: 3rem;
             }
             @include media("x-sm-tab") {
-                margin-bottom: 3rem;
+                width: 60%;
+                margin: 0px auto;
+
+                margin-bottom: 5rem;
             }
             @include media("sm-tab") {
                 width: 16%;
@@ -406,6 +409,18 @@ $footer-columns: 5;
         width: 100%;
         font-size: 13px;
         margin-top: 2rem;
+        @include media("sm-mob") {
+            margin-bottom: 5rem;
+        }
+        @include media("md-mob") {
+            margin-bottom: 5rem;
+        }
+        @include media("lg-mob") {
+            margin-bottom: 5rem;
+        }
+        @include media("x-sm-tab") {
+            margin-bottom: 5rem;
+        }
 
         span {
             padding: 0.5em 1em;
@@ -471,16 +486,34 @@ $footer-columns: 5;
 
 
 .scroll-top-top{
+    display: none;
     position: fixed;
-    bottom: 10%;
-    right: 5%;
+    bottom: 1%;
+    right: 1%;
     width: 50px;
     height: 50px;
     background-color: variables.$starhospitals-brand-secondary;
     z-index: 3500;
     border-radius: 50%;
-    display: flex;
+    // display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+
+    @include media('sm-mob')
+    {
+        bottom: 10%;
+    }
+    @include media('md-mob')
+    {
+        bottom: 10%;
+    }
+    @include media('lg-mob')
+    {
+        bottom: 10%;
+    }
+    @include media('x-sm-tab')
+    {
+        bottom: 10%;
+    }
 }

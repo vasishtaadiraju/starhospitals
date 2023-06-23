@@ -16,7 +16,7 @@ class ConditionsController extends Controller
       
         $content = Condition::where('diagnosis_treatment_slug',$slug)->orWhere('symptoms_causes_slug',$slug)->orWhere('doctors_departments_slug',$slug)->orWhere('care_at_star_hospitals_slug',$slug)->with(['coes'=>function($query){
                 $query->where('status','active')->select('centre_of_excellences.id','name','slug');
-        }])->first();
+        },'images'])->first();
 
         $coes = [];
         $branches = [];

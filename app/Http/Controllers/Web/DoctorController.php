@@ -62,7 +62,7 @@ class DoctorController extends Controller
     <span>❯</span>
     <a href='/locations/{$branch_slug}'>{$branch->name}</a>
     <span>❯</span>
-    <a href='/locations/{$speciality_slug}'>{$speciality->name}</a>
+    <a href='/specialities/{$speciality_slug}'>{$speciality->name}</a>
     <span>❯</span>
     <a href='#'>{$content->name}</a>
 </div>";

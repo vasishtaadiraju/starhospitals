@@ -89,7 +89,7 @@
         <div class="d-p-info__col-3">
             <ul class="d-p-info__col-3__scroll-tabs">
                 <li class="d-p-info__col-3__scroll-tabs__item d-p-info__col-3__scroll-tabs__item--active"><a
-                        href="#qualification" class="scroll-to-view">Qualifications</a></li>
+                        href="#qualification" data-tab="qualification" class="scroll-to-view">Qualifications</a></li>
                 <li class="d-p-info__col-3__scroll-tabs__item"><a href="#experience" >Experience</a>
                 </li>
                 <li class="d-p-info__col-3__scroll-tabs__item"><a href="#expertise" class="scroll-to-view">Field of

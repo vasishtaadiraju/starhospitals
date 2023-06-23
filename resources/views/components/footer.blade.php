@@ -718,7 +718,7 @@
     </div>
     <p class="footer__copyright">
 
-        <span> <a href="">Terms & Conditions </a> <span>|</span> <a href=""> Privacy Policy </a></span>
+        <span> <a href="{{route('t-c')}}">Terms & Conditions </a> <span>|</span> <a href=""> Privacy Policy </a></span>
         <span class="footer__copyright__pipe">|</span>
         <span> © 2008-2023 Star Hospitals, All Rights Reserved</span>
     </p>

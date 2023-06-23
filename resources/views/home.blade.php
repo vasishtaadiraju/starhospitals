@@ -30,6 +30,57 @@
 <x-about-us :$content/>
 <x-gap/>
 {{-- <x-testimonials :$content  :testimonials='$reviews'/> --}}
+
+
+{{-- ===================================================Patient Videos =============================================== --}}
+
+
+
+
+
+
+<x-heading :title="'Patient Videos'" :description="''" />
+    <div class="testimonials testimonials-slider">
+    
+        
+        
+        <div class="testimonials__card">
+           <div class="ctg-video"><img src="" class="ctg-video play-video" data-video-link="https://www.youtube.com/embed/BqzX3ilr5Uo" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt=""> </div> 
+            <div class="testimonials__card__content">
+                <p>MR. SHEIKH ABDUL SATTAR</p>
+    
+                <h4>Mr. Abdul Sattar shares his experience of angioplasty surgery | Patient Testimonial | Star Hospitals</h4>
+            </div>
+        </div>
+        <div class="testimonials__card">
+            <div class="ctg-video"> <img src="" class="play-video" data-video-link="https://www.youtube.com/embed/SpCctR-VNWE" data-src="{{Vite::asset('resources/images/testimonials/home-2.webp')}}" alt=""> </div>
+            <div class="testimonials__card__content">
+                <p>MRS REENA TEKRIWAL</p>
+    
+                <h4>Mr. Manoj shares his wife's breast cancer surgery experience | Patient Testimonial | Star Hospitals</h4>
+            </div>
+        </div>
+        <div class="testimonials__card">
+            <div class="ctg-video">  <img src="" class="play-video" data-video-link="https://www.youtube.com/embed/3ERI_hU34iQ" data-src="{{Vite::asset('resources/images/testimonials/home-3.webp')}}" alt=""> </div>
+            <div class="testimonials__card__content">
+                <p>Mr. SUBBA RAO</p>
+    
+                <h4>Mr. Subba Rao shares his experience of Pancreatic cancer surgery Patient Testimonial| Star Hospitals</h4>
+            </div>
+        </div>
+       
+    </div>
+
+
+
+
+
+<x-gap/>
+
+
+{{-- ================================================== end videos --}}
+
+
 <x-testimonials-secondary :$content  :testimonials='$reviews'/>
 
 {{-- <x-gap/> --}}

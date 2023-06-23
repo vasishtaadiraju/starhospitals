@@ -12,6 +12,10 @@ class Condition extends Model
 
     protected $table = 'conditions';
 
+    public function images()
+    {
+        return $this->hasMany(ConditionImage::class, 'condition_id', 'id');
+    }
     public function coes()
     {
         return $this->belongsToMany(CentreOfExcellence::class, 'coe_condition', 'condition_id', 'coe_id', 'id', 'id')->withTimestamps();

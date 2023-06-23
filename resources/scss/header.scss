@@ -3,7 +3,7 @@
 @import "utils/media-queries";
 @import "floating-buttons";
 $main-header-height: 9.5rem;
-$fixed-header-height: 6rem;
+$fixed-header-height: 6.5rem;
 
 @mixin dropdown-Options-wrapper() {
     display: none;
@@ -59,7 +59,7 @@ $fixed-header-height: 6rem;
 }
 
 @mixin mobile-nav() {
-    top: $fixed-header-height;
+    top: calc($fixed-header-height - 1rem);
     bottom: 0px;
     left: 100%;
     right: 0px;
@@ -69,6 +69,11 @@ $fixed-header-height: 6rem;
     // margin-left: 100%;
 
     align-items: flex-start;
+
+    @include media('md-tab')
+    {
+        top: 7rem;
+    }
 }
 
 .header-gap {
@@ -198,14 +203,14 @@ $fixed-header-height: 6rem;
             @include fixed-header;
             width: 100%;
             padding: 1em;
-            height: $fixed-header-height;
+            height: calc($fixed-header-height + 1rem);
 
         }
         @include media("md-tab") {
             @include fixed-header;
             width: 100%;
             padding: 1em;
-            height: $fixed-header-height;
+            height: calc($fixed-header-height + 1rem);
 
         }
 

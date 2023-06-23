@@ -59,7 +59,7 @@ class SpecialityController extends Controller
             $coes= CentreOfExcellence::where('id',$coe_id)->where('status','active')->with(['specialities'=>function($query) use ($content){
                 $query->where('status','active')->where('specialities.id','!=',$content->id)->select('specialities.id','name','slug','icon_image');
             }])->get(['id','slug','name']);
-            
+            // dd($coes);
         }
         else
         {

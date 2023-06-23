@@ -277,6 +277,53 @@ $('.media-slider').slick({
 ]
 })
 
+
+$('.key-services__wrapper--speciality').slick({
+    // dots:true,
+    arrows:true,
+    slidesToShow:5,
+    responsive: [{
+        breakpoint: 1275,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 2
+        }
+    },{
+        breakpoint: 1025,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 2
+        }
+    },
+    {
+        breakpoint: 768,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 2
+        }
+    },
+    {
+        breakpoint: 601,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 1
+        }
+    }
+]
+})
+
 $('.reviews-slider').slick({
     // dots:true,
     arrows:true,

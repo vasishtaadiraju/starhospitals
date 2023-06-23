@@ -15,6 +15,7 @@
                     
                         @foreach ($item->specialities as $speciality)
                         
+                        
                             <div class="key-services__wrapper__card-wrapper">
                                 <a href="{{route('speciality',$speciality->slug)}}" class="key-services__card">
                                     {!! $speciality->icon_image !!}
@@ -25,6 +26,10 @@
                             
                         @endforeach
                     @else
+
+                    @if (request()->route()->getName() != 'speciality')
+                        
+                    
                     <div class="key-services__wrapper__card-wrapper">
 
                     <a href="{{route('speciality',$item->slug)}}" class="key-services__card">
@@ -32,7 +37,8 @@
             
                         <p>{{ $item->name }}</p>
                     </a>
-                </div>
+                    </div>
+                    @endif
                     @endif
                 @endforeach
         @else

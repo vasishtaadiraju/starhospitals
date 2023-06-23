@@ -69,4 +69,4 @@ Route::get('/terms-and-conditions',function(){
     <a >Terms & Conditions</a>
 </div>";
     return view('terms-and-condition',['breadcrum'=>$breadcrum]);
-});
+})->name('t-c');

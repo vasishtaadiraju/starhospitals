@@ -51,7 +51,7 @@
     
 
 
-    <x-conditions-image-slider />
+    <x-conditions-image-slider  :images="$content->images" />
     <x-gap /> 
     <div class="conditions-content">
 
