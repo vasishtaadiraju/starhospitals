@@ -18,7 +18,7 @@
         Name: {{ $name }}<br />
         Email: {{ $email }}<br />
         Contact: {{ $contact }}<br />
-        Subject: {{ $subject }}<br />
+        Subject: {{ $sub }}<br />
         Message: {{ $query }}
     </div>
 </body>

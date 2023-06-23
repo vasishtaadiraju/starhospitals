@@ -13,18 +13,18 @@ class ContactFormToHospital extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $type, $name, $contact, $email, $subject, $query;
+    public $type, $name, $contact, $email, $sub, $query;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($type, $name, $contact, $email, $subject, $query)
+    public function __construct($type, $name, $contact, $email, $sub, $query)
     {
         $this->type = $type;
         $this->name = $name;
         $this->contact = $contact;
         $this->email = $email;
-        $this->subject = $subject;
+        $this->sub = $sub;
         $this->query = $query;
     }
 
