@@ -70,13 +70,11 @@ $fixed-header-height: 6.5rem;
 
     align-items: flex-start;
 
-    @include media('md-tab')
-    {
-        top:calc($fixed-header-height - 1.25rem)
+    @include media("md-tab") {
+        top: calc($fixed-header-height - 1.25rem);
     }
-    @include media('sm-tab')
-    {
-        top:calc($fixed-header-height + 1.5rem)
+    @include media("sm-tab") {
+        top: calc($fixed-header-height + 1.5rem);
     }
 }
 
@@ -98,52 +96,50 @@ $fixed-header-height: 6.5rem;
     }
 }
 
-.mobile-hamburger{
-
+.mobile-hamburger {
     position: relative;
-    width:20px;
-    height:100%;
+    width: 20px;
+    height: 100%;
 
-    @include media('sm-tab'){
+    @include media("sm-tab") {
         width: 70px;
     }
-    span{
+    span {
         display: block;
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  background: #000000;
-  border-radius: 9px;
-  opacity: 1;
-  left: 2em;
-  @include media('sm-tab'){
-    width: 2.5em;
-}
-  
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: .25s ease-in-out;
-  -moz-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
-  &:nth-child(1) {
-    top: 35%;
-  }
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: #000000;
+        border-radius: 9px;
+        opacity: 1;
+        left: 2em;
+        @include media("sm-tab") {
+            width: 2.5em;
+        }
 
-  &:nth-child(2) {
-    top: 45%;
-  }
-  
-  &:nth-child(3) {
-    top: 55%;
-  }
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.25s ease-in-out;
+        -moz-transition: 0.25s ease-in-out;
+        -o-transition: 0.25s ease-in-out;
+        transition: 0.25s ease-in-out;
+        &:nth-child(1) {
+            top: 35%;
+        }
+
+        &:nth-child(2) {
+            top: 45%;
+        }
+
+        &:nth-child(3) {
+            top: 55%;
+        }
     }
 
-    &--open{
-        span
-        {
+    &--open {
+        span {
             &:nth-child(1) {
                 top: 40%;
 
@@ -152,20 +148,20 @@ $fixed-header-height: 6.5rem;
                 -moz-transform: rotate(135deg);
                 -o-transform: rotate(135deg);
                 transform: rotate(135deg);
-              }
-              
-              &:nth-child(2) {
+            }
+
+            &:nth-child(2) {
                 opacity: 0;
                 right: -60px;
-              }
-              
-              &:nth-child(3) {
+            }
+
+            &:nth-child(3) {
                 top: 40%;
                 -webkit-transform: rotate(-135deg);
                 -moz-transform: rotate(-135deg);
                 -o-transform: rotate(-135deg);
                 transform: rotate(-135deg);
-              }
+            }
         }
     }
 }
@@ -189,7 +185,7 @@ $fixed-header-height: 6.5rem;
         padding-bottom: 0px;
         // padding-top: 1em;
         // margin-top: 1em;
-        
+
         @include media("sm-mob") {
             @include fixed-header;
             width: 100%;
@@ -201,32 +197,87 @@ $fixed-header-height: 6.5rem;
             width: 100%;
             padding: 1em;
             height: $fixed-header-height;
-
         }
         @include media("x-sm-tab") {
             @include fixed-header;
             width: 100%;
             padding: 1em;
             height: $fixed-header-height;
-
         }
         @include media("sm-tab") {
             @include fixed-header;
             width: 100%;
             padding: 1em;
             height: calc($fixed-header-height + 2rem);
-
         }
         @include media("md-tab") {
             @include fixed-header;
             width: 100%;
             padding: 1em;
             height: calc($fixed-header-height + 1rem);
-
         }
 
         &__card {
             // flex: 0 0 calc(50% / 4);
+
+            &--request-callback {
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0.5em;
+                    font-weight: 700;
+                    font-size: 20px;
+                    font-family: "Plus Jakarta Sans Bold";
+
+                    @include media('sm-mob')
+                    {
+                        margin-top: 2rem;
+                        margin-bottom: 2rem;
+                        font-size: 15px !important;
+                        font-weight: 600 !important;
+                    }
+                    @include media('md-mob')
+                    {
+                        margin-top: 2rem;
+                        margin-bottom: 2rem;
+                        font-size: 15px !important;
+                        font-weight: 600 !important;
+                    }
+                    @include media('lg-mob')
+                    {
+                        margin-top: 2rem;
+                        margin-bottom: 2rem;
+                        font-size: 15px !important;
+                        font-weight: 600 !important;
+                    }
+                    @include media('x-sm-tab')
+                    {
+                        margin-top: 2rem;
+                        margin-bottom: 2rem;
+                        font-size: 15px;
+                        font-weight: 600 !important;
+                    }
+                    @include media('sm-tab')
+                    {
+                        margin-top: 2rem;
+                        margin-bottom: 2rem;
+                        font-size: 15px;
+                        font-weight: 600 !important;
+                    }
+                    @include media('md-tab')
+                    {
+                        margin-top: 2rem;
+                        margin-bottom: 2rem;
+                        font-size: 15px;
+                        font-weight: 600 !important;
+                    }
+
+                    img{
+                        width:40px;height:40px
+                    }
+                }
+            }
 
             &--social {
                 // border: 1px solid blue;
@@ -614,7 +665,6 @@ $fixed-header-height: 6.5rem;
             }
             // padding: 1em;
 
-                
             a {
                 @include font-family(500);
                 // font-size: 15px;
@@ -645,10 +695,76 @@ $fixed-header-height: 6.5rem;
                 }
             }
 
-            &:nth-child(6){
-                a{
+            &:nth-child(6) {
+                a {
                     padding: 0px 0em 0px 0px;
+                }
+            }
+            &:nth-child(7) {
+                display: none;
 
+                @include media('sm-mob')
+                {
+                    display: block;
+
+                }
+                @include media('md-mob')
+                {
+                    display: block;
+                    
+                }
+                @include media('lg-mob')
+                {
+                    display: block;
+                    
+                }
+                @include media('x-sm-tab')
+                {
+                    display: block;
+                    
+                }
+                @include media('sm-tab')
+                {
+                    display: block;
+                    
+                }
+                @include media('md-tab')
+                {
+                    display: block;
+                    
+                }
+            }
+            &:nth-child(8) {
+                display: none;
+                @include media('sm-mob')
+                {
+                    display: block;
+
+                }
+                @include media('md-mob')
+                {
+                    display: block;
+                    
+                }
+                @include media('lg-mob')
+                {
+                    display: block;
+                    
+                }
+                @include media('x-sm-tab')
+                {
+                    display: block;
+                    
+                }
+                @include media('sm-tab')
+                {
+                    display: block;
+                    
+                }
+                @include media('md-tab')
+                {
+                    display: block;
+                    
                 }
             }
             // &:nth-child(5){

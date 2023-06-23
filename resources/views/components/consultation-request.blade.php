@@ -18,8 +18,8 @@
                         </svg>
                         Our Locations
                         <ul>
-                            <li>Banjara Hills</li>
-                            <li>Financial District</li>
+                            <li> <a href="/locations/banjara-hills"> Banjara Hills </a></li>
+                            <li> <a href="/locations/financial-district">Financial District </a> </li>
                         </ul>
                     </li>
                     <li class="consultation__card__contact-info__list__item">
@@ -65,7 +65,7 @@
                                 class="@error('name')
                             error-field
                         @enderror"
-                                name="name">
+                                required name="name" >
                             @error('name')
                                 <span class="error-message">{{ $message }}</span>
                             @enderror
@@ -77,10 +77,10 @@
                     <div class="form-fields-wrapper form-fields-wrapper--col-1">
                         <div class="form-fields-wrapper ">
                             <input placeholder="Email"
-                                type="text"class="@error('email')
+                                type="email"class="@error('email')
                             error-field
                         @enderror"
-                                name="email">
+                                required name="email">
                             @error('email')
                                 <span class="error-message">{{ $message }}</span>
                             @enderror
@@ -321,7 +321,7 @@
                     </div>
                     <div class="form-fields-wrapper form-fields-wrapper--col-0">
                         <div class="form-fields-wrapper ">
-                            <input placeholder="Phone Number" type="text" name="contact">
+                            <input placeholder="Phone Number" type="text" required name="contact">
                             @error('contact')
                             <span class="error-message">{{ $message }}</span>
                             @enderror
@@ -335,7 +335,7 @@
                                 type="text"class="@error('department')
                             error-field
                                  @enderror"
-                                name="department"> 
+                                required name="department"> 
                                 <option value="">Speciality</option>
                                 @foreach ($coes as $item)
                                     @if (count($item->specialities) > 0)
@@ -364,7 +364,7 @@
                                 type="date"class="@error('date')
                             error-field
                         @enderror"
-                                name="date" min="{{date("Y-m-d")}}">
+                                required name="date" min="{{date("Y-m-d")}}">
                             @error('date')
                                 <span class="error-message">{{ $message }}</span>
                             @enderror
