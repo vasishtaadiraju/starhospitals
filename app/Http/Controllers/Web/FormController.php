@@ -23,7 +23,7 @@ class FormController extends Controller
   {
     $request->validate([
       'name' => 'required|string|max:255',
-      'country_code' => 'required|string|max:5',
+      'country_code' => 'required|integer|numeric',
       'contact' => 'required|string|max:15',
       'email' => 'required|string|email:rfc,strict,dns,filter|max:255',
       'department' => 'required|string|max:255',
@@ -83,7 +83,7 @@ class FormController extends Controller
   {
     $request->validate([
       'name' => 'required|string|max:255',
-      'country_code' => 'required|string|max:5',
+      'country_code' => 'required|integer|numeric',
       'contact' => 'required|string|max:15',
       'email' => 'required|string|email:rfc,strict,dns,filter|max:255',
       'speciality' => 'required|string|max:255',
@@ -144,7 +144,7 @@ class FormController extends Controller
     $request->validate([
       'type' => ['required', 'string', Rule::in(['feedback', 'complaint', 'enquiry'])],
       'name' => 'required|string|max:255',
-      'country_code' => 'required|string|max:5',
+      'country_code' => 'required|integer|numeric',
       'contact' => 'required|string|max:15',
       'email' => 'required|string|email:rfc,strict,dns,filter|max:255',
       'subject' => 'required|string|max:255',
@@ -205,7 +205,7 @@ class FormController extends Controller
   {
     $request->validate([
       'name' => 'required|string|max:255',
-      'country_code' => 'required|string|max:5',
+      'country_code' => 'required|integer|numeric',
       'contact' => 'required|string|max:15',
       'email' => 'required|string|email:rfc,strict,dns,filter|max:255',
       'department' => 'required|string|max:255',
@@ -267,7 +267,7 @@ class FormController extends Controller
       'firstname' => 'required|string|max:255',
       'lastname' => 'required|string|max:255',
       'guardian_name' => 'required|string|max:255',
-      'country_code' => 'required|string|max:5',
+      'country_code' => 'required|integer|numeric',
       'contact' => 'required|string|max:15',
       'email' => 'required|string|email:rfc,strict,dns,filter|max:255',
       'branch' => 'required|string|max:255',
@@ -314,7 +314,7 @@ class FormController extends Controller
       'coe' => $request->input('coe'),
       'speciality' => $request->input('speciality'),
       'doctor' => $request->input('doctor'),
-      'date' => $request->input('speciality'),
+      'date' => $request->input('date'),
       'utm_source' => $utm_source,
       'utm_medium' => $utm_medium,
       'utm_campaign' => $utm_campaign,
@@ -335,7 +335,7 @@ class FormController extends Controller
   {
     $validation = Validator::make($request->all(), [
       'name' => 'required|string|max:255',
-      'country_code' => 'required|string|max:5',
+      'country_code' => 'required|integer|numeric',
       'contact' => 'required|string|max:15',
       'email' => 'required|string|email:rfc,strict,dns,filter|max:255',
       'branch' => 'required|string|max:255',
