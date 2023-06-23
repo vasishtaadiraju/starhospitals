@@ -439,6 +439,11 @@ export async function httpRequest(url ,method, body, headers) {
 // console.log(httpRequest("POST"));
 
 
+domSelector('.file-upload','change',function(e){
+    var fileName = e.target.files[0].name;
+
+    this.previousElementSibling.value = fileName;
+})
 
 export const debounce = (func, delay) => {
   let debounceTimer

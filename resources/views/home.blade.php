@@ -39,7 +39,7 @@
 
 
 
-<x-heading :title="'Patient Videos'" :description="''" />
+<x-heading :title="'Patient Testimonials'" :description="''" />
     <div class="testimonials testimonials-slider">
     
         

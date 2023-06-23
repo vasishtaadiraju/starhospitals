@@ -43,8 +43,8 @@
                     
              </div>
                 <div class="highlights__card__text">
-                    <h1>{{$content->experience}}</h1>
-                    <p>Years of Experience</p>
+                    <h1>{{$content->skilled_experienced_doctors}}</h1>
+                    <p>Skilled and Experienced Doctors</p>
                 </div>
         </div>
         <div class="highlights__card">
@@ -70,7 +70,7 @@
             </div>
                <div class="highlights__card__text">
                    <h1>{{$content->surgeries}}</h1>
-                   <p>Surgeries</p>
+                   <p>Successful Surgeries</p>
                </div>
        </div>
        <div class="highlights__card">
@@ -92,7 +92,7 @@
         </div>
            <div class="highlights__card__text">
                <h1>{{$content->beds}}</h1>
-               <p>Beds</p>
+               <p>Equipped Beds</p>
            </div>
    </div>
    <div class="highlights__card">
@@ -111,7 +111,7 @@
     </div>
        <div class="highlights__card__text">
            <h1 >{{$content->happy_patients}}</h1>
-           <p>Happy Patients</p>
+           <p>Happy Patients</p>
        </div>
 </div>
 

@@ -22,7 +22,8 @@
                     <span class="error-message">{{ $message }}</span>
                 @enderror
                 <div class="form-input">
-                    <select name="country_code" type="text">
+                   
+                    <select class="form-input__field int-enquiry-form__content__fields--country" name="country_code" type="text">
                         <option data-countryCode="IN" value="91" selected>India (+91)</option>
                         <option data-countryCode="GB" value="44" >UK (+44)</option>
                         <option data-countryCode="US" value="1">USA (+1)</option>
@@ -286,7 +287,7 @@
                 <div class="form-input">
                     <input class="form-input__field form-input__field--w-1 file-upload-field"
                         placeholder="Upload report" type="text" readonly>
-                    <input type="file" name="report" id="" hidden>
+                    <input class="file-upload" type="file" name="report" id="" hidden>
                 </div>
                 @error('report')
                     <span class="error-message">{{ $message }}</span>

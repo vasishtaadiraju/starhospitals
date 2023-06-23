@@ -79,8 +79,6 @@ class ConditionsController extends Controller
         $breadcrum = "<div class='banner__breadcrum'>
         <a href='/'>Home</a>
         <span>❯</span>
-        <a >Tests Procedures</a>
-        <span>❯</span>
         <a >Treatments and Tests</a>
     </div>";
         return view('services-and-treatments.index',[

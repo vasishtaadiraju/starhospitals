@@ -280,6 +280,8 @@
         &__form-wrapper {
             width: 70%;
             margin: 0px auto;
+        padding: 1rem;
+
             @include media("sm-mob") {
                 width: 90%;
             }
@@ -297,6 +299,11 @@
             }
             @include media("md-tab") {
                 width: 90%;
+            }
+
+            .form-submit-button{
+            margin-bottom: 2rem;
+
             }
         }
     }
@@ -322,7 +329,7 @@
     color: #ffff;
     font-family: 'Plus Jakarta Sans';
     font-weight: 700;   
-    margin-top: 3.5rem;
+    margin-top: 2.5rem;
     margin-left: 50%;
     transform: translate(-50%);
 
@@ -342,7 +349,7 @@
 
 
     select{
-        -webkit-appearance: none;
+    -webkit-appearance: none;
     -moz-appearance: none;
     position: relative;
     background: transparent;
@@ -355,7 +362,6 @@
 
     &--col-0 {
         flex: 1;
-
         margin-left: 7%;
     }
     &--col-1 {

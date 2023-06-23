@@ -94,7 +94,7 @@
                             <div class="form-fields-wrapper ">
                                 <select name="country_code" type="text">
                                     <option data-countryCode="IN" value="91" selected>India (+91)</option>
-                                    <option data-countryCode="GB" value="44" >UK (+44)</option>
+                                    <option data-countryCode="GB" value="44" Selected>UK (+44)</option>
                                     <option data-countryCode="US" value="1">USA (+1)</option>
                                     <optgroup label="Other countries">
                                         <option data-countryCode="DZ" value="213">Algeria (+213)</option>
@@ -390,7 +390,7 @@
                         </div>
                         <div class="form-fields-wrapper form-fields-wrapper--col-1">
                             <div class="form-fields-wrapper ">
-                                <input type="date" name="date">
+                                <input type="date" min="{{date("Y-m-d")}}" name="date">
                                 @error('date')  
                                 <span class="error-message">{{ $message }}</span>
                                 @enderror

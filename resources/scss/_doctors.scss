@@ -333,6 +333,7 @@
             font-size: 12px;
             font-family: 'Plus Jakarta Sans Bold';
             margin-top: 1em;
+            cursor: pointer !important;
             @include media("sm-mob") {
                 font-size: 11px;
 

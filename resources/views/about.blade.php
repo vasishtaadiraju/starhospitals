@@ -9,10 +9,10 @@
 <x-gap/>
 <x-chairman-desk :$about />
 {{-- <x-gap/> --}}
-<div class="ui-background">
+{{-- <div class="ui-background">
     <x-awards/>
 
-</div>
+</div> --}}
 
 <x-gap/>
 <x-about-star :$about />
