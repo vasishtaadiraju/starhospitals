@@ -10,7 +10,7 @@
             <div class="int-enquiry-form__content__wrapper">
                 <h3>Please fill in your details</h3>
             </div>
-            <form action="/internationalPatientEnquiryForm" method="POST">
+            <form action="/internationalPatientEnquiryForm" method="POST" enctype="multipart/form-data">
               @csrf
             <div class="int-enquiry-form__content__fields">
                 <div class="form-input">
