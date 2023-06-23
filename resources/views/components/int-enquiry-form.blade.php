@@ -760,7 +760,7 @@
                   
                 @enderror
                 <div class="form-input">
-                    <select class="form-input__field form-input__field--w-1" name="department" type="text">
+                    <select class="form-input__field form-input__field--w-1" name="speciality" type="text">
                       <option value="">Speciality</option>
                       @foreach ($coes as $item)
                           @if (count($item->specialities) > 0)
@@ -779,7 +779,7 @@
                       @endforeach
                     </select>
                 </div>
-                @error('department')
+                @error('speciality')
                 <span class="error-message">{{$message}}</span>
                   
                 @enderror
