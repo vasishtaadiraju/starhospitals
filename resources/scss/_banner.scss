@@ -203,6 +203,7 @@
         justify-content: flex-start;
         gap: 0.5em;
         padding: 1em 0px;
+        flex-wrap: wrap;
         a,
         span {
             @include font-family(400);

@@ -72,7 +72,11 @@ $fixed-header-height: 6.5rem;
 
     @include media('md-tab')
     {
-        top: 7rem;
+        top:calc($fixed-header-height - 1.25rem)
+    }
+    @include media('sm-tab')
+    {
+        top:calc($fixed-header-height + 1.5rem)
     }
 }
 
@@ -99,6 +103,10 @@ $fixed-header-height: 6.5rem;
     position: relative;
     width:20px;
     height:100%;
+
+    @include media('sm-tab'){
+        width: 70px;
+    }
     span{
         display: block;
   position: absolute;
@@ -108,6 +116,9 @@ $fixed-header-height: 6.5rem;
   border-radius: 9px;
   opacity: 1;
   left: 2em;
+  @include media('sm-tab'){
+    width: 2.5em;
+}
   
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -203,7 +214,7 @@ $fixed-header-height: 6.5rem;
             @include fixed-header;
             width: 100%;
             padding: 1em;
-            height: calc($fixed-header-height + 1rem);
+            height: calc($fixed-header-height + 2rem);
 
         }
         @include media("md-tab") {

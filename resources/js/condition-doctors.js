@@ -2,6 +2,7 @@ import "./utils/event-handler";
 import { httpRequest, showForm } from "./utils/event-handler";
 
 import BushraUrl from "../images/doctors/doctor.png";
+import './auto-complete';
 
 
 

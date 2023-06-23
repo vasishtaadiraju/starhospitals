@@ -55,3 +55,38 @@
         justify-content: center;
     }
 }
+
+.t-c-description{
+    width: 85%;
+    margin: 0px auto;
+    p,span,div,li,ul,ol{
+        font-family: 'Plus Jakarta Sans';
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    ul,ol{
+        margin-left: 1.5em;
+    }
+
+    ol li{
+        font-family: 'Plus Jakarta Sans Bold';
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    
+
+    strong{
+        font-family: 'Plus Jakarta Sans';
+
+    }
+
+    div strong{
+        font-size: 25px;
+        font-weight: 700;
+        padding: 1em 0px;
+        font-family: 'Plus Jakarta Sans';
+
+    }
+}

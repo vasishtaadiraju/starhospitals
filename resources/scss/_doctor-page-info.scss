@@ -121,18 +121,23 @@
         padding: 2em;
         @include media("sm-mob") {
             flex: 0 0 100%;
+            display: none;
         }
         @include media("md-mob") {
             flex: 0 0 100%;
+            display: none;
         }
         @include media("lg-mob") {
             flex: 0 0 100%;
+            display: none;
         }
         @include media("x-sm-tab") {
             flex: 0 0 100%;
+            display: none;
         }
         @include media("sm-tab") {
             flex: 0 0 100%;
+            display: none;
         }
         // @include media("md-tab") {
         //     flex: 0 0 30%;
@@ -375,7 +380,7 @@
             color: #424242;
             font-size: 12px;
             gap: 0.5em;
-
+            cursor: pointer;
             
             @include media("md-tab") {
                 min-height: 30px;
