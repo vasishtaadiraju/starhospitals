@@ -201,7 +201,7 @@ class Branch extends Resource
 
             Text::make('Happy patients', 'happy_patients')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:5'),
+                ->rules('nullable', 'string', 'max:10'),
         ];
     }
 

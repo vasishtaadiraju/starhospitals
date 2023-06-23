@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('experience', 5)->nullable();
             $table->string('surgeries', 5)->nullable();
             $table->string('beds', 5)->nullable();
-            $table->string('happy_patients', 5)->nullable();
+            $table->string('happy_patients', 10)->nullable();
             $table->string('why_choose_us_image')->nullable();
             $table->string('why_choose_us_image_alt', 100)->nullable();
             $table->text('choose1_icon')->nullable();
