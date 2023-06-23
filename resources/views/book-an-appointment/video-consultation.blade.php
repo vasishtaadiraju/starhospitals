@@ -94,7 +94,7 @@
                             <div class="form-fields-wrapper ">
                                 <select name="country_code" type="text">
                                     <option data-countryCode="IN" value="91" selected>India (+91)</option>
-                                    <option data-countryCode="GB" value="44" Selected>UK (+44)</option>
+                                    <option data-countryCode="GB" value="44" >UK (+44)</option>
                                     <option data-countryCode="US" value="1">USA (+1)</option>
                                     <optgroup label="Other countries">
                                         <option data-countryCode="DZ" value="213">Algeria (+213)</option>
@@ -183,7 +183,6 @@
                                         <option data-countryCode="HK" value="852">Hong Kong (+852)</option>
                                         <option data-countryCode="HU" value="36">Hungary (+36)</option>
                                         <option data-countryCode="IS" value="354">Iceland (+354)</option>
-                                        <option data-countryCode="IN" value="91">India (+91)</option>
                                         <option data-countryCode="ID" value="62">Indonesia (+62)</option>
                                         <option data-countryCode="IR" value="98">Iran (+98)</option>
                                         <option data-countryCode="IQ" value="964">Iraq (+964)</option>
