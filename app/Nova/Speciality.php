@@ -251,6 +251,12 @@ class Speciality extends Resource
                 ->creationRules('unique:specialities,slug')
                 ->updateRules('unique:specialities,slug,{{resourceId}}'),
 
+                Text::make('Doctor Slug', 'doctor_slug')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:100')
+                ->creationRules('unique:specialities,doctor_slug')
+                ->updateRules('unique:specialities,doctor_slug,{{resourceId}}'),
+
             Text::make('Meta Title', 'meta_title')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:255'),

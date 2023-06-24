@@ -36,6 +36,7 @@ return new class extends Migration
             $table->string('media_text')->nullable();
             $table->string('faq_text')->nullable();
             $table->string('slug', 100)->nullable()->unique();
+            $table->string('doctor_slug', 100)->nullable()->unique();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->string('schema_headline')->nullable();
