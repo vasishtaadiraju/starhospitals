@@ -7,7 +7,7 @@ import BushraUrl from "../images/doctors/doctor.png";
 
 function printLinks(links,previousLink,nextLink,from,to,total)
 {
-console.log(links);
+
 document.querySelector('.pagination__pages').innerHTML = "";
 if(previousLink == null)
 {
@@ -43,7 +43,7 @@ async function printDoctors(url,body) {
         body
     );
 
-    console.log(response);
+    
     printLinks(response.data.links,response.data.prev_page_url,response.data.next_page_url,response.data.from,response.data.to,response.data.total);
     document
                 .querySelector('.doctor-appointment-cards-wrapper').innerHTML = "";
@@ -165,14 +165,14 @@ async function printOptions(node)
     let selected_coe_id = node.parentNode.parentNode.querySelector(".coe-select-box").value;
     let selected_branch_id = node.parentNode.parentNode.querySelector(".location-select-box").value;
     let selected_speciality_id = node.parentNode.parentNode.querySelector(".speciality-select-box").value;
-        console.log(node);
+        
 
     if(type == 'coe')
     {
        coe_id = node.value;
-       console.log(coe_id);
+       
        branch_id = "";
-       console.log(type);
+       
        
     }
     if (type == 'location')

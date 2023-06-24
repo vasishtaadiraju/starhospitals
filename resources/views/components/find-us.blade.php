@@ -28,9 +28,9 @@
         <h2 class="find-us__locations__title section-heading">Find Us</h2>
         @foreach($branches as $branch)
         <div class="find-us__locations__card">
-            <h3>{{ $branch->name }}</h3>
+            <a href="{{route('branch',$branch->slug)}}">    <h3>{{ $branch->name }}</h3> </a>
             <p>{{ $branch->address }}</p>
-                <button>Find Directions</button>
+                <button class="find-direction">Find Directions</button>
         </div>
         @endforeach
 

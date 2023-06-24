@@ -4,7 +4,7 @@ import './app';
 
 async function handleBranchChange(){
 
-    console.log();
+    
     let branch_id = this.options[this.options.selectedIndex].getAttribute('data-id');
     let coe_id = "";
     let type = 'location'

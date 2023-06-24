@@ -2,7 +2,7 @@ import "./utils/event-handler";
 import { httpRequest , debounce , removeClass } from "./utils/event-handler";
 
 async function inputHandler(e) {
-  console.log(this);
+  
 
   if(e.keyCode == 13)
   {
@@ -38,7 +38,7 @@ function handleClick()
     this.parentNode.parentNode.previousElementSibling.value = this.innerHTML;
     let id  = this.getAttribute('data-id');
     let slug  = this.getAttribute('data-slug');
-    console.log(slug);
+    
     document.getElementsByClassName("auto-complete__list")[0].innerHTML = "";
     
 
@@ -99,7 +99,11 @@ function onKeyPress(e) {
 }
 document.addEventListener("click", function () {
     selectedOption = -1
-    document.getElementsByClassName("auto-complete__list")[0].innerHTML = "";
+    if(document.getElementsByClassName("auto-complete__list").length > 0)
+    {
+        document.getElementsByClassName("auto-complete__list")[0].innerHTML = "";
+
+    }
 
     
 });

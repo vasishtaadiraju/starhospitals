@@ -17,7 +17,7 @@ import BushraUrl from "../images/doctors/doctor.png";
 
 function printLinks(links,previousLink,nextLink,from,to,total)
 {
-console.log(links);
+
 document.querySelector('.pagination__pages').innerHTML = "";
 if(previousLink == null)
 {
@@ -51,7 +51,7 @@ async function printConditions(url,body) {
         body
     );
 
-    console.log(response);
+    
     printLinks(response.data.links,response.data.prev_page_url,response.data.next_page_url,response.data.from,response.data.to,response.data.total);
     document
                 .querySelector('.conditions-root').innerHTML = "";
@@ -102,7 +102,7 @@ async function printOptions(node)
     let branch_id = "";
     let selected_coe_id = node.parentNode.parentNode.querySelector(".coe-select-box").value;
     // let selected_branch_id = node.parentNode.parentNode.querySelector(".speciality-select-box").value;
-        console.log(node);
+        
 
     if(type == 'coe')
     {
@@ -112,7 +112,7 @@ async function printOptions(node)
     }
     type = 'coe' ;
     let body = {coe_id,branch_id,type};
-    console.log(body);
+    
     // let type = node.parentNode.parentNode.querySelector(".speciality-select-box").getAttribute('data-');
     const response = await httpRequest(
         "/api/getBranchCoeSpecialityById",
@@ -120,7 +120,7 @@ async function printOptions(node)
         body
     );
 
-    console.log(response);
+    
 
     if(type == "coe")
     {
@@ -165,7 +165,7 @@ async function handleChange(type) {
 function handlePageClicks(e)
 {
     e.preventDefault();
-    console.log(this.getAttribute('href'));
+    
     let coe_id = document.querySelector(
         ".speciality-select-box"
     ).value;

@@ -10,7 +10,7 @@ async function printCoe(id,type)
         
     // this.childNodes[1].insertAdjacentHTML("afterend",  htmlData);
 document.querySelector('.coes__description--desktop').innerHTML = "";
-console.log(response);
+
 let htmlData = `<div class="coes__description__wrapper coes__description__wrapper--mobile" >
 
 <img class="coes__description__image" id="coe-list" src="${import.meta.env.VITE_ASSET_URL}${response.data.homepage_image}" alt="${response.data.homepage_image_alt}">
@@ -285,7 +285,7 @@ if(this.querySelector('.coes__description__wrapper--mobile') == null)
 document.querySelector('.coes__description--desktop').insertAdjacentHTML("beforeend",cards.desktop);
     
 
-        // console.log(this.childNodes);
+       
         this.childNodes[2].classList.toggle("coes__description__wrapper--mobile--active");
 });
 

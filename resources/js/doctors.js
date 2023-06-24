@@ -131,7 +131,7 @@ async function printDoctors(body, selectBox, className) {
         document.querySelector('.coe-page').previousElementSibling.remove();
         document.querySelector('.coe-page').remove();
        }
-        console.log( );
+        
         
     }
 
@@ -143,7 +143,7 @@ async function printDoctors(body, selectBox, className) {
         }
         if (selectBox == true) {
            let branch_slug =  document.getElementsByClassName("location-select-box")[0].options[document.getElementsByClassName("location-select-box")[0].selectedIndex].getAttribute('data-slug');
-            console.log(branch_slug);
+            
            let coe_slug =  document.getElementsByClassName("coe-select-box")[0].options[document.getElementsByClassName("coe-select-box")[0].selectedIndex].getAttribute('data-slug');
            let speciality_slug =  document.getElementsByClassName("speciality-select-box")[0].options[document.getElementsByClassName("speciality-select-box")[0].selectedIndex].getAttribute('data-slug');
     // window.location.href = e.target.options[e.target.selectedIndex].getAttribute('data-url');
@@ -325,9 +325,9 @@ async function printOptions(node) {
     
     if (type == "coe") {
         coe_id = node.value | selected_coe_id;
-        console.log(coe_id);
+        
         branch_id = "";
-        console.log(type);
+        
     }
     if (type == "location") {
         branch_id = node.value;
@@ -338,7 +338,7 @@ async function printOptions(node) {
 
     let body = { coe_id, branch_id, type };
 
-    console.log(body);
+    
     const response = await httpRequest(
         "/api/getBranchCoeSpecialityById",
         "POST",
@@ -508,7 +508,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let branch_id = document.getElementById("location-select-box").value;
         let coe_id = document.getElementById("coe-select-box").value;
         let speciality_id = "";
-        // console.log();
+        
         // document.getElementsByClassName("location-select-box").forEach(element=>{
         //     printOptions(this);
 
