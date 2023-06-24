@@ -330,7 +330,7 @@ class Speciality extends Resource
     public function actions(NovaRequest $request)
     {
         return [
-            new Actions\DoctorSync
+            Actions\SpecialitySlugInDoctor::make()->showInline()
         ];
     }
 
