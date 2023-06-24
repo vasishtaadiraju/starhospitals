@@ -1,4 +1,4 @@
-<x-heading :title="'Photo Gallery'" :description="'Lorem ipsum dolor sit amet consectetur. Pharetra hac gravida vestibulum donec accumsan morbi. In aliquam turpis pellentesque ultricies imperdiet accumsan sociis.'"/>
+<x-heading :title="'Photo Gallery'" :description="''"/>
 
 <div class="gallery gallery-slider">
     <div class="gallery__image-wrapper">

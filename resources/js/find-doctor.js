@@ -1,6 +1,6 @@
 import  './app';
 import './slider';
-import './about-coe';
+// import './about-coe';
 import './faqs';
 import './footer';
 import './auto-complete';

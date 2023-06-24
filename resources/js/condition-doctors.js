@@ -302,9 +302,14 @@ document.addEventListener("DOMContentLoaded", () => {
     //     ".location-select-box"
     // ).value;
     // let body = { coe_id, branch_id, speciality_id,paginate};
-    printOptions(document.querySelector(
+    if(document.querySelector(
         ".location-select-box"
-    ))
+    ) != undefined)
+    {
+        printOptions(document.querySelector(
+            ".location-select-box"
+        ))
+    }
         // printDoctors('/api/getDoctorByBranchCoeSpeciality',body);
     
     

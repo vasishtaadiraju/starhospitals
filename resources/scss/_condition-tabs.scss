@@ -49,11 +49,15 @@
         @include media('sm-tab')
         {
             min-width: initial;
+            font-size: 12px;
+            padding: 10px 15px;
             
         }
         @include media('md-tab')
         {
             min-width: initial;
+            font-size: 12px;
+            padding: 10px 15px;
             
         }
         @include media('x-sm-desktop')

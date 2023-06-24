@@ -182,7 +182,7 @@ async function printOptions(node)
     }
 
     let body = {coe_id,branch_id,type};
-    console.log(body);
+    
     // let type = node.parentNode.parentNode.querySelector(".coe-select-box").getAttribute('data-');
     const response = await httpRequest(
         "/api/getBranchCoeSpecialityById",
@@ -190,7 +190,7 @@ async function printOptions(node)
         body
     );
 
-    console.log(response);
+    
 
     if(type == "coe")
     {
