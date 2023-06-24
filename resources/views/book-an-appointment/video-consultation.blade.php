@@ -342,7 +342,7 @@
                                 <select type="text" name="branch" class="location-select-box">
                                     <option value=""> Location</option>
                                     @foreach ($branches as $branch)
-                                        <option value="{{ $branch->id }}">{{ $branch->name }}</option>
+                                        <option data-id="{{ $branch->id }}" value="{{ $branch->name }}">{{ $branch->name }}</option>
                                     @endforeach
                                 </select>
                                 @error('branch')

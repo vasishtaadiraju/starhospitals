@@ -4,7 +4,8 @@ import './app';
 
 async function handleBranchChange(){
 
-    let branch_id = this.value;
+    console.log();
+    let branch_id = this.options[this.options.selectedIndex].getAttribute('data-id');
     let coe_id = "";
     let type = 'location'
 
@@ -18,7 +19,7 @@ async function handleBranchChange(){
     
     response.data.coes.forEach((result,index )=>{
         let option = "";
-        option = `<option data-type="coe" value="${result.id}">${result.name}</option>`;
+        option = `<option data-type="coe" data-id="${result.id}" value="${result.name}">${result.name}</option>`;
 
         document.querySelector(".coe-select-box")
         .insertAdjacentHTML("beforeend", option);
@@ -30,8 +31,8 @@ async function handleBranchChange(){
 
 async function handleCoeChange(){
 
-    let branch_id = document.querySelector(".location-select-box").value;
-    let coe_id = this.value;
+    let branch_id = document.querySelector(".location-select-box").options[document.querySelector(".location-select-box").options.selectedIndex].getAttribute('data-id');
+    let coe_id = this.options[this.options.selectedIndex].getAttribute('data-id');
     let type = 'coe'
 
         let body = {branch_id,coe_id,type}
@@ -45,7 +46,7 @@ async function handleCoeChange(){
     
     response.data.specialities.forEach((result,index )=>{
         let option = "";
-        option = `<option data-type="coe" value="${result.id}">${result.name}</option>`;
+        option = `<option data-type="coe" data-id="${result.id}" value="${result.name}">${result.name}</option>`;
 
         document.querySelector(".speciality-select-box")
         .insertAdjacentHTML("beforeend", option);
@@ -67,7 +68,7 @@ async function handleCoeChange(){
                     {
             
                         
-                            let option = `<option value="${result.doctor.id}">${result.doctor.name}</option>`;
+                            let option = `<option  value="${result.doctor.name}">${result.doctor.name}</option>`;
             
                             document.querySelector(".doctor-select-box")
                             .insertAdjacentHTML("beforeend", option);
@@ -84,10 +85,10 @@ async function handleCoeChange(){
 
 async function handleSpecialityChange(e){
 
-    let branch_id = document.querySelector(".location-select-box").value;
+    let branch_id = document.querySelector(".location-select-box").options[document.querySelector(".location-select-box").options.selectedIndex].getAttribute('data-id');
 
     let coe_id = " ";
-    let speciality_id = this.value;
+    let speciality_id = this.options[this.options.selectedIndex].getAttribute('data-id');
         
     
 
