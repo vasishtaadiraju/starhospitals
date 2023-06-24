@@ -329,9 +329,7 @@ class Speciality extends Resource
      */
     public function actions(NovaRequest $request)
     {
-        return [
-            Actions\SpecialitySlugInDoctor::make()->showInline()
-        ];
+        return [];
     }
 
     public static function redirectAfterCreate(NovaRequest $request, $resource)
