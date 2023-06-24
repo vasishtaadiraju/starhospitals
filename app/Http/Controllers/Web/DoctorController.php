@@ -49,7 +49,7 @@ class DoctorController extends Controller
         ])->first();
             // dd($content);
         $branch = Branch::where('status','active')->where('slug',$branch_slug)->first(['id','name']);
-        $speciality = Speciality::where('status','active')->where('doctor_slug',$speciality_slug)->first(['id','name']);
+        $speciality = Speciality::where('status','active')->where('doctor_slug',$speciality_slug)->first(['id','name','doctor_slug','slug']);
 
         if($content == null || $branch == null || $speciality == null)
         {
@@ -62,7 +62,7 @@ class DoctorController extends Controller
     <span>❯</span>
     <a href='/locations/{$branch_slug}'>{$branch->name}</a>
     <span>❯</span>
-    <a href='/specialities/{$speciality_slug}'>{$speciality->name}</a>
+    <a href='/specialities/{$speciality->slug}'>{$speciality->name}</a>
     <span>❯</span>
     <a href='#'>{$content->name}</a>
 </div>";
