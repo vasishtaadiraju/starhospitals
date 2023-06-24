@@ -446,7 +446,7 @@ $('.key-services-slider').slick({
 
             slidesToShow: 1,
             
-            rows:2,
+            rows:1,
         }
     },
     {
@@ -459,7 +459,7 @@ $('.key-services-slider').slick({
             slidesToShow: 1,
     slidesPerRow: 1,
 
-            rows:2,
+            rows:1,
         }
     }
 ]

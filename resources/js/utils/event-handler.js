@@ -75,19 +75,7 @@ export function showForm()
                     </div>
     
                 </div>
-                <div class="form-fields">
-                    <div class="form-fields-wrapper form-fields-wrapper--col-1">
-                        <div class="form-fields-wrapper ">
-                            <input placeholder="Email"
-                                type="text"class=""
-                                name="email">
-                        <span class="error-message"> </span/>
-
-                           
-                        </div>
-                    </div>
-                    
-                </div>
+                
 
                 <div class="form-fields">
                         <div class="form-fields-wrapper form-fields-wrapper--col-3">
@@ -329,39 +317,15 @@ export function showForm()
                             </div>
                         </div>
                     </div>
-                <div class="form-fields">
-                    <div class="form-fields-wrapper form-fields-wrapper--col-1">
-                        <div class="form-fields-wrapper ">
-                            
-                        <input placeholder="Speciality" 
-                        type="text"class=""
+                <input placeholder="Speciality" 
+                        type="hidden"class=""
                         name="speciality" value="${speciality}" disabled>
-                        <span class="error-message"> </span/>
-
-                        </div>
-                    </div>
-                    <div class="form-fields-wrapper form-fields-wrapper--col-1">
-                        <div class="form-fields-wrapper ">
-                            <input
-                                type="text"class=""
+                <input
+                                type="hidden"class=""
                                 name="branch" value="${branch}" placeholder="Branch" disabled>
-                        <span class="error-message"> </span/>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="form-fields">
-                    <div class="form-fields-wrapper form-fields-wrapper--col-1">
-                        <div class="form-fields-wrapper ">
-                            
-                        <input placeholder="Doctor Name" 
-                        type="text"class=""
+                <input placeholder="Doctor Name" 
+                        type="hidden"class=""
                         name="doctor" value="${name}" disabled>
-                        </div>
-                        <span class="error-message"> </span/>
-                    </div>
-                    
-                </div>
                 <input type="hidden" value="${href}" name="href"/>
                 <button class="form-submit-button" >Submit</button>
             </form>

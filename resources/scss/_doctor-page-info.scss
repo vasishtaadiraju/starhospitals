@@ -380,7 +380,6 @@
             color: #424242;
             font-size: 12px;
             gap: 0.5em;
-            cursor: pointer;
             
             @include media("md-tab") {
                 min-height: 30px;
