@@ -214,7 +214,10 @@
             <div class="about-speciality__content__links">
 
                 @foreach ($content->branches as $item)
-                    <a href="#" class="">{{ $item->name }}</a> |
+                    <a href="{{route('branch',$item->slug)}}" class="">{{ $item->name }}</a> 
+                    @if ($loop->index < count($content->branches) - 1)
+                            <span>|</span> 
+                        @endif
                 @endforeach
                 {{-- | <a href="#" class="">Banjara Hills</a> --}}
             </div>
