@@ -73,7 +73,7 @@ async function printDoctors(url,body) {
                     result.doctor.specialities.forEach((speciality,index)=>{
                         if(speciality.id == body.speciality_id)
                         {
-                            speciality_slug = speciality.slug;
+                            speciality_slug = speciality.doctor_slug;
                         formDetails.speciality  = speciality.name;
 
                         }

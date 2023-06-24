@@ -21,7 +21,7 @@ async function inputHandler(e) {
             }
             else
             {
-                speciality_slug = element.specialities[0].slug;
+                speciality_slug = element.specialities[0].doctor_slug;
 
             }
             let list = `<li class="auto-complete__list__item" data-id="${element.id}" data-slug="/doctors/${element.branches[0].slug}/${speciality_slug}/${element.slug}">${element.name}</li>`

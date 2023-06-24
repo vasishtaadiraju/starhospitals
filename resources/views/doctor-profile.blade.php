@@ -32,14 +32,24 @@
                 </h1>
                 <p class="d-p-info__designation">{{ $content->designation }}</p>
                 <p class="d-p-info__speciality">
-                    @foreach ($content->coes as $coe)
-                        {{ $coe->name }},
+                    @foreach ($content->specialities as $speciality)
+                        {{ $speciality->name }}
+                        @if ($loop->index < count($content->specialities) - 1)
+                        <span style="padding:0px 0.25em">|</span> 
+                            
+                        @endif
                     @endforeach
                 </p>
                 <p class="d-p-info__location">
                     @foreach ($content->branches as $branch)
-                        {{ $branch->name }},
+                        {{ $branch->name }}
+
+                        @if ($loop->index < count($content->branches) - 1)
+                            <span style="padding:0px 0.25em">|</span> 
+                        @endif
+
                     @endforeach
+                    
                 </p>
             </div>
             <div class="d-p-info__btn-wrapper">

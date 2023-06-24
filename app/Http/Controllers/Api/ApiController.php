@@ -43,7 +43,7 @@ class ApiController extends Controller
                 'coes' => function ($query) {
                     $query->with([
                         'specialities' => function ($query) {
-                            $query->where('status', 'active')->select('specialities.id', 'name');
+                            $query->where('status', 'active')->select('specialities.id', 'name','doctor_slug');
                         }
                     ])->select('centre_of_excellences.id', 'name','slug');
                 },
@@ -55,7 +55,7 @@ class ApiController extends Controller
                         'coes' => function ($query) {
                             $query->select('centre_of_excellences.id')->pluck('centre_of_excellences.id');
                         }
-                    ])->select('specialities.id', 'name','slug');
+                    ])->select('specialities.id', 'name','slug','doctor_slug');
                 }
             ])->select('id', 'name','slug')->take(10)->get();
             return response($user, 200);
@@ -157,7 +157,7 @@ class ApiController extends Controller
                     'coes' => function ($query) {
                         $query->where('status','active')->with([
                             'specialities' => function ($query) {
-                                $query->where('status', 'active')->select('specialities.id', 'name');
+                                $query->where('status', 'active')->select('specialities.id', 'name','doctor_slug');
                             }
                         ])->select('centre_of_excellences.id', 'name','slug');
                     },
@@ -169,7 +169,7 @@ class ApiController extends Controller
                             'coes' => function ($query) {
                                 $query->select('centre_of_excellences.id')->pluck('centre_of_excellences.id');
                             }
-                        ])->select('specialities.id', 'name','slug');
+                        ])->select('specialities.id', 'name','slug','doctor_slug');
                     }
                 ])->where('status','active')->select('id', 'name', 'slug', 'designation', 'small_image', 'large_image','experience','fee','his_id','video_consultation');
             }
@@ -219,7 +219,7 @@ class ApiController extends Controller
                     $query->where('status', 'active')->orderBy('branches.order_number')->select('branches.id', 'name', 'slug')->take(2);
                 },
                 'specialities' => function ($query) {
-                    $query->select('specialities.id', 'name', 'slug', 'icon_image')->orderByPivot('coe_speciality.order_number');
+                    $query->select('specialities.id', 'name', 'slug', 'icon_image','doctor_slug')->orderByPivot('coe_speciality.order_number');
                 },
             ])->first('id');
         } elseif ($type == 'location' && $branch_id != null) {
@@ -236,7 +236,7 @@ class ApiController extends Controller
                         $query->whereHas('coes',function($query) use ($coe_id){
                             $query->where('centre_of_excellences.id',$coe_id);             
 
-                        })->orderByPivot('branch_speciality.order_number')->select('specialities.id', 'name', 'slug', 'icon_image');
+                        })->orderByPivot('branch_speciality.order_number')->select('specialities.id', 'name', 'slug', 'icon_image','doctor_slug');
                     },
                 ])->first('id');  
             }
@@ -245,7 +245,7 @@ class ApiController extends Controller
                 $response = Branch::where('status', 'active')->where('id', $branch_id)->with([
                     'coes' => function ($query) {
                         $query->where('status', 'active')->with(['specialities'=> function ($query) {
-                            $query->select('specialities.id', 'name', 'slug', 'icon_image')->orderByPivot('coe_speciality.order_number');
+                            $query->select('specialities.id', 'name', 'slug', 'icon_image','doctor_slug')->orderByPivot('coe_speciality.order_number');
                         },])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
                     },
                     // 'specialities' => function ($query) {
@@ -314,7 +314,7 @@ class ApiController extends Controller
                     $query->where('status', 'active')->orderBy('branches.order_number')->select('branches.id', 'name', 'slug')->take(2);
                 },
                 'specialities' => function ($query) {
-                    $query->select('specialities.id', 'name', 'slug', 'icon_image');
+                    $query->select('specialities.id', 'name', 'slug', 'icon_image','doctor_slug');
                 },
             ])->first('id');
         } elseif ($type == 'location' && $branch_id != null) {
@@ -335,7 +335,7 @@ class ApiController extends Controller
                         $query->whereHas('coes',function($query) use ($coe_id){
                             $query->where('centre_of_excellences.id',$coe_id);             
 
-                        })->select('specialities.id', 'name', 'slug', 'icon_image');
+                        })->select('specialities.id', 'name', 'slug', 'icon_image','doctor_slug');
                     },
                 ])->first('id');  
             }
