@@ -26,6 +26,7 @@ class SpecialitySlugInDoctor extends Action
     {
         foreach ($models as $model) {
             $slug = trim($model->name);
+            $slug = strtolower($slug);
             $slug = str_replace("&", "", $slug);
             $slug = str_replace("  ", " ", $slug);
             $slug = str_replace(" ", "-", $slug);
