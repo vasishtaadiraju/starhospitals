@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->integer('country_code');
             $table->string('contact', 15);
-            $table->string('email');
             $table->string('branch');
             $table->string('speciality');
             $table->string('doctor');
