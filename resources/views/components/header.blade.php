@@ -175,7 +175,7 @@
                     <img src="" data-src="{{ Vite::asset('resources/images/Icons/emergency.png') }}"
                         alt="">
 
-                    <p>Emergency<br>
+                    <p>Emergency HelpLine <br>
                         <span>9100911911</span>
                     </p>
                 </div>

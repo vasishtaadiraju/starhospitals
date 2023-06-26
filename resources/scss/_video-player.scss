@@ -29,5 +29,21 @@
         margin: 0px auto;
         margin-top: 2%;
         height: 90%;
+
+        &--image{
+            margin-top: 0px;
+        }
+
+       
+        img{
+            width: 80%;
+            // height: 98%;
+            margin-left: 50%;
+            // margin-top: 50%;
+            transform: translateX(-50%);
+        margin-bottom: 2%;
+            
+            // transform: translateY(-50%);
+        }
     }
 }

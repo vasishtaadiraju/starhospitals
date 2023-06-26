@@ -42,15 +42,30 @@ domSelector('.play-video','click',videoPlayer);
 function videoPlayer()
 {
     let src = this.getAttribute('data-video-link')
-    const playerHtml = `
+    let type = this.getAttribute('data-type')
+    console.log();
+    let playerHtml = `
     <div class="video-player">
         <span id="video-player-close">X</span>
         <div class="video-player__container">
-            <iframe width="100%" height="100%" src="${src}" title="YouTube video player" frameborder="0" allow="accelerometer;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="100%" height="100%" src="${src}" title="YouTube video player" frameborder="0"  allow="accelerometer;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;autoplay" allowfullscreen></iframe>
         </div>
-    </div>
-    `
-    
+    </div>`
+    if(type == 'IMG')
+    {
+        playerHtml =  `
+        <div class="video-player">
+            <span id="video-player-close">X</span>
+            <div class="video-player__container video-player__container--image">
+        <img src="${src}" alt="" />
+                
+            </div>
+        </div>
+        `
+        
+        
+        
+    }
     document.querySelector('body').insertAdjacentHTML('afterbegin',playerHtml);
     document.getElementById('video-player-close').addEventListener('click',function(){
         this.parentNode.remove();

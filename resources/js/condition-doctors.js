@@ -1,5 +1,6 @@
 import "./utils/event-handler";
 import { httpRequest, showForm } from "./utils/event-handler";
+let screenWidth = screen.width;
 
 import BushraUrl from "../images/doctors/doctor.png";
 import './auto-complete';
@@ -43,10 +44,28 @@ async function printDoctors(url,body) {
         body
     );
 
-    printLinks(response.data.links,response.data.prev_page_url,response.data.next_page_url,response.data.from,response.data.to,response.data.total);
+    // printLinks(response.data.links,response.data.prev_page_url,response.data.next_page_url,response.data.from,response.data.to,response.data.total);
     document
                 .querySelector('.doctor-appointment-cards-wrapper').innerHTML = "";
-    response.data.data.forEach((result) => {
+                let doctors = [];
+                if(response.data.links == undefined)
+                {
+                    doctors = response.data;
+                   
+                }
+                else
+                {
+                    doctors = response.data.data;
+                    printLinks(
+                        response.data.links,
+                        response.data.prev_page_url,
+                        response.data.next_page_url,
+                        response.data.from,
+                        response.data.to,
+                        response.data.total
+                    );
+                }
+                doctors.forEach((result) => {
         if(result.doctor == null)
         {
             return;
@@ -115,6 +134,7 @@ async function printDoctors(url,body) {
          </div>
      </a>
      <div class="doctors-card__rt">
+     <div>
          <h2><a href="/doctors/${branch_slug}/${speciality_slug}/${
             result.doctor.slug
         }">${result.doctor.name}</a></h2>
@@ -123,7 +143,8 @@ async function printDoctors(url,body) {
         }"> ${result.doctor.designation} </a></p>
          <p class="doctors-card__rt__speciality"><a href="">${coeName.toString()}</a></p>
          <p class="doctors-card__rt__location"> <a href="">${branchName.toString()}</a></p>
-
+        </div>
+        <div>
          <div target="_blank" data-name="${result.doctor.name}" data-speciality="${formDetails.speciality}" data-branch="${formDetails.branch}" data-href="https://api.starhs.in/patient-portal/doctors/info/${branch_slug == 'financial-district' ? `nanakramguda` : `${branch_slug}`}/${
             result.doctor.his_id
         }" class="doctors-card__rt__btn doctor-physical-btn">
@@ -140,6 +161,7 @@ async function printDoctors(url,body) {
 
              <span>Book a Video Consultation</span>
          </a>` : ``}
+         </div>
      </div>
  </div>`
             document
@@ -149,7 +171,64 @@ async function printDoctors(url,body) {
     );
     domSelector(".doctor-physical-btn", "click", showForm);
 
+    if(response.data.links == undefined)
+    {
 
+        if( document.querySelector(".doctors__cards-wrapper").classList.contains('slick-initialized'))
+        {
+            $(".doctors__cards-wrapper").slick("unslick");
+
+        }
+
+        $('.doctors__cards-wrapper').slick({
+            // dots:true,
+            arrows: true,
+            slidesToShow: 4,
+            responsive: [
+                {
+                    breakpoint: 1275,
+                    settings: {
+                        // dots: true,
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: "0px",
+                        slidesToShow: 3,
+                    },
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        // dots: true,
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: "0px",
+                        slidesToShow: 2,
+                    },
+                },
+                {
+                    breakpoint: 769,
+                    settings: {
+                        // dots: true,
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: "0px",
+                        slidesToShow: 1,
+                    },
+                },
+                {
+                    breakpoint: 601,
+                    settings: {
+                        // dots: true,
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: "0px",
+                        slidesToShow: 1,
+                    },
+                },
+            ],
+        });
+       
+    }
  
 }
 
@@ -241,6 +320,12 @@ async function printOptions(node)
     ).value;
     let paginate = true;
     // let speciality_id = "";
+    if (screenWidth < 769) {
+
+        paginate = false;
+            
+    
+        }
     let doctorBody = { coe_id, branch_id, speciality_id, paginate};
 
         $(".specialists-slider").slick("unslick");
@@ -302,6 +387,12 @@ document.addEventListener("DOMContentLoaded", () => {
     //     ".location-select-box"
     // ).value;
     // let body = { coe_id, branch_id, speciality_id,paginate};
+    if (screenWidth < 769) {
+        document.querySelector('.pagination').remove()
+
+        document.querySelector('.doctors__cards-wrapper ').classList.remove('doctors__cards-wrapper--flex-list');
+
+    }
     if(document.querySelector(
         ".location-select-box"
     ) != undefined)
