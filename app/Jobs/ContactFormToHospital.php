@@ -35,6 +35,6 @@ class ContactFormToHospital implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to('veerukumarv1@gmail.com')->send(new MailContactFormToHospital($this->type, $this->name, $this->contact, $this->email, $this->subject, $this->query));
+        Mail::to('info@starhospitals.co.in')->send(new MailContactFormToHospital($this->type, $this->name, $this->contact, $this->email, $this->subject, $this->query));
     }
 }

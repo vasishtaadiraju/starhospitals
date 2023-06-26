@@ -30,6 +30,6 @@ class ContactFormToUser implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to('veerukumarv1@gmail.com')->send(new MailContactFormToUser);
+        Mail::to($this->email)->send(new MailContactFormToUser);
     }
 }

@@ -30,6 +30,6 @@ class VideoConsultationToUser implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to('veerukumarv1@gmail.com')->send(new MailVideoConsultationToUser);
+        Mail::to($this->email)->send(new MailVideoConsultationToUser);
     }
 }

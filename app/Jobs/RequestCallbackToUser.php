@@ -30,6 +30,6 @@ class RequestCallbackToUser implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to('veerukumarv1@gmail.com')->send(new MailRequestCallbackToUser);
+        Mail::to($this->email)->send(new MailRequestCallbackToUser);
     }
 }

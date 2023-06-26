@@ -30,6 +30,6 @@ class UserTalkToDoctor implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to('veerukumarv1@gmail.com')->send(new MailUserTalkToDoctor);
+        Mail::to($this->email)->send(new MailUserTalkToDoctor);
     }
 }

@@ -34,6 +34,6 @@ class HospitalTalkToDoctor implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to('veerukumarv1@gmail.com')->send(new MailHospitalTalkToDoctor($this->name, $this->contact, $this->email, $this->speciality, $this->query));
+        Mail::to('info@starhospitals.co.in')->send(new MailHospitalTalkToDoctor($this->name, $this->contact, $this->email, $this->speciality, $this->query));
     }
 }

@@ -35,6 +35,6 @@ class InternationalToHospital implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to('veerukumarv1@gmail.com')->send(new MailInternationalToHospital($this->name, $this->country_code, $this->contact, $this->email, $this->department, $this->report));
+        Mail::to('info@starhospitals.co.in')->send(new MailInternationalToHospital($this->name, $this->country_code, $this->contact, $this->email, $this->department, $this->report));
     }
 }

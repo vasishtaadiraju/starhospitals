@@ -30,6 +30,6 @@ class InternationalToUser implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to('veerukumarv1@gmail.com')->send(new MailInternationalToUser);
+        Mail::to($this->email)->send(new MailInternationalToUser);
     }
 }
