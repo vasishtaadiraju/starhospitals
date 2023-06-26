@@ -5,9 +5,7 @@
 @section('content')
 <x-gap/>
 <div class="thankyou">
-    <h1>Greetings,</h1>
-    {{-- <p>Thank you for choosing STAR Hospitals for your healthcare needs. Your form has been successfully submitted and
-        received by our dedicated team. </p> --}}
+    
     <div>
         <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_2480_2)">
@@ -24,14 +22,16 @@
             </svg>
             
     </div>
+    <h1>Thank You !</h1>
+    <p>Our expert professionals are now working diligently to review your information and provide you with the
+        assistance you require. </p>
     <p class="thankyou__description">
-        Our expert professionals are now working diligently to review your information and provide you with the
-        assistance you require.
+        
         <br>
 
-        Our team will get back to you shortly
+        {{-- Our team will get back to you shortly --}}
 
     </p>
-        <p> <strong>Thank You !</strong></p>
+        <p> <strong></strong></p>
 </div>
 @endsection
