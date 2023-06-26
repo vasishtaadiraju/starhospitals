@@ -49,14 +49,22 @@
     @include media('sm-mob')
     {
         width: 83%;
+        margin-top: 1em;
     }
     @include media('md-mob')
     {
         width: 83%;
+        margin-top: 1em;
     }
     @include media('lg-mob')
     {
         width: 83%;
+        margin-top: 1em;
+    }
+    @include media('x-sm-tab')
+    {
+       
+        margin-top: 1em;
     }
     &--primary{
         width:80%;
