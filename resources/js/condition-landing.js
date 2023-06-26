@@ -10,7 +10,7 @@ import './header.js';
 import './slider';
 
 import './footer';
-import "./condition-doctors";
+// import "./condition-doctors";
 import BushraUrl from "../images/doctors/doctor.png";
 
 

@@ -68,7 +68,7 @@
             padding: 0em 2em;
             // padding-top: 2em;
             @include font-family(400);
-            animation: growDown 100ms ease-in-out forwards;
+            animation: growDown 300ms ease-in-out forwards;
             line-height: 25px;
             // max-height: 0px;
             display: none;
