@@ -13,12 +13,10 @@ class DoctorController extends Controller
     function index($branch_slug,$speciality_slug,$slug)
     {
         // dd($branch_slug);
-        $content = Doctor::where('status', 'active')->where('slug', $slug)->whereHas('branches', function ($query) use ($branch_slug) {
+        $content = Doctor::where('status', 'active')->where('slug',$slug)->whereHas('branches', function ($query) use ($branch_slug) {
             $query->where('branches.slug', $branch_slug);
             })->whereHas('specialities', function ($query) use ($speciality_slug) {
                             $query->where('specialities.doctor_slug', $speciality_slug);
-                        })->orWhereHas('coes', function ($query) use ($speciality_slug) {
-                            $query->where('centre_of_excellences.slug', $speciality_slug);
                         })->with([
             'coes' => function ($query) {
                 $query->with([
@@ -51,7 +49,7 @@ class DoctorController extends Controller
         $branch = Branch::where('status','active')->where('slug',$branch_slug)->first(['id','name']);
         $speciality = Speciality::where('status','active')->where('doctor_slug',$speciality_slug)->first(['id','name','doctor_slug','slug']);
 
-        if($content == null || $branch == null || $speciality == null)
+        if($content == null)
         {
             abort(404); 
         }

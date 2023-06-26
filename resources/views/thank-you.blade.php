@@ -6,8 +6,8 @@
 <x-gap/>
 <div class="thankyou">
     <h1>Greetings,</h1>
-    <p>Thank you for choosing STAR Hospitals for your healthcare needs. Your form has been successfully submitted and
-        received by our dedicated team. </p>
+    {{-- <p>Thank you for choosing STAR Hospitals for your healthcare needs. Your form has been successfully submitted and
+        received by our dedicated team. </p> --}}
     <div>
         <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_2480_2)">

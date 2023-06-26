@@ -28,6 +28,7 @@ export default defineConfig({
                 'resources/js/condition-landing.js',
                 'resources/js/about.js',
                 'resources/js/int-patients.js',
+                'resources/js/find-doctor.js',
                 'resources/js/video-consultation.js',
                 ],
             refresh: true,
