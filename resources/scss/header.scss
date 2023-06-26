@@ -230,51 +230,46 @@ $fixed-header-height: 6.5rem;
                     font-size: 20px;
                     font-family: "Plus Jakarta Sans Bold";
 
-                    @include media('sm-mob')
-                    {
+                    @include media("sm-mob") {
                         margin-top: 2rem;
                         margin-bottom: 2rem;
                         font-size: 15px !important;
                         font-weight: 600 !important;
                     }
-                    @include media('md-mob')
-                    {
+                    @include media("md-mob") {
                         margin-top: 2rem;
                         margin-bottom: 2rem;
                         font-size: 15px !important;
                         font-weight: 600 !important;
                     }
-                    @include media('lg-mob')
-                    {
+                    @include media("lg-mob") {
                         margin-top: 2rem;
                         margin-bottom: 2rem;
                         font-size: 15px !important;
                         font-weight: 600 !important;
                     }
-                    @include media('x-sm-tab')
-                    {
+                    @include media("x-sm-tab") {
                         margin-top: 2rem;
                         margin-bottom: 2rem;
                         font-size: 15px;
                         font-weight: 600 !important;
                     }
-                    @include media('sm-tab')
-                    {
+                    @include media("sm-tab") {
                         margin-top: 2rem;
                         margin-bottom: 2rem;
                         font-size: 15px;
                         font-weight: 600 !important;
                     }
-                    @include media('md-tab')
-                    {
+                    @include media("md-tab") {
                         margin-top: 2rem;
                         margin-bottom: 2rem;
                         font-size: 15px;
                         font-weight: 600 !important;
                     }
 
-                    img{
-                        width:40px;height:40px
+                    img {
+                        width: 40px;
+                        height: 40px;
                     }
                 }
             }
@@ -372,7 +367,7 @@ $fixed-header-height: 6.5rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    padding: 0.5em 0.5em;
+                    padding: 0.5em 2em;
                     gap: 0.5em;
                     background-color: variables.$starhospitals-brand-secondary;
                     border-radius: 10px;
@@ -380,14 +375,17 @@ $fixed-header-height: 6.5rem;
                     @include media("sm-mob") {
                         font-size: 10px;
                         gap: 0.25em;
+                        padding: 0.5em 0.5em;
                     }
                     @include media("md-mob") {
                         font-size: 10px;
                         gap: 0.25em;
+                        padding: 0.5em 0.5em;
                     }
                     @include media("lg-mob") {
                         font-size: 10px;
                         gap: 0.25em;
+                        padding: 0.5em 0.5em;
                     }
                     img {
                         width: 18px;
@@ -703,68 +701,44 @@ $fixed-header-height: 6.5rem;
             &:nth-child(7) {
                 display: none;
 
-                @include media('sm-mob')
-                {
+                @include media("sm-mob") {
                     display: block;
-
                 }
-                @include media('md-mob')
-                {
+                @include media("md-mob") {
                     display: block;
-                    
                 }
-                @include media('lg-mob')
-                {
+                @include media("lg-mob") {
                     display: block;
-                    
                 }
-                @include media('x-sm-tab')
-                {
+                @include media("x-sm-tab") {
                     display: block;
-                    
                 }
-                @include media('sm-tab')
-                {
+                @include media("sm-tab") {
                     display: block;
-                    
                 }
-                @include media('md-tab')
-                {
+                @include media("md-tab") {
                     display: block;
-                    
                 }
             }
             &:nth-child(8) {
                 display: none;
-                @include media('sm-mob')
-                {
+                @include media("sm-mob") {
                     display: block;
-
                 }
-                @include media('md-mob')
-                {
+                @include media("md-mob") {
                     display: block;
-                    
                 }
-                @include media('lg-mob')
-                {
+                @include media("lg-mob") {
                     display: block;
-                    
                 }
-                @include media('x-sm-tab')
-                {
+                @include media("x-sm-tab") {
                     display: block;
-                    
                 }
-                @include media('sm-tab')
-                {
+                @include media("sm-tab") {
                     display: block;
-                    
                 }
-                @include media('md-tab')
-                {
+                @include media("md-tab") {
                     display: block;
-                    
                 }
             }
             // &:nth-child(5){
