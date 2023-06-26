@@ -314,7 +314,7 @@ class ApiController extends Controller
                     $query->where('status', 'active')->orderBy('branches.order_number')->select('branches.id', 'name', 'slug')->take(2);
                 },
                 'specialities' => function ($query) {
-                    $query->select('specialities.id', 'name', 'slug', 'icon_image','doctor_slug');
+                    $query->where('status', 'active')->select('specialities.id', 'name', 'slug', 'icon_image','doctor_slug');
                 },
             ])->first('id');
         } elseif ($type == 'location' && $branch_id != null) {
@@ -332,7 +332,7 @@ class ApiController extends Controller
                         }])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
                     },
                     'specialities' => function ($query) use ($coe_id) {
-                        $query->whereHas('coes',function($query) use ($coe_id){
+                        $query->where('status', 'active')->whereHas('coes',function($query) use ($coe_id){
                             $query->where('centre_of_excellences.id',$coe_id);             
 
                         })->select('specialities.id', 'name', 'slug', 'icon_image','doctor_slug');
@@ -346,7 +346,7 @@ class ApiController extends Controller
                         $query->whereHas('conditions',function($query) use ($condition_id){
                             $query->where('conditions.id',$condition_id);
                         })->where('status', 'active')->with(['specialities'=>function($query) use ($condition_id){
-                            $query->whereHas('conditions',function($query) use ($condition_id){
+                            $query->where('status', 'active')->whereHas('conditions',function($query) use ($condition_id){
                                 $query->where('conditions.id',$condition_id);
                             })->where('status', 'active')->select('specialities.id','name','slug');
                         }])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
