@@ -27,7 +27,7 @@ class RequestCallbackToUser extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Request Callback',
+            subject: 'Star Hospitals - Request a Callback',
         );
     }
 

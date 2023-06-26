@@ -27,7 +27,7 @@ class UserTalkToDoctor extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Talk to a Doctor',
+            subject: 'Star Hospitals - Talk to a Doctor',
         );
     }
 

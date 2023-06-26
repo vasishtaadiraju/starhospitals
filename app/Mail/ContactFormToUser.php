@@ -27,7 +27,7 @@ class ContactFormToUser extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Contact Us',
+            subject: 'Star Hospitals - Contact Us',
         );
     }
 

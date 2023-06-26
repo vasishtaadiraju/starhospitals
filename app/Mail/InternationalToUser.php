@@ -27,7 +27,7 @@ class InternationalToUser extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'International Patient Enquiry',
+            subject: 'Star Hospitals - International Patient Enquiry',
         );
     }
 

@@ -27,7 +27,7 @@ class VideoConsultationToUser extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Video Consultation',
+            subject: 'Star Hospitals - Video Consultation',
         );
     }
 
