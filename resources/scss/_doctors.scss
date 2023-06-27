@@ -195,6 +195,7 @@
             line-height:20px;
             font-weight:400;
             // min-height: 3em;
+            
             @include media('x-sm-desktop')
             {
                 font-size: 11px;
@@ -329,7 +330,7 @@
         &__speciality{
             padding-bottom: 0.5em;
             font-size: 12px;
-
+            color: variables.$starhospitals-text-primary;
            a{
             color: variables.$starhospitals-text-secondary;
              font-weight: 400;

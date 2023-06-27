@@ -12,7 +12,7 @@
 
                 <p>{{$content->banner1_description}}</p>
                 
-                <a href="{{$content->banner1_link}}" class="btn-primary">Explore More</a>
+                <a href="#coe-list"  class="scroll-to-view" class="btn-primary">Explore More</a>
             </div>
            
             </div>

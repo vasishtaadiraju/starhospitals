@@ -99,11 +99,11 @@ async function printDoctors(url,body) {
 
                          if (
                             !coeName.includes(
-                                `<a> ${speciality.name} ${index != result.doctor.specialities.length -1 ? `,` : ``} </a>`
+                                `<a> ${speciality.name} </a>`
                             )
                         ) {
                             coeName.push(
-                                `<a > ${speciality.name} ${index != result.doctor.specialities.length -1  ? `,` : ``} </a>`
+                                `<a> ${speciality.name} </a>`
                             );
                         }
                     })
