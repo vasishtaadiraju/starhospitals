@@ -9,8 +9,8 @@
             <h3>{{$item->name}}</h3>
             <p>{{$item->address}}</p>
             <p>{{$item->contact}}</p>
-            <a href="#" class="locations__card__content-wrapper__btn">Get Directions</a>
-            <a href="#" class="locations__card__content-wrapper__btn locations__card__content-wrapper__btn--secondary">More Information</a>
+            <a href="{{$item->map_link}}" class="locations__card__content-wrapper__btn">Get Directions</a>
+            <a href="{{route('branch',$item->slug)}}" class="locations__card__content-wrapper__btn locations__card__content-wrapper__btn--secondary">More Information</a>
         </div>
     </div> 
     @endforeach

@@ -25,7 +25,7 @@ class ContentServiceProvider extends ServiceProvider
         $this->menu_coes = CentreOfExcellence::where('status','active')->orderBy('order_number')->with(['specialities'=>function($query){
             $query->where('status','active')->orderByPivot('coe_speciality.order_number');
         }])->get(['id','name','slug','icon_image']);
-        $this->menu_branches = Branch::where('status','active')->orderBy('order_number')->get(['id','name','slug']);
+        $this->menu_branches = Branch::where('status','active')->orderBy('order_number')->get(['id','name','slug','map_link']);
 
         view()->composer('layout.main', function($view) {
             $view->with(['coes' => $this->menu_coes,'branches'=>$this->menu_branches]);

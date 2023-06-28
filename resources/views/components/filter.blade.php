@@ -38,7 +38,7 @@
             </svg>
             
         
-        <select type="text" class="coe-select-box" id="coe-select-box" data-type="coe" placeholder="Enter Doctor Name"> 
+        <select type="text" class="coe-select-box" data-selected-id="{{session('coe_id')}}" id="coe-select-box" data-type="coe" placeholder="Enter Doctor Name"> 
             <option value="">Center of Excellence</option>
             {{-- @foreach ($coes as $item)
             <option value="{{$item->id}}" @if (session('coe_id') == $item->id || $item->id  == 8)
@@ -56,7 +56,7 @@
             </svg>
             
 
-        <select type="text" class="speciality-select-box" id="speciality-select-box" data-type="speciality"  placeholder="Enter Doctor Name">
+        <select type="text" class="speciality-select-box" data-selected-id="{{session('speciality_id')}}" id="speciality-select-box" data-type="speciality"  placeholder="Enter Doctor Name">
             <option value="">Filter by Speciality</option>
             
         </select>

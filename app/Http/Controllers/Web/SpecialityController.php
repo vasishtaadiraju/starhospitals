@@ -19,7 +19,7 @@ class SpecialityController extends Controller
         if(CentreOfExcellence::where('slug',$slug)->where('status','active')->exists())
         {
             $content = CentreOfExcellence::where('status','active')->where('slug',$slug)->with(['branches'=>function($query){
-                $query->where('status','active')->orderBy('branches.order_number')->select('branches.id','name','slug','card_image','address')->take(2);
+                $query->where('status','active')->orderBy('branches.order_number')->select('branches.id','name','slug','card_image','address','map_link')->take(2);
             },'faqs','blogs'=>function($query){
                 $query->where('status','active')->orderBy('blog_coe.order_number')->select('title', 'author', 'image', 'image_alt', 'slug', 'published_date');
             },'media'=>function($query){
@@ -43,7 +43,7 @@ class SpecialityController extends Controller
         {
             
             $content = Speciality::where('status','active')->where('slug',$slug)->with(['branches'=>function($query){
-                $query->where('status','active')->orderBy('branches.order_number')->select('branches.id','name','slug','card_image','address')->take(2);
+                $query->where('status','active')->orderBy('branches.order_number')->select('branches.id','name','slug','card_image','address','map_link')->take(2);
             },'faqs','blogs'=>function($query){
                 $query->where('status','active')->orderBy('blog_speciality.order_number')->select('title', 'author', 'image', 'image_alt', 'slug', 'published_date');
             },'media'=>function($query){
@@ -55,6 +55,7 @@ class SpecialityController extends Controller
             session(['speciality_id'=>$content->id]);
 
             $coe_id= CoeSpeciality::where('speciality_id',$content->id)->pluck('coe_id');
+            session(['coe_id'=>$coe_id[0]]);
 
             $coes= CentreOfExcellence::where('id',$coe_id)->where('status','active')->with(['specialities'=>function($query) use ($content){
                 $query->where('status','active')->where('specialities.id','!=',$content->id)->select('specialities.id','name','slug','icon_image');

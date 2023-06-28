@@ -23,16 +23,14 @@
             color: black;
         }
     }
-
+    
     &__container{
         width: 90%;
         margin: 0px auto;
         margin-top: 2%;
         height: 90%;
 
-        &--image{
-            margin-top: 0px;
-        }
+        
 
        
         img{
@@ -44,6 +42,23 @@
         margin-bottom: 2%;
             
             // transform: translateY(-50%);
+        }
+
+        &--image{
+            display: flex !important;
+            justify-content: center;
+            align-items: center !important;
+            margin-top: 0px;
+            height: 100%;
+            img{
+                display: block;
+                width: initial;
+            height: 95%;
+            margin-left: 0%;
+            // margin-top: 50%;
+            transform: translateX(-0%);
+            margin-bottom: 0px;
+            }
         }
     }
 }

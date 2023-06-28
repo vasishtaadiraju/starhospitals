@@ -90,7 +90,7 @@ async function printDoctors(url, body) {
 
                     if (
                         !coeName.includes(
-                            `<a > ${speciality.name} ${
+                            `<a> ${speciality.name} ${
                                 index != result.doctor.specialities.length - 1
                                     ? `,`
                                     : ``
@@ -98,7 +98,7 @@ async function printDoctors(url, body) {
                         )
                     ) {
                         coeName.push(
-                            `<a > ${speciality.name} ${
+                            `<a> ${speciality.name} ${
                                 index != result.doctor.specialities.length - 1
                                     ? `,`
                                     : ``
@@ -257,23 +257,24 @@ async function printOptions(node) {
     let coe_id = "";
     let branch_id = "";
     let selected_coe_id =
-        node.parentNode.parentNode.querySelector(".coe-select-box").value;
+        node.parentNode.parentNode.querySelector(".coe-select-box").value || node.parentNode.parentNode.querySelector(".coe-select-box").getAttribute('data-selected-id');
+        console.log(node.parentNode.parentNode.querySelector(".coe-select-box").getAttribute('data-selected-id'));
     let selected_branch_id = node.parentNode.parentNode.querySelector(
         ".location-select-box"
     ).value;
     let selected_speciality_id = node.parentNode.parentNode.querySelector(
         ".speciality-select-box"
-    ).value;
+    ).value || node.parentNode.parentNode.querySelector(".speciality-select-box").getAttribute('data-selected-id');;
 
     if (type == "coe") {
-        coe_id = node.value;
+        coe_id = selected_coe_id;
 
         branch_id = "";
     }
     if (type == "location") {
         branch_id = node.value;
         coe_id =
-            node.parentNode.parentNode.querySelector(".coe-select-box").value;
+        selected_coe_id;
     }
 
     let body = { coe_id, branch_id, type };
