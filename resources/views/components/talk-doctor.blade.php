@@ -4,7 +4,7 @@
     </div>
     <div class="talk-doctor__form-wrapper">
         <div class="talk-doctor__form-wrapper__content">
-            <h2 class="section-heading" >Talk to a {{$content->name}} Doctor</h2>
+            <h2 class="section-heading" >Talk to a {{$content->name}} Specialist</h2>
             <form action="/talkToDoctor" method="post" enctype="multipart/form-data">
                 @csrf
                 

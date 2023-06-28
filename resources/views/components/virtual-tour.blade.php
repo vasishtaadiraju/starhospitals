@@ -21,7 +21,7 @@
         <div class="virtual-tour__sm-image">
             <img class="play-video" src="" data-type="IMG" data-video-link="{{Vite::asset('resources/images/gallery/virtual-tour/img-3.jpg')}}" data-src="{{Vite::asset('resources/images/gallery/virtual-tour/img-small-3.png')}}" alt="">
             <img class="play-video" src="" data-type="IMG" data-video-link="{{Vite::asset('resources/images/gallery/virtual-tour/img-9.jpg')}}" data-src="{{Vite::asset('resources/images/gallery/virtual-tour/img-small-9.png')}}" alt="">
-            <img class="play-video" src="" data-type="IMG" data-video-link="{{Vite::asset('resources/images/gallery/virtual-tour/img-10jpgg')}}" data-src="{{Vite::asset('resources/images/gallery/virtual-tour/img-small-10.png')}}" alt="">
+            <img class="play-video" src="" data-type="IMG" data-video-link="{{Vite::asset('resources/images/gallery/virtual-tour/img-10.jpg')}}" data-src="{{Vite::asset('resources/images/gallery/virtual-tour/img-small-10.png')}}" alt="">
             <img class="play-video" src="" data-type="IMG" data-video-link="{{Vite::asset('resources/images/gallery/virtual-tour/img-1.jpg')}}" data-src="{{Vite::asset('resources/images/gallery/virtual-tour/img-small-1.png')}}" alt="">
         </div>
     </div>
