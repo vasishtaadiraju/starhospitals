@@ -48,6 +48,8 @@ return new class extends Migration
             $table->string('faq_text')->nullable();
             $table->tinyInteger('order_number', false, true)->nullable();
             $table->string('slug', 50)->nullable()->unique();
+            $table->string('map_link')->nullable();
+            $table->string('embed_map_link')->nullable();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->string('schema_name')->nullable();

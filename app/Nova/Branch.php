@@ -279,6 +279,14 @@ class Branch extends Resource
                 ->creationRules('unique:branches,slug')
                 ->updateRules('unique:branches,slug,{{resourceId}}'),
 
+            Text::make('Map Link', 'map_link')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:255'),
+
+            Text::make('Embed Map Link', 'embed_map_link')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:255'),
+
             Text::make('Meta Title', 'meta_title')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:255'),
