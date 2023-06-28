@@ -52,7 +52,7 @@ Route::get('/doctors/{branch_slug}/{speciality_slug}/{slug}', [DoctorController:
 Route::get('/doctors/book-a-video-consultation', [DoctorController::class, 'videoConsultation'])->name('doctor.book-video-consultation');
 
 //Form routes
-Route::controller(FormController::class)->group(function () {
+Route::controller(FormController::class)->middleware(['XssSanitization'])->group(function () {
     Route::post('/request-callback', 'request_callback');
     Route::post('/talkToDoctor', 'talkToDoctor');
     Route::post('/contactForm', 'contactForm');

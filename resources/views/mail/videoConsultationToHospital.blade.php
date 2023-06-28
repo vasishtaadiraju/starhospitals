@@ -10,9 +10,9 @@
 
 <body>
     <div>
-        Hi team,<br /><br />
+        Greetings,<br /><br />
 
-        We received a lead through video consultation form.<br /><br />
+        You have received a lead from the Video Consultation form. Here are the details.<br /><br />
 
         First Name: {{ $firstname }}<br />
         Last Name: {{ $lastname }}<br />

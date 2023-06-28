@@ -15,14 +15,19 @@ class InternationalToUser implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $email;
+    protected $name, $country_code, $contact, $email, $department, $report;
 
     /**
      * Create a new job instance.
      */
-    public function __construct($email)
+    public function __construct($name, $country_code, $contact, $email, $department, $report)
     {
+        $this->name = $name;
+        $this->country_code = $country_code;
+        $this->contact = $contact;
         $this->email = $email;
+        $this->department = $department;
+        $this->report = $report;
     }
 
     /**
@@ -30,6 +35,6 @@ class InternationalToUser implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to($this->email)->send(new MailInternationalToUser);
+        Mail::to($this->email)->send(new MailInternationalToUser($this->name, $this->country_code, $this->contact, $this->email, $this->department, $this->report));
     }
 }

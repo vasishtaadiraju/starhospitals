@@ -10,9 +10,9 @@
 
 <body>
     <div>
-        Hi team,<br /><br />
+        Greetings,<br /><br />
 
-        We received a lead through request callback form.<br /><br />
+        You have received a lead from the Request a Callback form. Here are the details.<br /><br />
 
         Name: {{ $name }}<br />
         Email: {{ $email }}<br />

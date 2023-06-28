@@ -15,14 +15,18 @@ class RequestCallbackToUser implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $email;
+    protected $name, $contact, $email, $department, $date;
 
     /**
      * Create a new job instance.
      */
-    public function __construct($email)
+    public function __construct($name, $contact, $email, $department, $date)
     {
+        $this->name = $name;
+        $this->contact = $contact;
         $this->email = $email;
+        $this->department = $department;
+        $this->date = $date;
     }
 
     /**
@@ -30,6 +34,6 @@ class RequestCallbackToUser implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to($this->email)->send(new MailRequestCallbackToUser);
+        Mail::to($this->email)->send(new MailRequestCallbackToUser($this->name, $this->contact, $this->email, $this->department, $this->date));
     }
 }

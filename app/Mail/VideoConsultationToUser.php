@@ -13,12 +13,24 @@ class VideoConsultationToUser extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $firstname, $lastname, $guardian_name, $country_code, $contact, $email, $branch, $coe, $speciality, $doctor, $date;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($firstname, $lastname, $guardian_name, $country_code, $contact, $email, $branch, $coe, $speciality, $doctor, $date)
     {
-        //
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
+        $this->guardian_name = $guardian_name;
+        $this->country_code = $country_code;
+        $this->contact = $contact;
+        $this->email = $email;
+        $this->branch = $branch;
+        $this->coe = $coe;
+        $this->speciality = $speciality;
+        $this->doctor = $doctor;
+        $this->date = $date;
     }
 
     /**

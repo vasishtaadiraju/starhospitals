@@ -10,9 +10,9 @@
 
 <body>
     <div>
-        Hi team,<br /><br />
+        Greetings,<br /><br />
 
-        We received a lead through contact us form.<br /><br />
+        You have received a lead from the Contact Us form. Here are the details.<br /><br />
 
         Type: {{ ucfirst($type) }}<br />
         Name: {{ $name }}<br />

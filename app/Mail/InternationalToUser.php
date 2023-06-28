@@ -13,12 +13,19 @@ class InternationalToUser extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $name, $country_code, $contact, $email, $department, $report;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($name, $country_code, $contact, $email, $department, $report)
     {
-        //
+        $this->name = $name;
+        $this->country_code = $country_code;
+        $this->contact = $contact;
+        $this->email = $email;
+        $this->department = $department;
+        $this->report = $report;
     }
 
     /**

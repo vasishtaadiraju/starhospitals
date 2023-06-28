@@ -15,14 +15,19 @@ class ContactFormToUser implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $email;
+    protected $type, $name, $contact, $email, $subject, $query;
 
     /**
      * Create a new job instance.
      */
-    public function __construct($email)
+    public function __construct($type, $name, $contact, $email, $subject, $query)
     {
+        $this->type = $type;
+        $this->name = $name;
+        $this->contact = $contact;
         $this->email = $email;
+        $this->subject = $subject;
+        $this->query = $query;
     }
 
     /**
@@ -30,6 +35,6 @@ class ContactFormToUser implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to($this->email)->send(new MailContactFormToUser);
+        Mail::to($this->email)->send(new MailContactFormToUser($this->type, $this->name, $this->contact, $this->email, $this->subject, $this->query));
     }
 }

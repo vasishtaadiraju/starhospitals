@@ -13,12 +13,18 @@ class RequestCallbackToUser extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $name, $contact, $email, $department, $date;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($name, $contact, $email, $department, $date)
     {
-        //
+        $this->name = $name;
+        $this->contact = $contact;
+        $this->email = $email;
+        $this->department = $department;
+        $this->date = $date;
     }
 
     /**

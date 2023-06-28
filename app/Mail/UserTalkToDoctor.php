@@ -13,12 +13,18 @@ class UserTalkToDoctor extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $name, $contact, $email, $speciality, $query;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($name, $contact, $email, $speciality, $query)
     {
-        //
+        $this->name = $name;
+        $this->contact = $contact;
+        $this->email = $email;
+        $this->speciality = $speciality;
+        $this->query = $query;
     }
 
     /**

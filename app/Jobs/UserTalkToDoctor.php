@@ -15,14 +15,18 @@ class UserTalkToDoctor implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $email;
+    protected $name, $contact, $email, $speciality, $query;
 
     /**
      * Create a new job instance.
      */
-    public function __construct($email)
+    public function __construct($name, $contact, $email, $speciality, $query)
     {
+        $this->name = $name;
+        $this->contact = $contact;
         $this->email = $email;
+        $this->speciality = $speciality;
+        $this->query = $query;
     }
 
     /**
@@ -30,6 +34,6 @@ class UserTalkToDoctor implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to($this->email)->send(new MailUserTalkToDoctor);
+        Mail::to($this->email)->send(new MailUserTalkToDoctor($this->name, $this->contact, $this->email, $this->speciality, $this->query));
     }
 }

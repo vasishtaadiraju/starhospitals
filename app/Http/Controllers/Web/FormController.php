@@ -7,6 +7,7 @@ use App\Jobs\ContactFormToHospital;
 use App\Jobs\ContactFormToUser;
 use App\Jobs\HospitalTalkToDoctor;
 use App\Jobs\InternationalToHospital;
+use App\Jobs\InternationalToUser;
 use App\Jobs\RequestCallbackToHospital;
 use App\Jobs\RequestCallbackToUser;
 use App\Jobs\UserTalkToDoctor;
@@ -74,7 +75,7 @@ class FormController extends Controller
     ]);
 
     dispatch(new RequestCallbackToHospital($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('department'), $request->input('date')))->delay(now()->addMinute());
-    dispatch(new RequestCallbackToUser($request->input('email')))->delay(now()->addMinute());
+    dispatch(new RequestCallbackToUser($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('department'), $request->input('date')))->delay(now()->addMinute());
 
     return redirect('request-callback/thank-you');
   }
@@ -134,7 +135,7 @@ class FormController extends Controller
     ]);
 
     dispatch(new HospitalTalkToDoctor($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('speciality'), $request->input('message')))->delay(now()->addMinute());
-    dispatch(new UserTalkToDoctor($request->input('email')))->delay(now()->addMinute());
+    dispatch(new UserTalkToDoctor($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('speciality'), $request->input('message')))->delay(now()->addMinute());
 
     return redirect('talk-to-a-doctor/thank-you');
   }
@@ -196,7 +197,7 @@ class FormController extends Controller
     ]);
 
     dispatch(new ContactFormToHospital($request->input('type'), $request->input('name'), $request->input('contact'), $request->input('email'), $request->input('subject'), $request->input('message')))->delay(now()->addMinute());
-    dispatch(new ContactFormToUser($request->input('email')))->delay(now()->addMinute());
+    dispatch(new ContactFormToUser($request->input('type'), $request->input('name'), $request->input('contact'), $request->input('email'), $request->input('subject'), $request->input('message')))->delay(now()->addMinute());
 
     return redirect('contact/thank-you');
   }
@@ -258,7 +259,7 @@ class FormController extends Controller
     ]);
 
     dispatch(new InternationalToHospital($request->input('name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('department'), $report))->delay(now()->addMinute());
-    dispatch(new RequestCallbackToUser($request->input('email')))->delay(now()->addMinute());
+    dispatch(new InternationalToUser($request->input('name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('department'), $report))->delay(now()->addMinute());
 
     return redirect('international-patients/thank-you');
   }
@@ -328,7 +329,7 @@ class FormController extends Controller
     ]);
 
     dispatch(new VideoConsultationToHospital($request->input('firstname'), $request->input('lastname'), $request->input('guardian_name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('branch'), $request->input('coe'), $request->input('speciality'), $request->input('doctor'), $request->input('date')))->delay(now()->addMinute());
-    dispatch(new VideoConsultationToUser($request->input('email')))->delay(now()->addMinute());
+    dispatch(new VideoConsultationToUser($request->input('firstname'), $request->input('lastname'), $request->input('guardian_name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('branch'), $request->input('coe'), $request->input('speciality'), $request->input('doctor'), $request->input('date')))->delay(now()->addMinute());
 
     return redirect('video-consultation/thank-you');
   }

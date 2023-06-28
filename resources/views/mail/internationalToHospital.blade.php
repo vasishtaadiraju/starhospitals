@@ -10,9 +10,9 @@
 
 <body>
     <div>
-        Hi team,<br /><br />
+        Greetings,<br /><br />
 
-        We received a lead through international patient enquiry form.<br /><br />
+        You have received a lead from the International Patient Enquiry form. Here are the details.<br /><br />
 
         Name: {{ $name }}<br />
         Email: {{ $email }}<br />

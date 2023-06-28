@@ -10,9 +10,9 @@
 
 <body>
     <div>
-        Hi team,<br /><br />
+        Greetings,<br /><br />
 
-        We received a lead through talk to a doctor form.<br /><br />
+        You have received a lead from the Talk to a Doctor form. Here are the details.<br /><br />
 
         Name: {{ $name }}<br />
         Email: {{ $email }}<br />
