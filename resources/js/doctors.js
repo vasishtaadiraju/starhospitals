@@ -362,7 +362,7 @@ async function printOptions(node) {
             ".speciality-select-box"
         ).innerHTML = ``;
         response.data.specialities.forEach((result) => {
-            let option = `<option data-slug="${result.slug}" value="${result.id}" ${
+            let option = `<option data-slug="${result.doctor_slug}" value="${result.id}" ${
                 result.id == selected_branch_id ? `selected` : ``
             }>${result.name}</option>`;
 
@@ -390,7 +390,7 @@ async function printOptions(node) {
                     ".speciality-select-box"
                 ).innerHTML = ``;
                 result.specialities.forEach((speciality) => {
-                    let option = `<option data-slug="${speciality.slug}"  value="${speciality.id}" ${
+                    let option = `<option data-slug="${speciality.doctor_slug}"  value="${speciality.id}" ${
                         speciality.id == selected_branch_id ? `selected` : ``
                     }>${speciality.name}</option>`;
 
@@ -406,7 +406,7 @@ async function printOptions(node) {
                 ".speciality-select-box"
             ).innerHTML = ``;
             response.data.specialities.forEach((speciality) => {
-                let option = `<option data-slug="${speciality.slug}" value="${speciality.id}" ${
+                let option = `<option data-slug="${speciality.doctor_slug}" value="${speciality.id}" ${
                     speciality.id == selected_branch_id ? `selected` : ``
                 }>${speciality.name}</option>`;
 
