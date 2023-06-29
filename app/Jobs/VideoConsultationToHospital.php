@@ -40,6 +40,6 @@ class VideoConsultationToHospital implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to('info@starhospitals.co.in')->send(new MailVideoConsultationToHospital($this->firstname, $this->lastname, $this->guardian_name, $this->country_code, $this->contact, $this->email, $this->branch, $this->coe, $this->speciality, $this->doctor, $this->date));
+        Mail::to('noreply@starhospitals.co.in')->send(new MailVideoConsultationToHospital($this->firstname, $this->lastname, $this->guardian_name, $this->country_code, $this->contact, $this->email, $this->branch, $this->coe, $this->speciality, $this->doctor, $this->date));
     }
 }

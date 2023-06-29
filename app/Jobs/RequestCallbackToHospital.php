@@ -34,6 +34,6 @@ class RequestCallbackToHospital implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to('info@starhospitals.co.in')->send(new MailRequestCallbackToHospital($this->name, $this->contact, $this->email, $this->department, $this->date));
+        Mail::to('noreply@starhospitals.co.in')->send(new MailRequestCallbackToHospital($this->name, $this->contact, $this->email, $this->department, $this->date));
     }
 }
