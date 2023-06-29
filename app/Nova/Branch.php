@@ -377,7 +377,7 @@ class Branch extends Resource
     public function actions(NovaRequest $request)
     {
         return [
-            Actions\TagAllSpeciality::make()->showInline()
+            // Actions\TagAllSpeciality::make()->showInline()
         ];
     }
 

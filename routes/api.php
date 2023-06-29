@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Route::get('/createUser', [APIController::class, 'createUser']);
-Route::get('/truncateBranchCOESpecialityMapping', [APIController::class, 'truncateBranchCOESpecialityMapping']);
+// Route::get('/truncateBranchCOESpecialityMapping', [APIController::class, 'truncateBranchCOESpecialityMapping']);
