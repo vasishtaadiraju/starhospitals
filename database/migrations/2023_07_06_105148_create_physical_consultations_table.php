@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('appointment_id')->nullable();
             $table->string('patient_id');
             $table->string('patient_name');
+            $table->string('patient_email');
             $table->string('doctor');
             $table->string('location');
             $table->string('speciality');
