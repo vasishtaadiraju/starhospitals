@@ -60,6 +60,7 @@ Route::controller(FormController::class)->middleware(['XssSanitization', 'thrott
     Route::post('/contactForm', 'contactForm');
     Route::post('/internationalPatientEnquiryForm', 'internationalPatientEnquiryForm');
     Route::post('/videoConsultation', 'videoConsultation');
+    Route::post('/physicalConsultation', 'physical_consultation');
 });
 Route::get('/thank-you', function () {
     return view('thank-you');

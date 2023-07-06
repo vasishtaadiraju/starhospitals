@@ -8,6 +8,8 @@ use App\Jobs\ContactFormToUser;
 use App\Jobs\HospitalTalkToDoctor;
 use App\Jobs\InternationalToHospital;
 use App\Jobs\InternationalToUser;
+use App\Jobs\PhysicalConsultationToHospital;
+use App\Jobs\PhysicalConsultationToUser;
 use App\Jobs\RequestCallbackToHospital;
 use App\Jobs\RequestCallbackToUser;
 use App\Jobs\UserTalkToDoctor;
@@ -398,5 +400,55 @@ class FormController extends Controller
     return response()->json([
       'href' => $request->input('href')
     ], 200);
+  }
+
+  public function physical_consultation(Request $request)
+  {
+    if ($request->input('status') === true) {
+
+      DB::table('physical_consultations')->insert([
+        'appointment_id' => $request->input('appointment_id'),
+        'patient_id' => $request->input('patient_id'),
+        'patient_name' => $request->input('patient_name'),
+        'patient_email' => $request->input('patient_email'),
+        'doctor' => $request->input('doctor'),
+        'location' => $request->input('location'),
+        'speciality' => $request->input('speciality'),
+        'appointment_date' => $request->input('appointment_date'),
+        'appointment_time' => $request->input('appointment_time'),
+        'status' => $request->input('status'),
+        'response' => $request->input('response'),
+      ]);
+
+      dispatch(new PhysicalConsultationToHospital($request->input('appointment_id'), $request->input('patient_id'), $request->input('patient_name'), $request->input('patient_email'), $request->input('doctor'), $request->input('location'), $request->input('speciality'), $request->input('appointment_date'), $request->input('appointment_time')))->delay(now()->addMinute());
+      dispatch(new PhysicalConsultationToUser($request->input('appointment_id'), $request->input('patient_id'), $request->input('patient_name'), $request->input('patient_email'), $request->input('doctor'), $request->input('location'), $request->input('speciality'), $request->input('appointment_date'), $request->input('appointment_time')))->delay(now()->addMinute());
+
+      return view('thank-you', [
+        'appointment_id' => $request->input('appointment_id'),
+        'patient_id' => $request->input('patient_id'),
+        'patient_name' => $request->input('patient_name'),
+        'patient_email' => $request->input('patient_email'),
+        'doctor' => $request->input('doctor'),
+        'location' => $request->input('location'),
+        'speciality' => $request->input('speciality'),
+        'appointment_date' => $request->input('appointment_date'),
+        'appointment_time' => $request->input('appointment_time'),
+      ]);
+    } else {
+
+      DB::table('physical_consultations')->insert([
+        'patient_id' => $request->input('patient_id'),
+        'patient_name' => $request->input('patient_name'),
+        'doctor' => $request->input('doctor'),
+        'location' => $request->input('location'),
+        'speciality' => $request->input('speciality'),
+        'appointment_date' => $request->input('appointment_date'),
+        'appointment_time' => $request->input('appointment_time'),
+        'status' => $request->input('status'),
+        'response' => $request->input('response'),
+      ]);
+
+      return response('', 200);
+    }
   }
 }
