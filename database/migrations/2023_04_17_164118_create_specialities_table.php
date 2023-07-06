@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('specialities', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
+            $table->integer('his_id')->nullable();
             $table->tinyInteger('order_number', false, true)->nullable();
             $table->text('icon_image')->nullable();
             $table->string('homepage_image')->nullable();
@@ -37,6 +38,7 @@ return new class extends Migration
             $table->string('faq_text')->nullable();
             $table->string('slug', 100)->nullable()->unique();
             $table->string('doctor_slug', 100)->nullable()->unique();
+            $table->string('specialist')->nullable();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->string('schema_headline')->nullable();

@@ -36,4 +36,9 @@ class Media extends Model
     {
         return $this->belongsToMany(Speciality::class, 'media_speciality', 'media_id', 'speciality_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
+
+    public function specialists()
+    {
+        return $this->belongsToMany(Specialist::class, 'media_specialist', 'specialist_id', 'media_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+    }
 }

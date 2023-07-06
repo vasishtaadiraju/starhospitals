@@ -7,6 +7,7 @@ use App\Models\CentreOfExcellence;
 use App\Models\Doctor;
 use App\Models\Speciality;
 use App\Nova\Doctor as NovaDoctor;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Laravel\Nova\Fields\BelongsTo;
@@ -225,5 +226,61 @@ class DoctorOrder extends Resource
     public static function redirectAfterUpdate(NovaRequest $request, $resource)
     {
         return '/resources/doctor-orders/';
+    }
+
+    public static function afterCreate(NovaRequest $request, Model $model)
+    {
+        $data = DB::table('action_events')->where('actionable_type', 'App\Models\DoctorOrder')->where('actionable_id', $model->id)->latest('updated_at')->first();
+        $data = json_decode($data->original);
+
+        if (isset($data->order_number)) {
+            $order_number = $data->order_number;
+
+            if ($order_number < $model->order_number) {
+                $doctor_orders = DB::table('doctor_orders')->whereNot('id', $model->id)->where('branch_id', $request->input('branch_id'))->where('speciality_id', $request->input('speciality_id'))->whereBetween('order_number', [$order_number + 1, $model->order_number])->get();
+
+                foreach ($doctor_orders as $doctor_order) {
+                    DB::table('doctor_orders')->where('id', $doctor_order->id)->update([
+                        'order_number' => $doctor_order->order_number - 1
+                    ]);
+                }
+            } else {
+                $doctor_orders = DB::table('doctor_orders')->whereNot('id', $model->id)->where('branch_id', $request->input('branch_id'))->where('speciality_id', $request->input('speciality_id'))->whereBetween('order_number', [$model->order_number, $order_number - 1])->get();
+
+                foreach ($doctor_orders as $doctor_order) {
+                    DB::table('doctor_orders')->where('id', $doctor_order->id)->update([
+                        'order_number' => $doctor_order->order_number + 1
+                    ]);
+                }
+            }
+        }
+    }
+
+    public static function afterUpdate(NovaRequest $request, Model $model)
+    {
+        $data = DB::table('action_events')->where('actionable_type', 'App\Models\DoctorOrder')->where('actionable_id', $model->id)->latest('updated_at')->first();
+        $data = json_decode($data->original);
+
+        if (isset($data->order_number)) {
+            $order_number = $data->order_number;
+
+            if ($order_number < $model->order_number) {
+                $doctor_orders = DB::table('doctor_orders')->whereNot('id', $model->id)->where('branch_id', $request->input('branch_id'))->where('speciality_id', $request->input('speciality_id'))->whereBetween('order_number', [$order_number + 1, $model->order_number])->get();
+
+                foreach ($doctor_orders as $doctor_order) {
+                    DB::table('doctor_orders')->where('id', $doctor_order->id)->update([
+                        'order_number' => $doctor_order->order_number - 1
+                    ]);
+                }
+            } else {
+                $doctor_orders = DB::table('doctor_orders')->whereNot('id', $model->id)->where('branch_id', $request->input('branch_id'))->where('speciality_id', $request->input('speciality_id'))->whereBetween('order_number', [$model->order_number, $order_number - 1])->get();
+
+                foreach ($doctor_orders as $doctor_order) {
+                    DB::table('doctor_orders')->where('id', $doctor_order->id)->update([
+                        'order_number' => $doctor_order->order_number + 1
+                    ]);
+                }
+            }
+        }
     }
 }

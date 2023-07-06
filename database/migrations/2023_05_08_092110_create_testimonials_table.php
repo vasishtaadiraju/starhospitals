@@ -22,6 +22,7 @@ return new class extends Migration
             $table->tinyInteger('homepage_order_number', false, true)->nullable()->unique();
             $table->enum('internationalpage', ['yes', 'no']);
             $table->tinyInteger('internationalpage_order_number', false, true)->nullable()->unique();
+            $table->enum('doctor_video', ['yes', 'no']);
             $table->enum('status', ['active', 'inactive']);
             $table->timestamps();
             $table->softDeletes();

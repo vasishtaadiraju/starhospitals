@@ -55,6 +55,10 @@ class Speciality extends Resource
                 ->sortable()
                 ->rules('required', 'string', 'max:50'),
 
+            Number::make('HIS ID', 'his_id')
+                ->hideFromIndex()
+                ->rules('nullable', 'integer', 'numeric'),
+
             new Panel('Homepage', $this->homepage()),
             new Panel('Banner', $this->banner()),
             new Panel('Description', $this->description()),
@@ -251,11 +255,15 @@ class Speciality extends Resource
                 ->creationRules('unique:specialities,slug')
                 ->updateRules('unique:specialities,slug,{{resourceId}}'),
 
-                Text::make('Doctor Slug', 'doctor_slug')
+            Text::make('Doctor Slug', 'doctor_slug')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100')
                 ->creationRules('unique:specialities,doctor_slug')
                 ->updateRules('unique:specialities,doctor_slug,{{resourceId}}'),
+
+            Text::make('Specialist name', 'specialist')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:255'),
 
             Text::make('Meta Title', 'meta_title')
                 ->hideFromIndex()

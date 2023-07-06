@@ -56,6 +56,10 @@ class Branch extends Resource
             Text::make('Name', 'name')
                 ->rules('required', 'string', 'max:50'),
 
+            Number::make('HIS ID', 'his_id')
+                ->hideFromIndex()
+                ->rules('nullable', 'integer', 'numeric'),
+
             new Panel('Card', $this->card()),
             new Panel('Banner', $this->banner()),
             new Panel('About', $this->about()),

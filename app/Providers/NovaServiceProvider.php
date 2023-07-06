@@ -15,6 +15,7 @@ use App\Nova\FAQ;
 use App\Nova\Homepage;
 use App\Nova\InternationalPatient;
 use App\Nova\Media;
+use App\Nova\Specialist;
 use App\Nova\Speciality;
 use App\Nova\Testimonial;
 use Illuminate\Http\Request;
@@ -50,30 +51,19 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ])->icon('location-marker')->collapsable(),
 
                 MenuSection::resource(CentreOfExcellence::class),
-
                 MenuSection::resource(Speciality::class),
-
                 MenuSection::resource(Testimonial::class)->icon('document-text'),
-
                 MenuSection::resource(Blog::class)->icon('annotation'),
-
                 MenuSection::resource(Media::class)->icon('newspaper'),
-
                 MenuSection::resource(FAQ::class)->icon('question-mark-circle'),
-
                 MenuSection::resource(Homepage::class)->icon('home'),
-
                 MenuSection::resource(AboutUs::class)->icon('identification'),
-
                 MenuSection::resource(InternationalPatient::class),
-
                 MenuSection::resource(Career::class)->icon('academic-cap'),
-
                 MenuSection::resource(Condition::class),
-
                 MenuSection::resource(ConditionImage::class),
-
                 MenuSection::resource(DoctorOrder::class),
+                MenuSection::resource(Specialist::class)->icon('academic-cap'),
             ];
         });
 

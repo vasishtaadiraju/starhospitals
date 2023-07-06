@@ -37,4 +37,9 @@ class FAQ extends Model
     {
         return $this->belongsToMany(Condition::class, 'condition_faq', 'faq_id', 'condition_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
+
+    public function specialists()
+    {
+        return $this->belongsToMany(Specialist::class, 'faq_specialist', 'specialist_id', 'faq_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+    }
 }
