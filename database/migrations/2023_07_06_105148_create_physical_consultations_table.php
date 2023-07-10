@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('speciality');
             $table->string('appointment_date');
             $table->string('appointment_time');
-            $table->enum('status', [true, false]);
+            $table->enum('status', ['true', 'false']);
             $table->text('response');
             $table->timestamps();
         });
