@@ -95,12 +95,12 @@ class Specialist extends Resource
             Text::make('Title', 'title')
                 ->rules('nullable', 'string', 'max:255'),
 
-            Textarea::make('Description', 'about')
+            Textarea::make('Description', 'description')
                 ->rows(4)
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
 
-            Image::make('Image', 'about_image')
+            Image::make('Image', 'description_image')
                 ->disk('s3')
                 ->hideFromIndex()
                 ->rules('image', 'max:1024')
@@ -108,7 +108,7 @@ class Specialist extends Resource
                 ->updateRules('nullable')
                 ->prunable(),
 
-            Text::make('Alt', 'about_image_alt')
+            Text::make('Alt', 'description_image_alt')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
         ];

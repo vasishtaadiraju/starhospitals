@@ -21,9 +21,9 @@ return new class extends Migration
             $table->string('banner_alt', 100)->nullable();
             $table->string('our_specialist_text')->nullable();
             $table->string('title')->nullable();
-            $table->text('about')->nullable();
-            $table->string('about_image')->nullable();
-            $table->string('about_image_alt')->nullable();
+            $table->text('description')->nullable();
+            $table->string('description_image')->nullable();
+            $table->string('description_image_alt')->nullable();
             $table->string('reviews_text')->nullable();
             $table->string('doctors_text')->nullable();
             $table->string('media_text')->nullable();
