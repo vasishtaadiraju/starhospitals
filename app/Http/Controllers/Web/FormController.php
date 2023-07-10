@@ -404,7 +404,7 @@ class FormController extends Controller
 
   public function physical_consultation(Request $request)
   {
-    if ($request->input('status') === true) {
+    if ($request->input('status') === 'true') {
 
       DB::table('physical_consultations')->insert([
         'appointment_id' => $request->input('appointment_id'),
