@@ -137,6 +137,14 @@ class Media extends Resource
                         Number::make('Order Number', 'order_number')
                     ];
                 }),
+
+            BelongsToMany::make('Specialist', 'specialists')
+                ->searchable()
+                ->fields(function () {
+                    return [
+                        Number::make('Order Number', 'order_number')
+                    ];
+                }),
         ];
     }
 
