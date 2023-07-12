@@ -55,4 +55,9 @@ class Speciality extends Model
     {
         return $this->belongsToMany(Testimonial::class, 'speciality_testimonial', 'speciality_id', 'testimonial_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
+
+    public function specialists()
+    {
+        return $this->hasMany(Specialist::class, 'speciality_id', 'id');
+    }
 }

@@ -11,6 +11,7 @@ use App\Http\Controllers\Web\DoctorController;
 use App\Http\Controllers\Web\FormController;
 use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Web\InternationalPatientController;
+use App\Http\Controllers\Web\SpecialistController;
 use App\Models\User;
 use App\Http\Controllers\Web\SpecialityController;
 use Illuminate\Support\Facades\Route;
@@ -51,6 +52,8 @@ Route::get('/locations/{slug}', [BranchController::class, 'index'])->name('branc
 Route::get('/international-patient', [InternationalPatientController::class, 'index'])->name('international_patient');
 Route::get('/career', [CareerController::class, 'index'])->name('career');
 Route::get('/doctors/{branch_slug}/{speciality_slug}/{slug}', [DoctorController::class, 'index'])->name('doctor');
+Route::get('/team/{slug}/', [SpecialistController::class, 'index'])->name('specialist');
+Route::get('/book-an-appointment/{branch_slug}/{speciality_slug}/{slug}', [DoctorController::class, 'consultation'])->name('doctor.book-appointment');
 Route::get('/doctors/book-a-video-consultation', [DoctorController::class, 'videoConsultation'])->name('doctor.book-video-consultation');
 
 //Form routes

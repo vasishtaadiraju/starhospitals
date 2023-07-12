@@ -1,5 +1,9 @@
 import "./utils/event-handler";
 import { httpRequest, showForm } from "./utils/event-handler";
+import "./app";
+import './slider';
+import './faqs';
+import './auto-complete';
 let screenWidth = screen.width;
 
 import BushraUrl from "../images/doctors/doctor.png";
@@ -171,7 +175,6 @@ export async function printDoctors(url, body) {
         }" href="/book-an-appointment/${branch_slug}/${speciality_slug}/${
             result.doctor.slug
         }" class="doctors-card__rt__btn">
-
          <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
          <path d="M7.14702 0V2H13.2446V0H15.2771V2H19.3421C19.9034 2 20.3584 2.44772 20.3584 3V19C20.3584 19.5523 19.9034 20 19.3421 20H1.04946C0.488203 20 0.0332031 19.5523 0.0332031 19V3C0.0332031 2.44772 0.488203 2 1.04946 2H5.1145V0H7.14702ZM18.3259 10H2.06572V18H18.3259V10ZM6.13076 12V14H4.09824V12H6.13076ZM11.2121 12V14H9.17954V12H11.2121ZM16.2934 12V14H14.2608V12H16.2934ZM5.1145 4H2.06572V8H18.3259V4H15.2771V6H13.2446V4H7.14702V6H5.1145V4Z" fill="#E3000F"/>
          </svg>
@@ -277,7 +280,7 @@ async function printOptions(node) {
 
     // let type = node.parentNode.parentNode.querySelector(".coe-select-box").getAttribute('data-');
     const response = await httpRequest(
-        "/api/getBranchCoeSpecialityById",
+        "/api/getCOESpecilityBranchBySpecialist",
         "POST",
         body
     );
@@ -287,7 +290,7 @@ async function printOptions(node) {
             ".location-select-box"
         ).innerHTML = ``;
         response.data.branches.forEach((result) => {
-            let option = `<option value="${result.id}" ${
+            let option = `<option data-slug="${result.slug}" value="${result.id}" ${
                 result.id == selected_branch_id ? `selected` : ``
             }>${result.name}</option>`;
 
@@ -299,7 +302,7 @@ async function printOptions(node) {
             ".speciality-select-box"
         ).innerHTML = ``;
         response.data.specialities.forEach((result) => {
-            let option = `<option value="${result.id}" ${
+            let option = `<option data-slug="${result.doctor_slug}" value="${result.id}" ${
                 result.id == selected_branch_id ? `selected` : ``
             }>${result.name}</option>`;
 
@@ -313,7 +316,11 @@ async function printOptions(node) {
             ".coe-select-box"
         ).innerHTML = ``;
         response.data.coes.forEach((result, index) => {
-            let option = `<option value="${result.id}" ${
+            if(result.specialities.length == 0)
+            {
+                return;
+            }
+            let option = `<option data-slug="${result.slug}" value="${result.id}" ${
                 result.id == selected_coe_id ? `selected` : ``
             }>${result.name}</option>`;
 
@@ -325,7 +332,7 @@ async function printOptions(node) {
                     ".speciality-select-box"
                 ).innerHTML = ``;
                 result.specialities.forEach((speciality) => {
-                    let option = `<option value="${speciality.id}" ${
+                    let option = `<option data-slug="${speciality.doctor_slug}" value="${speciality.id}" ${
                         speciality.id == selected_speciality_id
                             ? `selected`
                             : ``
@@ -346,7 +353,7 @@ async function printOptions(node) {
                 ".speciality-select-box"
             ).innerHTML = ``;
             response.data.specialities.forEach((speciality) => {
-                let option = `<option value="${speciality.id}" ${
+                let option = `<option data-slug="${speciality.doctor_slug}" value="${speciality.id}" ${
                     speciality.id == selected_speciality_id ? `selected` : ``
                 }>${speciality.name}</option>`;
 
@@ -379,14 +386,23 @@ async function printOptions(node) {
 }
 async function handleChange(type) {
 
-    printOptions(this);
+    // printOptions(this);
 
-    // let coe_id = this.parentNode.parentNode.querySelector(
-    //     ".coe-select-box"
-    // ).value;
-    // let branch_id = this.parentNode.parentNode.querySelector(
-    //     ".location-select-box"
-    // ).value;
+    let speciality_id = this.parentNode.parentNode.querySelector(
+        ".speciality-select-box"
+    ).value;
+    let branch_id = this.parentNode.parentNode.querySelector(
+        ".location-select-box"
+    ).value;
+
+    
+    const response = await httpRequest(
+        "/api/getSpecialistPage",
+        "POST",
+        {speciality_id,branch_id}
+    );
+
+    window.location.href = '/team/'+response.data.slug;
     // let paginate = true;
     // let speciality_id = "";
     // let body = { coe_id, branch_id, speciality_id,paginate};
@@ -394,7 +410,31 @@ async function handleChange(type) {
     //     $(".specialists-slider").slick("unslick");
     //     printDoctors('/api/getDoctorByBranchCoeSpeciality',body);
 }
+async function handleCoeChange(type) {
 
+    await printOptions(this);
+    let speciality_id = this.parentNode.parentNode.querySelector(
+        ".speciality-select-box"
+    ).value;
+    let branch_id = this.parentNode.parentNode.querySelector(
+        ".location-select-box"
+    ).value;
+
+    
+    const response = await httpRequest(
+        "/api/getSpecialistPage",
+        "POST",
+        {speciality_id,branch_id}
+    );
+
+    window.location.href = '/team/'+response.data.slug;
+    // let paginate = true;
+    // let speciality_id = "";
+    // let body = { coe_id, branch_id, speciality_id,paginate};
+
+    //     $(".specialists-slider").slick("unslick");
+    //     printDoctors('/api/getDoctorByBranchCoeSpeciality',body);
+}
 function handlePageClicks(e) {
     e.preventDefault();
     console.log(this.getAttribute("href"));
@@ -426,7 +466,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // printDoctors('/api/getDoctorByBranchCoeSpeciality',body);
 });
 
-domSelector(".coe-select-box", "change", handleChange);
+domSelector(".coe-select-box", "change", handleCoeChange);
 domSelector(".location-select-box", "change", handleChange);
 domSelector(".speciality-select-box", "change", handleChange);
 

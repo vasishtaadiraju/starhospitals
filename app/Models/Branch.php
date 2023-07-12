@@ -53,4 +53,9 @@ class Branch extends Model
     {
         return $this->belongsToMany(Testimonial::class, 'branch_testimonial', 'branch_id', 'testimonial_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
+
+    public function specialists()
+    {
+        return $this->hasMany(Specialist::class, 'branch_id', 'id');
+    }
 }

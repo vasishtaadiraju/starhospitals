@@ -1,6 +1,8 @@
 import "./utils/event-handler";
 import { httpRequest } from "./utils/event-handler";
 import './app';
+import './slider'
+import './consultations/physical'
 
 async function handleBranchChange(){
 

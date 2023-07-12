@@ -4,7 +4,7 @@
             {{-- {{ config('variables.asset') . $content->description_image }} --}}
             <img class="" src=""
                 data-src=" @if ($content->page_type == 'Coe' || $content->page_type == 'speciality') {{ config('variables.asset') . $content->description_image }}
-        @elseif($content->page_type == 'Branch') {{ config('variables.asset') . $content->about_image_desktop }} @endif"
+                    @elseif($content->page_type == 'Branch') {{ config('variables.asset') . $content->about_image_desktop }} @else  {{ config('variables.asset') . $content->description_image }} @endif"
                 alt="{{ $content->about_image_desktop_alt }}">
                 <svg class="about-speciality__image-wrapper__dot-right" width="115" height="75" viewBox="0 0 115 75"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -209,7 +209,7 @@
 
     </div>
     <div class="about-speciality__content">
-        <h2 class="about-speciality__content__heading section-heading">{{ $content->name }}</h2>
+        <h2 class="about-speciality__content__heading section-heading">{{ isset($content->name) ?  $content->name : $content->our_specialist_text }}</h2>
         @if (isset($content->branches))
             <div class="about-speciality__content__links">
 
@@ -228,6 +228,9 @@
                 {!! $content->description !!}
             @elseif($content->page_type == 'Branch')
                 {!! $content->about !!}
+            @else
+            {!! $content->description !!}
+
             @endif
         </div>
     </div>

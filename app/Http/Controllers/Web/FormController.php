@@ -423,7 +423,7 @@ class FormController extends Controller
       dispatch(new PhysicalConsultationToHospital($request->input('appointment_id'), $request->input('patient_id'), $request->input('patient_name'), $request->input('patient_email'), $request->input('doctor'), $request->input('location'), $request->input('speciality'), $request->input('appointment_date'), $request->input('appointment_time')))->delay(now()->addMinute());
       dispatch(new PhysicalConsultationToUser($request->input('appointment_id'), $request->input('patient_id'), $request->input('patient_name'), $request->input('patient_email'), $request->input('doctor'), $request->input('location'), $request->input('speciality'), $request->input('appointment_date'), $request->input('appointment_time')))->delay(now()->addMinute());
 
-      return view('thank-you', [
+      return view('pc-thank-you', [
         'appointment_id' => $request->input('appointment_id'),
         'patient_id' => $request->input('patient_id'),
         'patient_name' => $request->input('patient_name'),

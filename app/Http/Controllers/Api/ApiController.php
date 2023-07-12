@@ -8,6 +8,7 @@ use App\Models\CentreOfExcellence;
 use App\Models\Condition;
 use App\Models\Doctor;
 use App\Models\DoctorOrder;
+use App\Models\Specialist;
 use App\Models\Speciality;
 use App\Models\User;
 use DB;
@@ -378,5 +379,82 @@ class ApiController extends Controller
         }
 
             return response($response,200);
+    }
+
+    function getCOESpecilityBranchBySpecialist(Request $request)
+    {
+        $branch_id = $request->branch_id;
+        $coe_id = $request->coe_id;
+        $type = $request->type;
+        $response = [];
+        if ($type == 'coe' && $coe_id != null) {
+            $response = CentreOfExcellence::where('status', 'active')->where('id', $coe_id)->with([
+                'branches' => function ($query) {
+                    $query->whereHas('specialists')->where('status', 'active')->orderBy('branches.order_number')->select('branches.id', 'name', 'slug')->take(2);
+                },
+                'specialities' => function ($query) {
+                    $query->whereHas('specialists')->where('status', 'active')->select('specialities.id', 'name', 'slug', 'icon_image','doctor_slug');
+                },
+            ])->first('id');
+        } elseif ($type == 'location' && $branch_id != null) {
+
+            if($coe_id != null)
+            {
+                $response = Branch::whereHas('specialists')->where('status', 'active')->where('id', $branch_id)->with([
+                    'coes' => function ($query){
+                        $query->where('status', 'active')->with(['specialities'=>function($query) {
+                            $query->whereHas('specialists')->where('status','active')->select('specialities.id','name','slug');
+                        }])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+                    },
+                    'specialities' => function ($query) use ($coe_id) {
+                        $query->whereHas('specialists')->where('status', 'active')->whereHas('coes',function($query) use ($coe_id){
+                            $query->where('centre_of_excellences.id',$coe_id);             
+
+                        })->select('specialities.id', 'name', 'slug', 'icon_image','doctor_slug');
+                    },
+                ])->first('id');  
+            }
+            else
+            {
+                $response = Branch::whereHas('specialists')->where('status', 'active')->where('id', $branch_id)->with([
+                    'coes' => function ($query) {
+                        $query->where('status', 'active')->with(['specialities'=>function($query){
+                            $query->where('status', 'active')->whereHas('specialists')->where('status', 'active')->select('specialities.id','name','slug');
+                        }])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+                    },
+                    // 'specialities' => function ($query) {
+                    //     $query->select('specialities.id', 'name', 'slug', 'icon_image');
+                    // },
+                ])->first('id');
+            }
+            
+
+
+        } 
+        // elseif ($type == 'coe' && $coe_id == null) {
+        //     $response = CentreOfExcellence::whereHas('conditions',function($query) use ($condition_id){
+        //         $query->where('condition.id',$condition_id);
+        //     })->where('status', 'active')->with([
+        //         'branches' => function ($query) {
+        //             $query->where('status', 'active')->orderBy('branches.order_number')->select('branches.id', 'name', 'slug')->take(2);
+        //         }
+        //     ])->first('id');
+        // } elseif ($type == 'location' && $branch_id == null) {
+        //     $response = Branch::whereHas('conditions',function($query) use ($condition_id){
+        //         $query->where('condition.id',$condition_id);
+        //     })->where('status', 'active')->with([
+        //         'coes' => function ($query) {
+        //             $query->where('status', 'active')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+        //         }
+        //     ])->first('id');
+        // }
+
+            return response($response,200);
+    }
+
+    function getSpecialistPage(Request $request){
+        $response = Specialist::where('branch_id',$request->branch_id)->where('speciality_id',$request->speciality_id)->first();
+        // dd($response);
+        return response($response,200);
     }
 }

@@ -145,22 +145,25 @@ async function printDoctors(url,body) {
          <p class="doctors-card__rt__location"> <a href="">${branchName.toString()}</a></p>
         </div>
         <div>
-         <div target="_blank" data-name="${result.doctor.name}" data-speciality="${formDetails.speciality}" data-branch="${formDetails.branch}" data-href="https://api.starhs.in/patient-portal/doctors/info/${branch_slug == 'financial-district' ? `nanakramguda` : `${branch_slug}`}/${
-            result.doctor.his_id
-        }" class="doctors-card__rt__btn doctor-physical-btn">
+        <a href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}" class="doctors-card__rt__btn">
+               
+             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0ZM10.1597 14C8.1243 14 6.29182 14.8687 5.01276 16.2556C6.38039 17.3474 8.114 18 10 18C11.9695 18 13.7727 17.2883 15.1666 16.1081C13.8956 14.8074 12.1219 14 10.1597 14ZM10 2C5.58172 2 2 5.58172 2 10C2 11.8106 2.6015 13.4807 3.61557 14.8214C5.25639 13.0841 7.58144 12 10.1597 12C12.6441 12 14.8933 13.0066 16.5218 14.6342C17.4526 13.3267 18 11.7273 18 10C18 5.58172 14.4183 2 10 2ZM10 3C12.2091 3 14 4.79086 14 7C14 9.2091 12.2091 11 10 11C7.79086 11 6 9.2091 6 7C6 4.79086 7.79086 3 10 3ZM10 5C8.8954 5 8 5.89543 8 7C8 8.1046 8.8954 9 10 9C11.1046 9 12 8.1046 12 7C12 5.89543 11.1046 5 10 5Z" fill="#E3000F"/>
+</svg>
+
+             
+
+             <span>View Full Profile</span>
+         </a>
+         <a data-name="${result.doctor.name}" data-speciality="${formDetails.speciality}" data-branch="${formDetails.branch}" href="/book-an-appointment/${branch_slug}/${speciality_slug}/${
+            result.doctor.slug
+        }" class="doctors-card__rt__btn">
          <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
          <path d="M7.14702 0V2H13.2446V0H15.2771V2H19.3421C19.9034 2 20.3584 2.44772 20.3584 3V19C20.3584 19.5523 19.9034 20 19.3421 20H1.04946C0.488203 20 0.0332031 19.5523 0.0332031 19V3C0.0332031 2.44772 0.488203 2 1.04946 2H5.1145V0H7.14702ZM18.3259 10H2.06572V18H18.3259V10ZM6.13076 12V14H4.09824V12H6.13076ZM11.2121 12V14H9.17954V12H11.2121ZM16.2934 12V14H14.2608V12H16.2934ZM5.1145 4H2.06572V8H18.3259V4H15.2771V6H13.2446V4H7.14702V6H5.1145V4Z" fill="#E3000F"/>
          </svg>
              <span>Book a Physical Consultation</span>
-         </div>
-         ${result.doctor.video_consultation == 'yes' ? `<a href="/doctors/book-a-video-consultation" class="doctors-card__rt__btn">
-               
-             <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12.2283 7.25L15.2771 5V11L12.2283 8.75V11H5.1145V5H12.2283V7.25ZM3.85721 14H18.3259V2H2.06572V15.3851L3.85721 14ZM4.56018 16L0.0332031 19.5V1C0.0332031 0.44772 0.488203 0 1.04946 0H19.3421C19.9034 0 20.3584 0.44772 20.3584 1V15C20.3584 15.5523 19.9034 16 19.3421 16H4.56018Z" fill="#E3000F"/>
-</svg>
-
-             <span>Book a Video Consultation</span>
-         </a>` : ``}
+         </a>
+         
          </div>
      </div>
  </div>`

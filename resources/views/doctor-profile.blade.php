@@ -81,17 +81,19 @@
             </div>
 
             <div class="d-p-info__appointment-wrapper">
-                <div target="_blank" data-name="{{$content->name}}" data-speciality="{{count($content->specialities) > 0 ? $content->specialities[0]->name : $content->coes[0]->name}}" data-branch="{{$branch_name}}" data-href="https://api.starhs.in/patient-portal/doctors/info/@if($branch_slug == 'financial-district'){{'nanakramguda'}}@else{{$branch_slug}}@endif/{{$content->his_id}}" class="d-p-info__appointment-wrapper__btn doctor-physical-btn">
-                    <img src="" data-src="{{ Vite::asset('resources/images/Icons/profile.png') }}" alt="">
+                <a data-name="{{$content->name}}" data-speciality="" data-branch="{{$branch_name}}" href="{{route('doctor.book-appointment',[$branch_slug,$speciality_slug,$content->slug])}}" class="d-p-info__appointment-wrapper__btn">
+                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.14702 0V2H13.2446V0H15.2771V2H19.3421C19.9034 2 20.3584 2.44772 20.3584 3V19C20.3584 19.5523 19.9034 20 19.3421 20H1.04946C0.488203 20 0.0332031 19.5523 0.0332031 19V3C0.0332031 2.44772 0.488203 2 1.04946 2H5.1145V0H7.14702ZM18.3259 10H2.06572V18H18.3259V10ZM6.13076 12V14H4.09824V12H6.13076ZM11.2121 12V14H9.17954V12H11.2121ZM16.2934 12V14H14.2608V12H16.2934ZM5.1145 4H2.06572V8H18.3259V4H15.2771V6H13.2446V4H7.14702V6H5.1145V4Z" fill="#E3000F"/>
+                        </svg>
                     <span>Book a Physical Consultation</span>
-                </div>
+                </s>
 
-                @if ($content->video_consultation == 'yes')
+                {{-- @if ($content->video_consultation == 'yes')
                 <a href="/doctors/book-a-video-consultation" class="d-p-info__appointment-wrapper__btn">
                     <img src="#" data-src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
                     <span>Book a Video Consultation</span>
                 </a>   
-                @endif
+                @endif --}}
                 
             </div>
 

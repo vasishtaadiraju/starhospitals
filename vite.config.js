@@ -25,6 +25,7 @@ export default defineConfig({
                 'resources/js/home.js',
                 'resources/js/branch.js',
                 'resources/js/speciality.js',
+                'resources/js/specialists.js',
                 'resources/js/condition.js',
                 'resources/js/condition-landing.js',
                 'resources/js/about.js',

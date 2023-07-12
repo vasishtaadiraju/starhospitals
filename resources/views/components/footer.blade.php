@@ -455,7 +455,7 @@
                 <li class="footer__columns__option__label footer__columns__option__label--dropdown">Patient Care & Services
                     <ul class="footer__columns__option__label--dropdown__option">
                         <li class="footer__columns__option__item"><a href="{{route('find-doctor')}}">Find a Doctor</a></li>
-                        <li class="footer__columns__option__item"><a href="{{route('doctor.book-video-consultation')}}">Book a Video Consultation</a></li>
+                        <li class="footer__columns__option__item"><a href="">Book a Video Consultation</a></li>
                         <li class="footer__columns__option__item"><a href="{{route('about')}}"> About Us</a></li>
                         
                         <li class="footer__columns__option__item"><a href="{{route('contact')}}">Contact</a></li>

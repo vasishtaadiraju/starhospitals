@@ -18,7 +18,7 @@ export function removeClass(elementClass, removeClass) {
 export async function handleFormSubmit(e)
 {
     e.preventDefault();
-    console.log(e.target.getAttribute('action'));
+    // console.log(e.target.getAttribute('action'));
     let formData = {};
     Array.from(e.target).forEach(input=>{
         // formData.append(input.name,input.value);
@@ -26,20 +26,24 @@ export async function handleFormSubmit(e)
     })
 
     let response = await httpRequest(e.target.getAttribute('action'),'POST',formData);
-    console.log(response);
+    // console.log(response);
 
-    if(response.status.status == 422)
+    if(response.status.status == 422 || response.data.status == false)
     {
         Array.from(e.target).forEach(input=>{
             // formData.append(input.name,input.value);
             
-            console.log();
+            // console.log();
             if(response.data.message[input.name] != undefined)
             {
                  
-                console.log(response.data.message[input.name][0]);
+                // console.log(response.data.message[input.name][0]);
                 input.nextElementSibling.innerHTML = response.data.message[input.name][0]
                 // response.data.message[input.name][0]
+            }
+            else if(response.data.error_data[input.name] != undefined)
+            {
+                input.nextElementSibling.innerHTML = response.data.error_data[input.name][0]
             }
         })
     }
@@ -346,7 +350,7 @@ export function showForm()
         document.querySelector('.patient-enquiry-form').addEventListener('submit',async function(e){
             let formResponse = await handleFormSubmit(e);
 
-            console.log(formResponse);
+            // console.log(formResponse);
             if(formResponse.status.status == 200)
             {
                 // console.log(formNode);
@@ -422,6 +426,7 @@ export async function httpRequest(url ,method, body, headers) {
         }
     }
     response = await fetch(url, data);
+    // console.log(response);
   return  response.status != 200
         ? handleAjaxError(await response.json(),response)
         : handleAjaxSuccess(await response.json(),response);
@@ -448,3 +453,17 @@ export const debounce = (func, delay) => {
           = setTimeout(() => func.apply(context, args), delay)
   }
 }
+
+
+export const throttle = (func, limit) => {
+    let inThrottle
+    return function() {
+      const args = arguments
+      const context = this
+      if (!inThrottle) {
+        func.apply(context, args)
+        inThrottle = true
+        setTimeout(() => inThrottle = false, limit)
+      }
+    }
+  };

@@ -1,0 +1,619 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+@import "utils/media-queries";
+
+.pc-modal {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #0000005e;
+    z-index: 3600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &__cross {
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        cursor: pointer;
+    }
+
+    &__card {
+        position: relative;
+        width: 40%;
+        min-height: 18rem;
+        background-color: #ffff;
+        border-radius: 20px;
+        padding: 91px 0px;
+
+        @include media("sm-mob") {
+            width: 80%;
+            padding: 45px 0px;
+        }
+        @include media("md-mob") {
+            width: 80%;
+            padding: 45px 0px;
+        }
+        @include media("lg-mob") {
+            width: 80%;
+            padding: 45px 0px;
+        }
+        @include media("x-sm-tab") {
+            width: 80%;
+            padding: 45px 0px;
+        }
+        @include media("sm-tab") {
+            width: 80%;
+            padding: 45px 0px;
+        }
+        @include media("md-tab") {
+            width: 60%;
+            padding: 45px 0px;
+        }
+
+        // &--choose-patient{
+        //     width: 50%;
+        // }
+        &__inner-box {
+            width: 69%;
+            // border: 1px solid blue;
+            margin: 0px auto;
+            @include media("sm-mob") {
+                width: 85%;
+            }
+            @include media("md-mob") {
+                width: 85%;
+            }
+            @include media("lg-mob") {
+                width: 85%;
+            }
+            &--registration {
+                margin-top: 25%;
+                @include media("sm-mob") {
+                    margin-top: 75%;
+                }
+                @include media("md-mob") {
+                    margin-top: 70%;
+                }
+                @include media("lg-mob") {
+                    margin-top: 70%;
+                }
+            }
+        }
+
+        &__title {
+            font-family: "Plus Jakarta Sans";
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 40px;
+            letter-spacing: 0em;
+            text-align: left;
+            margin-bottom: 51px;
+            @include media("sm-mob") {
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 25px;
+                margin-bottom: 25px;
+                // text-align: center;
+            }
+            @include media("md-mob") {
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 25px;
+                margin-bottom: 25px;
+                letter-spacing: 0em;
+                // text-align: center;
+            }
+            @include media("lg-mob") {
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 25px;
+                margin-bottom: 25px;
+                letter-spacing: 0em;
+                // text-align: center;
+            }
+        }
+
+        &__description {
+            font-family: "Plus Jakarta Sans";
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 25px;
+            letter-spacing: 0em;
+            text-align: left;
+            margin-bottom: 33px;
+            color: variables.$starhospitals-text-secondary;
+
+            @include media("sm-mob") {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 25px;
+                letter-spacing: 0em;
+                text-align: left;
+            }
+            @include media("md-mob") {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 25px;
+                letter-spacing: 0em;
+                text-align: left;
+            }
+            @include media("lg-mob") {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 25px;
+                letter-spacing: 0em;
+                text-align: left;
+            }
+            span {
+                font-size: 16px;
+                font-weight: 600;
+                color: variables.$starhospitals-brand-primary;
+
+                @include media("sm-mob") {
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 25px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                }
+                @include media("md-mob") {
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 25px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                }
+                @include media("lg-mob") {
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 25px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                }
+            }
+
+            &--regitration {
+                margin-bottom: 0px;
+            }
+        }
+
+        &__date-time {
+            width: 61%;
+            margin: 0px auto;
+            display: flex;
+            justify-content: space-between;
+            // gap:1em;
+            margin-bottom: 51px;
+
+            @include media("sm-mob") {
+                width: 90%;
+                margin-bottom: 25px;
+                margin-left: 0px;
+            }
+            @include media("md-mob") {
+                width: 90%;
+                margin-bottom: 25px;
+                margin-left: 0px;
+            }
+            @include media("lg-mob") {
+                width: 90%;
+                margin-bottom: 25px;
+                margin-left: 0px;
+            }
+
+            div {
+                display: flex;
+                font-family: Plus Jakarta Sans;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 25px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #757575;
+                gap: 0.5em;
+
+                strong {
+                    font-family: Plus Jakarta Sans;
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 20px;
+                    color: variables.$starhospitals-brand-primary;
+                }
+            }
+        }
+
+        &__label {
+            font-family: "Plus Jakarta Sans";
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: 0em;
+            text-align: left;
+
+            &--resend {
+                margin-top: 1.5em;
+
+                span {
+                    font-family: Plus Jakarta Sans;
+                    font-size: 12px;
+                    font-weight: 700;
+                    line-height: 20px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    color: #e3000f;
+                    border-bottom: 1px solid #004e9e;
+                    margin-left: 0.75em;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &__otp-label {
+            font-family: "PLus Jakarta Sans";
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 0em;
+            text-align: left;
+            // padding-bottom: 0.75em;
+            input {
+                margin-top: 1em !important;
+            }
+        }
+
+        &__btn {
+            min-width: 147px;
+            height: 52px;
+            top: 953px;
+            left: 779px;
+            padding: 16px 40px 16px 40px;
+            border-radius: 10px;
+            gap: 10px;
+            background-color: #e3000f;
+            outline: none;
+            border: none;
+            color: #ffff;
+            font-family: Plus Jakarta Sans;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 20px;
+            letter-spacing: 0em;
+            text-align: center;
+            margin-left: 50%;
+            transform: translate(-50%);
+            margin-top: 40px;
+            cursor: pointer;
+            @include media("sm-mob") {
+                min-width: 97px;
+                height: 40px;
+                padding: 10px 15px 10px 15px;
+                font-size: 14px;
+            }
+            @include media("md-mob") {
+                min-width: 97px;
+                height: 40px;
+                padding: 10px 15px 10px 15px;
+                font-size: 14px;
+            }
+            @include media("lg-mob") {
+                min-width: 97px;
+                height: 40px;
+                padding: 10px 15px 10px 15px;
+                font-size: 14px;
+            }
+        }
+
+        &__checkbox {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 1em;
+            font-family: "Plus Jakarta Sans";
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: 0em;
+            text-align: left;
+            margin-top: 2em;
+
+            input {
+                min-height: 25px;
+                // border: 5px solid #e0e0e0;
+
+                // border-radius: 10px;
+                width: 29%;
+                padding: 0px 1em;
+                // outline: none;
+                // font-family: 'Plus Jakarta Sans';
+            }
+        }
+
+        input {
+            font-family: "Plus Jakarta Sans";
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 17px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+
+        &__patient-table {
+            height: 12rem;
+            overflow-y: scroll;
+            margin-left: -2.5em;
+            @include media("sm-mob") {
+                margin-left: 0em;
+            }
+            @include media("md-mob") {
+                margin-left: 0em;
+            }
+            @include media("lg-mob") {
+                margin-left: 0em;
+            }
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            table {
+                width: 100%;
+                // border: 1px solid black;
+                th {
+                }
+
+                tr {
+                    @include media("sm-mob") {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    @include media("md-mob") {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    @include media("lg-mob") {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+
+            &__heading {
+                font-family: "Plus Jakarta Sans" !important;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 25px;
+                letter-spacing: 0em;
+                text-align: left;
+                padding-bottom: 1em;
+                // text-align: left;
+
+                &:first-child {
+                    width: 140px;
+                    padding-left: 2.5em;
+                    
+                }
+
+                @include media("sm-mob") {
+                    display: none;
+                }
+                @include media("md-mob") {
+                    display: none;
+                }
+                @include media("lg-mob") {
+                    display: none;
+                }
+            }
+
+            &__name {
+                font-family: "Plus Jakarta Sans";
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 20px;
+                letter-spacing: 0em;
+                text-align: left;
+                padding-bottom: 0.5em;
+                color: #004e9e;
+                label {
+                    // margin-left: 0.5em;
+                    padding-left: 0.4em;
+                cursor: pointer;
+
+                }
+                @include media("sm-mob") {
+                    padding-bottom: 0.25;
+                    padding-top: 0.5em;
+                }
+                @include media("md-mob") {
+                    padding-bottom: 0.25;
+                    padding-top: 0.5em;
+                }
+                @include media("lg-mob") {
+                    padding-bottom: 0.25;
+                    padding-top: 0.5em;
+                }
+            }
+
+            &__patient-id {
+                font-family: "Plus Jakarta Sans";
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 15px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #424242;
+                padding-left: 0.4em;
+
+                @include media("sm-mob") {
+                    padding-left: 1.75em;
+                    font-size: 14px;
+                }
+                @include media("md-mob") {
+                    padding-left: 1.75em;
+                    font-size: 14px;
+                }
+                @include media("lg-mob") {
+                    padding-left: 1.75em;
+                    font-size: 14px;
+                }
+
+                &--mob {
+                    font-family: Plus Jakarta Sans;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 25px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    color: #757575;
+                    display: none;
+                padding-left: 0.75em;
+
+                    @include media("sm-mob") {
+                        display: initial;
+                    }
+                    @include media("md-mob") {
+                        display: initial;
+                    }
+                    @include media("lg-mob") {
+                        display: initial;
+                    }
+                }
+            }
+
+            &__registration {
+                font-family: Plus Jakarta Sans;
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 15px;
+                letter-spacing: 0em;
+                text-align: left;
+
+                @include media("sm-mob") {
+                    padding-left: 1.75em;
+                    font-size: 14px;
+                }
+                @include media("md-mob") {
+                    padding-left: 1.75em;
+                    font-size: 14px;
+                }
+                @include media("lg-mob") {
+                    padding-left: 1.75em;
+                    font-size: 14px;
+                }
+            }
+
+            &__add-patient {
+                font-family: Plus Jakarta Sans;
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 20px;
+                letter-spacing: 0em;
+                text-align: left;
+                display: flex;
+                align-items: center;
+                gap: 1em;
+                justify-content: flex-start;
+                margin-top: 1em;
+                color: variables.$starhospitals-brand-secondary;
+                // padding-left: -0.5em;
+                width: max-content;
+                // @include media("sm-mob") {
+                //     padding-left: 0em;
+                // }
+                // @include media("md-mob") {
+                //     padding-left: 0em;
+                // }
+                // @include media("lg-mob") {
+                //     padding-left: 0em;
+                // }
+            }
+        }
+    }
+}
+
+.alert-box{
+    width: max-content !important;
+}
+.alert-circle{
+    width: 5rem;
+    height: 3.5rem;
+    // border: 3px solid #e3000f;
+    background-color: #e3000f;
+    transform: rotate(-45deg);
+    margin: 0px auto;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    &__inner-line{
+        width: 102%;
+        height:200%;
+        background-color: white;
+        border: none;
+        position: absolute;
+        top: -10%;
+        left: -20%;
+        transform: rotate(-45deg);
+        // border-radius: 50%;
+
+    }
+}
+
+.alert-message{
+    font-family: 'Plus Jakarta sans';
+    font-weight:500;
+    color: #e3000f;
+    text-align: center;
+
+    &__icon{
+        display: flex;
+        justify-content: center;
+    margin-bottom: 1em;
+
+    }
+}
+
+.otp-box{
+    input{
+        width: 40px !important;
+        // height: 50px;
+        text-align: center;
+        padding: 1em;
+        margin-right: 0.75em;
+    }
+}
+
+input[type="radio"]:after {
+    // width: 50px;
+    // height: 50px;
+    // border-radius: 15px;
+    // top: -2px;
+    // left: -1px;
+    // position: relative;
+    // background-color: #d1d3d1;
+    // content: '';
+    // display: inline-block;
+    // visibility: visible;
+    // border: 2px solid white;
+}
+
+input[type="radio"]:checked:after {
+    // width: 15px;
+    // height: 15px;
+    // border-radius: 15px;
+    // top: -2px;
+    // left: -1px;
+    // position: relative;
+    // background-color: variables.$starhospitals-text-primary;
+    // content: '';
+    // display: inline-block;
+    // visibility: visible;
+    // border: 2px solid variables.$starhospitals-text-primary;
+    // padding: 0.25em;
+}

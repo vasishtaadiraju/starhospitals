@@ -48,5 +48,8 @@ class ContentServiceProvider extends ServiceProvider
         view()->composer('book-an-appointment.video-consultation', function($view) {
             $view->with(['branches' => $this->menu_branches]);
         });
+        view()->composer('specialist', function($view) {
+            $view->with(['coes' => $this->menu_coes]);
+        });
     }
 }

@@ -1,41 +1,49 @@
-
 @use "variables";
 @import "./media-queries";
-@import '../video-player';
+@import "../video-player";
 @font-face {
-    font-family: 'Plus Jakarta Sans';
+    font-family: "Plus Jakarta Sans";
     // src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
-    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
-  }
-  @font-face {
-    font-family: 'Plus Jakarta Sans Bold';
+    src: local("Open Sans Regular"), local("OpenSans-Regular"),
+        url("/resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf")
+            format("truetype");
+}
+@font-face {
+    font-family: "Plus Jakarta Sans Bold";
     // src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
-    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf') format('truetype');
-  }
-  @font-face {
-    font-family: 'Plus Jakarta Sans Semi Bold';
+    src: local("Open Sans Regular"), local("OpenSans-Regular"),
+        url("/resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf")
+            format("truetype");
+}
+@font-face {
+    font-family: "Plus Jakarta Sans Semi Bold";
     // src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
-    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBold.ttf') format('truetype');
-  }
-  @font-face {
-    font-family: 'Plus Jakarta Sans Regular';
+    src: local("Open Sans Regular"), local("OpenSans-Regular"),
+        url("/resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBold.ttf")
+            format("truetype");
+}
+@font-face {
+    font-family: "Plus Jakarta Sans Regular";
     // src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
-    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Light.ttf') format('truetype');
-  }
-  @font-face {
-    font-family: 'Plus Jakarta Sans Medium';
+    src: local("Open Sans Regular"), local("OpenSans-Regular"),
+        url("/resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Light.ttf")
+            format("truetype");
+}
+@font-face {
+    font-family: "Plus Jakarta Sans Medium";
     // src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
-    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Medium.ttf') format('truetype');
-  }
-@mixin centerSection{
+    src: local("Open Sans Regular"), local("OpenSans-Regular"),
+        url("/resources/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Medium.ttf")
+            format("truetype");
+}
+@mixin centerSection {
     width: variables.$starhospitals-component-width;
     margin: 0px auto;
 }
 @mixin column-count($columns) {
     flex: 0 0 calc(95% / $columns);
 }
-@mixin input-fields-with-Icon()
-{
+@mixin input-fields-with-Icon() {
     margin-top: 0.5em;
     border: 1px solid variables.$starhospitals-ui-tertiary;
     display: flex;
@@ -47,13 +55,13 @@
     background-color: white;
 
     @content;
-    img , svg {
+    img,
+    svg {
         // padding: 0.25em;
         // color: gray !important;
         // background-color: gray;
         // fill: currentColor !important;
     }
-    
 
     input,
     select {
@@ -64,27 +72,21 @@
         height: 80%;
         min-height: 2rem;
         background: none;
-
     }
 }
 
-
-
-@mixin center-child-element()
-{
-display: grid;
-place-items: center;
+@mixin center-child-element() {
+    display: grid;
+    place-items: center;
 }
 
-@mixin center-align-item()
-{
+@mixin center-align-item() {
     margin-left: 50%;
     margin-top: 50%;
     transform: translate(-50%, -50%);
 }
 
-@mixin btn-primary($color,$background-color)
-{
+@mixin btn-primary($color, $background-color) {
     border: 1px solid $color;
     border-radius: 10px;
     @include font-family(600);
@@ -97,45 +99,40 @@ place-items: center;
     cursor: pointer;
 }
 
-@mixin font-family($font-weight)
-{
-    font-family:variables.$starhospitals-brand-secondary-font;
+@mixin font-family($font-weight) {
+    font-family: variables.$starhospitals-brand-secondary-font;
     font-weight: $font-weight;
-   
 }
 
-@mixin box-shadow()
-{
+@mixin box-shadow() {
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.16);
-        -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.16);
-        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.16);
 }
 
 @keyframes growDown {
     0% {
-        transform: scaleY(0)
+        transform: scaleY(0);
     }
     80% {
-        transform: scaleY(1.1)
+        transform: scaleY(1.1);
     }
     100% {
-        transform: scaleY(1)
+        transform: scaleY(1);
     }
 }
 
-*,html {
+*,
+html {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     scroll-behavior: smooth;
     // font-size: 62.5%;
     @media screen and (min-width: 2560px) and (max-width: 3839px) {
-       
-            font-size: 100%;
-            font-size: 107.5%;
-          
+        font-size: 100%;
+        font-size: 107.5%;
     }
-   
 }
 
 select {
@@ -149,254 +146,201 @@ select {
     background-position: calc(100% - 1em) !important;
     padding-right: 2em !important;
     // padding-left: 1em;
-  }
+}
 
-  
-
-a{
+a {
     text-decoration: none;
     color: variables.$starhospitals-text-primary;
 
-    &:hover{
+    &:hover {
         text-decoration: none;
     }
 }
 
-body{
+body {
     overflow-x: hidden;
     // font-size: 5rem;
-    color:variables.$starhospitals-text-primary;
+    color: variables.$starhospitals-text-primary;
     // color: red
-
 }
 
 // h1,h2,h3,h4,h5,h6,p,span,div{
 // }
 
-input,select{
+input,
+select {
     @include font-family(500);
     font-size: 12px;
 }
 
-    .error-message{
-        color: red;
-        margin-left: 1em;
-        @include font-family(400);
-        font-size: 10px;
-    }
+.error-message {
+    color: red;
+    margin-left: 1em;
+    @include font-family(400);
+    font-size: 10px;
+}
 
-    .error-field{
-        border: 0.7px solid red !important;
-    }
-.gap{
+.error-field {
+    border: 0.7px solid red !important;
+}
+.gap {
     height: 5rem;
-    @include media('sm-mob')
-    {
+    @include media("sm-mob") {
         height: 2.5rem;
-
     }
-    @include media('md-mob')
-    {
-    height: 2.5rem;
-        
+    @include media("md-mob") {
+        height: 2.5rem;
     }
-    @include media('lg-mob')
-    {
-    height: 2.5rem;
-        
+    @include media("lg-mob") {
+        height: 2.5rem;
     }
 }
 
-.form-input{
-
+.form-input {
     display: flex;
     justify-content: space-between;
     margin: 1em 0px;
     flex-wrap: wrap;
     gap: 1em;
-    &__field{
+    &__field {
         padding: 1em;
         outline: none;
         border: 1px solid variables.$starhospitals-ui-tertiary;
         border-radius: 10px;
-        background-color: #FAFAFA;
-        &--w-1{
+        background-color: #fafafa;
+        &--w-1 {
             flex: 0 0 100%;
         }
-        &--w-2{
-            flex: 0 0 calc(95%/2);
-            @include media('sm-mob')
-        {
-            
-            flex: 0 0 100%;
-            
-            
-        }
-        @include media('md-mob')
-        {
-            
-            flex: 0 0 100%;
-            
-        }
-        @include media('lg-mob')
-        {
-            
-            flex: 0 0 100%;
-            
-        }
-        @include media('x-sm-tab')
-        {
-            
-            flex: 0 0 100%;
-            
-        }
-        }
-        &--w-3{
-            flex: 0 0 calc(95%/3);
-            @include media('sm-mob')
-            {
-                
+        &--w-2 {
+            flex: 0 0 calc(95% / 2);
+            @include media("sm-mob") {
                 flex: 0 0 100%;
-                
-                
             }
-            @include media('md-mob')
-            {
-                
+            @include media("md-mob") {
                 flex: 0 0 100%;
-                
             }
-            @include media('lg-mob')
-            {
-                
+            @include media("lg-mob") {
                 flex: 0 0 100%;
-                
             }
-            @include media('x-sm-tab')
-            {
-                
+            @include media("x-sm-tab") {
                 flex: 0 0 100%;
-                
+            }
+        }
+        &--w-3 {
+            flex: 0 0 calc(95% / 3);
+            @include media("sm-mob") {
+                flex: 0 0 100%;
+            }
+            @include media("md-mob") {
+                flex: 0 0 100%;
+            }
+            @include media("lg-mob") {
+                flex: 0 0 100%;
+            }
+            @include media("x-sm-tab") {
+                flex: 0 0 100%;
             }
         }
     }
 
-    &__radio{
+    &__radio {
         display: flex;
         align-items: center;
         // justify-content: space-between;
         gap: 1em;
         font-size: 15px;
         cursor: pointer;
-        @include font-family(400)
+        @include font-family(400);
     }
-
-    
 }
 
-.view-all-btn{
-        @include btn-primary(red,transparent);
-        min-width: 167px;
+.view-all-btn {
+    @include btn-primary(red, transparent);
+    min-width: 167px;
+    width: max-content;
+    height: 52px;
+    padding: 16px 40px;
+    margin: 0px auto;
+    margin-top: 3em;
+    display: flex;
+    align-items: center;
+    @include media("sm-mob") {
+        min-width: 117px;
         width: max-content;
-        height: 52px;
-        padding: 16px 40px;
-        margin: 0px auto;
-        margin-top: 3em;
-        display: flex;
-        align-items: center;
-        @include media('sm-mob')
-        {
-            min-width: 117px;
-            width: max-content;
-            height: 40px;
-            padding: 10px 15px;
-        }
-        @include media('md-mob')
-        {
-            min-width: 117px;
-            width: max-content;
-            height: 40px;
-            padding: 10px 15px; 
-        }
-        @include media('lg-mob')
-        {
-            min-width: 117px;
-            width: max-content;
-            height: 40px;
-            padding: 10px 15px;   
-        }
-        @include media('x-sm-tab')
-        {
-            min-width: 117px;
-            width: max-content;
-            height: 40px;
-            padding: 10px 15px; 
-        }
-        @include media('sm-tab')
-        {
-            min-width: 117px;
-            width: max-content;
-            height: 40px;
-            padding: 10px 15px; 
-        }
+        height: 40px;
+        padding: 10px 15px;
+    }
+    @include media("md-mob") {
+        min-width: 117px;
+        width: max-content;
+        height: 40px;
+        padding: 10px 15px;
+    }
+    @include media("lg-mob") {
+        min-width: 117px;
+        width: max-content;
+        height: 40px;
+        padding: 10px 15px;
+    }
+    @include media("x-sm-tab") {
+        min-width: 117px;
+        width: max-content;
+        height: 40px;
+        padding: 10px 15px;
+    }
+    @include media("sm-tab") {
+        min-width: 117px;
+        width: max-content;
+        height: 40px;
+        padding: 10px 15px;
+    }
 }
-.ui-background{
-    padding:5rem 0px;
-        background-color: variables.$starhospitals-ui-background;
-        // background-color:gray
-        // z-index: 400;
+.ui-background {
+    padding: 5rem 0px;
+    background-color: variables.$starhospitals-ui-background;
+    // background-color:gray
+    // z-index: 400;
 
-    @include media('sm-mob'){
-        padding:2.5rem 0px;
-
+    @include media("sm-mob") {
+        padding: 2.5rem 0px;
     }
-    @include media('md-mob'){
-    padding:2.5rem 0px;
-        
+    @include media("md-mob") {
+        padding: 2.5rem 0px;
     }
-    @include media('lg-mob'){
-    padding:2.5rem 0px;
-        
+    @include media("lg-mob") {
+        padding: 2.5rem 0px;
     }
 }
 
-.section-heading{
-        font-family: 'Plus Jakarta Sans Semi Bold';
-        font-weight: 600 !important;
-        font-size: 36px;
-        line-height: 30.5px;
+.section-heading {
+    font-family: "Plus Jakarta Sans Semi Bold";
+    font-weight: 600 !important;
+    font-size: 36px;
+    line-height: 30.5px;
 
-        @include media("sm-mob") {
+    @include media("sm-mob") {
         font-size: 20px;
-            
-
-        }
-        @include media("md-mob") {
+    }
+    @include media("md-mob") {
         font-size: 20px;
-            
+    }
+    @include media("lg-mob") {
+        font-size: 20px;
+    }
+    // @include media("x-sm-tab") {
+    // font-size: 30px;
 
-        }
-        @include media("lg-mob") {
-        font-size:20px;
-            
+    // }
+    // @include media("md-tab") {
+    // font-size: 20px;
 
-        }
-        // @include media("x-sm-tab") {
-        // font-size: 30px;
-            
-
-        // }
-        // @include media("md-tab") {
-        // font-size: 20px;
-            
-
-        // }
+    // }
 }
 
-.ctg-video{
+.ctg-video {
     position: relative;
     cursor: pointer;
-    &::after{
+    &::after {
         content: url("data:image/svg+xml,%3Csvg  viewBox='0 0 68 68' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M33.9993 67.3333C15.5898 67.3333 0.666016 52.4093 0.666016 34C0.666016 15.5905 15.5898 0.666672 33.9993 0.666672C52.4087 0.666672 67.3327 15.5905 67.3327 34C67.3327 52.4093 52.4087 67.3333 33.9993 67.3333ZM33.9993 60.6667C48.727 60.6667 60.666 48.7277 60.666 34C60.666 19.2724 48.727 7.33334 33.9993 7.33334C19.2717 7.33334 7.33268 19.2724 7.33268 34C7.33268 48.7277 19.2717 60.6667 33.9993 60.6667ZM29.4057 22.0486L45.6687 32.8907C46.2813 33.299 46.447 34.127 46.0383 34.7397C45.9407 34.886 45.815 35.0117 45.6687 35.1093L29.4057 45.9513C28.793 46.36 27.965 46.1943 27.5567 45.5817C27.4107 45.3627 27.3327 45.1053 27.3327 44.842V23.158C27.3327 22.4216 27.9297 21.8247 28.666 21.8247C28.9293 21.8247 29.1867 21.9026 29.4057 22.0486Z' fill='white'/%3E%3C/svg%3E");
         position: absolute;
         top: 50%;
@@ -407,16 +351,13 @@ input,select{
         height: 50px;
         width: 50px;
         font-size: 12px;
-    cursor: pointer;
-    z-index: 255;
-    pointer-events: none;
-
-
+        cursor: pointer;
+        z-index: 255;
+        pointer-events: none;
     }
 }
 
-
-.file-upload-field{
+.file-upload-field {
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19ZM13 9V16H11V9H6L12 3L18 9H13Z' fill='black'/%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
     background-size: 20px;
@@ -426,31 +367,33 @@ input,select{
     cursor: pointer;
 }
 
-
-p{
-    @include media('sm-mob')
-    {
+p {
+    @include media("sm-mob") {
         font-size: 14px;
-    } @include media('md-mob')
-    {
-        font-size: 14px;
-        
-    } @include media('lg-mob')
-    {
-        font-size: 14px;
-        
     }
-    @include media('x-sm-mob')
-    {
+    @include media("md-mob") {
         font-size: 14px;
-        
+    }
+    @include media("lg-mob") {
+        font-size: 14px;
+    }
+    @include media("x-sm-mob") {
+        font-size: 14px;
     }
 }
 
-
-
 // =============================== form fields ====================
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 .form-fields {
     display: flex;
     justify-content: space-between;
@@ -466,17 +409,18 @@ p{
     border: none;
     background-color: variables.$starhospitals-brand-secondary;
     color: #ffff;
-    font-family: 'Plus Jakarta Sans';
-    font-weight: 700;   
+    font-family: "Plus Jakarta Sans";
+    font-weight: 700;
     margin-top: 3.5rem;
     margin-left: 50%;
     transform: translate(-50%);
     cursor: pointer;
-
 }
 .form-fields-wrapper {
     margin-top: 1rem;
-    input , select , textarea{
+    input,
+    select,
+    textarea {
         min-height: 50px;
         border: 0.7px solid #e0e0e0;
         background-color: #fafafa;
@@ -484,58 +428,66 @@ p{
         width: 100%;
         padding: 0px 1em;
         outline: none;
-        font-family: 'Plus Jakarta Sans';
+        font-family: "Plus Jakarta Sans";
         // padding-right: 1.5em;
     }
 
-    textarea{
+    textarea {
         min-height: 5rem;
         padding: 1em;
     }
 
-
-    select{
+    select {
         -webkit-appearance: none;
-    -moz-appearance: none;
-    position: relative;
-    background: transparent;
-    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0007 13.1714L16.9505 8.22168L18.3647 9.63589L12.0007 15.9999L5.63672 9.63589L7.05094 8.22168L12.0007 13.1714Z' fill='black'/%3E%3C/svg%3E%0A") !important;
-    background-repeat: no-repeat !important;
-    background-size: 25px;
-    background-position: calc(100% - 1em) !important;
-    padding-right: 2em !important;
+        -moz-appearance: none;
+        position: relative;
+        background: transparent;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0007 13.1714L16.9505 8.22168L18.3647 9.63589L12.0007 15.9999L5.63672 9.63589L7.05094 8.22168L12.0007 13.1714Z' fill='black'/%3E%3C/svg%3E%0A") !important;
+        background-repeat: no-repeat !important;
+        background-size: 25px;
+        background-position: calc(100% - 1em) !important;
+        padding-right: 2em !important;
     }
 
     &--col-0 {
         flex: 1;
 
         margin-left: 7%;
-        @include media('sm-mob')
-        {
-        flex: 0 0 calc(100% / 1);
-        margin-left: 0px;
-            
+        @include media("sm-mob") {
+            flex: 0 0 calc(100% / 1);
+            margin-left: 0px;
         }
-        @include media('md-mob')
-        {
-        flex: 0 0 calc(100% / 1);
-        margin-left: 0px;
-            
+        @include media("md-mob") {
+            flex: 0 0 calc(100% / 1);
+            margin-left: 0px;
         }
-        @include media('lg-mob')
-        {
-        flex: 0 0 calc(100% / 1);
-        margin-left: 0px;
-            
+        @include media("lg-mob") {
+            flex: 0 0 calc(100% / 1);
+            margin-left: 0px;
         }
-        @include media('x-sm-tab')
-        {
-        flex: 0 0 calc(100% / 1);
-        margin-left: 0px;
-            
+        @include media("x-sm-tab") {
+            flex: 0 0 calc(100% / 1);
+            margin-left: 0px;
         }
 
-        
+        &--no-wrap{
+            @include media("sm-mob") {
+                flex: 1;
+                margin-left: 0.5em;
+            }
+            @include media("md-mob") {
+                flex: 1;
+                margin-left: 0.5em;
+            }
+            @include media("lg-mob") {
+                flex: 1;
+                margin-left: 0.5em;
+            }
+            @include media("x-sm-tab") {
+                flex: 1;
+                margin-left: 0.5em;
+            }
+        }
     }
     &--col-1 {
         flex: 0 0 calc(100% / 1);
@@ -543,48 +495,170 @@ p{
 
     &--col-2 {
         flex: 0 0 calc(93% / 2);
-        @include media('sm-mob')
-        {
-        flex: 0 0 calc(100% / 1);
-            
+        @include media("sm-mob") {
+            flex: 0 0 calc(100% / 1);
         }
-        @include media('md-mob')
-        {
-        flex: 0 0 calc(100% / 1);
-            
+        @include media("md-mob") {
+            flex: 0 0 calc(100% / 1);
         }
-        @include media('lg-mob')
-        {
-        flex: 0 0 calc(100% / 1);
-            
+        @include media("lg-mob") {
+            flex: 0 0 calc(100% / 1);
         }
-        @include media('x-sm-tab')
-        {
-        flex: 0 0 calc(100% / 1);
-            
+        @include media("x-sm-tab") {
+            flex: 0 0 calc(100% / 1);
+        }
+
+        &--no-wrap{
+            @include media("sm-mob") {
+                flex:  0 0 calc(93%/2);
+            }
+            @include media("md-mob") {
+                flex:  0 0 calc(93%/2);
+            }
+            @include media("lg-mob") {
+                flex:  0 0 calc(93%/2);
+            }
+            @include media("x-sm-tab") {
+                flex:  0 0 calc(93%/2);
+            }
         }
     }
     &--col-3 {
         flex: 0 0 calc(93% / 3);
-        @include media('sm-mob')
-        {
-        flex: 0 0 calc(100% / 1);
-            
+        @include media("sm-mob") {
+            flex: 0 0 calc(100% / 1);
         }
-        @include media('md-mob')
-        {
-        flex: 0 0 calc(100% / 1);
-            
+        @include media("md-mob") {
+            flex: 0 0 calc(100% / 1);
         }
-        @include media('lg-mob')
-        {
-        flex: 0 0 calc(100% / 1);
-            
+        @include media("lg-mob") {
+            flex: 0 0 calc(100% / 1);
         }
-        @include media('x-sm-tab')
-        {
-        flex: 0 0 calc(100% / 1);
-            
+        @include media("x-sm-tab") {
+            flex: 0 0 calc(100% / 1);
+        }
+        &--no-wrap {
+            @include media("sm-mob") {
+                flex: 0 0 calc(93% / 3);
+            }
+            @include media("md-mob") {
+                flex: 0 0 calc(93% / 3);
+            }
+            @include media("lg-mob") {
+                flex: 0 0 calc(93% / 3);
+            }
+            @include media("x-sm-tab") {
+                flex: 0 0 calc(93% / 3);
+            }
         }
     }
 }
+
+
+
+
+
+.radio-field {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 8px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    transition: all 0.15s ease-out 0s;
+    background: variables.$starhospitals-ui-tertiary;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    // margin-left: -0.25rem;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+  }
+  .radio-field:hover {
+    background: variables.$starhospitals-ui-tertiary;
+  }
+  .radio-field:checked {
+    background: white;
+    border: 2px solid black;
+  }
+  .radio-field:checked::before {
+    width: 13.5px;
+    height: 13.5px;
+    display:flex;
+    content: '';
+    // font-size: 40px;
+    background-color: black;
+    border-radius: 50%;
+    font-weight:bold;
+    position: absolute;
+    align-items:center;
+    left: 18%;
+    top: 20%;
+    justify-content:center;
+    font-family:'Font Awesome 5 Free';
+  }
+  .radio-field:checked::after {
+    // -webkit-animation: click-wave 0.65s;
+    // -moz-animation: click-wave 0.65s;
+    // animation: click-wave 0.65s;
+    background: #004E9E;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+  }
+  .radio-field.radio {
+    border-radius: 50%;
+  }
+  .radio-field.radio::after {
+    border-radius: 50%;
+  }
+  
+  @keyframes click-wave {
+    0% {
+      height: 20px;
+      width: 20px;
+      opacity: 0.35;
+      position: relative;
+    }
+    100% {
+      height: 200px;
+      width: 200px;
+      margin-left: -80px;
+      margin-top: -80px;
+      opacity: 0;
+    }
+  }
+
+
+// =============================================loader =========================================k
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #004E9E;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+    margin: 0px auto;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

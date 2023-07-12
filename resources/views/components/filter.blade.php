@@ -24,7 +24,7 @@
             {{-- <option value="">Filter by Location</option> --}}
 
             @foreach ($branches as $item)
-            <option value="{{$item->id}}" @if (session('branch_id') == $item->id)
+            <option data-slug="{{$item->slug}}" value="{{$item->id}}" @if (session('branch_id') == $item->id)
                 selected
             @elseif($item->id == 1) selected @endif>{{$item->name}}</option>
                 

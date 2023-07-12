@@ -28,7 +28,7 @@
 
 <body>
 
-<x-patient-enquiry/>
+{{-- <x-patient-enquiry/> --}}
     
     <x-header :$coes :$branches/> 
     @yield('content')

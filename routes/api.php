@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ApiController;
+use App\Http\Controllers\Api\HisApiController;
 use App\Http\Controllers\Web\FormController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,4 +27,18 @@ Route::post('/getCoeSpeciality',[ApiController::class , 'getCoeSpeciality']);
 Route::post('/getBranchCoeSpecialityById',[ApiController::class , 'getBranchCoeSpecialityById']);
 Route::post('/getConditionsByCOESpeciality',[ApiController::class , 'getConditionsByCOESpeciality']);
 Route::post('/getCOESpecilityBranchByCondition',[ApiController::class , 'getCOESpecilityBranchByCondition']);
+Route::post('/getCOESpecilityBranchBySpecialist',[ApiController::class , 'getCOESpecilityBranchBySpecialist']);
+Route::post('/getSpecialistPage',[ApiController::class , 'getSpecialistPage']);
 Route::post('/patient', [FormController::class, 'patient']);
+
+
+
+Route::controller(HisApiController::class)->prefix('appointment')->group(function () {
+    Route::post('/check-availability', 'check_availability');
+    Route::post('/patients', 'patients');
+    Route::post('/register-patients', 'register_patients');
+    Route::post('/send-otp', 'send_otp');
+    Route::post('/verify-otp', 'verify_otp');
+    Route::post('/book-appointment', 'book_appointment');
+    
+});

@@ -87,14 +87,16 @@
 
         <div class="header__nav header__nav--fixed">
             <ul class="header__nav__options">
-                <li class="header__nav__option header__nav__option--dropdown">
+                {{-- header__nav__option--dropdown--mega --}}
+                {{-- dropdown-items --}}
+                <li class="header__nav__option header__nav__option--dropdown header__nav__option--dropdown--fixed  header__nav__option--dropdown--mega">
                     <a href="#coe-list" class="scroll-to-view">Centers of Excellence</a>
-                    <ul class="header__nav__option--dropdown__options">
+                    <ul class="header__nav__option--dropdown__options  header__nav__option--dropdown__options--mega">
                         @foreach ($coes as $item)
-                            <li class="@if (count($item->specialities) > 0) header__nav__option--nested-dropdown @endif ">
+                            <li class="@if (count($item->specialities) > 0) header__nav__option--nested-dropdown dropdown-arrow @endif coe-icons">
                                 <a
                                     href="@if (count($item->specialities) > 0) #
-                                @else{{ route('speciality', $item->slug) }} @endif ">{{ $item->name }}</a>
+                                @else{{ route('speciality', $item->slug) }} @endif "><span>{!!$item->icon_image!!}</span>{{ $item->name }}</a>
                                 <ul>
                                     @foreach ($item->specialities as $speciality)
                                         <li><a
@@ -130,7 +132,7 @@
                 {{-- <li class="header__nav__option">
                     <a href="#">Health Checkups</a>
                 </li> --}}
-                <li class="header__nav__option header__nav__option--dropdown">
+                <li class="header__nav__option header__nav__option--dropdown header__nav__option--dropdown--fixed ">
                     <a href="#centre-of-excellences">Locations</a>
                     <ul class="header__nav__option--dropdown__options">
                         @foreach ($branches as $item)
@@ -279,19 +281,22 @@
     </div>
     <div class="header__nav " id="star-navbar">
         <ul class="header__nav__options">
-            <li class="header__nav__option header__nav__option--dropdown">
-                <a href="#coe-list" class="scroll-to-view">Centers of Excellence</a>
-                <ul class="header__nav__option--dropdown__options">
+            <li class="header__nav__option header__nav__option--dropdown header__nav__option--dropdown--mega">
+                <a href="#coe-list" class="scroll-to-view ">Centers of Excellence</a>
+                <ul class="header__nav__option--dropdown__options header__nav__option--dropdown__options--mega dropdown-items coe-icons">
                     {{-- header__nav__option--nested-dropdown
                     header__nav__option--dropdown  --}}
                     @foreach ($coes as $item)
-                        <li class="@if (count($item->specialities) > 0) header__nav__option--nested-dropdown @endif "><a
+                        <li class="@if (count($item->specialities) > 0) header__nav__option--nested-dropdown @endif">
+                            <a
                                 href="@if (count($item->specialities) > 0) #
-                            @else{{ route('speciality', $item->slug) }} @endif ">{{ $item->name }}</a>
-                            <ul>
+                            @else{{ route('speciality', $item->slug) }} @endif "> <span>{!!$item->icon_image!!}</span> {{ $item->name }}</a>
+                            <ul class="">
                                 @foreach ($item->specialities as $speciality)
-                                    <li><a
-                                            href="{{ route('speciality', $speciality->slug) }}">{{ $speciality->name }}</a>
+                                    <li>
+                                        
+                                        <a
+                                            href="{{ route('speciality', $speciality->slug) }}"> <span>  </span> {{ $speciality->name }}</a>
                                     </li>
                                 @endforeach
 
@@ -323,7 +328,7 @@
             {{-- <li class="header__nav__option">
                 <a href="#">Health Checkups</a>
             </li> --}}
-            <li class="header__nav__option header__nav__option--dropdown">
+            <li class="header__nav__option header__nav__option--dropdown  dropdown-arrow dropdown-arrow--primary">
                 <a href="#">Locations</a>
                 <ul class="header__nav__option--dropdown__options">
                     {{-- header__nav__option--nested-dropdown

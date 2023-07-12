@@ -64,6 +64,49 @@ $('.specialists-slider').slick({
 }) 
 
 
+$('.physical-consultation__dates-slider').slick({
+    // dots:true,
+    arrows:true,
+    slidesToShow:4,
+    infinite:false,
+    responsive: [{
+        breakpoint: 1275,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: false,
+            centerPadding: '0px',
+            slidesToShow: 7
+        }
+    },{
+        breakpoint: 1025,
+        settings: {
+            // dots: true,
+            arrows: false,
+            centerMode: false,
+            centerPadding: '0px',
+            slidesToShow: 7
+        }
+    },
+    {
+        breakpoint: 769,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: false,
+            centerPadding: '0px',
+            slidesToShow: 7
+        }
+    },
+    {
+        breakpoint: 601,
+        settings: {
+            // dots: true,
+            arrows: false,
+        }
+    }
+]
+})
 
 $('.condition-tabs-slider').slick({
     // dots:true,
@@ -513,6 +556,8 @@ else
     ]
     })
 }
+
+
 
 if(screenWidth < 769)
 {

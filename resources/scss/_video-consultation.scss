@@ -2,20 +2,18 @@
 @import "utils/utils";
 
 @import "utils/media-queries";
-
 .video-consultation {
     @include centerSection;
-    width: 50%;
+    width: 73%;
     display: flex;
     justify-content: space-between;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.05);
-    -webkit-box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.05);
-    -moz-box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.05);
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
 
-    @include media('sm-mob')
-    {
+    @include media("sm-mob") {
         flex-direction: column;
         width: 90%;
         margin: 0px auto;
@@ -46,19 +44,24 @@
         margin: 0px auto;
     }
     &__col-1 {
-        flex: 0 0 45.5%;
-
+        flex: 0 0 47.5%;
 
         background-color: variables.$starhospitals-brand-primary;
         padding: 4.5rem 0px;
         @include media("sm-mob") {
             flex: 0 0 100%;
+            padding: 2em 0px;
+            border-radius: 20px;
         }
         @include media("md-mob") {
             flex: 0 0 100%;
+            padding: 2em 0px;
+            border-radius: 20px;
         }
         @include media("lg-mob") {
             flex: 0 0 100%;
+            padding: 2em 0px;
+            border-radius: 20px;
         }
         @include media("x-sm-tab") {
             flex: 0 0 100%;
@@ -74,24 +77,78 @@
             width: 63%;
             margin: 0px auto;
             @include media("sm-mob") {
-                width:90%;
+                width: 90%;
             }
             @include media("md-mob") {
-                width:90%;
+                width: 90%;
             }
             @include media("lg-mob") {
-                width:90%;
+                width: 90%;
             }
             @include media("x-sm-tab") {
-                width:90%;
+                width: 90%;
             }
             @include media("sm-tab") {
-                width:90%;
+                width: 90%;
             }
             @include media("md-tab") {
-                flex: 0 0 100%;
+                width: 90%;
+                // flex: 0 0 100%;
             }
 
+            &__doctor-card {
+                @include media("sm-mob") {
+                    display: flex;
+                    gap: 1.5em;
+                }
+                @include media("md-mob") {
+                    // justify-content: space-around;
+                    display: flex;
+                    gap: 1.5em;
+                }
+                @include media("lg-mob") {
+                    display: flex;
+                    gap: 1.5em;
+                }
+                @include media("x-sm-tab") {
+                    display: flex;
+                    gap: 1.5em;
+                }
+                @include media("sm-tab") {
+                    display: flex;
+                    gap: 1.5em;
+                }
+                @include media("md-tab") {
+                    display: flex;
+                    gap: 1.5em;
+                }
+                img {
+                    @include media("sm-mob") {
+                        width: 30% !important;
+                        height: 50%;
+                    }
+                    @include media("md-mob") {
+                        width: 30% !important;
+                        height: 50%;
+                    }
+                    @include media("lg-mob") {
+                        width: 30% !important;
+                        height: 50%;
+                    }
+                    @include media("x-sm-tab") {
+                        width: 35% !important;
+                        height: 50%;
+                    }
+                    @include media("sm-tab") {
+                        width: 35% !important;
+                        height: 50%;
+                    }
+                    @include media("md-tab") {
+                        width: 30% !important;
+                        height: 50%;
+                    }
+                }
+            }
         }
         img {
             width: 100%;
@@ -105,29 +162,47 @@
             color: #ffff;
             margin-bottom: 1.5rem;
             @include media("sm-mob") {
-                font-size: 25px !important;
-                margin-bottom: 0.25em;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 25px;
+                text-align: left;
+                margin-top: 0px;
+                margin-bottom: 0px;
             }
             @include media("md-mob") {
-                font-size: 25px !important;
-                margin-bottom: 0.25em;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 25px;
+                text-align: left;
+                margin-bottom: 0em;
+                margin-top: 0px;
             }
             @include media("lg-mob") {
-                font-size: 25px !important;
-                margin-bottom: 0.25em;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 25px;
+                text-align: left;
+                margin-bottom: 0em;
+                margin-top: 0px;
             }
             @include media("x-sm-tab") {
                 font-size: 25px !important;
                 margin-bottom: 0.25em;
+                margin-top: 0px;
+
             }
             @include media("sm-tab") {
                 font-size: 25px !important;
                 margin-bottom: 0.25em;
+                margin-top: 0px;
+
             }
             @include media("md-tab") {
                 font-size: 22px !important;
                 line-height: 30px !important;
                 margin-bottom: 0.25em;
+                margin-top: 0px;
+
             }
             @include media("lg-tab") {
                 font-size: 28px !important;
@@ -147,22 +222,34 @@
             margin-bottom: 0.5rem;
             line-height: 30px;
             @include media("sm-mob") {
-                font-size: 18px !important;
+                font-size: 14px !important;
+                font-weight: 500;
+                margin-bottom: 0px;
             }
             @include media("md-mob") {
-                font-size: 18px !important;
+                font-size: 14px !important;
+                font-weight: 500;
+                margin-bottom: 0px;
             }
             @include media("lg-mob") {
-                font-size: 18px !important;
+                font-size: 14px !important;
+                font-weight: 500;
+                margin-bottom: 0px;
             }
             @include media("x-sm-tab") {
                 font-size: 18px !important;
+                margin-bottom: 0px;
+
             }
             @include media("sm-tab") {
                 font-size: 18px !important;
+                margin-bottom: 0px;
+
             }
             @include media("md-tab") {
                 font-size: 18px !important;
+                margin-bottom: 0px;
+
             }
             @include media("lg-tab") {
                 font-size: 20px !important;
@@ -179,13 +266,13 @@
             color: white;
             margin-bottom: 1.25rem;
             @include media("sm-mob") {
-                font-size: 15px !important;
+                font-size: 12px !important;
             }
             @include media("md-mob") {
-                font-size: 15px !important;
+                font-size: 12px !important;
             }
             @include media("lg-mob") {
-                font-size: 15px !important;
+                font-size: 12px !important;
             }
             @include media("x-sm-tab") {
                 font-size: 15px !important;
@@ -196,17 +283,26 @@
             @include media("md-tab") {
                 font-size: 15px !important;
             }
-    
+
             // @include media("x-sm-desktop") {
             //     font-size: 13px !important;
             // }
         }
-        
+
         &__location {
             font-family: "Plus Jakarta Sans";
             font-style: "Regular";
             font-size: 0.75rem;
-            color: white;
+            color: #f5f5f5;
+            @include media("sm-mob") {
+                font-size: 11px !important;
+            }
+            @include media("md-mob") {
+                font-size: 11px !important;
+            }
+            @include media("lg-mob") {
+                font-size: 11px !important;
+            }
         }
 
         &__btn {
@@ -222,12 +318,30 @@
             }
             @include media("x-sm-tab") {
                 margin-top: 2rem;
+                display: none !important;
+
             }
             @include media("sm-tab") {
                 margin-top: 2rem;
+                display: none !important;
+
             }
             @include media("md-tab") {
                 margin-top: 2rem;
+                display: none !important;
+            }
+
+            &--tab{
+                display: none !important;
+                @include media("x-sm-tab") {
+                    display: flex !important;
+                }@include media("sm-tab") {
+                    display: flex !important;
+                }
+                @include media("md-tab") {
+                    display: flex !important;
+                }
+
             }
         }
 
@@ -274,13 +388,14 @@
     }
 
     &__col-2 {
-        flex: 0 0 100%;
+        // flex: 0 0 100%;
+        flex: 0 0 54%;
         display: flex;
-        align-items: center;
+        // align-items: center;
         &__form-wrapper {
             width: 70%;
             margin: 0px auto;
-        padding: 1rem;
+            // padding: 1rem;
 
             @include media("sm-mob") {
                 width: 90%;
@@ -301,16 +416,174 @@
                 width: 90%;
             }
 
-            .form-submit-button{
-            margin-bottom: 2rem;
-
+            .form-submit-button {
+                margin-bottom: 2rem;
             }
         }
     }
-
-
 }
 
+.physical-consultation {
+    &__label {
+        font-family: Plus Jakarta Sans;
+        display: flex;
+        gap: 0.5em;
+        align-items: center;
+        font-family: Plus Jakarta Sans;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #424242;
+        margin-top: 2em;
+    }
+    &__dates-slider {
+        width: 445px;
+        margin: 0px auto;
+        margin-top: 1em;
+        @include media('x-sm-tab')
+        {
+            width: 90vw;
+        }
+        @include media('sm-tab')
+        {
+            width: 90vw;
+        }
+        @include media('md-tab')
+        {
+            width: 90vw;
+        }
+    }
+    &__dates {
+        font-family: Plus Jakarta Sans;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #424242;
+        border: 1px solid variables.$starhospitals-brand-primary;
+        border-radius: 10px;
+        height: 56px;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap :0.5em;
+        margin: 0px 0.75em;
+        margin-left: 0px;
+        cursor: pointer;
+        transition: all 1s;
+
+       
+        // margin: ;
+        span {
+            font-family: Plus Jakarta Sans;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: variables.$starhospitals-brand-primary;
+        }
+        &:hover,&--active{
+            background-color: variables.$starhospitals-brand-primary;
+            span , p{
+                color: #fff;
+            }
+        }
+    }
+    &__slots-wrapper {
+        margin-top: 1.5em;
+    }
+    &__slots {
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid variables.$starhospitals-ui-tertiary;
+        display: flex !important;
+        gap: 0.25em;
+        align-items: center;
+        justify-content: center;
+        transition: all 1s;
+        // margin-right: 0.5em !important;
+        // margin-top: 0.5em;
+        cursor: pointer;
+
+        
+        @include media('sm-mob')
+        {
+            width: initial;
+        }
+        @include media('md-mob')
+        {
+            width: initial;
+        }
+        @include media('lg-mob')
+        {
+            width: initial;
+        }
+
+        
+        &__main{
+            padding: 0.20em;
+        float: left;
+
+
+        }
+        
+        span {
+            font-family: Plus Jakarta Sans;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 0em;
+            text-align: left;
+            
+        }
+
+        p {
+            font-family: Plus Jakarta Sans;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 15px;
+            letter-spacing: 0em;
+            text-align: left;
+            
+        }
+        
+        &:hover,&--active{
+            background-color: variables.$starhospitals-brand-primary;
+
+            span,p{
+                color: #ffff;
+            }
+        }
+    }
+}
+
+
+.physical-consultation__slots-wrapper .slick-prev, .physical-consultation__slots-wrapper .slick-next{
+    top: 115%;
+}
+
+.physical-consultation__slots-wrapper .slick-next {
+    right: 42%;
+}
+
+.physical-consultation__slots-wrapper .slick-prev {
+    left: 43%;
+}
+
+
+.physical-consultation__slots-wrapper .pc-modal__card__inner-box{
+    width: 100%;
+}
+
+.video-consultation-form {
+    display: none;
+}
 
 .form-fields {
     display: flex;
@@ -327,16 +600,17 @@
     border: none;
     background-color: variables.$starhospitals-brand-secondary;
     color: #ffff;
-    font-family: 'Plus Jakarta Sans';
-    font-weight: 700;   
+    font-family: "Plus Jakarta Sans";
+    font-weight: 700;
     margin-top: 2.5rem;
     margin-left: 50%;
     transform: translate(-50%);
-
+    cursor: pointer;
 }
 .form-fields-wrapper {
     margin-top: 1rem;
-    input , select{
+    input,
+    select {
         min-height: 50px;
         border: 1.7px solid #e0e0e0;
         background-color: #fafafa;
@@ -344,20 +618,19 @@
         width: 100%;
         padding: 0px 1em;
         outline: none;
-        font-family: 'Plus Jakarta Sans';
+        font-family: "Plus Jakarta Sans";
     }
 
-
-    select{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    position: relative;
-    background: transparent;
-    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0007 13.1714L16.9505 8.22168L18.3647 9.63589L12.0007 15.9999L5.63672 9.63589L7.05094 8.22168L12.0007 13.1714Z' fill='black'/%3E%3C/svg%3E%0A") !important;
-    background-repeat: no-repeat !important;
-    background-size: 25px;
-    background-position: calc(100% - 1em) !important;
-    padding-right: 2em !important;
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        position: relative;
+        background: transparent;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0007 13.1714L16.9505 8.22168L18.3647 9.63589L12.0007 15.9999L5.63672 9.63589L7.05094 8.22168L12.0007 13.1714Z' fill='black'/%3E%3C/svg%3E%0A") !important;
+        background-repeat: no-repeat !important;
+        background-size: 25px;
+        background-position: calc(100% - 1em) !important;
+        padding-right: 2em !important;
     }
 
     &--col-0 {

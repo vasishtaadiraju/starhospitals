@@ -1,3 +1,5 @@
+import { removeClass } from "./utils/event-handler";
+
 const navBtn = document.getElementById("nav-toggle");
 const navBar = document.getElementById("star-navbar");
 
@@ -28,6 +30,100 @@ $(window).scroll(function () {
         $(".scroll-top-top").css("display", "none");
     }
 });
+
+// document.querySelector('body').addEventListener('click',function(e){
+//     // document.querySelector('.header__nav__option--dropdown')
+//     console.log(e.target.parentElement.classList.contains('header__nav__option--dropdown'));
+//     if(e.target.parentElement.classList.contains('header__nav__option--dropdown')){
+//         return;
+//     }
+//     removeClass('header__nav__option--dropdown','header__nav__option--dropdown--active')
+// })
+domSelector('.header__nav__option--nested-dropdown','click',function(e) {
+    // removeClass('dropdown-items','nav-active');
+    // console.log(this.parentNode);
+    // console.log(e.target.parentNode);
+    console.log(e.target.nodeName);
+    if(e.target.nodeName == 'LI')
+    {
+        return;
+    }
+    else if (e.target.nodeName == 'A')
+    {
+        console.log(e.target.parentNode);
+        console.log(e.target.parentNode.classList.contains('header__nav__option--nested-dropdown'))
+
+        if(e.target.parentNode.classList.contains('header__nav__option--nested-dropdown') && !e.target.parentNode.classList.contains('header__nav__option--nested-dropdown--active'))
+        {
+            removeClass('header__nav__option--nested-dropdown','header__nav__option--nested-dropdown--active');
+            e.target.parentNode.classList.toggle('header__nav__option--nested-dropdown--active')
+        }
+        else if(e.target.parentNode.classList.contains('header__nav__option--nested-dropdown--active'))
+        {
+            removeClass('header__nav__option--nested-dropdown','header__nav__option--nested-dropdown--active');
+
+        }
+        // else if(parentNode == false){
+        //     e.target.parentNode.classList.toggle('header__nav__option--nested-dropdown--active')
+        //     parentNode = true;
+        // }
+    }
+
+    // if(this.querySelector('ul').classList.contains('nav-active') && open == true)
+    // {
+    //     // this.querySelector('ul').classList.remove('nav-active');
+        // this.classList.toggle('header__nav__option--dropdown--active')
+
+    //     // this.querySelector('ul').style.display = 'none';
+    // }
+
+})
+domSelector('.header__nav__option--dropdown','click',function(e) {
+    if(e.target.nodeName == 'LI')
+    {
+        return;
+    }
+    else if (e.target.nodeName == 'A')
+    {
+        if(e.target.parentNode.classList.contains('header__nav__option--dropdown') && !e.target.parentNode.classList.contains('header__nav__option--dropdown--active'))
+        {
+            removeClass('header__nav__option--dropdown','header__nav__option--dropdown--active');
+            e.target.parentNode.classList.toggle('header__nav__option--dropdown--active')
+        }
+        else if(e.target.parentNode.classList.contains('header__nav__option--dropdown--active'))
+        {
+            removeClass('header__nav__option--dropdown','header__nav__option--dropdown--active');
+
+        }
+    }
+
+})
+
+
+console.log();
+
+
+
+// Array.from(document.querySelectorAll('.coe-icons')[0].querySelectorAll('svg')).forEach((element) => {
+//     element.setAttribute('fill','currentColor')
+
+   
+
+//     Array.from(element.querySelectorAll('path')).forEach((path) => {
+//         path.setAttribute('fill','currentColor')
+//     });
+//     console.log(element.getAttribute('fill'));
+// });
+// Array.from(document.querySelectorAll('.coe-icons')[1].querySelectorAll('svg')).forEach((element) => {
+//     element.setAttribute('fill','currentColor')
+
+   
+
+//     Array.from(element.querySelectorAll('path')).forEach((path) => {
+//         path.setAttribute('fill','currentColor')
+//     });
+//     console.log(element.getAttribute('fill'));
+// });
 
 //   document.querySelector('.patient-enquiry').addEventListener('click',function(){
 //     // let src = this.getAttribute('data-video-link')
