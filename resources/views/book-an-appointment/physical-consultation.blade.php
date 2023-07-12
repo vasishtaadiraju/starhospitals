@@ -447,7 +447,7 @@
                                 {{-- <option value=""> Location</option> --}}
                                
                                 @foreach ($content->branches as $branch)
-                                    <option data-id="{{ $branch->id }}" data-his-id="{{$branch->his_id}}" data-url="{{route('doctor',[$branch->slug,$speciality_slug,$content->slug])}}" value="{{ $branch->his_id }}" @if ($branch->slug == $branch_slug)
+                                    <option data-id="{{ $branch->id }}" data-his-id="{{$branch->his_id}}" data-url="{{route('doctor.book-appointment',[$branch->slug,$speciality_slug,$content->slug])}}" value="{{ $branch->his_id }}" @if ($branch->slug == $branch_slug)
                                         selected
                                         
                                     @endif>
@@ -469,7 +469,7 @@
                                 {{-- <option value="">Speciality</option> --}}
                                 
                                 @foreach ($content->specialities as $speciality)
-                                    <option data-id="{{ $speciality->id }}" data-url="{{route('doctor',[$branch_slug,$speciality->slug,$content->slug])}}" data-his-id="{{$speciality->his_id}}" value="{{ $speciality->his_id }}" @if ($speciality->slug == $speciality_slug)
+                                    <option data-id="{{ $speciality->id }}" data-url="{{route('doctor.book-appointment',[$branch_slug,$speciality->slug,$content->slug])}}" data-his-id="{{$speciality->his_id}}" value="{{ $speciality->his_id }}" @if ($speciality->slug == $speciality_slug)
                                         selected
                                         
                                     @endif>
