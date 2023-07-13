@@ -23,7 +23,7 @@
             
     </div>
     <h1>Booking Confirmed!</h1>
-    <p>A physical consultation for {{$patient_name}} (Patient ID {{$patient_id}}) has been booked with {{$doctor_name}}, for {{$appointment_date}} at {{$appointment_time}}.</p>
+    <p>A physical consultation for {{$patient_name}} (Patient ID {{$patient_id}}) has been booked with {{$doctor}}, for {{$appointment_date}} at {{$appointment_time}}.</p>
     <p class="thankyou__description">
         
         <br>
