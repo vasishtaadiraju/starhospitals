@@ -130,7 +130,7 @@ async function confirmAppointment(body) {
     <input type="hidden" name="doctor" value="${confirmation.data.data.doctor_name}"/>
     <input type="hidden" name="location" value="${UiParameters.locationName}"/>
     <input type="hidden" name="status" value="${confirmation.data.status}"/>
-    <input type="hidden" name="status" value="${JSON.stringify(confirmation.data)}"/>
+    <input type="hidden" name="response" value="${JSON.stringify(confirmation.data)}"/>
 
     </form>`;
 
@@ -155,7 +155,7 @@ async function confirmAppointment(body) {
             speciality: UiParameters.specialityName,
             doctor: UiParameters.doctorName,
             location: UiParameters.locationName,
-            status: false,
+            status: 'false',
             response: JSON.stringify(confirmation.data),
         };
 
