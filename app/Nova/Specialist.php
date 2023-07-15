@@ -47,6 +47,9 @@ class Specialist extends Resource
         return [
             ID::make()->sortable(),
 
+            BelongsTo::make('Region', 'region')
+                ->withoutTrashed(),
+
             BelongsTo::make('Branch', 'branch')
                 ->withoutTrashed(),
 
