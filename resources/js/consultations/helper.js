@@ -262,7 +262,7 @@ export function patientsList(parameters, patients, fn) {
         });
 }
 
-export function registrationForm(mobile,fn) {
+export function registrationForm(parameters,fn) {
     if (document.querySelector(".pc-modal") != undefined) {
         document.querySelector(".pc-modal").remove();
     }
@@ -346,7 +346,7 @@ export function registrationForm(mobile,fn) {
                     </div>
                     <div class="form-fields-wrapper form-fields-wrapper--col-0 form-fields-wrapper--col-0--no-wrap">
                         <div class="form-fields-wrapper ">
-                            <input placeholder="Phone Number" type="number" name="mobile" value="${mobile}" readonly>
+                            <input placeholder="Phone Number" type="number" name="mobile" value="${parameters.mobile}" readonly>
                             
                             <span class="error-message"></span>
                             
@@ -356,7 +356,7 @@ export function registrationForm(mobile,fn) {
                 <div class="form-fields">
                     <div class="form-fields-wrapper form-fields-wrapper--col-1">
                         <div class="form-fields-wrapper ">
-                            <input placeholder="Email Id" type="text" name="email">
+                            <input placeholder="Email Id" type="text" name="email" value="${parameters.patient_email}" >
                             
                             <span class="error-message"></span>
                             
@@ -616,12 +616,13 @@ export function RequestCallBackForm(className,parameters){
 
     <div class="pc-modal__card__registration-form">
 
-        <form action="
-        ">
+        <form action="/request-callback" method="post">
         <div class="form-fields">
+    <input type="hidden" name="_token" value="${parameters.csrf_token}" >
+
             <div class="form-fields-wrapper form-fields-wrapper--col-1">
                 <div class="form-fields-wrapper ">
-                    <input placeholder="Name" name="name" type="text" >
+                    <input placeholder="Name" name="name" type="text" required>
                     
                         <span class="error-message"></span>
                     
@@ -632,12 +633,13 @@ export function RequestCallBackForm(className,parameters){
         <div class="form-fields">
             <div class="form-fields-wrapper form-fields-wrapper--col-3 form-fields-wrapper--col-3--no-wrap">
                 <div class="form-fields-wrapper ">
-                    <input type="text" placeholder="India (+91)" disabled>
+                    <input type="text" name="" placeholder="India (+91)"  disabled>
+                    <input type="hidden" name="country_code" placeholder="India (+91)" value="91" readonly>
                 </div>
             </div>
             <div class="form-fields-wrapper form-fields-wrapper--col-0 form-fields-wrapper--col-0--no-wrap">
                 <div class="form-fields-wrapper ">
-                    <input placeholder="Phone Number" type="text" name="contact">
+                    <input placeholder="Phone Number" type="number" name="contact" required>
                     
                     <span class="error-message"></span>
                     
@@ -647,14 +649,16 @@ export function RequestCallBackForm(className,parameters){
         <div class="form-fields">
             <div class="form-fields-wrapper form-fields-wrapper--col-1">
                 <div class="form-fields-wrapper ">
-                    <input placeholder="Email Id" type="text" name="email">
+                    <input placeholder="Email Id" type="email" name="email" required>
                     
                     <span class="error-message"></span>
                     
                 </div>
             </div>                
         </div>
-         <input type="hidden" name="speciality" value=""> 
+        
+         <input type="hidden" name="date" value="${parameters.appointment_date}"> 
+         <input type="hidden" name="department" value="${parameters.specialityName}"> 
         <button class="pc-modal__card__btn">Submit</button>
 
     </form>

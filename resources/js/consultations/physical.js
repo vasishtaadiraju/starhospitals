@@ -77,9 +77,10 @@ async function printSlots(request_date, department_id, doctor_id, location_id) {
                 slotCount++;
             }
         });
+        
 
         if (slotCount == 0) {
-            RequestCallBackForm(".physical-consultation__slots-wrapper", "");
+            RequestCallBackForm(".physical-consultation__slots-wrapper",UiParameters);
         }
         domSelector(
             ".physical-consultation__slots",
@@ -90,15 +91,16 @@ async function printSlots(request_date, department_id, doctor_id, location_id) {
             $(".physical-consultation__slots-wrapper").slick({
                 dots: false,
                 arrows: true,
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                // slidesPerRow: 1,
+                // slidesToShow: 4,
+                // slidesToScroll: 4,
+                slidesPerRow: 4,
+                // centerMode:false,
                 rows: 4,
                 infinite: false,
             });
         }
     } else if (slots.data.status == false) {
-        RequestCallBackForm(".physical-consultation__slots-wrapper");
+        RequestCallBackForm(".physical-consultation__slots-wrapper",UiParameters);
     }
     
     
@@ -142,7 +144,7 @@ async function confirmAppointment(body) {
             //     "";
             alertBox(confirmation.data.error_data.patient_id[0]);
         } else {
-            RequestCallBackForm(".pc-modal__card");
+            RequestCallBackForm(".pc-modal__card",UiParameters);
         }
 
         let body = {
@@ -275,6 +277,7 @@ function handleSlotClick() {
         let mobile = node.target[1].value;
         UiParameters.mobile = mobile;
         appointmentParameter.patient_email = node.target[2].value
+        UiParameters.patient_email = node.target[2].value
         console.log(appointmentParameter.patient_email);
         if (mobile == "") {
             return;
@@ -310,7 +313,7 @@ function handleSlotClick() {
             patients.data.status == true &&
             patients.data.data.length == 0
         ) {
-            registrationForm(mobile, registerPatientCallBack);
+            registrationForm(UiParameters, registerPatientCallBack);
         } else if (patients.data.status == false) {
             // return alert("Try entering a diffrent number");
             alertBox(
@@ -348,7 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .querySelectorAll(".physical-consultation__dates")[0]
         .getAttribute("data-date");
     appointmentParameter.appointment_date = date;
-
+    UiParameters.appointment_date = date;
     let date_month = document.querySelectorAll(
         ".physical-consultation__dates"
     )[0].children[0].innerHTML;
