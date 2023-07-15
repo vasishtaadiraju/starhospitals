@@ -52,6 +52,7 @@ class Specialist extends Resource
                 ->withoutTrashed(),
 
             BelongsTo::make('Branch', 'branch')
+                ->nullable()
                 ->withoutTrashed(),
 
             BelongsTo::make('Speciality', 'speciality')
