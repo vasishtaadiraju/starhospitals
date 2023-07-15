@@ -252,7 +252,7 @@ export function patientsList(parameters, patients, fn) {
         document
         .querySelector(".add-new-patient")
         .addEventListener("click", function () {
-            registrationForm(parameters.mobile,registerPatientCallBack)
+            registrationForm(parameters,registerPatientCallBack)
         });
     document
         .querySelector(".select-patient-form")
