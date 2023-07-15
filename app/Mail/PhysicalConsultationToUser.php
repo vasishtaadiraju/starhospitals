@@ -37,7 +37,7 @@ class PhysicalConsultationToUser extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Star Hospitals - Physical Consultation confirmation',
+            subject: 'Star Hospitals - Physical Consultation Confirmation',
         );
     }
 
