@@ -352,7 +352,7 @@
 
         <div class="d-p-achievement__details" id="research">
 
-            {!! $content->publications !!}
+            {!! $content->research_publications !!}
         </div>
     </div>
 
@@ -377,7 +377,7 @@
         </div>
 
         <div class="d-p-achievement__details" id="certifications">
-            {!! $content->certifications !!}
+            {!! $content->certifications_memberships !!}
         </div>
     </div>
 
