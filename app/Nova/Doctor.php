@@ -134,7 +134,7 @@ class Doctor extends Resource
 
             Text::make('Slug', 'slug')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:255')
+                ->rules('required', 'string', 'max:255')
                 ->creationRules('unique:doctors,slug')
                 ->updateRules('unique:doctors,slug,{{resourceId}}'),
 

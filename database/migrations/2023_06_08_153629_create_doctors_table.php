@@ -32,7 +32,7 @@ return new class extends Migration
             $table->string('media_text')->nullable();
             $table->enum('video_consultation', ['yes', 'no']);
             $table->string('canonical')->nullable();
-            $table->string('slug')->nullable()->unique();
+            $table->string('slug')->unique();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->string('schema_name')->nullable();
