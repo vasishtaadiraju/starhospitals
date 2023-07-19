@@ -34,8 +34,8 @@ $fixed-header-height: 6.5rem;
 }
 
 @mixin option-hover() {
-    background-color: #004f9e33;
-    // color: variables.$starhospitals-text-inverted;
+    background-color: variables.$starhospitals-brand-primary;
+    color: variables.$starhospitals-text-inverted;
 }
 
 @mixin dropdown-arrow() {
@@ -645,8 +645,6 @@ $fixed-header-height: 6.5rem;
             // flex: 0 0 calc(90%/7);
             list-style-type: none;
             // border: 1px solid black;
-            // height: 100%;
-            padding: 1.5em 0px;
             @include media("sm-mob") {
                 padding: 1em 0px;
             }
@@ -669,10 +667,9 @@ $fixed-header-height: 6.5rem;
 
             a {
                 @include font-family(500);
+                // font-size: 15px;
                 color: variables.$starhospitals-ui-tertiary;
                 padding: 0px 2em 0px 0px;
-                display: block;
-                width: 100%;
                 @include media("sm-mob") {
                     color: black;
                 }
@@ -755,8 +752,8 @@ $fixed-header-height: 6.5rem;
 
             &--dropdown {
                 position: relative;
+
                 z-index: 3000;
-                // height: 100%;
                 &__options {
                     @include dropdown-Options-wrapper;
                     animation: growDown 300ms ease-in-out forwards;
@@ -770,9 +767,6 @@ $fixed-header-height: 6.5rem;
                     box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
                     -webkit-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
                     -moz-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
-                    // padding: 1.5em;
-                    margin-top: 1.25em;
-                    // top: 100%;
                     @include media("sm-mob") {
                         top: 100%;
                         position: relative;
@@ -806,28 +800,14 @@ $fixed-header-height: 6.5rem;
                     // background-color: variables.$starhospitals-text-inverted;
                     // overflow: hidden;
                     // top: 0;
-
                     li {
                         position: relative;
-                        flex: 0 0 calc(95% / 3);
-                        // margin: 0.5em 0px;
-                        padding-right: 0.5em;
-                        a {
-                            // display: flex !important;
-                            // align-items: center;
-                            // gap: 0.75em;
-                        }
-                        svg {
-                            height: 30px !important;
-                            width: 30px;
-                        }
                         a {
                             // border-radius: 10px;
                             transition: all 1s;
                             margin-top: 0.25em;
 
                             @include dropdown-link;
-                            // padding: 0.25em 0.5em;
                             @include media("sm-mob") {
                                 padding: 1em;
                             }
@@ -836,194 +816,50 @@ $fixed-header-height: 6.5rem;
                             }
                             @include media("lg-mob") {
                                 padding: 1em;
-                            }
-                        }
-
-                        &:hover {
-                            background-color: #004E9E;
-
-                            // border-radius: 5px;
-                            a {
-                                color: #fff;
-                            }
-                            svg {
-                                color: #fff;
-                            }
-
-                            // .header__nav__option--nested-dropdown{
-
-                            ul {
-                                li {
-                                    a {
-                                        color: #000000 !important;
-                                    }
-                                    &:hover {
-                                        background-color: #004E9E;
-                                        border-radius: 5px;
-                                        a {
-                                            color: #fff !important;
-                                        }
-                                    }
-                                }
-                                // }
-                            }
-                        }
-                    }
-
-                    &--mega {
-                        // display: flex;
-                        flex-wrap: wrap;
-                        justify-content: flex-start;
-                        width: 1032px;
-                        padding: 1.5em;
-
-                        @include media("sm-mob") {
-                            width: 100%;
-                            height: 15rem;
-                            overflow-x: scroll;
-                        }
-                        @include media("md-mob") {
-                            width: 100%;
-                            height: 15rem;
-                            overflow-x: scroll;
-                        }
-                        @include media("lg-mob") {
-                            width: 100%;
-                            height: 15rem;
-                            overflow-x: scroll;
-                        }
-                        @include media("x-sm-tab") {
-                            width: 100%;
-                            height: 15rem;
-                            overflow-x: scroll;
-                        }
-                        @include media("sm-tab") {
-                            width: 100%;
-                            height: 15rem;
-                            overflow-x: scroll;
-                        }
-                        @include media("md-tab") {
-                            width: 100%;
-                            height: 15rem;
-                            overflow-x: scroll;
-                        }
-                        li {
-                            position: relative;
-                            flex: 0 0 calc(95% / 4);
-                            margin: 0.5em 0px;
-                            padding-right: 1em;
-                            @include media("sm-mob") {
-                                padding-right: 0px;
-                            }
-                            @include media("md-mob") {
-                                padding-right: 0px;
-                            }
-                            @include media("lg-mob") {
-                                padding-right: 0px;
-                            }
-                            @include media("x-sm-tab") {
-                                padding-right: 0px;
-                            flex: 0 0 calc(95% / 2);
-
-                            }
-                            @include media("sm-tab") {
-                                padding-right: 0px;
-                            flex: 0 0 calc(95% / 3);
-
-                            }
-                            @include media("md-tab") {
-                                padding-right: 0px;
-                            flex: 0 0 calc(95% / 3);
-
-                            }
-                            a {
-                                display: flex !important;
-                                align-items: center;
-                                gap: 0.75em;
-                            }
-                            svg {
-                                height: 30px !important;
-                                width: 30px;
-                                color: variables.$starhospitals-brand-primary;
-                            }
-                            a {
-                                // border-radius: 10px;
-                                transition: all 1s;
-                                margin-top: 0.25em;
-
-                                @include dropdown-link;
-                                // padding: 0.25em 0.5em;
-                                @include media("sm-mob") {
-                                    padding: 1em;
-                                }
-                                @include media("md-mob") {
-                                    padding: 1em;
-                                }
-                                @include media("lg-mob") {
-                                    padding: 1em;
-                                }
                             }
 
                             &:hover {
-                                background-color: #004f9e6e;
-                                color: #ffffff;
-    
-                                // border-radius: 5px;
-                                a {
-                                    color: #000000;
+                                @include option-hover;
 
-                                }
-                                svg {
-                                    color: #fff;
-                                }
-    
-                                // .header__nav__option--nested-dropdown{
-    
-                                ul {
-                                    li {
-                                        a {
-                                            color: #000000 !important;
-                                        }
-                                        &:hover {
-                                            background-color: #004E9E;
-                                            border-radius: 5px;
-                                            a {
-                                                color: #fff !important;
-                                            }
-                                        }
-                                    }
-                                    // }
+                                &::after {
+                                    // @include dropdown-arrow;
+                                    color: variables.$starhospitals-text-inverted !important;
                                 }
                             }
+
+                            // &:hover ul{
+                            //     display: block;
+                            //     right: 0;
+                            // }
                         }
                     }
                 }
 
+                &:hover &__options {
+                    display: block;
+                }
                 &::after {
                     @include dropdown-arrow;
-                    transition: all 300s;
-                    top: 40%;
-                    right: 1em;
-                    transform: rotate(90deg) !important;
+                    transform: rotate(90deg);
                     color: #ffff;
-                    transition: all 300ms;
+
                     @include media("sm-mob") {
                         transform: rotate(0deg);
                         color: black;
-                        top: 17px;
-                        right: 2.85em;
+                        top: 25%;
+                        right: 5%;
                     }
                     @include media("md-mob") {
                         transform: rotate(0deg);
                         color: black;
-                        top: 17px;
-                        right: 2.85em;
+                        top: 25%;
+                        right: 5%;
                     }
                     @include media("lg-mob") {
                         transform: rotate(0deg);
                         color: black;
-                        top: 17px;
-                        right: 2.85em;
+                        top: 25%;
+                        right: 5%;
                     }
                     @include media("x-sm-tab") {
                         transform: rotate(0deg);
@@ -1042,46 +878,6 @@ $fixed-header-height: 6.5rem;
                         color: black;
                         top: 25%;
                         right: 5%;
-                    }
-                }
-
-                &--active {
-                    &::after {
-                        transform: rotate(-90deg) !important;
-                    }
-                    .header__nav__option--dropdown__options {
-                        display: block;
-                        // margin-top: 1.25em;
-                        @include media("sm-mob") {
-                            margin-top: 0;
-                            display: block;
-                        }
-                        @include media("md-mob") {
-                            margin-top: 0;
-                            display: block;
-                        }
-                        @include media("lg-mob") {
-                            margin-top: 0;
-                            display: block;
-                        }
-                    }
-                }
-
-                &--mega {
-                    .header__nav__option--nested-dropdown {
-                        &::after {
-                            // @include dropdown-arrow;
-                            // top: 0%;
-                            // transform: translate(-50%);
-                            right: 1.5em;
-                            // transform: rotate(-90deg);
-                        }
-                    }
-                }
-
-                &--fixed{
-                    &::after{
-                        color: #000000;
                     }
                 }
             }
@@ -1091,10 +887,7 @@ $fixed-header-height: 6.5rem;
 
                 &::after {
                     @include dropdown-arrow;
-                    transition: all 300ms;
-                    top: 33%;
-                    right: 1em;
-                    transform: rotate(90deg) !important;
+                    transform: rotate(90deg);
 
                     @include media("sm-mob") {
                         transform: rotate(0deg);
@@ -1133,20 +926,24 @@ $fixed-header-height: 6.5rem;
                         right: 5%;
                     }
                 }
-                // position: relative;
+
+                &:hover {
+                    &::after {
+                        color: white;
+                    }
+                }
                 ul {
                     animation: growDown 300ms ease-in-out forwards;
                     // transform-origin: top center;
                     @include dropdown-Options-wrapper;
-                    left: 30.9%;
-                    top: 100%;
-                    z-index: 30;
+                    left: 99.9%;
+                    top: 0;
+                    z-index: -1;
                     padding: 0.5em 0px;
                     border-radius: 5px;
                     box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
                     -webkit-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
                     -moz-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
-                    background-color: #fff;
                     @include media("sm-mob") {
                         position: initial;
                         padding-left: 1em;
@@ -1172,6 +969,10 @@ $fixed-header-height: 6.5rem;
                         padding-left: 1em;
                     }
                 }
+                &:hover ul {
+                    display: block;
+                }
+
                 &::after {
                     // @include dropdown-arrow;
                     transform: rotate(0deg);
@@ -1182,51 +983,28 @@ $fixed-header-height: 6.5rem;
                     }
 
                     @include media("sm-mob") {
-                        right: 1.5em;
-                        top: 1.25em;
+                        right: 5%;
+                        top: 6%;
                     }
                     @include media("md-mob") {
-                        right: 1.5em;
-                        top: 1.25em;
+                        right: 5%;
+                        top: 6%;
                     }
                     @include media("lg-mob") {
-                        right: 1.5em;
-                        top: 1.25em;
+                        right: 5%;
+                        top: 6%;
                     }
                     @include media("x-sm-tab") {
-                        right: 1.5em;
-                        top: 1.25em;
+                        right: 5%;
+                        top: 6%;
                     }
                     @include media("sm-tab") {
-                        right: 1.5em;
-                        top: 1.25em;
+                        right: 5%;
+                        top: 6%;
                     }
                     @include media("md-tab") {
-                        right: 1.5em;
-                        top: 1.25em;
-                    }
-                }
-
-                &--active {
-                    z-index: 3600;
-
-                    &::after {
-                        transform: rotate(-90deg) !important;
-                    }
-
-                    ul {
-                        display: block;
-                        background-color: #fff;
-                    }
-                }
-
-                li {
-                    &:hover {
-                        background-color: #004f9e;
-                        border-radius: 5px;
-                        a {
-                            color: #fff !important;
-                        }
+                        right: 5%;
+                        top: 6%;
                     }
                 }
             }
@@ -1256,81 +1034,9 @@ $fixed-header-height: 6.5rem;
             }
 
             .header__nav__option--dropdown {
-                // &::after {
-                //     color: black;
-                // }
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 1220px) {
-    .header__nav__option--dropdown:hover
-        .header__nav__option--dropdown__options {
-        display: block;
-        // margin-top: 1.25em;
-        // padding-bottom: 1.25em;
-    }
-    .header__nav__option--dropdown--mega:hover
-        .header__nav__option--dropdown__options {
-        display: flex;
-        // margin-top: 1.25em;
-        // padding-bottom: 1.25em;
-    }
-
-    .header__nav__option--dropdown--mega:hover {
-        &::after {
-            transform: rotate(-90deg) !important;
-        }
-    }
-    .header__nav__option--nested-dropdown:hover ul {
-        display: block;
-        background-color: #fff;
-    }
-
-    .header__nav__option--nested-dropdown:hover {
-        &::after {
-            transform: rotate(-90deg) !important;
-        }
-
-        ul {
-            li {
-                a {
-                    color: #fff;
+                &::after {
+                    color: black;
                 }
-            }
-        }
-    }
-}
-
-.header__nav__option--dropdown--mega.header__nav__option--dropdown--active
-    .header__nav__option--dropdown__options {
-    display: flex;
-    // margin-top: 1.25em;
-    // padding-bottom: 1.25em;
-    @include media("sm-mob") {
-        margin-top: 0;
-        display: block;
-    }
-    @include media("md-mob") {
-        margin-top: 0;
-        display: block;
-    }
-    @include media("lg-mob") {
-        margin-top: 0;
-        display: block;
-    }
-}
-
-.header__nav__option--dropdown--mega.header__nav__option--dropdown--active {
-    li {
-        svg {
-            color: variables.$starhospitals-brand-primary;
-        }
-
-        &:hover {
-            svg {
-                color: white;
             }
         }
     }

@@ -4,7 +4,8 @@
 @import "utils/media-queries";
 
 .banner {
-    height: 70vh;
+    // height: 70vh;
+    height: 50vh;
     width: 100%;
     position: relative;
     @include media("sm-mob") {

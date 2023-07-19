@@ -9,6 +9,6 @@
     <a >Terms & Conditions</a>
 </div>
 <x-gap/>
-<x-doctors :type="'flex'" :$branches  :$coes/>
+<x-doctors :type="'flex'" :$branches  :$coes :title="'Book An Appointment'" :description="''"/>
 <x-gap/>
 @endsection

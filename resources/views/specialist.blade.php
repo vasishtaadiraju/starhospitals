@@ -3,11 +3,11 @@
 @vite(['resources/scss/branch.scss', 'resources/js/specialists.js'])
 @endsection
 @section('content')
-<x-banner :imgurl="config('variables.asset') .$content->banner_desktop" :text="$content->our_specialist_text" :$breadcrum/>  
+<x-banner :imgurl="config('variables.asset') .$content->banner_desktop" :text="$content->title" :$breadcrum/>  
 <x-gap/>    
 
  <div class="ui-background">
-<x-doctors :type="'flex'" :$branches  :$coes/>
+<x-doctors :type="'flex'" :$branches  :$coes  :title="'Our '.$content->speciality->specialist"  :description="$content->our_specialist_text"/>
  </div>
  <x-gap/>
  <x-about-speciality :$content/>
@@ -16,7 +16,7 @@
 <div class="ui-background">
 {{-- <x-testimonials :$content  :testimonials='$content->testimonials'/> --}}
 {{-- <x-testimonials-secondary :$content   :testimonials='$content->testimonials'/> --}}
-    <x-heading :title="'Reviews From Our Patients'" :description="'Reviews From Our Patients'" />
+    <x-heading :title="'Reviews From Our Patients'" :description="''" />
 
         <div class="t-sec testimonials-slider" id="patient-reviews">
             @foreach ($content->testimonials as $item)

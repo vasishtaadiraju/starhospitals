@@ -19,7 +19,7 @@ class SpecialistController extends Controller
         <span>❯</span>
         <a href='#'>Team</a>
         <span>❯</span>
-        <a href='#'>{$content->our_specialist_text}</a>
+        <a href='#'>{$content->title}</a>
     </div>";
 
         
@@ -32,6 +32,7 @@ class SpecialistController extends Controller
                 $query->where('speciality_id',$content->speciality_id);
             })->where('status','active')->get(['id','name','slug']);
     
+                
 
         return view('specialist',[
             'breadcrum'=>$breadcrum,

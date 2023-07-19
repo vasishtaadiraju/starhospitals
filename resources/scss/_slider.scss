@@ -30,7 +30,8 @@ $visible-cards: 1;
     }
 
     &__item {
-        height: 60vh;
+        // height: 60vh;
+        height: 50vh;
         z-index: 3000;
         position: relative;
         @include media("sm-mob") {

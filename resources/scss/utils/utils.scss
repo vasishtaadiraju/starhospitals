@@ -184,15 +184,15 @@ select {
     border: 0.7px solid red !important;
 }
 .gap {
-    height: 5rem;
+    height: 2rem;
     @include media("sm-mob") {
-        height: 2.5rem;
+        // height: 2.5rem;
     }
     @include media("md-mob") {
-        height: 2.5rem;
+        // height: 2.5rem;
     }
     @include media("lg-mob") {
-        height: 2.5rem;
+        // height: 2.5rem;
     }
 }
 
@@ -296,19 +296,20 @@ select {
     }
 }
 .ui-background {
-    padding: 5rem 0px;
+    // padding: 5rem 0px;
+    padding: 2rem 0px;
     background-color: variables.$starhospitals-ui-background;
     // background-color:gray
     // z-index: 400;
 
     @include media("sm-mob") {
-        padding: 2.5rem 0px;
+        // padding: 2.5rem 0px;
     }
     @include media("md-mob") {
-        padding: 2.5rem 0px;
+        // padding: 2.5rem 0px;
     }
     @include media("lg-mob") {
-        padding: 2.5rem 0px;
+        // padding: 2.5rem 0px;
     }
 }
 

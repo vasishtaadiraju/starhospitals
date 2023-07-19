@@ -56,8 +56,16 @@ about-root{
         flex: 0 0 100%; 
     }       
 
-    img{
+    // &:first-child{
+    //     border-radius: 20px;
+
+    // }
+    img:nth-child(4){
         border-radius: 20px;
+
+        // &:first-child{
+
+        // }
     }
     }
 

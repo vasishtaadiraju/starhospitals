@@ -209,7 +209,7 @@
 
     </div>
     <div class="about-speciality__content">
-        <h2 class="about-speciality__content__heading section-heading">{{ isset($content->name) ?  $content->name : $content->our_specialist_text }}</h2>
+        <h2 class="about-speciality__content__heading section-heading">{{ isset($content->name) ?  $content->name : $content->title }}</h2>
         @if (isset($content->branches))
             <div class="about-speciality__content__links">
 

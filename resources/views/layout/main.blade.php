@@ -30,7 +30,7 @@
 
 {{-- <x-patient-enquiry/> --}}
     
-    <x-header :$coes :$branches/> 
+    <x-header :$coes :$branches :$specialists/> 
     @yield('content')
     <x-footer :$coes :$branches/>
 

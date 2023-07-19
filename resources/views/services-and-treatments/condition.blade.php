@@ -67,7 +67,7 @@
     </div>
 
     @else
-    <x-doctors :type="'flex'" :$branches  :$coes/>
+    <x-doctors :type="'flex'" :$branches  :$coes :title="''" :description="''"/>
     <x-gap/>
 <x-faqs :$content :faqs='$faqs'/> 
 

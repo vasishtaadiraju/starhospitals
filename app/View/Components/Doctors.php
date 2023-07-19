@@ -11,13 +11,15 @@ class Doctors extends Component
     /**
      * Create a new component instance.
      */
-    public $type,$branches , $coes;
+    public $type,$branches , $coes,$title,$description;
 
-    public function __construct($type,$branches,$coes)
+    public function __construct($type,$branches,$coes,$title,$description)
     {
         $this->type = $type;
         $this->branches = $branches;
         $this->coes = $coes;
+        $this->title = $title;
+        $this->description = $description;
     }
     
     

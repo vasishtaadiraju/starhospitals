@@ -1,6 +1,6 @@
 <div class="coes">
     <div class="coes__list">
-        <h2 class="section-heading">Centres of Excellence</h2>
+        <h2 class="section-heading">Our Specialities</h2>
         <div class="coes__list__wrapper">
             <ul>
                 {{-- coes__description__wrapper--mobile coes__description__wrapper--mobile--active --}}
