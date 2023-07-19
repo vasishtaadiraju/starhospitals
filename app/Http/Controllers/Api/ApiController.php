@@ -174,7 +174,9 @@ class ApiController extends Controller
                     }
                 ])->where('status','active')->select('id', 'name', 'slug', 'designation', 'small_image', 'large_image','experience','fee','his_id','video_consultation');
             }
-        ])->orderBy(DB::raw('ISNULL(order_number), order_number'), 'ASC')->where('branch_id', $branch_id);
+        ])->orderBy(DB::raw('ISNULL(order_number), order_number'), 'ASC');
+        
+            $branch_id != 'hyderabad' ? $doctor_query->where('branch_id', $branch_id) : $doctor_query->whereIn('branch_id',[1,2]);
 
 
 
@@ -398,9 +400,43 @@ class ApiController extends Controller
             ])->first('id');
         } elseif ($type == 'location' && $branch_id != null) {
 
-            if($coe_id != null)
+            if($branch_id != 'hyderabad')
             {
-                $response = Branch::whereHas('specialists')->where('status', 'active')->where('id', $branch_id)->with([
+                if($coe_id != null)
+                {
+                    $response = Branch::whereHas('specialists')->where('status', 'active')->where('id', $branch_id)->with([
+                        'coes' => function ($query){
+                            $query->where('status', 'active')->with(['specialities'=>function($query) {
+                                $query->whereHas('specialists')->where('status','active')->select('specialities.id','name','slug');
+                            }])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+                        },
+                        'specialities' => function ($query) use ($coe_id) {
+                            $query->whereHas('specialists')->where('status', 'active')->whereHas('coes',function($query) use ($coe_id){
+                                $query->where('centre_of_excellences.id',$coe_id);             
+    
+                            })->select('specialities.id', 'name', 'slug', 'icon_image','doctor_slug');
+                        },
+                    ])->first('id');  
+                }
+                else
+                {
+                    $response = Branch::whereHas('specialists')->where('status', 'active')->where('id', $branch_id)->with([
+                        'coes' => function ($query) {
+                            $query->where('status', 'active')->with(['specialities'=>function($query){
+                                $query->where('status', 'active')->whereHas('specialists')->where('status', 'active')->select('specialities.id','name','slug');
+                            }])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+                        },
+                        // 'specialities' => function ($query) {
+                        //     $query->select('specialities.id', 'name', 'slug', 'icon_image');
+                        // },
+                    ])->first('id');
+                }
+            }
+            else
+            {
+                if($coe_id != null)
+            {
+                $response = Branch::whereHas('specialists')->where('status', 'active')->where('id',1)->orWhere('id',2)->with([
                     'coes' => function ($query){
                         $query->where('status', 'active')->with(['specialities'=>function($query) {
                             $query->whereHas('specialists')->where('status','active')->select('specialities.id','name','slug');
@@ -427,6 +463,8 @@ class ApiController extends Controller
                     // },
                 ])->first('id');
             }
+            }
+            
             
 
 
@@ -453,8 +491,18 @@ class ApiController extends Controller
     }
 
     function getSpecialistPage(Request $request){
-        $response = Specialist::where('branch_id',$request->branch_id)->where('speciality_id',$request->speciality_id)->first();
-        // dd($response);
+        if($request->branch_id != 'hyderabad')
+        {
+            $response = Specialist::where('branch_id',$request->branch_id)->where('speciality_id',$request->speciality_id)->first();
+            return response($response,200);
+
+        }
+        else
+        {
+        $response = Specialist::where('region_id',1)->where('speciality_id',$request->speciality_id)->first();
         return response($response,200);
+
+        }
+        // dd($response);
     }
 }

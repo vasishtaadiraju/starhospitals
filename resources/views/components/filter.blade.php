@@ -22,11 +22,18 @@
 
         <select type="text" class="location-select-box" id="location-select-box" data-type="location" placeholder="Enter Doctor Name">
             {{-- <option value="">Filter by Location</option> --}}
-
+            
+            @if (request()->route()->getName() == 'specialist')
+                <option @if (session('branch_id') == 'hyderabad')
+                    selected
+                @endif data-id="1" value="hyderabad">Hyderabad</option>
+            @endif
+            
+                
+            
             @foreach ($branches as $item)
             <option data-slug="{{$item->slug}}" value="{{$item->id}}" @if (session('branch_id') == $item->id)
-                selected
-            @elseif($item->id == 1) selected @endif>{{$item->name}}</option>
+                selected @endif>{{$item->name}}</option>
                 
             @endforeach
         </select>

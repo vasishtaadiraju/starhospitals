@@ -288,7 +288,7 @@ async function printOptions(node) {
     if (type == "coe") {
         node.parentNode.parentNode.querySelector(
             ".location-select-box"
-        ).innerHTML = ``;
+        ).innerHTML = `<option  data-id="1" value="hyderabad">Hyderabad</option>`;
         response.data.branches.forEach((result) => {
             let option = `<option data-slug="${result.slug}" value="${result.id}" ${
                 result.id == selected_branch_id ? `selected` : ``

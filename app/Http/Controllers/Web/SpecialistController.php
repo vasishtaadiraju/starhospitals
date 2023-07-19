@@ -26,13 +26,16 @@ class SpecialistController extends Controller
 
     $coe_id= CoeSpeciality::where('speciality_id',$content->speciality_id)->pluck('coe_id');
             session(['coe_id'=>$coe_id[0]]);
-            session(['branch_id' => $content->id]);
+            session(['branch_id' => $content->branch_id]);
             session(['speciality_id'=>$content->speciality_id]);
             $branches = Branch::whereHas('specialists',function($query) use ($content){
                 $query->where('speciality_id',$content->speciality_id);
             })->where('status','active')->get(['id','name','slug']);
     
-                
+            if($content->region_id != null)
+            {
+                session(['branch_id' => 'hyderabad']);
+            }
 
         return view('specialist',[
             'breadcrum'=>$breadcrum,

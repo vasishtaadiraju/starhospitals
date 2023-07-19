@@ -4,8 +4,6 @@
 @endsection
 @section('content')
 <x-banner :imgurl="config('variables.asset') .$content->banner_desktop" :text="$content->title" :$breadcrum/>  
-<x-gap/>    
-
  <div class="ui-background">
 <x-doctors :type="'flex'" :$branches  :$coes  :title="'Our '.$content->speciality->specialist"  :description="$content->our_specialist_text"/>
  </div>
@@ -16,7 +14,7 @@
 <div class="ui-background">
 {{-- <x-testimonials :$content  :testimonials='$content->testimonials'/> --}}
 {{-- <x-testimonials-secondary :$content   :testimonials='$content->testimonials'/> --}}
-    <x-heading :title="'Reviews From Our Patients'" :description="''" />
+    <x-heading :title="'Reviews From Our Patients'" :description="$content->reviews_text" />
 
         <div class="t-sec testimonials-slider" id="patient-reviews">
             @foreach ($content->testimonials as $item)
@@ -37,7 +35,7 @@
 </div>
 
 <x-gap/>
-<x-heading :title="'From Our Doctors'" :description="''" />
+<x-heading :title="'From Our Doctors'" :description="$content->doctors_text" />
 
     <div class="t-sec testimonials-slider" id="patient-reviews">
         @foreach ($content->testimonials as $item)
