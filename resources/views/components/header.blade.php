@@ -122,7 +122,7 @@
 
                             <li class="">
                                 <a
-                                    href="{{ route('specialist', $speciality->specialists[0]->slug) }}"><span>{!! $speciality->icon_image !!}</span>{{ $speciality->name }}</a>
+                                    href="{{ route('specialist', $speciality->specialists[0]->slug) }}"><span>{!! $speciality->icon_image !!}</span>{{ $speciality->specialist }}</a>
                                 {{-- <ul>
                                     @foreach ($item->specialities as $speciality)
                                         <li><a
@@ -346,7 +346,7 @@
 
                             <li class="">
                                 <a
-                                    href="{{ route('specialist', $speciality->specialists[0]->slug) }}"><span>{!! $speciality->icon_image !!}</span>{{ $speciality->name }}</a>
+                                    href="{{ route('specialist', $speciality->specialists[0]->slug) }}"><span>{!! $speciality->icon_image !!}</span>{{ $speciality->specialist }}</a>
                                 {{-- <ul>
                                     @foreach ($item->specialities as $speciality)
                                         <li><a

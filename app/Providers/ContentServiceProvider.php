@@ -30,7 +30,7 @@ class ContentServiceProvider extends ServiceProvider
         $this->specialists = CentreOfExcellence::where('status','active')->orderBy('order_number')->with(['specialities'=>function($query){
             $query->whereHas('specialists')->where('status','active')->whereNotNull('specialist')->with('specialists',function($query){
                 $query->whereNotNull('region_id');
-            })->orderBy('coe_speciality.order_number')->select(['specialities.id','name','slug','icon_image']);
+            })->orderBy('coe_speciality.order_number')->select(['specialities.id','name','slug','icon_image','specialist']);
         }])->get(['id','name','slug','icon_image']);
         // $this->specialists = Speciality::whereHas('specialists')->where('status','active')->with('specialists',function($query){
         //     $query->whereNotNull('region_id');
