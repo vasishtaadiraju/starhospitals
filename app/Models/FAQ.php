@@ -40,6 +40,6 @@ class FAQ extends Model
 
     public function specialists()
     {
-        return $this->belongsToMany(Specialist::class, 'faq_specialist', 'specialist_id', 'faq_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
+        return $this->belongsToMany(Specialist::class, 'faq_specialist', 'faq_id', 'specialist_id', 'id', 'id')->withPivot('order_number')->withTimestamps();
     }
 }
