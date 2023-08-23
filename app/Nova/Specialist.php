@@ -33,7 +33,7 @@ class Specialist extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'banner_title'
+        'id', 'title'
     ];
 
     /**
