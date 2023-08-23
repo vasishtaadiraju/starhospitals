@@ -59,7 +59,7 @@ class Specialist extends Resource
                 ->withoutTrashed(),
 
             new Panel('Banner', $this->banner()),
-            new Panel('Our Specialist', $this->text('our_specialist')),
+            new Panel('Our Specialist', $this->our_specialist()),
             new Panel('About', $this->about()),
             new Panel('Reviews', $this->text('reviews')),
             new Panel('From Our Doctors', $this->text('doctors')),
@@ -72,6 +72,9 @@ class Specialist extends Resource
     protected function banner()
     {
         return [
+            Text::make('Title', 'banner_title')
+                ->rules('nullable', 'string', 'max:100'),
+
             Image::make('Desktop Image', 'banner_desktop')
                 ->disk('s3')
                 ->hideFromIndex()
@@ -98,7 +101,7 @@ class Specialist extends Resource
     {
         return [
             Text::make('Title', 'title')
-                ->rules('nullable', 'string', 'max:255'),
+                ->rules('nullable', 'string', 'max:100'),
 
             Textarea::make('Description', 'description')
                 ->rows(4)
@@ -116,6 +119,18 @@ class Specialist extends Resource
             Text::make('Alt', 'description_image_alt')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
+        ];
+    }
+
+    protected function our_specialist()
+    {
+        return [
+            Text::make('Title', 'our_specialist_title')
+                ->rules('nullable', 'string', 'max:100'),
+
+            Text::make('Text', 'our_specialist_text')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:255'),
         ];
     }
 

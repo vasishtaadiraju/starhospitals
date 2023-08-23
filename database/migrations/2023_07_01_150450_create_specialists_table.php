@@ -16,11 +16,13 @@ return new class extends Migration
             $table->foreignId('region_id')->nullable()->constrained('regions')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('branch_id')->nullable()->constrained('branches')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('speciality_id')->nullable()->constrained('specialities')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('banner_title', 100)->nullable();
             $table->string('banner_desktop')->nullable();
             $table->string('banner_mobile')->nullable();
             $table->string('banner_alt', 100)->nullable();
+            $table->string('our_specialist_title', 100)->nullable();
             $table->string('our_specialist_text')->nullable();
-            $table->string('title')->nullable();
+            $table->string('title', 100)->nullable();
             $table->text('description')->nullable();
             $table->string('description_image')->nullable();
             $table->string('description_image_alt', 100)->nullable();
