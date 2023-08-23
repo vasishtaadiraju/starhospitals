@@ -25,7 +25,7 @@ class Specialist extends Resource
      *
      * @var string
      */
-    public static $title = 'title';
+    public static $title = 'banner_title';
 
     /**
      * The columns that should be searched.
@@ -33,7 +33,7 @@ class Specialist extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'title'
+        'id', 'banner_title'
     ];
 
     /**
