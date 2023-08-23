@@ -73,7 +73,6 @@ class Specialist extends Resource
     {
         return [
             Text::make('Title', 'banner_title')
-                ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
 
             Image::make('Desktop Image', 'banner_desktop')
@@ -102,6 +101,7 @@ class Specialist extends Resource
     {
         return [
             Text::make('Title', 'title')
+                ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
 
             Textarea::make('Description', 'description')
