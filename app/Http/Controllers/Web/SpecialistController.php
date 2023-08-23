@@ -19,7 +19,7 @@ class SpecialistController extends Controller
         <span>❯</span>
         <a href='#'>Team</a>
         <span>❯</span>
-        <a href='#'>{$content->title}</a>
+        <a href='#'>{$content->speciality->specialist}</a>
     </div>";
 
         

@@ -113,6 +113,10 @@ export async function printDoctors(url, body) {
                 branch_slug = branch.slug;
                 formDetails.branch = branch.name;
             }
+            else
+            {
+                branch_slug = branch.slug;
+            }
             branchName.push(
                 `<a href="/doctors/${branch.slug}/${speciality_slug}/${
                     result.doctor.slug
