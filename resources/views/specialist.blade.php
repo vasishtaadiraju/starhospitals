@@ -5,7 +5,7 @@
 @section('content')
     <x-banner :imgurl="config('variables.asset') . $content->banner_desktop" :text="$content->banner_title" :$breadcrum />
     <div class="ui-background">
-        <x-doctors :type="'flex'" :$branches :$coes :title="'Our ' . $content->speciality->specialist" :description="$content->our_specialist_title" />
+        <x-doctors :type="'flex'" :$branches :$coes :title="$content->our_specialist_title" :description="$content->doctors_text" />
     </div>
     @if ($content->description != null)
     <x-gap />
