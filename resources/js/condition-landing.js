@@ -77,7 +77,7 @@ async function printConditions(url,body) {
          <h3>${result.name}</h3>
 
          <p>
-             ${result.short_description}
+             ${result.short_description != null ? result.short_description : `` }
          </p>
 
          <a href="/tests-procedures/${slug}" class="conditions-root__cards__details__read-more">
