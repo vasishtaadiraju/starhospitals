@@ -32,7 +32,7 @@ export default defineConfig({
                 'resources/js/int-patients.js',
                 'resources/js/find-doctor.js',
                 'resources/js/video-consultation.js',
-                'resources/js/faq.js',
+                'resources/js/contact.js',
                 ],
             refresh: true,
         }),
