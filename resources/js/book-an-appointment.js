@@ -59,6 +59,13 @@ export async function printDoctors(url, body) {
             response.data.total
         );
     }
+    if(doctors.length == 0)
+    {
+        let errorMessage = `<div><h3 style="text-align:center;padding:3em;font-family:Plus Jakarta Sans Semi Bold">No doctors available for the respective selection.</h3></div>`
+        document
+        .querySelector(".doctor-appointment-cards-wrapper")
+        .insertAdjacentHTML("beforeend", errorMessage);
+    }
     doctors.forEach((result) => {
         if (result.doctor == null) {
             return;

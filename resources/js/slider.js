@@ -76,7 +76,7 @@ $('.physical-consultation__dates-slider').slick({
             arrows: true,
             centerMode: false,
             centerPadding: '0px',
-            slidesToShow: 7
+            slidesToShow: 2
         }
     },{
         breakpoint: 1025,
@@ -85,7 +85,7 @@ $('.physical-consultation__dates-slider').slick({
             arrows: false,
             centerMode: false,
             centerPadding: '0px',
-            slidesToShow: 7
+            slidesToShow: 2
         }
     },
     {
@@ -95,7 +95,7 @@ $('.physical-consultation__dates-slider').slick({
             arrows: true,
             centerMode: false,
             centerPadding: '0px',
-            slidesToShow: 7
+            slidesToShow: 2
         }
     },
     {

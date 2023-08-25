@@ -114,7 +114,7 @@ class DoctorController extends Controller
     <span>❯</span>
     <a href='#'>Book an Appointment</a>
     <span>❯</span>
-    <a href='{/locations/{$branch->slug}}'>{$branch->name}</a>
+    <a href='/locations/{$branch->slug}'>{$branch->name}</a>
     <span>❯</span>
     <a href='/specialities/{$speciality->slug}'>{$speciality->name}</a>
     <span>❯</span>

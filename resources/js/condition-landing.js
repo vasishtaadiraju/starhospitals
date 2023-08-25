@@ -167,7 +167,7 @@ function handlePageClicks(e)
     e.preventDefault();
     
     let coe_id = document.querySelector(
-        ".speciality-select-box"
+        ".coe-select-box"
     ).value;
     // let branch_id = document.querySelector(
     //     ".location-select-box"

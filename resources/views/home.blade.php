@@ -45,7 +45,7 @@
         
         
         <div class="testimonials__card">
-           <div class="ctg-video"><img src="" class="ctg-video play-video" data-video-link="https://www.youtube.com/embed/BqzX3ilr5Uo" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt=""> </div> 
+           <div class="ctg-video"><img src="" class="ctg-video play-video" data-video-link="https://www.youtube.com/embed/BqzX3ilr5Uo?autoplay=1" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt=""> </div> 
             <div class="testimonials__card__content">
                 <p>MR. SHEIKH ABDUL SATTAR</p>
     
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="testimonials__card">
-            <div class="ctg-video"> <img src="" class="play-video" data-video-link="https://www.youtube.com/embed/SpCctR-VNWE" data-src="{{Vite::asset('resources/images/testimonials/home-2.webp')}}" alt=""> </div>
+            <div class="ctg-video"> <img src="" class="play-video" data-video-link="https://www.youtube.com/embed/SpCctR-VNWE?autoplay=1" data-src="{{Vite::asset('resources/images/testimonials/home-2.webp')}}" alt=""> </div>
             <div class="testimonials__card__content">
                 <p>MRS REENA TEKRIWAL</p>
     
@@ -61,7 +61,7 @@
             </div>
         </div>
         <div class="testimonials__card">
-            <div class="ctg-video">  <img src="" class="play-video" data-video-link="https://www.youtube.com/embed/3ERI_hU34iQ" data-src="{{Vite::asset('resources/images/testimonials/home-3.webp')}}" alt=""> </div>
+            <div class="ctg-video">  <img src="" class="play-video" data-video-link="https://www.youtube.com/embed/3ERI_hU34iQ?autoplay=1" data-src="{{Vite::asset('resources/images/testimonials/home-3.webp')}}" alt=""> </div>
             <div class="testimonials__card__content">
                 <p>Mr. SUBBA RAO</p>
     

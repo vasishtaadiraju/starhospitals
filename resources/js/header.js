@@ -78,26 +78,35 @@ domSelector('.header__nav__option--nested-dropdown','click',function(e) {
     // }
 
 })
-domSelector('.header__nav__option--dropdown','click',function(e) {
-    if(e.target.nodeName == 'LI')
-    {
-        return;
-    }
-    else if (e.target.nodeName == 'A')
-    {
-        if(e.target.parentNode.classList.contains('header__nav__option--dropdown') && !e.target.parentNode.classList.contains('header__nav__option--dropdown--active'))
-        {
-            removeClass('header__nav__option--dropdown','header__nav__option--dropdown--active');
-            e.target.parentNode.classList.toggle('header__nav__option--dropdown--active')
-        }
-        else if(e.target.parentNode.classList.contains('header__nav__option--dropdown--active'))
-        {
-            removeClass('header__nav__option--dropdown','header__nav__option--dropdown--active');
 
-        }
+// $(window).scroll(function () {
+    if (screen.width < 1024) {
+
+        domSelector('.header__nav__option--dropdown','click',function(e) {
+            if(e.target.nodeName == 'LI')
+            {
+                return;
+            }
+            else if (e.target.nodeName == 'A')
+            {
+                if(e.target.parentNode.classList.contains('header__nav__option--dropdown') && !e.target.parentNode.classList.contains('header__nav__option--dropdown--active'))
+                {
+                    removeClass('header__nav__option--dropdown','header__nav__option--dropdown--active');
+                    e.target.parentNode.classList.toggle('header__nav__option--dropdown--active')
+                }
+                else if(e.target.parentNode.classList.contains('header__nav__option--dropdown--active'))
+                {
+                    removeClass('header__nav__option--dropdown','header__nav__option--dropdown--active');
+        
+                }
+            }
+        
+        })
+
     }
 
-})
+// })
+
 
 
 console.log();

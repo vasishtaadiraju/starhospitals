@@ -174,13 +174,31 @@ class ApiController extends Controller
                     }
                 ])->where('status','active')->select('id', 'name', 'slug', 'designation', 'small_image', 'large_image','experience','fee','his_id','video_consultation');
             }
-        ])->orderBy(DB::raw('ISNULL(order_number), order_number'), 'ASC');
+        ])->orderBy(DB::raw('ISNULL(doctor_orders.order_number), doctor_orders.order_number'), 'ASC');
         
-            $branch_id != 'hyderabad' ? $doctor_query->where('branch_id', $branch_id) : $doctor_query->whereIn('branch_id',[1,2]);
-
-
-
         $speciality_id == null ? $doctor_query->where('coe_id',$coe_id) : $doctor_query->where('speciality_id',$speciality_id);
+        
+
+        if($branch_id == 'hyderabad')
+        {
+            
+            $orderIds = $doctor_query->get(['id','doctor_id'])->unique('doctor_id');
+            $orderUniqueIds = [];
+            foreach ($orderIds as $key => $value) {
+                array_push($orderUniqueIds,$value->id);
+            }
+            $response = $doctor_query->whereIn('id',$orderUniqueIds)->paginate(10);
+            return response($response);
+
+        }
+        else
+        {
+            $doctor_query->where('branch_id', $branch_id) ;
+        }
+    //    $doctor_query->where('branch_id',1) ;
+
+    // $doctor_query->join('doctors', 'doctor_orders.doctor_id', '=', 'doctors.id')->distinct('doctor_orders.doctor_id');
+
         $request->paginate == true ? $response  = $doctor_query->paginate(10) : $response = $doctor_query->get();
 
         return response($response, 200);

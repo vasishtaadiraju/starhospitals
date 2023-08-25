@@ -147,8 +147,8 @@ $visible-cards: 1;
 
             h1 {
                 // @include font-family(700);
-                font-size: 40px;
-                line-height: 50px;
+                font-size: 35px;
+                line-height: 45px;
                 font-family: "Plus Jakarta Sans Semi Bold";
                 font-weight: 700;
                 @include media("sm-mob") {

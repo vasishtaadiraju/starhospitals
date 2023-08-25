@@ -113,8 +113,8 @@
                 </li>
                 <li
                     class="header__nav__option header__nav__option--dropdown header__nav__option--dropdown--fixed  header__nav__option--dropdown--mega">
-                    <a href="#coe-list" class="scroll-to-view">Doctors</a>
-                    <ul class="header__nav__option--dropdown__options  header__nav__option--dropdown__options--mega">
+                    <a href="#" class="scroll-to-view">Doctors</a>
+                    <ul class="header__nav__option--dropdown__options  header__nav__option--dropdown__options--mega centre-mega-container" >
                         @foreach ($specialists as $item)
 
                             @foreach ($item->specialities as $speciality)
@@ -337,8 +337,8 @@
             </li>
             <li
                     class="header__nav__option header__nav__option--dropdown   header__nav__option--dropdown--mega">
-                    <a href="#coe-list" class="scroll-to-view">Doctors</a>
-                    <ul class="header__nav__option--dropdown__options  header__nav__option--dropdown__options--mega">
+                    <a href="" class="scroll-to-view">Doctors</a>
+                    <ul class="header__nav__option--dropdown__options  header__nav__option--dropdown__options--mega centre-mega-container" >
                         @foreach ($specialists as $item)
 
                             @foreach ($item->specialities as $speciality)

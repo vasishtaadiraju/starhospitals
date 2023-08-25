@@ -135,6 +135,13 @@ async function printDoctors(body, selectBox, className) {
         
     }
 
+    if(response.data.length == 0)
+    {
+        let errorMessage = `<div><h3 style="text-align:center;padding:3em;font-family:Plus Jakarta Sans Semi Bold">No doctors available for the respective selection.</h3></div>`
+        document
+                .querySelector(className)
+                .insertAdjacentHTML("beforeend", errorMessage);
+    }
     
     response.data.forEach((result) => {
         if(result.doctor == null)
@@ -263,7 +270,7 @@ async function printDoctors(body, selectBox, className) {
         
     
     // $('.specialists-slider').slick('refresh')
-    if (selectBox != true) {
+    if (selectBox != true && response.data.length > 0) {
         $(className).slick({
             // dots:true,
             arrows: true,

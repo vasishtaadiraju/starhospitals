@@ -406,7 +406,7 @@ async function handleChange(type) {
         {speciality_id,branch_id}
     );
 
-    window.location.href = '/team/'+response.data.slug;
+    window.location.href = '/specialists/'+response.data.slug;
     // let paginate = true;
     // let speciality_id = "";
     // let body = { coe_id, branch_id, speciality_id,paginate};
@@ -431,7 +431,7 @@ async function handleCoeChange(type) {
         {speciality_id,branch_id}
     );
 
-    window.location.href = '/team/'+response.data.slug;
+    window.location.href = '/specialists/'+response.data.slug;
     // let paginate = true;
     // let speciality_id = "";
     // let body = { coe_id, branch_id, speciality_id,paginate};

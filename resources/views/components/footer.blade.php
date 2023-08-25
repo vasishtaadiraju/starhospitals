@@ -455,7 +455,7 @@
                 <li class="footer__columns__option__label footer__columns__option__label--dropdown">Patient Care & Services
                     <ul class="footer__columns__option__label--dropdown__option">
                         <li class="footer__columns__option__item"><a href="{{route('find-doctor')}}">Find a Doctor</a></li>
-                        <li class="footer__columns__option__item"><a href="">Book a Video Consultation</a></li>
+                        {{-- <li class="footer__columns__option__item"><a href="">Book a Video Consultation</a></li> --}}
                         <li class="footer__columns__option__item"><a href="{{route('about')}}"> About Us</a></li>
                         
                         <li class="footer__columns__option__item"><a href="{{route('contact')}}">Contact</a></li>
@@ -594,8 +594,7 @@
         <div class="footer__columns">
             <ul class="footer__columns__option">
 
-                <li class="footer__columns__option__label footer__columns__option__label--social-icon-wrapper">Follow
-                    STAR HOSPITALS
+                <li class="footer__columns__option__label footer__columns__option__label--social-icon-wrapper">Follow Star Hospitals
 
                     <div class="footer__social-icons">
                         <a target="_blank"href="https://www.facebook.com/starhospitalsin"> <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
@@ -718,7 +717,7 @@
     </div>
     <p class="footer__copyright">
 
-        <span> <a href="{{route('t-c')}}">Terms & Conditions </a> <span>|</span> <a href=""> Privacy Policy </a></span>
+        <span> <a href="{{route('t-c')}}">Terms & Conditions </a> <span>|</span> <a href="{{route('t-c')}}"> Privacy Policy </a></span>
         <span class="footer__copyright__pipe">|</span>
         <span> © 2008-2023 Star Hospitals, All Rights Reserved</span>
     </p>

@@ -1335,3 +1335,31 @@ $fixed-header-height: 6.5rem;
         }
     }
 }
+
+.centre-mega-container{
+    margin-left:-200px;
+    @include media("sm-mob") {
+        margin-left: initial;
+        
+    }
+    @include media("md-mob") {
+        margin-left: initial;
+    }
+    @include media("lg-mob") {
+        margin-left: initial;
+        
+    }
+    @include media("x-sm-tab") {
+        margin-left: initial;
+        
+    }
+    @include media("sm-tab") {
+        margin-left: initial;
+        
+    }
+    @include media("lg-tab") {
+        margin-left: initial;
+        
+    }
+
+}

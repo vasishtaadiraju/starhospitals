@@ -659,6 +659,8 @@ export function RequestCallBackForm(className,parameters){
         
          <input type="hidden" name="date" value="${parameters.appointment_date}"> 
          <input type="hidden" name="department" value="${parameters.specialityName}"> 
+         <input type="hidden" name="doctor" value="${parameters.doctorName}"> 
+         <input type="hidden" name="branch" value="${parameters.locationName}"> 
         <button class="pc-modal__card__btn">Submit</button>
 
     </form>

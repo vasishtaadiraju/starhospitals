@@ -24,7 +24,11 @@ class SpecialistController extends Controller
 
         
 
-    $coe_id= CoeSpeciality::where('speciality_id',$content->speciality_id)->pluck('coe_id');
+            $coe_id= CoeSpeciality::where('speciality_id',$content->speciality_id)->pluck('coe_id');
+            if(count($coe_id) == 0)
+            {
+                return abort(404);
+            }
             session(['coe_id'=>$coe_id[0]]);
             session(['branch_id' => $content->branch_id]);
             session(['speciality_id'=>$content->speciality_id]);
