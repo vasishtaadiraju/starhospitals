@@ -31,9 +31,11 @@ class FormController extends Controller
       'email' => 'required|string|email:rfc,strict,dns,filter|max:255',
       'department' => 'required|string|max:255',
       'date' => 'required|date',
+      'doctor' => 'nullable|string',
+      'branch' => 'nullable|string'
     ]);
 
-    $utm_source = $utm_medium = $utm_campaign = $utm_term = $utm_content = $utm_lms = null;
+    $utm_source = $utm_medium = $utm_campaign = $utm_term = $utm_content = $utm_lms = $doctor = $branch = null;
 
     if (session()->exists('utm_source')) {
       $utm_source = session('utm_source');
@@ -59,6 +61,14 @@ class FormController extends Controller
       $utm_lms = session('utm_lms');
     }
 
+    if ($request->filled('doctor')) {
+      $doctor = $request->input('doctor');
+    }
+
+    if ($request->filled('branch')) {
+      $branch = $request->input('branch');
+    }
+
     DB::table('request_callback_form')->insert([
       'name' => $request->input('name'),
       'country_code' => $request->input('country_code'),
@@ -66,6 +76,8 @@ class FormController extends Controller
       'email' => $request->input('email'),
       'department' => $request->input('department'),
       'date' => $request->input('date'),
+      'doctor' => $doctor,
+      'branch' => $branch,
       'utm_source' => $utm_source,
       'utm_medium' => $utm_medium,
       'utm_campaign' => $utm_campaign,
@@ -76,8 +88,8 @@ class FormController extends Controller
       'updated_at' => now()
     ]);
 
-    dispatch(new RequestCallbackToHospital($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('department'), $request->input('date')))->delay(now()->addMinute());
-    dispatch(new RequestCallbackToUser($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('department'), $request->input('date')))->delay(now()->addMinute());
+    dispatch(new RequestCallbackToHospital($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('department'), $request->input('date'), $doctor, $branch))->delay(now()->addMinute());
+    dispatch(new RequestCallbackToUser($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('department'), $request->input('date'), $doctor, $branch))->delay(now()->addMinute());
 
     return redirect('request-callback/thank-you');
   }

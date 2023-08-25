@@ -13,18 +13,20 @@ class RequestCallbackToHospital extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $name, $contact, $email, $department, $date;
+    public $name, $contact, $email, $department, $date, $doctor, $branch;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($name, $contact, $email, $department, $date)
+    public function __construct($name, $contact, $email, $department, $date, $doctor, $branch)
     {
         $this->name = $name;
         $this->contact = $contact;
         $this->email = $email;
         $this->department = $department;
         $this->date = $date;
+        $this->doctor = $doctor;
+        $this->branch = $branch;
     }
 
     /**

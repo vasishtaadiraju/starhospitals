@@ -19,6 +19,12 @@
         Email: {{ $email }}<br />
         Contact: {{ $contact }}<br />
         Department: {{ $department }}<br />
+        @if ($doctor)
+            Doctor: {{ $doctor }}<br />
+        @endif
+        @if ($branch)
+            Branch: {{ $branch }}<br />
+        @endif
         Date: {{ $date }}<br /><br />
 
         Our expert professionals are now working diligently to review your information and provide you with the

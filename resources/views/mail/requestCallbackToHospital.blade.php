@@ -18,7 +18,13 @@
         Email: {{ $email }}<br />
         Contact: {{ $contact }}<br />
         Department: {{ $department }}<br />
-        Date: {{ $date }}
+        Date: {{ $date }}<br />
+        @if ($doctor)
+            Doctor: {{ $doctor }}<br />
+        @endif
+        @if ($branch)
+            Branch: {{ $branch }}
+        @endif
     </div>
 </body>
 

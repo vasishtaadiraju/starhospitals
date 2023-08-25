@@ -15,18 +15,20 @@ class RequestCallbackToHospital implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $name, $contact, $email, $department, $date;
+    protected $name, $contact, $email, $department, $date, $doctor, $branch;
 
     /**
      * Create a new job instance.
      */
-    public function __construct($name, $contact, $email, $department, $date)
+    public function __construct($name, $contact, $email, $department, $date, $doctor, $branch)
     {
         $this->name = $name;
         $this->contact = $contact;
         $this->email = $email;
         $this->department = $department;
         $this->date = $date;
+        $this->doctor = $doctor;
+        $this->branch = $branch;
     }
 
     /**
@@ -34,6 +36,6 @@ class RequestCallbackToHospital implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to('noreply@starhospitals.co.in')->send(new MailRequestCallbackToHospital($this->name, $this->contact, $this->email, $this->department, $this->date));
+        Mail::to('noreply@starhospitals.co.in')->send(new MailRequestCallbackToHospital($this->name, $this->contact, $this->email, $this->department, $this->date, $this->doctor, $this->branch));
     }
 }
