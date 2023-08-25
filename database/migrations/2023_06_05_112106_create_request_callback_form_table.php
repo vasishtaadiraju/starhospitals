@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('email');
             $table->string('department');
             $table->date('date');
+            $table->string('doctor', 100)->nullable();
+            $table->string('branch', 50)->nullable();
             $table->string('utm_source')->nullable();
             $table->string('utm_medium')->nullable();
             $table->string('utm_campaign')->nullable();
