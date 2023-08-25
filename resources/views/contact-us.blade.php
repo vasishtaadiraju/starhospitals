@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('css')
-@vite(['resources/scss/contact.scss', 'resources/js/app.js','resources/js/faqs.js'])
+@vite(['resources/scss/contact.scss', 'resources/js/contact.js'])
 @endsection
 @section('content')
 <x-banner :imgurl="Vite::asset('resources/images/banner/contact-us.png')" :text="'Quality Healthcare Services in Hyderabad | Star Hospitals'" :$breadcrum/>
