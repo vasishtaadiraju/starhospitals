@@ -285,11 +285,11 @@ class Branch extends Resource
 
             Text::make('Map Link', 'map_link')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:255'),
+                ->rules('nullable', 'string'),
 
             Text::make('Embed Map Link', 'embed_map_link')
                 ->hideFromIndex()
-                ->rules('nullable', 'string', 'max:255'),
+                ->rules('nullable', 'string'),
 
             Text::make('Meta Title', 'meta_title')
                 ->hideFromIndex()
