@@ -6,10 +6,18 @@ import { removeClass } from './utils/event-handler';
 
 var myFunction = 
 domSelector('.faqs__card','click',function() {
-        // removeClass('faqs__card','faqs__card--active');
+       
+        let activeStatus = this.childNodes[3].classList.contains('faqs__card__answer--active');
         removeClass('faqs__card__answer','faqs__card__answer--active');
-        this.childNodes[3].classList.toggle("faqs__card__answer--active");
-        this.classList.toggle("faqs__card--active");
+        removeClass('faqs__card','faqs__card--active')
+        if(activeStatus == false)
+        {
+                this.childNodes[3].classList.add("faqs__card__answer--active");
+                this.classList.toggle("faqs__card--active");
+
+        }
+        
+
 });
 
 
