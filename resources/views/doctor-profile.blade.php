@@ -199,7 +199,7 @@
                 </defs>
             </svg>
             <h1 class="section-heading">Qualifications</h1>
-            <span>+</span>
+            <span></span>
         </div>
 
         <div class="d-p-achievement__details" id="qualification">
@@ -261,7 +261,7 @@
                 </defs>
             </svg>
             <h1 class="section-heading">Experience</h1>
-            <span>+</span>
+            <span></span>
 
         </div>
 
@@ -319,7 +319,7 @@
                 </defs>
             </svg>
             <h1 class="section-heading">Field of Expertise</h1>
-            <span>+</span>
+            <span></span>
         </div>
 
         <div class="d-p-achievement__details" id="expertise">
@@ -346,7 +346,7 @@
                 </defs>
             </svg>
             <h1 class="section-heading">Research & Publications</h1>
-            <span>+</span>
+            <span></span>
 
         </div>
 
@@ -372,7 +372,7 @@
                 </defs>
             </svg>
             <h1 class="section-heading">Certifications & Memberships</h1>
-            <span>+</span>
+            <span></span>
 
         </div>
 

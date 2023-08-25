@@ -520,6 +520,7 @@
         align-items: center !important  ;
         justify-content: center;
         // min-height: 5rem;
+        position: relative;
         cursor: pointer;
         padding-bottom: 1em;
         @include media("sm-mob") {
@@ -599,6 +600,36 @@
             }
             
         }
+
+        &::after{
+            content:'+';
+            font-size: 18px;
+            font-weight: 600;
+            font-size: 30px;
+            font-family: "Plus Jakarta Sans Bold";
+            flex: 1;
+            display: flex;
+            align-items: center !important  ;
+            justify-content: flex-end;
+            padding-right: 2em;
+            position: absolute;
+            right: 0;
+            @include media("sm-mob") {
+                padding-right: 1em;
+            }
+            @include media("md-mob") {
+                padding-right: 1em;
+            }
+            @include media("lg-mob") {
+                padding-right: 1em;
+            }
+            @include media("x-sm-tab") {
+                padding-right: 1em;
+            }
+            @include media("sm-tab") {
+                padding-right: 1em;
+            }
+        }
     }
 
     &__details {
@@ -626,6 +657,8 @@
         @include media("sm-tab") {
             padding: 0em 0.5em;
         }
+
+        
         &--active {
             max-height: 80rem;
             padding-bottom: 2rem;
@@ -698,3 +731,38 @@
         }
     }
 }
+
+
+
+
+    .d-p-achievement__tab.d-p-achievement__tab--active{
+        &::after{
+            content:'-';
+            font-size: 18px;
+            font-weight: 600;
+            font-size: 30px;
+            font-family: "Plus Jakarta Sans Bold";
+            flex: 1;
+            display: flex;
+            align-items: center !important  ;
+            justify-content: flex-end;
+            padding-right: 2em;
+            position: absolute;
+            right: 0;
+            @include media("sm-mob") {
+                padding-right: 1em;
+            }
+            @include media("md-mob") {
+                padding-right: 1em;
+            }
+            @include media("lg-mob") {
+                padding-right: 1em;
+            }
+            @include media("x-sm-tab") {
+                padding-right: 1em;
+            }
+            @include media("sm-tab") {
+                padding-right: 1em;
+            }
+        }
+    }

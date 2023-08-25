@@ -337,7 +337,7 @@
             </li>
             <li
                     class="header__nav__option header__nav__option--dropdown   header__nav__option--dropdown--mega">
-                    <a href="" class="scroll-to-view">Doctors</a>
+                    <a href="#" class="scroll-to-view">Doctors</a>
                     <ul class="header__nav__option--dropdown__options  header__nav__option--dropdown__options--mega centre-mega-container" >
                         @foreach ($specialists as $item)
 
