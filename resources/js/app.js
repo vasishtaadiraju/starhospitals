@@ -16,6 +16,10 @@ import './footer';
 // import './doctors';
 // // import './book-an-appointment';
 // import './scroll';
+domSelector('.find-direction','click',function(){
+    let iframe = this.getAttribute('data-map');
+    document.querySelector('.find-us__map').innerHTML = iframe;
+})
 
 
 const images = Array.from(document.querySelectorAll('img'));

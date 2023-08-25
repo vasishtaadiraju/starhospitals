@@ -13,6 +13,7 @@ import './footer';
 // import "./condition-doctors";
 import BushraUrl from "../images/doctors/doctor.png";
 
+var searchedStatus = false;
 
 
 function printLinks(links,previousLink,nextLink,from,to,total)
@@ -152,6 +153,7 @@ async function handleChange(type) {
 
     function handleSearch()
     {
+        searchedStatus = true;
         let coe_id = this.parentNode.parentNode.querySelector(
             ".coe-select-box"
         ).value;
@@ -169,13 +171,20 @@ function handlePageClicks(e)
     let coe_id = document.querySelector(
         ".coe-select-box"
     ).value;
+    let speciality_id = document.querySelector(
+        ".speciality-select-box"
+    ).value;
+
+    if(searchedStatus == false)
+    {
+        coe_id = "";
+        speciality_id = "";
+    }
     // let branch_id = document.querySelector(
     //     ".location-select-box"
     // ).value;
     let paginate = true;
-    let speciality_id = document.querySelector(
-            ".speciality-select-box"
-        ).value;
+    
     let body = { coe_id, speciality_id,paginate};
 
         // $(".specialists-slider").slick("unslick");

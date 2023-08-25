@@ -91,7 +91,7 @@
                 {{-- dropdown-items --}}
                 <li
                     class="header__nav__option header__nav__option--dropdown header__nav__option--dropdown--fixed  header__nav__option--dropdown--mega">
-                    <a href="#coe-list" class="scroll-to-view">Centers of Excellence</a>
+                    <a href="#coe-list" class="scroll-to-view">Specialities</a>
                     <ul class="header__nav__option--dropdown__options  header__nav__option--dropdown__options--mega">
                         @foreach ($coes as $item)
                             <li
@@ -140,7 +140,7 @@
                 </li>
                 
                 <li class="header__nav__option">
-                    <a href="{{ route('condition.landing') }}">Treatments & Tests</a>
+                    <a href="{{ route('condition.landing') }}">Treatments</a>
 
                 </li>
                 <li class="header__nav__option">
@@ -194,7 +194,7 @@
                     <img src="" data-src="{{ Vite::asset('resources/images/Icons/emergency.png') }}"
                         alt="">
 
-                    <p>Emergency HelpLine <br>
+                    <p>Emergency <br>
                         <span>9100911911</span>
                     </p>
                 </div>
@@ -299,7 +299,7 @@
     <div class="header__nav " id="star-navbar">
         <ul class="header__nav__options">
             <li class="header__nav__option header__nav__option--dropdown header__nav__option--dropdown--mega">
-                <a href="#coe-list" class="scroll-to-view ">Centers of Excellence</a>
+                <a href="#coe-list" class="scroll-to-view ">Specialities</a>
                 <ul
                     class="header__nav__option--dropdown__options header__nav__option--dropdown__options--mega dropdown-items coe-icons">
                     {{-- header__nav__option--nested-dropdown
@@ -363,7 +363,7 @@
                     </ul>
                 </li>
             <li class="header__nav__option">
-                <a href="{{ route('condition.landing') }}">Treatments & Tests</a>
+                <a href="{{ route('condition.landing') }}">Treatments</a>
             </li>
             <li class="header__nav__option">
                 <a href="{{ route('international_patient') }}">International Patients</a>

@@ -17,6 +17,8 @@ domSelector('.d-p-info__col-3__scroll-tabs__item a','click',function(e){
     let element = document.querySelector(this.getAttribute('href'));
     let tabClass = this.getAttribute('data-tab');
     removeClass('d-p-info__col-3__scroll-tabs__item','d-p-info__col-3__scroll-tabs__item--active')
+    removeClass('d-p-achievement__tab','d-p-achievement__tab--active')
+
     this.parentNode.classList.add('d-p-info__col-3__scroll-tabs__item--active');
     removeClass('d-p-achievement__details','d-p-achievement__details--active')
     element.classList.toggle('d-p-achievement__details--active')
