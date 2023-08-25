@@ -127,9 +127,9 @@ export async function printDoctors(url, body) {
             branchName.push(
                 `<a href="/doctors/${branch.slug}/${speciality_slug}/${
                     result.doctor.slug
-                }"> ${branch.name}</a> ${
+                }"> ${branch.name}${
                     index != result.doctor.branches.length - 1 ? `,` : ``
-                } `
+                } </a> `
             );
         });
         //
@@ -161,8 +161,7 @@ export async function printDoctors(url, body) {
             result.doctor.slug
         }"> ${result.doctor.designation} </a></p>
          <p class="doctors-card__rt__speciality"><a href="">${coeName.toString()}</a></p>
-         <p class="doctors-card__rt__location"> <a href="">${branchName.toString()}</a></p>
-
+         <p class="doctors-card__rt__location" style="color:black">${branchName.toString().replace(' ,','')}</p>
          </div>
          <div>
          <a href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}" class="doctors-card__rt__btn">

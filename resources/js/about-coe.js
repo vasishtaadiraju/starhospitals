@@ -247,9 +247,9 @@ ${response.data.homepage_description}
 </svg>
 </div>
 ${type == 'coe' ? `<a href="/specialities/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
-Learn More
+Know More
 </a>` : `<a href="/specialities/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
-Learn More
+Know More
 </a>`}`
 
 
