@@ -10,14 +10,19 @@
 <x-gap/>    
 {{-- <x-our-specialists :$content :branches='$content->branches' :$coes/> --}}
 <x-coe-specialists :$content/>
+@if($content->services_treatments != null)
 <x-gap/>
-
 <x-services-treatment :$content />
 
+@endif
+
+@if (count($coes[0]->specialities) > 0)
 <x-gap/>
 <div class="ui-background">
-<x-key-services :$coes />
-</div>
+    <x-key-services :$coes />
+</div>   
+@endif
+
 
 <x-gap/>
 <x-locations :$content  :locations='$content->branches'/>
@@ -28,8 +33,11 @@
 <x-gap/>
 {{-- <x-testimonials />
      --}}
-     <x-testimonials-secondary :$content   :testimonials='$content->testimonials'/>
- <x-gap/>
+@if (count($content->testimonials) > 0)
+<x-testimonials-secondary :$content   :testimonials='$content->testimonials'/>
+    <x-gap/>  
+@endif
+     
  {{--
 <div class="ui-background">
 
@@ -39,7 +47,6 @@
 <x-media :$content :media='$content->media'/> 
 <x-gap/> --}}
 <div class="ui-background">
-
 <x-faqs :$content :faqs='$content->faqs'/> 
 </div>
 
