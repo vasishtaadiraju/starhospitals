@@ -15,6 +15,7 @@ use App\Jobs\RequestCallbackToUser;
 use App\Jobs\UserTalkToDoctor;
 use App\Jobs\VideoConsultationToHospital;
 use App\Jobs\VideoConsultationToUser;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -88,8 +89,8 @@ class FormController extends Controller
       'updated_at' => now()
     ]);
 
-    dispatch(new RequestCallbackToHospital($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('department'), $request->input('date'), $doctor, $branch))->delay(now()->addMinute());
-    dispatch(new RequestCallbackToUser($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('department'), $request->input('date'), $doctor, $branch))->delay(now()->addMinute());
+    dispatch(new RequestCallbackToHospital($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('department'), $request->input('date'), $doctor, $branch))->delay(Carbon::now()->addMinute());
+    dispatch(new RequestCallbackToUser($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('department'), $request->input('date'), $doctor, $branch))->delay(Carbon::now()->addMinute());
 
     return redirect('request-callback/thank-you');
   }
@@ -148,8 +149,8 @@ class FormController extends Controller
       'updated_at' => now()
     ]);
 
-    dispatch(new HospitalTalkToDoctor($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('speciality'), $request->input('message')))->delay(now()->addMinute());
-    dispatch(new UserTalkToDoctor($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('speciality'), $request->input('message')))->delay(now()->addMinute());
+    dispatch(new HospitalTalkToDoctor($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('speciality'), $request->input('message')))->delay(Carbon::now()->addMinute());
+    dispatch(new UserTalkToDoctor($request->input('name'), $request->input('contact'), $request->input('email'), $request->input('speciality'), $request->input('message')))->delay(Carbon::now()->addMinute());
 
     return redirect('talk-to-a-doctor/thank-you');
   }
@@ -210,8 +211,8 @@ class FormController extends Controller
       'updated_at' => now()
     ]);
 
-    dispatch(new ContactFormToHospital($request->input('type'), $request->input('name'), $request->input('contact'), $request->input('email'), $request->input('subject'), $request->input('message')))->delay(now()->addMinute());
-    dispatch(new ContactFormToUser($request->input('type'), $request->input('name'), $request->input('contact'), $request->input('email'), $request->input('subject'), $request->input('message')))->delay(now()->addMinute());
+    dispatch(new ContactFormToHospital($request->input('type'), $request->input('name'), $request->input('contact'), $request->input('email'), $request->input('subject'), $request->input('message')))->delay(Carbon::now()->addMinute());
+    dispatch(new ContactFormToUser($request->input('type'), $request->input('name'), $request->input('contact'), $request->input('email'), $request->input('subject'), $request->input('message')))->delay(Carbon::now()->addMinute());
 
     return redirect('contact/thank-you');
   }
@@ -272,8 +273,8 @@ class FormController extends Controller
       'updated_at' => now()
     ]);
 
-    dispatch(new InternationalToHospital($request->input('name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('department'), $report))->delay(now()->addMinute());
-    dispatch(new InternationalToUser($request->input('name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('department'), $report))->delay(now()->addMinute());
+    dispatch(new InternationalToHospital($request->input('name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('department'), $report))->delay(Carbon::now()->addMinute());
+    dispatch(new InternationalToUser($request->input('name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('department'), $report))->delay(Carbon::now()->addMinute());
 
     return redirect('international-patients/thank-you');
   }
@@ -342,8 +343,8 @@ class FormController extends Controller
       'updated_at' => now()
     ]);
 
-    dispatch(new VideoConsultationToHospital($request->input('firstname'), $request->input('lastname'), $request->input('guardian_name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('branch'), $request->input('coe'), $request->input('speciality'), $request->input('doctor'), $request->input('date')))->delay(now()->addMinute());
-    dispatch(new VideoConsultationToUser($request->input('firstname'), $request->input('lastname'), $request->input('guardian_name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('branch'), $request->input('coe'), $request->input('speciality'), $request->input('doctor'), $request->input('date')))->delay(now()->addMinute());
+    dispatch(new VideoConsultationToHospital($request->input('firstname'), $request->input('lastname'), $request->input('guardian_name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('branch'), $request->input('coe'), $request->input('speciality'), $request->input('doctor'), $request->input('date')))->delay(Carbon::now()->addMinute());
+    dispatch(new VideoConsultationToUser($request->input('firstname'), $request->input('lastname'), $request->input('guardian_name'), $request->input('country_code'), $request->input('contact'), $request->input('email'), $request->input('branch'), $request->input('coe'), $request->input('speciality'), $request->input('doctor'), $request->input('date')))->delay(Carbon::now()->addMinute());
 
     return redirect('video-consultation/thank-you');
   }
@@ -432,8 +433,8 @@ class FormController extends Controller
         'response' => $request->input('response'),
       ]);
 
-      dispatch(new PhysicalConsultationToHospital($request->input('appointment_id'), $request->input('patient_id'), $request->input('patient_name'), $request->input('patient_email'), $request->input('doctor'), $request->input('location'), $request->input('speciality'), $request->input('appointment_date'), $request->input('appointment_time')))->delay(now()->addMinute());
-      dispatch(new PhysicalConsultationToUser($request->input('appointment_id'), $request->input('patient_id'), $request->input('patient_name'), $request->input('patient_email'), $request->input('doctor'), $request->input('location'), $request->input('speciality'), $request->input('appointment_date'), $request->input('appointment_time')))->delay(now()->addMinute());
+      dispatch(new PhysicalConsultationToHospital($request->input('appointment_id'), $request->input('patient_id'), $request->input('patient_name'), $request->input('patient_email'), $request->input('doctor'), $request->input('location'), $request->input('speciality'), $request->input('appointment_date'), $request->input('appointment_time')))->delay(Carbon::now()->addMinute());
+      dispatch(new PhysicalConsultationToUser($request->input('appointment_id'), $request->input('patient_id'), $request->input('patient_name'), $request->input('patient_email'), $request->input('doctor'), $request->input('location'), $request->input('speciality'), $request->input('appointment_date'), $request->input('appointment_time')))->delay(Carbon::now()->addMinute());
 
       return view('pc-thank-you', [
         'appointment_id' => $request->input('appointment_id'),
