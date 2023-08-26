@@ -96,7 +96,7 @@ class DoctorController extends Controller
                     'coes' => function ($query) {
                         $query->select('centre_of_excellences.id')->pluck('centre_of_excellences.id');
                     }
-                ])->select('specialities.id', 'name','slug','his_id');
+                ])->select('specialities.id', 'name','slug','his_id','doctor_slug');
             },
         ])->first();
             // dd($content);

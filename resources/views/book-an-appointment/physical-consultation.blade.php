@@ -469,7 +469,7 @@
                                 {{-- <option value="">Speciality</option> --}}
                                 
                                 @foreach ($content->specialities as $speciality)
-                                    <option data-id="{{ $speciality->id }}" data-url="{{route('doctor.book-appointment',[$branch_slug,$speciality->slug,$content->slug])}}" data-his-id="{{$speciality->his_id}}" value="{{ $speciality->his_id }}" @if ($speciality->slug == $speciality_slug)
+                                    <option data-id="{{ $speciality->id }}" data-url="{{route('doctor.book-appointment',[$branch_slug,$speciality->doctor_slug,$content->slug])}}" data-his-id="{{$speciality->his_id}}" value="{{ $speciality->his_id }}" @if ($speciality->doctor_slug == $speciality_slug)
                                         selected
                                         
                                     @endif>
