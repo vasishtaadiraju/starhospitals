@@ -152,7 +152,9 @@ class ApiController extends Controller
         $coe_id = $request->coe_id;
         $speciality_id = $request->speciality_id;
         $response = [];
-        $doctor_query = DoctorOrder::with([
+        $doctor_query = DoctorOrder::whereHas('doctor',function($query){
+            $query->where('status','active');
+        })->with([
             'doctor' => function ($query) {
                 $query->with([
                     'coes' => function ($query) {
@@ -187,7 +189,7 @@ class ApiController extends Controller
             foreach ($orderIds as $key => $value) {
                 array_push($orderUniqueIds,$value->id);
             }
-            $response = $doctor_query->whereIn('id',$orderUniqueIds)->paginate(10);
+            $response = $request->paginate == true ? $doctor_query->whereIn('id',$orderUniqueIds)->paginate(10) : $doctor_query->whereIn('id',$orderUniqueIds)->get();
             return response($response);
 
         }

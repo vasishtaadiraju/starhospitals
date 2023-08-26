@@ -380,6 +380,33 @@ $footer-columns: 5;
                             display: block;
                         }
                     }
+
+                    &--active{
+                        &::after{
+                            content: "❯";
+                            color: variables.$starhospitals-ui-tertiary;
+                            position: absolute;
+                            right: 5%;
+                            top: 0;
+                            transform: rotate(-90deg);
+                            display: none;
+                            @include media("sm-mob") {
+                                display: block;
+                            }
+                            @include media("md-mob") {
+                                display: block;
+                            }
+                            @include media("lg-mob") {
+                                display: block;
+                            }
+                            @include media("x-sm-tab") {
+                                display: block;
+                            }
+                            @include media("sm-tab") {
+                                display: block;
+                            }
+                        }
+                    }
                 }
             }
             &__item {

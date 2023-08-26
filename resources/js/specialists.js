@@ -9,7 +9,7 @@ let screenWidth = screen.width;
 import BushraUrl from "../images/doctors/doctor.png";
 
 function printLinks(links, previousLink, nextLink, from, to, total) {
-    document.querySelector(".pagination__pages").innerHTML = "";
+    document.querySelector(".pagination__pages") != null ? document.querySelector(".pagination__pages").innerHTML = "" : ``;
     if (previousLink == null) {
         previousLink = "#";
     }
