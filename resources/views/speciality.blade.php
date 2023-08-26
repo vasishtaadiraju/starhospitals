@@ -13,11 +13,11 @@
 @if($content->services_treatments != null)
 <x-gap/>
 <x-services-treatment :$content />
+<x-gap/>
 
 @endif
 
 @if (count($coes[0]->specialities) > 0)
-<x-gap/>
 <div class="ui-background">
     <x-key-services :$coes />
 </div>   
