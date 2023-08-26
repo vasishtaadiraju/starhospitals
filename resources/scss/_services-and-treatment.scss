@@ -8,7 +8,7 @@
 .s-t{
     @include centerSection;
     width: 54.75%;
-    min-height: 10rem;
+    // min-height: 10rem;
     // border: 1px solid blue;
     @include media('sm-mob')
                 {
