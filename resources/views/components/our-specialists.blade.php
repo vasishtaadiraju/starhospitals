@@ -1,5 +1,5 @@
 <div class="ui-background" id="find-doctors">
-    <x-heading :title="'Meet Our Specialists'" :description="$content->meet_our_specialist_text" />
+    <x-heading :title="'Meet Our Specialists'" :description="''" />
     <x-filter :$content :$branches :$coes />
     <div style="height:1em"></div>
     <div class="doctors doctors--primary specialists-slider">
