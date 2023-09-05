@@ -322,31 +322,60 @@ $fixed-header-height: 6.5rem;
             overflow: hidden;
             &--logo {
                 // flex: 0 0 %;
-                svg {
-                    -webkit-transition: all 0.5s;
-                    -moz-transition: all 0.5s;
-                    transition: all 0.5s;
-                    width: 100% !important;
-                    height: 100%;
+                // svg {
+                //     -webkit-transition: all 0.5s;
+                //     -moz-transition: all 0.5s;
+                //     transition: all 0.5s;
+                //     width: 100% !important;
+                //     height: 100%;
+                // }
+                    // width: 100%;
+                img{
+                    width:90px;
+                    height: 90px;
+                    z-index: 3501;
+                    @include media("sm-mob") {
+                        width: 100%;
+                    }
+                    @include media("md-mob") {
+                        width: 100%;
+                    }
+                    @include media("lg-mob") {
+                        width: 100%;
+                    }
+        
+                    @include media("x-sm-tab") {
+                        width: 100%;
+                    }
+                    @include media("md-tab") {
+                        width: 100%;
+                    }
+                    @include media("lg-tab") {
+                        width: 100%;
+                    }
+
                 }
 
                 &--fixed {
                     img {
-                        width: 80%;
-                        height: 100%;
+                        width: 80px;
+                        height:80px;
                     }
                 }
             }
             &--emergency {
                 flex: 0 0 calc(60% / 4);
                 @include media("sm-mob") {
-                    flex: 0 0 40%;
+                    flex: 0 0 49%;
+                    margin-left: 1em;
                 }
                 @include media("md-mob") {
-                    flex: 0 0 40%;
+                    flex: 0 0 49%;
+                    margin-left: 1em;
                 }
                 @include media("lg-mob") {
-                    flex: 0 0 40%;
+                    flex: 0 0 49%;
+                    margin-left: 1em;
                 }
                 @include media("x-sm-tab") {
                     flex: 0 0 35%;
@@ -399,12 +428,15 @@ $fixed-header-height: 6.5rem;
                         line-height: 22px;
                         @include media("sm-mob") {
                             line-height: 15px;
+                            font-size: 13px !important;
                         }
                         @include media("md-mob") {
                             line-height: 15px;
+                            font-size: 13px !important;
                         }
                         @include media("lg-mob") {
                             line-height: 15px;
+                            font-size: 13px !important;
                         }
                         span {
                             @include font-family(700);
@@ -443,7 +475,7 @@ $fixed-header-height: 6.5rem;
             }
             &--mob-nav {
                 display: flex;
-                justify-content: space-around;
+                justify-content: flex-start;
                 align-items: center;
                 // gap: 1em;
                 @include media("sm-tab") {
@@ -613,6 +645,8 @@ $fixed-header-height: 6.5rem;
         &__options {
             @include centerSection;
             // margin: 0px;
+            width: 91%;
+            margin-left: 7.5%;
             padding: 0px;
             display: flex;
             justify-content: space-between;
@@ -1234,7 +1268,7 @@ $fixed-header-height: 6.5rem;
 
         &--fixed {
             background-color: transparent;
-            flex: 0 0 90%;
+            flex: 0 0 70%;
             // overflow-x: hidden;
             display: none;
             // padding: 5em 0px;
@@ -1337,28 +1371,34 @@ $fixed-header-height: 6.5rem;
 }
 
 .centre-mega-container{
-    margin-left:-200px;
+    margin-left:50vw;
+    transform: translate(-57vw)  !important;
+
+    &--fixed{
+        margin-left: 35vw;
+       
+    }
     @include media("sm-mob") {
-        margin-left: initial;
+        // margin-left: initial;
         
     }
     @include media("md-mob") {
-        margin-left: initial;
+        // margin-left: initial;
     }
     @include media("lg-mob") {
-        margin-left: initial;
+        // margin-left: initial;
         
     }
     @include media("x-sm-tab") {
-        margin-left: initial;
+        // margin-left: initial;
         
     }
     @include media("sm-tab") {
-        margin-left: initial;
+        // margin-left: initial;
         
     }
     @include media("lg-tab") {
-        margin-left: initial;
+        // margin-left: initial;
         
     }
 
