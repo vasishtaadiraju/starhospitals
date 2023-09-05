@@ -461,7 +461,9 @@
                         <li class="footer__columns__option__item"><a href="{{route('contact')}}">Contact</a></li>
                         <li class="footer__columns__option__item"><a href="{{route('international_patient')}}">International Patients</a></li>
                         <li class="footer__columns__option__item"><a href="{{route('condition.landing')}}">Treatments & Tests</a></li>
-                      {{--  <li class="footer__columns__option__item"><a href="">Admission & Discharge Process</a>
+                        <li class="footer__columns__option__item"><a href="#">Bio Medical Waste</a></li>
+                        
+                        {{--  <li class="footer__columns__option__item"><a href="">Admission & Discharge Process</a>
                         </li>
                         <li class="footer__columns__option__item"><a href="">Insurance & Empanelment</a></li>
                         <li class="footer__columns__option__item"><a href="">Patient Guide</a></li>

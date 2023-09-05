@@ -2,8 +2,8 @@
 @section('css')
     @vite(['resources/scss/find-doctor.scss', 'resources/js/condition-landing.js'])
 @endsection
-@section('meta-title',"'Advanced Treatments and Tests at STAR Hospitals - Book Now'")
-@section('meta-description',"'At STAR Hospitals, experience the latest, advanced and innovative treatments and tests for safe and faster recovery. Experience top-tier healthcare for your well-being.'")
+@section('meta-title',"Advanced Treatments and Tests at STAR Hospitals - Book Now")
+@section('meta-description',"At STAR Hospitals, experience the latest, advanced and innovative treatments and tests for safe and faster recovery. Experience top-tier healthcare for your well-being.")
 @section('content')
 <x-banner :imgurl="'condition'" :text="'Treatments & Tests'" :$breadcrum/>
 
