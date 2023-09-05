@@ -77,7 +77,7 @@
                 <img class="header__main__card--mob-hide" src="" data-src="{{ Vite::asset('resources/images/logo/15 Years.png') }}" alt="">
 
                 <img class="header__main__card--mob-hide" src="" data-src="{{ Vite::asset('resources/images/logo/NABH.png') }}" alt="">
-                <img class="header__main__card--mob-hide" src="" data-src="{{ Vite::asset('resources\images\logo\Certifed.png') }}" alt="">
+                <img class="header__main__card--mob-hide" src="" data-src="{{ Vite::asset('resources/images/logo/Certifed.png') }}" alt="">
 
 
             </a>
@@ -560,7 +560,7 @@
                             <img src="" data-src="{{ Vite::asset('resources/images/logo/15 Years.png') }}" alt="">
             
                             <img src="" data-src="{{ Vite::asset('resources/images/logo/NABH.png') }}" alt="">
-                            <img src="" data-src="{{ Vite::asset('resources\images\logo\Certifed.png') }}" alt="">
+                            <img src="" data-src="{{ Vite::asset('resources/images/logo/Certifed.png') }}" alt="">
             
             
                         </a>
