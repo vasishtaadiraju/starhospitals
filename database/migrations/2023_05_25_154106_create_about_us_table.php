@@ -27,6 +27,8 @@ return new class extends Migration
             $table->string('our_locations_text')->nullable();
             $table->string('photo_gallery_text')->nullable();
             $table->string('faq_text')->nullable();
+            $table->string('meta_title')->nullable();
+            $table->text('meta_description')->nullable();
             $table->timestamps();
         });
     }

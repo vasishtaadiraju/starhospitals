@@ -54,7 +54,8 @@ class AboutUs extends Resource
             new Panel('About', $this->about()),
             new Panel('Our Locations', $this->text('our_locations')),
             new Panel('Photo Gallery', $this->text('photo_gallery')),
-            new Panel('FAQ', $this->text('faq'))
+            new Panel('FAQ', $this->text('faq')),
+            new Panel('SEO', $this->seo()),
         ];
     }
 
@@ -128,6 +129,20 @@ class AboutUs extends Resource
                 ->rows(2)
                 ->hideFromIndex()
                 ->rules('nullable', 'string')
+        ];
+    }
+
+    protected function seo()
+    {
+        return [
+            Text::make('Meta Title', 'meta_title')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:255'),
+
+            Textarea::make('Meta Description', 'meta_description')
+                ->rows(3)
+                ->hideFromIndex()
+                ->rules('nullable', 'string'),
         ];
     }
 

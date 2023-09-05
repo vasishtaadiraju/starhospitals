@@ -35,6 +35,8 @@ return new class extends Migration
             $table->text('reviews_text')->nullable();
             $table->text('enquiry_form_text')->nullable();
             $table->text('faq_text')->nullable();
+            $table->string('meta_title')->nullable();
+            $table->text('meta_description')->nullable();
             $table->timestamps();
         });
     }

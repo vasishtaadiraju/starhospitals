@@ -59,7 +59,8 @@ class Homepage extends Resource
             new Panel('Reviews', $this->text('review')),
             new Panel('Blogs', $this->text('blog')),
             new Panel('Media', $this->text('media')),
-            new Panel('Contact', $this->text('contact'))
+            new Panel('Contact', $this->text('contact')),
+            new Panel('SEO', $this->seo()),
         ];
     }
 
@@ -166,6 +167,20 @@ class Homepage extends Resource
                 ->rows(2)
                 ->hideFromIndex()
                 ->rules('nullable', 'string')
+        ];
+    }
+
+    protected function seo()
+    {
+        return [
+            Text::make('Meta Title', 'meta_title')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:255'),
+
+            Textarea::make('Meta Description', 'meta_description')
+                ->rows(3)
+                ->hideFromIndex()
+                ->rules('nullable', 'string'),
         ];
     }
 

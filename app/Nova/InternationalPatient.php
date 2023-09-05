@@ -57,6 +57,7 @@ class InternationalPatient extends Resource
             new Panel('Reviews', $this->reviews()),
             new Panel('Enquiry Form', $this->enquiryForm()),
             new Panel('FAQ', $this->faq()),
+            new Panel('SEO', $this->seo()),
         ];
     }
 
@@ -155,6 +156,20 @@ class InternationalPatient extends Resource
     {
         return [
             Textarea::make('Text', 'faq_text')
+                ->hideFromIndex()
+                ->rules('nullable', 'string'),
+        ];
+    }
+
+    protected function seo()
+    {
+        return [
+            Text::make('Meta Title', 'meta_title')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:255'),
+
+            Textarea::make('Meta Description', 'meta_description')
+                ->rows(3)
                 ->hideFromIndex()
                 ->rules('nullable', 'string'),
         ];

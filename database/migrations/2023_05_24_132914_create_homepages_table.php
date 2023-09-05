@@ -59,6 +59,8 @@ return new class extends Migration
             $table->text('blog_text')->nullable();
             $table->text('media_text')->nullable();
             $table->text('contact_text')->nullable();
+            $table->string('meta_title')->nullable();
+            $table->text('meta_description')->nullable();
             $table->timestamps();
         });
     }
