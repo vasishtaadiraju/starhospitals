@@ -2,6 +2,8 @@
 @section('css')
     @vite(['resources/scss/branch.scss', 'resources/js/specialists.js'])
 @endsection
+@section('meta-title',$content->meta_title)
+@section('meta-description',$content->meta_description)
 @section('content')
     <x-banner :imgurl="config('variables.asset') . $content->banner_desktop" :text="$content->banner_title" :$breadcrum />
     <div class="ui-background">

@@ -452,7 +452,7 @@
 
         <div class="footer__columns">
             <ul class="footer__columns__option">
-                <li class="footer__columns__option__label footer__columns__option__label--dropdown">Patient Care & Services
+                <li class="footer__columns__option__label footer__columns__option__label--dropdown">Important Links
                     <ul class="footer__columns__option__label--dropdown__option">
                         <li class="footer__columns__option__item"><a href="{{route('find-doctor')}}">Find a Doctor</a></li>
                         {{-- <li class="footer__columns__option__item"><a href="">Book a Video Consultation</a></li> --}}

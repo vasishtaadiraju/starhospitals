@@ -2,6 +2,8 @@
 @section('css')
     @vite(['resources/scss/condition.scss', 'resources/js/condition.js'])
 @endsection
+@section('meta-title',$content->meta_title)
+@section('meta-description',$content->meta_description)
 @section('content')
     {{-- <x-banner/> --}}
 <x-banner :imgurl="'condition'" :text="$content->name" :$breadcrum/>

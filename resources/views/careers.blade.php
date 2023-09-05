@@ -2,6 +2,7 @@
 @section('css')
     @vite(['resources/scss/career.scss', 'resources/js/app.js'])
 @endsection
+
 @section('content')
     <x-banner :imgurl="Vite::asset('resources/images/banner/international/Rectangle 4.png')" :text="'International Patients | Star Hospitals'" :$breadcrum />
     <x-gap />

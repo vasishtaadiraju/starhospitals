@@ -2,6 +2,8 @@
 @section('css')
 @vite(['resources/scss/about.scss', 'resources/js/about.js'])
 @endsection
+@section('meta-title',$about->meta_title)
+@section('meta-description',$about->meta_description)
 @section('content')
 <x-banner :imgurl="config('variables.asset') .$about->banner_desktop" :text="$about->banner_text" :$breadcrum/>
 <x-gap/>

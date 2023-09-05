@@ -29,8 +29,8 @@
                     
              </div>
                 <div class="highlights__card__text">
-                    <h1>15+</h1>
-                    <p>Years of Experience</p>
+                    <h1>150+</h1>
+                    <p>Doctors</p>
                 </div>
         </div>
         <div class="highlights__card">

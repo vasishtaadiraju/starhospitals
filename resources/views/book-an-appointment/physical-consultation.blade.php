@@ -4,6 +4,8 @@
     'resources/js/video-consultation.js'
     ])
 @endsection
+@section('meta-title',$content->meta_title)
+@section('meta-description',$content->meta_description)
 @section('content')
     {{-- <x-gap/> --}}
     {!! $breadcrum !!}

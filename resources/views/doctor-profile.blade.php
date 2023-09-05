@@ -2,6 +2,8 @@
 @section('css')
     @vite(['resources/scss/doctor-profile.scss', 'resources/js/doctor-profile.js'])
 @endsection
+@section('meta-title',$content->meta_title)
+@section('meta-description',$content->meta_description)
 @section('content')
     <x-banner :imgurl="Vite::asset('resources/images/banner/doc-profile.png')" :text="'Doctors | Star Hospitals'" :$breadcrum />
 

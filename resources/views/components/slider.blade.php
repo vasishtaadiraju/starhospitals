@@ -12,7 +12,7 @@
 
                 <p>{{$content->banner1_description}}</p>
                 
-                <a href="#coe-list"  class="scroll-to-view" class="btn-primary">Explore More</a>
+                {{-- <a href="#coe-list"  class="scroll-to-view" class="btn-primary">Explore More</a> --}}
             </div>
            
             </div>
@@ -29,7 +29,7 @@
 
                 <p>{{$content->banner2_description}}</p>
                 
-                <a href="{{$content->banner2_link}}" class="btn-primary">Explore More</a>
+                {{-- <a href="{{$content->banner2_link}}" class="btn-primary">Explore More</a> --}}
             </div>
             </div>
 
@@ -45,7 +45,7 @@
 
                 <p>{{$content->banner3_description}}</p>
                 
-                <a href="{{$content->banner3_link}}" class="btn-primary">Explore More</a>
+                {{-- <a href="{{$content->banner3_link}}" class="btn-primary">Explore More</a> --}}
             </div>
             </div>
 
@@ -61,7 +61,7 @@
 
                 <p>{{$content->banner4_description}}</p>
                 
-                <a href="{{$content->banner4_link}}" class="btn-primary">Explore More</a>
+                {{-- <a href="{{$content->banner4_link}}" class="btn-primary">Explore More</a> --}}
             </div>
             </div>
 

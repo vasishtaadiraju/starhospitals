@@ -2,6 +2,8 @@
 @section('css')
 @vite(['resources/scss/international-patients.scss', 'resources/js/int-patients.js'])
 @endsection
+@section('meta-title',$content->meta_title)
+@section('meta-description',$content->meta_description)
 @section('content')
 <x-banner :imgurl="config('variables.asset') .$content->banner_desktop" :text="$content->banner_text" :$breadcrum/>
 <x-int-highlight :$content/>
