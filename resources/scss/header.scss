@@ -360,7 +360,7 @@ $fixed-header-height: 6.5rem;
                 &--fixed {
                     img {
                         width: 80%;
-                        height:80px;
+                        height:50px !important;
                     }
                 }
             }
@@ -1269,7 +1269,7 @@ $fixed-header-height: 6.5rem;
 
         &--fixed {
             background-color: transparent;
-            flex: 0 0 70%;
+            flex: 0 0 73%;
             // overflow-x: hidden;
             display: none;
             // padding: 5em 0px;
@@ -1404,3 +1404,16 @@ $fixed-header-height: 6.5rem;
     }
 
 }
+
+
+.header__main--fixed{
+    .header__main__card--logo
+    {
+        img{
+            width: 100%;
+            height: 80px !important;
+            
+        }
+        
+    }
+} 

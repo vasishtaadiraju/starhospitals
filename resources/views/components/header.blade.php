@@ -8,7 +8,7 @@
 
         <div class="header__main__card header__main__card--logo">
             {{-- <a href="/"> <img  src="" data-src="{{ Vite::asset('resources/images/logo.svg') }}" alt=""> </a> --}}
-            <div href="/" style="display:flex;gap:1em;align-items:center;">
+            <div href="/" style="display:flex;gap:1.5em;align-items:center;">
                 {{-- <svg class="" width="150" height="100" viewBox="0 0 150 100" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1079_3)">
@@ -74,10 +74,10 @@
                     </defs>
                 </svg> --}}
                 <a href="/"><img class="" src="" data-src="{{Vite::asset('resources/images/logo.svg')}}" alt=""></a>
-                <a href="/"> <img class="header__main__card--mob-hide" src="" data-src="{{ Vite::asset('resources/images/logo/15 Years-exc.png') }}" alt=""> </a>
+                <a href="/" class="header__main__card--mob-hide"> <img  src="" data-src="{{ Vite::asset('resources/images/logo/15 Years-exc.png') }}" alt=""> </a>
 
-                <a href="https://nabh.co/"  target="_blank"> <img class="header__main__card--mob-hide" src="" data-src="{{ Vite::asset('resources/images/logo/NABH-nabh.png') }}" alt=""> </a>
-                <a href="https://nabl-india.org/" target="_blank"> <img class="header__main__card--mob-hide" src="" data-src="{{ Vite::asset('resources/images/logo/Certifed-nabl.png') }}" alt=""></a> 
+                <a href="https://nabh.co/" class="header__main__card--mob-hide"  target="_blank"> <img src="" data-src="{{ Vite::asset('resources/images/logo/NABH-nabh.png') }}" alt=""> </a>
+                <a href="https://nabl-india.org/" class="header__main__card--mob-hide" target="_blank"> <img  src="" data-src="{{ Vite::asset('resources/images/logo/Certifed-nabl.png') }}" alt=""></a> 
 
 
             </div>
