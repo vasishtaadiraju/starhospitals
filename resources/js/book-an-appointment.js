@@ -142,7 +142,7 @@ export async function printDoctors(url, body) {
             result.doctor.large_image
         }" alt="">
          <div class="doctors-card__lt__details">
-             <p>${result.doctor.experience} yrs <span>Experience</span></p>
+             <p>${result.doctor.experience != null ? result.doctor.experience + ` yrs <span>Experience</span>` : ``} </p>
 
              ${
                  result.doctor.fee != null
@@ -161,7 +161,7 @@ export async function printDoctors(url, body) {
             result.doctor.slug
         }"> ${result.doctor.designation} </a></p>
          <p class="doctors-card__rt__speciality"><a href="">${coeName.toString()}</a></p>
-         <p class="doctors-card__rt__location" style="color:black">${branchName.toString().replace(' ,','')}</p>
+         <p class="doctors-card__rt__location" >${branchName.toString().replace(' ,','')}</p>
          </div>
          <div>
          <a href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}" class="doctors-card__rt__btn">

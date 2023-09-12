@@ -6,7 +6,7 @@
 @section('meta-description',"Connect with STAR Hospitals for exceptional medical care. Our skilled team is here to provide for your healthcare needs and address your concerns with utmost care and expertise.")
 
 @section('content')
-<x-banner :imgurl="Vite::asset('resources/images/banner/contact-us.png')" :text="'Quality Healthcare Services in Hyderabad | Star Hospitals'" :$breadcrum/>
+<x-banner :imgurl="Vite::asset('resources/images/banner/contact.webp')" :text="'Quality Healthcare Services in Hyderabad | Star Hospitals'" :$breadcrum/>
 
 <div class="ui-background">
 

@@ -331,7 +331,8 @@ $fixed-header-height: 6.5rem;
                 // }
                     // width: 100%;
                 img{
-                    width:90px;
+                    width:95%;
+                    // aspect-ratio: 1/2;
                     height: 90px;
                     z-index: 3501;
                     @include media("sm-mob") {
@@ -358,7 +359,7 @@ $fixed-header-height: 6.5rem;
 
                 &--fixed {
                     img {
-                        width: 80px;
+                        width: 80%;
                         height:80px;
                     }
                 }

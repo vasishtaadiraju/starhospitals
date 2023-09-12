@@ -47,8 +47,8 @@
                         </svg>
                         Our Locations
                         <ul>
-                            <li> <a href="/locations/banjara-hills"> Banjara Hills </a></li>
-                            <li> <a href="/locations/financial-district">Financial District </a> </li>
+                            <li> <a target="_blank" href="https://goo.gl/maps/cQbms98heivaATpd7"> Banjara Hills </a></li>
+                            <li> <a target="_blank" href="https://goo.gl/maps/5et6DaCcDYrz1kfP8">Financial District </a> </li>
                         </ul>
                     </li>
                 </ul>
