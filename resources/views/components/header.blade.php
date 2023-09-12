@@ -241,7 +241,7 @@
                         
 
                 </a>
-                <a target="_blank" href="https://www.instagram.com/starhospitalsin/">
+                <a target="_blank" href="https://www.instagram.com/starhospitals.in/">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -569,7 +569,7 @@
                                 </defs>
                             </svg> --}}
                             {{-- <img class="" src="" data-src="{{Vite::asset('resources/images/logo.svg')}}" alt=""> --}}
-                            <a href="/"> <img  src="" data-src="{{ Vite::asset('resources/images/logo/15 Years.png') }}" alt=""> </a>
+                            <a href="/"> <img  src="" data-src="{{ Vite::asset('resources/images/logo/15 Years-exc.png') }}" alt=""> </a>
 
                             <a href="https://nabh.co/"  target="_blank"> <img  src="" data-src="{{ Vite::asset('resources/images/logo/NABH.png') }}" alt=""> </a>
                               <a href="https://nabl-india.org/" target="_blank"> <img  src="" data-src="{{ Vite::asset('resources/images/logo/Certifed.png') }}" alt=""></a> 
