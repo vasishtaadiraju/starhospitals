@@ -571,8 +571,8 @@
                             {{-- <img class="" src="" data-src="{{Vite::asset('resources/images/logo.svg')}}" alt=""> --}}
                             <a href="/"> <img  src="" data-src="{{ Vite::asset('resources/images/logo/15 Years-exc.png') }}" alt=""> </a>
 
-                            <a href="https://nabh.co/"  target="_blank"> <img  src="" data-src="{{ Vite::asset('resources/images/logo/NABH.png') }}" alt=""> </a>
-                              <a href="https://nabl-india.org/" target="_blank"> <img  src="" data-src="{{ Vite::asset('resources/images/logo/Certifed.png') }}" alt=""></a> 
+                            <a href="https://nabh.co/"  target="_blank"> <img  src="" data-src="{{ Vite::asset('resources/images/logo/NABH-nabh.png') }}" alt=""> </a>
+                              <a href="https://nabl-india.org/" target="_blank"> <img  src="" data-src="{{ Vite::asset('resources/images/logo/Certifed-nabl.png') }}" alt=""></a> 
                 
             
             
