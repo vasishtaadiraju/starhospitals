@@ -157,7 +157,7 @@ export async function printDoctors(url, body) {
          <p class="doctors-card__rt__designation"><a href="/doctors/${branch_slug}/${speciality_slug}/${
             result.doctor.slug
         }"> ${result.doctor.designation} </a></p>
-         <p class="doctors-card__rt__speciality"><a href="">${coeName.toString()}</a></p>
+         <p class="doctors-card__rt__speciality"><a href="">${coeName.toString().replace(' ,','')}</a></p>
          <p class="doctors-card__rt__location"> <a href="">${branchName.toString().replace(' ,','')}</a></p>
 
          </div>

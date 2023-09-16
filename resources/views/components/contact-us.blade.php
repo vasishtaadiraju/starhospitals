@@ -18,7 +18,8 @@
                     </svg>
                     Call Us
                 <ul>
-                    <li><a href="tel:1800 102 7827">1800 102 7827</a><br><br><a href="tel:9100911911">9100911911</a></li>
+                    <li><a href="tel:1800 102 7827">1800 102 7827</a></li>
+                    <li><a href="tel:9100911911">9100911911</a></li>
                 </ul>
             </li>
             <li class="consultation__card__contact-info__list__item">
