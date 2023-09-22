@@ -95,7 +95,7 @@
             <ul class="header__nav__options">
                 {{-- header__nav__option--dropdown--mega --}}
                 {{-- dropdown-items --}}
-                {{-- <li
+                <li
                     class="header__nav__option header__nav__option--dropdown header__nav__option--dropdown--fixed  header__nav__option--dropdown--mega">
                     <a href="#coe-list" class="scroll-to-view">Specialities</a>
                     <ul class="header__nav__option--dropdown__options  header__nav__option--dropdown__options--mega centre-mega-container centre-mega-container--fixed">
@@ -116,9 +116,7 @@
                             </li>
                         @endforeach
                     </ul>
-                </li> --}}
-                <li class="header__nav__option"><a href="/">Home</a></li>
-
+                </li>
                 <li
                     class="header__nav__option header__nav__option--dropdown header__nav__option--dropdown--fixed  header__nav__option--dropdown--mega">
                     <a href="#" class="scroll-to-view">Doctors</a>
@@ -147,14 +145,13 @@
                     </ul>
                 </li>
                 
-                {{-- <li class="header__nav__option">
+                <li class="header__nav__option">
                     <a href="{{ route('condition.landing') }}">Treatments</a>
 
-                </li> --}}
-
-                {{-- <li class="header__nav__option">
+                </li>
+                <li class="header__nav__option">
                     <a href="{{ route('international_patient') }}">International Patients</a>
-                </li> --}}
+                </li>
                 {{-- <li class="header__nav__option">
                     <a href="#">Health Checkups</a>
                 </li> --}}
@@ -186,8 +183,6 @@
                 <li class="header__nav__option">
                     <a href="{{ route('about') }}">About</a>
                 </li>
-                <li class="header__nav__option"><a href="{{route('contact')}}">Contact</a></li>
-
 
             </ul>
         </div>
@@ -330,11 +325,12 @@
     </div>
     <div class="header__nav " id="star-navbar">
         <ul class="header__nav__options">
-            {{-- <li class="header__nav__option header__nav__option--dropdown header__nav__option--dropdown--mega">
+            <li class="header__nav__option header__nav__option--dropdown header__nav__option--dropdown--mega">
                 <a href="#coe-list" class="scroll-to-view ">Specialities</a>
                 <ul
                     class="header__nav__option--dropdown__options header__nav__option--dropdown__options--mega dropdown-items coe-icons">
-                  
+                    {{-- header__nav__option--nested-dropdown
+                    header__nav__option--dropdown  --}}
                     @foreach ($coes as $item)
                         <li class="@if (count($item->specialities) > 0) header__nav__option--nested-dropdown @endif">
                             <a
@@ -355,15 +351,21 @@
                         </li>
                     @endforeach
 
-            
+                    {{-- <li class=""><a href="#">Test 2</a>
+                        <ul>
+                            <li><a href="#">Shibli</a></li>
+                            <li><a href="#">Abc</a></li>
+                            <li><a href="#">Abc</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Abc</a></li>
+                    <li><a href="#">Abc</a></li> --}}
                 </ul>
-            </li> --}}
-            <li class="header__nav__option"><a href="/">Home</a></li>
-
+            </li>
             <li
                     class="header__nav__option header__nav__option--dropdown   header__nav__option--dropdown--mega">
                     <a href="#" class="scroll-to-view">Doctors</a>
-                    <ul class="header__nav__option--dropdown__options centre-mega-container header__nav__option--dropdown__options--mega " >
+                    <ul class="header__nav__option--dropdown__options  header__nav__option--dropdown__options--mega centre-mega-container" >
                         @foreach ($specialists as $item)
 
                             @foreach ($item->specialities as $speciality)
@@ -387,12 +389,12 @@
                         @endforeach
                     </ul>
                 </li>
-            {{-- <li class="header__nav__option">
+            <li class="header__nav__option">
                 <a href="{{ route('condition.landing') }}">Treatments</a>
-            </li> --}}
-            {{-- <li class="header__nav__option">
+            </li>
+            <li class="header__nav__option">
                 <a href="{{ route('international_patient') }}">International Patients</a>
-            </li> --}}
+            </li>
             {{-- <li class="header__nav__option">
                 <a href="#">Health Checkups</a>
             </li> --}}
@@ -426,7 +428,6 @@
             <li class="header__nav__option">
                 <a href="{{ route('about') }}">About</a>
             </li>
-            <li class="header__nav__option"><a href="{{route('contact')}}">Contact</a></li>
 
             <li class="header__nav__option">
                 <div class="header__main__card header__main__card--request-callback header__main__card--desk-hide">

@@ -459,8 +459,8 @@
                         <li class="footer__columns__option__item"><a href="{{route('about')}}"> About Us</a></li>
                         
                         <li class="footer__columns__option__item"><a href="{{route('contact')}}">Contact</a></li>
-                        <li class="footer__columns__option__item"><a href="{{route('international_patient')}}">International Patients</a></li>
-                        <li class="footer__columns__option__item"><a href="{{route('condition.landing')}}">Treatments & Tests</a></li>
+                        {{-- <li class="footer__columns__option__item"><a href="{{route('international_patient')}}">International Patients</a></li> --}}
+                        {{-- <li class="footer__columns__option__item"><a href="{{route('condition.landing')}}">Treatments & Tests</a></li> --}}
                         <li class="footer__columns__option__item"><a href="#">Bio Medical Waste</a></li>
                         
                         {{--  <li class="footer__columns__option__item"><a href="">Admission & Discharge Process</a>
@@ -475,60 +475,28 @@
                 </li>
 
             </ul>
-            {{-- <div class="footer__columns"> --}}
-                <ul class="footer__columns__option">
-      
-                      <li class="footer__columns__option__label footer__columns__option__label--dropdown">Locations
-                          <ul class="footer__columns__option__label--dropdown__option">
-                              @foreach ($branches as $item)
-                              <li class="footer__columns__option__item"><a href="{{route('branch',$item->slug)}}">{{$item->name}}</a></li>
-                                  
-                              @endforeach
-                               {{-- <li class="footer__columns__option__item"><a href="">Financial District</a></li>  --}}
-                          </ul>
-                      </li>
-                  </ul> 
-            {{-- </div> --}}
+           
         </div>
 
         
-
-
-
-
-        <div class="footer__columns">
-            <ul class="footer__columns__option">
-                <li class="footer__columns__option__label footer__columns__option__label--dropdown" data-speciality="second-speciality">Specialities
-
-
-                    @php
-                        
-                        $i = 0;
-                    @endphp
-                    <ul class="footer__columns__option__label--dropdown__option">
-                        @foreach ($coes as $item)
-
-                        @foreach ($item->specialities as $speciality)
-                        @if($i <= 14)
-                        <li class="footer__columns__option__item"><a href="{{route('speciality',$speciality->slug)}}">{{$speciality->name}}</a></li>   
-                        @php
-                            $i++;
-                        @endphp
-                        @endif
-                        @endforeach
-                        @endforeach
-                        {{-- <li class="footer__columns__option__item"><a href="">Emergency Services</a></li>
-                        <li class="footer__columns__option__item"><a href="">Gastroenterology</a></li>
-                        <li class="footer__columns__option__item"><a href="">Neurology</a></li>
-                        <li class="footer__columns__option__item"><a href="">Nephrology</a></li>
-                        <li class="footer__columns__option__item"><a href="">Pulmonology</a></li> --}}
-
-                    </ul>
-                </li>
-
+ <div class="footer__columns">
+    <ul class="footer__columns__option">
+      
+        <li class="footer__columns__option__label footer__columns__option__label--dropdown">Locations
+            <ul class="footer__columns__option__label--dropdown__option">
+                @foreach ($branches as $item)
+                <li class="footer__columns__option__item"><a href="{{route('branch',$item->slug)}}">{{$item->name}}</a></li>
+                    
+                @endforeach
+                 {{-- <li class="footer__columns__option__item"><a href="">Financial District</a></li>  --}}
             </ul>
-            
-        </div>
+        </li>
+    </ul> 
+</div>
+
+
+
+       
 
 
 
@@ -562,15 +530,9 @@
 
         <div class="footer__columns">
             <ul class="footer__columns__option">
-                <li class="footer__columns__option__label" id="second-speciality">
+                {{-- <li class="footer__columns__option__label" id="second-speciality">
                     <ul class="footer__columns__option__label--dropdown__option speciality-second-column" style="">
-                        {{-- <li class="footer__columns__option__item"><a href="">Cardiologists in Hyderabad</a>
-                        </li>
-                        <li class="footer__columns__option__item"><a href="">Gastroenterologists in
-                                Hyderabad</a></li>
-                        <li class="footer__columns__option__item"><a href="">Neurologists in Hyderabad</a></li>
-                        <li class="footer__columns__option__item"><a href="">Nephrologists in Hyderabad</a>
-                        </li>--}}
+                      
                         
 
                         @php
@@ -588,7 +550,7 @@
                         @endforeach
                         @endforeach
                     </ul>
-                </li>
+                </li> --}}
 
             </ul>
         </div>

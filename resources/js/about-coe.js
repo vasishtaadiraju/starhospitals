@@ -23,16 +23,16 @@ ${response.data.homepage_description}
 
 
 
-${type == 'coe' ? `<a href="/specialities/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
-Learn More
-</a>` : `<a href="/specialities/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
-Learn More
-</a>`}
+
 
 
 </div>
 `
-
+// ${type == 'coe' ? `<a href="/specialities/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
+// Learn More
+// </a>` : `<a href="/specialities/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
+// Learn More
+// </a>`}
 
 let desktopHTML =  `<div class="coes__description__wrapper" >
 
@@ -246,12 +246,12 @@ ${response.data.homepage_description}
 <circle cx="2.5" cy="12.5" r="2.5" transform="rotate(90 2.5 12.5)" fill="#004E9E"/>
 </svg>
 </div>
-${type == 'coe' ? `<a href="/specialities/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
-Know More
-</a>` : `<a href="/specialities/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
-Know More
-</a>`}`
-
+`
+// ${type == 'coe' ? `<a href="/specialities/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
+// Know More
+// </a>` : `<a href="/specialities/${response.data.slug}" class="view-all-btn coes__description__wrapper__read-more-btn">
+// Know More
+// </a>`}
 
   return {
     'mobile':htmlData,

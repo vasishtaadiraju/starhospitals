@@ -36,20 +36,20 @@ Route::get('/find-a-doctor', function () {
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about');
 Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact');
 // Route::get('/centers-of-excellence/{slug}',[CoeController::class,'index'])->name('coe');
-Route::get('/specialities/{slug}', [SpecialityController::class, 'index'])->name('speciality');
+// Route::get('/specialities/{slug}', [SpecialityController::class, 'index'])->name('speciality');
 Route::post('/', [FormController::class, 'homeForm'])->name('home.form');
 // Route::post('/centers-of-excellence',[FormController::class,'talkToDoctor'])->name('coe.form');
 Route::post('/contact', [FormController::class, 'contactForm'])->name('contact.form');
 
 // ======================================Services and Treatment ============================
-Route::get('/treatments-tests', [ConditionsController::class, 'landingPage'])->name('condition.landing');
-Route::get('/tests-procedures/{slug}', [ConditionsController::class, 'index'])->name('condition');
-Route::get('/doctors-departments/{slug}', [ConditionsController::class, 'index'])->name('department');
-Route::get('/care-at-star-hospitals/{slug}', [ConditionsController::class, 'index'])->name('care');
+// Route::get('/treatments-tests', [ConditionsController::class, 'landingPage'])->name('condition.landing');
+// Route::get('/tests-procedures/{slug}', [ConditionsController::class, 'index'])->name('condition');
+// Route::get('/doctors-departments/{slug}', [ConditionsController::class, 'index'])->name('department');
+// Route::get('/care-at-star-hospitals/{slug}', [ConditionsController::class, 'index'])->name('care');
 // ==================================
 
 Route::get('/locations/{slug}', [BranchController::class, 'index'])->name('branch');
-Route::get('/international-patients', [InternationalPatientController::class, 'index'])->name('international_patient');
+// Route::get('/international-patients', [InternationalPatientController::class, 'index'])->name('international_patient');
 Route::get('/career', [CareerController::class, 'index'])->name('career');
 Route::get('/doctors/{branch_slug}/{speciality_slug}/{slug}', [DoctorController::class, 'index'])->name('doctor');
 Route::get('/specialists/{slug}/', [SpecialistController::class, 'index'])->name('specialist');

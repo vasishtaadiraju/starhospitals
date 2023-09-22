@@ -60,8 +60,7 @@ class DoctorController extends Controller
     <a href='#'>Doctors</a>
     <span>❯</span>
     <a href='/locations/{$branch_slug}'>{$branch->name}</a>
-    <span>❯</span>
-    <a href='/specialities/{$speciality->slug}'>{$speciality->name}</a>
+    
     <span>❯</span>
     <a href='#'>{$content->name}</a>
 </div>";
@@ -115,8 +114,6 @@ class DoctorController extends Controller
     <a href='#'>Book an Appointment</a>
     <span>❯</span>
     <a href='/locations/{$branch->slug}'>{$branch->name}</a>
-    <span>❯</span>
-    <a href='/specialities/{$speciality->slug}'>{$speciality->name}</a>
     <span>❯</span>
     <a href='#'>{$content->name}</a>
 </div>";

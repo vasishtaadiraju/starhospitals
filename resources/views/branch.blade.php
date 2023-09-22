@@ -133,8 +133,8 @@
 
 
 <x-gap/> --}}
-<x-key-services :coes='$content->coes' />
- <x-gap/>
+{{-- <x-key-services :coes='$content->coes' /> --}}
+ {{-- <x-gap/> --}}
  <div class="ui-background">
 <x-doctors :type="'flex'" :$branches  :$coes :title="'Book An Appointment'" :description="''"/>
  </div>
