@@ -5,26 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> Star Hospitals</title>
 <link rel="icon" href="https://webdesignzservice.in/projects/lp/starhospitals-lp/images/fav-icon.png" sizes="32x32" />
-<link href="brand/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="brand/lib/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-<link href="brand/lib/owl-carousel/owl.css" rel="stylesheet">
-<link href="brand/lib/Swiper/css/swiper.min.css" rel="stylesheet">
-<link href="brand/lib/owl-carousel/assets/owl.carousel.min.css" rel="stylesheet">
-<link href="brand/lib/vegas/vegas.min.css" rel="stylesheet">
-<link href="brand/lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-<link href="brand/lib/sweetalert/sweetalert2.min.css" rel="stylesheet">
-<link href="brand/lib/materialize-parallax/materialize-parallax.css" rel="stylesheet">
-<link href="brand/fonts/fontawesome-all.min.css" rel="stylesheet">
-<link href="brand/fonts/pe-icon-7-stroke.css" rel="stylesheet">
-<link href="brand/fonts/et-line-font.css" rel="stylesheet">
-<link href="brand/css/animate.css" rel="stylesheet">
-<link href="brand/css/main.css" rel="stylesheet">
-<link href="brand/css/rgen-grids.css" rel="stylesheet">
-<link href="brand/css/helper.css" rel="stylesheet">
-<link href="brand/css/responsive.css" rel="stylesheet">
-<link href="brand/css/themes/default.css" rel="stylesheet">
-<link href="brand/css/template-custom.css" rel="stylesheet">
-<link rel="stylesheet" href="brand/css/novi.css">
+<link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="lib/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<link href="lib/owl-carousel/owl.css" rel="stylesheet">
+<link href="lib/Swiper/css/swiper.min.css" rel="stylesheet">
+<link href="lib/owl-carousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="lib/vegas/vegas.min.css" rel="stylesheet">
+<link href="lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+<link href="lib/sweetalert/sweetalert2.min.css" rel="stylesheet">
+<link href="lib/materialize-parallax/materialize-parallax.css" rel="stylesheet">
+<link href="fonts/fontawesome-all.min.css" rel="stylesheet">
+<link href="fonts/pe-icon-7-stroke.css" rel="stylesheet">
+<link href="fonts/et-line-font.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+<link href="css/rgen-grids.css" rel="stylesheet">
+<link href="css/helper.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link href="css/themes/default.css" rel="stylesheet">
+<link href="css/template-custom.css" rel="stylesheet">
+<link rel="stylesheet" href="css/novi.css">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-585586121"></script>
@@ -57,7 +57,7 @@ gtag('config', 'AW-585586121/AxF2CIaq7aIYEMmrnZcC', {
       <div class="col-md-3 pos-rel"> <a href="tel:07969250193" class="nav-handle" style="
 
                      background: #1370b5; padding: 13px 11px; color: #ffffff; font-size: 14px; border-radius:50%;"><i class="fa fa-phone fa-fw fa-rotate-90" aria-hidden="true"></i></a>
-        <div class="header-logo-wrp  "> <a class="header-logo pd-tb-small" href="#"> <img src="brand/images/star-hospitals.png" alt="Brand logo"> </a> </div>
+        <div class="header-logo-wrp  "> <a class="header-logo pd-tb-small" href="#"> <img src="images/star-hospitals.png" alt="Brand logo"> </a> </div>
       </div>
       <div class="col-md-9 align-r m-content">
         <ul class="row gt20 justify-content-md-end mr-0 align-items-center">
@@ -104,7 +104,7 @@ gtag('config', 'AW-585586121/AxF2CIaq7aIYEMmrnZcC', {
                 <h1 style="font-size:16px;color:#FFFFFF;text-align: center;">
               </div>
             </div>
-            <form class="form-elements" action="brand/mail-form.php" method="POST">
+            <form class="form-elements" action="mail-form.php" method="POST">
             <input type="hidden" name="utm_source" required value="<?php echo (isset($_GET['utm_source']) && $_GET['utm_source']) ? $_GET['utm_source']: '';?>">
             <input type="hidden" name="utm_campaign" required value="<?php echo (isset($_GET['utm_campaign']) && $_GET['utm_campaign']) ? $_GET['utm_campaign']: '';?>">
             <input type="hidden" name="utm_medium" required value="<?php echo (isset($_GET['utm_medium']) && $_GET['utm_medium']) ? $_GET['utm_medium']: '';?>">
@@ -219,35 +219,35 @@ gtag('config', 'AW-585586121/AxF2CIaq7aIYEMmrnZcC', {
     <div class="row gt20 mb10 mr-b-601" data-rgen-sm="mr-b-30">
       <div class="col">
         <div class="info-obj img-t g30 mini align-c count-box bg-white shadow-tiny pd-mini">
-          <div class="info"> <img src="brand/images/icons/cardiac.png" width="64" heigh="64">
+          <div class="info"> <img src="images/icons/cardiac.png" width="64" heigh="64">
             <p class="title-sub f-2 small mr-0"  style="font-size: 13px;">Cardiac Sciences</p>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="info-obj img-t g30 mini align-c count-box bg-white shadow-tiny pd-mini">
-          <div class="info"> <img src="brand/images/icons/ent.png" width="64" heigh="64">
+          <div class="info"> <img src="images/icons/ent.png" width="64" heigh="64">
             <p class="title-sub f-2 small mr-0"  style="font-size: 13px;">ENT</p>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="info-obj img-t g30 mini align-c count-box bg-white shadow-tiny pd-mini">
-          <div class="info"> <img src="brand/images/icons/nephrology.png" width="64" heigh="64">
+          <div class="info"> <img src="images/icons/nephrology.png" width="64" heigh="64">
             <p class="title-sub f-2 small mr-0"  style="font-size: 13px;">Nephrology</p>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="info-obj img-t g30 mini align-c count-box bg-white shadow-tiny pd-mini">
-          <div class="info"> <img src="brand/images/icons/orthopaedics.png" width="64" heigh="64">
+          <div class="info"> <img src="images/icons/orthopaedics.png" width="64" heigh="64">
             <p class="title-sub f-2 small mr-0"  style="font-size: 13px;">Orthopaedics</p>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="info-obj img-t g30 mini align-c count-box bg-white shadow-tiny pd-mini">
-          <div class="info"> <img src="brand/images/icons/diabetology.png" width="64" heigh="64">
+          <div class="info"> <img src="images/icons/diabetology.png" width="64" heigh="64">
             <p class="title-sub f-2 small mr-0" style="font-size: 13px;">Diabetology</p>
           </div>
         </div>
@@ -256,35 +256,35 @@ gtag('config', 'AW-585586121/AxF2CIaq7aIYEMmrnZcC', {
     <div class="row gt20 mb10 mr-b-601" data-rgen-sm="mr-b-30">
       <div class="col">
         <div class="info-obj img-t g30 mini align-c count-box bg-white shadow-tiny pd-mini">
-          <div class="info"> <img src="brand/images/icons/pulmonology.png" width="64" heigh="64">
+          <div class="info"> <img src="images/icons/pulmonology.png" width="64" heigh="64">
             <p class="title-sub f-2 small mr-0" style="font-size: 13px;">Pulmonology</p>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="info-obj img-t g30 mini align-c count-box bg-white shadow-tiny pd-mini">
-          <div class="info"> <img src="brand/images/icons/rheumatology.png" width="64" heigh="64">
+          <div class="info"> <img src="images/icons/rheumatology.png" width="64" heigh="64">
             <p class="title-sub f-2 small mr-0" style="font-size: 13px;">Rheumatology</p>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="info-obj img-t g30 mini align-c count-box bg-white shadow-tiny pd-mini">
-          <div class="info"> <img src="brand/images/icons/gynaecology.png" width="64" heigh="64">
+          <div class="info"> <img src="images/icons/gynaecology.png" width="64" heigh="64">
             <p class="title-sub f-2 small mr-0" style="font-size: 13px;">Gynaecology</p>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="info-obj img-t g30 mini align-c count-box bg-white shadow-tiny pd-mini">
-          <div class="info"> <img src="brand/images/icons/oncology.png" width="64" heigh="64">
+          <div class="info"> <img src="images/icons/oncology.png" width="64" heigh="64">
             <p class="title-sub f-2 small mr-0" style="font-size: 13px;">Oncology</p>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="info-obj img-t g30 mini align-c count-box bg-white shadow-tiny pd-mini">
-          <div class="info"> <img src="brand/images/icons/dermatology.png" width="64" heigh="64">
+          <div class="info"> <img src="images/icons/dermatology.png" width="64" heigh="64">
             <p class="title-sub f-2 small mr-0" style="font-size: 13px;">Dermatology</p>
           </div>
         </div>
@@ -494,7 +494,7 @@ gtag('config', 'AW-585586121/AxF2CIaq7aIYEMmrnZcC', {
           <div class="lp-form-header-wrapper">
             <div class="lp-form-header-content-wrapper" style="padding: 1px 4px 4px; filter: none; background-image: none; background-color: rgb(255, 255, 255); background-position: 0% 0%; background-repeat: no-repeat;" data-hover-bg-color="rgba(255,255,255,1)" data-bg-color-type="solid"> </div>
           </div>
-          <form class="form-elements" action="brand/mail-form.php" method="POST">
+          <form class="form-elements" action="mail-form.php" method="POST">
           <input type="hidden" name="utm_source" required value="<?php echo (isset($_GET['utm_source']) && $_GET['utm_source']) ? $_GET['utm_source']: '';?>">
             <input type="hidden" name="utm_campaign" required value="<?php echo (isset($_GET['utm_campaign']) && $_GET['utm_campaign']) ? $_GET['utm_campaign']: '';?>">
             <input type="hidden" name="utm_medium" required value="<?php echo (isset($_GET['utm_medium']) && $_GET['utm_medium']) ? $_GET['utm_medium']: '';?>">
@@ -540,19 +540,19 @@ gtag('config', 'AW-585586121/AxF2CIaq7aIYEMmrnZcC', {
                 <div class="avl-regions-address pt-1">
                   <div class="ouc-s">
                     <div class="ouc">
-                      <div> <img src="brand/images/icons/beds.png" alt="Beds">
+                      <div> <img src="images/icons/beds.png" alt="Beds">
                         <p>350+</p>
                         <p>Beds</p>
                       </div>
                     </div>
                     <div class="ouc">
-                      <div> <img src="brand/images/icons/nurses.png" alt="Doctors">
+                      <div> <img src="images/icons/nurses.png" alt="Doctors">
                         <p>100+</p>
                         <p>Doctors</p>
                       </div>
                     </div>
                     <div class="ouc">
-                      <div> <img src="brand/images/icons/nurses.png" alt="nurses">
+                      <div> <img src="images/icons/nurses.png" alt="nurses">
                         <p>300+</p>
                         <p>Nurses</p>
                       </div>
@@ -562,7 +562,7 @@ gtag('config', 'AW-585586121/AxF2CIaq7aIYEMmrnZcC', {
                   <p>8-2-596/5, Road No. 10, Gaffar Khan Colony, Banjara Hills, Hyderabad, Telangana 500034</p>
                 </div>
               </div>
-              <div class="col-md-6"> <img src="brand/images/location/banjarahill.jpg" width="100%" height="200" alt=""> </div>
+              <div class="col-md-6"> <img src="images/location/banjarahill.jpg" width="100%" height="200" alt=""> </div>
             </div>
           </div>
           <div class="tab-pane fade" id="v-pills-financialdistrict" role="tabpanel" aria-labelledby="v-pills-financialdistrict-tab">
@@ -571,19 +571,19 @@ gtag('config', 'AW-585586121/AxF2CIaq7aIYEMmrnZcC', {
                 <div class="avl-regions-address pt-1">
                   <div class="ouc-s">
                     <div class="ouc">
-                      <div> <img src="brand/images/icons/beds.png" alt="Beds">
+                      <div> <img src="images/icons/beds.png" alt="Beds">
                         <p>350+</p>
                         <p>Beds</p>
                       </div>
                     </div>
                     <div class="ouc">
-                      <div> <img src="brand/images/icons/nurses.png" alt="Doctors">
+                      <div> <img src="images/icons/nurses.png" alt="Doctors">
                         <p>100+</p>
                         <p>Doctors</p>
                       </div>
                     </div>
                     <div class="ouc">
-                      <div> <img src="brand/images/icons/nurses.png" alt="nurses">
+                      <div> <img src="images/icons/nurses.png" alt="nurses">
                         <p>200+</p>
                         <p>Nurses</p>
                       </div>
@@ -593,7 +593,7 @@ gtag('config', 'AW-585586121/AxF2CIaq7aIYEMmrnZcC', {
                   <p>Address: Survey No 74, Financial District, Nanakramguda, Hyderabad, Telangana 500008</p>
                 </div>
               </div>
-              <div class="col-md-6"> <img src="brand/images/location/nanakramguda.jpg" width="100%" height="200" alt=""> </div>
+              <div class="col-md-6"> <img src="images/location/nanakramguda.jpg" width="100%" height="200" alt=""> </div>
             </div>
           </div>
         </div>
@@ -661,28 +661,28 @@ $('.counter-count').each(function () {
 })
 	
 </script> 
-<script src="brand/js/webfonts.js" type="text/javascript"></script> 
-<script src="brand/lib/jquery/jquery-3.3.1.min.js" type="text/javascript"></script> 
-<script src="brand/lib/jquery/jquery-migrate-3.0.0.min.js" type="text/javascript"></script> 
-<script src="brand/lib/jquery/popper.min.js" type="text/javascript"></script> 
-<script src="brand/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script> 
-<script src="brand/lib/jquery-smooth-scroll/jquery.smooth-scroll.min.js" type="text/javascript"></script> 
-<script src="brand/lib/jQuery-viewport-checker/jquery.viewportchecker.min.js" type="text/javascript"></script> 
-<script src="brand/lib/Swiper/js/swiper.min.js" type="text/javascript"></script> 
-<script src="brand/lib/owl-carousel/owl.js" type="text/javascript"></script> 
-<script src="brand/lib/Magnific-Popup/jquery.magnific-popup.min.js" type="text/javascript"></script> 
-<script src="brand/lib/isotopeimagesloaded.pkgd.min.js" type="text/javascript"></script> 
-<script src="brand/lib/isotope/isotope.pkgd.min.js" type="text/javascript"></script> 
-<script src="brand/lib/isotope/packery-mode.pkgd.min.js" type="text/javascript"></script> 
-<script src="brand/lib/sweetalert/sweetalert2.min.js" type="text/javascript"></script> 
-<script src="brand/lib/jquery-validation/jquery.validate.min.js" type="text/javascript"></script> 
-<script src="brand/lib/youtubebackground/jquery.youtubebackground.js" type="text/javascript"></script> 
-<script src="brand/lib/Vide/jquery.vide.min.js" type="text/javascript"></script> 
-<script src="brand/lib/vegas/vegas.min.js" type="text/javascript"></script> 
-<script src="brand/lib/materialize-parallax/materialize-parallax.js" type="text/javascript"></script> 
-<script src="brand/lib/countUp/countUp.js" type="text/javascript"></script> 
-<script src="brand/lib/stellar/jquery.stellar.min.js" type="text/javascript"></script> 
-<script src="brand/js/enquire.min.js" type="text/javascript"></script> 
-<script src="brand/js/main.js"></script>
+<script src="js/webfonts.js" type="text/javascript"></script> 
+<script src="lib/jquery/jquery-3.3.1.min.js" type="text/javascript"></script> 
+<script src="lib/jquery/jquery-migrate-3.0.0.min.js" type="text/javascript"></script> 
+<script src="lib/jquery/popper.min.js" type="text/javascript"></script> 
+<script src="lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script> 
+<script src="lib/jquery-smooth-scroll/jquery.smooth-scroll.min.js" type="text/javascript"></script> 
+<script src="lib/jQuery-viewport-checker/jquery.viewportchecker.min.js" type="text/javascript"></script> 
+<script src="lib/Swiper/js/swiper.min.js" type="text/javascript"></script> 
+<script src="lib/owl-carousel/owl.js" type="text/javascript"></script> 
+<script src="lib/Magnific-Popup/jquery.magnific-popup.min.js" type="text/javascript"></script> 
+<script src="lib/isotopeimagesloaded.pkgd.min.js" type="text/javascript"></script> 
+<script src="lib/isotope/isotope.pkgd.min.js" type="text/javascript"></script> 
+<script src="lib/isotope/packery-mode.pkgd.min.js" type="text/javascript"></script> 
+<script src="lib/sweetalert/sweetalert2.min.js" type="text/javascript"></script> 
+<script src="lib/jquery-validation/jquery.validate.min.js" type="text/javascript"></script> 
+<script src="lib/youtubebackground/jquery.youtubebackground.js" type="text/javascript"></script> 
+<script src="lib/Vide/jquery.vide.min.js" type="text/javascript"></script> 
+<script src="lib/vegas/vegas.min.js" type="text/javascript"></script> 
+<script src="lib/materialize-parallax/materialize-parallax.js" type="text/javascript"></script> 
+<script src="lib/countUp/countUp.js" type="text/javascript"></script> 
+<script src="lib/stellar/jquery.stellar.min.js" type="text/javascript"></script> 
+<script src="js/enquire.min.js" type="text/javascript"></script> 
+<script src="js/main.js"></script>
 </body>
 </html>
