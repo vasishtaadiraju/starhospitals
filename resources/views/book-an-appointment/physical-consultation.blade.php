@@ -62,9 +62,10 @@
 
 
                 <div class="d-p-info__btn-wrapper video-consultation__col-1__btn">
-
+                    @if($content->experience != null)
                     <p class="d-p-info__btn-wrapper__btn d-p-info__btn-wrapper__btn--primary"> <span>{{$content->experience}}</span> Years of
                         Experience</p>
+                    @endif
 
                         @if ($content->fee != null)
                     <p class="d-p-info__btn-wrapper__btn d-p-info__btn-wrapper__btn--primary"> <span>Rs. {{$content->fee}}</span> Fees</p>
