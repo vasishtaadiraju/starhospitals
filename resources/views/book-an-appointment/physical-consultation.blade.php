@@ -66,8 +66,10 @@
                     <p class="d-p-info__btn-wrapper__btn d-p-info__btn-wrapper__btn--primary"> <span>{{$content->experience}}</span> Years of
                         Experience</p>
 
-
-                    <p class="d-p-info__btn-wrapper__btn d-p-info__btn-wrapper__btn--primary"> <span>Rs. 500</span> Fees</p>
+                        @if ($content->fee != null)
+                    <p class="d-p-info__btn-wrapper__btn d-p-info__btn-wrapper__btn--primary"> <span>Rs. {{$content->fee}}</span> Fees</p>
+                            
+                        @endif
 
                 </div>
 
