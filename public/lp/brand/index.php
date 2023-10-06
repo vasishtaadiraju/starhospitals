@@ -37,13 +37,9 @@
 </script>
 
 <script>
-
-gtag('config', 'AW-585586121/AxF2CIaq7aIYEMmrnZcC', {
-
-'phone_conversion_number': '07969250193'
-
-});
-
+  gtag('config', 'AW-585586121/AxF2CIaq7aIYEMmrnZcC', {
+    'phone_conversion_number': '079692 50193'
+  });
 </script>
 
 

@@ -44,13 +44,9 @@ body {
 
 
 <script>
-
-gtag('config', 'AW-585586121/AxF2CIaq7aIYEMmrnZcC', {
-
-'phone_conversion_number': '1800 102 7827'
-
-});
-
+  gtag('config', 'AW-585586121/AxF2CIaq7aIYEMmrnZcC', {
+    'phone_conversion_number': '079692 50193'
+  });
 </script>
 
 

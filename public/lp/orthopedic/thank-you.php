@@ -42,7 +42,11 @@ body {
 
   gtag('config', 'AW-585586121');
 </script>
-
+<script>
+  gtag('config', 'AW-585586121/AxF2CIaq7aIYEMmrnZcC', {
+    'phone_conversion_number': '079692 50193'
+  });
+</script>
 <!-- Event snippet for Submit lead form conversion page -->
 
 <script>
