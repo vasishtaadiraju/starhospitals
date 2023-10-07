@@ -46,7 +46,7 @@
 <div class="container-fluid shadow bg-white sticky-top">
  <div class="container">
   <div class="primary-nav">
-   <nav class="navbar navbar-expand-lg navbar-light p-0"> <a href="index.php"><img src="images/STAR-Hospitals-Logo.svg" class="logo" alt="Star Cancer Centre Logo"></a>
+   <nav class="navbar navbar-expand-lg navbar-light p-0"> <a href="index.php"><img src="images/STAR-Hospitals-Logo.png" class="logo" alt="Star Cancer Centre Logo"></a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span class="bars"><span></span><span></span><span></span></span> </button> 
     <!--<a class="button purple-bc text-white font-weight-bold d-block d-lg-none" href=" tel:07969250193"> 07969 250 193</a>-->
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -135,16 +135,14 @@
    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"> <div class="abt-lft-bg"></div> </div>
    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
     <h2 class="text-left pc mb-4 font-weight-bold">Oncology Centre at Star Hospitals</h2>
-    <p  style="font-size: 14px">The Cancer Diseases Center of Excellence at STAR Hospitals is dedicated to providing specialized
-care for those patients who have cancer. We are staffed by some of the most experienced and highly
-skilled oncologists, radiation oncologists, and support staff. They make use of the most advanced
-technology and techniques to diagnose and treat a wide range of cancers.</p>
+    <p  style="font-size: 14px">The Oncology Center of Excellence at STAR Hospitals is dedicated to providing specialized
+care for those patients who have cancer. We are staffed by some of the most experienced and highly skilled medical, surgical, radiation & hemato oncologists, and support staff. They make use of the most advanced technology and techniques to diagnose and treat a wide range of cancers.</p>
     <p class=""  style="font-size: 14px">We offer all the oncology
 services a patient can expect. These include diagnosis, chemotherapy, radiation therapy, and surgical
 interventions. We have cutting-edge technology like MRI, PET-CT, and molecular profiling. This helps
 us provide accurate and effective treatment plans.</p>
     <ul class="pl-3" style="font-size: 14px">
-     <li><strong>Personalized Treatment:</strong> We are committed to providing tailored treatment plans that cater to the unique needs of each patient.</li>
+     <li><strong>Personalized Treatment:</strong> We have tailored treatment plans catered to unique needs achieved through multidisciplinary treatment decisions taken by an expert tumor board.</li>
      <li><strong>Interdepartmental Collaboration:</strong> Our doctors work closely with experts from various departments to develop comprehensive and effective treatment plans.</li>
      <li><strong>Emphasis on Emotional Well-being:</strong> We prioritize supporting patients in coping with the emotional and psychological challenges that cancer brings.</li>
     </ul>
@@ -190,6 +188,27 @@ us provide accurate and effective treatment plans.</p>
       <p>Uses high-energy rays to target and destroy cancer cells.</p>
      </div>
     </div>
+	<div class="col-lg-3 col-md-6">
+     <div class="icon-box">
+      <div class="icon mb-3"><img width="74" height="68" src="images/icons/bmt.png" class="attachment-full" alt="BMT" decoding="async" loading="lazy"></div>
+      <h2 class="title pc font-weight-bold">BMT</h2>
+      <p>Blood and marrow transplant for treating blood disorders.</p>
+     </div>
+    </div>
+	<div class="col-lg-3 col-md-6">
+     <div class="icon-box">
+      <div class="icon mb-3"><img width="74" height="68" src="images/icons/nuclear-medicine.png" class="attachment-full" alt="Nuclear Medicine" decoding="async" loading="lazy"></div>
+      <h2 class="title pc font-weight-bold">Nuclear Medicine</h2>
+      <p>Uses small amounts of radioactive materials for imaging and treatment.</p>
+     </div>
+    </div>
+	<div class="col-lg-3 col-md-6">
+     <div class="icon-box">
+      <div class="icon mb-3"><img width="74" height="68" src="images/icons/tumor-board.png" class="attachment-full" alt="Tumor Board" decoding="async" loading="lazy"></div>
+      <h2 class="title pc font-weight-bold">Tumor Board</h2>
+      <p>A team of specialists who collaborate to plan cancer treatment.</p>
+     </div>
+    </div>
    </div>
   </div>
  </div>
@@ -222,7 +241,7 @@ us provide accurate and effective treatment plans.</p>
           <path d="M12.6006 15.5C12.7006 16.1 13.2006 16.6 13.8006 16.6C13.9006 16.6 13.9006 16.6 14.0006 16.6C14.7006 16.5 15.2006 15.9 15.1006 15.2L13.9006 5.40002C13.8006 4.90002 14.0006 4.40002 14.3006 4.00002C14.6006 3.60002 15.1006 3.40002 15.6006 3.40002H40.3006C40.8006 3.40002 41.3006 3.60002 41.6006 4.00002C41.9006 4.40002 42.1006 4.90002 42.0006 5.40002L41.0006 15.2C40.9006 15.9 41.4006 16.5 42.1006 16.6C42.8006 16.7 43.4006 16.2 43.5006 15.5L44.7006 5.70002C44.8006 4.50002 44.5006 3.30002 43.7006 2.30002C42.9006 1.40002 41.7006 0.900024 40.5006 0.900024H15.6006C14.4006 0.900024 13.2006 1.40002 12.4006 2.30002C11.6006 3.20002 11.2006 4.40002 11.4006 5.70002L12.6006 15.5Z" fill="#FF7300"></path>
          </svg>
         </div>
-        <h3 class="title small pc font-weight-bold">Patient-Centered Approach</h3>
+        <h3 class="title small pc font-weight-bold">Personalized Treatment</h3>
        </div>
        <p class="mb-0 mt-1"> We believe in treating each patient as an individual with unique needs. Your well-being is at the heart of every decision we make.</p>
       </div>
@@ -428,6 +447,45 @@ us provide accurate and effective treatment plans.</p>
        </div>
       </div>
      </div>
+	 <div class="col-md-3 m-0 px-0">
+      <div class="dt-sc-icon-box type6">
+       <div class="icon-wrapper"><img width="74" height="68" src="images/icons/liver-cancer.png" class="attachment-full" alt="Prostate Cancer" decoding="async" loading="lazy"></div>
+       <div class="icon-content">
+        <h4 class="title font-weight-bold">Liver Cancers</h4>
+        <div class="tret-cntnt">
+         <p>> Liver cancer is often associated with underlying liver conditions like cirrhosis and hepatitis.</p>
+		 <p>> Symptoms may include abdominal pain, unexplained weight loss, jaundice and a swollen abdomen.</p>
+		 <p>> Seek prompt medical evaluation, including liver function tests and imaging.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+	 <div class="col-md-3 m-0 px-0">
+      <div class="dt-sc-icon-box type6 first bg-blue">
+       <div class="icon-wrapper"><img width="74" height="68" src="images/icons/pancreatic-cancer.png" class="attachment-full" alt="Blood Cancers" decoding="async" loading="lazy"></div>
+       <div class="icon-content">
+        <h4 class="title font-weight-bold">Pancreatic Cancers</h4>
+        <div class="tret-cntnt">
+         <p>> Pancreatic cancer is a type of cancer that begins as a growth of cells in the pancreas.</p>
+		 <p>> Symptoms may include abdominal or back pain, unintended weight loss, changes in stool color, and loss of appetite.</p>
+		 <p>> Maintain regular check-ups and discuss potential screening options with your healthcare provider.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+	 <div class="col-md-3 m-0 px-0">
+      <div class="dt-sc-icon-box type6">
+       <div class="icon-wrapper"><img width="74" height="68" src="images/icons/sarcomas-bone-tumors.png" class="attachment-full" alt="Prostate Cancer" decoding="async" loading="lazy"></div>
+       <div class="icon-content">
+        <h4 class="title font-weight-bold">Sarcomas & Bone Tumors</h4>
+        <div class="tret-cntnt">
+         <p>> Sarcomas and bone tumors are a group of cancers that develop in bones, muscles, and tendons.</p>
+		 <p>> Symptoms may include palpable lumps, localized bone pain, swelling, and, in some cases, fractures.</p>
+		 <p>> Consult a healthcare professional promptly for evaluation, imaging, and potential biopsy if necessary.</p>
+        </div>
+       </div>
+      </div>
+     </div>
     </div>
    </div>
   </div>
@@ -548,17 +606,17 @@ us provide accurate and effective treatment plans.</p>
 <div class="row">
  <div class="col-md-3 mb-4">
   <div class="p-2 h-100 bg-white shadow round-20px">
-   <div class="techno-img"> <img src="images/treubeam.webp" alt="TreuBeam"> </div>
+   <div class="techno-img"> <img src="images/treubeam.webp" alt="TrueBeam"> </div>
   </div>
  </div>
  <div class="col-md-9 mb-4">
   <div class="p-2 h-100 bg-white shadow round-20px">
    <div class="techno-content px-3">
-    <h5 class="pc font-weight-bold mt-3">TreuBeam: Cutting-edge equipment for the cancer care</h5>
+    <h5 class="pc font-weight-bold mt-3">TrueBeam: Cutting-edge equipment for the cancer care</h5>
     <ul class="list-tchno pl-0">
      <li><img src="images/icons/check.svg" alt="check"> HyperArc: Pinpoint accuracy in radiation treatment</li>
      <li><img src="images/icons/check.svg" alt="check"> Respiratory Gating System (RGS): Syncs radiation with your breath for precision</li>
-     <li><img src="images/icons/check.svg" alt="check"> Adaptive Therapy: Adjustable setting to your body's changes</li>
+     <li><img src="images/icons/check.svg" alt="check"> Adaptive Therapy: Adjustable settings to your body's movement</li>
      <li><img src="images/icons/check.svg" alt="check"> High-Definition Multileaf Collimator (HDMLC): Ultra-precise dosage for effective treatment</li>
      <li><img src="images/icons/check.svg" alt="check"> Energy Diversity: Multiple spectrum energy for different tumor’s treatment.</li>
      <li><img src="images/icons/check.svg" alt="check"> Perfect Pitch: Optimal and comfy patient positioning</li>
@@ -857,6 +915,22 @@ us provide accurate and effective treatment plans.</p>
          </div>
         </div>
        </div>
+	   	   <div class="shadow faqheader mb-4 bg-white round-20px wow slideInUp">
+        <div class="question tc">Can blood disorders be prevented?</div>
+        <div class="answercont">
+         <div class="answer">
+          <p class="mb-0">Some can be prevented through lifestyle changes, vaccination, and genetic counseling, but not all blood disorders are preventable. Early diagnosis and treatment are essential for managing them effectively.</p>
+         </div>
+        </div>
+       </div>
+	   <div class="shadow faqheader mb-4 bg-white round-20px wow slideInUp">
+        <div class="question tc">What are the risk factors for developing blood disorders during cancer treatment?</div>
+        <div class="answercont">
+         <div class="answer">
+          <p class="mb-0">Risk factors can include the type and intensity of cancer treatment, the specific chemotherapy drugs used, radiation therapy to bone marrow-rich areas, and the patient's overall health and medical history.</p>
+         </div>
+        </div>
+       </div>
       </div>
       <div class="col-md-6">
        <div class="shadow faqheader mb-4 bg-white round-20px wow slideInUp">
@@ -912,6 +986,30 @@ us provide accurate and effective treatment plans.</p>
         <div class="answercont">
          <div class="answer">
           <p class="mb-0">The Oncology Department at Star Hospitals has a dedicated genetic clinic that offers genetic counseling and advanced genomic testing. If any genetic mutation is detected, cascade testing of the family members is done after which reconstruction surgeries and risk-reducing surgeries in the form of bilateral mastectomies are offered.</p>
+         </div>
+        </div>
+       </div>
+	   <div class="shadow faqheader mb-4 bg-white round-20px wow slideInUp">
+        <div class="question tc">What are the symptoms of blood disorders in cancer patients?</div>
+        <div class="answercont">
+         <div class="answer">
+          <p class="mb-0">Symptoms may include fatigue, increased susceptibility to infections, easy bruising or bleeding, and shortness of breath.</p>
+         </div>
+        </div>
+       </div>
+	   <div class="shadow faqheader mb-4 bg-white round-20px wow slideInUp">
+        <div class="question tc">How are blood disorders managed in cancer patients?</div>
+        <div class="answercont">
+         <div class="answer">
+          <p class="mb-0">Treatment may involve medications to stimulate blood cell production, blood transfusions, and adjustments to cancer treatment plans. The approach depends on the specific type of blood disorder and its underlying causes.</p>
+         </div>
+        </div>
+       </div>
+	   <div class="shadow faqheader mb-4 bg-white round-20px wow slideInUp">
+        <div class="question tc">Can blood disorders that develop during cancer treatment be treated?</div>
+        <div class="answercont">
+         <div class="answer">
+          <p class="mb-0">Yes, many blood disorders that arise during cancer treatment are treatable and manageable with the appropriate medical interventions, including medications, transfusions, and adjustments to cancer treatment protocols.</p>
          </div>
         </div>
        </div>

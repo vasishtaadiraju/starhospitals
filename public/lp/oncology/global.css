@@ -311,7 +311,7 @@ div#loctabs > .row {
     font-weight: 400;
 }
 img.logo {
-    width: 245px;
+    width: 120px;
 }
 
 .icon-cardiology svg path, .icon-obstetricsy svg path, .icon-padiatrician svg path, .icon-neurology svg path, .icon-pulmonology svg path, .icon-dental svg path, .icon-urology svg path, .icon-gastrology svg path:last-child, .icon-nurse svg path, .icon-nurse svg path, .icon-ambulance svg path, .icon-telemedicine svg path:first-child, .icon-doctor svg path:nth-child(1), .icon-doctor svg path:nth-child(2), .icon-drip svg path, .icon-ward svg path:last-child, .icon-blood svg path, .icon-pharmacy svg path {
@@ -591,16 +591,11 @@ div#services .icon-box img {
     font-size:18px;
 }
 .lft-bg-ycho {
-    background: url(../images/star-why-choose2.webp);
+    background: url(https://webdesignzservice.in/projects/lp/star-hospitals-lps/oncology/images/star-why-choose2.webp);
     background-size: cover;
     width: 100%;
     min-height: 300px;
-    height: 100%;
-    background-repeat: no-repeat;
-    border-radius: 12px;
-    /* box-shadow: 1px 1px 71px 41px #e4e4e4; 
-    max-height: 488px;*/
-    padding: 0 !important;
+   height: 100%;
 }
 .abt-lft-bg {
     background: url(../images/oncology.webp);
