@@ -40,6 +40,7 @@
         font-family: "PlusJakartaSans-Regular";
         }
     </style> --}}
+    <script src="https://www.kenyt.ai/botapp/ChatbotUI/dist/js/bot-loader.js" type="text/javascript" data-bot="59755173"></script>
 </head>
 
 <body>
