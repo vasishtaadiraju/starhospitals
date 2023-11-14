@@ -10,15 +10,15 @@ class APIController extends Controller
 {
     public function createUser() {
         DB::table('users')->insert([
-            'name' => 'Vasishta',
-            'email' => 'vasishta@outshade.com',
+            'name' => 'Manvi',
+            'email' => 'mehrotramanvi06@gmail.com',
             'password' => Hash::make('Outshade@007'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
 
         DB::table('role_user')->insert([
-            'user_id' => 11,
+            'user_id' => 12,
             'role_id' => 1,
             'created_at' => now(),
             'updated_at' => now()
