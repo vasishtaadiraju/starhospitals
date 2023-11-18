@@ -9,19 +9,13 @@ use Illuminate\Support\Facades\Hash;
 class APIController extends Controller
 {
     public function createUser() {
-        DB::table('users')->insert([
-            'name' => 'Vasishta',
-            'email' => 'pavankumar@starhospitals.co.in',
-            'password' => Hash::make('StarHospitals@123'),
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-
-        DB::table('role_user')->insert([
-            'user_id' => 13,
-            'role_id' => 1,
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
+        if (!DB::table('role_user')->where('user_id', 13)->exists()) {
+            DB::table('role_user')->insert([
+                'user_id' => 13,
+                'role_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+        }
     }
 }
