@@ -4,6 +4,61 @@
 @endsection
 @section('meta-title',$content->meta_title)
 @section('meta-description',$content->meta_description)
+@push('page-schema')
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type":  "Physician",
+    "name":  "{{$content->name}}",
+    "description": "{{$content->meta_description}}",
+    "image": "{{ config('variables.asset') . $content->large_image }}",
+    "openingHours":
+    "{{$content->schema_openingHours}}",
+    "url": "{{url()->full()}}",
+    "address": [
+    {
+    "@type": "PostalAddress",
+    "addressLocality": "{{$branch->name}}",
+    "addressRegion":  "Hyderabad",
+    "postalCode":  "{{$branch->postalCode}}",
+    "streetAddress":  "{{$branch->address}}",
+    "telephone": "{{$branch->schema_telephone}}"
+    }
+    ],
+    "priceRange": "{{$content->fee}}"
+    }
+    </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/", 
+          "@type": "BreadcrumbList", 
+          "itemListElement": [{
+            "@type": "ListItem", 
+            "position": 1, 
+            "name": "Home",
+            "item": "{{url('/')}}"  
+          },
+           {
+            "@type": "ListItem", 
+            "position": 2, 
+            "name": "{{$branch->name}}",
+            "item": "{{route('branch',$branch->slug)}}"  
+          },
+          {{--  {
+            "@type": "ListItem", 
+            "position": 4, 
+            "name": "Cardiologist",
+            "item": "https://www.starhospitals.in/team/best-cardiologists-in-hyderabad" 
+        }, --}}
+        {
+            "@type": "ListItem", 
+            "position": 3, 
+            "name": "{{$content->name}}",
+            "item": "{{url()->full()}}" 
+          }]
+        }
+        </script>
+@endpush
 @section('content')
     <x-banner :imgurl="Vite::asset('resources/images/banner/doc-profile.png')" :text="'Doctors | Star Hospitals'" :$breadcrum />
 

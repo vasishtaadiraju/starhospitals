@@ -4,6 +4,89 @@
 @endsection
 @section('meta-title',$content->meta_title)
 @section('meta-description',$content->meta_description)
+@push('page-schema')
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Webpage",
+    "name": "{{$content->meta_title}}",
+    "description": "{{$content->meta_description}}",
+    "image": "{{config('variables.asset') .$content->banner_desktop}}",
+    "@id": "info@starhospitals.co.in",
+    "url": "{{url()->full()}}",
+    "telephone": "{{$content->schema_telephone}}",
+    "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{$content->address}}",
+    "addressLocality": "Hyderabad",
+    "postalCode": "{{$content->schema_postalCode}}",
+    "addressCountry": "IN"
+    },
+    "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "{{$content->schema_latitude}}",
+    "longitude": "{{$content->schema_longitude}}"
+    },
+    "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+    ],
+    "opens": "{{$content->schema_opens}}",
+    "closes": "{{$content->schema_closes}}"
+    },
+    "sameAs": [
+    "https://www.facebook.com/starhospitalsin",
+        "https://twitter.com/starhospitalsin/",
+        "https://www.instagram.com/starhospitalsin/",
+        "https://www.youtube.com/@StarHospitalsin1",
+        "https://www.linkedin.com/company/star-hospitals-hyderabad/"
+    ]
+    }
+    </script>
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org/",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "{{url('/')}}"
+        },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Banjara Hills",
+        "item": "{{route('branch',$content->slug)}}"
+        }]
+        }
+        </script>
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                @foreach ($content->faqs as $value)
+                {
+                    "@type": "Question",
+                    "name": "{{$value->question}}",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "{{strip_tags( html_entity_decode($value->answer))}}"
+                    }
+                  }{{$loop->index != count($content->faqs) -1 ? ',' : ''}}
+                @endforeach
+              ]
+            }
+            </script>
+        
+@endpush
 @section('content')
 <x-banner :imgurl="config('variables.asset') .$content->banner_desktop" :text="$content->banner_text" :$breadcrum/>  
     <x-scroll-tabs :$tabs />

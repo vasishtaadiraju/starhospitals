@@ -47,8 +47,8 @@ class DoctorController extends Controller
             }
         ])->first();
             // dd($content);
-        $branch = Branch::where('status','active')->where('slug',$branch_slug)->first(['id','name']);
-        $speciality = Speciality::where('status','active')->where('doctor_slug',$speciality_slug)->first(['id','name','doctor_slug','slug']);
+        $branch = Branch::where('status','active')->where('slug',$branch_slug)->first();
+        $speciality = Speciality::where('status','active')->where('doctor_slug',$speciality_slug)->first();
 
         if($content == null)
         {
@@ -69,6 +69,8 @@ class DoctorController extends Controller
             'breadcrum' => $breadcrum,
             'branch_slug' => $branch_slug,
             'speciality_slug' => $speciality_slug,
+            'branch'=>$branch,
+            'speciality'=>$speciality
         ]);
     }
 

@@ -4,6 +4,69 @@
 @endsection
 @section('meta-title',$content->meta_title)
 @section('meta-description',$content->meta_description)
+@push('page-schema')
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebPage",
+       "headline": "{{$content->meta_title}}",
+    "url":"{{url()->full()}}",
+    "image": "https://starhospitalsuat.s3.amazonaws.com/",
+    "name": "{{$content->title}}",
+    "description": "{{$content->meta_description}}",
+    "keywords": ["{{$content->speciality->specialist}} In {{$content->branch !=null ? $content->branch->name : 'Hyderabad'}},Best {{$content->speciality->specialist}} In {{$content->branch !=null ? $content->branch->name : 'Hyderabad'}},Top {{$content->speciality->specialist}} In {{$content->branch !=null ? $content->branch->name : 'Hyderabad'}},Best {{$content->speciality->specialist}} Doctor In {{$content->branch !=null ? $content->branch->name : 'Hyderabad'}}"],
+        "publisher": {
+            "@type": "Hospital",
+            "name": "STAR Hospitals, Hyderabad"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/", 
+          "@type": "BreadcrumbList", 
+          "itemListElement": [{
+            "@type": "ListItem", 
+            "position": 1, 
+            "name": "Home",
+            "item": "{{url('/')}}"  
+          },
+          {{-- {
+            "@type": "ListItem", 
+            "position": 2, 
+            "name": "{{$content->speciality->name}}",
+            "item": "https://www.starhospitals.in/specialities/cardiology-hospital-in-hyderabad"  
+          }, --}}
+          {
+            "@type": "ListItem", 
+            "position": 2, 
+            "name": "{{$content->speciality->specialist}}",
+            "item": "{{url('/specialists/'.$content->slug)}}"  
+          }]
+        }
+        </script>
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                @foreach ($content->faqs as $value)
+                {
+                    "@type": "Question",
+                    "name": "{{$value->question}}",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "{{strip_tags( html_entity_decode($value->answer))}}"
+                    }
+                  }{{$loop->index != count($content->faqs) -1 ? ',' : ''}}
+                @endforeach
+              ]
+            }
+            </script>
+            
+    
+@endpush
 @section('content')
     <x-banner :imgurl="config('variables.asset') . $content->banner_desktop" :text="$content->banner_title" :$breadcrum />
     <div class="ui-background">

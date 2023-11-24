@@ -4,6 +4,103 @@
 @endsection
 @section('meta-title',$content->meta_title)
 @section('meta-description',$content->meta_description)
+@push('page-schema')
+    
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalOrganization",
+      "name": "Star Hospitals in Hyderabad",
+      "url": "https://www.starhospitals.in",
+      "logo": "https://starhospitalsuat.s3.amazonaws.com/ujvabylMydyA9er4aLzgR2bR5FJdEJHJaNAal6PM.webp",
+    "description": "Looking for a top-rated hospital near you? Visit Star Hospitals, the best multispeciality hospital in Hyderabad providing world-class healthcare services. Book your appointment today to receive the best medical care.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "18001027827",
+        "contactType": "customer service",
+        "contactOption": "TollFree",
+        "areaServed": "IN",
+        "availableLanguage": ["Telugu","Kannada","en","Tamil","Hindi","Urdu"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/starhospitalsin",
+        "https://twitter.com/starhospitalsin/",
+        "https://www.instagram.com/starhospitalsin/",
+        "https://www.youtube.com/@StarHospitalsin1",
+        "https://www.linkedin.com/company/star-hospitals-hyderabad/"
+      ]
+    }
+    </script>
+    
+    
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "hospital",
+      "name": "Best Hospital in Hyderabad | Best Multispeciality Hospital In Hyderabad | Star Hospitals",
+      "image": "https://starhospitalsuat.s3.amazonaws.com/ujvabylMydyA9er4aLzgR2bR5FJdEJHJaNAal6PM.webp",
+      "@id": "",
+      "url": "https://www.starhospitals.in",
+      "telephone": "18001027827",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Survey No.74, Financial District, Nanakramguda",
+        "addressLocality": "Hyderabad",
+        "postalCode": "500008",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 17.4107978,
+        "longitude": 78.341552
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://www.facebook.com/starhospitalsin",
+        "https://twitter.com/starhospitalsin/",
+        "https://www.instagram.com/starhospitalsin/",
+        "https://www.youtube.com/@StarHospitalsin1",
+        "https://www.linkedin.com/company/star-hospitals-hyderabad/"
+      ] 
+    }
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "Webpage",
+    "headline": "Multispeciality Hospital In Hyderabad | Best Hospital Near Me - Star Hospitals",
+    "@id":"https://www.starhospitals.in/",
+    "thumbnailUrl": "https://starhospitalsuat.s3.amazonaws.com/ujvabylMydyA9er4aLzgR2bR5FJdEJHJaNAal6PM.webp",
+    "name": "Star Hospitals",
+    "description": "Looking for a top-rated hospital near you? Visit Star Hospitals, the best multispeciality hospital in Hyderabad providing world-class healthcare services. Book your appointment today to receive the best medical care.",
+    "publisher": "Star Multi Speciality Hospitals",
+    "creator": ["Star Hospitals Hyderabad"],
+    "keywords": ["best hospitals in hyderabad,Hospitals In Nanakramguda,Hospital Near Hitech City,Hospital Near Gachibowli,Hospital Near Manikonda,Hospital Near Me,Hospital In Hyderabad,Top Hospitals In Hyderabad"]
+    }</script>
+    
+@endpush
 @section('content')
 <x-slider :$content/>
 <x-search-doctor :$branches :$coes/>
