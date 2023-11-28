@@ -45,7 +45,7 @@
     "https://www.facebook.com/starhospitalsin",
         "https://twitter.com/starhospitalsin/",
         "https://www.instagram.com/starhospitalsin/",
-        "https://www.youtube.com/@StarHospitalsin1",
+        "https://www.youtube.com/@StarHospitalsHyderabad/",
         "https://www.linkedin.com/company/star-hospitals-hyderabad/"
     ]
     }

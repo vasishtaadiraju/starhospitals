@@ -256,7 +256,7 @@
 
 
                 </a>
-                <a target="_blank" href="https://www.youtube.com/@StarHospitalsin1">
+                <a target="_blank" href="https://www.youtube.com/@StarHospitalsHyderabad/">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -476,7 +476,7 @@
 
 
                         </a>
-                        <a target="_blank" href="https://www.youtube.com/@StarHospitalsin1">
+                        <a target="_blank" href="https://www.youtube.com/@StarHospitalsHyderabad/">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path

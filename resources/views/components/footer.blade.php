@@ -590,7 +590,7 @@
                             </svg>
 
                         </a>
-                        <a target="_blank"href="https://www.youtube.com/@StarHospitalsin1">
+                        <a target="_blank"href="https://www.youtube.com/@StarHospitalsHyderabad/">
                             <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
