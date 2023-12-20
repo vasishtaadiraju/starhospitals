@@ -15,11 +15,11 @@
 <link href="css/global.css" rel="stylesheet" >
 <link href="css/animate.css" rel="stylesheet">
 <link href="css/slick.css" rel="stylesheet" >
-<script src="js/jquery.min.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/popper.min.js"></script> 
-<script src="js/wow.min.js"></script> 
-<script src="js/slick.js"></script> 
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/slick.js"></script>
 <script src="js/jquery.fancybox.min.js"></script>
 <style>
 body {
@@ -58,9 +58,9 @@ body {
 LAPAROSCOPIC HEPATO-
 PANCREATO-BILIARY SURGERY</h1>
 <div class="lr-gradient mb-4" style="height:3px;"></div>
-<h4>Organized by <b>Department of Surgical Gastroenterology, 
+<h4>Organized by <b>Department of Surgical Gastroenterology,
 GI Oncology, HPB Surgery and Liver Transplant
-<span class="text-danger">STAR Hospitals</span>, under the aegis of <span class="text-danger">Indian Association 
+<span class="text-danger">STAR Hospitals</span>, under the aegis of <span class="text-danger">Indian Association
 of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
 <div class="lr-gradient mt-4" style="height:5px;"></div>
   </div>
@@ -70,9 +70,9 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
   <div class="container-fluid" style="background: linear-gradient(90deg, #e3000f 50%, #004e9e 50%);">
   <div class="container">
   <div class="sec-space"></div>
-  
-  
-  
+
+
+
     <div class="row">
 	<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
 	<h2 class="text-left text-white mb-4 font-weight-bold text-center">IAGES Executive Committee</h2>
@@ -194,7 +194,7 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
         <div class="heading text-center pb-4 wow slideInLeft">
           <h3 class="text-center font-weight-bold mb-2 tc"> <span class="pc"> </span></h3>
         </div>
-		
+
         <div class="wow fadeInUp">
           <div class="shadow faqheader mb-4 bg-white round-20px wow slideInUp">
             <div class="question bc">TRUSTEES</div>
@@ -210,8 +210,8 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
             </div>
           </div>
 		</div>
-		
-		
+
+
         <div class="wow fadeInUp">
           <div class="shadow faqheader mb-4 bg-white round-20px wow slideInUp">
             <div class="question bc">ADVISORS</div>
@@ -234,8 +234,8 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
             </div>
           </div>
 		</div>
-		
-				
+
+
         <div class="wow fadeInUp">
           <div class="shadow faqheader mb-4 bg-white round-20px wow slideInUp">
             <div class="question bc">EC MEMBERS (NORTH ZONE)</div>
@@ -252,8 +252,8 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
             </div>
           </div>
 		</div>
-		
-				
+
+
         <div class="wow fadeInUp">
           <div class="shadow faqheader mb-4 bg-white round-20px wow slideInUp">
             <div class="question bc">EC MEMBERS (EAST ZONE)</div>
@@ -270,8 +270,8 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
             </div>
           </div>
 		</div>
-		
-				
+
+
         <div class="wow fadeInUp">
           <div class="shadow faqheader mb-4 bg-white round-20px wow slideInUp">
             <div class="question bc">EC MEMBERS (WEST ZONE)</div>
@@ -288,8 +288,8 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
             </div>
           </div>
 		</div>
-		
-				
+
+
         <div class="wow fadeInUp">
           <div class="shadow faqheader mb-4 bg-white round-20px wow slideInUp">
             <div class="question bc">EC MEMBERS (SOUTH ZONE)</div>
@@ -306,8 +306,8 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
             </div>
           </div>
 		</div>
-		
-				
+
+
         <div class="wow fadeInUp">
           <div class="shadow faqheader mb-4 bg-white round-20px wow slideInUp">
             <div class="question bc">EC MEMBERS (CENTRAL ZONE)</div>
@@ -324,8 +324,8 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
             </div>
           </div>
 		</div>
-		
-				
+
+
         <div class="wow fadeInUp">
           <div class="shadow faqheader mb-4 bg-white round-20px wow slideInUp">
             <div class="question bc">CO-OPTED MEMBERS</div>
@@ -342,8 +342,8 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
             </div>
           </div>
 		</div>
-		
-				
+
+
 	</div>
 </div>
 </div>
@@ -615,10 +615,10 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
     <p class="mb-0">STAR Hospitals, Financial District</p>
 	</div>
 	</div>
-	
-	
-	
-    
+
+
+
+
   </div>
   </div>
   <div class="sec-space"></div>
@@ -638,7 +638,7 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
     <p>It is an honour to host such distinguished experts and professionals in the field of surgical medicine. This conference promises to be an enriching experience filled with knowledge sharing, innovative discussions, and the opportunity to further advance our collective understanding of this complex surgical discipline.</p>
 	</div>
 	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-	
+
     <p>As we gather under the banner of medical excellence, I am confident that the insights gained during this conference will pave the way for cutting-edge advancements in your skills in Laparoscopic Hepatopancreatico Surgery. Our dedicated team has worked tirelessly to ensure a seamless and productive event, and I encourage you all to actively participate and engage in the fruitful exchange of ideas.</p>
     <p>Once again, a warm welcome to STAR Hospitals, Banjara Hills. Let us work together to explore new frontiers in this specialized field and ultimately enhance patient care.</p>
     <p>Wishing you a successful and enlightening conference.</p>
@@ -647,10 +647,10 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
     <p class="mb-0">Managing Director, STAR Group of Hospitals</p>
 	</div>
 	</div>
-	
-	
-	
-		
+
+
+
+
 
   </div>
   </div>
@@ -689,7 +689,7 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
           </thead>
         <tbody>
           <tr>
-            <td colspan="4" class="text-center bluec font-weight-bold">Early Bird until December 15, 2023</td>
+            <td colspan="4" class="text-center bluec font-weight-bold">Early Bird until December 31, 2023</td>
           </tr>
           <tr class="table-info">
             <td> FellowshipCandidates (FALS/HPB)<br>
@@ -712,7 +712,7 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
             <td>&#8377;&nbsp;3,540</td>
           </tr>
           <tr>
-            <td colspan="4" class="text-center bluec font-weight-bold">December 16th Onwards</td>
+            <td colspan="4" class="text-center bluec font-weight-bold">January 1st, 2024 Onwards</td>
           </tr>
           <tr class="table-info">
             <td> Fellowship Candidates (FALS/HPB)<br>
@@ -784,11 +784,11 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
 	</div>
     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 mb-4">
 	<p class="font-weight-bold">Scan the QR code for registration</p>
-    <img src="images/QRCode.png" class="img-fluid shadow bg-white rounded p-3"> 
+    <img src="images/QRCode.png" class="img-fluid shadow bg-white rounded p-3">
 	</div>
 	</div>
-	
-	
+
+
     </div>
   <div class="sec-space"></div>
 </div>
@@ -801,7 +801,7 @@ of Gastrointestinal Endosurgeons (IAGES)</span></b></h4>
     </div>
   </div>
 </div>
-<script> 
+<script>
 let question = document.querySelectorAll(".question");
 question.forEach(question => {
   question.addEventListener("click", event => {
