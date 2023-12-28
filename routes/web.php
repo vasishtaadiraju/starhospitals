@@ -94,6 +94,26 @@ Route::get('/international-patients/thank-you', function () {
     return view('thank-you');
 });
 
-Route::get('/video-consultation/thank-you', function() {
+Route::get('/video-consultation/thank-you', function () {
     return view('thank-you');
+});
+
+Route::get('/mem', function () {
+    $breadcrum = "<div class='banner__breadcrum'>
+    <a href='/'>Home</a>
+    <span>❯</span>
+    <a >Masters in Emergency Medicine</a>
+</div>";
+
+    return view('mem', ['breadcrum' => $breadcrum]);
+})->name('t-c');
+
+Route::get('/mem-register', function () {
+    $breadcrum = "<div class='banner__breadcrum'>
+    <a href='/'>Home</a>
+    <span>❯</span>
+    <a >Masters in Emergency Medicine</a>
+</div>";
+
+    return view('mem-form', ['breadcrum' => $breadcrum]);
 });
