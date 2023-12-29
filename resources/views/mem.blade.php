@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('css')
-    @vite(['resources/scss/thankyou.scss', 'resources/js/app.js'])
+    @vite(['resources/scss/thankyou.scss', 'resources/js/app.js','resources/js/home.js'])
 @endsection
 @section('content')
     <x-banner :imgurl="Vite::asset('resources/images/banner/t&c.png')" :text="'Introducing MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) at Star Hospitals: Your Path to Excellence in Emergency Care'" :$breadcrum />
@@ -37,18 +37,25 @@
         <br>
 
         <div>
-            The MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) at Star Hospitals is designed to shape the next
-            generation of emergency medicine specialists. Here’s why you should consider joining:
+            <img data-src="{{ Vite::asset('resources/images/mem/wepik-export-20230424074108.png') }}" class="floating-image"
+                alt="">
+
+            <p style="">
+                The MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) at Star Hospitals is designed to shape the next
+                generation of emergency medicine specialists. Here’s why you should consider joining:
+                <br>
+                <br>
+
+
+                <span style="color: #004E9E; font-size: 16px; font-weight: 700;">
+                    Training:
+                </span>
+                The program offers a comprehensive curriculum that covers all aspects of emergency medicine, including
+                trauma care, resuscitation, critical care, and more. You will receive hands-on experience in a high-volume,
+                high-acuity setting, ensuring that you are well-prepared for any emergency.
+            </p>
         </div>
         <br>
-        <div>
-            <span style="color: #004E9E; font-size: 16px; font-weight: 700;">
-                Training:
-            </span>
-            The program offers a comprehensive curriculum that covers all aspects of emergency medicine, including
-            trauma care, resuscitation, critical care, and more. You will receive hands-on experience in a high-volume,
-            high-acuity setting, ensuring that you are well-prepared for any emergency.
-        </div>
 
         <br />
 
@@ -345,7 +352,71 @@
                 centre allows you to practice and refine your skills in a controlled environment.
             </span>
         </div>
+        <br />
+        <br />
 
+        <div>
+            {{-- <x-heading :title="'Reviews From Our Patients'" :description="$content->review_text" /> --}}
+                <div class="testimonials testimonials-slider">
+                
+                    {{-- @foreach ($testimonials as $item)
+                    <div class="testimonials__card">
+                        <a class="ctg-video">
+                            <img src="" data-src="{{ config('variables.asset') . $item->image }}" alt="">
+                
+                        </a>
+                        <div class="testimonials__card__content">
+                            <p>{{$item->patient_name}}</p>
+                
+                            <h4>{{$item->text}}</h4>
+                        </div>
+                    </div> 
+                    @endforeach --}}
+                    
+                    <div class="testimonials__card">
+                       <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt=""> </a>
+                        <div class="testimonials__card__content">
+                           
+                        </div>
+                    </div>
+                    <div class="testimonials__card">
+                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <div class="testimonials__card__content">
+                         
+                        </div>
+                    </div>
+                    <div class="testimonials__card">
+                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <div class="testimonials__card__content">
+                            
+                        </div>
+                    </div>
+                    <div class="testimonials__card">
+                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <div class="testimonials__card__content">
+                            
+                        </div>
+                    </div>
+                    <div class="testimonials__card">
+                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <div class="testimonials__card__content">
+                            
+                        </div>
+                    </div>
+                    <div class="testimonials__card">
+                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <div class="testimonials__card__content">
+                            
+                        </div>
+                    </div>
+                    
+                   
+                    
+                    
+                </div>
+        </div>
+
+        <br />
         <br />
 
         <div>
@@ -360,6 +431,70 @@
                 your specialization request during the final year.
             </span>
         </div>
+        <br />
+        <br />
+
+        <div>
+            {{-- <x-heading :title="'Reviews From Our Patients'" :description="$content->review_text" /> --}}
+                <div class="testimonials testimonials-slider">
+                
+                    {{-- @foreach ($testimonials as $item)
+                    <div class="testimonials__card">
+                        <a class="ctg-video">
+                            <img src="" data-src="{{ config('variables.asset') . $item->image }}" alt="">
+                
+                        </a>
+                        <div class="testimonials__card__content">
+                            <p>{{$item->patient_name}}</p>
+                
+                            <h4>{{$item->text}}</h4>
+                        </div>
+                    </div> 
+                    @endforeach --}}
+                    
+                    <div class="testimonials__card">
+                       <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt=""> </a>
+                        <div class="testimonials__card__content">
+                           
+                        </div>
+                    </div>
+                    <div class="testimonials__card">
+                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <div class="testimonials__card__content">
+                         
+                        </div>
+                    </div>
+                    <div class="testimonials__card">
+                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <div class="testimonials__card__content">
+                            
+                        </div>
+                    </div>
+                    <div class="testimonials__card">
+                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <div class="testimonials__card__content">
+                            
+                        </div>
+                    </div>
+                    <div class="testimonials__card">
+                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <div class="testimonials__card__content">
+                            
+                        </div>
+                    </div>
+                    <div class="testimonials__card">
+                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <div class="testimonials__card__content">
+                            
+                        </div>
+                    </div>
+                    
+                   
+                    
+                    
+                </div>
+        </div>
+        <br />
 
         <br />
 
@@ -422,12 +557,15 @@
         <div
             style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
             <ul>
-                <li>
+                <li style="">
                     2024 Batch, Applications Open:
 
                     <br /><br />
 
-                    <table style="border: 1px solid #E0E0E0; border-radius: 10px; border-spacing:20px;">
+                    
+                </li>
+                <li style="list-style-type: none;margin-left:-1.5em">
+                    <table style="border: 1px solid #E0E0E0; border-radius: 10px;">
                         <thead>
                             <tr>
                                 <th>Batch</th>
@@ -452,9 +590,77 @@
                         </tbody>
                     </table>
                 </li>
+                <br>
+                <li>
+                    Eligibility:
+                </li>
+                <li style="list-style-type: none;margin-left:-15px;padding-top:0.5em">
+                    1. MBBS degree with valid state medical council registration.
+                </li>
+                <li style="list-style-type: none;margin-left:-15px;padding-top:0.5em">
+                    2. MBBS graduates from foreign varsities qualified through FMGE (Foreign Medical Graduate Entrance) by
+                    MCI with valid state medical council registration.
+
+                </li>
+                <li>
+                    How to Apply: <a href="" style="color: #004E9E;font-weight:bold;text-decoration:underline">Link
+                        to online form for submission</a> <br>
+                    Brochure Download (for more detailed information about the program, academics, faculty)
+                </li>
             </ul>
         </div>
+        <br /><br /><br />
 
+        <div>
+            <strong>Join Us in Shaping the Future of Emergency Medicine</strong>
+        </div>
+        <br>
+        <div>
+            <p>
+                The Star Hospitals Emergency Medicine Residency Program is your gateway to a fulfilling and impactful career
+                in emergency medicine. Whether you aspire to work in a bustling urban trauma center, a rural hospital, or
+                anywhere in between, our program will equip you with the skills and knowledge needed to excel. At Star
+                Hospitals, we are committed to providing a well-rounded and comprehensive academic experience that prepares
+                our residents to excel in emergency medicine, make informed decisions, and lead with confidence. Our program
+                is dedicated to nurturing the next generation of emergency medicine physicians who are not only skilled
+                clinicians but also effective leaders and communicators.
+                <br><br>
+                Are you ready to make a difference in the lives of patients during their most critical moments? <br>
+                Apply to the Star Hospital’s Emergency Medicine Residency Program and be part of a legacy of excellence in
+                healthcare.
+            </p>
+        </div>
+
+        <br>
+
+        <div class="mem-contact-info">
+            <div class="mem-contact-info-item-1">
+                <p>For inquiries and application details, please visit our website www.------------.com or
+                    contact:</p>
+
+                <br><br>
+
+
+                Dr. Rahul Katta, <br>
+                Group Lead, Department of Emergency Medicine. <br>
+                Mail: rahul.katta@starhospitals.co.in <br>
+                Ph: +91 9148779869 <br>
+            </div>
+            <div class="mem-contact-info-item-2">
+                <br><br><br>
+
+                Dr. Imran Shareef, <br>
+                Clinical Lead, MBBS, FRCEM <br>
+                Mail: imran.shareef@starhospitals.co.in <br>
+                Ph: +91 8008670634 <br>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div>
+            <p style="color: #E3000F">Note: MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) is a 3-year postgraduate course accredited by the Society for Emergency Medicine India [SEMI] board and not accredited/recognized by the National Medical Commission (earlier – Medical Council of India).</p>
+        </div>
     </div>
     <x-gap />
 @endsection
