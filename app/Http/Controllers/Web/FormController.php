@@ -8,6 +8,8 @@ use App\Jobs\ContactFormToUser;
 use App\Jobs\HospitalTalkToDoctor;
 use App\Jobs\InternationalToHospital;
 use App\Jobs\InternationalToUser;
+use App\Jobs\MemRegisterToHospital;
+use App\Jobs\MemRegisterToUser;
 use App\Jobs\PhysicalConsultationToHospital;
 use App\Jobs\PhysicalConsultationToUser;
 use App\Jobs\RequestCallbackToHospital;
@@ -463,5 +465,67 @@ class FormController extends Controller
 
       return response('', 200);
     }
+  }
+
+
+
+  public function memRegister(Request $request)
+  {
+    $request->validate([
+      'firstname' => 'required|string|max:255',
+      'lastname' => 'required|string|max:255',
+      'country_code' => 'required|integer|numeric',
+      'contact' => 'required|string|max:15',
+      'email' => 'required|string|email:rfc,strict,dns,filter|max:255',
+      'message' => 'required|string'
+    ]);
+
+    $utm_source = $utm_medium = $utm_campaign = $utm_term = $utm_content = $utm_lms = null;
+
+    if (session()->exists('utm_source')) {
+      $utm_source = session('utm_source');
+    }
+
+    if (session()->exists('utm_medium')) {
+      $utm_medium = session('utm_medium');
+    }
+
+    if (session()->exists('utm_campaign')) {
+      $utm_campaign = session('utm_campaign');
+    }
+
+    if (session()->exists('utm_term')) {
+      $utm_term = session('utm_term');
+    }
+
+    if (session()->exists('utm_content')) {
+      $utm_content = session('utm_content');
+    }
+
+    if (session()->exists('utm_lms')) {
+      $utm_lms = session('utm_lms');
+    }
+
+    DB::table('mem_registrations')->insert([
+      'firstname' => $request->input('firstname'),
+      'lastname' => $request->input('lastname'),
+      'country_code' => $request->input('country_code'),
+      'contact' => $request->input('contact'),
+      'email' => $request->input('email'),
+      'message' => $request->input('message'),
+      'utm_source' => $utm_source,
+      'utm_medium' => $utm_medium,
+      'utm_campaign' => $utm_campaign,
+      'utm_term' => $utm_term,
+      'utm_content' => $utm_content,
+      'utm_lms' => $utm_lms,
+      'created_at' => now(),
+      'updated_at' => now()
+    ]);
+
+    dispatch(new MemRegisterToHospital($request->firstname,$request->lastname,$request->email,$request->country_code,$request->contact,$request->message))->delay(Carbon::now()->addMinute());
+    dispatch(new MemRegisterToUser($request->firstname,$request->lastname,$request->email))->delay(Carbon::now()->addMinute());
+
+    return redirect('/mem-register/thank-you');
   }
 }

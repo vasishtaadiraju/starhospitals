@@ -98,18 +98,18 @@
                 ">
                     Please fill in your details to apply</h1>
 
-                <form action="/contactForm" method="post">
+                <form action="/mem-register" method="post">
                     @csrf
 
                     <div class="form-fields">
                         <div class="form-fields-wrapper form-fields-wrapper--col-2">
                             <div class="form-fields-wrapper ">
                                 <input type="text" placeholder="Firstname"
-                                    class="@error('name')
+                                    class="@error('firstname')
                                 error-field
                             @enderror"
-                                    name="name">
-                                @error('name')
+                                    name="firstname">
+                                @error('firstname')
                                     <span class="error-message">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -117,11 +117,11 @@
                         <div class="form-fields-wrapper form-fields-wrapper--col-2">
                             <div class="form-fields-wrapper ">
                                 <input type="text" placeholder="Lastname"
-                                    class="@error('name')
+                                    class="@error('lastname')
                                 error-field
                             @enderror"
-                                    name="name">
-                                @error('name')
+                                    name="lastname">
+                                @error('lastname')
                                     <span class="error-message">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -392,7 +392,7 @@
                                 error-field
                             @enderror"
                                     name="message"> </textarea>
-                                @error('name')
+                                @error('message')
                                     <span class="error-message">{{ $message }}</span>
                                 @enderror
                             </div>

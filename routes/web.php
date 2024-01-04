@@ -64,6 +64,7 @@ Route::controller(FormController::class)->middleware(['XssSanitization', 'thrott
     Route::post('/internationalPatientEnquiryForm', 'internationalPatientEnquiryForm');
     Route::post('/videoConsultation', 'videoConsultation');
     Route::post('/physicalConsultation', 'physical_consultation');
+    Route::post('/mem-register', 'memRegister');
 });
 Route::get('/thank-you', function () {
     return view('thank-you');
@@ -117,3 +118,9 @@ Route::get('/mem-register', function () {
 
     return view('mem-form', ['breadcrum' => $breadcrum]);
 });
+
+Route::get('/mem-register/thank-you', function () {
+    return view('mem-thank-you');
+});
+
+
