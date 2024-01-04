@@ -107,7 +107,7 @@ Route::get('/mem', function () {
 </div>";
 
     return view('mem', ['breadcrum' => $breadcrum]);
-})->name('t-c');
+});
 
 Route::get('/mem-register', function () {
     $breadcrum = "<div class='banner__breadcrum'>
