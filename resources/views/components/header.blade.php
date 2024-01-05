@@ -280,16 +280,20 @@
             
         </div>
         <div class="header__main__card header__main__card--emergency header__main--fixed--hide" style="">
-            <a href="tel:+919100911911">
+            <div>
                 <div>
                     <img src="" data-src="{{ Vite::asset('resources/images/Icons/emergency.png') }}"
                         alt="">
 
                     <p>24/7 Emergency <br>
-                        <span>9100911911</span>
+                        {{-- <span>9100911911</span> --}}
+                        <small class="emergency_number" >
+                        <a href="tel:9100911911">  Banjara Hills : 9100911911</a> <br>
+                        <a href="tel:8712608192">  Financial District : 8712608192</a>
+                        </small>
                     </p>
                 </div>
-            </a>
+            </div>
         </div>
         {{-- <div
             class="header__main__card header__main__card--web-search header__main__card--mob-hide header__main--fixed--hide">

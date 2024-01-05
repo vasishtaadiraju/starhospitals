@@ -34,7 +34,7 @@ class MemRegisterToHospital implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to('vasishta@outshade.com')->send(new MailMemHospital($this->firstname,$this->lastname,$this->email,$this->country_code,$this->contact,$this->userMessage));
+        Mail::to('rahul.katta@starhospitals.co.in')->send(new MailMemHospital($this->firstname,$this->lastname,$this->email,$this->country_code,$this->contact,$this->userMessage));
 
     }
 }

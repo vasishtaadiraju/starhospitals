@@ -6,7 +6,7 @@
 {{-- @section('meta-title', $content->meta_title) --}}
 {{-- @section('meta-description', $content->meta_description) --}}
 @section('content')
-<x-banner :imgurl="Vite::asset('resources/images/banner/t&c.png')" :text="'Introducing MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) at Star Hospitals: Your Path to Excellence in Emergency Care'" :$breadcrum />
+<x-banner :imgurl="Vite::asset('resources/images/mem/banner.png')" :text="'Introducing MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) at Star Hospitals: Your Path to Excellence in Emergency Care'" :$breadcrum />
 
     {{-- <x-gap/> --}}
     {!! $breadcrum !!}

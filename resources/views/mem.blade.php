@@ -3,7 +3,7 @@
     @vite(['resources/scss/thankyou.scss', 'resources/js/app.js','resources/js/home.js'])
 @endsection
 @section('content')
-    <x-banner :imgurl="Vite::asset('resources/images/banner/t&c.png')" :text="'Introducing MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) at Star Hospitals: Your Path to Excellence in Emergency Care'" :$breadcrum />
+    <x-banner :imgurl="Vite::asset('resources/images/mem/banner.png')" :text="'Introducing MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) at Star Hospitals: Your Path to Excellence in Emergency Care'" :$breadcrum />
 
     <x-gap />
     @php
@@ -374,37 +374,37 @@
                     @endforeach --}}
                     
                     <div class="testimonials__card">
-                       <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt=""> </a>
+                       <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt=""> </a>
                         <div class="testimonials__card__content">
                            
                         </div>
                     </div>
                     <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
                         <div class="testimonials__card__content">
                          
                         </div>
                     </div>
                     <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
                         <div class="testimonials__card__content">
                             
                         </div>
                     </div>
                     <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
                         <div class="testimonials__card__content">
                             
                         </div>
                     </div>
                     <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
                         <div class="testimonials__card__content">
                             
                         </div>
                     </div>
                     <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
                         <div class="testimonials__card__content">
                             
                         </div>
@@ -453,37 +453,37 @@
                     @endforeach --}}
                     
                     <div class="testimonials__card">
-                       <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt=""> </a>
+                       <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt=""> </a>
                         <div class="testimonials__card__content">
                            
                         </div>
                     </div>
                     <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
                         <div class="testimonials__card__content">
                          
                         </div>
                     </div>
                     <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
                         <div class="testimonials__card__content">
                             
                         </div>
                     </div>
                     <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
                         <div class="testimonials__card__content">
                             
                         </div>
                     </div>
                     <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
                         <div class="testimonials__card__content">
                             
                         </div>
                     </div>
                     <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt="">
+                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
                         <div class="testimonials__card__content">
                             
                         </div>
@@ -603,7 +603,7 @@
 
                 </li>
                 <li>
-                    How to Apply: <a href="" style="color: #004E9E;font-weight:bold;text-decoration:underline">Link
+                    How to Apply: <a href="/mem-register" style="color: #004E9E;font-weight:bold;text-decoration:underline">Link
                         to online form for submission</a> <br>
                     Brochure Download (for more detailed information about the program, academics, faculty)
                 </li>
