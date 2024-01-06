@@ -164,24 +164,24 @@
             width: 70%;
             @include media("sm-mob") {
                 // color: black;
-                line-height: 35px;
-                font-size: 25px;
+                line-height: 30px;
+                font-size: 18px;
                 // margin-left: 2rem;
-                width: 80%;
+                width: 95%;
             }
             @include media("md-mob") {
-                // color: black;
-                font-size: 25px;
-                line-height: 35px;
-                // margin-left: 2rem;
-                width: 80%;
+               // color: black;
+               line-height: 30px;
+               font-size: 18px;
+               // margin-left: 2rem;
+               width: 95%;
             }
             @include media("lg-mob") {
-                // color: black;
-                font-size: 25px;
-                line-height: 35px;
-                // margin-left: 2rem;
-                width: 80%;
+               // color: black;
+               line-height: 30px;
+               font-size: 18px;
+               // margin-left: 2rem;
+               width: 95%;
             }
             @include media("x-sm-tab") {
                 // color: black;
