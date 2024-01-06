@@ -558,13 +558,13 @@
             style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
             <ul>
                 <li style="">
-                    2024 Batch, Applications Open:
+                   <strong style="color: #004E9E">2024 Batch, Applications Open</strong> 
 
-                    <br /><br />
+                  
 
                     
                 </li>
-                <li style="list-style-type: none;margin-left:-1.5em">
+                {{-- <li style="list-style-type: none;margin-left:-1.5em">
                     <table style="border: 1px solid #E0E0E0; border-radius: 10px;">
                         <thead>
                             <tr>
@@ -589,10 +589,10 @@
                             </tr>
                         </tbody>
                     </table>
-                </li>
+                </li> --}}
                 <br>
                 <li>
-                    Eligibility:
+                   <b>Eligibility:</b> 
                 </li>
                 <li style="list-style-type: none;margin-left:-15px;padding-top:0.5em">
                     1. MBBS degree with valid state medical council registration.
@@ -603,7 +603,7 @@
 
                 </li>
                 <li>
-                    How to Apply: <a href="/mem-register" style="color: #004E9E;font-weight:bold;text-decoration:underline">Link
+                    How to Apply: <a href="/courses/mem/registration" style="color: #004E9E;font-weight:bold;text-decoration:underline">Link
                         to online form for submission</a> <br>
                     Brochure Download (for more detailed information about the program, academics, faculty)
                 </li>
@@ -635,7 +635,7 @@
 
         <div class="mem-contact-info">
             <div class="mem-contact-info-item-1">
-                <p>For inquiries and application details, please visit our website www.------------.com or
+                <p>For inquiries and application details, please
                     contact:</p>
 
                 <br><br>
@@ -661,6 +661,12 @@
         <div>
             <p style="color: #E3000F">Note: MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) is a 3-year postgraduate course accredited by the Society for Emergency Medicine India [SEMI] board and not accredited/recognized by the National Medical Commission (earlier – Medical Council of India).</p>
         </div>
+        <br><br>
+        <div>
+            <a href="/courses/mem/registration" class="" style="padding:1em 2em;border:1px solid #E3000F;background-color:#E3000F;border-radius:10px;color:#fffffF;font-weight:bold">Apply Now</a>
+
+        </div>
+
     </div>
     <x-gap />
 @endsection

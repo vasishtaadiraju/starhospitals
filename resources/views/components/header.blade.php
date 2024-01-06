@@ -589,4 +589,7 @@
     </div>
 </div>
 <div class="header-gap"></div>
+@if (!str_contains(url()->current() , 'courses'))
 <x-floating-buttons />
+    
+@endif

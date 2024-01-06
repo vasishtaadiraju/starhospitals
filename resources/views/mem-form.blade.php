@@ -1,12 +1,11 @@
 @extends('layout.main')
 @section('css')
-    @vite(['resources/scss/find-doctor.scss','resources/scss/thankyou.scss', 'resources/js/video-consultation.js'])
-  
+    @vite(['resources/scss/find-doctor.scss', 'resources/scss/thankyou.scss', 'resources/js/video-consultation.js'])
 @endsection
 {{-- @section('meta-title', $content->meta_title) --}}
 {{-- @section('meta-description', $content->meta_description) --}}
 @section('content')
-<x-banner :imgurl="Vite::asset('resources/images/mem/banner.png')" :text="'Introducing MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) at Star Hospitals: Your Path to Excellence in Emergency Care'" :$breadcrum />
+    <x-banner :imgurl="Vite::asset('resources/images/mem/banner.png')" :text="'Introducing MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) at Star Hospitals: Your Path to Excellence in Emergency Care'" :$breadcrum />
 
     {{-- <x-gap/> --}}
     {!! $breadcrum !!}
@@ -24,15 +23,14 @@
                     <img data-src="{{ Vite::asset('resources/images/mem/wepik-export-20230424074108.png') }}" alt="">
                     <div>
                         {{-- <h1 class="doctor-name">Name</h1> --}}
-                 
-                        <p class="video-consultation__col-1__designation mem-course-name">Masters in <br> Emergency Medicine</p>
-                        
-                        <p class="mem-affiliation"
-                            >
+
+                        <p class="video-consultation__col-1__designation mem-course-name">Masters in Emergency Medicine
+                        </p>
+
+                        <p class="mem-affiliation">
                             Affiliated to SEMI</p>
-                     
-                        <p class="mem-location"
-                         >
+
+                        <p class="mem-location">
                             Banjara Hills </p>
 
                         {{-- <div
@@ -70,14 +68,22 @@
 
                 <div class="video-consultation__col-1__btm-content">
                     <p>In case of any query call us at</p>
-                    <a href="tel:1800 102 7827"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    <p style="display:flex;justify-content:center;align-items:center;gap:0.25em;font-size:13px">
+                        <a href="tel:+919148779869" style="text-wrap:nowrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M9.36556 10.6821C10.302 12.3288 11.6712 13.698 13.3179 14.6344L14.2024 13.3961C14.4965 12.9845 15.0516 12.8573 15.4956 13.0998C16.9024 13.8683 18.4571 14.3353 20.0789 14.4637C20.599 14.5049 21 14.9389 21 15.4606V19.9234C21 20.4361 20.6122 20.8657 20.1022 20.9181C19.5723 20.9726 19.0377 21 18.5 21C9.93959 21 3 14.0604 3 5.5C3 4.96227 3.02742 4.42771 3.08189 3.89776C3.1343 3.38775 3.56394 3 4.07665 3H8.53942C9.0611 3 9.49513 3.40104 9.5363 3.92109C9.66467 5.54288 10.1317 7.09764 10.9002 8.50444C11.1427 8.9484 11.0155 9.50354 10.6039 9.79757L9.36556 10.6821ZM6.84425 10.0252L8.7442 8.66809C8.20547 7.50514 7.83628 6.27183 7.64727 5H5.00907C5.00303 5.16632 5 5.333 5 5.5C5 12.9558 11.0442 19 18.5 19C18.667 19 18.8337 18.997 19 18.9909V16.3527C17.7282 16.1637 16.4949 15.7945 15.3319 15.2558L13.9748 17.1558C13.4258 16.9425 12.8956 16.6915 12.3874 16.4061L12.3293 16.373C10.3697 15.2587 8.74134 13.6303 7.627 11.6707L7.59394 11.6126C7.30849 11.1044 7.05754 10.5742 6.84425 10.0252Z"
                                 fill="white" />
                         </svg>
-                        1800 102 7827
+                        +91 9148779869
+                    </a> <small> or</small>
+                    <a href="tel:+918008670634" style="text-wrap:nowrap">
+                        
+                        +91 8008670634
                     </a>
+                    </p>
+                    
+                    
                 </div>
             </div>
 
@@ -98,7 +104,7 @@
                 ">
                     Please fill in your details to apply</h1>
 
-                <form action="/mem-register" method="post">
+                <form action="/mem-register" id="mem-form" method="post">
                     @csrf
 
                     <div class="form-fields">
@@ -108,7 +114,7 @@
                                     class="@error('firstname')
                                 error-field
                             @enderror"
-                                    name="firstname">
+                                    name="firstname" >
                                 @error('firstname')
                                     <span class="error-message">{{ $message }}</span>
                                 @enderror
@@ -120,7 +126,7 @@
                                     class="@error('lastname')
                                 error-field
                             @enderror"
-                                    name="lastname">
+                                    name="lastname" >
                                 @error('lastname')
                                     <span class="error-message">{{ $message }}</span>
                                 @enderror
@@ -132,7 +138,7 @@
                     <div class="form-fields">
                         <div class="form-fields-wrapper form-fields-wrapper--col-3">
                             <div class="form-fields-wrapper ">
-                                <select name="country_code" type="text">
+                                <select name="country_code" type="text" >
                                     <option data-countryCode="IN" value="91" selected>India (+91)</option>
                                     <option data-countryCode="GB" value="44">UK (+44)</option>
                                     <option data-countryCode="US" value="1">USA (+1)</option>
@@ -362,7 +368,7 @@
                         </div>
                         <div class="form-fields-wrapper form-fields-wrapper--col-0">
                             <div class="form-fields-wrapper ">
-                                <input placeholder="Phone Number" type="text" name="contact">
+                                <input placeholder="Phone Number" type="number" name="contact" >
                                 @error('contact')
                                     <span class="error-message">{{ $message }}</span>
                                 @enderror
@@ -372,11 +378,11 @@
                     <div class="form-fields">
                         <div class="form-fields-wrapper form-fields-wrapper--col-1">
                             <div class="form-fields-wrapper ">
-                                <input placeholder="Email"
-                                    type="text"class="@error('email')
+                                <input placeholder="Email Id" type="email"
+                                    class="@error('email')
                                 error-field
                             @enderror"
-                                    name="email">
+                                    name="email" >
                                 @error('email')
                                     <span class="error-message">{{ $message }}</span>
                                 @enderror
@@ -387,12 +393,12 @@
                     <div class="form-fields">
                         <div class="form-fields-wrapper form-fields-wrapper--col-1">
                             <div class="form-fields-wrapper ">
-                                <textarea placeholder="Write your Message"
-                                    type="text"class="@error('message')
-                                error-field
-                            @enderror"
-                                    name="message"> </textarea>
-                                @error('message')
+
+                                <textarea placeholder="Write your message"                @error('message')  class="
+                                            error-field
+                                             " @enderror
+                                    name="message" ></textarea>
+                                    @error('message')
                                     <span class="error-message">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -415,4 +421,28 @@
     </div>
 
     <x-gap />
+@endsection
+@section('js')
+<script>
+    document.querySelector('#mem-form').addEventListener('submit',function(e){
+        Array.from(e.target).forEach(element=>{
+            if(element.nextElementSibling != null && element.nextElementSibling.nodeName == 'SPAN')
+            {
+                element.nextElementSibling.innerHTML = ""
+            }
+            let types = ['text','number','email','textarea'];
+            if(types.includes(element.type))
+            {
+                
+                if(element.value.replaceAll(' ','') == "")
+                {
+                    element.insertAdjacentHTML('afterend',`<span class="error-message">${element.name.charAt(0).toUpperCase() + element.name.slice(1)} is required</span>`)
+                    e.preventDefault();
+                
+                }
+            }
+        })
+    })
+
+</script>
 @endsection

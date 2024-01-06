@@ -526,6 +526,6 @@ class FormController extends Controller
     dispatch(new MemRegisterToHospital($request->firstname,$request->lastname,$request->email,$request->country_code,$request->contact,$request->message))->delay(Carbon::now()->addMinute());
     dispatch(new MemRegisterToUser($request->firstname,$request->lastname,$request->email))->delay(Carbon::now()->addMinute());
 
-    return redirect('/mem-register/thank-you');
+    return redirect('/courses/mem/registration/thank-you');
   }
 }

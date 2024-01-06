@@ -99,7 +99,7 @@ Route::get('/video-consultation/thank-you', function () {
     return view('thank-you');
 });
 
-Route::get('/mem', function () {
+Route::get('/courses/mem', function () {
     $breadcrum = "<div class='banner__breadcrum'>
     <a href='/'>Home</a>
     <span>❯</span>
@@ -109,7 +109,7 @@ Route::get('/mem', function () {
     return view('mem', ['breadcrum' => $breadcrum]);
 });
 
-Route::get('/mem-register', function () {
+Route::get('/courses/mem/registration', function () {
     $breadcrum = "<div class='banner__breadcrum'>
     <a href='/'>Home</a>
     <span>❯</span>
@@ -119,7 +119,7 @@ Route::get('/mem-register', function () {
     return view('mem-form', ['breadcrum' => $breadcrum]);
 });
 
-Route::get('/mem-register/thank-you', function () {
+Route::get('/courses/mem/registration/thank-you', function () {
     return view('mem-thank-you');
 });
 

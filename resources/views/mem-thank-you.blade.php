@@ -32,7 +32,7 @@
 
     </p>
         <p> <strong></strong></p>
-        <a href="/mem-register" style="justify-content:center" class="view-all-btn">Continue</a>
+        <a href="/courses/mem" style="justify-content:center" class="view-all-btn">Continue</a>
     <br><br><br>
 </div>
 @endsection
