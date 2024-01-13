@@ -26,8 +26,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// include('search-console.php');
 include('old.php');
+include('search-console.php');
+
 // include('doctors.php');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/find-a-doctor', function () {
