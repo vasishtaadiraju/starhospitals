@@ -2,8 +2,7 @@
 @section('css')
     @vite(['resources/scss/find-doctor.scss', 'resources/scss/thankyou.scss', 'resources/js/video-consultation.js'])
 @endsection
-{{-- @section('meta-title', $content->meta_title) --}}
-{{-- @section('meta-description', $content->meta_description) --}}
+
 @section('content')
     <x-banner :imgurl="Vite::asset('resources/images/mem/banner.png')" :text="'Introducing MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) at Star Hospitals: Your Path to Excellence in Emergency Care'" :$breadcrum />
 
@@ -24,14 +23,30 @@
                     <div>
                         {{-- <h1 class="doctor-name">Name</h1> --}}
 
-                        <p class="video-consultation__col-1__designation mem-course-name">Masters in Emergency Medicine
-                        </p>
+                        <p class="video-consultation__col-1__designation mem-course-name">
+                            CCT-EM (MEM)
 
-                        <p class="mem-affiliation">
+                            
+                        </p>
+                        <small class="mem-location" style="font-size:12px">Affiliated to SEMI</small> <br>
+                        <small class="mem-location" style="font-size:12px">(Society for Emergency Medicine India)</small>
+
+                        <br>
+
+                        <p class="video-consultation__col-1__designation mem-course-name">
+                            MRCEM (UK) <br>
+
+                            
+                        </p>
+                        <small class="mem-location" style="font-size:12px">Training as per Royal College of Emergency Medicine Standards</small>
+                        <br>
+                        <br>
+                        <p class="mem-location" style="line-height: 20px;text-align:justify">STAR HOSPITALS is Awarded as Center of Excellence in Emergency Medicine by SEMI (Society for Emergency Medicine, India)</p>
+                        {{-- <p class="mem-affiliation">
                             Affiliated to SEMI</p>
 
                         <p class="mem-location">
-                            Banjara Hills </p>
+                            Banjara Hills </p> --}}
 
                         {{-- <div
                             class="d-p-info__btn-wrapper video-consultation__col-1__btn d-p-info__btn-wrapper video-consultation__col-1__btn--tab">
@@ -68,23 +83,34 @@
 
                 <div class="video-consultation__col-1__btm-content">
                     <p>In case of any query call us at</p>
-                    <p style="display:flex;justify-content:center;align-items:center;gap:0.25em;font-size:13px">
-                        <a href="tel:+919148779869" style="text-wrap:nowrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    <br>
+                    <p style="display:flex;justify-content:start;align-items:center;gap:0.25em;font-size:13px;margin-left:0.75em">
+                        <svg style="padding-right:0.5em" width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18.8995L13.9497 13.9497C16.6834 11.2161 16.6834 6.78392 13.9497 4.05025C11.2161 1.31658 6.78392 1.31658 4.05025 4.05025C1.31658 6.78392 1.31658 11.2161 4.05025 13.9497L9 18.8995ZM9 21.7279L2.63604 15.364C-0.87868 11.8492 -0.87868 6.15076 2.63604 2.63604C6.15076 -0.87868 11.8492 -0.87868 15.364 2.63604C18.8787 6.15076 18.8787 11.8492 15.364 15.364L9 21.7279ZM9 11C10.1046 11 11 10.1046 11 9C11 7.89543 10.1046 7 9 7C7.8954 7 7 7.89543 7 9C7 10.1046 7.8954 11 9 11ZM9 13C6.79086 13 5 11.2091 5 9C5 6.79086 6.79086 5 9 5C11.2091 5 13 6.79086 13 9C13 11.2091 11.2091 13 9 13Z" fill="white"></path>
+                        </svg>  Banjara Hills
+                    </p>
+                    <p style="display:flex;justify-content:start;align-items:center;gap:0.25em;font-size:13px">
+                        <a href="tel:+919148779869"  style="text-wrap:nowrap;font-size:12px;"><svg width="24" height="24" style="padding-right:0.5em" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M9.36556 10.6821C10.302 12.3288 11.6712 13.698 13.3179 14.6344L14.2024 13.3961C14.4965 12.9845 15.0516 12.8573 15.4956 13.0998C16.9024 13.8683 18.4571 14.3353 20.0789 14.4637C20.599 14.5049 21 14.9389 21 15.4606V19.9234C21 20.4361 20.6122 20.8657 20.1022 20.9181C19.5723 20.9726 19.0377 21 18.5 21C9.93959 21 3 14.0604 3 5.5C3 4.96227 3.02742 4.42771 3.08189 3.89776C3.1343 3.38775 3.56394 3 4.07665 3H8.53942C9.0611 3 9.49513 3.40104 9.5363 3.92109C9.66467 5.54288 10.1317 7.09764 10.9002 8.50444C11.1427 8.9484 11.0155 9.50354 10.6039 9.79757L9.36556 10.6821ZM6.84425 10.0252L8.7442 8.66809C8.20547 7.50514 7.83628 6.27183 7.64727 5H5.00907C5.00303 5.16632 5 5.333 5 5.5C5 12.9558 11.0442 19 18.5 19C18.667 19 18.8337 18.997 19 18.9909V16.3527C17.7282 16.1637 16.4949 15.7945 15.3319 15.2558L13.9748 17.1558C13.4258 16.9425 12.8956 16.6915 12.3874 16.4061L12.3293 16.373C10.3697 15.2587 8.74134 13.6303 7.627 11.6707L7.59394 11.6126C7.30849 11.1044 7.05754 10.5742 6.84425 10.0252Z"
                                 fill="white" />
                         </svg>
                         +91 9148779869
-                    </a> <small> or</small>
-                    <a href="tel:+918008670634" style="text-wrap:nowrap">
+                    </a> <small>||</small>
+                    <a href="tel:+918008670634" style="text-wrap:nowrap;font-size:12px">
                         
                         +91 8008670634
                     </a>
                     </p>
-                    
+                    <p style="display:flex;justify-content:start;align-items:center;gap:0.25em;font-size:13px;margin-left:0.75em">
+                        <svg style="padding-right:0.5em" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z" fill="white"></path>
+                            </svg>  rahul.katta@starhospitals.co.in
+                    </p>
                     
                 </div>
+                
             </div>
 
 

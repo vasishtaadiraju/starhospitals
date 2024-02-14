@@ -1,6 +1,7 @@
 @extends('layout.main')
 @section('css')
 @vite(['resources/scss/homepage.scss', 'resources/js/home.js'])
+<link rel=“canonical” href=“https://starhospitals.in/” />
 @endsection
 @section('meta-title',$content->meta_title)
 @section('meta-description',$content->meta_description)

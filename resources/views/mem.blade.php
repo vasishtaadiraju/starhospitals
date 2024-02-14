@@ -1,6 +1,11 @@
 @extends('layout.main')
 @section('css')
     @vite(['resources/scss/thankyou.scss', 'resources/js/app.js','resources/js/home.js'])
+    <style>
+        p,span{
+            text-align: justify !important;
+        }
+    </style>
 @endsection
 @section('content')
     <x-banner :imgurl="Vite::asset('resources/images/mem/banner.png')" :text="'Introducing MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) at Star Hospitals: Your Path to Excellence in Emergency Care'" :$breadcrum />
@@ -75,7 +80,7 @@
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                                Core Emergency Medicine:
+                               <b>Core Emergency Medicine</b> :
                             </span>
                             <span
                                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -90,7 +95,7 @@
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                                Clinical Decision-Making:
+                              <b>Clinical Decision-Making</b>  :
                             </span>
                             <span
                                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -104,22 +109,22 @@
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                                Advanced Procedures:
+                            <b> Advanced Procedures</b>   :
                             </span>
                             <span
                                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
                                 Our program includes hands-on training in advanced procedures commonly performed in the
                                 emergency
-                                department, such as Intubation, chest tubes, Ultrasound-guided line placement (Central,
+                                department, such as Intubation, Chest tubes, Ultrasound-guided line placement (Central,
                                 arterial,
-                                dialysis sheath), Nerve Blocks, Simple and complex wound repair, etc.<br />
+                                dialysis sheath), Nerve Blocks, Simple and Complex wound repair, etc.<br />
                             </span>
                         </li>
 
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                                Simulation-Based Learnings:
+                              <b>Simulation-Based Learnings</b>  :
                             </span>
                             <span
                                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -128,6 +133,51 @@
                                 scenarios. This allows residents to practice critical skills and decision-making in a
                                 controlled
                                 environment, enhancing their preparedness for real-life emergencies.
+                            </span>
+                        </li>
+
+
+
+                        <li>
+                            <span
+                                style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
+                              <b>Target-based learning</b>  :
+                            </span>
+                            <span
+                                style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
+                                Goals for individual modules every 3 months is an organized approach to education and skill development. It involves setting specific, short-term learning objectives for individuals within a three-month timeframe. This method allows for customized learning, measurable progress, and adaptability, enhancing motivation and facilitating ongoing growth in various contexts, including professional development and personal goals.
+                            </span>
+                        </li>
+                        <li>
+                            <span
+                                style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
+                              <b>96 sessions</b>   :
+                            </span>
+                            <span
+                                style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
+                                sessions held throughout a year to cover a complete curriculum, ensuring consistent learning and comprehensive coverage of topics or skills. This approach is adaptable for various educational or training contexts.
+                            </span>
+                        </li>
+
+                        <li>
+                            <span
+                                style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
+                            <b>Educational Supervisors</b>     :
+                            </span>
+                            <span
+                                style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
+                                This approach involves mentorship under educational supervisors, with assessments conducted every three months to track progress. It offers structured and customized learning experiences, fostering skill development and knowledge acquisition. This method is applicable in various contexts, promoting accountability, feedback, and personalized guidance for individuals' goals and development.
+                            </span>
+                        </li>
+
+                        <li>
+                            <span
+                                style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
+                             <b>Innovative logbook covering both RCEM and CCT-EM curriculum</b>    :
+                            </span>
+                            <span
+                                style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
+                                It is a progressive tool for medical professionals specializing in emergency medicine. It effectively encompasses the requirements of both curricula, streamlining the learning processes. This logbook includes features for self-assessment, mentor evaluations, and aligns with regulatory standards, promoting an efficient and comprehensive educational experience for trainees in this field.
                             </span>
                         </li>
                     </ul>
@@ -144,7 +194,7 @@
                         style="color: #212121; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
                         <ul style="list-style-image: none; list-style-type: disc;">
                             <li>
-                                We are the only institute in India with 2 fully trained FRCEM consultants as a part of our
+                                We are the only institute in India with <b>2 fully trained FRCEM consultants</b>  as a part of our
                                 faculty.
                                 Our
                                 academic sessions are conducted by a team of highly experienced senior consultants and
@@ -186,7 +236,7 @@
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                                Procedural Skills:
+                             <b>Procedural Skills</b>   :
                             </span>
                             <span
                                 style="font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -200,7 +250,7 @@
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                                Simulation Scenarios:
+                             <b>Simulation Scenarios</b>   :
                             </span>
                             <span
                                 style="font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -214,7 +264,7 @@
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                                Team-Based Training:
+                             <b>Team-Based Training</b>   :
                             </span>
                             <span
                                 style="font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -268,18 +318,18 @@
                         style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
                         <ul style="list-style-image: none; list-style-type: disc;">
                             <li>
-                                Duration
-                                of course: A 3-year program with in-depth training in emergency medicine.
+                              <b>Duration
+                                of course</b>  : A 3-year program with in-depth training in emergency medicine.
                             </li>
                             <li>
-                                Working Hours:
+                              <b>Working Hours</b>  :
                                 Round-the-clock shifts (covering day and night), well balanced amongst the residents with
                                 24/7
                                 consultant
                                 coverage.
                             </li>
                             <li>
-                                Rotations: Resident is predominantly trained in ER for most of the training but also
+                              <b>Rotations</b>  : Resident is predominantly trained in ER for most of the training but also
                                 posted
                                 in critical care and anesthesia to broaden clinical expertise.
                             </li>
@@ -309,25 +359,25 @@
 
                                 <br /><br />
 
-                                <table style="border: 1px solid #E0E0E0; border-radius: 10px; border-spacing:10px;">
+                                <table style="width:20rem;border: 1px solid #181818; border-radius: 10px; border-spacing:10px;border-collapse:collapse;padding;0.5em">
                                     <thead>
-                                        <tr>
-                                            <th>Year Of Residency</th>
-                                            <th>Per Month</th>
+                                        <tr >
+                                            <th style="border: 1px solid #181818;padding:0.25em;text-align:center">Year Of Residency</th>
+                                            <th style="border: 1px solid #181818;padding:0.25em;text-align:center">Per Month</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>First</td>
-                                            <td>25,000/-</td>
+                                            <td style="border: 1px solid #181818;padding:0.25em;text-align:center">First</td>
+                                            <td style="border: 1px solid #181818;padding:0.25em;text-align:center">25,000/-</td>
                                         </tr>
                                         <tr>
-                                            <td>Second</td>
-                                            <td>30,000/-</td>
+                                            <td style="border: 1px solid #181818;padding:0.25em;text-align:center">Second</td>
+                                            <td style="border: 1px solid #181818;padding:0.25em;text-align:center">30,000/-</td>
                                         </tr>
                                         <tr>
-                                            <td>Third</td>
-                                            <td>35,000/-</td>
+                                            <td style="border: 1px solid #181818;padding:0.25em;text-align:center">Third</td>
+                                            <td style="border: 1px solid #181818;padding:0.25em;text-align:center">35,000/-</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -419,6 +469,28 @@
         <br />
         <br />
 
+        <div>
+            <span
+                style="color: #004E9E; font-size: 16px; font-weight: 700; line-height: 25px; letter-spacing: 0.32px; word-wrap: break-word">
+                Electronic Medical Records:
+            </span>
+            <span
+                style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
+                We have fully integrated EMR to improve documentation quality, streamline audits, and enhance healthcare delivery through accessibility, integration, security, and compliance features.
+            </span>
+        </div>
+        <br>
+        <div>
+            <span
+                style="color: #004E9E; font-size: 16px; font-weight: 700; line-height: 25px; letter-spacing: 0.32px; word-wrap: break-word">
+                Evidence Based Medicine:
+            </span>
+            <span
+                style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
+                With more than 80 evidence-based protocols in place, the emergency department ensures that patients receive high-quality, consistent, and efficient care. These protocols improve patient outcomes, reduce costs, enhance patient safety, and contribute to ongoing quality improvement efforts. Healthcare providers are well-trained in these protocols, and patients are educated about their care options, promoting active participation in treatment decisions.
+            </span>
+        </div>
+        <br>
         <div>
             <span
                 style="color: #004E9E; font-size: 16px; font-weight: 700; line-height: 25px; letter-spacing: 0.32px; word-wrap: break-word">
