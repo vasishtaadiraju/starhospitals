@@ -1,0 +1,348 @@
+@media screen and (max-width: 992px) {
+	.abtstar:after{
+		display: none;
+	}
+	.img-box {
+    margin-top: 20px;
+    text-align: center;
+    border-bottom: 0 !important;
+}
+	.img-box i {
+    font-size: 60px;
+    color: #367bb8;
+   padding-right: 180px;
+    margin-top: -100px;
+}
+	header{
+		min-height: 100px !important;
+	}
+	.donr-form:before{
+		display: none;
+	}
+	.abtstar .title-desc {
+    
+		    padding: 0 !important;
+}
+	.adrs {
+    text-align: center !important;
+}
+	.adrs-lctn {
+    text-align: center;
+}
+	footer.ftr-cpy {
+       padding-bottom: 50px !important;
+}
+	.title-desc.p-5.pt-3 {
+    padding: 0 !important;
+}
+	.section-title.px-5 {
+    padding: 0 !important;
+}
+	.layer-content-srvs.px-5 {
+    padding: 0 !important;
+}  
+}
+
+
+/* ============ start header css
+=================== */
+header {
+    height: auto;
+    min-height: 60px;
+    max-height: 80px;
+}
+
+img.logo {
+    width: 100px;
+}
+.bg-gray {
+    background: #f2f2f2;
+}
+li.nav-item a {
+    color: #333;
+    background: #ddd;
+    margin-right: 10px;
+    border-radius: 0 !important;
+ padding: 4px;
+}
+
+/*=========End header ======= */
+/*====banner=*/
+
+
+
+/*============ Start Form css ============== */
+
+.donr-form {
+    background: url(../images/background-colr.png);
+	    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+form input {
+    z-index: 9;
+    position: relative;
+}
+/*.donr-form:before {
+       width: 160px;
+    height: 230px;
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    background: url(../images/form-bg.png);
+    left: 10px;
+    bottom: 0;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}*/
+.img-box img {
+    width: 100%;
+    height: auto;
+    max-width: 115px;
+}
+.img-box {
+    padding-bottom: 20px;
+    border-bottom: 3px dashed #0f62ac;
+    border-radius: 80px;
+    padding-left: 20px;
+}
+.frm {
+    border-radius: 20px;
+}
+.text-right {
+    text-align: right;
+}
+
+h2.title {
+    color: #0f62ac;
+}
+
+.form-title {
+    color: #0f62ac;
+	font-size: 26px;
+}
+button.submit-btn {
+    background: linear-gradient(45deg, #0f62ac69, #0f62ac);
+    color: #fff;
+    padding: 4px 40px;
+	border-radius: 8px;
+}
+/* ================ end form css =========*/
+/* ================ Start about css =========*/
+
+.font-weight-bold {
+    font-weight: 400 !important;
+}
+/* ================ end about css =========*/
+/* ================ Start doctor css =========*/
+.doctor {
+    background: #edf7fd;
+}
+.doc-img img {
+    width: 100%;
+    max-width: 200px;
+}
+.doc-name h3 {
+    font-size: 20px;
+    color: #0f62ac;
+}
+.doc-name p {
+    font-size: 14px;
+    color: #959596;
+	margin-bottom: 6px;
+}
+.doc-name h5 {
+     font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+}
+/* ================ end doctor css =========*/
+
+/* =========== at star ==========*/
+.abtstar {
+  position: relative;
+	background: #edf7fd;
+}
+.abtstar .title-desc {
+    padding-right: 60px;
+}
+.abtstar:after {
+    width: 250px;
+    height: 360px;
+    content: "";
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    background: url(../images/about-start.png);
+    left: 960px;
+    bottom: 0;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* ================ Start services css =========*/
+
+.section-title p {
+    font-size: 18px;
+    color: #0f62ac;
+}
+.services .title-desc h6 {
+    color: #facecf;
+}
+.services .title-desc {
+    color: #e1eaf2;
+}
+.services .title-desc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+/* ================ end services css =========*/
+/* ================ Start contact css =========*/
+
+
+.contctus {
+    background: #0f57a6;
+}
+.info-obj {
+    background: #0d3c70;
+    padding: 20px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+	border-radius: 10px;
+    width: 80%;
+}
+
+.cntctus {
+    background: #0f57a6;
+}
+
+.adrs {
+    text-align: right;
+	font-weight: 600;
+}
+.adrs-lctn {
+    font-weight: 600;
+}
+.phn i {
+       color: #fff;
+    font-size: 34px;
+}
+.phn a {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.social-icns a {
+    font-size: 20px;
+    color: #0f57a6;
+    margin-left: 10px;
+}
+.addrs-lctn p i {
+    margin-right: 10px;
+    font-size: 12px;
+}
+.addrs p i {
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.social-icns {
+    text-align: center;
+    background: #fff;
+    width: 80%;
+    border-radius: 10px;
+    padding: 8px;
+}
+/* ================ end contact css =========*/
+/* ================ Start faqs css =========*/
+
+.faqs {
+   background: url(../images/background-colr.png);
+	  position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.faq-qstn h4 {
+    font-size: 16px;
+    font-weight: 700;
+	    margin-bottom: 2px;
+}
+p.answr {
+    font-size: 14px;
+}
+
+/* ================ end faqs css =========*/
+/* ================ Start footer css =========*/
+footer.ftr-cpy {
+    background: linear-gradient(45deg, #ed3237, #0f62ac);
+}
+p.float-end a {
+    color: #fff;
+}
+p.cpyrt {
+    margin-bottom: 0;
+}
+
+/* ================ end footer css =========*/
+/* ================ call to action =========*/
+.frmbg {
+    background: #367bb8;
+}
+.frmbg a {
+    text-decoration: none;
+}
+.phnbg a {
+    text-decoration: none;
+}
+
+.phnbg {
+    background: #ed3237;
+}
+/* ================ end call to action =========*/
+
+/*========start euipped======*/
+
+.serv-itm {
+    position: relative;
+}
+.serv-itm:after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -20px;
+    width: 2px;
+    height: 30px;
+    background: #ed3237;
+}
+.serv-itm:before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: -20px;
+    right: 0;
+    height: 120px;
+    width: 2px;
+    background: #e8e9e9;
+}
+.serv-itm h5{
+    color: #0f62ac;
+}
+.d-felx {
+    display: flex;
+}
+.title-desc i {
+    padding-right: 10px;
+    color: #e7cbcb;
+}
