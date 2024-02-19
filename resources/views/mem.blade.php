@@ -2,8 +2,13 @@
 @section('css')
     @vite(['resources/scss/thankyou.scss', 'resources/js/app.js','resources/js/home.js'])
     <style>
-        p,span{
+        p,span,li,div{
             text-align: justify !important;
+            line-height: 25px !important;
+            word-spacing: 5px !important;
+        }
+        li{
+            margin-top:0.5em !important;
         }
     </style>
 @endsection
@@ -35,7 +40,7 @@ MRCEM (UK) welcoming a new cohort of passionate medical
             professionals.
         </div>
 
-        <br><br>
+        <br>
 
         <div>
             <strong>Why Choose Our Residency Program?</strong>
@@ -65,8 +70,6 @@ MRCEM (UK) at Star Hospitals is designed to shape the next
         </div>
         <br>
 
-        <br />
-
         <div>
             <ul style="list-style-image: url('{{ Vite::asset('resources/images/bullet.svg') }}');">
                 <li>
@@ -80,7 +83,7 @@ MRCEM (UK) at Star Hospitals is designed to shape the next
                         provide residents with a strong foundation in emergency medicine and a well-rounded education. The
                         curriculum covers a wide range of topics, including but not limited to:<br />
                     </span>
-                    <br>
+                  
                         
                     <ul style="list-style-image: none; list-style-type: disc;">
                         <li>
@@ -197,7 +200,7 @@ personal spheres.
                 <li>
                     <span
                         style="color: #004E9E; font-size: 14px; font-weight: 600; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                        Expert Faculty-Led Academics:<br />
+                        Expert Faculty-Led Academics:
                     </span>
 
                     
@@ -231,13 +234,13 @@ personal spheres.
                 </li>
 
                 <br />
-                <br>
+             
                 <li>
                     <span
                         style="color: #004E9E; font-size: 14px; font-weight: 600; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
                         Hands-on Workshop:
                     </span>
-                    <br>
+                 
 
                     <span
                         style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -263,7 +266,7 @@ personal spheres.
                                 that they are proficient in critical interventions.
                             </span>
                         </li>
-                        <br><br>
+                        <br>
                         <div>
                             {{-- <x-heading :title="'Reviews From Our Patients'" :description="$content->review_text" /> --}}
                                 <div class="testimonials testimonials-slider">
@@ -308,7 +311,7 @@ personal spheres.
                                 </div>
                         </div>
 
-                        <br><br>
+                        <br>
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -344,7 +347,7 @@ personal spheres.
                                     @endforeach --}}
                                     
                                     <div class="testimonials__card">
-                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/g-2-i-1.png')}}" alt=""> </a>
+                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/g-2-i-1.jpg')}}" alt=""> </a>
                                          <div class="testimonials__card__content">
                                             
                                          </div>
@@ -556,7 +559,7 @@ personal spheres.
                 Train in a world-class healthcare facility equipped with the latest technology and resources. 
             </span>
         </div>
-        <br><br>
+        <br>
                         <div>
                             {{-- <x-heading :title="'Reviews From Our Patients'" :description="$content->review_text" /> --}}
                                 <div class="testimonials testimonials-slider">
@@ -574,6 +577,12 @@ personal spheres.
                                         </div>
                                     </div> 
                                     @endforeach --}}
+                                    <div class="testimonials__card">
+                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/FD.jpg')}}" alt=""> </a>
+                                         <div class="testimonials__card__content">
+                                            
+                                         </div>
+                                     </div>
                                     
                                     <div class="testimonials__card">
                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/B - Block A.JPG')}}" alt=""> </a>
@@ -587,12 +596,7 @@ personal spheres.
                                             
                                          </div>
                                      </div>
-                                     <div class="testimonials__card">
-                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/FD.jpg')}}" alt=""> </a>
-                                         <div class="testimonials__card__content">
-                                            
-                                         </div>
-                                     </div>
+                                     
                                     
                                     
                                    
@@ -601,7 +605,7 @@ personal spheres.
                                 </div>
                         </div>
 
-                        <br><br>
+                        <br>
         <br />
 
 
@@ -639,11 +643,6 @@ personal spheres.
                 your specialization request during the final year.
             </span>
         </div>
-        <br />
-        <br />
-
-     
-
         <br />
 
         <div>
@@ -694,7 +693,7 @@ personal spheres.
             </ul>
         </div>
 
-        <br /><br /><br />
+        <br />
 
         <div>
             <strong>Application Information</strong>
@@ -743,10 +742,10 @@ personal spheres.
                    <b>Eligibility:</b> 
                 </li>
                 <li style="list-style-type: none;margin-left:-15px;padding-top:0.5em">
-                    1. MBBS degree with valid state medical council registration.
+                    -  MBBS degree with valid state medical council registration.
                 </li>
                 <li style="list-style-type: none;margin-left:-15px;padding-top:0.5em">
-                    2. MBBS graduates from foreign varsities qualified through FMGE (Foreign Medical Graduate Entrance) by
+                    - MBBS graduates from foreign varsities qualified through FMGE (Foreign Medical Graduate Entrance) by
                     MCI with valid state medical council registration.
 
                 </li>
@@ -758,7 +757,7 @@ personal spheres.
                 </li>
             </ul>
         </div>
-        <br /><br /><br />
+        <br />
 
         <div>
             <strong>Join Us in Shaping the Future of Emergency Medicine</strong>
@@ -773,7 +772,7 @@ personal spheres.
                 our residents to excel in emergency medicine, make informed decisions, and lead with confidence. Our program
                 is dedicated to nurturing the next generation of emergency medicine physicians who are not only skilled
                 clinicians but also effective leaders and communicators.
-                <br><br>
+                <br>
                 Are you ready to make a difference in the lives of patients during their most critical moments? <br> <br>
                 Apply to the Star Hospital’s Emergency Medicine Residency Program and be part of a legacy of excellence in
                 healthcare.
@@ -787,7 +786,7 @@ personal spheres.
                 <p>For inquiries and application details, please
                     contact:</p>
 
-                <br><br>
+                <br>
 
 
                 
@@ -795,34 +794,35 @@ personal spheres.
 Dr. Rahul Katta, <br>
 MBBS, FRCEM. CCT<br>
 Group Lead. Department of Emergency Medicine.<br>
-Star Hospitals<br>
 Mail: rahul.katta@starhospitals.co.in<br>
 Ph: +91 9148779869<br>
             </div>
             <div class="mem-contact-info-item-1">
-                <br><br><br>
+                <br><br>
 
                 
 
 Dr. Imran Shareef, <br>
 MBBS, FRCEM, CCT <br>
 Clinical Lead, Department of Emergency Medicine. <br>
-Star Hospitals<br>
+Star Hospitals, Banjara Hills<br>
 Mail: imran.shareef@starhospitals.co.in<br>
 Ph: +91 8008670634<br>
             </div>
             <div class="mem-contact-info-item-1">
-                <br><br><br>
+                <br><br>
 
                 Dr. Nickhil Vangapally <br>
                 MBBS, MEM, MRCEM (UK)<br>
                 Lead - Department of Emergency Medicine<br>
                 Star Hospitals, Nanakramguda<br>
+                Mail: drnickhilv@starhospitals.co.in<br>
+Ph: +91 9866456120<br>
 
             </div>
         </div>
 
-        <br><br>
+        <br>
 
         <div>
             <p style="color: #E3000F">Note: CCT-EM (SEMI) / (MEM) is a 3-year postgraduate
@@ -835,7 +835,7 @@ Ph: +91 8008670634<br>
                 are not accredited/recognized by the National Medical
                 Commission (earlier – Medical Council of India).</p>
         </div>
-        <br><br>
+        <br>
         <div>
             <a href="/courses/mem/registration" class="" style="padding:1em 2em;border:1px solid #E3000F;background-color:#E3000F;border-radius:10px;color:#fffffF;font-weight:bold">Apply Now</a>
 

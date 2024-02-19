@@ -20,7 +20,7 @@
             <div class="video-consultation__col-1__details-wrapper">
 
                 <div class="video-consultation__col-1__details-wrapper__doctor-card">
-                    <img data-src="{{ Vite::asset('resources/images/mem/wepik-export-20230424074108.png') }}" alt="">
+                    <img data-src="{{ Vite::asset('resources/images/mem/content.jpg') }}" alt="">
                     <div>
                         {{-- <h1 class="doctor-name">Name</h1> --}}
 

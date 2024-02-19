@@ -15,8 +15,8 @@
     <br><br>
    <b> Should you have any queries or require assistance, please don't hesitate to reach out to our team. We're here to ensure that your experience with Star Hospitals exceeds your expectations. We're looking forward to embarking on this educational journey together.</b>
     <br><br>
-    Regards,
-    Star Hospitals
+    Regards, <br>
+    Star Hospitals<br><br>
     
 </body>
 </html>
