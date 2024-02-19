@@ -8,7 +8,8 @@
     </style>
 @endsection
 @section('content')
-    <x-banner :imgurl="Vite::asset('resources/images/mem/banner.png')" :text="'Introducing MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) at Star Hospitals: Your Path to Excellence in Emergency Care'" :$breadcrum />
+    <x-banner :imgurl="Vite::asset('resources/images/mem/banner.png')" :text="'Introducing MASTERS IN CCT-EM (SEMI)/
+MRCEM (UK) at Star Hospitals: Your Path to Excellence in Emergency Care'" :$breadcrum />
 
     <x-gap />
     @php
@@ -29,7 +30,8 @@
         <div>
             Are you ready to embark on an exciting journey towards becoming a highly skilled and compassionate Emergency
             Medicine Physician? Look no further! Star Hospitals proudly announces the intake of residents for the
-            prestigious MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) welcoming a new cohort of passionate medical
+            prestigious MASTERS IN CCT-EM (SEMI)/
+MRCEM (UK) welcoming a new cohort of passionate medical
             professionals.
         </div>
 
@@ -42,11 +44,12 @@
         <br>
 
         <div>
-            <img data-src="{{ Vite::asset('resources/images/mem/wepik-export-20230424074108.png') }}" class="floating-image"
+            <img data-src="{{ Vite::asset('resources/images/mem/content.jpg') }}" class="floating-image"
                 alt="">
 
             <p style="">
-                The MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) at Star Hospitals is designed to shape the next
+                The MASTERS IN CCT-EM (SEMI)/
+MRCEM (UK) at Star Hospitals is designed to shape the next
                 generation of emergency medicine specialists. Here’s why you should consider joining:
                 <br>
                 <br>
@@ -69,6 +72,7 @@
                 <li>
                     <span style="color: #004E9E; font-size: 14px;"><b>Comprehensive Academic
                             Curriculum:</b></span>
+                            
                     <span
                         style="font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
                         Our Emergency Medicine Residency Program is grounded in a robust academic curriculum that is
@@ -76,6 +80,8 @@
                         provide residents with a strong foundation in emergency medicine and a well-rounded education. The
                         curriculum covers a wide range of topics, including but not limited to:<br />
                     </span>
+                    <br>
+                        
                     <ul style="list-style-image: none; list-style-type: disc;">
                         <li>
                             <span
@@ -116,8 +122,8 @@
                                 Our program includes hands-on training in advanced procedures commonly performed in the
                                 emergency
                                 department, such as Intubation, Chest tubes, Ultrasound-guided line placement (Central,
-                                arterial,
-                                dialysis sheath), Nerve Blocks, Simple and Complex wound repair, etc.<br />
+                                Arterial,
+                                Dialysis sheath), Nerve Blocks, Simple and Complex wound repair, etc.<br />
                             </span>
                         </li>
 
@@ -145,7 +151,10 @@
                             </span>
                             <span
                                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                                Goals for individual modules every 3 months is an organized approach to education and skill development. It involves setting specific, short-term learning objectives for individuals within a three-month timeframe. This method allows for customized learning, measurable progress, and adaptability, enhancing motivation and facilitating ongoing growth in various contexts, including professional development and personal goals.
+                                Establishing objectives for individuals every 3 months is a structured way to enhance education and skill
+development. It entails defining precise, short-term learning targets, promoting personalized learning, measurable
+advancement, and adaptability. This method boosts motivation and facilitates continual growth in professional and
+personal spheres.
                             </span>
                         </li>
                         <li>
@@ -155,7 +164,7 @@
                             </span>
                             <span
                                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                                sessions held throughout a year to cover a complete curriculum, ensuring consistent learning and comprehensive coverage of topics or skills. This approach is adaptable for various educational or training contexts.
+                                Training sessions held throughout a year to cover a complete curriculum, ensuring consistent learning and comprehensive coverage of topics or skills. This approach is adaptable for various educational or training contexts.
                             </span>
                         </li>
 
@@ -166,7 +175,7 @@
                             </span>
                             <span
                                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                                This approach involves mentorship under educational supervisors, with assessments conducted every three months to track progress. It offers structured and customized learning experiences, fostering skill development and knowledge acquisition. This method is applicable in various contexts, promoting accountability, feedback, and personalized guidance for individuals' goals and development.
+                                This approach involves mentorship under educational supervisors, with assessments conducted every three months to track progress. It offers structured and customized learning experiences, fostering skill development and knowledge acquisition. This method helps provide personalized guidance for individuals' goals and development.
                             </span>
                         </li>
 
@@ -190,11 +199,15 @@
                         style="color: #004E9E; font-size: 14px; font-weight: 600; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
                         Expert Faculty-Led Academics:<br />
                     </span>
+
+                    
+                  
+
                     <span
                         style="color: #212121; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
                         <ul style="list-style-image: none; list-style-type: disc;">
                             <li>
-                                We are the only institute in India with <b>2 fully trained FRCEM consultants</b>  as a part of our
+                                We are the only institute in India with <strong style="font-size:18px;color:#004E9E">2 fully trained FRCEM consultants</strong>  as a part of our
                                 faculty.
                                 Our
                                 academic sessions are conducted by a team of highly experienced senior consultants and
@@ -218,12 +231,14 @@
                 </li>
 
                 <br />
-
+                <br>
                 <li>
                     <span
                         style="color: #004E9E; font-size: 14px; font-weight: 600; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
                         Hands-on Workshop:
                     </span>
+                    <br>
+
                     <span
                         style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
                         In
@@ -232,6 +247,8 @@
                         invaluable in
                         emergency medicine.<br />Workshops cover a wide range of topics, including:<br />
                     </span>
+                    <br>
+
                     <ul style="list-style-image: none; list-style-type: disc;">
                         <li>
                             <span
@@ -246,7 +263,52 @@
                                 that they are proficient in critical interventions.
                             </span>
                         </li>
+                        <br><br>
+                        <div>
+                            {{-- <x-heading :title="'Reviews From Our Patients'" :description="$content->review_text" /> --}}
+                                <div class="testimonials testimonials-slider">
+                                
+                                    {{-- @foreach ($testimonials as $item)
+                                    <div class="testimonials__card">
+                                        <a class="ctg-video">
+                                            <img src="" data-src="{{ config('variables.asset') . $item->image }}" alt="">
+                                
+                                        </a>
+                                        <div class="testimonials__card__content">
+                                            <p>{{$item->patient_name}}</p>
+                                
+                                            <h4>{{$item->text}}</h4>
+                                        </div>
+                                    </div> 
+                                    @endforeach --}}
+                                    
+                                    <div class="testimonials__card">
+                                       <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/g-1-i-1.png')}}" alt=""> </a>
+                                        <div class="testimonials__card__content">
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="testimonials__card">
+                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/g-1-i-2.png')}}" alt=""> </a>
+                                         <div class="testimonials__card__content">
+                                            
+                                         </div>
+                                     </div>
+                                     <div class="testimonials__card">
+                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/g-1-i-3.png')}}" alt=""> </a>
+                                         <div class="testimonials__card__content">
+                                            
+                                         </div>
+                                     </div>
+                                    
+                                    
+                                   
+                                    
+                                    
+                                </div>
+                        </div>
 
+                        <br><br>
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -261,6 +323,47 @@
                             </span>
                         </li>
 
+                        <br>
+                        <br>
+                        <div>
+                            {{-- <x-heading :title="'Reviews From Our Patients'" :description="$content->review_text" /> --}}
+                                <div class="testimonials testimonials-slider">
+                                
+                                    {{-- @foreach ($testimonials as $item)
+                                    <div class="testimonials__card">
+                                        <a class="ctg-video">
+                                            <img src="" data-src="{{ config('variables.asset') . $item->image }}" alt="">
+                                
+                                        </a>
+                                        <div class="testimonials__card__content">
+                                            <p>{{$item->patient_name}}</p>
+                                
+                                            <h4>{{$item->text}}</h4>
+                                        </div>
+                                    </div> 
+                                    @endforeach --}}
+                                    
+                                    <div class="testimonials__card">
+                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/g-2-i-1.png')}}" alt=""> </a>
+                                         <div class="testimonials__card__content">
+                                            
+                                         </div>
+                                     </div>
+                                     <div class="testimonials__card">
+                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/g-2-i-2.jpg')}}" alt=""> </a>
+                                         <div class="testimonials__card__content">
+                                            
+                                         </div>
+                                     </div>
+                                    
+                                   
+                                    
+                                    
+                                </div>
+                        </div>
+                        <br>
+                        <br>
+
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -273,6 +376,53 @@
                                 communication and collaboration among healthcare professionals in the emergency department.
                             </span>
                         </li>
+                        <br>
+                        <br>
+                        <div>
+                            {{-- <x-heading :title="'Reviews From Our Patients'" :description="$content->review_text" /> --}}
+                                <div class="testimonials testimonials-slider">
+                                
+                                    {{-- @foreach ($testimonials as $item)
+                                    <div class="testimonials__card">
+                                        <a class="ctg-video">
+                                            <img src="" data-src="{{ config('variables.asset') . $item->image }}" alt="">
+                                
+                                        </a>
+                                        <div class="testimonials__card__content">
+                                            <p>{{$item->patient_name}}</p>
+                                
+                                            <h4>{{$item->text}}</h4>
+                                        </div>
+                                    </div> 
+                                    @endforeach --}}
+                                    
+                                    <div class="testimonials__card">
+                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/tbt-1.png')}}" alt=""> </a>
+                                         <div class="testimonials__card__content">
+                                            
+                                         </div>
+                                     </div>
+                                     <div class="testimonials__card">
+                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/tbt-2.png')}}" alt=""> </a>
+                                         <div class="testimonials__card__content">
+                                            
+                                         </div>
+                                     </div>
+                                     <div class="testimonials__card">
+                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/tbt-3.png')}}" alt=""> </a>
+                                         <div class="testimonials__card__content">
+                                            
+                                         </div>
+                                     </div>
+                                    
+                                    
+                                   
+                                    
+                                    
+                                </div>
+                        </div>
+                        <br>
+                        <br>
                     </ul>
                 </li>
 
@@ -329,9 +479,14 @@
                                 coverage.
                             </li>
                             <li>
-                              <b>Rotations</b>  : Resident is predominantly trained in ER for most of the training but also
-                                posted
-                                in critical care and anesthesia to broaden clinical expertise.
+                              <b>Rotations</b>  : Resident is predominantly trained in
+                              ER for most of the training period and includes
+                              4 months of critical care, 4 months of
+                              anesthesia, additional 4 months electives
+                              covering pediatrics, prehospital, radiology,
+                              trauma, quality improvement, simulation based
+                              on student interest to broaden clinical
+                              expertise.
                             </li>
                         </ul>
                     </span>
@@ -398,76 +553,11 @@
             </span>
             <span
                 style="font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                Train in a world-class healthcare facility equipped with the latest technology and resources. Our simulation
-                centre allows you to practice and refine your skills in a controlled environment.
+                Train in a world-class healthcare facility equipped with the latest technology and resources. 
             </span>
         </div>
         <br />
-        <br />
 
-        <div>
-            {{-- <x-heading :title="'Reviews From Our Patients'" :description="$content->review_text" /> --}}
-                <div class="testimonials testimonials-slider">
-                
-                    {{-- @foreach ($testimonials as $item)
-                    <div class="testimonials__card">
-                        <a class="ctg-video">
-                            <img src="" data-src="{{ config('variables.asset') . $item->image }}" alt="">
-                
-                        </a>
-                        <div class="testimonials__card__content">
-                            <p>{{$item->patient_name}}</p>
-                
-                            <h4>{{$item->text}}</h4>
-                        </div>
-                    </div> 
-                    @endforeach --}}
-                    
-                    <div class="testimonials__card">
-                       <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt=""> </a>
-                        <div class="testimonials__card__content">
-                           
-                        </div>
-                    </div>
-                    <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
-                        <div class="testimonials__card__content">
-                         
-                        </div>
-                    </div>
-                    <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
-                        <div class="testimonials__card__content">
-                            
-                        </div>
-                    </div>
-                    <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
-                        <div class="testimonials__card__content">
-                            
-                        </div>
-                    </div>
-                    <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
-                        <div class="testimonials__card__content">
-                            
-                        </div>
-                    </div>
-                    <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
-                        <div class="testimonials__card__content">
-                            
-                        </div>
-                    </div>
-                    
-                   
-                    
-                    
-                </div>
-        </div>
-
-        <br />
-        <br />
 
         <div>
             <span
@@ -487,7 +577,7 @@
             </span>
             <span
                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                With more than 80 evidence-based protocols in place, the emergency department ensures that patients receive high-quality, consistent, and efficient care. These protocols improve patient outcomes, reduce costs, enhance patient safety, and contribute to ongoing quality improvement efforts. Healthcare providers are well-trained in these protocols, and patients are educated about their care options, promoting active participation in treatment decisions.
+                With more than <b>80 evidence-based protocols</b>  in place, the emergency department ensures that patients receive high-quality, consistent, and efficient care. These protocols improve patient outcomes, reduce costs, enhance patient safety, and contribute to ongoing quality improvement efforts. Healthcare providers are well-trained in these protocols, and patients are educated about their care options, promoting active participation in treatment decisions.
             </span>
         </div>
         <br>
@@ -506,67 +596,7 @@
         <br />
         <br />
 
-        <div>
-            {{-- <x-heading :title="'Reviews From Our Patients'" :description="$content->review_text" /> --}}
-                <div class="testimonials testimonials-slider">
-                
-                    {{-- @foreach ($testimonials as $item)
-                    <div class="testimonials__card">
-                        <a class="ctg-video">
-                            <img src="" data-src="{{ config('variables.asset') . $item->image }}" alt="">
-                
-                        </a>
-                        <div class="testimonials__card__content">
-                            <p>{{$item->patient_name}}</p>
-                
-                            <h4>{{$item->text}}</h4>
-                        </div>
-                    </div> 
-                    @endforeach --}}
-                    
-                    <div class="testimonials__card">
-                       <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt=""> </a>
-                        <div class="testimonials__card__content">
-                           
-                        </div>
-                    </div>
-                    <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
-                        <div class="testimonials__card__content">
-                         
-                        </div>
-                    </div>
-                    <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
-                        <div class="testimonials__card__content">
-                            
-                        </div>
-                    </div>
-                    <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
-                        <div class="testimonials__card__content">
-                            
-                        </div>
-                    </div>
-                    <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
-                        <div class="testimonials__card__content">
-                            
-                        </div>
-                    </div>
-                    <div class="testimonials__card">
-                        <img src="" data-src="{{Vite::asset('resources/images/mem/nurse-taking-notes-x-ray-room.jpeg')}}" alt="">
-                        <div class="testimonials__card__content">
-                            
-                        </div>
-                    </div>
-                    
-                   
-                    
-                    
-                </div>
-        </div>
-        <br />
+     
 
         <br />
 
@@ -674,10 +704,11 @@
                     MCI with valid state medical council registration.
 
                 </li>
+                <br>
                 <li>
                     How to Apply: <a href="/courses/mem/registration" style="color: #004E9E;font-weight:bold;text-decoration:underline">Link
                         to online form for submission</a> <br>
-                    Brochure Download (for more detailed information about the program, academics, faculty)
+              
                 </li>
             </ul>
         </div>
@@ -697,7 +728,7 @@
                 is dedicated to nurturing the next generation of emergency medicine physicians who are not only skilled
                 clinicians but also effective leaders and communicators.
                 <br><br>
-                Are you ready to make a difference in the lives of patients during their most critical moments? <br>
+                Are you ready to make a difference in the lives of patients during their most critical moments? <br> <br>
                 Apply to the Star Hospital’s Emergency Medicine Residency Program and be part of a legacy of excellence in
                 healthcare.
             </p>
@@ -713,25 +744,50 @@
                 <br><br>
 
 
-                Dr. Rahul Katta, <br>
-                Group Lead, Department of Emergency Medicine. <br>
-                Mail: rahul.katta@starhospitals.co.in <br>
-                Ph: +91 9148779869 <br>
+                
+
+Dr. Rahul Katta, <br>
+MBBS, FRCEM. CCT<br>
+Group Lead. Department of Emergency Medicine.<br>
+Star Hospitals<br>
+Mail: rahul.katta@starhospitals.co.in<br>
+Ph: +91 9148779869<br>
             </div>
-            <div class="mem-contact-info-item-2">
+            <div class="mem-contact-info-item-1">
                 <br><br><br>
 
-                Dr. Imran Shareef, <br>
-                Clinical Lead, MBBS, FRCEM <br>
-                Mail: imran.shareef@starhospitals.co.in <br>
-                Ph: +91 8008670634 <br>
+                
+
+Dr. Imran Shareef, <br>
+MBBS, FRCEM, CCT <br>
+Clinical Lead, Department of Emergency Medicine. <br>
+Star Hospitals<br>
+Mail: imran.shareef@starhospitals.co.in<br>
+Ph: +91 8008670634<br>
+            </div>
+            <div class="mem-contact-info-item-1">
+                <br><br><br>
+
+                Dr. Nickhil Vangapally <br>
+                MBBS, MEM, MRCEM (UK)<br>
+                Lead - Department of Emergency Medicine<br>
+                Star Hospitals, Nanakramguda<br>
+
             </div>
         </div>
 
         <br><br>
 
         <div>
-            <p style="color: #E3000F">Note: MASTERS IN EMERGENCY MEDICINE (MEM) / CCT-EM (SEMI) is a 3-year postgraduate course accredited by the Society for Emergency Medicine India [SEMI] board and not accredited/recognized by the National Medical Commission (earlier – Medical Council of India).</p>
+            <p style="color: #E3000F">Note: CCT-EM (SEMI) / (MEM) is a 3-year postgraduate
+                course accredited by the Society for Emergency
+                Medicine India [SEMI] board and MRCEM is offered by
+                the Royal College of Emergency Medicine (UK) a
+                GMC-recognized postgraduate qualification and the
+                most suitable pathway for overseas Emergency
+                Medicine doctors to attain GMC registration and both
+                are not accredited/recognized by the National Medical
+                Commission (earlier – Medical Council of India).</p>
         </div>
         <br><br>
         <div>

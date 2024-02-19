@@ -104,7 +104,9 @@ Route::get('/courses/mem', function () {
     $breadcrum = "<div class='banner__breadcrum'>
     <a href='/'>Home</a>
     <span>❯</span>
-    <a >Masters in Emergency Medicine</a>
+    <a >Emergency Medicine</a>
+    <span>❯</span>
+    <a >Courses</a>
 </div>";
 
     return view('mem', ['breadcrum' => $breadcrum]);
@@ -114,7 +116,9 @@ Route::get('/courses/mem/registration', function () {
     $breadcrum = "<div class='banner__breadcrum'>
     <a href='/'>Home</a>
     <span>❯</span>
-    <a >Masters in Emergency Medicine</a>
+    <a >Emergency Medicine</a>
+    <span>❯</span>
+    <a >Courses</a>
 </div>";
 
     return view('mem-form', ['breadcrum' => $breadcrum]);
