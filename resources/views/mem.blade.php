@@ -5,7 +5,8 @@
         p,span,li,div{
             text-align: justify !important;
             line-height: 25px !important;
-            word-spacing: 5px !important;
+            /* word-spacing: 5px !important; */
+            text-decoration: none !important;
         }
         li{
             margin-top:0.5em !important;
@@ -74,7 +75,7 @@ MRCEM (UK) at Star Hospitals is designed to shape the next
             <ul style="list-style-image: url('{{ Vite::asset('resources/images/bullet.svg') }}');">
                 <li>
                     <span style="color: #004E9E; font-size: 14px;"><b>Comprehensive Academic
-                            Curriculum:</b></span>
+                            Curriculum:</b> </span>
                             
                     <span
                         style="font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -89,7 +90,7 @@ MRCEM (UK) at Star Hospitals is designed to shape the next
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                               <b>Core Emergency Medicine</b> :
+                               <b>Core Emergency Medicine:</b> 
                             </span>
                             <span
                                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -104,7 +105,7 @@ MRCEM (UK) at Star Hospitals is designed to shape the next
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                              <b>Clinical Decision-Making</b>  :
+                              <b>Clinical Decision-Making:</b> 
                             </span>
                             <span
                                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -118,7 +119,7 @@ MRCEM (UK) at Star Hospitals is designed to shape the next
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                            <b> Advanced Procedures</b>   :
+                            <b> Advanced Procedures:</b> 
                             </span>
                             <span
                                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -133,7 +134,7 @@ MRCEM (UK) at Star Hospitals is designed to shape the next
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                              <b>Simulation-Based Learnings</b>  :
+                              <b>Simulation-Based Learnings:</b> 
                             </span>
                             <span
                                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -150,7 +151,7 @@ MRCEM (UK) at Star Hospitals is designed to shape the next
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                              <b>Target-based learning</b>  :
+                              <b>Target-based learning:</b> 
                             </span>
                             <span
                                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -163,7 +164,7 @@ personal spheres.
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                              <b>96 sessions</b>   :
+                              <b>96 sessions:</b> 
                             </span>
                             <span
                                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -174,7 +175,7 @@ personal spheres.
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                            <b>Educational Supervisors</b>     :
+                            <b>Educational Supervisors:</b> 
                             </span>
                             <span
                                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -185,7 +186,7 @@ personal spheres.
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                             <b>Innovative logbook covering both RCEM and CCT-EM curriculum</b>    :
+                             <b>Innovative logbook covering both RCEM and CCT-EM curriculum:</b> 
                             </span>
                             <span
                                 style="color: black; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -256,7 +257,7 @@ personal spheres.
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                             <b>Procedural Skills</b>   :
+                             <b>Procedural Skills:</b> 
                             </span>
                             <span
                                 style="font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -266,7 +267,7 @@ personal spheres.
                                 that they are proficient in critical interventions.
                             </span>
                         </li>
-                        <br>
+                       
                         <div>
                             {{-- <x-heading :title="'Reviews From Our Patients'" :description="$content->review_text" /> --}}
                                 <div class="testimonials testimonials-slider">
@@ -311,11 +312,11 @@ personal spheres.
                                 </div>
                         </div>
 
-                        <br>
+                       
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                             <b>Simulation Scenarios</b>   :
+                             <b>Simulation Scenarios:</b>   
                             </span>
                             <span
                                 style="font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -326,8 +327,8 @@ personal spheres.
                             </span>
                         </li>
 
-                        <br>
-                        <br>
+                       
+                    
                         <div>
                             {{-- <x-heading :title="'Reviews From Our Patients'" :description="$content->review_text" /> --}}
                                 <div class="testimonials testimonials-slider">
@@ -364,13 +365,13 @@ personal spheres.
                                     
                                 </div>
                         </div>
-                        <br>
-                        <br>
+                        
+                     
 
                         <li>
                             <span
                                 style="color: #004E9E; font-size: 14px; font-weight: 500; text-decoration: underline; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
-                             <b>Team-Based Training</b>   :
+                             <b>Team-Based Training:</b>  
                             </span>
                             <span
                                 style="font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
@@ -379,8 +380,7 @@ personal spheres.
                                 communication and collaboration among healthcare professionals in the emergency department.
                             </span>
                         </li>
-                        <br>
-                        <br>
+                     
                         <div>
                             {{-- <x-heading :title="'Reviews From Our Patients'" :description="$content->review_text" /> --}}
                                 <div class="testimonials testimonials-slider">
@@ -424,8 +424,7 @@ personal spheres.
                                     
                                 </div>
                         </div>
-                        <br>
-                        <br>
+                    
                     </ul>
                 </li>
 
@@ -606,7 +605,7 @@ personal spheres.
                         </div>
 
                         <br>
-        <br />
+        
 
 
         <div>
@@ -739,7 +738,7 @@ personal spheres.
                 </li> --}}
                 <br>
                 <li>
-                   <b>Eligibility:</b> 
+                   <b>Eligibility:</b>  
                 </li>
                 <li style="list-style-type: none;margin-left:-15px;padding-top:0.5em">
                     -  MBBS degree with valid state medical council registration.
@@ -772,7 +771,7 @@ personal spheres.
                 our residents to excel in emergency medicine, make informed decisions, and lead with confidence. Our program
                 is dedicated to nurturing the next generation of emergency medicine physicians who are not only skilled
                 clinicians but also effective leaders and communicators.
-                <br>
+                <br><br>
                 Are you ready to make a difference in the lives of patients during their most critical moments? <br> <br>
                 Apply to the Star Hospital’s Emergency Medicine Residency Program and be part of a legacy of excellence in
                 healthcare.
@@ -794,6 +793,7 @@ personal spheres.
 Dr. Rahul Katta, <br>
 MBBS, FRCEM. CCT<br>
 Group Lead. Department of Emergency Medicine.<br>
+Star Hospitals<br>
 Mail: rahul.katta@starhospitals.co.in<br>
 Ph: +91 9148779869<br>
             </div>
