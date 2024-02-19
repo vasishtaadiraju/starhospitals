@@ -556,6 +556,52 @@ personal spheres.
                 Train in a world-class healthcare facility equipped with the latest technology and resources. 
             </span>
         </div>
+        <br><br>
+                        <div>
+                            {{-- <x-heading :title="'Reviews From Our Patients'" :description="$content->review_text" /> --}}
+                                <div class="testimonials testimonials-slider">
+                                
+                                    {{-- @foreach ($testimonials as $item)
+                                    <div class="testimonials__card">
+                                        <a class="ctg-video">
+                                            <img src="" data-src="{{ config('variables.asset') . $item->image }}" alt="">
+                                
+                                        </a>
+                                        <div class="testimonials__card__content">
+                                            <p>{{$item->patient_name}}</p>
+                                
+                                            <h4>{{$item->text}}</h4>
+                                        </div>
+                                    </div> 
+                                    @endforeach --}}
+                                    
+                                    <div class="testimonials__card">
+                                       <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/B - Block A.JPG')}}" alt=""> </a>
+                                        <div class="testimonials__card__content">
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="testimonials__card">
+                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/B - Block B.JPG')}}" alt=""> </a>
+                                         <div class="testimonials__card__content">
+                                            
+                                         </div>
+                                     </div>
+                                     <div class="testimonials__card">
+                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/FD.jpg')}}" alt=""> </a>
+                                         <div class="testimonials__card__content">
+                                            
+                                         </div>
+                                     </div>
+                                    
+                                    
+                                   
+                                    
+                                    
+                                </div>
+                        </div>
+
+                        <br><br>
         <br />
 
 
