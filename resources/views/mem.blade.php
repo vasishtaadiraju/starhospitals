@@ -585,13 +585,13 @@ personal spheres.
                                      </div>
                                     
                                     <div class="testimonials__card">
-                                       <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/B - Block A.JPG')}}" alt=""> </a>
+                                       <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/B - Block A.jpg')}}" alt=""> </a>
                                         <div class="testimonials__card__content">
                                            
                                         </div>
                                     </div>
                                     <div class="testimonials__card">
-                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/B - Block B.JPG')}}" alt=""> </a>
+                                        <a href="" class=""> <img src="" data-src="{{Vite::asset('resources/images/mem/gallery/B - Block B.jpg')}}" alt=""> </a>
                                          <div class="testimonials__card__content">
                                             
                                          </div>
