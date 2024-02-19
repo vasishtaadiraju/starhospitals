@@ -8,7 +8,7 @@
     </style>
 @endsection
 @section('content')
-    <x-banner :imgurl="Vite::asset('resources/images/mem/banner.png')" :text="'Introducing MASTERS IN CCT-EM (SEMI)/
+    <x-banner :imgurl="Vite::asset('resources/images/mem/banner.png')" :text="'Introducing CCT-EM (SEMI)/
 MRCEM (UK) at Star Hospitals: Your Path to Excellence in Emergency Care'" :$breadcrum />
 
     <x-gap />
@@ -30,7 +30,7 @@ MRCEM (UK) at Star Hospitals: Your Path to Excellence in Emergency Care'" :$brea
         <div>
             Are you ready to embark on an exciting journey towards becoming a highly skilled and compassionate Emergency
             Medicine Physician? Look no further! Star Hospitals proudly announces the intake of residents for the
-            prestigious MASTERS IN CCT-EM (SEMI)/
+            prestigious CCT-EM (SEMI)/
 MRCEM (UK) welcoming a new cohort of passionate medical
             professionals.
         </div>
@@ -48,7 +48,7 @@ MRCEM (UK) welcoming a new cohort of passionate medical
                 alt="">
 
             <p style="">
-                The MASTERS IN CCT-EM (SEMI)/
+                The CCT-EM (SEMI)/
 MRCEM (UK) at Star Hospitals is designed to shape the next
                 generation of emergency medicine specialists. Here’s why you should consider joining:
                 <br>
