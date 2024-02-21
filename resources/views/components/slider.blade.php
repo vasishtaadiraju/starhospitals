@@ -1,7 +1,9 @@
 <div class="slider" id="slider-body">
 
     @if($content->banner1_desktop != null)
-    <div class="slider__item">
+    <div class="slider__item" @if ($content->banner1_cta != null)
+        onclick='window.open("{{$content->banner1_cta}}","_blank")'
+    @endif >
     
         <img class="slider__image" src="" data-src="{{config('variables.asset').$content->banner1_desktop}}" alt="">
 
@@ -20,7 +22,9 @@
     </div>
     @endif
     @if($content->banner2_desktop != null)
-    <div class="slider__item">
+    <div class="slider__item" @if ($content->banner2_cta != null)
+        onclick='window.open("{{$content->banner2_cta}}","_blank")'
+    @endif>
         <img class="slider__image" src="" data-src="{{config('variables.asset').$content->banner2_desktop}}" alt="">
 
         <div class="slider__item__content">
@@ -36,7 +40,9 @@
     </div>
     @endif
     @if($content->banner3_desktop != null)
-    <div class="slider__item">
+    <div class="slider__item" @if ($content->banner3_cta != null)
+        onclick='window.open("{{$content->banner3_cta}}","_blank")'
+    @endif>
         <img class="slider__image" src="" data-src="{{config('variables.asset').$content->banner3_desktop}}" alt="">
 
         <div class="slider__item__content">
@@ -52,7 +58,9 @@
     </div>
     @endif
     @if($content->banner4_desktop != null)
-    <div class="slider__item">
+    <div class="slider__item" @if ($content->banner4_cta != null)
+        onclick='window.open("{{$content->banner4_cta}}","_blank")'
+    @endif >
         <img class="slider__image" src="" data-src="{{config('variables.asset').$content->banner4_desktop}}" alt="">
 
         <div class="slider__item__content">
