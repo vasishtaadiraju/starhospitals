@@ -1,5 +1,5 @@
 <marquee style="position: fixed;padding:5px 0px;color:white" width="100%" behavior="scroll" bgcolor="#E3000F">
-<a style="padding-right:7px;color:white;cursor:pointer;color: #fff; font-weight: 600 !important;font-family:'Plus Jakarta Sans';font-size:12px;"  href="/courses/mem">Emergency medicine course - CCT-EM (SEMI)/ MRCEM (UK) at Star Hospitals. <span style="text-decoration: underline;">Click here to know more!</span> </a>|
+<a style="padding-right:7px;color:white;cursor:pointer;color: #fff; font-weight: 600 !important;font-family:'Plus Jakarta Sans';font-size:12px;" target="_blank"  href="/courses/mem">Emergency medicine course - CCT-EM (SEMI)/ MRCEM (UK) at Star Hospitals. <span style="text-decoration: underline;">Click here to know more!</span> </a>|
     <span style="padding-left:5px;"><b style="padding-left:5px;color: #fff; font-weight: 600 !important;font-family:'Plus Jakarta Sans';font-size:12px;">  Please note
             that STAR Hospitals does not accept online payments and will never ask for an OTP over phone. Please make
             all payments directly at the hospital. </b></span>

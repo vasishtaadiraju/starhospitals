@@ -7,12 +7,21 @@
     <x-banner :imgurl="Vite::asset('resources/images/mem/banner-mem.jpg')" :text="''" :$breadcrum />
 
     {{-- <x-gap/> --}}
-    {!! $breadcrum !!}
+    {{-- {!! $breadcrum !!} --}}
 
-    <x-gap />
     {{-- <x-heading :title="'Book a Physical Consultation'" :description="'Our healthcare specialists are equipped with the knowledge and skills to provide you with the support you require. From consultation to diagnosis to treatments, our experts are dedicated to helping you.'" /> --}}
 
     {{-- <x-gap /> --}}
+    <div style="width:85%;margin:0px auto">
+        <div class='banner__breadcrum' style="color:black">
+            <a style="color:black" href='/'>Home</a>
+            <span style="color:black">❯</span>
+            <a style="color:black" >Emergency Medicine</a>
+            <span style="color:black">❯</span>
+            <a style="color:black" >Courses</a>
+        </div>
+    </div>
+    <x-gap />
     <div class="video-consultation">
         <div class="video-consultation__col-1">
 

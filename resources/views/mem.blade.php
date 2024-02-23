@@ -16,7 +16,7 @@
 @section('content')
     <x-banner :imgurl="Vite::asset('resources/images/mem/banner-mem.jpg')" :text="''" :$breadcrum />
 
-    <x-gap />
+    
     @php
 
         $description = 'All the information displayed, transmitted, or carried by STAR Hospitals and its subsidiaries including, but
@@ -25,7 +25,16 @@
         website is for informational purposes only.';
     @endphp
     {{-- <x-gap/> --}}
-
+    <div style="width:85%;margin:0px auto">
+        <div class='banner__breadcrum' style="color:black">
+            <a style="color:black" href='/'>Home</a>
+            <span style="color:black">❯</span>
+            <a style="color:black" >Emergency Medicine</a>
+            <span style="color:black">❯</span>
+            <a style="color:black" >Courses</a>
+        </div>
+    </div>
+    <x-gap />
     <div class="t-c-description">
 
         <div>

@@ -101,25 +101,13 @@ Route::get('/video-consultation/thank-you', function () {
 });
 
 Route::get('/courses/mem', function () {
-    $breadcrum = "<div class='banner__breadcrum'>
-    <a href='/'>Home</a>
-    <span>❯</span>
-    <a >Emergency Medicine</a>
-    <span>❯</span>
-    <a >Courses</a>
-</div>";
+    $breadcrum = "";
 
     return view('mem', ['breadcrum' => $breadcrum]);
 });
 
 Route::get('/courses/mem/registration', function () {
-    $breadcrum = "<div class='banner__breadcrum'>
-    <a href='/'>Home</a>
-    <span>❯</span>
-    <a >Emergency Medicine</a>
-    <span>❯</span>
-    <a >Courses</a>
-</div>";
+    $breadcrum = "";
 
     return view('mem-form', ['breadcrum' => $breadcrum]);
 });
