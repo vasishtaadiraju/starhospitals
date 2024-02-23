@@ -4,7 +4,7 @@
 @endsection
 
 @section('content')
-    <x-banner :imgurl="Vite::asset('resources/images/mem/banner-mem.jpg')" :text="''" :$breadcrum />
+    <x-banner :imgurl="Vite::asset('resources/images/mem/mem-banner.jpg')" :text="''" :$breadcrum />
 
     {{-- <x-gap/> --}}
     {{-- {!! $breadcrum !!} --}}

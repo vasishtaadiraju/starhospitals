@@ -117,6 +117,7 @@
 
 .mem-contact-info{
     display: flex;
+    gap: 1em;
     @include media("sm-mob") {
         flex-direction: column;
         
@@ -138,11 +139,15 @@
 }
 
 .mem-contact-info-item-1{
-    flex: 0 0 calc(100%/3);
+    flex: 0 0 calc(100%/4);
+    padding: 0px 1em;
+
+
 }
 
 .mem-contact-info-item-2{
-    flex: 0 0 calc(100%/3);
+    flex: 0 0 calc(100%/4);
+    padding: 0px 1em;
 
     
 }

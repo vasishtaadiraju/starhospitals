@@ -14,7 +14,7 @@
     </style>
 @endsection
 @section('content')
-    <x-banner :imgurl="Vite::asset('resources/images/mem/banner-mem.jpg')" :text="''" :$breadcrum />
+    <x-banner :imgurl="Vite::asset('resources/images/mem/mem-banner.jpg')" :text="''" :$breadcrum />
 
     
     @php
@@ -793,7 +793,7 @@ personal spheres.
                 <p>For inquiries and application details, please
                     contact:</p>
 
-                <br>
+              
 
 
                 
@@ -805,7 +805,7 @@ Star Hospitals<br>
 Mail: rahul.katta@starhospitals.co.in<br>
 Ph: +91 9148779869<br>
             </div>
-            <div class="mem-contact-info-item-1">
+            <div class="mem-contact-info-item-2">
                 <br><br>
 
                 
@@ -828,9 +828,26 @@ Ph: +91 8008670634<br>
 Ph: +91 9866456120<br>
 
             </div>
+            <div class="mem-contact-info-item-2">
+                <br><br>
+
+                Dr.B.Narmada <br>
+                MBBS, MEM, MBA (HA)<br>
+                Admin Lead - Department of Emergency Medicine<br>
+                Star Hospitals, Banjara Hills<br>
+                Email - erhod@starhospitals.co.in<br>
+                Phone - +918331092390<br>
+
+            </div>
         </div>
 
         <br>
+
+        
+        
+        
+        
+         
 
         <div>
             <p style="color: #E3000F">Note: CCT-EM (SEMI) / (MEM) is a 3-year postgraduate
