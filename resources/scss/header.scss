@@ -176,7 +176,7 @@ $fixed-header-height: 7.5rem;
         justify-content: space-between;
         align-items: center;
         gap: calc(5% / 4);
-        padding: 1.5em 0px;
+        // padding: 1.5em 0px;
         height: $main-header-height;
         position: relative;
         z-index: 3000;
@@ -185,7 +185,7 @@ $fixed-header-height: 7.5rem;
         transition: height 0.5s;
         padding-bottom: 0px;
         // padding-top: 1em;
-        // margin-top: 1em;
+        top: 1em;
 
         @include media("sm-mob") {
             @include fixed-header;
@@ -544,6 +544,7 @@ $fixed-header-height: 7.5rem;
             box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
             -webkit-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
             -moz-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
+            top:0;
             @include media("x-sm-desktop") {
                 width: 110%;
             }

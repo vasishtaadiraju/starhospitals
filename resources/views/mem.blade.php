@@ -14,8 +14,7 @@
     </style>
 @endsection
 @section('content')
-    <x-banner :imgurl="Vite::asset('resources/images/mem/banner-mem.jpg')" :text="'Introducing CCT-EM (SEMI)/
-MRCEM (UK) at Star Hospitals: Your Path to Excellence in Emergency Care'" :$breadcrum />
+    <x-banner :imgurl="Vite::asset('resources/images/mem/banner-mem.jpg')" :text="''" :$breadcrum />
 
     <x-gap />
     @php
@@ -211,7 +210,7 @@ personal spheres.
                         style="color: #212121; font-size: 14px; font-weight: 400; line-height: 25px; letter-spacing: 0.28px; word-wrap: break-word">
                         <ul style="list-style-image: none; list-style-type: disc;">
                             <li>
-                                We are the only institute in India with <strong style="font-size:18px;color:#004E9E">2 fully trained FRCEM consultants</strong>  as a part of our
+                                We are the only institute in India with <strong style="font-size:14px;">2 fully trained FRCEM consultants</strong>  as a part of our
                                 faculty.
                                 Our
                                 academic sessions are conducted by a team of highly experienced senior consultants and

@@ -4,8 +4,7 @@
 @endsection
 
 @section('content')
-    <x-banner :imgurl="Vite::asset('resources/images/mem/banner-mem.jpg')" :text="'Introducing CCT-EM (SEMI)/
-    MRCEM (UK) at Star Hospitals: Your Path to Excellence in Emergency Care'" :$breadcrum />
+    <x-banner :imgurl="Vite::asset('resources/images/mem/banner-mem.jpg')" :text="''" :$breadcrum />
 
     {{-- <x-gap/> --}}
     {!! $breadcrum !!}
