@@ -787,56 +787,61 @@ personal spheres.
         </div>
 
         <br>
-
+        <p>For inquiries and application details, please
+            contact:</p>     <br><br>
         <div class="mem-contact-info">
+            
             <div class="mem-contact-info-item-1">
-                <p>For inquiries and application details, please
-                    contact:</p>
-
+               
+               
               
 
 
                 
 
-Dr. Rahul Katta, <br>
-MBBS, FRCEM. CCT<br>
-Group Lead. Department of Emergency Medicine.<br>
-Star Hospitals<br>
-Mail: rahul.katta@starhospitals.co.in<br>
-Ph: +91 9148779869<br>
+                Dr. Rahul Katta<br>
+                MBBS, FRCEM, CCT (UK), AMPH (ISB)<br>
+                Group Lead<br>
+                Department of Emergency Medicine<br>
+                Star Hospitals <br>
+                Mail: rahul.katta@starhospitals.co.in<br>
+                Ph: +91 9148779869<br>
             </div>
             <div class="mem-contact-info-item-2">
-                <br><br>
+                
 
                 
 
-Dr. Imran Shareef, <br>
-MBBS, FRCEM, CCT <br>
-Clinical Lead, Department of Emergency Medicine. <br>
-Star Hospitals, Banjara Hills<br>
-Mail: imran.shareef@starhospitals.co.in<br>
-Ph: +91 8008670634<br>
+                Dr. Imran Shareef<br>
+                MBBS, FRCEM, CCT (UK)<br>
+                Clinical Lead, Senior Consultant<br>
+                Department of Emergency Medicine<br>
+                Star Hospitals, Banjara Hills <br>
+                Mail: imran.shareef@starhospitals.co.in<br>
+                Ph: +91 8008670634<br>
             </div>
-            <div class="mem-contact-info-item-1">
-                <br><br>
+            <div class="mem-contact-info-item-1" >
+            
 
-                Dr. Nickhil Vangapally <br>
+                Dr. Nickhil Vangapally<br>
                 MBBS, MEM, MRCEM (UK)<br>
-                Lead - Department of Emergency Medicine<br>
-                Star Hospitals, Nanakramguda<br>
+                Lead, Senior Consultant<br>
+                Department of Emergency Medicine<br>
+                Star Hospitals, Nanakramguda <br>
                 Mail: drnickhilv@starhospitals.co.in<br>
-Ph: +91 9866456120<br>
+                Ph: +91 9866456120<br>
 
             </div>
             <div class="mem-contact-info-item-2">
-                <br><br>
+                
 
                 Dr.B.Narmada <br>
                 MBBS, MEM, MBA (HA)<br>
-                Admin Lead - Department of Emergency Medicine<br>
-                Star Hospitals, Banjara Hills<br>
-                Email - erhod@starhospitals.co.in<br>
-                Phone - +918331092390<br>
+                Admin Lead, Senior Consultant <br>
+                Department of Emergency Medicine<br>
+                Star Hospitals, Banjara Hills <br>
+                Mail: erhod@starhospitals.co.in<br>
+                Ph: +91 8331092390<br>
 
             </div>
         </div>
