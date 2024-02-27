@@ -33,12 +33,12 @@ Route::post('/patient', [FormController::class, 'patient']);
 
 
 
+
 Route::controller(HisApiController::class)->prefix('appointment')->group(function () {
     Route::post('/check-availability', 'check_availability');
-    Route::post('/patients', 'patients');
-    Route::post('/register-patients', 'register_patients');
-    Route::post('/send-otp', 'send_otp');
-    Route::post('/verify-otp', 'verify_otp');
-    Route::post('/book-appointment', 'book_appointment');
-    
+    Route::post('/patients', 'patients')->middleware('verifyApi')->middleware('throttle:5,1');
+    Route::post('/register-patients', 'register_patients')->middleware('verifyApi')->middleware('throttle:5,1');
+    Route::post('/send-otp', 'send_otp')->middleware('throttle:5,1');
+    Route::post('/verify-otp', 'verify_otp')->middleware('throttle:5,1');
+    Route::post('/book-appointment', 'book_appointment')->middleware('verifyApi')->middleware('throttle:7,1');
 });

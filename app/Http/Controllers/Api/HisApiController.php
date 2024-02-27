@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Http;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Crypt;
 class HisApiController extends Controller
 {
 //     "request_date": "string",
@@ -52,7 +52,7 @@ class HisApiController extends Controller
     {
 
         try {
-            $response = Http::withToken(config('variables.token'))->post('https://api.starhs.in/kranium-health-api/public/api/v1/patients/pre-register', $request->all());
+            $response = Http::withToken(config('variables.token'))->post('https://api.starhs.in/kranium-health-api/public/api/v1/patients/pre-register', [...$request->all(),'mobile'=>$request->mobile]);
             return response($response->json(),$response->status());
         } catch (\Throwable $th) {
             return response($th->getMessage(), 500);
@@ -85,7 +85,18 @@ class HisApiController extends Controller
 
         try {
             $response = Http::withToken(config('variables.token'))->post('https://api.starhs.in/kranium-health-api/public/api/v1/patients/verify-otp', $request->all());
-            return response($response->json(),$response->status());
+            // $jwt = JWT::encode(['number'=>$request->mobile_no], 'sdfgksdfkgsdkfgsdkjfgksdjgfksdg', 'HS256');
+               
+            // session(['mobile'=>$request->mobile]);
+            $data = $response->json();
+            // return response($data);
+            if($data['status'])
+            {
+                $jwt = Crypt::encryptString(implode(',',[$request->mobile_no,now()]));
+                return response(['data'=>$data,'token'=>$jwt],$response->status());
+            }
+            return response(['data'=>$data],$response->status());
+            
         } catch (\Throwable $th) {
             return response($th->getMessage(), 500);
 
@@ -104,11 +115,25 @@ class HisApiController extends Controller
     function book_appointment(Request $request)
     {
 
-        try {
-            $response = Http::withToken(config('variables.token'))->post('https://api.starhs.in/kranium-health-api/public/api/v1/appointments/book-appointment', $request->all());
-            return response($response->json(),$response->status());
-        } catch (\Throwable $th) {
-            return response($th->getMessage(), 500);
+
+
+        $response = Http::withToken(config('variables.token'))->get('https://api.starhs.in/kranium-health-api/public/api/v1/patients/' . $request->mobile);
+       
+        foreach ($response->json()['data'] as $key => $value) {
+            if((isset($value['temporary_id']) && $value['temporary_id'] == $request->patient_id) || (isset($value['pid']) && $value['pid'] == $request->patient_id))
+            {
+                try {
+                    $response = Http::withToken(config('variables.token'))->post('https://api.starhs.in/kranium-health-api/public/api/v1/appointments/book-appointment', $request->all());
+                    return response($response->json(),$response->status());
+                } catch (\Throwable $th) {
+                    return response($th->getMessage(), 500);
+                }
+            }
+           
+            
         }
+        return response(['status'=>false,'message'=>'Invalid patient ID'],422);
+  
+        
     }
 }

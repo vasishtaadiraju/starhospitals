@@ -406,6 +406,7 @@ function handleAjaxError(data,status) {
 }
 
 export async function httpRequest(url ,method, body, headers) {
+    let csrf = document.querySelector('meta[name=csrf-token').content;
     let response;
     let data = {};
     if (method == "POST") {
@@ -419,6 +420,9 @@ export async function httpRequest(url ,method, body, headers) {
 
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
+                "Accept":"application/json",
+                "X-CSRF-Token" : csrf,
+                Authorization: 'Bearer '+window.localStorage.getItem('token')
             },
         };
         if (method == "GET") {

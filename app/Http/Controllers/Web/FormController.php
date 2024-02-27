@@ -461,6 +461,8 @@ class FormController extends Controller
         'appointment_time' => $request->input('appointment_time'),
         'status' => $request->input('status'),
         'response' => $request->input('response'),
+        'created_at' => now(),
+        'updated_at' => now()
       ]);
 
       return response('', 200);

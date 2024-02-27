@@ -68,5 +68,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'XssSanitization' => \App\Http\Middleware\XssSanitization::class,
+        'verifyApi'=> \App\Http\Middleware\verifyApiRequest::class
     ];
 }

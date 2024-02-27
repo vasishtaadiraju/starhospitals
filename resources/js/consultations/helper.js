@@ -285,7 +285,7 @@ export function registrationForm(parameters,fn) {
         
                 <form class="patient-registration-form-submit" action="/api/appointment/register-patients">
                 
-                <div class="form-fields">
+                                <div class="form-fields">
                     <div class="form-fields-wrapper form-fields-wrapper--col-1">
                         <div class="form-fields-wrapper ">
                         <select placeholder="Last Name" name="title" type="text">
@@ -346,7 +346,7 @@ export function registrationForm(parameters,fn) {
                     </div>
                     <div class="form-fields-wrapper form-fields-wrapper--col-0 form-fields-wrapper--col-0--no-wrap">
                         <div class="form-fields-wrapper ">
-                            <input placeholder="Phone Number" type="number" name="mobile" value="${parameters.mobile}" readonly>
+                            <input placeholder="Phone Number" type="number" name="phone" value="${parameters.mobile}" disabled>
                             
                             <span class="error-message"></span>
                             

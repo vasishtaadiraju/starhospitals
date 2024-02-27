@@ -7,7 +7,7 @@ navBtn.addEventListener("click", () => {
     navBtn.classList.toggle("mobile-hamburger--open");
     navBar.classList.toggle("header__nav--active");
 });
-
+window.localStorage.clear()
 $(window).scroll(function () {
     if (screen.width > 1024) {
         if ($(this).scrollTop() > 1) {

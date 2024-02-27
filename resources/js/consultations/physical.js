@@ -16,6 +16,8 @@ import {
 let screenWidth = screen.width;
 var appointmentParameter = {};
 var UiParameters = {};
+    window.localStorage.clear()
+
 async function printSlots(request_date, department_id, doctor_id, location_id) {
     const slots = await httpRequest(
         "/api/appointment/check-availability",
@@ -138,6 +140,7 @@ async function confirmAppointment(body) {
 
         document.querySelector("body").insertAdjacentHTML("afterbegin", form);
         document.querySelector(".confirm-appointment").submit();
+        console.log(confirmation);
     } else if (confirmation.data.status == false) {
         if (confirmation.data.error_data.patient_id != undefined) {
             // document.querySelector(".pc-modal__card__description").innerHTML =
@@ -188,9 +191,97 @@ async function confirmOTPCallback(node) {
         "POST",
         body
     );
-    if (verifyOTp.data.status == true) {
+
+    
+    console.log(verifyOTp);
+    if (verifyOTp.data.data.status == true) {
         document.querySelector(".otp-box").nextElementSibling.innerHTML = "";
-        let is_existing_patient =
+        window.localStorage.setItem('token',verifyOTp.data.token);
+        const patients = await httpRequest(
+            "/api/appointment/patients",
+            "POST",
+            
+        );
+        if (patients.data.status == true && patients.data.data.length > 0) {
+            patientsList(
+                UiParameters,
+                patients.data.data,
+                async function (node) {
+                    let patient_id = document.querySelector(
+                        'input[name="patient_id"]:checked'
+                    ).value;
+                    appointmentParameter.patient_type = document
+                        .querySelector('input[name="patient_id"]:checked')
+                        .getAttribute("data-type");
+                    appointmentParameter.patient_name = document.querySelector(
+                        'input[name="patient_id"]:checked'
+                    ).nextElementSibling.innerHTML;
+
+                    appointmentParameter.patient_id = patient_id;
+                    loader();
+                    let is_existing_patient =
+            appointmentParameter.patient_type == "temporary" ? false : true;
+        let doctor_id = appointmentParameter.doctor_id;
+        let department_id = appointmentParameter.department_id;
+        let location_id = appointmentParameter.location_id;
+        let appointment_type = appointmentParameter.appointment_type;
+        let appointment_date_time =
+            appointmentParameter.appointment_date +
+            " " +
+            appointmentParameter.appointment_time;
+        let booking_from = "website";
+         patient_id = appointmentParameter.patient_id;
+        let body = {
+            is_existing_patient,
+            patient_id,
+            doctor_id,
+            department_id,
+            location_id,
+            appointment_type,
+            appointment_date_time,
+            booking_from,
+        };
+        confirmAppointment(body);
+                }
+            );
+        } else if (
+            patients.data.status == true &&
+            patients.data.data.length == 0
+        ) {
+            registrationForm(UiParameters, registerPatientCallBack);
+        } else if (patients.data.status == false) {
+            // return alert("Try entering a diffrent number");
+            alertBox(
+                "Can't proceed with the entered number, try using a diffrent number"
+            );
+        }
+
+        
+    } else {
+        let message = "";
+        if (verifyOTp.data.data.error_data != undefined) {
+            message = verifyOTp.data.error_data.otp[0];
+        } else {
+            message = verifyOTp.data.data.message;
+        }
+        document.querySelector(".otp-box").nextElementSibling.innerHTML =
+            message;
+    }
+}
+
+export async function registerPatientCallBack(node) {
+    if (node.target[10].checked == false) {
+        return;
+    }
+    let formResponse = await handleFormSubmit(node);
+
+    if (formResponse.data.status == true) {
+        appointmentParameter.patient_name =
+            node.target[1].value + node.target[2].value;
+        appointmentParameter.patient_id = formResponse.data.data.temporary_id;
+        appointmentParameter.patient_type = "temporary";
+        loader();
+let is_existing_patient =
             appointmentParameter.patient_type == "temporary" ? false : true;
         let doctor_id = appointmentParameter.doctor_id;
         let department_id = appointmentParameter.department_id;
@@ -214,32 +305,6 @@ async function confirmOTPCallback(node) {
         };
         confirmAppointment(body);
     } else {
-        let message = "";
-        if (verifyOTp.data.error_data != undefined) {
-            message = verifyOTp.data.error_data.otp[0];
-        } else {
-            message = verifyOTp.data.message;
-        }
-        document.querySelector(".otp-box").nextElementSibling.innerHTML =
-            message;
-    }
-}
-
-export async function registerPatientCallBack(node) {
-    if (node.target[10].checked == false) {
-        return;
-    }
-    let formResponse = await handleFormSubmit(node);
-
-    if (formResponse.data.status == true) {
-        appointmentParameter.patient_name =
-            node.target[1].value + node.target[2].value;
-        appointmentParameter.patient_id = formResponse.data.data.temporary_id;
-        appointmentParameter.patient_type = "temporary";
-        loader();
-        sendOtp(UiParameters.mobile);
-        confirmOTP(UiParameters, confirmOTPCallback);
-    } else {
         // return alert("Try using a diffrent mobile number");
 
         alertBox(
@@ -249,6 +314,7 @@ export async function registerPatientCallBack(node) {
 }
 
 function handleSlotClick() {
+    window.localStorage.clear()
     UiParameters.time = this.children[0].innerHTML;
     UiParameters.meridiem = this.children[1].innerHTML;
     appointmentParameter.appointment_type = this.getAttribute("data-type");
@@ -283,43 +349,12 @@ function handleSlotClick() {
             return;
         }
         loader();
-        const patients = await httpRequest(
-            "/api/appointment/patients",
-            "POST",
-            { mobile }
-        );
-        if (patients.data.status == true && patients.data.data.length > 0) {
-            patientsList(
-                UiParameters,
-                patients.data.data,
-                async function (node) {
-                    let patient_id = document.querySelector(
-                        'input[name="patient_id"]:checked'
-                    ).value;
-                    appointmentParameter.patient_type = document
-                        .querySelector('input[name="patient_id"]:checked')
-                        .getAttribute("data-type");
-                    appointmentParameter.patient_name = document.querySelector(
-                        'input[name="patient_id"]:checked'
-                    ).nextElementSibling.innerHTML;
 
-                    appointmentParameter.patient_id = patient_id;
-                    loader();
-                    sendOtp(mobile);
-                    confirmOTP(UiParameters, confirmOTPCallback);
-                }
-            );
-        } else if (
-            patients.data.status == true &&
-            patients.data.data.length == 0
-        ) {
-            registrationForm(UiParameters, registerPatientCallBack);
-        } else if (patients.data.status == false) {
-            // return alert("Try entering a diffrent number");
-            alertBox(
-                "Can't proceed with the entered number, try using a diffrent number"
-            );
-        }
+        sendOtp(mobile);
+        window.localStorage.clear()
+
+        confirmOTP(UiParameters, confirmOTPCallback);
+        
     });
 }
 
