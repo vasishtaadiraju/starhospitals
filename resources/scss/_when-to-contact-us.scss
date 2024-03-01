@@ -41,8 +41,12 @@
                 }
     }
 
-    h2,p{
+    h2,p,div{
         color: variables.$starhospitals-text-inverted;
+        font-family: 'Plus Jakarta Sans';
+        line-height: 30px;
+        text-align: center;
+        
     }
 
     p{

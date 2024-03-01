@@ -11,7 +11,7 @@
 <x-speciality-description-v2 :$content/>
 <x-gap/>    
 
-<x-when-to-contact-us/>
+<x-when-to-contact-us :description='$content->when_to_contact_description'/>
 <x-gap/>
 <x-gap/>
 <x-our-specialists :$content :branches='$content->branches' :$coes/>
