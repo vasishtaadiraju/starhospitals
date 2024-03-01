@@ -2,12 +2,12 @@
     <div class="about-speciality__image-wrapper">
         <div class="about-speciality__image-wrapper__image">
             {{-- {{ config('variables.asset') . $content->description_image }} --}}
-            {{-- <img class="" src=""
+            <img class="" src=""
                 data-src=" @if ($content->page_type == 'Coe' || $content->page_type == 'speciality') {{ config('variables.asset') . $content->description_image }}
                     @elseif($content->page_type == 'Branch') {{ config('variables.asset') . $content->about_image_desktop }} @else  {{ config('variables.asset') . $content->description_image }} @endif"
-                alt="{{ $content->about_image_desktop_alt }}"> --}}
+                alt="{{ $content->about_image_desktop_alt }}">
 
-        <img src="" data-src="{{Vite::asset('resources\images\speciality\spec-description.png')}}" alt="">
+        {{-- <img src="" data-src="{{Vite::asset('resources\images\speciality\spec-description.png')}}" alt=""> --}}
                 
             
         </div>
