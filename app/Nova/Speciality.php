@@ -62,6 +62,7 @@ class Speciality extends Resource
             new Panel('Homepage', $this->homepage()),
             new Panel('Banner', $this->banner()),
             new Panel('Description', $this->description()),
+            new Panel('When To Contact Us', $this->whenToContact()),
             new Panel('Our Doctors', $this->our_doctors()),
             new Panel('Services and Treatments', $this->services_treatments()),
             new Panel('Our Locations', $this->our_locations()),
@@ -165,6 +166,15 @@ class Speciality extends Resource
                 ->creationRules('nullable')
                 ->updateRules('nullable')
                 ->prunable(),
+        ];
+    }
+
+    protected function whenToContact()
+    {
+        return [
+            Trix::make('Description', 'when_to_contact_description')
+                ->hideFromIndex()
+                ->rules('nullable', 'string'),
         ];
     }
 

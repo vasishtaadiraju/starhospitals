@@ -27,6 +27,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('description_image')->nullable();
             $table->string('description_image_alt', 100)->nullable();
+            $table->text('when_to_contact_description')->nullable();
             $table->string('our_doctors_text')->nullable();
             $table->string('our_locations_text')->nullable();
             $table->string('services_treatments_image1')->nullable();
