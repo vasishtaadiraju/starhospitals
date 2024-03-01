@@ -1,4 +1,4 @@
-<div class="ui-background" id="find-doctors">
+<div class="" id="find-doctors">
     <x-heading :title="'Meet Our Specialists'" :description="''" />
     <x-filter :$content :$branches :$coes />
     <div style="height:1em"></div>

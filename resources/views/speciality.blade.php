@@ -8,37 +8,44 @@
 <x-banner :imgurl="config('variables.asset') .$content->banner_desktop" :text="$content->banner_text" :$breadcrum/>  
 <x-scroll-tabs :$tabs/>
 <x-gap/>    
-<x-about-speciality :$content/>
+<x-speciality-description-v2 :$content/>
 <x-gap/>    
-{{-- <x-our-specialists :$content :branches='$content->branches' :$coes/> --}}
-<x-coe-specialists :$content/>
+
+<x-when-to-contact-us/>
+<x-gap/>
+<x-gap/>
+<x-our-specialists :$content :branches='$content->branches' :$coes/>
+{{-- <x-our-specialists :$content :$branches  :$coes/> --}}
 @if($content->services_treatments != null)
 <x-gap/>
+
+<div class="ui-background">
 <x-services-treatment :$content />
+</div>   
 <x-gap/>
 
 @endif
 
-@if (count($coes[0]->specialities) > 0)
+{{-- @if (count($coes[0]->specialities) > 0)
 <div class="ui-background">
     <x-key-services :$coes />
 </div>   
-@endif
+@endif --}}
 
 
-<x-gap/>
+{{-- <x-gap/>
 <x-locations :$content  :locations='$content->branches'/>
 <x-gap/>
 <div class="ui-background">
 <x-talk-doctor :$content />
 </div>
-<x-gap/>
+<x-gap/> --}}
 {{-- <x-testimonials />
      --}}
-@if (count($content->testimonials) > 0)
+{{-- @if (count($content->testimonials) > 0)
 <x-testimonials-secondary :$content   :testimonials='$content->testimonials'/>
     <x-gap/>  
-@endif
+@endif --}}
      
  {{--
 <div class="ui-background">
@@ -48,9 +55,8 @@
 <x-gap/>
 <x-media :$content :media='$content->media'/> 
 <x-gap/> --}}
-<div class="ui-background">
-<x-faqs :$content :faqs='$content->faqs'/> 
-</div>
 
+<x-faq-v2 :$content :faqs='$content->faqs'/> 
+<x-gap/>
 
 @endsection

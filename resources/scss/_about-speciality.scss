@@ -213,3 +213,12 @@
         }
     }
 }
+
+.speciality-description-v2-root{
+    gap: 5%;
+    h1{
+        font-size: 15px;
+        color: variables.$starhospitals-brand-primary !important;
+        font-weight: 700;
+    }
+}

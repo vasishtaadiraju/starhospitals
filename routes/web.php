@@ -37,7 +37,7 @@ Route::get('/find-a-doctor', function () {
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about');
 Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact');
 // Route::get('/centers-of-excellence/{slug}',[CoeController::class,'index'])->name('coe');
-// Route::get('/specialities/{slug}', [SpecialityController::class, 'index'])->name('speciality');
+Route::get('/specialities/{slug}', [SpecialityController::class, 'index'])->name('speciality');
 Route::post('/', [FormController::class, 'homeForm'])->name('home.form');
 // Route::post('/centers-of-excellence',[FormController::class,'talkToDoctor'])->name('coe.form');
 Route::post('/contact', [FormController::class, 'contactForm'])->name('contact.form');

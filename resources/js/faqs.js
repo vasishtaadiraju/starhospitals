@@ -20,4 +20,19 @@ domSelector('.faqs__card','click',function() {
 
 });
 
+domSelector('.faqs-v2__card','click',function() {
+       
+        let activeStatus = this.childNodes[3].classList.contains('faqs-v2__card__answer--active');
+        removeClass('faqs-v2__card__answer','faqs-v2__card__answer--active');
+        removeClass('faqs-v2__card','faqs-v2__card--active')
+        if(activeStatus == false)
+        {
+                this.childNodes[3].classList.add("faqs-v2__card__answer--active");
+                this.classList.toggle("faqs-v2__card--active");
+
+        }
+        
+
+});
+
 

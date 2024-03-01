@@ -1,4 +1,4 @@
-<x-heading :title="'Services and Treatments'" :description="''" />
+<x-heading :title="'Scope of Services'" :description="''" />
 
 <div class="s-t">
     <div class="s-t__img-wrp" id="treatments-procedures">

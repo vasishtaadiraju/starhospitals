@@ -7,7 +7,8 @@
 
 .s-t{
     @include centerSection;
-    width: 54.75%;
+    width: 80%;
+    text-align: center !important;
     // min-height: 10rem;
     // border: 1px solid blue;
     @include media('sm-mob')
@@ -89,7 +90,7 @@
 
     &__content-wrp{
         font-family: 'Plus Jakarta Sans Regular';
-        margin-top: 2rem;
+        // margin-top: 2rem;
         &__content{
 
             span,p,div,li{
@@ -100,7 +101,11 @@
             }
             ul{
                 margin-left: 1em;
-
+              
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                
                 li{
                     list-style-type: none;
                     padding: 0.75em;
@@ -112,6 +117,28 @@
                     font-size: 14px;
                     font-style: Regular;
                     color: #212121;
+                    flex: 0 0 50%;
+                    text-align: left;
+                    @include media('sm-mob')
+                {
+                    flex: 0 0 100%;
+                }
+                @include media('md-mob')
+                {
+                    flex: 0 0 100%;
+                }
+                @include media('lg-mob')
+                {
+                    flex: 0 0 100%;
+                }
+                @include media('x-sm-tab')
+                {
+                    flex: 0 0 100%;
+                }
+                @include media('sm-tab')
+                {
+                    flex: 0 0 100%;
+                }
                     &::after{
                         content: "";
                         display: block;
@@ -129,4 +156,7 @@
             }
         }
     }
+
+
+    
 }

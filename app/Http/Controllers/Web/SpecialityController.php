@@ -60,7 +60,7 @@ class SpecialityController extends Controller
             $coes= CentreOfExcellence::where('id',$coe_id)->where('status','active')->with(['specialities'=>function($query) use ($content){
                 $query->where('status','active')->where('specialities.id','!=',$content->id)->select('specialities.id','name','slug','icon_image');
             }])->get(['id','slug','name']);
-            // dd($coes);
+            
         }
         else
         {
@@ -85,7 +85,7 @@ class SpecialityController extends Controller
             <path d="M21.6779 7.97912L20.2637 9.39333L18.1424 7.27201L16.021 9.39333L19.5566 12.9289L18.1424 14.3431L17.4353 13.636L11.0713 19.9999H5.41444L3.29312 22.1213L1.87891 20.707L4.00023 18.5857V12.9289L10.3642 6.56491L9.65708 5.8578L11.0713 4.44359L14.6068 7.97912L16.7281 5.8578L14.6068 3.73648L16.021 2.32227L21.6779 7.97912ZM16.021 12.2218L11.7784 7.97912L10.3642 9.39333L12.4855 11.5147L11.0713 12.9289L8.94997 10.8075L7.53576 12.2218L9.65708 14.3431L8.24287 15.7573L6.12155 13.636L6.00023 13.7573V17.9999H10.2429L16.021 12.2218Z" fill="white"/>
             </svg>
             
-        <a href="#treatments-procedures" class="scroll-to-view">Treatments & Procedures</a>
+        <a href="#treatments-procedures" class="scroll-to-view">Scope of Services</a>
     </div>
     <div class="scroll_tabs">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -102,6 +102,8 @@ class SpecialityController extends Controller
     
     <a href='#'>{$content->name}</a>
 </div>";
+
+        
         return view('speciality', [
             'content' => $content,
             'breadcrum'=>$breadcrum,
