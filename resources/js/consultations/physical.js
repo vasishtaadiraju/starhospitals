@@ -116,7 +116,7 @@ async function confirmAppointment(body) {
         "POST",
         body
     );
-
+    
     console.log(confirmation);
     if (confirmation.data.status == true) {
         let form = `<form style="display:none"  class="confirm-appointment" action="/physicalConsultation" method="Post">
@@ -142,6 +142,9 @@ async function confirmAppointment(body) {
         document.querySelector(".confirm-appointment").submit();
         console.log(confirmation);
     } else if (confirmation.data.status == false) {
+        if (document.querySelector(".pc-modal") != undefined) {
+            document.querySelector(".pc-modal").remove();
+        }
         if (confirmation.data.error_data.patient_id != undefined) {
             // document.querySelector(".pc-modal__card__description").innerHTML =
             //     "";
@@ -186,6 +189,7 @@ async function confirmOTPCallback(node) {
     let request_id = appointmentParameter.otp_request_id;
     let mobile_no = UiParameters.mobile;
     let body = { mobile_no, request_id, otp };
+    loader();
     const verifyOTp = await httpRequest(
         "/api/appointment/verify-otp",
         "POST",
@@ -195,13 +199,16 @@ async function confirmOTPCallback(node) {
     
     console.log(verifyOTp);
     if (verifyOTp.data.data.status == true) {
-        document.querySelector(".otp-box").nextElementSibling.innerHTML = "";
+        
+        // document.querySelector(".otp-box").nextElementSibling.innerHTML = "";
         window.localStorage.setItem('token',verifyOTp.data.token);
         const patients = await httpRequest(
             "/api/appointment/patients",
             "POST",
             
         );
+
+        
         if (patients.data.status == true && patients.data.data.length > 0) {
             patientsList(
                 UiParameters,
@@ -247,6 +254,7 @@ async function confirmOTPCallback(node) {
         } else if (
             patients.data.status == true &&
             patients.data.data.length == 0
+            
         ) {
             registrationForm(UiParameters, registerPatientCallBack);
         } else if (patients.data.status == false) {
@@ -258,6 +266,7 @@ async function confirmOTPCallback(node) {
 
         
     } else {
+        confirmOTP(UiParameters,confirmOTPCallback);
         let message = "";
         if (verifyOTp.data.data.error_data != undefined) {
             message = verifyOTp.data.error_data.otp[0];
