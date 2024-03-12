@@ -285,12 +285,14 @@ async function printDoctors(body, selectBox, className) {
     
     // $('.specialists-slider').slick('refresh')
     if (selectBox != true && response.data.length > 0) {
-        console.log(className);
+        // console.log(className);
         $(className).slick('unslick')
+        console.log($(className));
         $(className).slick({
             // dots:true,
             arrows: true,
             slidesToShow: 4,
+            infinite:false,
             responsive: [
                 {
                     breakpoint: 1275,
@@ -678,10 +680,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let coe_id = document.getElementById("coe-select-box").value;
         let speciality_id = "";
         
-        Array.from(document.getElementsByClassName("location-select-box")).forEach(element=>{
-            printOptions(element);
+        // Array.from(document.getElementsByClassName("location-select-box")).forEach(element=>{
+        //     printOptions(element);
 
-        })
+        // })
 
         // printOptions(document.getElementsByClassName("location-select-box")[0])
         // printOptions(document.getElementsByClassName("location-select-box")[1])

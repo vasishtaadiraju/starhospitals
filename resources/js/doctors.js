@@ -272,7 +272,7 @@ async function printDoctors(body, selectBox, className) {
     // $('.specialists-slider').slick('refresh')
     if (selectBox != true && response.data.length > 0) {
         console.log(className);
-        $(className).slick('unslick')
+        // $(className).slick('unslick')
         $(className).slick({
             // dots:true,
             arrows: true,
