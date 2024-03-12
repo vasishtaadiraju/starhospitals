@@ -264,7 +264,7 @@ async function printOptions(node) {
     let branch_id = "";
     let selected_coe_id =
         node.parentNode.parentNode.querySelector(".coe-select-box").value || node.parentNode.parentNode.querySelector(".coe-select-box").getAttribute('data-selected-id');
-        console.log(node.parentNode.parentNode.querySelector(".coe-select-box").getAttribute('data-selected-id'));
+      
     let selected_branch_id = node.parentNode.parentNode.querySelector(
         ".location-select-box"
     ).value;
@@ -287,7 +287,7 @@ async function printOptions(node) {
 
     // let type = node.parentNode.parentNode.querySelector(".coe-select-box").getAttribute('data-');
     const response = await httpRequest(
-        "/api/getBranchCoeSpecialityById",
+        "/api/getCOESpecilityBranchBySpecialist",
         "POST",
         body
     );
@@ -295,9 +295,9 @@ async function printOptions(node) {
     if (type == "coe") {
         node.parentNode.parentNode.querySelector(
             ".location-select-box"
-        ).innerHTML = ``;
+        ).innerHTML = `<option  data-id="1" value="hyderabad">Hyderabad</option>`;
         response.data.branches.forEach((result) => {
-            let option = `<option value="${result.id}" ${
+            let option = `<option data-slug="${result.slug}" value="${result.id}" ${
                 result.id == selected_branch_id ? `selected` : ``
             }>${result.name}</option>`;
 
@@ -309,7 +309,7 @@ async function printOptions(node) {
             ".speciality-select-box"
         ).innerHTML = ``;
         response.data.specialities.forEach((result) => {
-            let option = `<option value="${result.id}" ${
+            let option = `<option data-slug="${result.doctor_slug}" value="${result.id}" ${
                 result.id == selected_branch_id ? `selected` : ``
             }>${result.name}</option>`;
 
@@ -323,7 +323,11 @@ async function printOptions(node) {
             ".coe-select-box"
         ).innerHTML = ``;
         response.data.coes.forEach((result, index) => {
-            let option = `<option value="${result.id}" ${
+            if(result.specialities.length == 0)
+            {
+                return;
+            }
+            let option = `<option data-slug="${result.slug}" value="${result.id}" ${
                 result.id == selected_coe_id ? `selected` : ``
             }>${result.name}</option>`;
 
@@ -335,7 +339,7 @@ async function printOptions(node) {
                     ".speciality-select-box"
                 ).innerHTML = ``;
                 result.specialities.forEach((speciality) => {
-                    let option = `<option value="${speciality.id}" ${
+                    let option = `<option data-slug="${speciality.doctor_slug}" value="${speciality.id}" ${
                         speciality.id == selected_speciality_id
                             ? `selected`
                             : ``
@@ -356,7 +360,7 @@ async function printOptions(node) {
                 ".speciality-select-box"
             ).innerHTML = ``;
             response.data.specialities.forEach((speciality) => {
-                let option = `<option value="${speciality.id}" ${
+                let option = `<option data-slug="${speciality.doctor_slug}" value="${speciality.id}" ${
                     speciality.id == selected_speciality_id ? `selected` : ``
                 }>${speciality.name}</option>`;
 
@@ -381,10 +385,10 @@ async function printOptions(node) {
             
     
         }
+   
     // let speciality_id = "";
     let doctorBody = { coe_id, branch_id, speciality_id, paginate };
 
-    // $(".specialists-slider").slick("unslick");
     printDoctors("/api/getDoctorByBranchCoeSpeciality", doctorBody);
 }
 async function handleChange(type) {

@@ -1,5 +1,6 @@
 <div class="" id="find-doctors">
-    <x-heading :title="'Meet Our Specialists'" :description="''" />
+    <x-heading :title="'Meet Our Specialists'" :description="$content->doctor_description" />
+    
     <x-filter :$content :$branches :$coes />
     <div style="height:1em"></div>
     <div class="doctors doctors--primary specialists-slider">
@@ -133,8 +134,10 @@
 
         </div> --}}
     </div>
-
-    {{-- <button class="view-all-btn">
+    @if (request()->route()->getName() == 'speciality')
+    <a href="/find-a-doctor" class="view-all-btn" style="display:flex;justify-content:center">
         View All
-    </button> --}}
+    </a>    
+    @endif
+    
 </div>

@@ -103,7 +103,7 @@ class SpecialityController extends Controller
     <a href='#'>{$content->name}</a>
 </div>";
 
-        
+        session(['branch_id'=>'Hyderabad']);
         return view('speciality', [
             'content' => $content,
             'breadcrum'=>$breadcrum,

@@ -1,4 +1,4 @@
-<div class="filter">
+<div class="filter " style="{{request()->route()->getName() == 'speciality' ? 'display:none' : ""}}">
     <div class="filter__fields-wrapper" style="position: relative">
 
         <svg width="19" height="22" viewBox="0 0 19 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -23,19 +23,21 @@
         <select type="text" class="location-select-box" id="location-select-box" data-type="location" placeholder="Enter Doctor Name">
             {{-- <option value="">Filter by Location</option> --}}
             
-            @if (request()->route()->getName() == 'specialist')
+            @if (request()->route()->getName() == 'specialist' || request()->route()->getName() == 'speciality' || request()->route()->getName() == 'find-doctor')
                 <option @if (session('branch_id') == 'hyderabad')
                     selected
                 @endif data-id="1" value="hyderabad">Hyderabad</option>
             @endif
             
                 
-            
+            @if (request()->route()->getName() != 'speciality')
             @foreach ($branches as $item)
             <option data-slug="{{$item->slug}}" value="{{$item->id}}" @if (session('branch_id') == $item->id)
                 selected @endif>{{$item->name}}</option>
                 
-            @endforeach
+            @endforeach  
+            @endif
+            
         </select>
     </div>
     <div class="filter__fields-wrapper">

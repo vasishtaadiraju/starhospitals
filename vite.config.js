@@ -33,6 +33,7 @@ export default defineConfig({
                 'resources/js/find-doctor.js',
                 'resources/js/video-consultation.js',
                 'resources/js/contact.js',
+                'resources/js/speciality-doctors.js'
                 ],
             refresh: true,
         }),
