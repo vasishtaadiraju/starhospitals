@@ -216,7 +216,7 @@ async function printDoctors(body, selectBox, className) {
             
 
             let doctorCard = `<div class="doctors-card doctors-card--primary">
-        <a href="/doctors/${branch_slug}/${speciality_slug}/${
+        <a href="/doctors/${branch_slug == "" ? result.doctor.branches[0].slug : branch_slug}/${speciality_slug}/${
             result.doctor.slug
         }"><img class="doctors-card--primary__doctor-img" style="width:100%" src="${
                 import.meta.env.VITE_ASSET_URL
@@ -224,7 +224,7 @@ async function printDoctors(body, selectBox, className) {
  
          <div class="doctors-card--primary__content">
          <div class="doctors-card--primary__info">
-             <h4><a href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}">${
+             <h4><a href="/doctors/${branch_slug == "" ? result.doctor.branches[0].slug : branch_slug}/${speciality_slug}/${result.doctor.slug}">${
                 result.doctor.name
             }</a></h4>
             <p class="doctors-card--primary__designation" style="margin-top:0.5em"><a href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}"> ${
