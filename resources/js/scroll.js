@@ -7,5 +7,5 @@ domSelector('.scroll-to-view','click',function(e) {
     {
         return;
     }
-    section.scrollIntoView(false);
+    section.scrollIntoView(true);
 })  
