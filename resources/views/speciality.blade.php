@@ -15,9 +15,11 @@
 <x-gap/>
 <x-gap/>
 <x-our-specialists :$content :branches='$content->branches' :$coes/>
+    <x-gap/>
+    <x-gap/>
 {{-- <x-our-specialists :$content :$branches  :$coes/> --}}
 @if($content->services_treatments != null)
-<x-gap/>
+
 
 <div class="ui-background">
 <x-services-treatment :$content />
