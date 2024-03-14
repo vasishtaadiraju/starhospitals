@@ -3,17 +3,17 @@ $('.slider').slick({
     dots:true,
     arrows:false,
     autoplay:true,
-}) 
+})
 
 $('.virtual-tour-slider').slick({
     dots:false,
     arrows:true,
- 
+
 })
 $('.int-reviews').slick({
     dots:false,
     arrows:true,
-}) 
+})
 $('.specialists-slider').slick({
     // dots:true,
     arrows:true,
@@ -61,7 +61,7 @@ $('.specialists-slider').slick({
         }
     }
 ]
-}) 
+})
 
 
 $('.physical-consultation__dates-slider').slick({
@@ -275,6 +275,47 @@ $('.testimonials-slider').slick({
     }
 ]
 })
+if (screenWidth < 769) {
+$('.centerofexcellence-slider').slick({
+    // dots:true,
+    arrows:true,
+    slidesToShow:3,
+    slidesToScroll:1,
+    infinite:false,
+    settings: 'unslick',
+    responsive: [{
+        breakpoint: 1025,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 2
+        }
+    },
+    {
+        breakpoint: 768,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 2
+        }
+    },
+    {
+        breakpoint: 601,
+        settings: {
+            // dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 1
+        }
+    }
+]
+})
+}
 
 $('.media-slider').slick({
     // dots:true,
@@ -439,7 +480,7 @@ $('.gallery-slider').slick({
             centerMode: true,
             centerPadding: '0px',
             slidesToShow: 1,
-            
+
             rows:3,
         }
     },
@@ -551,7 +592,7 @@ else
                 centerPadding: '0px',
                 slidesToShow: 1,
         slidesPerRow: 2,
-    
+
                 rows:1,
             }
         }

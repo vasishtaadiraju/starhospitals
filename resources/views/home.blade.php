@@ -6,7 +6,7 @@
 @section('meta-title',$content->meta_title)
 @section('meta-description',$content->meta_description)
 @push('page-schema')
-    
+
 <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -32,9 +32,9 @@
       ]
     }
     </script>
-    
-    
-    
+
+
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -76,18 +76,18 @@
         "https://www.instagram.com/starhospitalsin/",
         "https://www.youtube.com/@StarHospitalsHyderabad/",
         "https://www.linkedin.com/company/star-hospitals-hyderabad/"
-      ] 
+      ]
     }
     </script>
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
     <script type="application/ld+json">{
     "@context": "http://schema.org",
     "@type": "Webpage",
@@ -100,7 +100,7 @@
     "creator": ["Star Hospitals Hyderabad"],
     "keywords": ["best hospitals in hyderabad,Hospitals In Nanakramguda,Hospital Near Hitech City,Hospital Near Gachibowli,Hospital Near Manikonda,Hospital Near Me,Hospital In Hyderabad,Top Hospitals In Hyderabad"]
     }</script>
-    
+
 @endpush
 @section('content')
 <x-slider :$content/>
@@ -113,9 +113,10 @@
 {{-- <div class="ui-background"> --}}
 
 {{-- </div> --}}
-{{-- <x-gap/> --}}
+<x-gap/>
+<x-centerof-excellence/>
 
-<x-about-coe  :$coes/>
+{{--  <x-about-coe  :$coes/>  --}}
 
 <x-gap/>
 <x-our-specialists :$content :$branches  :$coes/>
@@ -141,14 +142,14 @@
 
 <x-heading :title="'Patient Testimonials'" :description="''" />
     <div class="testimonials testimonials-slider">
-    
-        
-        
+
+
+
         <div class="testimonials__card">
-           <div class="ctg-video"><img src="" class="ctg-video play-video" data-video-link="https://www.youtube.com/embed/BqzX3ilr5Uo?autoplay=1" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt=""> </div> 
+           <div class="ctg-video"><img src="" class="ctg-video play-video" data-video-link="https://www.youtube.com/embed/BqzX3ilr5Uo?autoplay=1" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt=""> </div>
             <div class="testimonials__card__content">
                 <p>MR. SHEIKH ABDUL SATTAR</p>
-    
+
                 <h4>Mr. Abdul Sattar shares his experience of angioplasty surgery | Patient Testimonial | Star Hospitals</h4>
             </div>
         </div>
@@ -156,7 +157,7 @@
             <div class="ctg-video"> <img src="" class="play-video" data-video-link="https://www.youtube.com/embed/SpCctR-VNWE?autoplay=1" data-src="{{Vite::asset('resources/images/testimonials/home-2.webp')}}" alt=""> </div>
             <div class="testimonials__card__content">
                 <p>MRS REENA TEKRIWAL</p>
-    
+
                 <h4>Mr. Manoj shares his wife's breast cancer surgery experience | Patient Testimonial | Star Hospitals</h4>
             </div>
         </div>
@@ -164,11 +165,11 @@
             <div class="ctg-video">  <img src="" class="play-video" data-video-link="https://www.youtube.com/embed/3ERI_hU34iQ?autoplay=1" data-src="{{Vite::asset('resources/images/testimonials/home-3.webp')}}" alt=""> </div>
             <div class="testimonials__card__content">
                 <p>Mr. SUBBA RAO</p>
-    
+
                 <h4>Mr. Subba Rao shares his experience of Pancreatic cancer surgery Patient Testimonial| Star Hospitals</h4>
             </div>
         </div>
-       
+
     </div>
 
 
@@ -184,7 +185,7 @@
 <x-testimonials-secondary :$content  :testimonials='$reviews'/>
 
 {{-- <x-gap/> --}}
-{{-- 
+{{--
 <div class="ui-background">
 
 <x-blogs :$content :$blogs/>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Web\CoeController;
 use App\Http\Controllers\Web\ConditionsController;
 use App\Http\Controllers\Web\ContactUsController;
 use App\Http\Controllers\Web\DoctorController;
+use App\Http\Controllers\Web\DoctorNewController;
 use App\Http\Controllers\Web\FormController;
 use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Web\InternationalPatientController;
@@ -41,6 +42,7 @@ Route::get('/specialities/{slug}', [SpecialityController::class, 'index'])->name
 Route::post('/', [FormController::class, 'homeForm'])->name('home.form');
 // Route::post('/centers-of-excellence',[FormController::class,'talkToDoctor'])->name('coe.form');
 Route::post('/contact', [FormController::class, 'contactForm'])->name('contact.form');
+// Route::get('/doctor-appoinment-new', [DoctorNewController::class, 'doctorAppoinmentNew'])->name('doctor.appoinment.new');
 
 // ======================================Services and Treatment ============================
 // Route::get('/treatments-tests', [ConditionsController::class, 'landingPage'])->name('condition.landing');
@@ -56,6 +58,7 @@ Route::get('/doctors/{branch_slug}/{speciality_slug}/{slug}', [DoctorController:
 Route::get('/specialists/{slug}/', [SpecialistController::class, 'index'])->name('specialist');
 Route::get('/book-an-appointment/{branch_slug}/{speciality_slug}/{slug}', [DoctorController::class, 'consultation'])->name('doctor.book-appointment');
 Route::get('/doctors/book-a-video-consultation', [DoctorController::class, 'videoConsultation'])->name('doctor.book-video-consultation');
+Route::get('/doctor-appointment-new', [DoctorController::class, 'newAppointment'])->name('doctor.appointment-new');
 
 //Form routes
 Route::controller(FormController::class)->middleware(['XssSanitization', 'throttle:form'])->group(function () {
@@ -115,5 +118,13 @@ Route::get('/courses/mem/registration', function () {
 Route::get('/courses/mem/registration/thank-you', function () {
     return view('mem-thank-you');
 });
+
+
+
+
+
+
+
+
 
 

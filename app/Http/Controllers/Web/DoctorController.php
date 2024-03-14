@@ -52,7 +52,7 @@ class DoctorController extends Controller
 
         if($content == null)
         {
-            abort(404); 
+            abort(404);
         }
         $breadcrum = "<div class='banner__breadcrum banner__breadcrum--blue'>
     <a href='/'>Home</a>
@@ -60,7 +60,7 @@ class DoctorController extends Controller
     <a href='#'>Doctors</a>
     <span>❯</span>
     <a href='/locations/{$branch_slug}'>{$branch->name}</a>
-    
+
     <span>❯</span>
     <a href='#'>{$content->name}</a>
 </div>";
@@ -106,7 +106,7 @@ class DoctorController extends Controller
 
         if($content == null)
         {
-            abort(404); 
+            abort(404);
         }
 
 
@@ -123,17 +123,31 @@ class DoctorController extends Controller
 
 
 
-       
-           
 
 
 
-    
+
+
+
         return view('book-an-appointment.physical-consultation', [
             'content' => $content,
             'breadcrum' => $breadcrum,
             'branch_slug' => $branch_slug,
             'speciality_slug' => $speciality_slug,
         ]);
+    }
+
+
+    function newAppointment()
+    {
+        $breadcrum = "<div class='banner__breadcrum banner__breadcrum--blue' style='margin-top:1.5rem;margin-left:5%;font-family:Plus Jakarta Sans;font-size:13px'>
+    <a href='/'>Home</a>
+    <span>❯</span>
+    <a href='#'>Book an Appointment</a>
+    <span>❯</span>
+    </div>";
+   return view('doctor-appointment-new', [
+    'breadcrum' => $breadcrum,
+]);
     }
 }

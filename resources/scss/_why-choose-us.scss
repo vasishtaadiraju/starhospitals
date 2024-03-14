@@ -5,27 +5,29 @@
 
 .choose-us {
     @include centerSection;
+    width: 88% !important;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
     display: flex;
-    // justify-content: space-between;
-    gap: 10%;
-    &--secondary {
-        flex-direction: row-reverse;
-        margin-top: 3em;
-    }
+
     @include media("sm-mob") {
-        flex-direction: column-reverse;
+        // width: 100%;
+        flex-direction: column;
     }
     @include media("md-mob") {
-        flex-direction: column-reverse;
+        // width: 100%;
+        flex-direction: column;
+
     }
     @include media("x-sm-tab") {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     @include media("md-tab") {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     @include media("sm-tab") {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     // @include media("lg-tab") {
@@ -34,81 +36,43 @@
     // @include media("lg-tab") {
     //     flex-direction: column-reverse;
     // }
-    &__benifits {
-        flex: 0 0 42%;
+    &__card {
+        flex-basis: 23%;
         // min-height: 60vh;
         @include media("sm-mob") {
-            flex: 0 0 100%;
+
+            flex-direction: column;
         }
         @include media("md-mob") {
-            flex: 0 0 100%;
+            flex-direction: column;
         }
         @include media("lg-mob") {
-            flex: 0 0 100%;
+            flex-direction: column;
         }
         @include media("sm-tab") {
-            flex: 0 0 61%;
+            flex-direction: column;
         }
         @include media("lg-tab") {
-            flex: 0 0 60%;
+            flex-direction: column;
         }
         @include media("x-sm-desktop") {
-            flex: 0 0 45%;
+            flex-direction: column;
         }
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        &__card {
-            flex: 0 0 calc(95% / 2);
-            // margin-top: 0.5em;
-            padding: 0.5em 1em;
-            // border: 1px solid blue;
-            min-height: 12rem;
-            margin-bottom: 2em;
-            border-radius: 10px;
+
+        min-height: 12rem;
+        flex-basis: 23% !important;
+        flex: 0 0 calc(95% / 2);
+        margin-bottom: 2em;
+        box-shadow: 0px 4px 10px 0px #004E9E1A;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.5em 1em;
+        border-radius: 10px;
             box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
             -webkit-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
             -moz-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
-            @include media("sm-mob") {
-                flex: 0 0 100%;
-                display: flex;
-                align-items: center;
-                gap: 1em;
-                min-height: 7rem;
-                margin-bottom: 0em;
-            }
-            @include media("md-mob") {
-                flex: 0 0 100%;
-                display: flex;
-                align-items: center;
-                gap: 1em;
-                min-height: 7rem;
-                margin-bottom: 1em;
-
-            }
-            @include media("lg-mob") {
-                flex: 0 0 100%;
-                display: flex;
-                align-items: center;
-                gap: 1em;
-                min-height: 7rem;
-                margin-bottom: 1em;
-
-            }
-            @include media("x-sm-tab") {
-                margin-bottom: 1em;
-            }
-            @include media("sm-tab") {
-                margin-bottom: 2em;
-            }
-            @include media("md-tab") {
-                margin-bottom: 2em;
-            }
-            @include media("x-sm-desktop") {
-                margin-bottom: 3em;
-            }
-
-            &__icon-wrapper {
+                    &__icon-wrapper {
                 min-height: 3em;
             }
             h3 {
@@ -153,88 +117,8 @@
                     font-size: 12px;
                 }
             }
-        }
     }
-    &__image-wrapper {
-        width: 80%;
-        margin: 0px auto;
-        img {
-            width: 100%;
-            // height: 100%;
-        }
-        &--secondary {
-            // margin: 0px;
-            img {
-                // width: initial;
-            }
-        }
 
-        @include media("sm-mob") {
-            width: 100%;
-            margin-bottom: 1.5em;
-        }
-        @include media("md-mob") {
-            width: 100%;
-            margin-bottom: 1.5em;
-        }
-        @include media("lg-mob") {
-            width: 100%;
-            margin-bottom: 1.5em;
-        }
 
-        @include media("x-sm-tab") {
-            // width: 100%;
-            margin-bottom: 1.5em;
-        }
-        @include media("sm-tab") {
-            // width: 100%;
-            margin-bottom: 1.5em;
-        }
-        @include media("md-tab") {
-            // width: 100%;
-            margin-bottom: 1.5em;
-        }
-    }
-    &__image-container {
-        position: relative;
-        flex: 0 0 40%;
-        &--secondary {
-            margin-left: 0px;
-            flex: 1;
-            // flex: 45%;
-        }
-        @include media("sm-mob") {
-            flex: 0 0 100%;
-        }
-        @include media("sm-tab") {
-            flex: 0 0 35%;
-        }
-        @include media("sm-tab") {
-            height: 50%;
-        }
-        @include media("lg-tab") {
-            flex: 0 0 35%;
-        }
-        // background-color: white;
-        &__dots-left {
-            width: 10%;
-            position: absolute;
-            left: 2rem;
-            bottom: 10%;
-            z-index: -1;
-            &--secondary {
-                left: 5px;
-            }
-        }
-        &__dots-right {
-            width: 10%;
-            position: absolute;
-            right: 2rem;
-            top: 10%;
-            z-index: -1;
-            &--secondary {
-                right: 1rem;
-            }
-        }
-    }
 }
+

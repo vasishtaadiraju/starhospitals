@@ -1,0 +1,58 @@
+@use "utils/variables" as variables;
+@import 'utils/utils';
+
+@import "utils/media-queries";
+
+
+.doctors-root{
+    padding:3rem 0px
+
+    &--secondary{
+        background-color: variables.$starhospitals-ui-background;
+
+    }
+}
+.doctors{
+
+    @include centerSection;
+    // padding: 2em 0px;
+    // z-index: -1;
+    // margin: 1em 0px;
+    @include media('sm-mob')
+    {
+        width: 83%;
+        margin-top: 1em;
+    }
+    @include media('md-mob')
+    {
+        width: 83%;
+        margin-top: 1em;
+    }
+    @include media('lg-mob')
+    {
+        width: 83%;
+        margin-top: 1em;
+    }
+    @include media('x-sm-tab')
+    {
+
+        margin-top: 1em;
+    }
+    &--primary{
+        width:87%;
+        // padding-bottom: 5em;
+    }
+
+    &__cards-wrapper{
+        width: 100%;
+
+        &--flex-list{
+            display: flex;
+            flex-wrap: wrap;
+
+            .doctors-card{
+                margin: 1em calc(5%/3) 0px 0px;
+            }
+        }
+    }
+}

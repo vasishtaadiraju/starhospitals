@@ -1,5 +1,148 @@
 <?php
 
+// Redirection March 2024
+
+Route::get('/lp/swap-',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/specialities/ent',function(){
+    return redirect('https://starhospitals.in/specialists/best-ent-specialists-in-hyderabad');
+    });
+    Route::get('/doctors/banjara-hills/neurosurgery/dr-aneel-kumar-neuro-surgeon',function(){
+    return redirect('https://starhospitals.in/find-a-doctor');
+    });
+    Route::get('/lp/swap-kidney-',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/visitor_info/view/3',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/Specialities/view/46',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/doctors/view_doctor/84',function(){
+    return redirect('https://starhospitals.in/find-a-doctor');
+    });
+    Route::get('/Health_package/view/8',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/patient_info/view/7',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/doctors/view_doctor/47',function(){
+    return redirect('https://starhospitals.in/find-a-doctor');
+    });
+    Route::get('/Specialities/view/37',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/Health_package/view/24',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/scamner_com_a64de6cefc734c3933a43047add00e9d.html',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/doctors/view_doctor/105',function(){
+    return redirect('https://starhospitals.in/find-a-doctor');
+    });
+    Route::get('/visitor_info/view/5',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/covid19',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/doctors/financial-district/neurosurgery/dr-aneel-kumar-neuro-surgeon',function(){
+    return redirect('https://starhospitals.in/find-a-doctor');
+    });
+    Route::get('/Specialities/view/31',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/biomedical_wastage',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/visitor_info/view/2',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/doctors/banjara-hills/hematology-and-bone-marrow-transplant/dr-amvr-narendra-hematologist',function(){
+    return redirect('https://starhospitals.in/doctors/financial-district/hematology-and-bone-marrow-transplant/dr-amvr-narendra-hematologist');
+    });
+    Route::get('/site/doctorview/245/DrPPadma',function(){
+    return redirect('https://starhospitals.in/find-a-doctor');
+    });
+    Route::get('/site/doctorview/121/DrRameshBabuDasari',function(){
+    return redirect('https://starhospitals.in/doctors/banjara-hills/critical-care/dr-ramesh-babu-dasari-paediatrician-intensivist');
+    });
+    Route::get('/site/department/Physiotherapy/83',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/site/patients_visitors/patient_guide',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/api/getDoctorByBranchCoeSpeciality?page=1',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/visitor_info/view/2',function(){
+    return redirect('https://www.starhospitals.in/');
+    });
+    Route::get('/site/newsview/news_1',function(){
+    return redirect('https://www.starhospitals.in/');
+    });
+    Route::get('/site/department/oncology/90',function(){
+    return redirect('https://starhospitals.in/specialists/best-medical-oncologists-in-hyderabad');
+    });
+    Route::get('/site/doctorview/237/drsivaramireddy',function(){
+    return redirect('https://starhospitals.in/index.php/find-a-doctor');
+    });
+    Route::get('/site/doctorview/250/dryvrao',function(){
+    return redirect('https://starhospitals.in/index.php/find-a-doctor');
+    });
+    Route::get('/site/doctorview/271/drsaritashrivastva',function(){
+    return redirect('https://starhospitals.in/index.php/find-a-doctor');
+    });
+    Route::get('/site/doctorview/126/drsukumarsura',function(){
+    return redirect('https://starhospitals.in/index.php/find-a-doctor');
+    });
+    Route::get('/site/doctorview/264/drankitaroychawla',function(){
+    return redirect('https://starhospitals.in/index.php/find-a-doctor');
+    });
+    Route::get('/site/department/arthroscopysportsmedicine/49?utm_source=Google&utm_medium=GMB&utm_campaign=GMB-Listings&utm_term=Best-Orthopedics-Doctors-in-Banjarahills-Hyderabad',function(){
+    return redirect('https://starhospitals.in/specialists/best-arthroscopic-surgeons-in-hyderabad');
+    });
+    Route::get('/site/doctorview/115/drysarunkumarreddy',function(){
+    return redirect('https://starhospitals.in/index.php/find-a-doctor');
+    });
+    Route::get('/site/doctorview/154/drvijayvarma',function(){
+    return redirect('https://starhospitals.in/index.php/find-a-doctor');
+    });
+    Route::get('/site/doctorview/107/DrSrinivasaMurthyK',function(){
+    return redirect('https://starhospitals.in/doctors/banjara-hills/cardiothoracic-surgery/dr-srinivasa-murthy-k-cardiothoracic-surgeon');
+    });
+    Route::get('/site/doctorview/89/DrNeelamVRamanaReddy',function(){
+    return redirect('https://starhospitals.in/doctors/banjara-hills/orthopedics/dr-neelam-v-ramana-reddy-orthopedic-surgeon');
+    });
+    Route::get('/site/doctorview/146/drphaniprasantmulakaluri',function(){
+    return redirect('https://starhospitals.in/index.php/find-a-doctor');
+    });
+    Route::get('/site/starnewsdetails/9',function(){
+    return redirect('https://starhospitals.in/');
+    });
+    Route::get('/site/doctorview/120/drdilipnandamuri',function(){
+    return redirect('https://starhospitals.in/index.php/find-a-doctor');
+    });
+    Route::get('/site/doctorview/86/',function(){
+    return redirect('https://starhospitals.in/index.php/find-a-doctor');
+    });
+    Route::get('/site/doctorview/147/drjvkkishore',function(){
+    return redirect('https://starhospitals.in/index.php/find-a-doctor');
+    });
+    Route::get('/site/doctorview/84/DrAnuradhaT',function(){
+    return redirect('https://starhospitals.in/doctors/banjara-hills/pulmonology/dr-anuradha-t-pulmonologist');
+    });
+    Route::get('/site/doctorview/83/DrRameshGudapati',function(){
+    return redirect('https://starhospitals.in/doctors/financial-district/cardiology/dr-ramesh-gudapati-cardiologist');
+    });
+    Route::get('/site/department/CardiacSciences/43/53',function(){
+    return redirect('https://starhospitals.in/specialists/best-cardiologists-in-hyderabad');
+    });
 
 Route::get('/site/doctorview/109/drgopichandmannam', function () {
     return redirect('https://starhospitals.in/doctors/financial-district/cardiothoracic-surgery/dr-gopi-chand-mannam-cardiothoracic-surgeon');
