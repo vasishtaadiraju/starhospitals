@@ -4,6 +4,6 @@ import './slider';
 import './faqs';
 import './footer';
 import './auto-complete';
-import './book-an-appointment';
+import './find-doctor-specialists';
 // import "./condition-landing";
 import './scroll';

@@ -125,6 +125,133 @@
         };
 
         &__content{
+            padding: 1.5em 1.5em;
+            // cursor: pointer;
+            @include font-family(400);
+            min-height:9rem;
+            display:flex !important;
+            flex-direction:column;
+            justify-content:space-between !important;
+            @include media('sm-mob')
+            {
+                padding: 0.5em 0.75em 1em 1em;
+                min-height: 14rem;
+            }
+            @include media('md-mob')
+            {
+                padding: 0.5em 0.5em 1em 1em;
+                min-height: 14rem;
+            }
+            @include media('lg-mob')
+            {
+                padding: 0.5em 0.5em 1em 1em;
+                min-height: 14rem;
+
+            }
+            @include media('x-sm-tab')
+            {
+                padding: 0.5em 0.5em 1em 1em;
+                min-height: 14rem;
+
+            }
+            @include media('sm-tab')
+            {
+                padding: 0.5em 0.5em 1em 0.5em;
+                // height: 14rem;
+            }
+            @include media('lg-tab')
+            {
+                padding: 0.5em 0.5em 1em 0.5em;
+                // height: 14rem;
+            }
+            h4{
+                // line-height: 40px;
+                // min-height: 30px;
+                // font-weight: 500;
+                // min-height: 2.75em;
+
+                @include media('x-sm-desktop')
+                {
+                    font-size: 14px;
+
+                }
+            }
+
+
+        }
+        &__designation{
+            font-size:14px;
+            line-height:20px;
+            font-weight:400;
+            min-height: 2.5em;
+            @include media('x-sm-desktop')
+            {
+                font-size: 12px;
+
+            }
+        }
+        &__speciality{
+            font-size:11px;
+            line-height:20px;
+            font-weight:400;
+            // min-height: 3em;
+            
+            @include media('x-sm-desktop')
+            {
+                font-size: 11px;
+
+            }
+        }
+        &__location{
+            font-size:10px;
+            padding-top:1.5em;
+            color: variables.$starhospitals-text-secondary;
+        }
+
+
+        &__button-wrapper{
+            // padding-top:2em;
+            // position:absolute;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+
+        }
+    }
+
+    &--find-doctor{
+        display: block !important;
+        // position:relative;
+        // border: 1px solid gray;
+        flex: 0 0 calc(90%/4);
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
+        -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.10);
+        margin:1em;
+        // margin-left: 0px;
+        padding:0px !important;
+
+        @include media("sm-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("md-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("lg-mob") {
+            flex: 0 0 100%;
+        }
+        @include media("x-sm-tab") {
+            flex: 0 0 100%;
+        }
+        &__doctor-img{
+            width: 100% !important;
+            aspect-ratio: 4/2;
+            // height: 14rem;
+            border-radius:10px 10px 0px 0px;
+
+        };
+
+        &__content{
             padding: 1.5em 1em;
             // cursor: pointer;
             @include font-family(400);
@@ -216,7 +343,7 @@
             flex-direction: column;
             gap: 0.5em;
 
-        }
+        } 
     }
     &__lt{
         flex: 0 0 40%;

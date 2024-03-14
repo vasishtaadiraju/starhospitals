@@ -12,6 +12,8 @@
     <a >Terms & Conditions</a>
 </div>
 <x-gap/>
-<x-doctors :type="'flex'" :$branches  :$coes :title="'Book An Appointment'" :description="''"/>
+<div class="find-doctor-specialists">
+    <x-doctors :type="'flex'" :$branches  :$coes :title="'Book an Appointment'" :description="'Our healthcare specialists are equipped with the knowledge and skills to provide you with the support you require. From consultation to diagnosis to treatments, our experts are dedicated to helping you.'"/>
+</div>
 <x-gap/>
 @endsection

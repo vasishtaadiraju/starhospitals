@@ -23,8 +23,8 @@
         <select type="text" class="location-select-box" id="location-select-box" data-type="location" placeholder="Enter Doctor Name">
             {{-- <option value="">Filter by Location</option> --}}
             
-            @if (request()->route()->getName() == 'specialist' || request()->route()->getName() == 'speciality' || request()->route()->getName() == 'find-doctor')
-                <option @if (session('branch_id') == 'hyderabad')
+            @if (request()->route()->getName() == 'specialist' || request()->route()->getName() == 'speciality' || (request()->route()->getName() == 'find-doctor' && session('branch_id') == 'Hyderabad'))
+                <option @if (session('branch_id') == 'Hyderabad')
                     selected
                 @endif data-id="1" value="hyderabad">Hyderabad</option>
             @endif
