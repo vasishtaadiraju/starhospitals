@@ -127,7 +127,8 @@
 
 <x-gap/>
 {{-- <x-gap/> --}}
-
+<x-story/>
+<x-gap/>
 <x-about-us :$content/>
 <x-gap/>
 {{-- <x-testimonials :$content  :testimonials='$reviews'/> --}}

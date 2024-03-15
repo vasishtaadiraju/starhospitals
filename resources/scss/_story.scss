@@ -1,0 +1,326 @@
+@use "utils/variables" as variables;
+@import "utils/utils";
+
+@import "utils/media-queries";
+
+.story{
+    overflow: hidden;
+    // position: relative;
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include media("sm-mob") {
+            height: 49vh;
+        }
+        @include media("md-mob") {
+            height: 61vh;
+        }
+        @include media("lg-mob") {
+            height: 61vh;
+        }
+        @include media("x-sm-tab") {
+            height: 50vh;
+        }
+        @include media("sm-tab") {
+            height: 76vh;
+        }
+        @include media("md-tab") {
+            height: 50vh;
+        }
+        @include media("lg-tab") {
+            height: 50vh;
+        }
+
+        img{
+        position: relative;
+        height: 80vh;
+     width: 100%;
+        float: left;
+
+        margin-top: 2rem;
+        // margin-bottom: 2rem;
+
+        @include media("sm-mob") {
+            // position: relative;
+            height: 45vh;
+            margin-top: 1rem;
+            // height: 60%;
+        }
+        @include media("md-mob") {
+            // position: relative;
+            height: 57vh;
+            margin-top: 2rem;
+            // bottom: 0;
+        }
+        @include media("lg-mob") {
+            // position: relative;
+            height: 57vh;
+            margin-top: 2rem;
+        }
+        @include media("x-sm-tab") {
+            // position: relative;
+            height: 46vh;
+            margin-top: 2rem;
+        }
+        @include media("sm-tab") {
+            // position: relative;
+            height: 50vh;
+            margin-top: 2rem;
+        }
+        @include media("md-tab") {
+            // position: relative;
+            height: 50vh;
+            margin-top: 2rem;
+        }
+        @include media("lg-tab") {
+            // position: relative;
+            height: 46vh;
+            margin-top: 2rem;
+        }
+
+    }
+    &__text{
+        position: absolute;
+        color: white;
+        padding: 10rem;
+        height: 80vh;
+        width: 100%;
+        align-items: center;
+        background-color: #004f9e63;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        @include media("sm-mob") {
+            position: absolute;
+            height: 45vh;
+            width: 100%;
+            padding: 4rem;
+            transform: translateY(0%);
+            background-color: #004e9ebf;
+            margin-top: 2rem;
+        margin-bottom: 2rem;
+
+
+        }
+
+    @include media("md-mob") {
+        position: absolute;
+        height: 57vh;
+        width: 100%;
+        padding: 4rem;
+        transform: translateY(0%);
+        background-color: #004e9ebf;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+
+
+
+    }
+    @include media("lg-mob") {
+        position: absolute;
+        height: 57%;
+        width: 100%;
+        padding: 4rem;
+        transform: translateY(0%);
+        background-color: #004e9ebf;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+
+
+    }
+    @include media("x-sm-tab") {
+        position: absolute;
+        height: 46vh;
+        width: 100%;
+        padding: 4rem;
+        transform: translateY(0%);
+        background-color: #004e9ebf;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @include media("sm-tab") {
+        height: 50vh;
+
+        padding: 4rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    @include media("md-tab") {
+        height: 46vh;
+        // font-size: 15px;
+            // line-height: 25px;
+            // margin-left: 2rem;
+            width: 100%;
+            padding: 4rem;
+            margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    @include media("lg-tab") {
+        height: 46vh;
+        // font-size: 15px;
+            // line-height: 25px;
+            // margin-left: 2rem;
+            width: 100%;
+            padding: 4rem;
+            margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+     h1{
+        font-family: Plus Jakarta Sans;
+        // font-size: 20px;
+        font-weight: 700;
+
+        line-height: 1.5em;
+        width: 70%;
+
+        @include media("sm-mob") {
+            // color: black;
+            // line-height: 30px;
+            font-size: 15px;
+            // margin-left: 2rem;
+
+        }
+        @include media("md-mob") {
+           // color: black;
+           line-height: 30px;
+           font-size: 18px;
+
+        }
+        @include media("lg-mob") {
+           // color: black;
+           line-height: 30px;
+           font-size: 18px;
+
+        }
+        @include media("x-sm-tab") {
+            // color: black;
+            font-size: 20px;
+            // margin-left: 2rem;
+        }
+        @include media("sm-tab") {
+            font-size: 23px;
+        }
+        @include media("md-tab") {
+            font-size: 23px;
+        }
+        @include media("lg-tab") {
+            font-size: 23px;
+        }
+
+     }
+     p{
+        font-family: Plus Jakarta Sans;
+        margin-bottom: 2rem;
+        font-size: 1.2em;
+        font-weight: 500;
+        line-height: 2rem;
+        width: 70%;
+
+        @include media("sm-mob") {
+            // color: black;
+            line-height: 26px;
+            font-size: 11px;
+            // margin-left: 2rem;
+        }
+        @include media("md-mob") {
+           // color: black;
+           line-height: 26px;
+           font-size: 14px;
+           // margin-left: 2rem;
+        }
+        @include media("lg-mob") {
+           // color: black;
+           line-height: 26px;
+           font-size: 14px;
+           // margin-left: 2rem;
+        }
+        @include media("x-sm-tab") {
+            // color: black;
+            font-size: 15px;
+            // line-height: 35px;
+            // margin-left: 2rem;
+            // width: 80%;
+        }
+        @include media("sm-tab") {
+            font-size: 18px;
+        }
+        @include media("md-tab") {
+            font-size: 18px;
+        }
+        @include media("lg-tab") {
+            font-size: 18px;
+        }
+
+     }
+     button{
+        width: 150px;
+        padding: 12px 20px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 1);
+        background: transparent;
+        cursor: pointer;
+        color: white;
+        font-family: Plus Jakarta Sans;
+        font-weight: 500;
+
+        @include media("sm-mob") {
+            // color: black;
+            line-height: 15px;
+            font-size: 9px;
+            padding: 4px;
+            width: 90px;
+            // margin-left: 2rem;
+        }
+        @include media("md-mob") {
+           // color: black;
+           line-height: 25px;
+           font-size: 12px;
+           padding: 4px;
+           width: 90px;
+           // margin-left: 2rem;
+        }
+        @include media("lg-mob") {
+           // color: black;
+           line-height: 25px;
+           font-size: 12px;
+           padding: 4px;
+           width: 90px;
+           // margin-left: 2rem;
+        }
+        @include media("x-sm-tab") {
+            // color: black;
+            font-size: 12pxpx;
+            // line-height: 35px;
+            // margin-left: 2rem;
+        }
+        @include media("sm-tab") {
+            font-size: 15px;
+        }
+        @include media("md-tab") {
+            font-size: 15px;
+        }
+        @include media("lg-tab") {
+            font-size: 15px;
+        }
+
+     }
+
+
+
+    }
+
+
+}
+
+// .story__content.slick-slide img{
+//     width: 100% !important;
+//     // margin: 0px !important;
+// }
+}
+
+
+

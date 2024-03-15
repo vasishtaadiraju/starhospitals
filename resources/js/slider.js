@@ -317,6 +317,49 @@ $('.centerofexcellence-slider').slick({
 })
 }
 
+
+    // $('.story-slider').slick({
+    //     // dots:true,
+    //     arrows:true,
+    //     slidesToShow:3,
+    //     slidesToScroll:1,
+    //     infinite:false,
+    //     settings: 'unslick',
+    //     responsive: [{
+    //         breakpoint: 1025,
+    //         settings: {
+    //             // dots: true,
+    //             arrows: true,
+    //             centerMode: true,
+    //             centerPadding: '0px',
+    //             slidesToShow: 2
+    //         }
+    //     },
+    //     {
+    //         breakpoint: 768,
+    //         settings: {
+    //             // dots: true,
+    //             arrows: true,
+    //             centerMode: true,
+    //             centerPadding: '0px',
+    //             slidesToShow: 2
+    //         }
+    //     },
+    //     {
+    //         breakpoint: 601,
+    //         settings: {
+    //             // dots: true,
+    //             arrows: true,
+    //             centerMode: true,
+    //             centerPadding: '0px',
+    //             slidesToShow: 1
+    //         }
+    //     }
+    // ]
+    // })
+
+
+
 $('.media-slider').slick({
     // dots:true,
     arrows:true,

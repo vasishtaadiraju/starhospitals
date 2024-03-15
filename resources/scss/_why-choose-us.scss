@@ -37,7 +37,6 @@
     //     flex-direction: column-reverse;
     // }
     &__card {
-        flex-basis: 23%;
         // min-height: 60vh;
         @include media("sm-mob") {
 
@@ -60,7 +59,7 @@
         }
 
         min-height: 12rem;
-        flex-basis: 23% !important;
+        flex-basis: 30% !important;
         flex: 0 0 calc(95% / 2);
         margin-bottom: 2em;
         box-shadow: 0px 4px 10px 0px #004E9E1A;
