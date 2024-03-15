@@ -5,14 +5,14 @@
 
 .highlights {
     width: 100%;
-    min-height: 10rem;
+    // min-height: 10rem;
     background-color: variables.$starhospitals-brand-primary;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
     flex-direction: column;
-    padding: 2rem 0px;
+    padding: 4rem 0px;
     gap: 2.5em;
     @include media('sm-mob')
     {
@@ -35,7 +35,7 @@
 
     &__container {
         @include centerSection;
-        width: 90%;
+        // width: 90%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -110,7 +110,7 @@
             height: 100%;
 
             h1{
-                font-size: 25px;
+                font-size: 40px;
                 @include media('sm-mob')
                 {
                     font-size: 20px;

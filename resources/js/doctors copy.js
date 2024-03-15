@@ -216,15 +216,15 @@ async function printDoctors(body, selectBox, className) {
             
 
             let doctorCard = `<div class="doctors-card doctors-card--primary">
-        <a href="/doctors/${branch_slug == "" ? result.doctor.branches[0].slug : branch_slug}/${speciality_slug}/${
+        <a href="/doctors/${branch_slug}/${speciality_slug}/${
             result.doctor.slug
         }"><img class="doctors-card--primary__doctor-img" style="width:100%" src="${
                 import.meta.env.VITE_ASSET_URL
             }${result.doctor.small_image}" alt="" /></a> 
  
-         
+         <div class="doctors-card--primary__content">
          <div class="doctors-card--primary__info">
-             <h4><a href="/doctors/${branch_slug == "" ? result.doctor.branches[0].slug : branch_slug}/${speciality_slug}/${result.doctor.slug}">${
+             <h4><a href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}">${
                 result.doctor.name
             }</a></h4>
             <p class="doctors-card--primary__designation" style="margin-top:0.5em"><a href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}"> ${
@@ -234,7 +234,7 @@ async function printDoctors(body, selectBox, className) {
              <p class="doctors-card--primary__speciality" style="display:flex;flex-wrap:wrap;gap:0.25em;margin-top:0.75em">${coeName.map(name=>{
                 return `${name}`;
              })} </p>
-             
+             <p class="doctors-card--primary__location"></p>
      </div>
              <div class="doctors-card--primary__button-wrapper" >
            <div href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}" class="doctors-card__rt__btn">
@@ -270,7 +270,7 @@ async function printDoctors(body, selectBox, className) {
              
              
              </div/>
-         
+         </div>
          
      </div>`;
             document
@@ -285,14 +285,12 @@ async function printDoctors(body, selectBox, className) {
     
     // $('.specialists-slider').slick('refresh')
     if (selectBox != true && response.data.length > 0) {
-        // console.log(className);
+        console.log(className);
         $(className).slick('unslick')
-        console.log($(className));
         $(className).slick({
             // dots:true,
             arrows: true,
             slidesToShow: 4,
-            infinite:false,
             responsive: [
                 {
                     breakpoint: 1275,
@@ -680,10 +678,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let coe_id = document.getElementById("coe-select-box").value;
         let speciality_id = "";
         
-        // Array.from(document.getElementsByClassName("location-select-box")).forEach(element=>{
-        //     printOptions(element);
+        Array.from(document.getElementsByClassName("location-select-box")).forEach(element=>{
+            printOptions(element);
 
-        // })
+        })
 
         // printOptions(document.getElementsByClassName("location-select-box")[0])
         // printOptions(document.getElementsByClassName("location-select-box")[1])

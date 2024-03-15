@@ -30,7 +30,7 @@ $fixed-header-height: 7.5rem;
     // background-color: black;
     color: variables.$starhospitals-ui-secondary;
     width: 100%;
-    // font-size: 13px;
+    font-size: 13px;
 }
 
 @mixin option-hover() {
@@ -317,7 +317,7 @@ $fixed-header-height: 7.5rem;
             @include font-family(400);
             font-size: 14px;
             @include center-child-element;
-            justify-content: flex-end;
+            justify-content: flex-start;
             color: variables.$starhospitals-text-secondary;
             overflow: hidden;
             &--logo {
@@ -365,7 +365,7 @@ $fixed-header-height: 7.5rem;
                 }
             }
             &--emergency {
-                flex: 0 0 60%;
+                flex: 0 0 calc(70% / 3);
                 @include media("sm-mob") {
                     flex: 0 0 55%;
                     margin-left: 1em;
@@ -396,12 +396,12 @@ $fixed-header-height: 7.5rem;
                 }
                 div {
                     display: flex;
-                    justify-content: end;
+                    justify-content: center;
                     align-items: center;
                     padding: 0.5em 0.5em;
-                    // padding-right: 2em;
-                    gap: 1em;
-                    
+                    padding-right: 2em;
+                    gap: 0.5em;
+                    background-color: variables.$starhospitals-brand-secondary;
                     border-radius: 10px;
                     // width: max-content;
                     @include media("sm-mob") {
@@ -418,9 +418,6 @@ $fixed-header-height: 7.5rem;
                         font-size: 10px;
                         gap: 0.25em;
                         padding: 0.5em 0.5em;
-                    }
-                    div{
-                        background-color: variables.$starhospitals-brand-secondary;
                     }
                     img {
                         width: 18px;
@@ -463,29 +460,6 @@ $fixed-header-height: 7.5rem;
                         }
                     }
                 }
-                .social-icons{
-                    background-color: #ffffff;
-
-                    .footer__social-icons{
-                        background-color: #ffffff;
-                        margin-top: 0;
-                        margin-right: 3em;
-                    }
-                    
-                }
-                .appointment{
-                    background-color: #ffffff;
-                    border: 1px solid #004E9E;
-
-                    p{
-                        color: #000000;
-                    }
-
-                    &__title{
-                        color: #004E9E !important;
-                        font-family: 'Plus Jakarta Sans Medium';
-                    }
-                }
             }
             &--web-search {
                 display: block;
@@ -518,22 +492,22 @@ $fixed-header-height: 7.5rem;
             }
             &--mob-hide {
                 @include media("sm-mob") {
-                    display: none !important;
+                    display: none;
                 }
                 @include media("md-mob") {
-                    display: none !important;
+                    display: none;
                 }
                 @include media("lg-mob") {
-                    display: none !important;
+                    display: none;
                 }
                 @include media("x-sm-tab") {
-                    display: none !important;
+                    display: none;
                 }
                 @include media("sm-tab") {
-                    display: none !important;
+                    display: none;
                 }
                 @include media("md-tab") {
-                    display: none !important;
+                    display: none;
                 }
                 
             }
@@ -742,7 +716,6 @@ $fixed-header-height: 7.5rem;
                 padding: 0px 2em 0px 0px;
                 display: block;
                 width: 100%;
-                font-size: 20px;;
                 @include media("sm-mob") {
                     color: black;
                 }
@@ -1467,127 +1440,4 @@ $fixed-header-height: 7.5rem;
 
 .header__main__card--emergency:hover .emergency_number {
     display: initial;
-}
-
-
-
-.scrollable-dropdown{
-    display: flex;
-    position: absolute;
-    background-color: transparent;
-    margin-top: 1em;
-    // gap: 0.5em;
-    @include media("sm-mob") {
-        display: none;
-    }
-    @include media("md-mob") {
-        display: none;
-    }
-    @include media("x-sm-tab") {
-        display: none;
-    }
-    @include media("sm-tab") {
-        display: none;
-    }
-    @include media("md-tab") {
-        display: none;
-    }
-   
-    &__options-container{
-        height: 25rem;
-        overflow-y: scroll;
-        background-color: #ffffff;
-        border-radius: 10px;
-        padding: 0.5em 0px;
-        scrollbar-color: #004E9E;
-        display: none;
-        color: variables.$starhospitals-text-primary;
-        &::-webkit-scrollbar-thumb{
-            width: 10px;
-            background-color: #004E9E;
-            border-radius: 10px
-        }
-        &::-webkit-scrollbar{
-            width: 10px;
-            // background-color: #004E9E;
-            
-        }
-        &--active{
-            display: block;
-        }
-
-        li{
-            padding: 0.5em;
-            &:hover{
-                background-color: #D4E9FF;
-        border-radius: 10px;
-
-            }
-            // // a{
-                // position: relative;
-                // &::after{
-                //     content: ">";
-                //     display: block;
-                //     position: absolute;
-                //     left: 100%;
-                // }
-            // // }
-        }
-    };
-    &__child-container{
-        background-color: #ffffff;
-        border-radius: 10px;
-        height: max-content;
-        li{
-            padding: 0.5em;
-
-            &:hover{
-                background-color: #D4E9FF;
-        border-radius: 10px;
-
-            }
-
-            
-        }
-
-    }
-    li{
-        list-style: none;
-        min-width: 15rem;
-        a{
-            padding: 0.5em;
-            color: #000000
-        };
-    }
-
-    &__parent-option{
-
-    }
-}
-
-.scrollable-dropdown-btn:hover .scrollable-dropdown__options-container{
-    display: block;
-}
-
-.child-option{
-    display: none;
-}
-
-.mobile-scrollable-dropdown{
-    display: none ;
-    @include media("sm-mob") {
-        display: block;
-    }
-    @include media("md-mob") {
-        display: block;
-    }
-    @include media("x-sm-tab") {
-        display: block;
-    }
-    @include media("sm-tab") {
-        display: block;
-    }
-    @include media("md-tab") {
-        display: block;
-    }
 }

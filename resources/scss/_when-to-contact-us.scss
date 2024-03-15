@@ -8,8 +8,8 @@
     width: 100%;
     // background-color: #004E9E;
     min-height: 20rem;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(76,156,254,1) 0%, rgba(0,78,158,1) 46%);
+    // background: rgb(2,0,36);
+    // background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(76,156,254,1) 0%, rgba(0,78,158,1) 46%);
     position: relative;
     display: flex;
     justify-content: center;
@@ -43,7 +43,7 @@
     }
 
     h2,p,div{
-        color: variables.$starhospitals-text-inverted;
+        color: variables.$starhospitals-text-primary;
         font-family: 'Plus Jakarta Sans';
         line-height: 30px;
         text-align: center;

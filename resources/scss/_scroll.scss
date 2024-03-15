@@ -4,7 +4,7 @@
 @import "utils/media-queries";
 
 .scroll{
-    background-color: variables.$starhospitals-brand-primary;
+    background-color: #D4E9FF;
     height: 6rem;
     @include media('sm-mob')
     {
@@ -100,8 +100,8 @@
         }
         
         a{
-            color: white;
-            font-size: 14px;
+            color: #004E9E;
+            font-size: 15px;
             font-weight: 700;
             @include media('sm-mob')
             {

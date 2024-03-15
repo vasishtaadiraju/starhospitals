@@ -31,6 +31,6 @@ class MemRegisterToUser implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to([$this->email,'rahul.katta@starhospitals.co.in'])->send(new MailMemUser($this->firstname,$this->lastname));
+        Mail::to([$this->email])->send(new MailMemUser($this->firstname,$this->lastname));
     }
 }

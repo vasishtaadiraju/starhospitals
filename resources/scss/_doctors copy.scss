@@ -77,9 +77,9 @@
         &--flex-list{
             display: flex;
             flex-wrap: wrap;
-            
+
             .doctors-card{
-                // margin: 1em calc(5%/3) 0px 0px;
+                margin: 1em calc(5%/3) 0px 0px;
             }
         }
     }
@@ -102,8 +102,7 @@
     background-color: white;
 
     &--primary{
-        // display: block !important;
-        flex-direction: column;
+        display: block !important;
         // position:relative;
         // border: 1px solid gray;
         box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
@@ -111,14 +110,8 @@
         -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.10);
         margin:1em;
         // margin-left: 0px;
-        font-family: 'Plus Jakarta Sans';
         padding:0px !important;
-        min-height: 35rem;
-        justify-content: space-between;
-        @media screen and (min-width: 1920px) {
-            min-height: 49rem;
-   
-        }
+
         @include media('sm-mob')
         {
             margin: 1em;
@@ -132,12 +125,10 @@
         };
 
         &__content{
-            padding: 1em 1.5em;
+            padding: 1.5em 1.5em;
             // cursor: pointer;
-            
             @include font-family(400);
-            // min-height:9rem;
-            font-family: 'Plus Jakarta Sans';
+            min-height:9rem;
             display:flex !important;
             flex-direction:column;
             justify-content:space-between !important;
@@ -178,7 +169,7 @@
                 // min-height: 30px;
                 // font-weight: 500;
                 // min-height: 2.75em;
-                
+
                 @include media('x-sm-desktop')
                 {
                     font-size: 14px;
@@ -190,10 +181,9 @@
         }
         &__designation{
             font-size:14px;
-            line-height:30px;
+            line-height:20px;
             font-weight:400;
-            // min-height: 2.5em;
-            font-family: 'Plus Jakarta Sans';
+            min-height: 2.5em;
             @include media('x-sm-desktop')
             {
                 font-size: 12px;
@@ -201,7 +191,7 @@
             }
         }
         &__speciality{
-            font-size:14px;
+            font-size:11px;
             line-height:20px;
             font-weight:400;
             // min-height: 3em;
@@ -217,16 +207,7 @@
             padding-top:1.5em;
             color: variables.$starhospitals-text-secondary;
         }
-        &__info{
-            padding: 0px 1.5em 0px 1.5em;
 
-            h4{
-               a{
-                font-family: 'Plus Jakarta Sans';
-               } 
-            }
-
-        }
 
         &__button-wrapper{
             // padding-top:2em;
@@ -234,29 +215,22 @@
             display: flex;
             flex-direction: column;
             gap: 0.5em;
-            padding: 0px 1.5em 1.5em 1.5em;
-
 
         }
     }
 
     &--find-doctor{
-        // display: block !important;
+        display: block !important;
         // position:relative;
         // border: 1px solid gray;
-        flex-direction: column;
-        justify-content: space-between;
-        flex: 0 0 calc(95%/4);
-        // flex-grow: 1;
-
+        flex: 0 0 calc(90%/4);
         box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
         -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
         -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.10);
-        // margin:1em;
+        margin:1em;
         // margin-left: 0px;
-        margin-top: 1.5em;
         padding:0px !important;
-        min-height: 35rem;
+
         @include media("sm-mob") {
             flex: 0 0 100%;
         }
@@ -337,7 +311,6 @@
             line-height:20px;
             font-weight:400;
             // min-height: 3em;
-            text-wrap: nowrap;
             @include media('x-sm-desktop')
             {
                 font-size: 12px;
@@ -345,7 +318,7 @@
             }
         }
         &__speciality{
-            font-size:14px;
+            font-size:11px;
             line-height:20px;
             font-weight:400;
             // min-height: 3em;
@@ -483,12 +456,12 @@
         }
         &__speciality{
             padding-bottom: 0.5em;
-            font-size: 14px;
+            font-size: 12px;
             color: variables.$starhospitals-text-primary;
            a{
             color: variables.$starhospitals-text-secondary;
              font-weight: 400;
-             font-size: 14px;
+             font-size: 12px;
            }
         }
 
@@ -511,11 +484,10 @@
             align-items: center;
             color: variables.$starhospitals-text-primary;
             font-family: variables.$starhospitals-brand-secondary-font;
-            font-weight: 500;
-            font-size: 15px;
-            font-family: 'Plus Jakarta Sans Medium';
+            font-weight: 400;
+            font-size: 12px;
+            font-family: 'Plus Jakarta Sans Bold';
             margin-top: 1em;
-            text-wrap: nowrap;
             cursor: pointer !important;
             @include media("sm-mob") {
                 font-size: 13px;
@@ -532,10 +504,4 @@
 
         }
     }
-}
-
-.find-doctor-specialists .doctors__cards-wrapper.doctor-appointment-cards-wrapper.doctors__cards-wrapper--flex-list
-{
-    gap: 0.5em;
-    margin-top: 1.5em;
 }

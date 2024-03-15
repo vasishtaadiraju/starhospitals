@@ -1,4 +1,4 @@
-<div class="" id="find-doctors">
+<div class="" >
     <x-heading :title="'Meet Our Specialists'" :description="$content->doctor_description" />
     
     <x-filter :$content :$branches :$coes />
@@ -135,7 +135,7 @@
         </div> --}}
     </div>
     @if (request()->route()->getName() == 'speciality')
-    <a href="/find-a-doctor" class="view-all-btn" style="display:flex;justify-content:center">
+    <a id="treatments-procedures" href="/find-a-doctor" class="view-all-btn" style="display:flex;justify-content:center">
         View All
     </a>    
     @endif

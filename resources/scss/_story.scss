@@ -9,7 +9,9 @@
     &__content {
         display: flex;
         flex-wrap: wrap;
-
+        position: relative;
+        height: 70vh;
+        margin-top: 2em;
         @include media("sm-mob") {
             height: 49vh;
         }
@@ -34,7 +36,7 @@
 
         img{
         position: relative;
-        height: 80vh;
+        height: 100%;
      width: 100%;
         float: left;
 
@@ -83,9 +85,13 @@
     &__text{
         position: absolute;
         color: white;
-        padding: 10rem;
-        height: 80vh;
+        padding: 6rem 10rem;
+        height: 100%;
         width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         align-items: center;
         background-color: #004f9e63;
         margin-top: 2rem;
@@ -170,13 +176,13 @@
     }
 
      h1{
-        font-family: Plus Jakarta Sans;
+        font-family: 'Plus Jakarta Sans Bold';
         // font-size: 20px;
         font-weight: 700;
 
-        line-height: 1.5em;
-        width: 70%;
-
+        line-height: 50px;
+        width: 60%;
+        font-size: 40px;
         @include media("sm-mob") {
             // color: black;
             // line-height: 30px;
@@ -213,13 +219,14 @@
 
      }
      p{
-        font-family: Plus Jakarta Sans;
+        font-family: 'Plus Jakarta Sans Semi Bold';
+        margin-top: 1em;
         margin-bottom: 2rem;
         font-size: 1.2em;
         font-weight: 500;
-        line-height: 2rem;
-        width: 70%;
-
+        line-height: 30px;
+        width: 50%;
+        font-size: 20px;
         @include media("sm-mob") {
             // color: black;
             line-height: 26px;
@@ -258,7 +265,7 @@
      }
      button{
         width: 150px;
-        padding: 12px 20px;
+        padding: 18px 20px;
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 1);
         background: transparent;

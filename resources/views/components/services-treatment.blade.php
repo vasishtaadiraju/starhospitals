@@ -1,7 +1,7 @@
-<x-heading :title="'Scope of Services'" :description="''" />
+<x-heading :title="'Treatments and Procedures'" :description="''" />
 
 <div class="s-t">
-    <div class="s-t__img-wrp" id="treatments-procedures">
+    <div class="s-t__img-wrp" >
         <div class="s-t__img-wrp__img">
             <img src="" data-src="{{ config('variables.asset') . $content->services_treatments_image1 }}" alt="">
         </div>

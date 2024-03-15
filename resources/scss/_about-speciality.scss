@@ -87,6 +87,10 @@
 
     &__content {
         flex: 1;
+        div{
+            font-size: 18px;
+            line-height: 30px;
+        }
 
         &__heading {
             padding-bottom:0em;
@@ -217,8 +221,9 @@
 .speciality-description-v2-root{
     gap: 5%;
     h1{
-        font-size: 15px;
+        font-size: 20px;
         color: variables.$starhospitals-brand-primary !important;
         font-weight: 700;
+        line-height: 40px;
     }
 }

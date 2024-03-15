@@ -31,6 +31,39 @@ $(window).scroll(function () {
     }
 });
 
+
+// document.querySelector('#scroll-fixed-dropdown').addEventListener('click'.at)
+
+// $('.scrollable-dropdown-btn').on('click',function (e){
+    
+//     // e.preventDefault()
+//     if(e.target !== e.currentTarget) return;
+//     console.log($('#'+$(this).attr('data-item')));
+//     $('#'+$(this).attr('data-item')).toggleClass('scrollable-dropdown__options-container--active');
+//     $('.child-option').hide();
+// })
+
+
+$('.scrollable-dropdown__parent-option').on('mouseover',function(){
+    
+    $('.child-option').hide();
+    let className = $(this).attr('data-class');
+    $(this).parent().parent().find('.'+className).show();
+    
+})
+$('.scrollable-dropdown').on('mouseleave',function(){
+    
+    $('.child-option').hide();
+    // let className = $(this).attr('data-class');
+    // $(this).parent().parent().find('.'+className).show();
+    
+})
+
+// $(document).on('mouseover', 'div', function(e) {
+//     console.log($(e.target).attr('class'));
+//     // $('.child-option').hide();
+// });
+
 // document.querySelector('body').addEventListener('click',function(e){
 //     // document.querySelector('.header__nav__option--dropdown')
 //     console.log(e.target.parentElement.classList.contains('header__nav__option--dropdown'));
@@ -39,54 +72,65 @@ $(window).scroll(function () {
 //     }
 //     removeClass('header__nav__option--dropdown','header__nav__option--dropdown--active')
 // })
-domSelector('.header__nav__option--nested-dropdown','click',function(e) {
-    // removeClass('dropdown-items','nav-active');
-    // console.log(this.parentNode);
-    // console.log(e.target.parentNode);
-    console.log(e.target.nodeName);
-    if(e.target.nodeName == 'LI')
-    {
-        return;
-    }
-    else if (e.target.nodeName == 'A')
-    {
-        console.log(e.target.parentNode);
-        console.log(e.target.parentNode.classList.contains('header__nav__option--nested-dropdown'))
+// domSelector('.header__nav__option--nested-dropdown','click',function(e) {
+//     // removeClass('dropdown-items','nav-active');
+//     // console.log(this.parentNode);
+//     // console.log(e.target.parentNode);
+//     console.log(e.target.nodeName);
+//     if(e.target.nodeName == 'LI')
+//     {
+//         return;
+//     }
+//     else if (e.target.nodeName == 'A')
+//     {
+//         console.log(e.target.parentNode);
+//         console.log(e.target.parentNode.classList.contains('header__nav__option--nested-dropdown'))
 
-        if(e.target.parentNode.classList.contains('header__nav__option--nested-dropdown') && !e.target.parentNode.classList.contains('header__nav__option--nested-dropdown--active'))
-        {
-            removeClass('header__nav__option--nested-dropdown','header__nav__option--nested-dropdown--active');
-            e.target.parentNode.classList.toggle('header__nav__option--nested-dropdown--active')
-        }
-        else if(e.target.parentNode.classList.contains('header__nav__option--nested-dropdown--active'))
-        {
-            removeClass('header__nav__option--nested-dropdown','header__nav__option--nested-dropdown--active');
+//         if(e.target.parentNode.classList.contains('header__nav__option--nested-dropdown') && !e.target.parentNode.classList.contains('header__nav__option--nested-dropdown--active'))
+//         {
+//             removeClass('header__nav__option--nested-dropdown','header__nav__option--nested-dropdown--active');
+//             e.target.parentNode.classList.toggle('header__nav__option--nested-dropdown--active')
+//         }
+//         else if(e.target.parentNode.classList.contains('header__nav__option--nested-dropdown--active'))
+//         {
+//             removeClass('header__nav__option--nested-dropdown','header__nav__option--nested-dropdown--active');
 
-        }
-        // else if(parentNode == false){
-        //     e.target.parentNode.classList.toggle('header__nav__option--nested-dropdown--active')
-        //     parentNode = true;
-        // }
-    }
+//         }
+//         // else if(parentNode == false){
+//         //     e.target.parentNode.classList.toggle('header__nav__option--nested-dropdown--active')
+//         //     parentNode = true;
+//         // }
+//     }
 
-    // if(this.querySelector('ul').classList.contains('nav-active') && open == true)
-    // {
-    //     // this.querySelector('ul').classList.remove('nav-active');
-        // this.classList.toggle('header__nav__option--dropdown--active')
+//     // if(this.querySelector('ul').classList.contains('nav-active') && open == true)
+//     // {
+//     //     // this.querySelector('ul').classList.remove('nav-active');
+//         // this.classList.toggle('header__nav__option--dropdown--active')
 
-    //     // this.querySelector('ul').style.display = 'none';
-    // }
+//     //     // this.querySelector('ul').style.display = 'none';
+//     // }
 
-})
+// })
 
 // $(window).scroll(function () {
     if (screen.width < 1024) {
 
         domSelector('.header__nav__option--dropdown','click',function(e) {
+            console.log();
+
+            // console.log(e.target.parentNode.getAttribute('data-item'));
+            // if(e.target.parentNode.getAttribute('data-item') != null)
+            // {
+                
+            //     return;
+            // }    
+            // $('#fixed-dropdown').removeClass('scrollable-dropdown__options-container--active');
+            // $('#scrollable-main-dropdown').removeClass('scrollable-dropdown__options-container--active');
             if(e.target.nodeName == 'LI')
             {
                 return;
             }
+           
             else if (e.target.nodeName == 'A')
             {
                 if(e.target.parentNode.classList.contains('header__nav__option--dropdown') && !e.target.parentNode.classList.contains('header__nav__option--dropdown--active'))

@@ -1,4 +1,4 @@
-<div class="about-speciality speciality-description-v2-root" id="overview">
+<div class="about-speciality speciality-description-v2-root" >
     <div class="about-speciality__image-wrapper">
         <div class="about-speciality__image-wrapper__image">
             {{-- {{ config('variables.asset') . $content->description_image }} --}}

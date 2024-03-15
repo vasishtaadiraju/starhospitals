@@ -114,12 +114,16 @@
 
 {{-- </div> --}}
 <x-gap/>
-<x-centerof-excellence/>
+<x-centerof-excellence :$coes/>
 
 {{--  <x-about-coe  :$coes/>  --}}
 
 <x-gap/>
+<div class="ui-background">
+  <x-gap/>
 <x-our-specialists :$content :$branches  :$coes/>
+<x-gap/>
+</div>
 {{-- <x-gap/> --}}
 
 <x-gap/>
@@ -183,7 +187,7 @@
 {{-- ================================================== end videos --}}
 
 
-<x-testimonials-secondary :$content  :testimonials='$reviews'/>
+{{-- <x-testimonials-secondary :$content  :testimonials='$reviews'/> --}}
 
 {{-- <x-gap/> --}}
 {{--

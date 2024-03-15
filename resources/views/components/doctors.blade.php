@@ -1,4 +1,4 @@
-<x-heading :title="$title" :description="''"/>
+<x-heading :title="$title" :description="$description"/>
 <x-filter :content='null' :$branches :$coes />
 <div class="doctors">
     <div class="doctors__cards-wrapper doctor-appointment-cards-wrapper @if ($type == 'flex')

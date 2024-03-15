@@ -1,4 +1,4 @@
-<div class="scroll">
+<div class="scroll" id="overview">
     <div class="scroll__wrapper">
         {!!$tabs!!}
         {{-- <div class="scroll_tabs">

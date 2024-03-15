@@ -10,8 +10,9 @@
 <x-gap/>    
 <x-speciality-description-v2 :$content/>
 <x-gap/>    
-
+<div class="ui-background">
 <x-when-to-contact-us :description='$content->when_to_contact_description'/>
+</div>  
 <x-gap/>
 <x-gap/>
 <x-our-specialists :$content :branches='$content->branches' :$coes/>
@@ -23,7 +24,7 @@
 
 <div class="ui-background">
 <x-services-treatment :$content />
-</div>   
+</div>  
 <x-gap/>
 
 @endif
@@ -57,7 +58,7 @@
 <x-gap/>
 <x-media :$content :media='$content->media'/> 
 <x-gap/> --}}
-
+<x-gap/>
 <x-faq-v2 :$content :faqs='$content->faqs'/> 
 <x-gap/>
 

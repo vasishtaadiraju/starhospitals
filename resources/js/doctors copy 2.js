@@ -112,6 +112,11 @@ import BushraUrl from "../images/doctors/doctor.png";
 
 async function printDoctors(body, selectBox, className) {
     let formDetails = {};
+    // document.querySelector(className).previousElementSibling.previousElementSibling.remove()
+        // document.querySelector(className).previousElementSibling.remove()
+        // $(className).slick('unslick')
+        $(className).empty()
+        
     const response = await httpRequest(
         "/api/getDoctorByBranchCoeSpeciality",
         "POST",
@@ -142,7 +147,10 @@ async function printDoctors(body, selectBox, className) {
                 .querySelector(className)
                 .insertAdjacentHTML("beforeend", errorMessage);
     }
+    console.log( document.querySelector(className));
     
+    
+    console.log( document.querySelector(className))   
     response.data.forEach((result) => {
         if(result.doctor == null)
         {
@@ -172,7 +180,7 @@ async function printDoctors(body, selectBox, className) {
 
             result.doctor.coes.forEach((coe, index) => {
                 if (coe.specialities.length == 0) {
-                    coeName.push(`<a style="padding:0.25em;background-color:#004E9E12;color:#004E9E !important;font-weight:500 !important;font-family:'Plus Jakarta Sans Semi Bold';border-radius:5px" href="#"> ${coe.name}</a> ${index != result.doctor.specialities.length -1  ? `` : ``} `);
+                    coeName.push(`<a href="#"> ${coe.name}</a> ${index != result.doctor.specialities.length -1  ? `,` : ``} `);
                     if(coe.id == body.coe_id)
                     {
                         speciality_slug = coe.slug;
@@ -189,11 +197,11 @@ async function printDoctors(body, selectBox, className) {
                     }
                         if (
                             !coeName.includes(
-                                `<a style="padding:0.25em;background-color:#004E9E12;color:#004E9E !important;font-weight:500 !important;font-family:'Plus Jakarta Sans Semi Bold';border-radius:5px"> ${speciality.name} ${index != result.doctor.specialities.length -1 ? `` : ``} </a>`
+                                `<a > ${speciality.name} ${index != result.doctor.specialities.length -1 ? `,` : ``} </a>`
                             )
                         ) {
                             coeName.push(
-                                `<a style="padding:0.25em;background-color:#004E9E12;color:#004E9E !important;font-weight:500 !important;font-family:'Plus Jakarta Sans Semi Bold';border-radius:5px"> ${speciality.name} ${index != result.doctor.specialities.length -1  ? `` : ``} </a>`
+                                `<a > ${speciality.name} ${index != result.doctor.specialities.length -1  ? `,` : ``} </a>`
                             );
                         }
                     });
@@ -206,71 +214,57 @@ async function printDoctors(body, selectBox, className) {
                     formDetails.branch  = branch.name;
 
                 }
-                
-                // branchName.push(`<a href="/doctors/${branch.slug}/${speciality_slug}/${
-                //     result.doctor.slug
-                // }"> ${branch.name}</a> ${index != result.doctor.branches.length -1  ? `` : ``} `);
+                branchName.push(`<a href="/doctors/${branch.slug}/${speciality_slug}/${
+                    result.doctor.slug
+                }"> ${branch.name}</a> ${index != result.doctor.branches.length -1  ? `` : ``} `);
             });
             //
 
             
 
             let doctorCard = `<div class="doctors-card doctors-card--primary">
-        <a href="/doctors/${branch_slug == "" ? result.doctor.branches[0].slug : branch_slug}/${speciality_slug}/${
+        <a href="/doctors/${branch_slug}/${speciality_slug}/${
             result.doctor.slug
         }"><img class="doctors-card--primary__doctor-img" style="width:100%" src="${
                 import.meta.env.VITE_ASSET_URL
             }${result.doctor.small_image}" alt="" /></a> 
  
-         
+         <div class="doctors-card--primary__content">
          <div class="doctors-card--primary__info">
-             <h4><a href="/doctors/${branch_slug == "" ? result.doctor.branches[0].slug : branch_slug}/${speciality_slug}/${result.doctor.slug}">${
+             <h4><a href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}">${
                 result.doctor.name
             }</a></h4>
-            <p class="doctors-card--primary__designation" style="margin-top:0.5em"><a href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}"> ${
+            <p class="doctors-card--primary__designation"><a href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}"> ${
                 result.doctor.designation
             } </a></p>
 
-             <p class="doctors-card--primary__speciality" style="display:flex;flex-wrap:wrap;gap:0.25em;margin-top:0.75em">${coeName.map(name=>{
-                return `${name}`;
-             })} </p>
-             
+             <p class="doctors-card--primary__speciality">${coeName.toString()} </p>
+             <p class="doctors-card--primary__location">${branchName.toString()}</p>
      </div>
              <div class="doctors-card--primary__button-wrapper" >
-           <div href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}" class="doctors-card__rt__btn">
+             <a href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}" class="doctors-card__rt__btn">
                
-           <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-           <path d="M9 18.8995L13.9497 13.9497C16.6834 11.2161 16.6834 6.78392 13.9497 4.05025C11.2161 1.31658 6.78392 1.31658 4.05025 4.05025C1.31658 6.78392 1.31658 11.2161 4.05025 13.9497L9 18.8995ZM9 21.7279L2.63604 15.364C-0.87868 11.8492 -0.87868 6.15076 2.63604 2.63604C6.15076 -0.87868 11.8492 -0.87868 15.364 2.63604C18.8787 6.15076 18.8787 11.8492 15.364 15.364L9 21.7279ZM9 11C10.1046 11 11 10.1046 11 9C11 7.89543 10.1046 7 9 7C7.8954 7 7 7.89543 7 9C7 10.1046 7.8954 11 9 11ZM9 13C6.79086 13 5 11.2091 5 9C5 6.79086 6.79086 5 9 5C11.2091 5 13 6.79086 13 9C13 11.2091 11.2091 13 9 13Z" fill="#004E9E"/>
-           </svg>
-           
+             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0ZM10.1597 14C8.1243 14 6.29182 14.8687 5.01276 16.2556C6.38039 17.3474 8.114 18 10 18C11.9695 18 13.7727 17.2883 15.1666 16.1081C13.8956 14.8074 12.1219 14 10.1597 14ZM10 2C5.58172 2 2 5.58172 2 10C2 11.8106 2.6015 13.4807 3.61557 14.8214C5.25639 13.0841 7.58144 12 10.1597 12C12.6441 12 14.8933 13.0066 16.5218 14.6342C17.4526 13.3267 18 11.7273 18 10C18 5.58172 14.4183 2 10 2ZM10 3C12.2091 3 14 4.79086 14 7C14 9.2091 12.2091 11 10 11C7.79086 11 6 9.2091 6 7C6 4.79086 7.79086 3 10 3ZM10 5C8.8954 5 8 5.89543 8 7C8 8.1046 8.8954 9 10 9C11.1046 9 12 8.1046 12 7C12 5.89543 11.1046 5 10 5Z" fill="#E3000F"/>
+</svg>
 
              
 
-             <span>${result.doctor.branches.map((branch,index)=>{
-                
-                if(index != result.doctor.branches.length - 1)
-                {
-                    return `<a href="/doctors/${branch.slug}/${speciality_slug}/${
-                                result.doctor.slug
-                           }">${branch.name}</a> | `
-                }
-              return `<a href="/doctors/${branch.slug}/${speciality_slug}/${
-                             result.doctor.slug
-                     }">${branch.name}</a>`             }).toString().replace(',','')}</span>
-         </div>
-             <a  data-name="${result.doctor.name}" data-speciality="${formDetails.speciality}" data-branch="${formDetails.branch}" href="/book-an-appointment/${branch_slug == "" ? result.doctor.branches[0].slug : branch_slug}/${speciality_slug}/${result.doctor.slug}" class="doctors-card__rt__btn">
+             <span>View Full Profile</span>
+         </a>
+             <a  data-name="${result.doctor.name}" data-speciality="${formDetails.speciality}" data-branch="${formDetails.branch}" href="/book-an-appointment/${branch_slug}/${speciality_slug}/${result.doctor.slug}" class="doctors-card__rt__btn">
                 
              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
              <path d="M7 0V2H13V0H15V2H19C19.5523 2 20 2.44772 20 3V19C20 19.5523 19.5523 20 19 20H1C0.44772 20 0 19.5523 0 19V3C0 2.44772 0.44772 2 1 2H5V0H7ZM18 10H2V18H18V10ZM6 12V14H4V12H6ZM11 12V14H9V12H11ZM16 12V14H14V12H16ZM5 4H2V8H18V4H15V6H13V4H7V6H5V4Z" fill="#E3000F"/>
              </svg>
              
 
-                 <span>Book an Appointment</span>
+                 <span>Book a Physical Consultation</span>
              </a>
              
              
              </div/>
-         
+         </div>
          
      </div>`;
             document
@@ -285,14 +279,13 @@ async function printDoctors(body, selectBox, className) {
     
     // $('.specialists-slider').slick('refresh')
     if (selectBox != true && response.data.length > 0) {
-        // console.log(className);
-        $(className).slick('unslick')
-        console.log($(className));
+        console.log(className);
+        // $(className).slick('unslick')
         $(className).slick({
             // dots:true,
+            infinite:false,
             arrows: true,
             slidesToShow: 4,
-            infinite:false,
             responsive: [
                 {
                     breakpoint: 1275,
@@ -471,7 +464,7 @@ async function printDoctors(body, selectBox, className) {
 
 // new code
 
-async function printOptions(node) {
+async function  printOptions(node) {
     let type = node.getAttribute("data-type");
     let coe_id = "";
     let branch_id = "";
@@ -612,6 +605,7 @@ async function printOptions(node) {
 }
 
 async function handleChange(type) {
+    // $(".specialists-slider").slick('unslick')
     let printStatus = printOptions(this);
 
     // let coe_id =
@@ -638,7 +632,7 @@ async function handleChange(type) {
     // } else {
     //     $(".specialists-slider").slick("unslick");
 
-    //     document.querySelector(".specialists-slider").innerHTML = "";
+        // document.querySelector(".specialists-slider").innerHTML = "";
     //     printDoctors(body, false, ".specialists-slider");
     // }
 }
@@ -680,10 +674,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let coe_id = document.getElementById("coe-select-box").value;
         let speciality_id = "";
         
-        // Array.from(document.getElementsByClassName("location-select-box")).forEach(element=>{
-        //     printOptions(element);
+        Array.from(document.getElementsByClassName("location-select-box")).forEach(element=>{
+            printOptions(element);
 
-        // })
+        })
 
         // printOptions(document.getElementsByClassName("location-select-box")[0])
         // printOptions(document.getElementsByClassName("location-select-box")[1])

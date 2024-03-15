@@ -142,7 +142,7 @@ $footer-columns: 5;
             }
             img,
             svg {
-                width: 60%;
+                // width: 60%;
                 margin: 0px auto;
                 &:first-child {
                     // width: 100%;
@@ -417,7 +417,7 @@ $footer-columns: 5;
                     line-height: 25px;
                     color: variables.$starhospitals-ui-tertiary;
                     @include font-family(400);
-                    font-size: 12px;
+                    font-size: 13px;
                     font-style: normal;
                 }
             }
