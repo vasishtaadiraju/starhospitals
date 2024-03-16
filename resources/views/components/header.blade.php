@@ -156,28 +156,7 @@
 
                     </ul>
                 </div>
-                <ul class="header__nav__option--dropdown__options header__main__card--desk-hide">
-                    @foreach ($branches as $item)
-                        <li class=""><a href="{{ route('branch', $item->slug) }}">{{ $item->name }}</a>
-                            {{-- <ul>
-                <li><a href="#">Abc</a>
-                </li>
-                <li><a href="#">Abc</a></li>
-                <li><a href="#">Abc</a></li>
-            </ul> --}}
-                        </li>
-                    @endforeach
-
-                    {{-- <li class="header__nav__option--dropdown header__nav__option--nested-dropdown"><a href="#">Test 2</a>
-                <ul>
-                    <li><a href="#">Shibli</a></li>
-                    <li><a href="#">Abc</a></li>
-                    <li><a href="#">Abc</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Abc</a></li>
-            <li><a href="#">Abc</a></li> --}}
-                </ul>
+                
             </li>
                 <li
                     class="header__nav__option">
