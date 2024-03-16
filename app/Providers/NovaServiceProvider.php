@@ -108,7 +108,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 'ashokvardhan.k@starhospitals.co.in',
                 'vasishta@outshade.com',
                 'mehrotramanvi06@gmail.com',
-                'pavankumar@starhospitals.co.in'
+                'pavankumar@starhospitals.co.in',
+                'nmannam@gmail.com',
+                'jgupta96353@gmail.com'
             ]);
         });
     }
