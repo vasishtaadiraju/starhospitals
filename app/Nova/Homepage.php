@@ -137,7 +137,7 @@ class Homepage extends Resource
 
             Text::make('Description', 'choose' . $number . '_description')
                 ->hideFromIndex()
-                ->rules('nullable', 'string')
+                ->rules('nullable', 'string','max:220')
         ];
     }
 
