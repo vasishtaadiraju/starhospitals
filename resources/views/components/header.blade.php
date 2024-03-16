@@ -160,7 +160,7 @@
             </li>
                 <li
                     class="header__nav__option">
-                    <a href="/find-doctor" class="scroll-to-view">Our Doctors</a>
+                    <a href="/find-a-doctor" >Our Doctors</a>
                     {{-- <ul class="header__nav__option--dropdown__options  header__nav__option--dropdown__options--mega centre-mega-container centre-mega-container--fixed" >
                         @foreach ($specialists as $item)
 
