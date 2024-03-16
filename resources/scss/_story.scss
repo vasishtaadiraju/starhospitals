@@ -10,75 +10,75 @@
         display: flex;
         flex-wrap: wrap;
         position: relative;
-        height: 70vh;
+        // height: max-content;
         margin-top: 2em;
         @include media("sm-mob") {
-            height: 49vh;
+            // height: 45vh;
         }
         @include media("md-mob") {
-            height: 61vh;
+            // height: 50vh;
         }
         @include media("lg-mob") {
-            height: 61vh;
+            // height: 50vh;
         }
         @include media("x-sm-tab") {
-            height: 50vh;
+            // height: 50vh;
         }
         @include media("sm-tab") {
-            height: 76vh;
+            // height: 76vh;
         }
         @include media("md-tab") {
-            height: 50vh;
+            // height: 50vh;
         }
         @include media("lg-tab") {
-            height: 50vh;
+            // height: 50vh;
         }
 
         img{
         position: relative;
-        height: 100%;
+    //     height: 100%;
      width: 100%;
-        float: left;
+        // float: left;
 
-        margin-top: 2rem;
+        // margin-top: 2rem;
         // margin-bottom: 2rem;
-
+            height: 70vh;
         @include media("sm-mob") {
             // position: relative;
             height: 45vh;
-            margin-top: 1rem;
+            // margin-top: 1rem;
             // height: 60%;
         }
         @include media("md-mob") {
             // position: relative;
-            height: 57vh;
-            margin-top: 2rem;
+            height: 30vh;
+            // margin-top: 2rem;
             // bottom: 0;
         }
         @include media("lg-mob") {
             // position: relative;
-            height: 57vh;
-            margin-top: 2rem;
+            height: 30vh;
+            // margin-top: 2rem;
         }
         @include media("x-sm-tab") {
             // position: relative;
-            height: 46vh;
-            margin-top: 2rem;
+            height: 30vh;
+            // margin-top: 2rem;
         }
         @include media("sm-tab") {
             // position: relative;
-            height: 50vh;
-            margin-top: 2rem;
+            height: 30vh;
+            // margin-top: 2rem;
         }
         @include media("md-tab") {
             // position: relative;
-            height: 50vh;
-            margin-top: 2rem;
+            height: 30vh;
+            // margin-top: 2rem;
         }
         @include media("lg-tab") {
             // position: relative;
-            height: 46vh;
-            margin-top: 2rem;
+            height: 30vh;
+            // margin-top: 2rem;
         }
 
     }
@@ -86,38 +86,38 @@
         position: absolute;
         color: white;
         padding: 6rem 10rem;
-        height: 100%;
-        width: 100%;
+        // height: 100%;
+        // width: 100%;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
         align-items: center;
         background-color: #004f9e63;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        // margin-top: 2rem;
+        // margin-bottom: 2rem;
         @include media("sm-mob") {
             position: absolute;
-            height: 45vh;
+            // height: 45vh;
             width: 100%;
-            padding: 4rem;
+            padding: 1rem 2em;
             transform: translateY(0%);
             background-color: #004e9ebf;
-            margin-top: 2rem;
-        margin-bottom: 2rem;
+        //     margin-top: 2rem;
+        // margin-bottom: 2rem;
 
 
         }
 
     @include media("md-mob") {
         position: absolute;
-        height: 57vh;
+        // height: 57vh;
         width: 100%;
-        padding: 4rem;
+        padding: 1rem 2em;
         transform: translateY(0%);
         background-color: #004e9ebf;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        // margin-top: 2rem;
+        // margin-bottom: 2rem;
 
 
 
@@ -125,34 +125,34 @@
     }
     @include media("lg-mob") {
         position: absolute;
-        height: 57%;
+        // height: 57%;
         width: 100%;
-        padding: 4rem;
+        padding: 1rem 2em;
         transform: translateY(0%);
         background-color: #004e9ebf;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        // margin-top: 2rem;
+        // margin-bottom: 2rem;
 
 
 
     }
     @include media("x-sm-tab") {
         position: absolute;
-        height: 46vh;
+        // height: 46vh;
         width: 100%;
-        padding: 4rem;
+        padding: 1rem 2em;
         transform: translateY(0%);
         background-color: #004e9ebf;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        // margin-top: 2rem;
+        // margin-bottom: 2rem;
     }
 
     @include media("sm-tab") {
-        height: 50vh;
+        // height: 50vh;
 
-        padding: 4rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        padding: 1rem 2em;
+        // margin-top: 2rem;
+        // margin-bottom: 2rem;
     }
     @include media("md-tab") {
         height: 46vh;
@@ -160,9 +160,9 @@
             // line-height: 25px;
             // margin-left: 2rem;
             width: 100%;
-            padding: 4rem;
-            margin-top: 2rem;
-        margin-bottom: 2rem;
+            padding: 1rem 2em;
+        //     margin-top: 2rem;
+        // margin-bottom: 2rem;
     }
     @include media("lg-tab") {
         height: 46vh;
@@ -170,9 +170,9 @@
             // line-height: 25px;
             // margin-left: 2rem;
             width: 100%;
-            padding: 4rem;
-            margin-top: 2rem;
-        margin-bottom: 2rem;
+            padding: 1rem 2em;
+        //     margin-top: 2rem;
+        // margin-bottom: 2rem;
     }
 
      h1{
@@ -185,27 +185,31 @@
         font-size: 40px;
         @include media("sm-mob") {
             // color: black;
-            // line-height: 30px;
-            font-size: 15px;
+            line-height: 30px;
+            font-size: 20px;
             // margin-left: 2rem;
+            width: 90%;
 
         }
         @include media("md-mob") {
-           // color: black;
-           line-height: 30px;
-           font-size: 18px;
+            line-height: 30px;
+            font-size: 20px;
+            // margin-left: 2rem;
+            width: 90%;
 
         }
         @include media("lg-mob") {
-           // color: black;
-           line-height: 30px;
-           font-size: 18px;
+            line-height: 30px;
+            font-size: 20px;
+            // margin-left: 2rem;
+            width: 90%;
 
         }
         @include media("x-sm-tab") {
-            // color: black;
+            line-height: 30px;
             font-size: 20px;
             // margin-left: 2rem;
+            width: 90%;
         }
         @include media("sm-tab") {
             font-size: 23px;
@@ -230,36 +234,47 @@
         @include media("sm-mob") {
             // color: black;
             line-height: 26px;
-            font-size: 11px;
+            font-size: 16px;
+            width: 80%;
             // margin-left: 2rem;
         }
         @include media("md-mob") {
            // color: black;
            line-height: 26px;
-           font-size: 14px;
+           font-size: 16px;
+           width: 80%;
            // margin-left: 2rem;
         }
         @include media("lg-mob") {
            // color: black;
            line-height: 26px;
-           font-size: 14px;
+            font-size: 16px;
+            width: 80%;
            // margin-left: 2rem;
         }
         @include media("x-sm-tab") {
             // color: black;
-            font-size: 15px;
+            line-height: 26px;
+            font-size: 16px;
+            width: 80%;
             // line-height: 35px;
             // margin-left: 2rem;
             // width: 80%;
         }
         @include media("sm-tab") {
-            font-size: 18px;
+            line-height: 26px;
+            font-size: 16px;
+            width: 80%;
         }
         @include media("md-tab") {
-            font-size: 18px;
+            line-height: 26px;
+            font-size: 16px;
+            width: 80%;
         }
         @include media("lg-tab") {
-            font-size: 18px;
+            line-height: 26px;
+            font-size: 16px;
+            width: 80%;
         }
 
      }

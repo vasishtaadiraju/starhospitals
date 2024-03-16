@@ -1,4 +1,4 @@
-<div class="ui-background">
+
 
     <div class="consultation">
 
@@ -397,4 +397,4 @@
         </div>
 
     </div>
-</div>
+

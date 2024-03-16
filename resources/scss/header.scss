@@ -10,7 +10,7 @@ $fixed-header-height: 7.5rem;
     display: none;
     position: absolute;
     list-style-type: none;
-    min-width: 12rem;
+    min-width: 15rem;
     border-radius: 10px;
     background-color: variables.$starhospitals-text-inverted;
     @content;

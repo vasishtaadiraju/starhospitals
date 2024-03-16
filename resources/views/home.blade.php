@@ -117,6 +117,7 @@
 <x-centerof-excellence :$coes/>
 
 {{--  <x-about-coe  :$coes/>  --}}
+<x-gap/>
 
 <x-gap/>
 <div class="ui-background">
@@ -125,6 +126,7 @@
 <x-gap/>
 </div>
 {{-- <x-gap/> --}}
+<x-gap/>
 
 <x-gap/>
 <x-why-choose-us :$content/>
@@ -133,8 +135,12 @@
 {{-- <x-gap/> --}}
 <x-story/>
 <x-gap/>
+<x-gap/>
+
 <x-about-us :$content/>
 <x-gap/>
+<x-gap/>
+
 {{-- <x-testimonials :$content  :testimonials='$reviews'/> --}}
 
 
@@ -144,6 +150,8 @@
 
 
 
+<div class="ui-background">
+<x-gap/>
 
 <x-heading :title="'Patient Testimonials'" :description="''" />
     <div class="testimonials testimonials-slider">
@@ -180,8 +188,10 @@
 
 
 
+    <x-gap/>
 
-<x-gap/>
+</div>
+    <x-gap/>
 
 
 {{-- ================================================== end videos --}}
@@ -198,7 +208,10 @@
 <x-gap/>
 <x-media :$content :$media /> --}}
 <x-gap/>
+
 <x-consultation-request :$coes />
+<x-gap/>
+<x-gap/>
 
 @endsection
 

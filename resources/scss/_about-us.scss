@@ -194,8 +194,9 @@ about-root{
         }
         p{
             @include font-family(400);
-            font-size: 15px;
-            line-height: 22px;
+            font-size: 20px;
+            line-height: 30px;
+            text-align: justify;
             @include media('sm-mob')
             {
                 text-align: justify;

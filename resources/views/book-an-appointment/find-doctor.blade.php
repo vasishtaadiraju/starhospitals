@@ -13,7 +13,7 @@
 </div>
 <x-gap/>
 <div class="find-doctor-specialists">
-    <x-doctors :type="'flex'" :$branches  :$coes :title="'Book an Appointment'" :description="'Our healthcare specialists are equipped with the knowledge and skills to provide you with the support you require. From consultation to diagnosis to treatments, our experts are dedicated to helping you.'"/>
+    <x-doctors :type="'flex'" :$branches  :$coes :title="'Book an Appointment'" :description="''"/>
 </div>
 <x-gap/>
 @endsection

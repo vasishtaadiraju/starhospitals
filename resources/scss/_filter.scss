@@ -30,7 +30,7 @@
 }
 
 .search-doctor {
-    min-height: 9rem;
+    min-height: 7rem;
     background-color: #ffff;
     box-shadow: 0px 4px 20px rgba(224, 224, 224, 0.7);
     display: flex;
@@ -38,6 +38,7 @@
     align-items: center;
     padding-left:7.5%;
     padding-right:4%;
+    padding-bottom: 0.5em;
     gap: 6%;
 
     @include media("sm-mob") {
