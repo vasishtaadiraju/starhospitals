@@ -398,7 +398,7 @@ $fixed-header-height: 7.5rem;
                     display: flex;
                     justify-content: end;
                     align-items: center;
-                    padding: 0.5em 0.5em;
+                    padding: 0.5em 1em;
                     // padding-right: 2em;
                     gap: 1em;
                     
@@ -459,6 +459,10 @@ $fixed-header-height: 7.5rem;
                             }
                             @include media("lg-tab") {
                                 font-size: 11px;
+                            }
+
+                            a{
+                                color: #ffffff;
                             }
                         }
                     }
@@ -744,7 +748,7 @@ $fixed-header-height: 7.5rem;
                 padding: 0px 2em 0px 0px;
                 display: block;
                 width: 100%;
-                font-size: 20px;;
+                font-size: 18px;;
                 @include media("sm-mob") {
                     color: black;
                 }
@@ -1478,7 +1482,9 @@ $fixed-header-height: 7.5rem;
     position: absolute;
     background-color: transparent;
     margin-top: 1em;
+    overflow: hidden;
     // gap: 0.5em;
+    padding-bottom: 1em;
     @include media("sm-mob") {
         display: none;
     }
@@ -1499,19 +1505,21 @@ $fixed-header-height: 7.5rem;
         height: 25rem;
         overflow-y: scroll;
         background-color: #E3F1FF;
-        border-radius: 10px;
-        // padding: 0.5em 0px;
+        border-radius: 10px 0px 10px 10px;
+        // padding-bottom: 5em;
         scrollbar-color: #004E9E;
         display: none;
         color: variables.$starhospitals-text-primary;
         &::-webkit-scrollbar-thumb{
             width: 10px;
             background-color: #004E9E;
-            border-radius: 10px
+            border-radius: 10px;
         }
         &::-webkit-scrollbar{
             width: 10px;
-            // background-color: #004E9E;
+            background-color: #004f9e41;
+            border-radius: 10px;
+
             
         }
         &--active{
@@ -1522,7 +1530,7 @@ $fixed-header-height: 7.5rem;
             padding: 0.5em;
             &:hover{
                 background-color: #B3D9FF;
-        border-radius: 10px;
+        // border-radius: 10px;
 
             }
 
@@ -1542,7 +1550,7 @@ $fixed-header-height: 7.5rem;
     };
     &__child-container{
         background-color: #E3F1FF;
-        border-radius: 10px;
+        border-radius: 0px 10px 10px 10px;
         height: max-content;
         li{
             padding: 0.5em;
@@ -1597,5 +1605,13 @@ $fixed-header-height: 7.5rem;
     }
     @include media("md-tab") {
         display: block;
+    }
+}
+
+.scrollable-dropdown.about-scrollable{
+    .scrollable-dropdown__options-container{
+        &::-webkit-scrollbar{
+            display: none;
+        }
     }
 }

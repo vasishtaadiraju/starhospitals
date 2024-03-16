@@ -94,6 +94,36 @@
                 {{-- dropdown-items --}}
                
                 <li class="header__nav__option"><a href="/">Home</a></li>
+                <li class="header__nav__option header__nav__option--dropdown header__nav__option--dropdown--fixed scrollable-dropdown-btn">
+                    <a href="#centre-of-excellences">About Us</a>
+                    <div class="scrollable-dropdown about-scrollable" >
+                        <ul class="scrollable-dropdown__options-container" id="fixed-dropdown" style="height: max-content" >
+                            
+                                <li
+                                    class="scrollable-dropdown__parent-option" data-class="location">
+                                    <a>
+                                    {{-- <span>{!! $item->icon_image !!}</span> --}}
+                                    Location</a>
+                                   
+                                </li>
+                                
+                       
+                        </ul>
+                        <ul class="scrollable-dropdown__child-container">
+                            @foreach ($branches as $item)
+                            <li class="child-option location">
+                                <a
+                                    href="{{ route('branch', $item->slug) }}">{{ $item->name }}</a>
+                            </li>
+                        @endforeach
+                                
+                         
+                            
+    
+                        </ul>
+                    </div>
+                    
+                </li>
                 <li
                 class="header__nav__option header__nav__option--dropdown header__nav__option--dropdown--fixed scrollable-dropdown-btn"  data-item="fixed-dropdown">
                 <a  data-id="fixed-dropdown" class="scrollable-dropdown-btn">Specialities</a>
@@ -128,36 +158,7 @@
 
                 
             </li>
-            <li class="header__nav__option header__nav__option--dropdown header__nav__option--dropdown--fixed scrollable-dropdown-btn">
-                <a href="#centre-of-excellences">About Us</a>
-                <div class="scrollable-dropdown" >
-                    <ul class="scrollable-dropdown__options-container" id="fixed-dropdown" style="height: max-content" >
-                        
-                            <li
-                                class="scrollable-dropdown__parent-option" data-class="location">
-                                <a>
-                                {{-- <span>{!! $item->icon_image !!}</span> --}}
-                                Location</a>
-                               
-                            </li>
-                            
-                   
-                    </ul>
-                    <ul class="scrollable-dropdown__child-container">
-                        @foreach ($branches as $item)
-                        <li class="child-option location">
-                            <a
-                                href="{{ route('branch', $item->slug) }}">{{ $item->name }}</a>
-                        </li>
-                    @endforeach
-                            
-                     
-                        
-
-                    </ul>
-                </div>
-                
-            </li>
+            
                 <li
                     class="header__nav__option">
                     <a href="/find-a-doctor" >Our Doctors</a>
@@ -302,7 +303,7 @@
                         
 
                     <p > <a class="appointment__title">Book Appointment</a>  <br>
-                        <span>9100911911</span>
+                         <a href="tel:1800 102 7827"> <span>1800 102 7827</span></a> 
                         {{-- <small class="" >
                         <a href="tel:9100911911">  Banjara Hills : 9100911911</a> <br>
                         <a href="tel:8536853853">  Financial District : 8536853853</a>
@@ -314,7 +315,7 @@
                         alt="">
 
                     <p>24/7 Emergency <br>
-                        <span>9100911911 | 9100911911</span>
+                        <span> <a href="tel:9100911911"> 9100911911</a>  |  <a href="tel:8536853853"> 8536853853 </a> </span>
                         {{-- <small class="" >
                         <a href="tel:9100911911">  Banjara Hills : 9100911911</a> <br>
                         <a href="tel:8536853853">  Financial District : 8536853853</a>
@@ -364,6 +365,60 @@
         <ul class="header__nav__options">
             
             <li class="header__nav__option"><a href="/">Home</a></li>
+            
+            <li class="header__nav__option header__nav__option--dropdown  scrollable-dropdown-btn">
+                <a href="#centre-of-excellences">About Us</a>
+                <div class="scrollable-dropdown about-scrollable" >
+                    <ul class="scrollable-dropdown__options-container" id="fixed-dropdown" style="height: max-content" >
+                        
+                            <li
+                                class="scrollable-dropdown__parent-option" data-class="location">
+                                <a>
+                                {{-- <span>{!! $item->icon_image !!}</span> --}}
+                                Location</a>
+                               
+                            </li>
+                            
+                   
+                    </ul>
+                    <ul class="scrollable-dropdown__child-container">
+                        @foreach ($branches as $item)
+                        <li class="child-option location">
+                            <a
+                                href="{{ route('branch', $item->slug) }}">{{ $item->name }}</a>
+                        </li>
+                    @endforeach
+                            
+                     
+                        
+
+                    </ul>
+                </div>
+                <div class="mobile-scrollable-dropdown">
+                <ul class="header__nav__option--dropdown__options header__main__card--desk-hide">
+                    @foreach ($branches as $item)
+                        <li class=""><a href="{{ route('branch', $item->slug) }}">{{ $item->name }}</a>
+                            {{-- <ul>
+                <li><a href="#">Abc</a>
+                </li>
+                <li><a href="#">Abc</a></li>
+                <li><a href="#">Abc</a></li>
+            </ul> --}}
+                        </li>
+                    @endforeach
+
+                    {{-- <li class="header__nav__option--dropdown header__nav__option--nested-dropdown"><a href="#">Test 2</a>
+                <ul>
+                    <li><a href="#">Shibli</a></li>
+                    <li><a href="#">Abc</a></li>
+                    <li><a href="#">Abc</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Abc</a></li>
+            <li><a href="#">Abc</a></li> --}}
+                </ul>
+            </div>
+            </li>
             <li data-item="scrollable-main-dropdown" class="header__nav__option header__nav__option--dropdown header__nav__option--dropdown--mega scrollable-dropdown-btn">
                 <a data-item="scrollable-main-dropdown" class="scrollable-dropdown-btn">Specialities</a>
                 <div class="scrollable-dropdown">
@@ -423,59 +478,6 @@
                 </ul>
                 </div>
                 
-            </li>
-            <li class="header__nav__option header__nav__option--dropdown  scrollable-dropdown-btn">
-                <a href="#centre-of-excellences">About Us</a>
-                <div class="scrollable-dropdown" >
-                    <ul class="scrollable-dropdown__options-container" id="fixed-dropdown" style="height: max-content" >
-                        
-                            <li
-                                class="scrollable-dropdown__parent-option" data-class="location">
-                                <a>
-                                {{-- <span>{!! $item->icon_image !!}</span> --}}
-                                Location</a>
-                               
-                            </li>
-                            
-                   
-                    </ul>
-                    <ul class="scrollable-dropdown__child-container">
-                        @foreach ($branches as $item)
-                        <li class="child-option location">
-                            <a
-                                href="{{ route('branch', $item->slug) }}">{{ $item->name }}</a>
-                        </li>
-                    @endforeach
-                            
-                     
-                        
-
-                    </ul>
-                </div>
-                <div class="mobile-scrollable-dropdown">
-                <ul class="header__nav__option--dropdown__options header__main__card--desk-hide">
-                    @foreach ($branches as $item)
-                        <li class=""><a href="{{ route('branch', $item->slug) }}">{{ $item->name }}</a>
-                            {{-- <ul>
-                <li><a href="#">Abc</a>
-                </li>
-                <li><a href="#">Abc</a></li>
-                <li><a href="#">Abc</a></li>
-            </ul> --}}
-                        </li>
-                    @endforeach
-
-                    {{-- <li class="header__nav__option--dropdown header__nav__option--nested-dropdown"><a href="#">Test 2</a>
-                <ul>
-                    <li><a href="#">Shibli</a></li>
-                    <li><a href="#">Abc</a></li>
-                    <li><a href="#">Abc</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Abc</a></li>
-            <li><a href="#">Abc</a></li> --}}
-                </ul>
-            </div>
             </li>
             {{-- header__nav__option--dropdown   header__nav__option--dropdown--mega --}}
             <li
