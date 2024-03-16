@@ -365,7 +365,7 @@ $fixed-header-height: 7.5rem;
                 }
             }
             &--emergency {
-                flex: 0 0 60%;
+                flex: 0 0 85%;
                 @include media("sm-mob") {
                     flex: 0 0 55%;
                     margin-left: 1em;
@@ -507,7 +507,7 @@ $fixed-header-height: 7.5rem;
                 }
             }
             &--mob-nav {
-                display: flex;
+                display: flex !important;
                 justify-content: flex-start;
                 align-items: center;
                 // gap: 1em;
@@ -538,24 +538,24 @@ $fixed-header-height: 7.5rem;
                 
             }
             &--desk-hide {
-                display: none;
+                display: none ;
                 @include media("sm-mob") {
-                    display: flex;
+                    display: flex ;
                 }
                 @include media("md-mob") {
-                    display: flex;
+                    display: flex ;
                 }
                 @include media("lg-mob") {
-                    display: flex;
+                    display: flex ;
                 }
                 @include media("x-sm-tab") {
-                    display: flex;
+                    display: flex ;
                 }
                 @include media("sm-tab") {
-                    display: flex;
+                    display: flex ;
                 }
                 @include media("md-tab") {
-                    display: flex;
+                    display: flex ;
                 }
             }
         }
@@ -571,6 +571,8 @@ $fixed-header-height: 7.5rem;
             -webkit-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
             -moz-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.05);
             top:0;
+            justify-content: flex-start;
+            gap: 5em;
             @include media("x-sm-desktop") {
                 width: 110%;
             }
@@ -1304,12 +1306,12 @@ $fixed-header-height: 7.5rem;
 
         &--fixed {
             background-color: transparent;
-            flex: 0 0 73%;
+            flex: 0 0 80%;
             // overflow-x: hidden;
             display: none;
             // padding: 5em 0px;
             z-index: 3500;
-            margin-left: -7%;
+            // margin-left: -7%;
             @include media("lg-tab") {
                 flex: 0 0 65%;
 
@@ -1496,9 +1498,9 @@ $fixed-header-height: 7.5rem;
     &__options-container{
         height: 25rem;
         overflow-y: scroll;
-        background-color: #ffffff;
+        background-color: #E3F1FF;
         border-radius: 10px;
-        padding: 0.5em 0px;
+        // padding: 0.5em 0px;
         scrollbar-color: #004E9E;
         display: none;
         color: variables.$starhospitals-text-primary;
@@ -1519,9 +1521,13 @@ $fixed-header-height: 7.5rem;
         li{
             padding: 0.5em;
             &:hover{
-                background-color: #D4E9FF;
+                background-color: #B3D9FF;
         border-radius: 10px;
 
+            }
+
+            a{
+                font-size: 16px
             }
             // // a{
                 // position: relative;
@@ -1535,18 +1541,20 @@ $fixed-header-height: 7.5rem;
         }
     };
     &__child-container{
-        background-color: #ffffff;
+        background-color: #E3F1FF;
         border-radius: 10px;
         height: max-content;
         li{
             padding: 0.5em;
-
+            
             &:hover{
-                background-color: #D4E9FF;
+                background-color: #B3D9FF;
         border-radius: 10px;
 
             }
-
+            a{
+                font-size: 16px;
+            }
             
         }
 

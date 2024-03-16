@@ -1,4 +1,4 @@
-<x-heading :title="'Why Choose Us'" :description="''" />
+<x-heading :title="'What We Do Best'" :description="''" />
 <div class="choose-us ">
     @if($content != null)
         @if(isset($content->choose1_icon) && $content->choose1_icon != null)

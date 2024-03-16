@@ -7,10 +7,11 @@
 @section('content')
 <x-banner :imgurl="config('variables.asset') .$content->banner_desktop" :text="$content->banner_text" :$breadcrum/>  
 <x-scroll-tabs :$tabs/>
-<x-gap/>    
+<x-gap/>
+  
 <x-speciality-description-v2 :$content/>
 <x-gap/>    
-<div class="ui-background">
+<div class="ui-background" >
 <x-when-to-contact-us :description='$content->when_to_contact_description'/>
 </div>  
 <x-gap/>
@@ -22,7 +23,7 @@
 @if($content->services_treatments != null)
 
 
-<div class="ui-background">
+<div class="ui-background" id="treatments-procedures">
 <x-services-treatment :$content />
 </div>  
 <x-gap/>

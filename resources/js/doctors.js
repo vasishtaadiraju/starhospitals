@@ -189,11 +189,11 @@ async function printDoctors(body, selectBox, className) {
                     }
                         if (
                             !coeName.includes(
-                                `<a style="padding:0.25em;background-color:#004E9E12;color:#004E9E !important;font-weight:500 !important;font-family:'Plus Jakarta Sans Semi Bold';border-radius:5px"> ${speciality.name} ${index != result.doctor.specialities.length -1 ? `` : ``} </a>`
+                                `<a style="padding:0.5em;background-color:#004E9E12;color:#004E9E !important;font-weight:500 !important;font-family:'Plus Jakarta Sans Semi Bold';border-radius:5px"> ${speciality.name} ${index != result.doctor.specialities.length -1 ? `` : ``} </a>`
                             )
                         ) {
                             coeName.push(
-                                `<a style="padding:0.25em;background-color:#004E9E12;color:#004E9E !important;font-weight:500 !important;font-family:'Plus Jakarta Sans Semi Bold';border-radius:5px"> ${speciality.name} ${index != result.doctor.specialities.length -1  ? `` : ``} </a>`
+                                `<a style="padding:0.5em;background-color:#004E9E12;color:#004E9E !important;font-weight:500 !important;font-family:'Plus Jakarta Sans Semi Bold';border-radius:5px"> ${speciality.name} ${index != result.doctor.specialities.length -1  ? `` : ``} </a>`
                             );
                         }
                     });

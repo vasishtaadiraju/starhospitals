@@ -3,7 +3,7 @@
     <div class="consultation">
 
         <div class="consultation__card" id="request-a-callback">
-            <h2 class="section-heading">Reach Us</h2>
+            <h2 class="section-heading">Reach Out to Us</h2>
             {{-- <p class="consultation__card__info">Our empathetic and excellent healthcare services will not disappoint you,
                 this is our promise. Get in touch with us, the best multispeciality hospital near you, for any queries
                 or discrepancies</p> --}}
