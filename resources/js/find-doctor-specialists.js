@@ -80,7 +80,7 @@ export async function printDoctors(url, body) {
 
             result.doctor.coes.forEach((coe, index) => {
                 if (coe.specialities.length == 0) {
-                    coeName.push(`<a style="padding:0.25em;background-color:#004E9E12;color:#004E9E !important;font-weight:500 !important;font-family:'Plus Jakarta Sans Semi Bold';border-radius:5px" href="#"> ${coe.name}</a> ${index != result.doctor.specialities.length -1  ? `` : ``} `);
+                    coeName.push(`<a style="padding:0.5em;background-color:#004E9E12;color:#004E9E !important;font-weight:500 !important;font-family:'Plus Jakarta Sans Semi Bold';border-radius:5px" href="#"> ${coe.name}</a> ${index != result.doctor.specialities.length -1  ? `` : ``} `);
                     if(coe.id == body.coe_id)
                     {
                         speciality_slug = coe.slug;
@@ -97,11 +97,11 @@ export async function printDoctors(url, body) {
                     }
                         if (
                             !coeName.includes(
-                                `<a style="padding:0.25em;background-color:#004E9E12;color:#004E9E !important;font-weight:500 !important;font-family:'Plus Jakarta Sans Semi Bold';border-radius:5px"> ${speciality.name} ${index != result.doctor.specialities.length -1 ? `` : ``} </a>`
+                                `<a style="padding:0.5em;background-color:#004E9E12;color:#004E9E !important;font-weight:500 !important;font-family:'Plus Jakarta Sans Semi Bold';border-radius:5px"> ${speciality.name} ${index != result.doctor.specialities.length -1 ? `` : ``} </a>`
                             )
                         ) {
                             coeName.push(
-                                `<a style="padding:0.25em;background-color:#004E9E12;color:#004E9E !important;font-weight:500 !important;font-family:'Plus Jakarta Sans Semi Bold';border-radius:5px"> ${speciality.name} ${index != result.doctor.specialities.length -1  ? `` : ``} </a>`
+                                `<a style="padding:0.5em;background-color:#004E9E12;color:#004E9E !important;font-weight:500 !important;font-family:'Plus Jakarta Sans Semi Bold';border-radius:5px"> ${speciality.name} ${index != result.doctor.specialities.length -1  ? `` : ``} </a>`
                             );
                         }
                     });
@@ -154,7 +154,7 @@ export async function printDoctors(url, body) {
 
              
 
-             <span>${result.doctor.branches.map((branch,index)=>{
+             <span style="font-size:16px"> ${result.doctor.branches.map((branch,index)=>{
                 
                 if(index != result.doctor.branches.length - 1)
                 {

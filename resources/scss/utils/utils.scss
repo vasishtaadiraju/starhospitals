@@ -70,7 +70,7 @@
         color: variables.$starhospitals-text-tertiary;
         width: 100%;
         height: 80%;
-        min-height: 2rem;
+        min-height: 2.5rem;
         background: none;
     }
 }
@@ -170,7 +170,7 @@ body {
 input,
 select {
     @include font-family(500);
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .error-message {
@@ -453,7 +453,7 @@ input[type=number] {
     &--col-0 {
         flex: 1;
 
-        margin-left: 7%;
+        margin-left: 3%;
         @include media("sm-mob") {
             flex: 0 0 calc(100% / 1);
             margin-left: 0px;
@@ -495,7 +495,7 @@ input[type=number] {
     }
 
     &--col-2 {
-        flex: 0 0 calc(93% / 2);
+        flex: 0 0 calc(95% / 2);
         @include media("sm-mob") {
             flex: 0 0 calc(100% / 1);
         }

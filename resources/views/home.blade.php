@@ -153,33 +153,33 @@
 <div class="ui-background">
 <x-gap/>
 
-<x-heading :title="'Patient Testimonials'" :description="''" />
+<x-heading :title="'Reviews From Our Patients'" :description="''" />
     <div class="testimonials testimonials-slider">
 
 
 
         <div class="testimonials__card">
-           <div class="ctg-video"><img src="" class="ctg-video play-video" data-video-link="https://www.youtube.com/embed/BqzX3ilr5Uo?autoplay=1" data-src="{{Vite::asset('resources/images/testimonials/home-1.webp')}}" alt=""> </div>
+           <div class="ctg-video"><img src="" class="ctg-video play-video" data-video-link="https://www.youtube.com/embed/-oUvG5fjTLg?si=3xGlLDg7Wx_z3i2f?autoplay=1" data-src="{{Vite::asset('resources/images/review/maxresdefault.jpg')}}" alt=""> </div>
             <div class="testimonials__card__content">
-                <p>MR. SHEIKH ABDUL SATTAR</p>
+                <p>Mr. RAGHUNATHA REDDY</p>
 
-                <h4>Mr. Abdul Sattar shares his experience of angioplasty surgery | Patient Testimonial | Star Hospitals</h4>
+                <h4>Witness the Power of Swap Kidney Transplant | Star Hospitals</h4>
             </div>
         </div>
         <div class="testimonials__card">
-            <div class="ctg-video"> <img src="" class="play-video" data-video-link="https://www.youtube.com/embed/SpCctR-VNWE?autoplay=1" data-src="{{Vite::asset('resources/images/testimonials/home-2.webp')}}" alt=""> </div>
+            <div class="ctg-video"> <img src="" class="play-video" data-video-link="https://www.youtube.com/embed/SGnL_OVdBmU?si=r-NNFAIDvRfcgqa9?autoplay=1" data-src="{{Vite::asset('resources/images/review/maxresdefault (1).jpg')}}" alt=""> </div>
             <div class="testimonials__card__content">
-                <p>MRS REENA TEKRIWAL</p>
+                <p>Mrs. MARIAMMA</p>
 
-                <h4>Mr. Manoj shares his wife's breast cancer surgery experience | Patient Testimonial | Star Hospitals</h4>
+                <h4>From Darkness to Light - Mariamma's Path to Recovery | Patient Testimonial | Star Hospitals</h4>
             </div>
         </div>
         <div class="testimonials__card">
-            <div class="ctg-video">  <img src="" class="play-video" data-video-link="https://www.youtube.com/embed/3ERI_hU34iQ?autoplay=1" data-src="{{Vite::asset('resources/images/testimonials/home-3.webp')}}" alt=""> </div>
+            <div class="ctg-video">  <img src="" class="play-video" data-video-link="https://www.youtube.com/embed/zURrLzYna5o?si=h3HBg0yFVfFyHexN?autoplay=1" data-src="{{Vite::asset('resources/images/review/maxresdefault (2).jpg')}}" alt=""> </div>
             <div class="testimonials__card__content">
-                <p>Mr. SUBBA RAO</p>
+                <p>Mr. PRASHANTA SHARMA</p>
 
-                <h4>Mr. Subba Rao shares his experience of Pancreatic cancer surgery Patient Testimonial| Star Hospitals</h4>
+                <h4>Mr. Prashanta Sharma Shares his positive feedback on Gastrointestinal stromal tumor Surgery</h4>
             </div>
         </div>
 

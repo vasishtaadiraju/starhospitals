@@ -179,7 +179,7 @@
                 // min-height: 30px;
                 // font-weight: 500;
                 // min-height: 2.75em;
-                
+                font-size: 22px;;
                 @include media('x-sm-desktop')
                 {
                     font-size: 14px;
@@ -190,7 +190,7 @@
 
         }
         &__designation{
-            font-size:14px;
+            font-size:16px;
             line-height:30px;
             font-weight:400;
             // min-height: 2.5em;
@@ -202,7 +202,7 @@
             }
         }
         &__speciality{
-            font-size:14px;
+            font-size:15px;
             line-height:20px;
             font-weight:400;
             // min-height: 3em;
@@ -224,6 +224,7 @@
             h4{
                a{
                 font-family: 'Plus Jakarta Sans';
+                font-size: 20px;
                } 
             }
 
@@ -247,7 +248,7 @@
         // border: 1px solid gray;
         flex-direction: column;
         justify-content: space-between;
-        flex: 0 0 calc(95%/4);
+        flex: 0 0 calc(90%/4);
         // flex-grow: 1;
 
         box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
@@ -324,7 +325,7 @@
                 // min-height: 30px;
                 // font-weight: 500;
                 // min-height: 2.75em;
-
+                font-size: 20px;
                 @include media('x-sm-desktop')
                 {
                     font-size: 14px;
@@ -335,7 +336,7 @@
 
         }
         &__designation{
-            font-size:14px;
+            font-size:16px;
             line-height:20px;
             font-weight:400;
             // min-height: 3em;
@@ -347,7 +348,7 @@
             }
         }
         &__speciality{
-            font-size:14px;
+            font-size:15px;
             line-height:20px;
             font-weight:400;
             // min-height: 3em;
@@ -485,7 +486,7 @@
         }
         &__speciality{
             padding-bottom: 0.5em;
-            font-size: 14px;
+            font-size: 15px;
             color: variables.$starhospitals-text-primary;
            a{
             color: variables.$starhospitals-text-secondary;
@@ -514,7 +515,7 @@
             color: variables.$starhospitals-text-primary;
             font-family: variables.$starhospitals-brand-secondary-font;
             font-weight: 500;
-            font-size: 15px;
+            font-size: 18px;
             font-family: 'Plus Jakarta Sans Medium';
             margin-top: 1em;
             text-wrap: nowrap;
