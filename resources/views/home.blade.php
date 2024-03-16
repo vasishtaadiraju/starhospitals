@@ -133,7 +133,7 @@
 
 <x-gap/>
 {{-- <x-gap/> --}}
-<x-story/>
+<x-story :$content/>
 <x-gap/>
 <x-gap/>
 

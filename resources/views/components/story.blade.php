@@ -1,21 +1,29 @@
 <div class="story">
+    @if($content != null)
+    @if(isset($content->story1_desktop) && $content->story1_desktop != null)
     <div class="story__content">
-        <img src="" data-src="{{Vite::asset('resources/images/story/Rectangle 148.png')}}" alt="">
+        {{--  <img src="" data-src="{{Vite::asset('resources/images/story/Rectangle 148.png')}}" alt="">  --}}
+        {!! $content->story1_desktop !!}
         <div class="story__content__text">
-            <h1>Star Hospitals hosts Tosacon pre-conference workshop on Primary Total Kneee Replacement </h1>
-            <p>During the workshop, eminent doctors discussed various aspects of primary total knee replacement.</p>
+            <h1>{{ $content->story1_title }}</h1>
+            <p>{{ $content->story1_description }}</p>
             <button>View Story</button>
 
         </div>
 
     </div>
+    @endif
+    @if(isset($content->story2_desktop) && $content->story2_desktop != null)
     <div class="story__content">
-        <img src="" data-src="{{Vite::asset('resources/images/story/Rectangle 149.png')}}" alt="">
+        {{--  <img src="" data-src="{{Vite::asset('resources/images/story/Rectangle 149.png')}}" alt="">  --}}
+        {!! $content->story2_desktop !!}
         <div class="story__content__text">
-            <h1>Telangana heart beats for Andhra boy: Brain-dead teen gives new life to 8-yr-old</h1>
-            <p>Andhra boy Yashwant’s heart was functioning at only eight per cent and was in the last stages of disease.</p>
+            <h1>{{ $content->story2_title }}</h1>
+            <p>{{ $content->story2_description }}</p>
             <button>View Story</button>
         </div>
 
     </div>
+    @endif
+    @endif
 </div>
