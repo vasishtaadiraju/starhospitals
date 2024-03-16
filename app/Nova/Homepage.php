@@ -55,6 +55,8 @@ class Homepage extends Resource
             new Panel('Why Choose Us - Second Card', $this->whyChooseUsCard(2)),
             new Panel('Why Choose Us - Third Card', $this->whyChooseUsCard(3)),
             new Panel('Why Choose Us - Fourth Card', $this->whyChooseUsCard(4)),
+            new Panel('First Story', $this->story(1)),
+            new Panel('Second Story', $this->story(2)),
             new Panel('About Us', $this->aboutUs()),
             new Panel('Reviews', $this->text('review')),
             new Panel('Blogs', $this->text('blog')),
@@ -136,6 +138,40 @@ class Homepage extends Resource
             Text::make('Description', 'choose' . $number . '_description')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:120')
+        ];
+    }
+
+
+    protected function story($number)
+    {
+        return [
+            Image::make('Desktop image', 'story' . $number . '_desktop')
+                ->disk('s3')
+                ->hideFromIndex()
+                ->rules('nullable', 'image', 'max:1024')
+                ->prunable(),
+
+            Image::make('Mobile image', 'story' . $number . '_mobile')
+                ->disk('s3')
+                ->hideFromIndex()
+                ->rules('nullable', 'image', 'max:1024')
+                ->prunable(),
+
+            Text::make('Alt', 'story' . $number . '_alt')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:100'),
+
+            Text::make('Title', 'story' . $number . '_title')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:150'),
+
+            Text::make('Description', 'story' . $number . '_description')
+                ->hideFromIndex()
+                ->rules('nullable', 'string', 'max:200'),
+
+            URL::make('CTA', 'story' . $number . '_cta')
+                ->hideFromIndex()
+                ->rules('nullable', 'url')
         ];
     }
 
