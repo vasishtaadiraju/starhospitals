@@ -15,7 +15,7 @@
                 </svg> --}}
                 
                
-                    <img src="{{Vite::asset('resources/images/logo/Star Logo - White 1.svg')}}" alt="">
+                    <img data-src="{{Vite::asset('resources/images/logo/Star Logo - White 1.svg')}}" alt="">
                         
 
                 
@@ -83,6 +83,26 @@
         </li>
     </ul> 
 </div>
+<div class="footer__columns">
+    <ul class="footer__columns__option">
+      
+        <li class="footer__columns__option__label footer__columns__option__label--dropdown">Specialities
+            <ul class="footer__columns__option__label--dropdown__option">
+                {{-- @foreach ($branches as $item) --}}
+                <li class="footer__columns__option__item"><a href="https://starhospitals.in/specialities/cardiology-hospital-in-hyderabad">Cardiology</a></li>
+                <li class="footer__columns__option__item"><a href="https://starhospitals.in/specialities/cardiac-surgery-hospital-in-hyderabad">Cardiothoracic Surgery</a></li>
+                <li class="footer__columns__option__item"><a href="https://starhospitals.in/specialities/orthopedics-hospital-in-hyderabad">Orthopedics</a></li>
+                <li class="footer__columns__option__item"><a href="https://starhospitals.in/specialities/arthroscopy-and-sports-medicine-hospital-in-hyderabad">Sports Medicine</a></li>
+                <li class="footer__columns__option__item"><a href="https://starhospitals.in/specialities/medical-gastroenterology-hospital-in-hyderabad">Medical Gastroenterology</a></li>
+                <li class="footer__columns__option__item"><a href="https://starhospitals.in/specialities/surgical-gastroenterology-hospital-in-hyderabad">Surgical Gastroenterology</a></li>
+                {{-- <li class="footer__columns__option__item"><a href="https://starhospitals.in/specialities/cardiology-hospital-in-hyderabad">Cardiology</a></li> --}}
+                    
+                {{-- @endforeach --}}
+                 {{-- <li class="footer__columns__option__item"><a href="">Financial District</a></li>  --}}
+            </ul>
+        </li>
+    </ul> 
+</div>
 
 
 
@@ -118,9 +138,9 @@
 
 
 
-        <div class="footer__columns">
+        {{-- <div class="footer__columns">
             <ul class="footer__columns__option">
-                {{-- <li class="footer__columns__option__label" id="second-speciality">
+                <li class="footer__columns__option__label" id="second-speciality">
                     <ul class="footer__columns__option__label--dropdown__option speciality-second-column" style="">
                       
                         
@@ -140,10 +160,10 @@
                         @endforeach
                         @endforeach
                     </ul>
-                </li> --}}
+                </li>
 
             </ul>
-        </div>
+        </div> --}}
         
         <div class="footer__columns">
             <ul class="footer__columns__option">
