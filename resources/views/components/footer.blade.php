@@ -21,13 +21,13 @@
                 
                 
                 
-                    <img data-src="{{Vite::asset('resources\images\logo\15 y ex 1.svg')}}" alt="">
+                    <img data-src="{{Vite::asset('resources/images/logo/15 y ex 1.svg')}}" alt="">
                         
 
-                <img data-src="{{Vite::asset('resources\images\logo\Layer 1.svg')}}" alt="">
+                <img data-src="{{Vite::asset('resources/images/logo/Layer 1.svg')}}" alt="">
 
         
-                        <img data-src="{{Vite::asset('resources\images\logo\NABH-Logo 2.svg')}}" alt="">
+                        <img data-src="{{Vite::asset('resources/images/logo/NABH-Logo 2.svg')}}" alt="">
                             
                     </div>
 
