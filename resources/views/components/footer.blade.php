@@ -10,25 +10,25 @@
                 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
                 <use xlink:href="#image0_1409_1462" transform="scale(0.00458716 0.00689655)"/>
                 </pattern>
-                
+
                 </defs>
                 </svg> --}}
-                
-               
-                    <img data-src="{{Vite::asset('resources/images/logo/Star Logo - White 1.svg')}}" alt="">
-                        
 
-                
-                
-                
+
+                    <img data-src="{{Vite::asset('resources/images/logo/Star Logo - White 1.svg')}}" alt="">
+
+
+
+
+
                     <img data-src="{{Vite::asset('resources/images/logo/15 y ex 1.svg')}}" alt="">
-                        
+
 
                 <img data-src="{{Vite::asset('resources/images/logo/Layer 1.svg')}}" alt="">
 
-        
+
                         <img data-src="{{Vite::asset('resources/images/logo/NABH-Logo 2.svg')}}" alt="">
-                            
+
                     </div>
 
 
@@ -47,12 +47,12 @@
                         <li class="footer__columns__option__item"><a href="{{route('find-doctor')}}">Find a Doctor</a></li>
                         {{-- <li class="footer__columns__option__item"><a href="">Book a Video Consultation</a></li> --}}
                         <li class="footer__columns__option__item"><a href="{{route('about')}}"> About Us</a></li>
-                        
+
                         <li class="footer__columns__option__item"><a href="{{route('contact')}}">Contact</a></li>
                         {{-- <li class="footer__columns__option__item"><a href="{{route('international_patient')}}">International Patients</a></li> --}}
                         {{-- <li class="footer__columns__option__item"><a href="{{route('condition.landing')}}">Treatments & Tests</a></li> --}}
                         <li class="footer__columns__option__item"><a href="#">Bio Medical Waste</a></li>
-                        
+
                         {{--  <li class="footer__columns__option__item"><a href="">Admission & Discharge Process</a>
                         </li>
                         <li class="footer__columns__option__item"><a href="">Insurance & Empanelment</a></li>
@@ -65,27 +65,27 @@
                 </li>
 
             </ul>
-           
+
         </div>
 
-        
+
  <div class="footer__columns">
     <ul class="footer__columns__option">
-      
+
         <li class="footer__columns__option__label footer__columns__option__label--dropdown">Locations
             <ul class="footer__columns__option__label--dropdown__option">
                 @foreach ($branches as $item)
                 <li class="footer__columns__option__item"><a href="{{route('branch',$item->slug)}}">{{$item->name}}</a></li>
-                    
+
                 @endforeach
                  {{-- <li class="footer__columns__option__item"><a href="">Financial District</a></li>  --}}
             </ul>
         </li>
-    </ul> 
+    </ul>
 </div>
 <div class="footer__columns">
     <ul class="footer__columns__option">
-      
+
         <li class="footer__columns__option__label footer__columns__option__label--dropdown">Specialities
             <ul class="footer__columns__option__label--dropdown__option">
                 {{-- @foreach ($branches as $item) --}}
@@ -96,17 +96,17 @@
                 <li class="footer__columns__option__item"><a href="https://starhospitals.in/specialities/medical-gastroenterology-hospital-in-hyderabad">Medical Gastroenterology</a></li>
                 <li class="footer__columns__option__item"><a href="https://starhospitals.in/specialities/surgical-gastroenterology-hospital-in-hyderabad">Surgical Gastroenterology</a></li>
                 {{-- <li class="footer__columns__option__item"><a href="https://starhospitals.in/specialities/cardiology-hospital-in-hyderabad">Cardiology</a></li> --}}
-                    
+
                 {{-- @endforeach --}}
                  {{-- <li class="footer__columns__option__item"><a href="">Financial District</a></li>  --}}
             </ul>
         </li>
-    </ul> 
+    </ul>
 </div>
 
 
 
-       
+
 
 
 
@@ -142,8 +142,8 @@
             <ul class="footer__columns__option">
                 <li class="footer__columns__option__label" id="second-speciality">
                     <ul class="footer__columns__option__label--dropdown__option speciality-second-column" style="">
-                      
-                        
+
+
 
                         @php
                             $j = 0;                        @endphp
@@ -151,8 +151,8 @@
 
                         @foreach ($item->specialities as $speciality)
                         @if($j > $i)
-                        <li class="footer__columns__option__item"><a href="{{route('speciality',$speciality->slug)}}">{{$speciality->name}}</a></li>   
-                        
+                        <li class="footer__columns__option__item"><a href="{{route('speciality',$speciality->slug)}}">{{$speciality->name}}</a></li>
+
                         @endif
                         @php
                             $j++;
@@ -164,7 +164,7 @@
 
             </ul>
         </div> --}}
-        
+
         <div class="footer__columns">
             <ul class="footer__columns__option">
 
@@ -178,7 +178,7 @@
                                     fill="white" />
                             </svg>
                         </a>
-                        <a target="_blank"href="https://twitter.com/starhospitalsin/"> 
+                        <a target="_blank"href="https://twitter.com/starhospitalsin/">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_21_2)">
                                 <path d="M11.8618 8.46864L19.1472 0H17.4208L11.0949 7.3532L6.04244 0H0.215027L7.85533 11.1193L0.215027 20H1.94152L8.62181 12.2348L13.9576 20H19.785L11.8614 8.46864H11.8618ZM9.49714 11.2173L8.72301 10.1101L2.5636 1.29967H5.21539L10.1861 8.40994L10.9602 9.51718L17.4216 18.7594H14.7698L9.49714 11.2177V11.2173Z" fill="white"/>
@@ -189,7 +189,7 @@
                                 </clipPath>
                                 </defs>
                                 </svg>
-                                
+
                         </a>
                         <a target="_blank"href="https://www.instagram.com/starhospitalsin/">
                             <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
@@ -221,25 +221,25 @@
                 </li>
             </ul>
         </div>
-        
-        
-        
-        
-        
+
+
+
+
+
         {{-- <div class="footer__columns">
             <ul class="footer__columns__option">
-  
+
                   <li class="footer__columns__option__label footer__columns__option__label--dropdown">Locations
                       <ul class="footer__columns__option__label--dropdown__option">
                           @foreach ($branches as $item)
                           <li class="footer__columns__option__item"><a href="{{route('branch',$item->slug)}}">{{$item->name}}</a></li>
-                              
+
                           @endforeach
                       </ul>
                   </li>
-              </ul> 
+              </ul>
         </div> --}}
-        
+
         <div class="footer__columns footer__columns--logo">
 
 
@@ -252,9 +252,9 @@
 
 
         </div>
-        
 
-        
+
+
 
 
 
@@ -293,7 +293,7 @@
 
 
 
-        
+
     </div>
     <p class="footer__copyright">
 

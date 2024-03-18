@@ -13,4 +13,4 @@ document.getElementsByClassName('search-doctor__submit-btn')[0].addEventListener
 e.preventDefault();
 
 window.location.href = document.getElementsByClassName('doctor-select-box')[0].value;
-}) 
+})

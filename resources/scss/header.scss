@@ -42,7 +42,7 @@ $fixed-header-height: 7.5rem;
     content: "❯";
     display: block;
     position: absolute;
-    right: 10px;
+    right: 1px;
     top: 10%;
     // color: variables.$starhospitals-ui-tertiary;
 }
@@ -317,7 +317,8 @@ $fixed-header-height: 7.5rem;
             @include font-family(400);
             font-size: 14px;
             @include center-child-element;
-            justify-content: flex-end;
+            // justify-content: flex-end;
+
             color: variables.$starhospitals-text-secondary;
             overflow: hidden;
             &--logo {
@@ -344,7 +345,7 @@ $fixed-header-height: 7.5rem;
                     @include media("lg-mob") {
                         width: 100%;
                     }
-        
+
                     @include media("x-sm-tab") {
                         width: 100%;
                     }
@@ -401,7 +402,7 @@ $fixed-header-height: 7.5rem;
                     padding: 0.5em 1em;
                     // padding-right: 2em;
                     gap: 1em;
-                    
+
                     border-radius: 10px;
                     // width: max-content;
                     @include media("sm-mob") {
@@ -475,11 +476,35 @@ $fixed-header-height: 7.5rem;
                         margin-top: 0;
                         margin-right: 3em;
                     }
-                    
+
                 }
                 .appointment{
                     background-color: #ffffff;
                     border: 1px solid #004E9E;
+                    @include media("sm-mob") {
+
+                        width:40%;
+                    }
+                    @include media("md-mob") {
+                        width:40%;
+                    }
+
+                    @include media("lg-mob") {
+                        width:40%;
+                    }
+
+                    @include media("x-sm-tab") {
+                        width:40%;
+                    }
+
+                    @include media("sm-tab") {
+                        width:40%;
+                    }
+
+                    @include media("md-tab") {
+                        width:40%;
+                    }
+
 
                     p{
                         color: #000000;
@@ -518,10 +543,12 @@ $fixed-header-height: 7.5rem;
                 @include media("sm-tab") {
                     gap: 2em;
                     margin-right: 2em;
+
                 }
             }
             &--mob-hide {
                 @include media("sm-mob") {
+
                     display: none !important;
                 }
                 @include media("md-mob") {
@@ -539,7 +566,7 @@ $fixed-header-height: 7.5rem;
                 @include media("md-tab") {
                     display: none !important;
                 }
-                
+
             }
             &--desk-hide {
                 display: none ;
@@ -745,7 +772,7 @@ $fixed-header-height: 7.5rem;
             a {
                 @include font-family(500);
                 color: variables.$starhospitals-ui-tertiary;
-                padding: 0px 2em 0px 0px;
+                padding: 0px 1.2em 0px 0px;
                 display: block;
                 width: 100%;
                 font-size: 18px;;
@@ -1043,7 +1070,7 @@ $fixed-header-height: 7.5rem;
                             &:hover {
                                 background-color: #004f9e6e;
                                 color: #ffffff;
-    
+
                                 // border-radius: 5px;
                                 a {
                                     color: #000000;
@@ -1052,9 +1079,9 @@ $fixed-header-height: 7.5rem;
                                 svg {
                                     color: #fff;
                                 }
-    
+
                                 // .header__nav__option--nested-dropdown{
-    
+
                                 ul {
                                     li {
                                         a {
@@ -1078,8 +1105,8 @@ $fixed-header-height: 7.5rem;
                 &::after {
                     @include dropdown-arrow;
                     transition: all 300s;
-                    top: 40%;
-                    right: 1em;
+                    top: 38%;
+                    // right: 1em;
                     transform: rotate(90deg) !important;
                     color: #ffff;
                     transition: all 300ms;
@@ -1379,6 +1406,11 @@ $fixed-header-height: 7.5rem;
     }
 }
 
+.header__nav__option--nested-dropdown:hover ul {
+    display: block;
+    background-color: #fff;
+}
+
 .header__nav__option--dropdown--mega.header__nav__option--dropdown--active
     .header__nav__option--dropdown__options {
     display: flex;
@@ -1417,37 +1449,37 @@ $fixed-header-height: 7.5rem;
     transform: translate(-57vw)  !important;
     @include media("sm-mob") {
         // margin-left: initial;
-        
+
     }
     @include media("md-mob") {
         // margin-left: initial;
     }
     @include media("lg-mob") {
         // margin-left: initial;
-        
+
     }
     @include media("x-sm-tab") {
         // margin-left: initial;
-        
+
     }
     @include media("sm-tab") {
-    
 
-        
+
+
     }
     @include media("lg-tab") {
         margin-left:50vw;
         transform: translate(-65vw)  !important;
-        
+
     }
     &--fixed{
         margin-left: 35vw;
         @include media("lg-tab") {
             margin-left: 22vw;
-            
+
         }
     }
-    
+
 
 }
 
@@ -1458,11 +1490,11 @@ $fixed-header-height: 7.5rem;
         img{
             width: 100%;
             height: 80px !important;
-            
+
         }
-        
+
     }
-} 
+}
 
 .emergency_number{
     display: none;
@@ -1500,7 +1532,7 @@ $fixed-header-height: 7.5rem;
     @include media("md-tab") {
         display: none;
     }
-   
+
     &__options-container{
         height: 25rem;
         overflow-y: scroll;
@@ -1520,7 +1552,7 @@ $fixed-header-height: 7.5rem;
             background-color: #004f9e41;
             border-radius: 10px;
 
-            
+
         }
         &--active{
             display: block;
@@ -1554,7 +1586,7 @@ $fixed-header-height: 7.5rem;
         height: max-content;
         li{
             padding: 0.5em;
-            
+
             &:hover{
                 background-color: #B3D9FF;
         border-radius: 10px;
@@ -1563,7 +1595,7 @@ $fixed-header-height: 7.5rem;
             a{
                 font-size: 16px;
             }
-            
+
         }
 
     }
@@ -1615,3 +1647,5 @@ $fixed-header-height: 7.5rem;
         }
     }
 }
+
+

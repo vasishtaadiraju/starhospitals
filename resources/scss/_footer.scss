@@ -143,39 +143,40 @@ $footer-columns: 5;
             img,
             svg {
                 // width: 60%;
+
                 margin: 0px auto;
                 &:first-child {
                     // width: 100%;
                     @include media("sm-mob") {
-                        width: 30%;
+                        width: 70%;
                     }
                     @include media("md-mob") {
-                        width: 30%;
+                        width: 70%;
                     }
                     @include media("lg-mob") {
-                        width: 30%;
+                        width: 70%;
                     }
                     @include media("x-sm-tab") {
-                        width: 30%;
+                        width: 70%;
                     }
                     @include media("sm-tab") {
-                        width: 16%;
+                        width: 78%;
                     }
                 }
                 @include media("sm-mob") {
-                    width: 30%;
+                    width: 27%;
                 }
                 @include media("md-mob") {
-                    width: 30%;
+                    width: 27%;
                 }
                 @include media("lg-mob") {
-                    width: 30%;
+                    width: 27%;
                 }
                 @include media("x-sm-tab") {
-                    width: 30%;
+                    width: 23%;
                 }
                 @include media("sm-tab") {
-                    width: 16%;
+                    width: 28%;
                 }
             }
 

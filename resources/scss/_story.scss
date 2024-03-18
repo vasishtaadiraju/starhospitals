@@ -45,7 +45,7 @@
             height: 70vh;
         @include media("sm-mob") {
             // position: relative;
-            height: 45vh;
+            height: 32vh;
             // margin-top: 1rem;
             // height: 60%;
         }
@@ -102,7 +102,7 @@
             width: 100%;
             padding: 1rem 2em;
             transform: translateY(0%);
-            background-color: #004e9ebf;
+            // background-color: #004e9ebf;
         //     margin-top: 2rem;
         // margin-bottom: 2rem;
 
@@ -115,7 +115,7 @@
         width: 100%;
         padding: 1rem 2em;
         transform: translateY(0%);
-        background-color: #004e9ebf;
+        // background-color: #004e9ebf;
         // margin-top: 2rem;
         // margin-bottom: 2rem;
 
@@ -129,7 +129,7 @@
         width: 100%;
         padding: 1rem 2em;
         transform: translateY(0%);
-        background-color: #004e9ebf;
+        // background-color: #004e9ebf;
         // margin-top: 2rem;
         // margin-bottom: 2rem;
 
@@ -142,7 +142,7 @@
         width: 100%;
         padding: 1rem 2em;
         transform: translateY(0%);
-        background-color: #004e9ebf;
+        // background-color: #004e9ebf;
         // margin-top: 2rem;
         // margin-bottom: 2rem;
     }
@@ -185,22 +185,22 @@
         font-size: 40px;
         @include media("sm-mob") {
             // color: black;
-            line-height: 30px;
-            font-size: 20px;
+            line-height: 18px;
+            font-size: 14px;
             // margin-left: 2rem;
             width: 90%;
 
         }
         @include media("md-mob") {
-            line-height: 30px;
-            font-size: 20px;
+            line-height: 25px;
+            font-size: 18px;
             // margin-left: 2rem;
             width: 90%;
 
         }
         @include media("lg-mob") {
-            line-height: 30px;
-            font-size: 20px;
+            line-height: 25px;
+            font-size: 18px;
             // margin-left: 2rem;
             width: 90%;
 
@@ -213,12 +213,18 @@
         }
         @include media("sm-tab") {
             font-size: 23px;
+            line-height: 30px;
+
         }
         @include media("md-tab") {
             font-size: 23px;
+            line-height: 30px;
+
         }
         @include media("lg-tab") {
             font-size: 23px;
+            line-height: 30px;
+
         }
 
      }
@@ -233,23 +239,22 @@
         font-size: 20px;
         @include media("sm-mob") {
             // color: black;
-            line-height: 26px;
-            font-size: 16px;
-            width: 80%;
-            // margin-left: 2rem;
+            line-height: 18px;
+           font-size: 12px;
+           width: 80%;
         }
         @include media("md-mob") {
            // color: black;
-           line-height: 26px;
-           font-size: 16px;
+           line-height: 21px;
+           font-size: 14px;
            width: 80%;
            // margin-left: 2rem;
         }
         @include media("lg-mob") {
            // color: black;
-           line-height: 26px;
-            font-size: 16px;
-            width: 80%;
+           line-height: 21px;
+           font-size: 14px;
+           width: 80%;
            // margin-left: 2rem;
         }
         @include media("x-sm-tab") {
@@ -299,8 +304,8 @@
         }
         @include media("md-mob") {
            // color: black;
-           line-height: 25px;
-           font-size: 12px;
+           line-height: 20px;
+           font-size: 10px;
            padding: 4px;
            width: 90px;
            // margin-left: 2rem;
@@ -315,18 +320,22 @@
         }
         @include media("x-sm-tab") {
             // color: black;
-            font-size: 12pxpx;
+            font-size: 12px;
+            padding: 11px;
             // line-height: 35px;
             // margin-left: 2rem;
         }
         @include media("sm-tab") {
             font-size: 15px;
+           padding: 9px;
         }
         @include media("md-tab") {
             font-size: 15px;
+            padding: 9px;
         }
         @include media("lg-tab") {
             font-size: 15px;
+            padding: 9px;
         }
 
      }

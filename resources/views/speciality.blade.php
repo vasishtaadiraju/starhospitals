@@ -5,15 +5,15 @@
 @section('meta-title',$content->meta_title)
 @section('meta-description',$content->meta_description)
 @section('content')
-<x-banner :imgurl="config('variables.asset') .$content->banner_desktop" :text="$content->banner_text" :$breadcrum/>  
+<x-banner :imgurl="config('variables.asset') .$content->banner_desktop" :text="$content->banner_text" :$breadcrum/>
 <x-scroll-tabs :$tabs/>
 <x-gap/>
-  
+
 <x-speciality-description-v2 :$content/>
-<x-gap/>    
+<x-gap/>
 <div class="ui-background" >
 <x-when-to-contact-us :description='$content->when_to_contact_description'/>
-</div>  
+</div>
 <x-gap/>
 <x-gap/>
 <x-our-specialists :$content :branches='$content->branches' :$coes/>
@@ -25,7 +25,7 @@
 
 <div class="ui-background" id="treatments-procedures">
 <x-services-treatment :$content />
-</div>  
+</div>
 <x-gap/>
 
 @endif
@@ -33,7 +33,7 @@
 {{-- @if (count($coes[0]->specialities) > 0)
 <div class="ui-background">
     <x-key-services :$coes />
-</div>   
+</div>
 @endif --}}
 
 
@@ -48,19 +48,19 @@
      --}}
 {{-- @if (count($content->testimonials) > 0)
 <x-testimonials-secondary :$content   :testimonials='$content->testimonials'/>
-    <x-gap/>  
+    <x-gap/>
 @endif --}}
-     
+
  {{--
 <div class="ui-background">
 
 <x-blogs :$content :blogs='$content->blogs'/>
 </div>
 <x-gap/>
-<x-media :$content :media='$content->media'/> 
+<x-media :$content :media='$content->media'/>
 <x-gap/> --}}
 <x-gap/>
-<x-faq-v2 :$content :faqs='$content->faqs'/> 
+<x-faq-v2 :$content :faqs='$content->faqs'/>
 <x-gap/>
 
 @endsection
