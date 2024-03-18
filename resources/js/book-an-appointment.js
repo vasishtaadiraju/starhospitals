@@ -149,7 +149,7 @@ export async function printDoctors(url, body) {
 
              
 
-             <span style="font-size:14px"> ${result.doctor.branches.map((branch,index)=>{
+             <span style="font-size:12px"> ${result.doctor.branches.map((branch,index)=>{
                 
                 if(index != result.doctor.branches.length - 1)
                 {
