@@ -316,7 +316,8 @@ $fixed-header-height: 7.5rem;
             height: 100%;
             @include font-family(400);
             font-size: 14px;
-            @include center-child-element;
+            display: flex;
+            justify-content: flex-end;
             // justify-content: flex-end;
 
             color: variables.$starhospitals-text-secondary;
@@ -389,11 +390,11 @@ $fixed-header-height: 7.5rem;
                     flex: 0 0 25%;
                 }
                 @include media("lg-tab") {
-                    flex: 0 0 14%;
+                    // flex: 0 0 14%;
                     margin-right: 1.5em;
                 }
                 @include media("x-sm-desktop") {
-                    flex: 0 0 25%;
+                    // flex: 0 0 25%;
                 }
                 div {
                     display: flex;
@@ -483,31 +484,69 @@ $fixed-header-height: 7.5rem;
                     border: 1px solid #004E9E;
                     @include media("sm-mob") {
 
-                        width:40%;
+                        width: max-content;
+                        padding: 1em;;
+                        gap: 1em;
                     }
                     @include media("md-mob") {
-                        width:40%;
+                        width: max-content;
+                        padding: 1em;;
+                        gap: 1em;
                     }
 
                     @include media("lg-mob") {
-                        width:40%;
+                        width: max-content;
+                        padding: 1em;;
+                        gap: 1em;
                     }
 
                     @include media("x-sm-tab") {
-                        width:40%;
+                        width: max-content;
+                        padding: 1em;;
+                        gap: 1em;
                     }
 
                     @include media("sm-tab") {
-                        width:40%;
+                        width: max-content;
+                        padding: 1em;;
+                        gap: 1em;
                     }
 
                     @include media("md-tab") {
-                        width:40%;
+                        width: max-content;
+                        padding: 1em;;
+                        gap: 1em;
                     }
 
 
                     p{
                         color: #000000;
+
+                        span{
+                            @include media("sm-mob") {
+
+                                font-size: 18px;
+                            }
+                            @include media("md-mob") {
+                                font-size: 18px;
+                            }
+        
+                            @include media("lg-mob") {
+                                font-size: 18px;
+                            }
+        
+                            @include media("x-sm-tab") {
+                                font-size: 18px;
+                            }
+        
+                            @include media("sm-tab") {
+                                font-size: 18px;
+                            }
+        
+                            @include media("md-tab") {
+                                font-size: 18px;
+                            }
+                        }
                     }
 
                     &__title{
@@ -1536,6 +1575,7 @@ $fixed-header-height: 7.5rem;
     &__options-container{
         height: 25rem;
         overflow-y: scroll;
+        overflow-x: hidden;
         background-color: #E3F1FF;
         border-radius: 10px 0px 10px 10px;
         // padding-bottom: 5em;
