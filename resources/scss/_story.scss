@@ -80,7 +80,7 @@
     }
     &__text{
         position: relative;
-        color: white;
+        color: black;
         padding: 6rem 10rem;
         // height: 100%;
         // width: 100%;
@@ -283,10 +283,10 @@
         width: 150px;
         padding: 18px 20px;
         border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 1);
+        border: 1px solid rgb(1, 1, 1);
         background: transparent;
         cursor: pointer;
-        color: white;
+        color: black;
         font-family: Plus Jakarta Sans;
         font-weight: 500;
 

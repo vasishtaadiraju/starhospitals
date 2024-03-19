@@ -6,10 +6,11 @@ about-root{
     &--secondary{
 
     }
-} 
+}
 .about{
     @include centerSection;
     display: flex;
+    gap: 3em;
     @include media('sm-mob')
     {
         flex-direction: column;
@@ -37,24 +38,24 @@ about-root{
     &__image-wrapper{
         padding: 2em;
         position: relative;
-        flex: 0 0 45%; 
+        flex: 0 0 45%;
         @include media('sm-mob')
     {
         padding: 0.5em;
-        flex: 0 0 100%; 
+        flex: 0 0 100%;
 
     }
     @include media('md-mob')
     {
         padding: 0.5em;
-        flex: 0 0 100%; 
+        flex: 0 0 100%;
 
     }
     @include media('x-sm-tab')
     {
         padding: 0.5em;
-        flex: 0 0 100%; 
-    }       
+        flex: 0 0 100%;
+    }
 
     // &:first-child{
     //     border-radius: 20px;
@@ -73,6 +74,7 @@ about-root{
         width: 100%;
         z-index: 1;
         position: relative;
+        margin: 57px;
         &__dots-left{
             position: absolute;
             bottom: 0%;
@@ -82,21 +84,21 @@ about-root{
             {
                 text-align: center;
                 display: none;
-        
-            } 
+
+            }
             @include media('md-mob')
             {
                 text-align: center;
                 display: none;
-        
+
             }
             @include media('x-sm-tab')
             {
                 text-align: center;
                 display: none;
-        
+
             }
-            
+
         }
         &__dots-right{
             position: absolute;
@@ -108,19 +110,19 @@ about-root{
             {
                 text-align: center;
                 display: none;
-        
-            } 
+
+            }
             @include media('md-mob')
             {
                 text-align: center;
                 display: none;
-        
+
             }
             @include media('x-sm-tab')
             {
                 text-align: center;
                 display: none;
-        
+
             }
         }
         // z-index: 20;
@@ -133,41 +135,42 @@ about-root{
         @include media('sm-mob')
         {
             padding: 0.5em 0.5em;
-            flex: 0 0 100%; 
-    
-        } 
+            flex: 0 0 100%;
+
+        }
         @include media('md-mob')
         {
             padding: 0.5em 0.5em;
-            flex: 0 0 100%; 
-    
+            flex: 0 0 100%;
+
         }
         @include media('x-sm-tab')
         {
             padding: 0.5em 0.5em;
-            flex: 0 0 100%; 
-    
+            flex: 0 0 100%;
+
         }
         &__heading{
             padding: 1em 0px;
+
             @include font-family(600);
             @include media('sm-mob')
             {
                 text-align: center;
                 display: none;
-        
-            } 
+
+            }
             @include media('md-mob')
             {
                 text-align: center;
                 display: none;
-        
+
             }
             @include media('x-sm-tab')
             {
                 text-align: center;
                 display: none;
-        
+
             }
 
             &--mobile{
@@ -176,19 +179,19 @@ about-root{
                 {
                     text-align: center;
                     display: block;
-            
-                } 
+
+                }
                 @include media('md-mob')
                 {
                     text-align: center;
                     display: block;
-            
+
                 }
                 @include media('x-sm-tab')
                 {
                     text-align: center;
                     display: block;
-            
+
                 }
             }
         }
@@ -202,7 +205,7 @@ about-root{
                 text-align: justify;
 
                 font-size: 13px
-            } 
+            }
             @include media('md-mob')
             {
                 text-align: center;
@@ -227,13 +230,13 @@ about-root{
                 margin: 0px auto;
                 margin-top: 1.5em;
                 font-size: 13px;
-            } 
+            }
             @include media('md-mob')
             {
                 margin: 0px auto;
                 margin-top: 1.5em;
                 font-size: 13px;
-            } 
+            }
             @include media('x-sm-tab')
             {
                 margin: 0px auto;

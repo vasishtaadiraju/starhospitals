@@ -333,9 +333,9 @@ $fixed-header-height: 7.5rem;
                 // }
                     // width: 100%;
                 img{
-                    width:95%;
+                    width:100%;
                     // aspect-ratio: 1/2;
-                    height: 90px;
+                    height: 100%;
                     z-index: 3501;
                     @include media("sm-mob") {
                         width: 100%;
@@ -474,8 +474,8 @@ $fixed-header-height: 7.5rem;
 
                     .footer__social-icons{
                         background-color: #ffffff;
-                        margin-top: 0;
-                        margin-right: 3em;
+                        // margin-top: 0;
+                        margin-top: 3em;
                     }
 
                 }
