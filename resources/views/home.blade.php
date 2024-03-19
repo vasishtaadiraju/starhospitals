@@ -113,13 +113,13 @@
 {{-- <div class="ui-background"> --}}
 
 {{-- </div> --}}
-<x-gap/>
+{{--  <x-gap/>  --}}
 <x-centerof-excellence :$coes/>
 
 {{--  <x-about-coe  :$coes/>  --}}
 <x-gap/>
 
-<x-gap/>
+{{--  <x-gap/>  --}}
 <div class="ui-background">
   <x-gap/>
 <x-our-specialists :$content :$branches  :$coes/>
@@ -128,17 +128,17 @@
 {{-- <x-gap/> --}}
 <x-gap/>
 
-<x-gap/>
+{{--  <x-gap/>  --}}
 <x-why-choose-us :$content/>
 
 <x-gap/>
 {{-- <x-gap/> --}}
 <x-story :$content/>
 <x-gap/>
-<x-gap/>
+{{--  <x-gap/>  --}}
 
 <x-about-us :$content/>
-<x-gap/>
+{{--  <x-gap/>  --}}
 <x-gap/>
 
 {{-- <x-testimonials :$content  :testimonials='$reviews'/> --}}
@@ -211,7 +211,7 @@
 
 <x-consultation-request :$coes />
 <x-gap/>
-<x-gap/>
+{{--  <x-gap/>  --}}
 
 @endsection
 

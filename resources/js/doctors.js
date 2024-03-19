@@ -15,7 +15,7 @@ import BushraUrl from "../images/doctors/doctor.png";
 //         <div class="p-enq__wrapper">
 //             <h2>Please Fill in Your Details</h2>
 //             <form class="patient-enquiry-form" action="/api/patient" method="post">
-                
+
 //                 <div class="form-fields">
 //                     <div class="form-fields-wrapper form-fields-wrapper--col-1">
 //                         <div class="form-fields-wrapper ">
@@ -24,10 +24,10 @@ import BushraUrl from "../images/doctors/doctor.png";
 //                                 name="name">
 //                         <span class="error-message"> </span/>
 
-                            
+
 //                         </div>
 //                     </div>
-    
+
 //                 </div>
 //                 <div class="form-fields">
 //                     <div class="form-fields-wrapper form-fields-wrapper--col-1">
@@ -37,7 +37,7 @@ import BushraUrl from "../images/doctors/doctor.png";
 //                                 name="email">
 //                         <span class="error-message"> </span/>
 
-                           
+
 //                         </div>
 //                     </div>
 //                     <div class="form-fields-wrapper form-fields-wrapper--col-1">
@@ -47,15 +47,15 @@ import BushraUrl from "../images/doctors/doctor.png";
 //                                 name="contact">
 //                         <span class="error-message"> </span/>
 
-                           
+
 //                         </div>
 //                     </div>
 //                 </div>
 //                 <div class="form-fields">
 //                     <div class="form-fields-wrapper form-fields-wrapper--col-2">
 //                         <div class="form-fields-wrapper ">
-                            
-//                         <input placeholder="Speciality" 
+
+//                         <input placeholder="Speciality"
 //                         type="text"class=""
 //                         name="speciality" value="${speciality}" disabled>
 //                         <span class="error-message"> </span/>
@@ -68,21 +68,21 @@ import BushraUrl from "../images/doctors/doctor.png";
 //                                 type="text"class=""
 //                                 name="branch" value="${branch}" placeholder="Branch" disabled>
 //                         <span class="error-message"> </span/>
-                            
+
 //                         </div>
 //                     </div>
 //                 </div>
 //                 <div class="form-fields">
 //                     <div class="form-fields-wrapper form-fields-wrapper--col-1">
 //                         <div class="form-fields-wrapper ">
-                            
-//                         <input placeholder="Doctor Name" 
+
+//                         <input placeholder="Doctor Name"
 //                         type="text"class=""
 //                         name="doctor" value="${name}" disabled>
 //                         </div>
 //                         <span class="error-message"> </span/>
 //                     </div>
-                    
+
 //                 </div>
 //                 <input type="hidden" value="${href}" name="href"/>
 //                 <button class="form-submit-button" >Submit</button>
@@ -90,7 +90,7 @@ import BushraUrl from "../images/doctors/doctor.png";
 //         </div>
 //     </div>
 //         `
-        
+
 //         document.querySelector('body').insertAdjacentHTML('afterbegin',formHtml);
 //         document.querySelector('.p-enq__close').addEventListener('click',async function(){
 //             this.parentNode.remove();
@@ -119,7 +119,7 @@ async function printDoctors(body, selectBox, className) {
     );
     if((className == ".banjara-hills-slider" || className == ".financial-slider")  && response.data.length == 0)
     {
-        
+
 
         // console.log(document.querySelector(className).previousElementSibling.previousElementSibling);
         document.querySelector(className).previousElementSibling.previousElementSibling.remove()
@@ -131,8 +131,8 @@ async function printDoctors(body, selectBox, className) {
         document.querySelector('.coe-page').previousElementSibling.remove();
         document.querySelector('.coe-page').remove();
        }
-        
-        
+
+
     }
 
     if(response.data.length == 0)
@@ -142,7 +142,7 @@ async function printDoctors(body, selectBox, className) {
                 .querySelector(className)
                 .insertAdjacentHTML("beforeend", errorMessage);
     }
-    
+
     response.data.forEach((result) => {
         if(result.doctor == null)
         {
@@ -150,9 +150,10 @@ async function printDoctors(body, selectBox, className) {
         }
         if (selectBox == true) {
            let branch_slug =  document.getElementsByClassName("location-select-box")[0].options[document.getElementsByClassName("location-select-box")[0].selectedIndex].getAttribute('data-slug');
-            
+
            let coe_slug =  document.getElementsByClassName("coe-select-box")[0].options[document.getElementsByClassName("coe-select-box")[0].selectedIndex].getAttribute('data-slug');
            let speciality_slug =  document.getElementsByClassName("speciality-select-box")[0].options[document.getElementsByClassName("speciality-select-box")[0].selectedIndex].getAttribute('data-slug');
+           console.log(speciality_slug);
     // window.location.href = e.target.options[e.target.selectedIndex].getAttribute('data-url');
 
             if(speciality_slug == "")
@@ -206,23 +207,23 @@ async function printDoctors(body, selectBox, className) {
                     formDetails.branch  = branch.name;
 
                 }
-                
+
                 // branchName.push(`<a href="/doctors/${branch.slug}/${speciality_slug}/${
                 //     result.doctor.slug
                 // }"> ${branch.name}</a> ${index != result.doctor.branches.length -1  ? `` : ``} `);
             });
             //
 
-            
+
 
             let doctorCard = `<div class="doctors-card doctors-card--find-doctor">
         <a href="/doctors/${branch_slug == "" ? result.doctor.branches[0].slug : branch_slug}/${speciality_slug}/${
             result.doctor.slug
         }"><img class="doctors-card--primary__doctor-img" style="width:100%" src="${
                 import.meta.env.VITE_ASSET_URL
-            }${result.doctor.small_image}" alt="" /></a> 
- 
-         
+            }${result.doctor.small_image}" alt="" /></a>
+
+
          <div class="doctors-card--primary__info">
              <h4><a href="/doctors/${branch_slug == "" ? result.doctor.branches[0].slug : branch_slug}/${speciality_slug}/${result.doctor.slug}">${
                 result.doctor.name
@@ -238,16 +239,16 @@ async function printDoctors(body, selectBox, className) {
      </div>
              <div class="doctors-card--primary__button-wrapper" >
            <div href="/doctors/${branch_slug}/${speciality_slug}/${result.doctor.slug}" class="doctors-card__rt__btn">
-               
+
            <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
            <path d="M9 18.8995L13.9497 13.9497C16.6834 11.2161 16.6834 6.78392 13.9497 4.05025C11.2161 1.31658 6.78392 1.31658 4.05025 4.05025C1.31658 6.78392 1.31658 11.2161 4.05025 13.9497L9 18.8995ZM9 21.7279L2.63604 15.364C-0.87868 11.8492 -0.87868 6.15076 2.63604 2.63604C6.15076 -0.87868 11.8492 -0.87868 15.364 2.63604C18.8787 6.15076 18.8787 11.8492 15.364 15.364L9 21.7279ZM9 11C10.1046 11 11 10.1046 11 9C11 7.89543 10.1046 7 9 7C7.8954 7 7 7.89543 7 9C7 10.1046 7.8954 11 9 11ZM9 13C6.79086 13 5 11.2091 5 9C5 6.79086 6.79086 5 9 5C11.2091 5 13 6.79086 13 9C13 11.2091 11.2091 13 9 13Z" fill="#004E9E"/>
            </svg>
-           
 
-             
+
+
 
              <span style="font-size:12px">${result.doctor.branches.map((branch,index)=>{
-                
+
                 if(index != result.doctor.branches.length - 1)
                 {
                     return `<a href="/doctors/${branch.slug}/${speciality_slug}/${
@@ -259,19 +260,19 @@ async function printDoctors(body, selectBox, className) {
                      }">${branch.name}</a>`             }).toString().replace(',','')}</span>
          </div>
              <a style="font-family:'Plus Jakarta Sans Semi Bold'" data-name="${result.doctor.name}" data-speciality="${formDetails.speciality}" data-branch="${formDetails.branch}" href="/book-an-appointment/${branch_slug == "" ? result.doctor.branches[0].slug : branch_slug}/${speciality_slug}/${result.doctor.slug}" class="doctors-card__rt__btn">
-                
+
              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
              <path d="M7 0V2H13V0H15V2H19C19.5523 2 20 2.44772 20 3V19C20 19.5523 19.5523 20 19 20H1C0.44772 20 0 19.5523 0 19V3C0 2.44772 0.44772 2 1 2H5V0H7ZM18 10H2V18H18V10ZM6 12V14H4V12H6ZM11 12V14H9V12H11ZM16 12V14H14V12H16ZM5 4H2V8H18V4H15V6H13V4H7V6H5V4Z" fill="#E3000F"/>
              </svg>
-             
+
 
                  <span>Book an Appointment</span>
              </a>
-             
-             
+
+
              </div/>
-         
-         
+
+
      </div>`;
             document
                 .querySelector(className)
@@ -281,8 +282,8 @@ async function printDoctors(body, selectBox, className) {
 
         // domSelector('.')
         domSelector(".doctor-physical-btn", "click", showForm);
-        
-    
+
+
     // $('.specialists-slider').slick('refresh')
     if (selectBox != true && response.data.length > 0) {
         console.log(className);
@@ -340,7 +341,7 @@ async function printDoctors(body, selectBox, className) {
 
 // async function printOptions(node) {
 //     let type = node.getAttribute("data-type");
-    
+
 //     let coe_id = "";
 //     let branch_id = "";
 //     let selected_coe_id =
@@ -348,12 +349,12 @@ async function printDoctors(body, selectBox, className) {
 //     let selected_branch_id = node.parentNode.parentNode.querySelector(
 //         ".location-select-box"
 //     ).value;
-    
+
 //     if (type == "coe") {
 //         coe_id = node.value | selected_coe_id;
-        
+
 //         branch_id = "";
-        
+
 //     }
 //     if (type == "location") {
 //         branch_id = node.value;
@@ -364,7 +365,7 @@ async function printDoctors(body, selectBox, className) {
 
 //     let body = { coe_id, branch_id, type };
 
-    
+
 //     const response = await httpRequest(
 //         "/api/getBranchCoeSpecialityById",
 //         "POST",
@@ -410,7 +411,7 @@ async function printDoctors(body, selectBox, className) {
 //             node.parentNode.parentNode
 //                 .querySelector(".coe-select-box")
 //                 .insertAdjacentHTML("beforeend", option);
-            
+
 //             if (index == 0) {
 //                 node.parentNode.parentNode.querySelector(
 //                     ".speciality-select-box"
@@ -475,7 +476,7 @@ async function printOptions(node) {
     let branch_id = "";
     let selected_coe_id =
         node.parentNode.parentNode.querySelector(".coe-select-box").value || node.parentNode.parentNode.querySelector(".coe-select-box").getAttribute('data-selected-id');
-      
+
     let selected_branch_id = node.parentNode.parentNode.querySelector(
         ".location-select-box"
     ).value;
@@ -590,7 +591,7 @@ async function printOptions(node) {
         ".speciality-select-box"
     ).value;
     let paginate = false;
-   
+
     // let speciality_id = "";
     let doctorBody = { coe_id, branch_id, speciality_id, paginate };
 
@@ -603,7 +604,7 @@ async function printOptions(node) {
                 printDoctors(doctorBody, true, ".doctor-select-box");
             } else {
                 $(".specialists-slider").slick("unslick");
-        
+
                 document.querySelector(".specialists-slider").innerHTML = "";
                 printDoctors(doctorBody, false, ".specialists-slider");
             }
@@ -677,7 +678,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let branch_id = document.getElementById("location-select-box").value;
         let coe_id = document.getElementById("coe-select-box").value;
         let speciality_id = "";
-        
+
         Array.from(document.getElementsByClassName("location-select-box")).forEach(element=>{
             printOptions(element);
 

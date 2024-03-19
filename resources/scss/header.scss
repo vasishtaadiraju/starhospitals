@@ -530,19 +530,19 @@ $fixed-header-height: 7.5rem;
                             @include media("md-mob") {
                                 font-size: 18px;
                             }
-        
+
                             @include media("lg-mob") {
                                 font-size: 18px;
                             }
-        
+
                             @include media("x-sm-tab") {
                                 font-size: 18px;
                             }
-        
+
                             @include media("sm-tab") {
                                 font-size: 18px;
                             }
-        
+
                             @include media("md-tab") {
                                 font-size: 18px;
                             }
@@ -607,6 +607,9 @@ $fixed-header-height: 7.5rem;
                 }
 
             }
+            &--emergency{
+                justify-content: center;
+            }
             &--desk-hide {
                 display: none ;
                 @include media("sm-mob") {
@@ -617,15 +620,19 @@ $fixed-header-height: 7.5rem;
                 }
                 @include media("lg-mob") {
                     display: flex ;
+                    justify-content: center;
                 }
                 @include media("x-sm-tab") {
                     display: flex ;
+                    justify-content: center;
                 }
                 @include media("sm-tab") {
                     display: flex ;
+                    justify-content: center;
                 }
                 @include media("md-tab") {
                     display: flex ;
+                    justify-content: center;
                 }
             }
         }
@@ -1196,14 +1203,20 @@ $fixed-header-height: 7.5rem;
                         // margin-top: 1.25em;
                         @include media("sm-mob") {
                             margin-top: 0;
+                            background-color: #e3f1ff;
+                            border-radius: 10px 0 10px 10px;
                             display: block;
                         }
                         @include media("md-mob") {
                             margin-top: 0;
+                            background-color: #e3f1ff;
+                            border-radius: 10px 0 10px 10px;
                             display: block;
                         }
                         @include media("lg-mob") {
                             margin-top: 0;
+                            background-color: #e3f1ff;
+                            border-radius: 10px 0 10px 10px;
                             display: block;
                         }
                     }
@@ -1447,7 +1460,8 @@ $fixed-header-height: 7.5rem;
 
 .header__nav__option--nested-dropdown:hover ul {
     display: block;
-    background-color: #fff;
+    background-color: #e3f1ff;
+    border-radius: 10px 0 10px 10px;
 }
 
 .header__nav__option--dropdown--mega.header__nav__option--dropdown--active
@@ -1457,14 +1471,17 @@ $fixed-header-height: 7.5rem;
     // padding-bottom: 1.25em;
     @include media("sm-mob") {
         margin-top: 0;
+        background-color: #e3f1ff;
         display: block;
     }
     @include media("md-mob") {
         margin-top: 0;
+        background-color: #e3f1ff;
         display: block;
     }
     @include media("lg-mob") {
         margin-top: 0;
+        background-color: #e3f1ff;
         display: block;
     }
 }
