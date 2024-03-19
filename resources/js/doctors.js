@@ -221,9 +221,9 @@ async function printDoctors(body, selectBox, className) {
             result.doctor.slug
         }"><img class="doctors-card--primary__doctor-img" style="width:100%" src="${
                 import.meta.env.VITE_ASSET_URL
-            }${result.doctor.small_image}" alt="" /></a>
-
-
+            }${result.doctor.small_image}" alt="" /></a> 
+ 
+            <div class="doctors-card--primary__content">
          <div class="doctors-card--primary__info">
              <h4><a href="/doctors/${branch_slug == "" ? result.doctor.branches[0].slug : branch_slug}/${speciality_slug}/${result.doctor.slug}">${
                 result.doctor.name
@@ -271,8 +271,8 @@ async function printDoctors(body, selectBox, className) {
 
 
              </div/>
-
-
+         </div>
+         
      </div>`;
             document
                 .querySelector(className)
@@ -335,6 +335,7 @@ async function printDoctors(body, selectBox, className) {
                 },
             ],
         });
+        $('.doctors .doctors-card').css('height',$('.doctors .slick-track').outerHeight()+'px')
     }
 }
 // old code
@@ -499,7 +500,7 @@ async function printOptions(node) {
 
     // let type = node.parentNode.parentNode.querySelector(".coe-select-box").getAttribute('data-');
     const response = await httpRequest(
-        "/api/getCOESpecilityBranchBySpecialist",
+        "/api/getBranchCoeSpecialityById",
         "POST",
         body
     );
