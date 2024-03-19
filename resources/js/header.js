@@ -49,6 +49,7 @@ $('.scrollable-dropdown__parent-option').on('mouseover',function(){
     $('.child-option').hide();
     let className = $(this).attr('data-class');
     $(this).parent().parent().find('.'+className).show();
+    $('.scrollable-dropdown__child-container').css('margin-top',$(this).position().top + 'px')
     
 })
 $('.scrollable-dropdown').on('mouseleave',function(){
