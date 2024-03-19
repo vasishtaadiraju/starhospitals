@@ -114,7 +114,7 @@
         // margin-left: 0px;
         font-family: 'Plus Jakarta Sans';
         padding:0px !important;
-        min-height: 35rem;
+        // min-height: 35rem;
         // justify-content: space-between;
         @media screen and (min-width: 1920px) {
             min-height: 49rem;
@@ -259,7 +259,7 @@
         margin-top: 1.5em;
         margin-bottom: 1.5em;
         padding:0px !important;
-        min-height: 35rem;
+        // min-height: 35rem;
         @include media("sm-mob") {
             flex: 0 0 100%;
         }

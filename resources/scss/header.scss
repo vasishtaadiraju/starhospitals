@@ -7,7 +7,7 @@ $main-header-height: 9.5rem;
 $fixed-header-height: 7.5rem;
 
 @mixin dropdown-Options-wrapper() {
-    display: none;
+    display: none !important;
     position: absolute;
     list-style-type: none;
     min-width: 15rem;
@@ -368,17 +368,21 @@ $fixed-header-height: 7.5rem;
             }
             &--emergency {
                 flex: 0 0 85%;
+                margin-right: -15px;
                 @include media("sm-mob") {
                     flex: 0 0 55%;
                     margin-left: 1em;
+                    margin-right: 15px;
                 }
                 @include media("md-mob") {
                     flex: 0 0 55%;
                     margin-left: 1em;
+                    margin-right: 15px;
                 }
                 @include media("lg-mob") {
                     flex: 0 0 55%;
                     margin-left: 1em;
+                    margin-right: 15px;
                 }
                 @include media("x-sm-tab") {
                     flex: 0 0 35%;
@@ -608,30 +612,30 @@ $fixed-header-height: 7.5rem;
 
             }
             &--emergency{
-                justify-content: center;
+                // justify-content: center;
             }
             &--desk-hide {
-                display: none ;
+                display: none !important;
                 @include media("sm-mob") {
-                    display: flex ;
+                    display: flex !important ;
                 }
                 @include media("md-mob") {
-                    display: flex ;
+                    display: flex !important ;
                 }
                 @include media("lg-mob") {
-                    display: flex ;
+                    display: flex !important ;
                     justify-content: center;
                 }
                 @include media("x-sm-tab") {
-                    display: flex ;
+                    display: flex !important ;
                     justify-content: center;
                 }
                 @include media("sm-tab") {
-                    display: flex ;
+                    display: flex !important ;
                     justify-content: center;
                 }
                 @include media("md-tab") {
-                    display: flex ;
+                    display: flex !important ;
                     justify-content: center;
                 }
             }
@@ -961,6 +965,8 @@ $fixed-header-height: 7.5rem;
                         flex: 0 0 calc(95% / 3);
                         // margin: 0.5em 0px;
                         padding-right: 0.5em;
+
+                        
                         a {
                             // display: flex !important;
                             // align-items: center;
@@ -1199,7 +1205,7 @@ $fixed-header-height: 7.5rem;
                         transform: rotate(-90deg) !important;
                     }
                     .header__nav__option--dropdown__options {
-                        display: block;
+                        display: block !important;
                         // margin-top: 1.25em;
                         @include media("sm-mob") {
                             margin-top: 0;
