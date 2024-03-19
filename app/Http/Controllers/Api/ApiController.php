@@ -246,7 +246,8 @@ class ApiController extends Controller
                 },
             ])->first('id');
         } elseif ($type == 'location' && $branch_id != null) {
-
+            if($branch_id != 'hyderabad')
+            {
             if($coe_id != null)
             {
                 $response = Branch::where('status', 'active')->where('id', $branch_id)->with([
@@ -276,7 +277,39 @@ class ApiController extends Controller
                     // },
                 ])->first('id');
             }
-            
+        }
+        else
+        {
+            if($coe_id != null)
+            {
+                $response = Branch::where('status', 'active')->where('id',1)->orWhere('id',2)->with([
+                    'coes' => function ($query) {
+                        $query->where('status', 'active')->with(['specialities'=> function ($query) {
+                            $query->orderByPivot('coe_speciality.order_number')->select('specialities.id', 'name', 'slug', 'icon_image','coe_speciality.order_number');
+                        },])->orderBy('centre_of_excellences.order_number')->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+                    },
+                    'specialities' => function ($query) use ($coe_id) {
+                        $query->where('status', 'active')->whereHas('coes',function($query) use ($coe_id){
+                            $query->where('centre_of_excellences.id',$coe_id);             
+
+                        })->orderByPivot('branch_speciality.order_number')->select('specialities.id', 'name', 'slug', 'icon_image','doctor_slug');
+                    },
+                ])->first('id');  
+            }
+            else
+            {
+                $response = Branch::where('status', 'active')->where('id',1)->orWhere('id',2)->with([
+                    'coes' => function ($query) {
+                        $query->where('status', 'active')->with(['specialities'=> function ($query) {
+                            $query->where('status', 'active')->select('specialities.id', 'name', 'slug', 'icon_image','doctor_slug')->orderByPivot('coe_speciality.order_number');
+                        },])->select('centre_of_excellences.id', 'name', 'slug', 'icon_image');
+                    },
+                    // 'specialities' => function ($query) {
+                    //     $query->select('specialities.id', 'name', 'slug', 'icon_image');
+                    // },
+                ])->first('id');
+            }  
+        }
 
 
         } elseif ($type == 'coe' && $coe_id == null) {

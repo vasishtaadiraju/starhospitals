@@ -125,7 +125,7 @@ export async function printDoctors(url, body) {
                 import.meta.env.VITE_ASSET_URL
             }${result.doctor.small_image}" alt="" /></a> 
  
-         
+            <div class="doctors-card--primary__content">
          <div class="doctors-card--primary__info">
              <h4><a href="/doctors/${branch_slug == "" ? result.doctor.branches[0].slug : branch_slug}/${speciality_slug}/${result.doctor.slug}">${
                 result.doctor.name
@@ -174,7 +174,7 @@ export async function printDoctors(url, body) {
              
              </div/>
          
-         
+         </div>
      </div>`;
         document
             .querySelector(".doctor-appointment-cards-wrapper")

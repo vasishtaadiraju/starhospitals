@@ -53,6 +53,7 @@ class SpecialityController extends Controller
             }])->first();
             $content->page_type = 'speciality';
             session(['speciality_id'=>$content->id]);
+            
 
             $coe_id= CoeSpeciality::where('speciality_id',$content->id)->pluck('coe_id');
             session(['coe_id'=>$coe_id[0]]);
