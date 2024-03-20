@@ -11,14 +11,14 @@
 
 <x-speciality-description-v2 :$content/>
 <x-gap/>
-<div class="ui-background" >
+
 <x-when-to-contact-us :description='$content->when_to_contact_description'/>
-</div>
+
 <x-gap/>
-<x-gap/>
+{{--  <x-gap/>  --}}
 <x-our-specialists :$content :branches='$content->branches' :$coes/>
     <x-gap/>
-    <x-gap/>
+    {{--  <x-gap/>  --}}
 {{-- <x-our-specialists :$content :$branches  :$coes/> --}}
 @if($content->services_treatments != null)
 
