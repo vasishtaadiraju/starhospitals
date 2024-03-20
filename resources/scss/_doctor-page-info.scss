@@ -17,34 +17,34 @@
         flex-direction: column;
         width: 85%;
         margin: 0px auto;
-        gap: 3em;
+        gap: 0em;
     }
     @include media("md-mob") {
         flex-direction: column;
         width: 85%;
         margin: 0px auto;
-        gap: 3em;
+        gap: 0em;
     }
     @include media("lg-mob") {
         flex-direction: column;
         width: 85%;
         margin: 0px auto;
-        gap: 3em;
+        gap: 0em;
     }
     @include media("x-sm-tab") {
         flex-direction: column;
         width: 85%;
         margin: 0px auto;
-        gap: 3em;
+        gap: 0em;
     }
     @include media("sm-tab") {
         flex-direction: column;
         width: 85%;
         margin: 0px auto;
-        gap: 3em;
+        gap: 0em;
     }
     @include media("md-tab") {
-        gap: 2em;
+        gap: 0em;
     min-height: 30vh;
 
     }
@@ -347,8 +347,8 @@
             outline: none;
             font-family: 'Plus Jakarta Sans';
         }
-    
-    
+
+
         select{
             -webkit-appearance: none;
         -moz-appearance: none;
@@ -380,7 +380,7 @@
             color: #424242;
             font-size: 12px;
             gap: 0.5em;
-            
+
             @include media("md-tab") {
                 min-height: 30px;
                 height: 30px;
@@ -568,7 +568,7 @@
             @include media("md-tab") {
                 font-size: 20px;
             }
-            
+
             @include media("x-sm-desktop") {
                 font-size: 20px;
             }
@@ -598,7 +598,7 @@
             @include media("sm-tab") {
                 padding-right: 1em;
             }
-            
+
         }
 
         &::after{
@@ -658,7 +658,7 @@
             padding: 0em 0.5em;
         }
 
-        
+
         &--active {
             max-height: 80rem;
             padding-bottom: 2rem;

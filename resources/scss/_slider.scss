@@ -81,7 +81,7 @@ $visible-cards: 1;
                 border-left: none;
                 border-radius: 0px;
                 padding: 1em;
-                background-color: #004e9ebf;
+                // background-color: #004e9ebf;
             }
             @include media("md-mob") {
                 width: 100%;
@@ -93,7 +93,7 @@ $visible-cards: 1;
                 border-left: none;
                 border-radius: 0px;
                 padding: 1em;
-                background-color: #004e9ebf;
+                // background-color: #004e9ebf;
             }
 
             @include media("lg-mob") {
@@ -107,7 +107,7 @@ $visible-cards: 1;
                 border-left: none;
                 border-radius: 0px;
                 padding: 1em;
-                background-color: #004e9ebf;
+                // background-color: #004e9ebf;
             }
             @include media("x-sm-tab") {
                 width: 100%;
@@ -121,7 +121,7 @@ $visible-cards: 1;
                 border-radius: 0px;
                 padding: 1em;
                 padding-left: 5em;
-                background-color: #004e9ebf;
+                // background-color: #004e9ebf;
             }
             @include media("sm-tab") {
                 width: 60%;
@@ -232,12 +232,12 @@ $visible-cards: 1;
                 color: white;
                 border: 2px solid white;
                 display: flex;
-                align-items: center;  
+                align-items: center;
                 justify-content: center;
                 @include media("sm-mob") {
                     font-size: 13px;
                     margin-top: 1em;
-                    
+
                     min-width: 133px;
                     height: 40px;
                     padding: 10px 15px;
@@ -246,7 +246,7 @@ $visible-cards: 1;
                 @include media("md-mob") {
                     font-size: 13px;
                     margin-top: 1em;
-                    
+
                     min-width: 133px;
                     height: 40px;
                     padding: 10px 15px;
@@ -255,7 +255,7 @@ $visible-cards: 1;
                 @include media("lg-mob") {
                     font-size: 13px;
                     margin-top: 1em;
-                    
+
                     min-width: 133px;
                     height: 40px;
                     padding: 10px 15px;
@@ -264,7 +264,7 @@ $visible-cards: 1;
                 @include media("x-sm-tab") {
                     font-size: 13px;
                     margin-top: 1em;
-                    
+
                     min-width: 133px;
                     height: 40px;
                     padding: 10px 15px;
@@ -273,7 +273,7 @@ $visible-cards: 1;
                 @include media("sm-tab") {
                     font-size: 13px;
                     margin-top: 1em;
-                    
+
                     min-width: 133px;
                     height: 40px;
                     padding: 10px 15px;

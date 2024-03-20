@@ -113,7 +113,7 @@ $fixed-header-height: 7.5rem;
         background: #000000;
         border-radius: 9px;
         opacity: 1;
-        left: 2em;
+        // left: 2em;
         @include media("sm-tab") {
             width: 2.5em;
         }
@@ -966,7 +966,7 @@ $fixed-header-height: 7.5rem;
                         // margin: 0.5em 0px;
                         padding-right: 0.5em;
 
-                        
+
                         a {
                             // display: flex !important;
                             // align-items: center;
@@ -1465,7 +1465,7 @@ $fixed-header-height: 7.5rem;
 }
 
 .header__nav__option--nested-dropdown:hover ul {
-    display: block;
+    display: block !important;
     background-color: #e3f1ff;
     border-radius: 10px 0 10px 10px;
 }

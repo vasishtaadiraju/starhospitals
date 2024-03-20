@@ -30,31 +30,31 @@
     </script>
     <script type="application/ld+json">
         {
-          "@context": "https://schema.org/", 
-          "@type": "BreadcrumbList", 
+          "@context": "https://schema.org/",
+          "@type": "BreadcrumbList",
           "itemListElement": [{
-            "@type": "ListItem", 
-            "position": 1, 
+            "@type": "ListItem",
+            "position": 1,
             "name": "Home",
-            "item": "{{url('/')}}"  
+            "item": "{{url('/')}}"
           },
            {
-            "@type": "ListItem", 
-            "position": 2, 
+            "@type": "ListItem",
+            "position": 2,
             "name": "{{$branch->name}}",
-            "item": "{{route('branch',$branch->slug)}}"  
+            "item": "{{route('branch',$branch->slug)}}"
           },
           {{--  {
-            "@type": "ListItem", 
-            "position": 4, 
+            "@type": "ListItem",
+            "position": 4,
             "name": "Cardiologist",
-            "item": "https://www.starhospitals.in/team/best-cardiologists-in-hyderabad" 
+            "item": "https://www.starhospitals.in/team/best-cardiologists-in-hyderabad"
         }, --}}
         {
-            "@type": "ListItem", 
-            "position": 3, 
+            "@type": "ListItem",
+            "position": 3,
             "name": "{{$content->name}}",
-            "item": "{{url()->full()}}" 
+            "item": "{{url()->full()}}"
           }]
         }
         </script>
@@ -92,8 +92,8 @@
                     @foreach ($content->specialities as $speciality)
                         {{ $speciality->name }}
                         @if ($loop->index < count($content->specialities) - 1)
-                        <span style="padding:0px 0.25em">|</span> 
-                            
+                        <span style="padding:0px 0.25em">|</span>
+
                         @endif
                     @endforeach
                 </p>
@@ -102,11 +102,11 @@
                         {{ $branch->name }}
 
                         @if ($loop->index < count($content->branches) - 1)
-                            <span style="padding:0px 0.25em">|</span> 
+                            <span style="padding:0px 0.25em">|</span>
                         @endif
 
                     @endforeach
-                    
+
                 </p>
             </div>
             <div class="d-p-info__btn-wrapper">
@@ -130,9 +130,9 @@
                             $branch_name = $branch->name;
                         @endphp
                     @endif>{{ $branch->name }}
-                
+
                 </option>
-                    
+
                     @endforeach
                 </select>
             </div>
@@ -149,9 +149,9 @@
                 <a href="/doctors/book-a-video-consultation" class="d-p-info__appointment-wrapper__btn">
                     <img src="#" data-src="{{ Vite::asset('resources/images/Icons/calender.png') }}" alt="">
                     <span>Book a Video Consultation</span>
-                </a>   
+                </a>
                 @endif --}}
-                
+
             </div>
 
         </div>
@@ -453,7 +453,7 @@
         <x-media :$content :media='$content->media' />
     </div> --}}
 
-  
+
 
 
     {{-- <x-faqs :faqs='$content->faqs' /> --}}

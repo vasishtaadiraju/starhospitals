@@ -113,7 +113,7 @@
 {{-- <div class="ui-background"> --}}
 
 {{-- </div> --}}
-{{--  <x-gap/>  --}}
+<x-gap/>
 <x-centerof-excellence :$coes/>
 
 {{--  <x-about-coe  :$coes/>  --}}

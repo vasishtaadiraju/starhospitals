@@ -153,7 +153,7 @@ async function printDoctors(body, selectBox, className) {
 
            let coe_slug =  document.getElementsByClassName("coe-select-box")[0].options[document.getElementsByClassName("coe-select-box")[0].selectedIndex].getAttribute('data-slug');
            let speciality_slug =  document.getElementsByClassName("speciality-select-box")[0].options[document.getElementsByClassName("speciality-select-box")[0].selectedIndex].getAttribute('data-slug');
-           console.log(speciality_slug);
+        //    console.log(speciality_slug);
     // window.location.href = e.target.options[e.target.selectedIndex].getAttribute('data-url');
 
             if(speciality_slug == "")
@@ -221,8 +221,8 @@ async function printDoctors(body, selectBox, className) {
             result.doctor.slug
         }"><img class="doctors-card--primary__doctor-img" style="width:100%" src="${
                 import.meta.env.VITE_ASSET_URL
-            }${result.doctor.small_image}" alt="" /></a> 
- 
+            }${result.doctor.small_image}" alt="" /></a>
+
             <div class="doctors-card--primary__content">
          <div class="doctors-card--primary__info">
              <h4><a href="/doctors/${branch_slug == "" ? result.doctor.branches[0].slug : branch_slug}/${speciality_slug}/${result.doctor.slug}">${
@@ -272,7 +272,7 @@ async function printDoctors(body, selectBox, className) {
 
              </div/>
          </div>
-         
+
      </div>`;
             document
                 .querySelector(className)

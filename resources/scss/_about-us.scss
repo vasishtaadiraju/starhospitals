@@ -14,14 +14,17 @@ about-root{
     @include media('sm-mob')
     {
         flex-direction: column;
+        gap: 1em;
     }
     @include media('md-mob')
     {
         flex-direction: column;
+
     }
     @include media('x-sm-tab')
     {
         flex-direction: column;
+
     }
     @include media('sm-tab')
     {
@@ -75,6 +78,21 @@ about-root{
         z-index: 1;
         position: relative;
         margin: 57px;
+        @include media('sm-mob')
+        {
+            margin: 0px;
+
+        }
+        @include media('md-mob')
+        {
+            margin: 0px;
+
+        }
+        @include media('x-sm-tab')
+        {
+            margin: 0px;
+
+        }
         &__dots-left{
             position: absolute;
             bottom: 0%;
@@ -84,18 +102,21 @@ about-root{
             {
                 text-align: center;
                 display: none;
+                margin: 0px;
 
             }
             @include media('md-mob')
             {
                 text-align: center;
                 display: none;
+                margin: 0px;
 
             }
             @include media('x-sm-tab')
             {
                 text-align: center;
                 display: none;
+                margin: 0px;
 
             }
 
