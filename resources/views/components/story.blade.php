@@ -13,7 +13,7 @@
 
     </div>
     @endif
-    {{--  @if(isset($content->story2_desktop) && $content->story2_desktop != null)
+     @if(isset($content->story2_desktop) && $content->story2_desktop != null)
     <div class="story__content">
         <img src="" data-src="{{config('variables.asset').$content->story2_desktop}}" alt="">
         <div class="story__content__text">
@@ -23,6 +23,6 @@
         </div>
 
     </div>
-    @endif  --}}
+    @endif 
     @endif
 </div>
