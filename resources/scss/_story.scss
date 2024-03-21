@@ -171,60 +171,7 @@
         // margin-bottom: 2rem;
     }
 
-     h1{
-        font-family: 'Plus Jakarta Sans Bold';
-        // font-size: 20px;
-        font-weight: 700;
-
-        line-height: 50px;
-        // width: 51%;
-        font-size: 36px;
-        @include media("sm-mob") {
-            // color: black;
-            line-height: 18px;
-            font-size: 14px;
-            // margin-left: 2rem;
-            width: 90%;
-
-        }
-        @include media("md-mob") {
-            line-height: 25px;
-            font-size: 18px;
-            // margin-left: 2rem;
-            width: 90%;
-
-        }
-        @include media("lg-mob") {
-            line-height: 25px;
-            font-size: 18px;
-            // margin-left: 2rem;
-            width: 90%;
-
-        }
-        @include media("x-sm-tab") {
-            line-height: 30px;
-            font-size: 20px;
-            // margin-left: 2rem;
-            width: 90%;
-        }
-        @include media("sm-tab") {
-            font-size: 23px;
-            line-height: 30px;
-
-        }
-        @include media("md-tab") {
-            font-size: 23px;
-            line-height: 30px;
-
-        }
-        @include media("lg-tab") {
-            font-size: 23px;
-            line-height: 30px;
-
-        }
-
-     }
-     p,div{
+    p,div{
         font-family: 'Plus Jakarta Sans Semi Bold';
         margin-top: 1em;
         margin-bottom: 2rem;
@@ -279,6 +226,114 @@
         }
 
      }
+
+     h1{
+
+        
+        font-family: 'Plus Jakarta Sans Bold';
+        // font-size: 20px;
+        font-weight: 700;
+
+        line-height: 50px;
+        // width: 51%;
+        font-size: 36px;
+        @include media("sm-mob") {
+            // color: black;
+            line-height: 18px;
+            font-size: 14px;
+            // margin-left: 2rem;
+            width: 90%;
+
+        }
+        @include media("md-mob") {
+            line-height: 25px;
+            font-size: 18px;
+            // margin-left: 2rem;
+            width: 90%;
+
+        }
+        @include media("lg-mob") {
+            line-height: 25px;
+            font-size: 18px;
+            // margin-left: 2rem;
+            width: 90%;
+
+        }
+        @include media("x-sm-tab") {
+            line-height: 30px;
+            font-size: 20px;
+            // margin-left: 2rem;
+            width: 90%;
+        }
+        @include media("sm-tab") {
+            font-size: 23px;
+            line-height: 30px;
+
+        }
+        @include media("md-tab") {
+            font-size: 23px;
+            line-height: 30px;
+
+        }
+        @include media("lg-tab") {
+            font-size: 23px;
+            line-height: 30px;
+
+        }
+        div{
+            font-family: 'Plus Jakarta Sans Bold';
+            // font-size: 20px;
+            font-weight: 700;
+    
+            line-height: 50px;
+            // width: 51%;
+            font-size: 36px;
+            @include media("sm-mob") {
+                // color: black;
+                line-height: 18px;
+                font-size: 14px;
+                // margin-left: 2rem;
+                width: 90%;
+    
+            }
+            @include media("md-mob") {
+                line-height: 25px;
+                font-size: 18px;
+                // margin-left: 2rem;
+                width: 90%;
+    
+            }
+            @include media("lg-mob") {
+                line-height: 25px;
+                font-size: 18px;
+                // margin-left: 2rem;
+                width: 90%;
+    
+            }
+            @include media("x-sm-tab") {
+                line-height: 30px;
+                font-size: 20px;
+                // margin-left: 2rem;
+                width: 90%;
+            }
+            @include media("sm-tab") {
+                font-size: 23px;
+                line-height: 30px;
+    
+            }
+            @include media("md-tab") {
+                font-size: 23px;
+                line-height: 30px;
+    
+            }
+            @include media("lg-tab") {
+                font-size: 23px;
+                line-height: 30px;
+    
+            }  
+        }
+     }
+     
      button{
         width: 150px;
         padding: 18px 20px;
