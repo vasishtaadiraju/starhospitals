@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
@@ -161,11 +162,11 @@ class Homepage extends Resource
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:100'),
 
-            Text::make('Title', 'story' . $number . '_title')
+            Trix::make('Title', 'story' . $number . '_title')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:150'),
 
-            Text::make('Description', 'story' . $number . '_description')
+            Trix::make('Description', 'story' . $number . '_description')
                 ->hideFromIndex()
                 ->rules('nullable', 'string', 'max:250'),
 
