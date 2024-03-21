@@ -11,7 +11,7 @@
         flex-wrap: wrap;
         position: relative;
         // height: max-content;
-        margin-top: 2em;
+        margin-top: 1em;
         @include media("sm-mob") {
             // height: 45vh;
         }
@@ -81,7 +81,7 @@
     &__text{
         position: relative;
         color: black;
-        padding: 6rem 10rem;
+        padding: 3rem 10rem;
         // height: 100%;
         // width: 100%;
         top: 0;
@@ -177,8 +177,8 @@
         font-weight: 700;
 
         line-height: 50px;
-        width: 51%;
-        font-size: 40px;
+        // width: 51%;
+        font-size: 36px;
         @include media("sm-mob") {
             // color: black;
             line-height: 18px;

@@ -5,8 +5,8 @@
           <img src="" data-src="{{config('variables.asset').$content->story1_desktop}}" alt=""> 
           {{--  <img  src="" data-src="{{Vite::asset('resources/images/story/STORY02.jpg')}}" alt="">  --}}
         <div class="story__content__text">
-            <h1>{{ $content->story1_title }}</h1>
-            <p>{{ $content->story1_description }}</p>
+            <h1>{!! $content->story1_title !!}</h1>
+            <p>{!! $content->story1_description !!}</p>
            <a target="_blank" href="{{$content->story1_cta}}"> <button>View Story</button> </a>
 
         </div>
@@ -17,8 +17,8 @@
     <div class="story__content">
         <img src="" data-src="{{config('variables.asset').$content->story2_desktop}}" alt="">
         <div class="story__content__text">
-            <h1>{{ $content->story2_title }}</h1>
-            <p>{{ $content->story2_description }}</p>
+            <h1>{!! $content->story2_title !!}</h1>
+            <p>{!! $content->story2_description !!}</p>
            <a target="_blank" href="{{$content->story2_cta}}"> <button>View Story</button></a>
         </div>
 

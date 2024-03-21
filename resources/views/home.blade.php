@@ -135,7 +135,7 @@
 {{-- <x-gap/> --}}
 <x-story :$content/>
 <x-gap/>
-{{--  <x-gap/>  --}}
+ {{-- <x-gap/>  --}}
 
 <x-about-us :$content/>
 {{--  <x-gap/>  --}}
