@@ -64,7 +64,29 @@
         }
     }
     &--doctor-profile{
-        height: 35vh;
+        height: 25vh;
+
+        @include media("sm-mob") {
+            height: 17vh;
+                }
+        @include media("md-mob") {
+            height: 17vh;
+                }
+        @include media("lg-mob") {
+            height: 17vh;
+                }
+        @include media("x-sm-tab") {
+            height: 17vh;
+                }
+        @include media("sm-tab") {
+            height: 17vh;
+                }
+        @include media("md-tab") {
+            height: 17vh;
+                }
+        @include media("lg-tab") {
+            height: 17vh;
+                }
     }
 
     &__image {

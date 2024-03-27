@@ -612,7 +612,7 @@ export function RequestCallBackForm(className,parameters){
 </svg>
 </span>` : ``}
     <div class="pc-modal__card__inner-box ">
-    <p class="pc-modal__card__description pc-modal__card__description--regitration" style="color:red !important">Sorry, No available slots for the selected date & location. Kindly fill out the form below to request a callback.</p>
+    <p class="pc-modal__card__description pc-modal__card__description--regitration" style="color:red !important">Sorry, No available slots for the selected date & location. <br> Kindly fill out the form below to request a callback.</p>
 
     <div class="pc-modal__card__registration-form">
 

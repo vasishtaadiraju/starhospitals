@@ -14,7 +14,8 @@ use App\Models\User;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
-
+use Carbon\Carbon;
+use stdClass;
 class ApiController extends Controller
 {
 
@@ -557,5 +558,49 @@ class ApiController extends Controller
 
         }
         // dd($response);
+    }
+
+
+    function calendar($date = null)
+    {
+        
+        $date =  empty($date) ? Carbon::now('Asia/Calcutta') : Carbon::createFromDate($date)->setTimezone('Asia/Calcutta');
+        $startOfActiveDates = Carbon::now('Asia/Calcutta')->format('Y-m-d');
+        $startOfCalendar = $date->setTimezone('Asia/Calcutta')->copy()->firstOfMonth()->startOfWeek(Carbon::SUNDAY);
+        $endOfCalendar = $date->setTimezone('Asia/Calcutta')->copy()->lastOfMonth()->endOfWeek(Carbon::SATURDAY);
+        $dayLabels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+        $days = [];
+
+        while($startOfCalendar <= $endOfCalendar)
+    {
+        
+        // $extraClass .= $startOfCalendar->isToday() ? ' today' : '';
+        $day = new stdClass();
+
+        $day->day = $startOfCalendar->format('d');
+        $day->month = $startOfCalendar->format('m');
+        $day->fullMonth = $startOfCalendar->format('F');
+        $day->year = $startOfCalendar->format('Y');
+        $day->date = $startOfCalendar->format('Y-m-d');
+        $day->inactive = $startOfCalendar->format('Y-m-d')  < Carbon::now('Asia/Calcutta')->format('Y-m-d') || $startOfCalendar->format('Y-m-d') > Carbon::now('Asia/Calcutta')->addMonth()->format('Y-m-d')   ? true : false;
+        $day->today = $startOfCalendar->isToday() ? true : false;
+        $day->start = $startOfCalendar;
+        $day->now = Carbon::now();
+
+        array_push($days,$day);
+
+        $startOfCalendar->addDay();
+    }
+
+        return response([
+            'startOfActiveDates'=>$startOfActiveDates,
+            'week'=>$dayLabels,
+            'year'=>$date->format('Y'),
+            'month'=>$date->format('F'),
+            'days'=>$days,
+            
+        ],200);
+
     }
 }

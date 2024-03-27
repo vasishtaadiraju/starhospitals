@@ -8,6 +8,7 @@ use App\Models\Doctor;
 use App\Models\Speciality;
 use Http;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class DoctorController extends Controller
 {
@@ -27,14 +28,14 @@ class DoctorController extends Controller
                 ])->select('centre_of_excellences.id', 'name');
             },
             'branches' => function ($query) {
-                $query->select('name','slug');
+                $query->select('name','slug','his_id');
             },
             'specialities' => function ($query) {
                 $query->where('status', 'active')->with([
                     'coes' => function ($query) {
                         $query->select('centre_of_excellences.id')->pluck('centre_of_excellences.id');
                     }
-                ])->select('specialities.id', 'name');
+                ])->select('specialities.id', 'name','doctor_slug','his_id');
             },
             'blogs' => function ($query) {
                 $query->orderBy('blog_doctor.order_number')->select('title', 'author', 'image', 'image_alt', 'slug', 'published_date');
@@ -64,13 +65,25 @@ class DoctorController extends Controller
     <span>❯</span>
     <a href='#'>{$content->name}</a>
 </div>";
+            
+            $date =  empty($date) ? Carbon::now('IST') : Carbon::createFromDate($date,'IST');
+            $todaysDate = Carbon::today('Asia/Calcutta')->format('Y-m-d');;
+            
+            $startOfCalendar = $date->copy()->firstOfMonth()->startOfWeek(Carbon::SUNDAY);
+            $endOfCalendar = $date->copy()->lastOfMonth()->endOfWeek(Carbon::SATURDAY);
+            $dayLabels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         return view('doctor-profile', [
             'content' => $content,
             'breadcrum' => $breadcrum,
             'branch_slug' => $branch_slug,
             'speciality_slug' => $speciality_slug,
             'branch'=>$branch,
-            'speciality'=>$speciality
+            'speciality'=>$speciality,
+            'date'=>$date,
+            'dayLabels'=>$dayLabels,
+            'startOfCalendar'=>$startOfCalendar,
+            'endOfCalendar'=>$endOfCalendar,
+            'todaysDate'=>$todaysDate,
         ]);
     }
 

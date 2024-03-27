@@ -30,6 +30,7 @@ Route::post('/getCOESpecilityBranchByCondition',[ApiController::class , 'getCOES
 Route::post('/getCOESpecilityBranchBySpecialist',[ApiController::class , 'getCOESpecilityBranchBySpecialist']);
 Route::post('/getSpecialistPage',[ApiController::class , 'getSpecialistPage']);
 Route::post('/patient', [FormController::class, 'patient']);
+Route::get('/calendar/{date}',[ApiController::class , 'calendar']);
 
 
 

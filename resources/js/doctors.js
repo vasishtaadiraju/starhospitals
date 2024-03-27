@@ -259,7 +259,7 @@ async function printDoctors(body, selectBox, className) {
                              result.doctor.slug
                      }">${branch.name}</a>`             }).toString().replace(',','')}</span>
          </div>
-             <a style="font-family:'Plus Jakarta Sans Semi Bold'" data-name="${result.doctor.name}" data-speciality="${formDetails.speciality}" data-branch="${formDetails.branch}" href="/book-an-appointment/${branch_slug == "" ? result.doctor.branches[0].slug : branch_slug}/${speciality_slug}/${result.doctor.slug}" class="doctors-card__rt__btn">
+             <a style="font-family:'Plus Jakarta Sans Semi Bold'" data-name="${result.doctor.name}" data-speciality="${formDetails.speciality}" data-branch="${formDetails.branch}" href="/doctors/${branch_slug == "" ? result.doctor.branches[0].slug : branch_slug}/${speciality_slug}/${result.doctor.slug}" class="doctors-card__rt__btn">
 
              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
              <path d="M7 0V2H13V0H15V2H19C19.5523 2 20 2.44772 20 3V19C20 19.5523 19.5523 20 19 20H1C0.44772 20 0 19.5523 0 19V3C0 2.44772 0.44772 2 1 2H5V0H7ZM18 10H2V18H18V10ZM6 12V14H4V12H6ZM11 12V14H9V12H11ZM16 12V14H14V12H16ZM5 4H2V8H18V4H15V6H13V4H7V6H5V4Z" fill="#E3000F"/>

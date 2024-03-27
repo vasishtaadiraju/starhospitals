@@ -162,7 +162,7 @@ async function printDoctors(url,body) {
 
              <span>View Full Profile</span>
          </a>
-         <a data-name="${result.doctor.name}" data-speciality="${formDetails.speciality}" data-branch="${formDetails.branch}" href="/book-an-appointment/${branch_slug}/${speciality_slug}/${
+         <a data-name="${result.doctor.name}" data-speciality="${formDetails.speciality}" data-branch="${formDetails.branch}" href="/doctors/${branch_slug}/${speciality_slug}/${
             result.doctor.slug
         }" class="doctors-card__rt__btn">
          <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">

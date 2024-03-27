@@ -145,6 +145,7 @@ async function confirmAppointment(body) {
         if (document.querySelector(".pc-modal") != undefined) {
             document.querySelector(".pc-modal").remove();
         }
+        console.log(confirmation.data);
         if (confirmation.data.error_data.patient_id != undefined) {
             // document.querySelector(".pc-modal__card__description").innerHTML =
             //     "";
@@ -328,6 +329,14 @@ function handleSlotClick() {
     UiParameters.meridiem = this.children[1].innerHTML;
     appointmentParameter.appointment_type = this.getAttribute("data-type");
     appointmentParameter.appointment_time = this.getAttribute("data-time");
+    UiParameters.locationName = $('.d-p-info__branches--active').html();
+    UiParameters.specialityName = document.querySelector(
+        ".pc-speciality-select-box"
+    ).options[
+        document.querySelector(".pc-speciality-select-box").selectedIndex
+    ].innerHTML;
+    console.log(UiParameters.locationName);
+    console.log(UiParameters.specialityName);
     removeClass(
         "physical-consultation__slots",
         "physical-consultation__slots--active"
@@ -354,6 +363,7 @@ function handleSlotClick() {
         appointmentParameter.patient_email = node.target[2].value
         UiParameters.patient_email = node.target[2].value
         console.log(appointmentParameter.patient_email);
+       
         if (mobile == "") {
             return;
         }
@@ -367,83 +377,84 @@ function handleSlotClick() {
     });
 }
 
-function handleDateClick() {
-    let date = this.getAttribute("data-date");
+export function handleDateClick() {
+    let date = this.getAttribute("data-date" );
     removeClass(
-        "physical-consultation__dates",
-        "physical-consultation__dates--active"
+        "physical-consultation__date",
+        "calender__week--active"
     );
-    this.classList.add("physical-consultation__dates--active");
+    this.classList.add("calender__week--active");
     appointmentParameter.appointment_date = date;
-    let date_month = this.children[0].innerHTML;
-    let day = this.children[1].innerHTML;
-    UiParameters.date_month = date_month;
-    UiParameters.day = day;
+    let date_month = date.split('-')[1];
+    let day = this.innerHTML;
+    UiParameters.date_month = date.split('-')[2] +' '+ this.getAttribute("data-month");
+    UiParameters.day = date.split('-')[0];
+    UiParameters.csrf_token = document
+        .querySelector(".pc-doctor-select-box")
+        .getAttribute("data-csrf");
+        UiParameters.doctorName = document
+        .querySelector(".pc-doctor-select-box")
+        .getAttribute("data-name");
     let department_id = document.querySelector(".pc-speciality-select-box").value;
-    let location_id = document.querySelector(".pc-location-select-box").value;
+    let location_id = document.querySelector(".d-p-info__branches--active").getAttribute('data-his-id');
     let doctor_id = document.querySelector(
         ".pc-doctor-select-box"
     ).getAttribute('data-his-id');;
     document.querySelector(
         ".physical-consultation__slots-wrapper"
     ).innerHTML = `<div class="loader"></div>`;
+    appointmentParameter.doctor_id = doctor_id;
+    appointmentParameter.department_id = department_id;
+    appointmentParameter.location_id = location_id;
     printSlots(date, department_id,doctor_id,location_id);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    let date = document
-        .querySelectorAll(".physical-consultation__dates")[0]
-        .getAttribute("data-date");
-    appointmentParameter.appointment_date = date;
-    UiParameters.appointment_date = date;
-    let date_month = document.querySelectorAll(
-        ".physical-consultation__dates"
-    )[0].children[0].innerHTML;
-    let day = document.querySelectorAll(".physical-consultation__dates")[0]
-        .children[1].innerHTML;
-    UiParameters.date_month = date_month;
-    UiParameters.day = day;
-    UiParameters.doctorName = document
-        .querySelector(".pc-doctor-select-box")
-        .getAttribute("data-name");
-    UiParameters.csrf_token = document
-        .querySelector(".pc-doctor-select-box")
-        .getAttribute("data-csrf");
-    UiParameters.locationName = document.querySelector(
-        ".pc-location-select-box"
-    ).options[
-        document.querySelector(".pc-location-select-box").selectedIndex
-    ].innerHTML;
-    UiParameters.specialityName = document.querySelector(
-        ".pc-speciality-select-box"
-    ).options[
-        document.querySelector(".pc-speciality-select-box").selectedIndex
-    ].innerHTML;
+    // let date = document
+    //     .querySelectorAll(".physical-consultation__dates")[0]
+    //     .getAttribute("data-date");
+    // appointmentParameter.appointment_date = date;
+    // UiParameters.appointment_date = date;
+    // let date_month = document.querySelectorAll(
+    //     ".physical-consultation__dates"
+    // )[0].children[0].innerHTML;
+    // let day = document.querySelectorAll(".physical-consultation__dates")[0]
+    //     .children[1].innerHTML;
+    // UiParameters.date_month = date_month;
+    // UiParameters.day = day;
+    // UiParameters.doctorName = document
+    //     .querySelector(".pc-doctor-select-box")
+    //     .getAttribute("data-name");
+    // UiParameters.csrf_token = document
+    //     .querySelector(".pc-doctor-select-box")
+    //     .getAttribute("data-csrf");
+    
 
-    let department_id = document.querySelector(".pc-speciality-select-box").value;
-    let location_id = document.querySelector(".pc-location-select-box").value;
-    let doctor_id = document.querySelector(
-        ".pc-doctor-select-box"
-    ).getAttribute('data-his-id');;
+    // let department_id = document.querySelector(".pc-speciality-select-box").value;
+    // let location_id = document.querySelector(".pc-location-select-box").value;
+    // let doctor_id = document.querySelector(
+    //     ".pc-doctor-select-box"
+    // ).getAttribute('data-his-id');;
 
-    appointmentParameter.doctor_id = doctor_id;
-    appointmentParameter.department_id = department_id;
-    appointmentParameter.location_id = location_id;
-    printSlots(
-        document
-            .querySelectorAll(".physical-consultation__dates")[0]
-            .getAttribute("data-date"),
-            department_id,
-        doctor_id,
-        location_id,
-    );
+    // appointmentParameter.doctor_id = doctor_id;
+    // appointmentParameter.department_id = department_id;
+    // appointmentParameter.location_id = location_id;
+    // printSlots(
+    //     document
+    //         .querySelectorAll(".physical-consultation__dates")[0]
+    //         .getAttribute("data-date"),
+    //         department_id,
+    //     doctor_id,
+    //     location_id,
+    // );
+    
 });
 
-domSelector(
-    ".physical-consultation__dates",
-    "click",
-    throttle(handleDateClick, 1500)
-);
+// domSelector(
+//     ".physical-consultation__dates",
+//     "click",
+//     throttle(handleDateClick, 1500)
+// );
 
 domSelector("#pc-location-select-box", "change", function (e) {
     window.location.href =
