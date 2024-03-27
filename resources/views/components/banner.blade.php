@@ -1,7 +1,10 @@
 <div class="banner @if ($imgurl == 'condition')
 banner--condition 
 @endif @if (request()->route()->getName() == 'doctor') banner--doctor-profile @endif" >
-    <img class="banner__image" src="" data-src="{{$imgurl}}"  alt="">
+@if (request()->route()->getName() != 'doctor')
+<img class="banner__image" src="" data-src="{{$imgurl}}"  alt="">
+
+@endif
     <div class="banner__content @if (request()->route()->getName() == 'doctor')
         banner__content--blue
     @endif">

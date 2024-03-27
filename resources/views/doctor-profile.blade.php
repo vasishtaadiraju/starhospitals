@@ -60,7 +60,7 @@
         </script>
 @endpush
 @section('content')
-    <x-banner :imgurl="Vite::asset('resources/images/banner/doc-profile.png')" :text="'Doctors | Star Hospitals'" :$breadcrum />
+    <x-banner :imgurl="''" :text="'Doctors | Star Hospitals'" :$breadcrum />
 
     <x-gap />
 
