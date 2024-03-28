@@ -14,48 +14,40 @@
     flex-direction: column;
     padding: 4rem 0px;
     gap: 2.5em;
-    @include media('sm-mob')
-    {
+    @include media("sm-mob") {
         padding: 2em 0px;
         gap: 2em;
     }
 
-    @include media('md-mob')
-    {
+    @include media("md-mob") {
         padding: 2em 0px;
         gap: 2em;
-
     }
-    @include media('x-sm-tab')
-    {
+    @include media("x-sm-tab") {
         padding: 2em 0px;
         gap: 2em;
-
     }
 
     &__container {
         @include centerSection;
-        // width: 90%;
+        width: 90%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         height: 100%;
-        @include media('sm-mob')
-        {
+        @include media("sm-mob") {
             flex-direction: column;
             align-items: flex-start;
             gap: 1.5em;
         }
-        @include media('md-mob')
-        {
+        @include media("md-mob") {
             flex-direction: column;
             align-items: flex-start;
             gap: 1.5em;
         }
-        
-        @include media('x-sm-tab')
-        {
+
+        @include media("x-sm-tab") {
             // flex-direction: column;
             // align-items: flex-start;
             // gap: 1.5em;
@@ -70,114 +62,98 @@
         flex-wrap: wrap;
         height: 100%;
         @include font-family(500);
-        @include media('sm-tab')
-        {
-            flex: 0 0 calc(100%/2);
+        @include media("sm-tab") {
+            flex: 0 0 calc(100% / 2);
             flex-wrap: wrap;
             margin: 1em 0px;
-
-
         }
-        @include media('md-tab')
-        {
-            flex: 0 0 calc(100%/2);
+        @include media("md-tab") {
+            margin: 1.5em 0px;
+        }
+        // @include media('lg-tab')
+        // {
+        //     flex: 0 0 calc(100%/2);
+        //     flex-wrap: wrap;
+        //     margin: 1em 0px;
+
+        // }
+        @include media("x-sm-tab") {
+            flex: 0 0 calc(100% / 2);
             flex-wrap: wrap;
             margin: 1.5em 0px;
-
-
-        }
-        @include media('lg-tab')
-        {
-            flex: 0 0 calc(100%/2);
-            flex-wrap: wrap;
-            margin: 1em 0px;
-
-
-        }
-        @include media('x-sm-tab')
-        {
-            flex: 0 0 calc(100%/2);
-            flex-wrap: wrap;
-            margin: 1.5em 0px;
-
-
         }
 
-        &__text{
+        &__text {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             height: 100%;
 
-            h1{
+            h1 {
                 font-size: 40px;
-                @include media('sm-mob')
-                {
+                @include media("sm-mob") {
                     font-size: 20px;
                 }
-                @include media('md-mob')
-                {
+                @include media("md-mob") {
                     font-size: 20px;
                 }
-                @include media('lg-mob')
-                {
+                @include media("lg-mob") {
                     font-size: 20px;
                 }
-                @include media('x-sm-tab')
-                {
+                @include media("md-tab") {
+                    font-size: 25px;
+                }
+                @include media("lg-tab") {
+                    font-size: 25px;
+                }
+                @include media("x-sm-tab") {
                     font-size: 20px;
                 }
-                @include media('sm-tab')
-                {
+                @include media("sm-tab") {
                     font-size: 20px;
                 }
             }
-            p{
-                padding-top:10px;
+            p {
+                padding-top: 10px;
                 font-size: 20px;
-                @include media('sm-mob')
-                {
+                @include media("sm-mob") {
                     font-size: 15px;
                 }
-                @include media('md-mob')
-                {
+                @include media("md-mob") {
                     font-size: 15px;
                 }
-                @include media('lg-mob')
-                {
+                @include media("lg-mob") {
                     font-size: 15px;
                 }
-                @include media('x-sm-tab')
-                {
+                @include media("md-tab") {
+                    font-size: 20px;
+                }
+                @include media("md-tab") {
+                    font-size: 20px;
+                }
+                @include media("x-sm-tab") {
                     font-size: 15px;
                 }
-               
-                @include media('sm-tab')
-                {
+
+                @include media("sm-tab") {
                     font-size: 15px;
                 }
             }
         }
-        
+
         &__icon {
             padding: 1em;
             background-color: white;
             border-radius: 50%;
-            @include media('sm-mob')
-        {
-            padding: 0.5em;
-
-        }
-        @include media('md-mob')
-        {
-            padding: 0.5em;
-
-        }
-        @include media('x-sm-tab')
-        {
-            padding: 0.5em;
-
-        }
+            @include media("sm-mob") {
+                padding: 0.5em;
+            }
+            @include media("md-mob") {
+                padding: 0.5em;
+            }
+            @include media("x-sm-tab") {
+                padding: 0.5em;
+            }
         }
     }
 }
